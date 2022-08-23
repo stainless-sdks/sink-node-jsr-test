@@ -723,3 +723,24 @@ const uuid4 = () => {
     return v.toString(16);
   });
 };
+
+export interface HeadersProtocol {
+  get: (header: string) => string | null | undefined;
+}
+export type HeadersLike = Record<string, string | string[] | undefined> | HeadersProtocol;
+
+export const isHeadersProtocol = (headers: any): headers is HeadersProtocol => {
+  return typeof headers?.get === 'function';
+};
+
+export const getHeader = (headers: HeadersLike, key: string): string | null | undefined => {
+  const lowerKey = key.toLowerCase();
+  if (isHeadersProtocol(headers)) return headers.get(key) || headers.get(lowerKey);
+  const value = headers[key] || headers[lowerKey];
+  if (Array.isArray(value)) {
+    if (value.length <= 1) return value[0];
+    console.warn(`Received ${value.length} entries for the ${key} header, using the first entry.`);
+    return value[0];
+  }
+  return value;
+};
