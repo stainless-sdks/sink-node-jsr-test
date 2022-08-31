@@ -34,7 +34,7 @@ async function main() {
 
   console.log(card.token);
 }
-main();;
+main().catch(console.error)
 ```
 
 ### Usage with TypeScript
@@ -56,7 +56,7 @@ async function main() {
   const card: Sink.Card = await sink.cards.create(params)
 
 }
-main();;
+main().catch(console.error)
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -81,7 +81,7 @@ async function main() {
     })
 
 }
-main();;
+main().catch(console.error)
 ```
 
 Error codes are as followed:
