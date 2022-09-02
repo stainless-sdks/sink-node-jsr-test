@@ -56,11 +56,11 @@ export class Cards extends APIResource {
    * [Contact Us](https://lithic.com/contact) or your Customer Success representative
    * for more information.
    */
-  provision(
+  provisionFoo(
     id: string,
-    body: CardProvisionParams,
+    body: CardProvisionFooParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<CardProvisionResponse>> {
+  ): Promise<Core.APIResponse<CardProvisionFooResponse>> {
     return this.post(`/cards/${id}/provision`, { body, ...options });
   }
 
@@ -249,7 +249,7 @@ export namespace Card {
   }
 }
 
-export interface CardProvisionResponse {
+export interface CardProvisionFooResponse {
   provisioning_payload?: string;
 }
 
@@ -521,7 +521,7 @@ export interface CardListParams extends PageParams {
   end?: string;
 }
 
-export interface CardProvisionParams {
+export interface CardProvisionFooParams {
   /**
    * Only required for multi-account users. Token identifying the account the card
    * will be associated with. Only applicable if using account holder enrollment. See

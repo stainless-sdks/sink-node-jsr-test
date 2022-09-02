@@ -102,12 +102,12 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('provision: only required params', async () => {
-    const response = await sink.cards.provision('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
+  test('provision_foo: only required params', async () => {
+    const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
   });
 
-  test('provision: required and optional params', async () => {
-    const response = await sink.cards.provision('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+  test('provision_foo: required and optional params', async () => {
+    const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       digital_wallet: 'APPLE_PAY',
       nonce: 'U3RhaW5sZXNzIHJvY2tz',
       nonce_signature: 'U3RhaW5sZXNzIHJvY2tz',

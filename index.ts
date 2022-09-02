@@ -84,12 +84,12 @@ export namespace Sink {
   export import APIStatus = API.APIStatus;
 
   export import Card = API.Card;
-  export import CardProvisionResponse = API.CardProvisionResponse;
+  export import CardProvisionFooResponse = API.CardProvisionFooResponse;
   export import CardsPage = API.CardsPage;
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;
-  export import CardProvisionParams = API.CardProvisionParams;
+  export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
 }
 
