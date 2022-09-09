@@ -19,10 +19,13 @@ type Config = {
   baseURL?: string;
   timeout?: number;
   httpAgent?: Agent;
+  username?: string | null;
 };
 
 export class Sink extends Core.APIClient {
-  constructor(config?: Config) {
+  username: string;
+
+  constructor(config: Config) {
     const options: Config = {
       apiKey: process.env['SINK_API_KEY'] || '',
       environment: 'production',
@@ -41,6 +44,14 @@ export class Sink extends Core.APIClient {
       timeout: options.timeout,
       httpAgent: options.httpAgent,
     });
+
+    const username = config.username || process.env['SINK_USER'];
+    if (!username) {
+      throw new Error(
+        "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
+      );
+    }
+    this.username = username;
   }
 
   cards: API.Cards = new API.Cards(this);
@@ -49,12 +60,8 @@ export class Sink extends Core.APIClient {
     return this.get('/status', options);
   }
 
-  protected override defaultHeaders(): Core.Headers {
-    const Authorization = `Bearer ${this.apiKey}`;
-    return {
-      ...super.defaultHeaders(),
-      Authorization,
-    };
+  protected override authHeaders(): Core.Headers {
+    return { Authorization: `Bearer ${this.apiKey}` };
   }
 
   protected override qsOptions(): qs.IStringifyOptions {
