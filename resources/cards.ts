@@ -309,6 +309,11 @@ export interface CardCreateParams {
   memo?: string;
 
   /**
+   * Used to test the PythonSDKs ability to handle reserved keywords as parameters
+   */
+  not?: string;
+
+  /**
    * Encrypted PIN block (in base64). Only applies to cards of type `PHYSICAL` and
    * `VIRTUAL`. See
    * [Encrypted PIN Block](https://docs.lithic.com/docs/cards#encrypted-pin-block-enterprise).
