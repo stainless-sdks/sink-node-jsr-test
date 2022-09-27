@@ -103,6 +103,17 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('list_non_get', async () => {
+    const response = await sink.cards.listNonGet();
+  });
+
+  test('list_non_get: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.cards.listNonGet({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('provision_foo: only required params', async () => {
     const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
   });

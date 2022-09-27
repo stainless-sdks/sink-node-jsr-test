@@ -49,6 +49,13 @@ export class Cards extends APIResource {
   }
 
   /**
+   * List cards.
+   */
+  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsPage> {
+    return this.getAPIList('/cards/list', CardsPage, { method: 'post', ...options });
+  }
+
+  /**
    * Allow your cardholders to directly add payment cards to the device's digital
    * wallet (e.g. Apple Pay) with one touch from your app.
    *
