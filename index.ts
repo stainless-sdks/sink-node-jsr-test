@@ -55,9 +55,16 @@ export class Sink extends Core.APIClient {
   }
 
   cards: API.Cards = new API.Cards(this);
+  sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
+  }
+  createNoResponse(options?: Core.RequestOptions): Promise<void> {
+    return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
+  }
+  sta_563PostEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<unknown>> {
+    return this.post('/sta_563_empty_object', options);
   }
 
   protected override authHeaders(): Core.Headers {
