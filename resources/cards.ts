@@ -7,7 +7,7 @@ import { Page, PageParams } from '~/pagination';
 
 export class Cards extends APIResource {
   /**
-   * Create a new virtual or physical card. Parameters `pin`, `shipping_address`, and
+   * Create a new virtual or physical card. Parameters `pin`, `shippingAddress`, and
    * `product_id` only apply to physical cards.
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
@@ -98,7 +98,7 @@ export interface Card {
   /**
    * Last four digits of the card number.
    */
-  last_four: string;
+  lastFour: string;
 
   /**
    * Amount (in cents) to limit approved authorizations. Transaction requests above
@@ -216,7 +216,7 @@ export namespace Card {
      * The last 4 digits of the account (e.g. bank account, debit card) associated with
      * this FundingAccount. This may be null.
      */
-    last_four: string;
+    lastFour: string;
 
     /**
      * State of funding source.
@@ -334,8 +334,6 @@ export interface CardCreateParams {
    */
   product_id?: string;
 
-  shipping_address?: CardCreateParams.ShippingAddress;
-
   /**
    * Shipping method for the card. Only applies to cards of type PHYSICAL [beta]. Use
    * of options besides `STANDARD` require additional permissions.
@@ -348,6 +346,8 @@ export interface CardCreateParams {
    *   tracking
    */
   shipping_method?: 'STANDARD' | 'STANDARD_WITH_TRACKING' | 'EXPEDITED';
+
+  shippingAddress?: CardCreateParams.ShippingAddress;
 
   /**
    * Amount (in cents) to limit approved authorizations. Transaction requests above
@@ -576,11 +576,6 @@ export interface CardReissueParams {
   product_id?: string;
 
   /**
-   * If omitted, the previous shipping address will be used.
-   */
-  shipping_address?: CardReissueParams.ShippingAddress;
-
-  /**
    * Shipping method for the card. Use of options besides `STANDARD` require
    * additional permissions.
    *
@@ -592,6 +587,11 @@ export interface CardReissueParams {
    *   tracking
    */
   shipping_method?: 'STANDARD' | 'STANDARD_WITH_TRACKING' | 'EXPEDITED';
+
+  /**
+   * If omitted, the previous shipping address will be used.
+   */
+  shippingAddress?: CardReissueParams.ShippingAddress;
 }
 
 export namespace CardReissueParams {

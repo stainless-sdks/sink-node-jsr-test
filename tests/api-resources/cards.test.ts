@@ -23,7 +23,7 @@ describe('resource cards', () => {
       type: 'MERCHANT_LOCKED',
       pin: 'string',
       product_id: '1',
-      shipping_address: {
+      shippingAddress: {
         first_name: 'Michael',
         last_name: 'Bluth',
         line2_text: 'The Bluth Company',
@@ -134,7 +134,7 @@ describe('resource cards', () => {
 
   test('reissue: required and optional params', async () => {
     const response = await sink.cards.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      shipping_address: {
+      shippingAddress: {
         first_name: 'Michael',
         last_name: 'Bluth',
         line2_text: 'The Bluth Company',
