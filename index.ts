@@ -54,6 +54,7 @@ export class Sink extends Core.APIClient {
     this.username = username;
   }
 
+  testing: API.TestingResource = new API.TestingResource(this);
   cards: API.Cards = new API.Cards(this);
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
 
@@ -96,6 +97,8 @@ export namespace Sink {
   export import PageResponse = Pagination.PageResponse;
 
   export import APIStatus = API.APIStatus;
+
+  export import TestingRootResponse = API.TestingRootResponse;
 
   export import Card = API.Card;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
