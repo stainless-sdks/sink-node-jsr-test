@@ -57,6 +57,7 @@ export class Sink extends Core.APIClient {
   testing: API.TestingResource = new API.TestingResource(this);
   cards: API.Cards = new API.Cards(this);
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
+  parent: API.ParentResource = new API.ParentResource(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
