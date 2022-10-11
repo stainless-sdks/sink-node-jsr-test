@@ -17,37 +17,37 @@ describe('instantiate client', () => {
   });
 
   test('with minimal arguments', () => {
-    // fails if no api key provided
+    // fails if no user token provided
     expect(() => {
       new Sink({ username: 'Robert' });
     }).toThrow();
 
-    // set api key via env var
-    process.env['SINK_API_KEY'] = 'env var api key';
+    // set user token via env var
+    process.env['SINK_USER_TOKEN'] = 'env var user token';
     const client = new Sink({ username: 'Robert' });
-    expect(client.apiKey).toBe('env var api key');
+    expect(client.userToken).toBe('env var user token');
     expect(client.username).toBe('Robert');
   });
 
-  test('with apiKey argument', () => {
-    process.env['SINK_API_KEY'] = 'env var api key';
+  test('with userToken argument', () => {
+    process.env['SINK_USER_TOKEN'] = 'env var user token';
 
-    const client = new Sink({ apiKey: 'another api key', username: 'Robert' });
-    expect(client.apiKey).toBe('another api key');
+    const client = new Sink({ userToken: 'another user token', username: 'Robert' });
+    expect(client.userToken).toBe('another user token');
   });
 
   test('with options argument', () => {
-    process.env['SINK_API_KEY'] = 'env var api key';
+    process.env['SINK_USER_TOKEN'] = 'env var user token';
 
-    // apiKey and custom options
-    const client = new Sink({ apiKey: 'my api key', username: 'Robert' });
-    expect(client.apiKey).toBe('my api key');
+    // userToken and custom options
+    const client = new Sink({ userToken: 'my user token', username: 'Robert' });
+    expect(client.userToken).toBe('my user token');
   });
 
   test('with disabled authentication', () => {
-    process.env['SINK_API_KEY'] = 'env var api key';
+    process.env['SINK_USER_TOKEN'] = 'env var user token';
 
-    const client = new Sink({ apiKey: null, username: 'Robert' });
-    expect(client.apiKey).toBeNull();
+    const client = new Sink({ userToken: null, username: 'Robert' });
+    expect(client.userToken).toBeNull();
   });
 });

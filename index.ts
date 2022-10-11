@@ -12,9 +12,9 @@ const environments = {
 
 type Config = {
   /**
-   * Defaults to to process.env["SINK_API_KEY"]. Set it to null if you want to send unauthenticated requests.
+   * Defaults to to process.env["SINK_USER_TOKEN"]. Set it to null if you want to send unauthenticated requests.
    */
-  apiKey?: string | null;
+  userToken?: string | null;
   environment?: keyof typeof environments;
   baseURL?: string;
   timeout?: number;
@@ -23,27 +23,28 @@ type Config = {
 };
 
 export class Sink extends Core.APIClient {
+  userToken: string | null;
   username: string;
 
   constructor(config: Config) {
     const options: Config = {
-      apiKey: process.env['SINK_API_KEY'] || '',
+      userToken: process.env['SINK_USER_TOKEN'] || '',
       environment: 'production',
       ...config,
     };
 
-    if (!options.apiKey && options.apiKey !== null) {
+    if (!options.userToken && options.userToken !== null) {
       throw new Error(
-        "The SINK_API_KEY environment variable is missing or empty; either provide it, or instantiate the Sink client with an apiKey option, like new Sink({apiKey: 'my api key'}).",
+        "The SINK_USER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Sink client with an userToken option, like new Sink({userToken: 'my user token'}).",
       );
     }
 
     super({
-      apiKey: options.apiKey,
       baseURL: options.baseURL || environments[options.environment || 'production'],
       timeout: options.timeout,
       httpAgent: options.httpAgent,
     });
+    this.userToken = options.userToken;
 
     const username = config.username || process.env['SINK_USER'];
     if (!username) {
@@ -70,7 +71,7 @@ export class Sink extends Core.APIClient {
   }
 
   protected override authHeaders(): Core.Headers {
-    return { Authorization: `Bearer ${this.apiKey}` };
+    return { Authorization: `Bearer ${this.userToken}` };
   }
 
   protected override qsOptions(): qs.IStringifyOptions {
