@@ -57,6 +57,7 @@ export class Sink extends Core.APIClient {
   testing: API.TestingResource = new API.TestingResource(this);
   cards: API.Cards = new API.Cards(this);
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
+  sta_569: API.Sta_569Resource = new API.Sta_569Resource(this);
   parent: API.ParentResource = new API.ParentResource(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
@@ -109,6 +110,11 @@ export namespace Sink {
   export import CardListParams = API.CardListParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
+
+  export import Sta_569OneEntryResponse = API.Sta_569OneEntryResponse;
+  export import Sta_569OneEntryWithNullResponse = API.Sta_569OneEntryWithNullResponse;
+  export import Sta_569OneEntryParams = API.Sta_569OneEntryParams;
+  export import Sta_569OneEntryWithNullParams = API.Sta_569OneEntryWithNullParams;
 }
 
 exports = module.exports = Sink;
