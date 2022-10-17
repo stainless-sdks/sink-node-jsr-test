@@ -59,6 +59,7 @@ export class Sink extends Core.APIClient {
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
   sta_569: API.Sta_569Resource = new API.Sta_569Resource(this);
   parent: API.ParentResource = new API.ParentResource(this);
+  sta_606: API.Sta_606Resource = new API.Sta_606Resource(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
@@ -115,6 +116,8 @@ export namespace Sink {
   export import Sta_569OneEntryWithNullResponse = API.Sta_569OneEntryWithNullResponse;
   export import Sta_569OneEntryParams = API.Sta_569OneEntryParams;
   export import Sta_569OneEntryWithNullParams = API.Sta_569OneEntryWithNullParams;
+
+  export import Sta_606WithSharedParamsParams = API.Sta_606WithSharedParamsParams;
 }
 
 exports = module.exports = Sink;
