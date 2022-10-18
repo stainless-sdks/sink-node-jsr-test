@@ -56,7 +56,7 @@ const sink = new Sink({
 async function main() {
   const params: Sink.CardCreateParams = { type: 'SINGLE_USE',not: 'TEST' };
 
-  const card: Sink.Card = await sink.cards.create(params)
+  const card: Sink.Card = await sink.cards.create(params);
 
 }
 main().catch(console.error)
