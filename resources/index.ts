@@ -8,3 +8,4 @@ export * from './sta-569';
 export * from './sta-606';
 export * from './testing';
 export * from './top-level';
+export * from './widgets';
