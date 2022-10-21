@@ -6,10 +6,10 @@ import { APIResource } from '~/resource';
 export class Widgets extends APIResource {
   retrieveWithFilter(
     widgetId: number,
-    id: 'available' | 'archived' | 'out_of_stock',
+    filterType: 'available' | 'archived' | 'out_of_stock',
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Widget>> {
-    return this.get(`/widgets/${widgetId}/filter/${id}`, options);
+    return this.get(`/widgets/${widgetId}/filter/${filterType}`, options);
   }
 }
 

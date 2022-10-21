@@ -17,8 +17,8 @@ export class Cards extends APIResource {
   /**
    * Get card configuration such as spend limit and state.
    */
-  retrieve(id: string, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
-    return this.get(`/cards/${id}`, options);
+  retrieve(cardToken: string, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
+    return this.get(`/cards/${cardToken}`, options);
   }
 
   /**
@@ -28,8 +28,12 @@ export class Cards extends APIResource {
    * _Note: setting a card to a `CLOSED` state is a final action that cannot be
    * undone._
    */
-  update(id: string, body: CardUpdateParams, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
-    return this.patch(`/cards/${id}`, { body, ...options });
+  update(
+    cardToken: string,
+    body: CardUpdateParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Card>> {
+    return this.patch(`/cards/${cardToken}`, { body, ...options });
   }
 
   /**
@@ -64,11 +68,11 @@ export class Cards extends APIResource {
    * for more information.
    */
   provisionFoo(
-    id: string,
+    cardToken: string,
     body: CardProvisionFooParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<CardProvisionFooResponse>> {
-    return this.post(`/cards/${id}/provision`, { body, ...options });
+    return this.post(`/cards/${cardToken}/provision`, { body, ...options });
   }
 
   /**
@@ -77,11 +81,11 @@ export class Cards extends APIResource {
    * Only applies to cards of type `PHYSICAL` [beta].
    */
   reissue(
-    id: string,
+    cardToken: string,
     body: CardReissueParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Card>> {
-    return this.post(`/cards/${id}/reissue`, { body, ...options });
+    return this.post(`/cards/${cardToken}/reissue`, { body, ...options });
   }
 }
 
