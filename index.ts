@@ -61,6 +61,7 @@ export class Sink extends Core.APIClient {
   parent: API.ParentResource = new API.ParentResource(this);
   sta_606: API.Sta_606Resource = new API.Sta_606Resource(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
+  names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
@@ -123,6 +124,8 @@ export namespace Sink {
 
   export import Address = API.Address;
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
+
+  export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
 
   export import Widget = API.Widget;
 }
