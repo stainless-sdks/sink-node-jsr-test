@@ -63,6 +63,7 @@ export class Sink extends Core.APIClient {
   envelopes: API.Envelopes = new API.Envelopes(this);
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
+  sta_613: API.Sta_613Resource = new API.Sta_613Resource(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
@@ -128,6 +129,9 @@ export namespace Sink {
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
 
   export import Widget = API.Widget;
+
+  export import Sta_613GlobalWithStandardResponse = API.Sta_613GlobalWithStandardResponse;
+  export import Sta_613OnlyGlobalResponse = API.Sta_613OnlyGlobalResponse;
 }
 
 exports = module.exports = Sink;

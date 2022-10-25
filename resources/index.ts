@@ -7,6 +7,7 @@ export * from './shared';
 export * from './sta-563';
 export * from './sta-569';
 export * from './sta-606';
+export * from './sta-613';
 export * from './testing';
 export * from './top-level';
 export * from './widgets';
