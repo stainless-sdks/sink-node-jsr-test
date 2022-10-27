@@ -5,6 +5,8 @@
 The Sink Node library provides convenient access to the Sink REST API from applications written in server-side JavaScript.
 It includes TypeScript definitions for all request params and response fields.
 
+
+
 ## Documentation
 
 The API documentation can be found [here](https://stainlessapi.com).
