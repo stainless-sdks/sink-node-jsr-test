@@ -58,6 +58,7 @@ export class Sink extends Core.APIClient {
   cards: API.Cards = new API.Cards(this);
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
   sta_569: API.Sta_569Resource = new API.Sta_569Resource(this);
+  sta_630: API.Sta_630Resource = new API.Sta_630Resource(this);
   parent: API.ParentResource = new API.ParentResource(this);
   sta_606: API.Sta_606Resource = new API.Sta_606Resource(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
@@ -120,6 +121,9 @@ export namespace Sink {
   export import Sta_569OneEntryWithNullResponse = API.Sta_569OneEntryWithNullResponse;
   export import Sta_569OneEntryParams = API.Sta_569OneEntryParams;
   export import Sta_569OneEntryWithNullParams = API.Sta_569OneEntryWithNullParams;
+
+  export import GithubUser = API.GithubUser;
+  export import GithubUserPreferences = API.GithubUserPreferences;
 
   export import Sta_606WithSharedParamsParams = API.Sta_606WithSharedParamsParams;
 
