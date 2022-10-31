@@ -1,6 +1,6 @@
 # Sink Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/sink.svg)](https://npmjs.org/package/sink)
+[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm)
 
 The Sink Node library provides convenient access to the Sink REST API from applications written in server-side JavaScript.
 It includes TypeScript definitions for all request params and response fields.
@@ -14,15 +14,15 @@ The API documentation can be found [here](https://stainlessapi.com).
 ## Installation
 
 ```sh
-npm install --save sink
+npm install --save sink-npm
 # or
-yarn add sink
+yarn add sink-npm
 ```
 
 ## Usage
 
 ```js
-import Sink from 'sink';
+import Sink from 'sink-npm';
 
 const sink = new Sink({
   userToken: 'my user token', // defaults to process.env["SINK_USER_TOKEN"]
@@ -47,7 +47,7 @@ Importing, instantiating, and interacting with the library are the same as above
 If you like, you may reference our types directly:
 
 ```ts
-import Sink from 'sink';
+import Sink from 'sink-npm';
 
 const sink = new Sink({
   userToken: 'my user token', // defaults to process.env["SINK_USER_TOKEN"]
