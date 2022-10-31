@@ -5,8 +5,6 @@
 The Sink Node library provides convenient access to the Sink REST API from applications written in server-side JavaScript.
 It includes TypeScript definitions for all request params and response fields.
 
-
-
 ## Documentation
 
 The API documentation can be found [here](https://stainlessapi.com).
@@ -38,7 +36,7 @@ async function main() {
 
   console.log(card.token);
 }
-main().catch(console.error)
+main().catch(console.error);
 ```
 
 ### Usage with TypeScript
@@ -56,12 +54,11 @@ const sink = new Sink({
 });
 
 async function main() {
-  const params: Sink.CardCreateParams = { type: 'SINGLE_USE',not: 'TEST' };
+  const params: Sink.CardCreateParams = { type: 'SINGLE_USE', not: 'TEST' };
 
   const card: Sink.Card = await sink.cards.create(params);
-
 }
-main().catch(console.error)
+main().catch(console.error);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -74,19 +71,17 @@ a subclass of `APIError` will be thrown:
 
 ```ts
 async function main() {
-  const card = await sink.cards.create({ type: 'an_incorrect_type' })
-    .catch((err) => {
-      if (err instanceof Sink.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.error?.message); // Invalid parameter(s): type
-        console.log(err.error?.debugging_request_id); // 94d5e915-xxxx-4cee-a4f5-2xd6ebd279ac
-        console.log(err.headers); // {server: 'nginx', ...}
-      }
-    })
-
+  const card = await sink.cards.create({ type: 'an_incorrect_type' }).catch((err) => {
+    if (err instanceof Sink.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.error?.message); // Invalid parameter(s): type
+      console.log(err.error?.debugging_request_id); // 94d5e915-xxxx-4cee-a4f5-2xd6ebd279ac
+      console.log(err.headers); // {server: 'nginx', ...}
+    }
+  });
 }
-main().catch(console.error)
+main().catch(console.error);
 ```
 
 Error codes are as followed:
@@ -159,7 +154,7 @@ async function fetchAllCards(params) {
     allCards.push(card);
   }
   return allCards;
-};
+}
 ```
 
 ## Configuring an HTTP(S) Agent (e.g., for proxies)
