@@ -3,6 +3,7 @@ export * from './cards';
 export * from './envelopes';
 export * from './names';
 export * from './parent/parent';
+export * from './resources';
 export * from './shared';
 export * from './sta-563';
 export * from './sta-569';
