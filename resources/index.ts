@@ -12,4 +12,5 @@ export * from './sta-613';
 export * from './sta-630';
 export * from './testing';
 export * from './top-level';
+export * from './types';
 export * from './widgets';

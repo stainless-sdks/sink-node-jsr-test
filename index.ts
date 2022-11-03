@@ -63,6 +63,7 @@ export class Sink extends Core.APIClient {
   parent: API.ParentResource = new API.ParentResource(this);
   sta_606: API.Sta_606Resource = new API.Sta_606Resource(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
+  types: API.Types = new API.Types(this);
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
   sta_613: API.Sta_613Resource = new API.Sta_613Resource(this);
@@ -130,6 +131,9 @@ export namespace Sink {
 
   export import Address = API.Address;
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
+
+  export import TypeEnumsResponse = API.TypeEnumsResponse;
+  export import TypeEnumsParams = API.TypeEnumsParams;
 
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
 
