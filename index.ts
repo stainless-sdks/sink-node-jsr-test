@@ -57,6 +57,7 @@ export class Sink extends Core.APIClient {
   testing: API.TestingResource = new API.TestingResource(this);
   cards: API.Cards = new API.Cards(this);
   resources: API.Resources = new API.Resources(this);
+  configTools: API.ConfigTools = new API.ConfigTools(this);
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
   sta_569: API.Sta_569Resource = new API.Sta_569Resource(this);
   sta_630: API.Sta_630Resource = new API.Sta_630Resource(this);
