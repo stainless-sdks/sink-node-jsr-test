@@ -7,6 +7,7 @@ export * from './params';
 export * from './parent/parent';
 export * from './path-params';
 export * from './resources';
+export * from './responses';
 export * from './shared';
 export * from './sta-563';
 export * from './sta-569';

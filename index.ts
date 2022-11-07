@@ -69,6 +69,7 @@ export class Sink extends Core.APIClient {
   widgets: API.Widgets = new API.Widgets(this);
   sta_613: API.Sta_613Resource = new API.Sta_613Resource(this);
   pathParams: API.PathParams = new API.PathParams(this);
+  responses: API.Responses = new API.Responses(this);
   params: API.Params = new API.Params(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
@@ -147,6 +148,9 @@ export namespace Sink {
 
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
+
+  export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
+  export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
 
   export import ParamTopLevelAnyOfResponse = API.ParamTopLevelAnyOfResponse;
   export import ParamTopLevelOneOfResponse = API.ParamTopLevelOneOfResponse;
