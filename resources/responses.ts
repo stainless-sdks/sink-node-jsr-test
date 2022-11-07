@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as Shared from '~/resources/shared';
 
 export class Responses extends APIResource {
   /**
@@ -16,6 +17,10 @@ export class Responses extends APIResource {
    */
   oneofofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithOneOfNullProperty>> {
     return this.get('/responses/oneof_null', options);
+  }
+
+  sharedResponseObject(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.SimpleObject>> {
+    return this.get('/responses/simple_object', options);
   }
 }
 
