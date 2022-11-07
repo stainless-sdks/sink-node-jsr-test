@@ -2,8 +2,11 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import { Params } from './params';
 
 export class Names extends APIResource {
+  params: Params = new Params(this.client);
+
   responseShadowsPydantic(
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<NameResponseShadowsPydanticResponse>> {

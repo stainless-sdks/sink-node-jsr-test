@@ -68,6 +68,8 @@ export class Sink extends Core.APIClient {
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
   sta_613: API.Sta_613Resource = new API.Sta_613Resource(this);
+  pathParams: API.PathParams = new API.PathParams(this);
+  params: API.Params = new API.Params(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
@@ -142,6 +144,18 @@ export namespace Sink {
 
   export import Sta_613GlobalWithStandardResponse = API.Sta_613GlobalWithStandardResponse;
   export import Sta_613OnlyGlobalResponse = API.Sta_613OnlyGlobalResponse;
+
+  export import PathParamMultipleResponse = API.PathParamMultipleResponse;
+  export import PathParamSingularResponse = API.PathParamSingularResponse;
+
+  export import ParamTopLevelAnyOfResponse = API.ParamTopLevelAnyOfResponse;
+  export import ParamTopLevelOneOfResponse = API.ParamTopLevelOneOfResponse;
+  export import ParamUnionOverlappingPropResponse = API.ParamUnionOverlappingPropResponse;
+  export import ParamTopLevelAllOfParams = API.ParamTopLevelAllOfParams;
+  export import ParamTopLevelAllOfNestedObjectParams = API.ParamTopLevelAllOfNestedObjectParams;
+  export import ParamTopLevelAnyOfParams = API.ParamTopLevelAnyOfParams;
+  export import ParamTopLevelOneOfParams = API.ParamTopLevelOneOfParams;
+  export import ParamUnionOverlappingPropParams = API.ParamUnionOverlappingPropParams;
 }
 
 exports = module.exports = Sink;
