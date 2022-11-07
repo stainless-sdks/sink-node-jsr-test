@@ -71,6 +71,7 @@ export class Sink extends Core.APIClient {
   pathParams: API.PathParams = new API.PathParams(this);
   responses: API.Responses = new API.Responses(this);
   params: API.Params = new API.Params(this);
+  decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
 
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
@@ -160,6 +161,8 @@ export namespace Sink {
   export import ParamTopLevelAnyOfParams = API.ParamTopLevelAnyOfParams;
   export import ParamTopLevelOneOfParams = API.ParamTopLevelOneOfParams;
   export import ParamUnionOverlappingPropParams = API.ParamUnionOverlappingPropParams;
+
+  export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
 }
 
 exports = module.exports = Sink;
