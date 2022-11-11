@@ -1,4 +1,4 @@
-import type { Sink } from './index';
+import type { Sink } from './index'
 
 export class APIResource {
   protected client: Sink;

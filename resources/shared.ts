@@ -1,33 +1,22 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export type Currency =
-  | 'USD'
-  | 'GBP'
-  | 'PAB'
-  | 'AED'
-  | 'AFN'
-  | 'ALL'
-  | 'AMD'
-  | 'ANG'
-  | 'AOA'
-  | 'ARS'
-  | 'AUD'
-  | 'AWG'
-  | 'AZN'
-  | 'BAM';
+import * as Core from '../core';
 
-export interface ObjectWithChildRef {
-  bar?: SimpleObject;
+export type Currency = 'USD' | 'GBP' | 'PAB' | 'AED' | 'AFN' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM'
 
-  foo?: string;
+export interface ObjectWithChildRef  {
+
+bar?: SimpleObject
+
+foo?: string
 }
 
-export namespace ObjectWithChildRef {
-  export interface Bar {
-    bar?: number;
-  }
-}
+export namespace ObjectWithChildRef {export interface Bar  {
 
-export interface SimpleObject {
-  bar?: number;
+bar?: number
+}}
+
+export interface SimpleObject  {
+
+bar?: number
 }
