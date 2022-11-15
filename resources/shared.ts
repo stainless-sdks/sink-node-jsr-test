@@ -22,12 +22,6 @@ export interface ObjectWithChildRef {
   foo?: string;
 }
 
-export namespace ObjectWithChildRef {
-  export interface Bar {
-    bar?: number;
-  }
-}
-
 export interface SimpleObject {
   bar?: number;
 }
