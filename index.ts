@@ -107,6 +107,22 @@ export class Sink extends Core.APIClient {
   static InternalServerError = Core.InternalServerError;
 }
 
+export const {
+  APIError,
+
+  APIConnectionError,
+  APIConnectionTimeoutError,
+
+  BadRequestError,
+  AuthenticationError,
+  PermissionDeniedError,
+  NotFoundError,
+  ConflictError,
+  UnprocessableEntityError,
+  RateLimitError,
+  InternalServerError,
+} = Sink;
+
 export namespace Sink {
   // Helper functions
   export import fileFromPath = FileFromPath.fileFromPath;
