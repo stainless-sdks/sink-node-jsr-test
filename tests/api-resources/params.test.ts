@@ -4,6 +4,14 @@ import Sink from '~/index';
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
 describe('resource params', () => {
+  test('read_only_properties: only required params', async () => {
+    const response = await sink.params.readOnlyProperties({});
+  });
+
+  test('read_only_properties: required and optional params', async () => {
+    const response = await sink.params.readOnlyProperties({ in_both: true });
+  });
+
   test('top_level_allOf: only required params', async () => {
     const response = await sink.params.topLevelAllOf({ kind: 'VIRTUAL', is_foo: true });
   });

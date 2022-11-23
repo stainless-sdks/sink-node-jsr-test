@@ -176,6 +176,7 @@ export namespace Sink {
   export import ParamTopLevelAnyOfResponse = API.ParamTopLevelAnyOfResponse;
   export import ParamTopLevelOneOfResponse = API.ParamTopLevelOneOfResponse;
   export import ParamUnionOverlappingPropResponse = API.ParamUnionOverlappingPropResponse;
+  export import ParamReadOnlyPropertiesParams = API.ParamReadOnlyPropertiesParams;
   export import ParamTopLevelAllOfParams = API.ParamTopLevelAllOfParams;
   export import ParamTopLevelAllOfNestedObjectParams = API.ParamTopLevelAllOfNestedObjectParams;
   export import ParamTopLevelAnyOfParams = API.ParamTopLevelAnyOfParams;

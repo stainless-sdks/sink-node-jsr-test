@@ -6,6 +6,18 @@ import { isRequestOptions } from '~/core';
 
 export class Params extends APIResource {
   /**
+   * Endpoint with a `requestBody` that sets `readOnly` to `true` on top level
+   * properties
+   */
+  readOnlyProperties(body: ParamReadOnlyPropertiesParams, options?: Core.RequestOptions): Promise<void> {
+    return this.post('/params/read_only_properties', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` making use of allOf.
    */
   topLevelAllOf(body: ParamTopLevelAllOfParams, options?: Core.RequestOptions): Promise<void> {
@@ -84,6 +96,10 @@ export interface ParamTopLevelOneOfResponse {
 
 export interface ParamUnionOverlappingPropResponse {
   foo?: string;
+}
+
+export interface ParamReadOnlyPropertiesParams {
+  in_both?: boolean;
 }
 
 export type ParamTopLevelAllOfParams = ParamTopLevelAllOfParams.ObjectWithRequiredEnum &
