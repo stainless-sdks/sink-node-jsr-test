@@ -141,22 +141,6 @@ On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
 
-## Auto-pagination
-
-List methods in the Sink API are paginated.
-Use `for await … of` syntax to iterate through items across all pages.
-
-```js
-async function fetchAllCards(params) {
-  const allCards = [];
-  // Automatically fetches more pages as needed.
-  for await (const card of sink.cards.list()) {
-    allCards.push(card);
-  }
-  return allCards;
-}
-```
-
 ## Configuring an HTTP(S) Agent (e.g., for proxies)
 
 By default, this library uses a stable agent for all http/https requests to reuse TCP connections, eliminating many TCP & TLS handshakes and shaving around 100ms off most requests.
