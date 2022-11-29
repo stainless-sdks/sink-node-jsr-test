@@ -84,6 +84,22 @@ export class Params extends APIResource {
 
     return this.post('/params/top_level_anyOf_overlapping_property', { body, ...options });
   }
+
+  /**
+   * Endpoint with a request body that contains a property that points to a model
+   * reference.
+   */
+  withModelProperty(body: ParamWithModelPropertyParams, options?: Core.RequestOptions): Promise<void> {
+    return this.post('/params/with_model_property', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+}
+
+export interface MyModel {
+  bar?: boolean;
 }
 
 export interface ParamTopLevelAnyOfResponse {
@@ -181,4 +197,10 @@ export namespace ParamUnionOverlappingPropParams {
      */
     foo?: boolean;
   }
+}
+
+export interface ParamWithModelPropertyParams {
+  foo?: string;
+
+  my_model?: MyModel;
 }

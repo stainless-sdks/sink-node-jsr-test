@@ -71,4 +71,12 @@ describe('resource params', () => {
       sink.params.unionOverlappingProp({ foo: 'string' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
+
+  test('with_model_property: only required params', async () => {
+    const response = await sink.params.withModelProperty({});
+  });
+
+  test('with_model_property: required and optional params', async () => {
+    const response = await sink.params.withModelProperty({ my_model: { bar: true }, foo: 'string' });
+  });
 });

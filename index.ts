@@ -173,6 +173,7 @@ export namespace Sink {
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
 
+  export import MyModel = API.MyModel;
   export import ParamTopLevelAnyOfResponse = API.ParamTopLevelAnyOfResponse;
   export import ParamTopLevelOneOfResponse = API.ParamTopLevelOneOfResponse;
   export import ParamUnionOverlappingPropResponse = API.ParamUnionOverlappingPropResponse;
@@ -182,6 +183,7 @@ export namespace Sink {
   export import ParamTopLevelAnyOfParams = API.ParamTopLevelAnyOfParams;
   export import ParamTopLevelOneOfParams = API.ParamTopLevelOneOfParams;
   export import ParamUnionOverlappingPropParams = API.ParamUnionOverlappingPropParams;
+  export import ParamWithModelPropertyParams = API.ParamWithModelPropertyParams;
 
   export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
 }
