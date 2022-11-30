@@ -2,9 +2,11 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import { Languages } from './languages';
 import { KeepThisResourceResource } from './keep-this-resource';
 
 export class DecoratorTests extends APIResource {
+  languages: Languages = new Languages(this.client);
   keepThisResource: KeepThisResourceResource = new KeepThisResourceResource(this.client);
 
   /**
