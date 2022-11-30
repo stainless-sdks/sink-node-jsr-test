@@ -4,11 +4,7 @@ import Sink from '~/index';
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
 describe('resource sta_569', () => {
-  test('one_entry: only required params', async () => {
-    const response = await sink.sta_569.oneEntry({ enable_debug_logging: true });
-  });
-
-  test('one_entry: required and optional params', async () => {
+  test('one_entry', async () => {
     const response = await sink.sta_569.oneEntry({ enable_debug_logging: true });
   });
 

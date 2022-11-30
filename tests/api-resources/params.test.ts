@@ -12,11 +12,7 @@ describe('resource params', () => {
     const response = await sink.params.readOnlyProperties({ in_both: true });
   });
 
-  test('top_level_allOf: only required params', async () => {
-    const response = await sink.params.topLevelAllOf({ kind: 'VIRTUAL', is_foo: true });
-  });
-
-  test('top_level_allOf: required and optional params', async () => {
+  test('top_level_allOf', async () => {
     const response = await sink.params.topLevelAllOf({ kind: 'VIRTUAL', is_foo: true });
   });
 
@@ -34,19 +30,11 @@ describe('resource params', () => {
     });
   });
 
-  test('top_level_anyOf: only required params', async () => {
+  test('top_level_anyOf', async () => {
     const response = await sink.params.topLevelAnyOf({ kind: 'VIRTUAL' });
   });
 
-  test('top_level_anyOf: required and optional params', async () => {
-    const response = await sink.params.topLevelAnyOf({ kind: 'VIRTUAL' });
-  });
-
-  test('top_level_oneOf: only required params', async () => {
-    const response = await sink.params.topLevelOneOf({ kind: 'VIRTUAL' });
-  });
-
-  test('top_level_oneOf: required and optional params', async () => {
+  test('top_level_oneOf', async () => {
     const response = await sink.params.topLevelOneOf({ kind: 'VIRTUAL' });
   });
 
