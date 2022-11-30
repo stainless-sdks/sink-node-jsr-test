@@ -6,7 +6,7 @@ import { APIResource } from '~/resource';
 export class Widgets extends APIResource {
   retrieveWithFilter(
     widgetId: number,
-    filterType: 'available' | 'archived' | 'out_of_stock',
+    filterType: 'available' | 'archived' | 'out_of_stock' | null,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Widget>> {
     return this.get(`/widgets/${widgetId}/filter/${filterType}`, options);
