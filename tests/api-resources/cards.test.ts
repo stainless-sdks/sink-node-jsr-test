@@ -15,7 +15,7 @@ describe('resource cards', () => {
       card_program_token: '00000000-0000-0000-1000-000000000000',
       exp_month: '06',
       exp_year: '2027',
-      funding_token: 'ecbd1d58-0299-48b3-84da-6ed7f5bf9ec1',
+      funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
       memo: 'New Card',
       spend_limit: 0,
       spend_limit_duration: 'ANNUALLY',
