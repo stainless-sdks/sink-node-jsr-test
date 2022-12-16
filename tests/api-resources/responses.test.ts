@@ -15,13 +15,24 @@ describe('resource responses', () => {
     );
   });
 
-  test('oneofof_null', async () => {
-    const response = await sink.responses.oneofofNull();
+  test('array_response', async () => {
+    const response = await sink.responses.arrayResponse();
   });
 
-  test('oneofof_null: request options instead of params are passed correctly', async () => {
+  test('array_response: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.oneofofNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(sink.responses.arrayResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('oneof_null', async () => {
+    const response = await sink.responses.oneofNull();
+  });
+
+  test('oneof_null: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.oneofNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

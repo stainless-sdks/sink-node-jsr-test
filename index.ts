@@ -127,9 +127,12 @@ export namespace Sink {
   // Helper functions
   export import fileFromPath = FileFromPath.fileFromPath;
 
-  export import Page = Pagination.Page;
-  export import PageParams = Pagination.PageParams;
-  export import PageResponse = Pagination.PageResponse;
+  export import PageNumber = Pagination.PageNumber;
+  export import PageNumberParams = Pagination.PageNumberParams;
+  export import PageNumberResponse = Pagination.PageNumberResponse;
+
+  export import MyFakePage = Pagination.MyFakePage;
+  export import MyFakePageResponse = Pagination.MyFakePageResponse;
 
   export import APIStatus = API.APIStatus;
 
@@ -137,7 +140,7 @@ export namespace Sink {
 
   export import Card = API.Card;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
-  export import CardsPage = API.CardsPage;
+  export import CardsPageNumber = API.CardsPageNumber;
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;
@@ -172,6 +175,7 @@ export namespace Sink {
 
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import SimpleObjectsMyFakePage = API.SimpleObjectsMyFakePage;
 
   export import MyModel = API.MyModel;
   export import ParamTopLevelAnyOfResponse = API.ParamTopLevelAnyOfResponse;

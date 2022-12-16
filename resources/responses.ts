@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import { MyFakePage } from '~/pagination';
 import * as Shared from '~/resources/shared';
 
 export class Responses extends APIResource {
@@ -12,10 +13,14 @@ export class Responses extends APIResource {
     return this.get('/responses/anyof_null', options);
   }
 
+  arrayResponse(options?: Core.RequestOptions): Core.PagePromise<SimpleObjectsMyFakePage> {
+    return this.getAPIList('/responses/array', SimpleObjectsMyFakePage, options);
+  }
+
   /**
    * Method with a response object that uses oneOf to indicate nullability.
    */
-  oneofofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithOneOfNullProperty>> {
+  oneofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithOneOfNullProperty>> {
     return this.get('/responses/oneof_null', options);
   }
 
@@ -23,6 +28,8 @@ export class Responses extends APIResource {
     return this.get('/responses/simple_object', options);
   }
 }
+
+export class SimpleObjectsMyFakePage extends MyFakePage<Shared.SimpleObject> {}
 
 export interface ObjectWithAnyOfNullProperty {
   foo?: ObjectWithAnyOfNullProperty.Foo | null;

@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { Page, PageParams } from '~/pagination';
+import { PageNumber, PageNumberParams } from '~/pagination';
 
 export class Cards extends APIResource {
   /**
@@ -39,24 +39,24 @@ export class Cards extends APIResource {
   /**
    * List cards.
    */
-  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsPage>;
-  list(options?: Core.RequestOptions): Core.PagePromise<CardsPage>;
+  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsPageNumber>;
+  list(options?: Core.RequestOptions): Core.PagePromise<CardsPageNumber>;
   list(
     query: CardListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsPage> {
+  ): Core.PagePromise<CardsPageNumber> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
 
-    return this.getAPIList('/cards', CardsPage, { query, ...options });
+    return this.getAPIList('/cards', CardsPageNumber, { query, ...options });
   }
 
   /**
    * List cards.
    */
-  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsPage> {
-    return this.getAPIList('/cards/list', CardsPage, { method: 'post', ...options });
+  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsPageNumber> {
+    return this.getAPIList('/cards/list', CardsPageNumber, { method: 'post', ...options });
   }
 
   /**
@@ -89,7 +89,7 @@ export class Cards extends APIResource {
   }
 }
 
-export class CardsPage extends Page<Card> {}
+export class CardsPageNumber extends PageNumber<Card> {}
 
 export interface Card {
   /**
@@ -515,7 +515,7 @@ export interface CardUpdateParams {
   state?: 'CLOSED' | 'OPEN' | 'PAUSED';
 }
 
-export interface CardListParams extends PageParams {
+export interface CardListParams extends PageNumberParams {
   /**
    * Only required for multi-account users. Returns cards associated with this
    * account. Only applicable if using account holder enrollment. See
