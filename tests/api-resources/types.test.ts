@@ -9,6 +9,6 @@ describe('resource types', () => {
   });
 
   test('enums: required and optional params', async () => {
-    const response = await sink.types.enums({ input_currency: 'USD' });
+    const response = await sink.types.enums({ input_currency: 'USD', problematic_enum: '123_FOO' });
   });
 });
