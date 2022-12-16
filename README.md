@@ -140,6 +140,31 @@ On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
 
+## Default Headers
+
+We automatically send the following headers with all requests.
+
+| Header             | Value |
+| ------------------ | ----- |
+| `My-Api-Version`   | `11`  |
+| `X-Enable-Metrics` | `1`   |
+
+If you need to, you can override these headers by setting default headers on a per-request basis.
+
+```ts
+import Sink from 'sink-npm';
+
+const sink = new Sink();
+
+const card = await sink.cards.create(
+  {
+    type: 'SINGLE_USE',
+    not: 'TEST',
+  },
+  { headers: { 'My-Api-Version': 'My-Custom-Value' } },
+);
+```
+
 ## Configuring an HTTP(S) Agent (e.g., for proxies)
 
 By default, this library uses a stable agent for all http/https requests to reuse TCP connections, eliminating many TCP & TLS handshakes and shaving around 100ms off most requests.

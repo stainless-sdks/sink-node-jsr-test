@@ -84,6 +84,14 @@ export class Sink extends Core.APIClient {
     return this.post('/sta_563_empty_object', options);
   }
 
+  protected override defaultHeaders(): Core.Headers {
+    return {
+      ...super.defaultHeaders(),
+      'My-Api-Version': '11',
+      'X-Enable-Metrics': '1',
+    };
+  }
+
   protected override authHeaders(): Core.Headers {
     return { Authorization: `My Token: ${this.userToken}` };
   }
