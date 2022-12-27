@@ -4,6 +4,7 @@ import * as Pagination from './pagination';
 import * as API from './resources';
 import type { Agent } from 'http';
 import * as FileFromPath from 'formdata-node/file-from-path';
+import qs from 'qs';
 
 const environments = {
   production: 'https://demo.stainlessapi.com/',
@@ -82,6 +83,22 @@ export class Sink extends Core.APIClient {
   }
   sta_563PostEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<unknown>> {
     return this.post('/sta_563_empty_object', options);
+  }
+  /**
+   * A top level custom method on the sink.
+   */
+  getAuthURL({ redirectUri, clientId }: { redirectUri: string; clientId: string }): string {
+    const url = new URL('/auth', 'http://localhost:8000');
+
+    url.search = qs.stringify(
+      {
+        client_id: clientId,
+        redirect_uri: redirectUri,
+      },
+      this.qsOptions(),
+    );
+
+    return url.toString();
   }
 
   protected override defaultHeaders(): Core.Headers {

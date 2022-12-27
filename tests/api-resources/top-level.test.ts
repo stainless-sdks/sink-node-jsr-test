@@ -34,4 +34,14 @@ describe('resource top_level', () => {
       Sink.NotFoundError,
     );
   });
+
+  test('getAuthURL', () => {
+    const url = sink.getAuthURL({
+      clientId: '<client_id>',
+      redirectUri: 'http://localhost:8000/auth/success',
+    });
+    expect(url).toEqual(
+      'http://localhost:8000/auth?client_id=%3Cclient_id%3E&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fsuccess',
+    );
+  });
 });
