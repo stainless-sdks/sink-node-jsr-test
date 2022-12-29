@@ -88,7 +88,7 @@ export class MyFakePage<Item> extends AbstractPage<Item> {
   ) {
     super(client, response, options);
 
-    this.items = response;
+    this.items = response || [];
   }
 
   getPaginatedItems(): Item[] {
