@@ -17,11 +17,6 @@ describe('instantiate client', () => {
   });
 
   test('with minimal arguments', () => {
-    // fails if no user token provided
-    expect(() => {
-      new Sink({ username: 'Robert' });
-    }).toThrow();
-
     // set user token via env var
     process.env['SINK_USER_TOKEN'] = 'env var user token';
     const client = new Sink({ username: 'Robert' });
@@ -46,7 +41,6 @@ describe('instantiate client', () => {
 
   test('with disabled authentication', () => {
     process.env['SINK_USER_TOKEN'] = 'env var user token';
-
     const client = new Sink({ userToken: null, username: 'Robert' });
     expect(client.userToken).toBeNull();
   });

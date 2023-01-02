@@ -34,18 +34,12 @@ export class Sink extends Core.APIClient {
       ...config,
     };
 
-    if (!options.userToken && options.userToken !== null) {
-      throw new Error(
-        "The SINK_USER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Sink client with an userToken option, like new Sink({userToken: 'my user token'}).",
-      );
-    }
-
     super({
       baseURL: options.baseURL || environments[options.environment || 'production'],
       timeout: options.timeout,
       httpAgent: options.httpAgent,
     });
-    this.userToken = options.userToken;
+    this.userToken = options.userToken || null;
 
     const username = config.username || process.env['SINK_USER'];
     if (!username) {
@@ -107,6 +101,18 @@ export class Sink extends Core.APIClient {
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
     };
+  }
+
+  protected override validateHeaders(headers: Core.Headers, customHeaders: Core.Headers) {
+    if (this.userToken && headers['Authorization']) {
+      return;
+    }
+
+    if (customHeaders['Authorization'] === null) {
+      return;
+    }
+
+    throw new Error('Expected userToken to be set or Authorization header to be omitted.');
   }
 
   protected override authHeaders(): Core.Headers {
