@@ -10,5 +10,5 @@ export class TestingResource extends APIResource {
 }
 
 export interface TestingRootResponse {
-  message?: string;
+  message: string;
 }

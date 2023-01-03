@@ -18,5 +18,5 @@ export class DecoratorTests extends APIResource {
 }
 
 export interface DecoratorTestKeepMeResponse {
-  foo?: string;
+  foo: string;
 }

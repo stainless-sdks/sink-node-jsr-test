@@ -16,5 +16,5 @@ export class KeepThisResourceResource extends APIResource {
 }
 
 export interface KeepThisResourceKeepThisMethodResponse {
-  foo?: string;
+  foo: string;
 }

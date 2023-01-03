@@ -51,11 +51,7 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('update: only required params', async () => {
-    const response = await sink.cards.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
-  });
-
-  test('update: required and optional params', async () => {
+  test('update', async () => {
     const response = await sink.cards.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       funding_token: 'ecbd1d58-0299-48b3-84da-6ed7f5bf9ec1',
@@ -114,11 +110,7 @@ describe('resource cards', () => {
     );
   });
 
-  test('provision_foo: only required params', async () => {
-    const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
-  });
-
-  test('provision_foo: required and optional params', async () => {
+  test('provision_foo', async () => {
     const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       digital_wallet: 'APPLE_PAY',
       nonce: 'U3RhaW5sZXNzIHJvY2tz',
@@ -128,11 +120,7 @@ describe('resource cards', () => {
     });
   });
 
-  test('reissue: only required params', async () => {
-    const response = await sink.cards.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
-  });
-
-  test('reissue: required and optional params', async () => {
+  test('reissue', async () => {
     const response = await sink.cards.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       shippingAddress: {
         first_name: 'Michael',

@@ -261,7 +261,7 @@ export namespace Card {
 }
 
 export interface CardProvisionFooResponse {
-  provisioning_payload?: string;
+  provisioning_payload: string;
 }
 
 export interface CardCreateParams {
@@ -456,37 +456,37 @@ export interface CardUpdateParams {
    * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
    * more information.
    */
-  account_token?: string;
+  account_token: string;
 
   /**
    * Identifier for any Auth Rules that will be applied to transactions taking place
    * with the card.
    */
-  auth_rule_token?: string;
+  auth_rule_token: string;
 
   /**
    * The token for the desired `FundingAccount` to use when making transactions with
    * this card.
    */
-  funding_token?: string;
+  funding_token: string;
 
   /**
    * Friendly name to identify the card.
    */
-  memo?: string;
+  memo: string;
 
   /**
    * Encrypted PIN block (in base64). Only applies to cards of type `PHYSICAL` and
    * `VIRTUAL`. See
    * [Encrypted PIN Block](https://docs.lithic.com/docs/cards#encrypted-pin-block-enterprise).
    */
-  pin?: string;
+  pin: string;
 
   /**
    * Amount (in cents) to limit approved authorizations. Transaction requests above
    * the spend limit will be declined.
    */
-  spend_limit?: number;
+  spend_limit: number;
 
   /**
    * Spend limit duration values:
@@ -500,7 +500,7 @@ export interface CardUpdateParams {
    * - `TRANSACTION` - Card will authorizate multiple transactions if each individual
    *   transaction is under the spend limit.
    */
-  spend_limit_duration?: 'ANNUALLY' | 'FOREVER' | 'MONTHLY' | 'TRANSACTION';
+  spend_limit_duration: 'ANNUALLY' | 'FOREVER' | 'MONTHLY' | 'TRANSACTION';
 
   /**
    * Card state values:
@@ -512,7 +512,7 @@ export interface CardUpdateParams {
    * - `PAUSED` - Card will decline authorizations, but can be resumed at a later
    *   time.
    */
-  state?: 'CLOSED' | 'OPEN' | 'PAUSED';
+  state: 'CLOSED' | 'OPEN' | 'PAUSED';
 }
 
 export interface CardListParams extends PageNumberParams {
@@ -544,31 +544,31 @@ export interface CardProvisionFooParams {
    * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
    * more information.
    */
-  account_token?: string;
+  account_token: string;
 
   /**
    * Required for `APPLE_PAY`. Apple's public leaf certificate. Base64 encoded in PEM
    * format with headers `(-----BEGIN CERTIFICATE-----)` and trailers omitted.
    * Provided by the device's wallet.
    */
-  certificate?: string;
+  certificate: string;
 
   /**
    * Name of digital wallet provider.
    */
-  digital_wallet?: 'APPLE_PAY' | 'GOOGLE_PAY' | 'SAMSUNG_PAY';
+  digital_wallet: 'APPLE_PAY' | 'GOOGLE_PAY' | 'SAMSUNG_PAY';
 
   /**
    * Required for `APPLE_PAY`. Base64 cryptographic nonce provided by the device's
    * wallet.
    */
-  nonce?: string;
+  nonce: string;
 
   /**
    * Required for `APPLE_PAY`. Base64 cryptographic nonce provided by the device's
    * wallet.
    */
-  nonce_signature?: string;
+  nonce_signature: string;
 }
 
 export interface CardReissueParams {
@@ -577,7 +577,7 @@ export interface CardReissueParams {
    * manufactured with, and only applies to cards of type `PHYSICAL` [beta]. This
    * must be configured with Lithic before use.
    */
-  product_id?: string;
+  product_id: string;
 
   /**
    * Shipping method for the card. Use of options besides `STANDARD` require
@@ -590,12 +590,12 @@ export interface CardReissueParams {
    * - `EXPEDITED` - FedEx Standard Overnight or similar international option, with
    *   tracking
    */
-  shipping_method?: 'STANDARD' | 'STANDARD_WITH_TRACKING' | 'EXPEDITED';
+  shipping_method: 'STANDARD' | 'STANDARD_WITH_TRACKING' | 'EXPEDITED';
 
   /**
    * If omitted, the previous shipping address will be used.
    */
-  shippingAddress?: CardReissueParams.ShippingAddress;
+  shippingAddress: CardReissueParams.ShippingAddress;
 }
 
 export namespace CardReissueParams {

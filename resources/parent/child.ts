@@ -13,5 +13,5 @@ export class ChildResource extends APIResource {
 }
 
 export interface ChildInlinedResponseResponse {
-  foo?: number;
+  foo: number;
 }

@@ -15,5 +15,5 @@ export class Names extends APIResource {
 }
 
 export interface NameResponseShadowsPydanticResponse {
-  parse_raw?: string;
+  parse_raw: string;
 }

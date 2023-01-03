@@ -103,15 +103,15 @@ export interface MyModel {
 }
 
 export interface ParamTopLevelAnyOfResponse {
-  foo?: string;
+  foo: string;
 }
 
 export interface ParamTopLevelOneOfResponse {
-  foo?: string;
+  foo: string;
 }
 
 export interface ParamUnionOverlappingPropResponse {
-  foo?: string;
+  foo: string;
 }
 
 export interface ParamReadOnlyPropertiesParams {

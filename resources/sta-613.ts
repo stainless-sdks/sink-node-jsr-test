@@ -28,9 +28,9 @@ export class Sta_613Resource extends APIResource {
 }
 
 export interface Sta_613GlobalWithStandardResponse {
-  foo?: string;
+  foo: string;
 }
 
 export interface Sta_613OnlyGlobalResponse {
-  foo?: string;
+  foo: string;
 }
