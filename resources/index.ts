@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 export * from './cards';
+export * from './company/company';
 export * from './config-tools';
 export * from './decorator-tests/decorator-tests';
 export * from './envelopes';

@@ -54,6 +54,7 @@ export class Sink extends Core.APIClient {
   cards: API.Cards = new API.Cards(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
+  company: API.CompanyResource = new API.CompanyResource(this);
   sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
   sta_569: API.Sta_569Resource = new API.Sta_569Resource(this);
   sta_630: API.Sta_630Resource = new API.Sta_630Resource(this);
@@ -177,6 +178,8 @@ export namespace Sink {
   export import CardListParams = API.CardListParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
+
+  export import Company = API.Company;
 
   export import Sta_569OneEntryResponse = API.Sta_569OneEntryResponse;
   export import Sta_569OneEntryWithNullResponse = API.Sta_569OneEntryWithNullResponse;
