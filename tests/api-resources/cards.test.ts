@@ -110,6 +110,19 @@ describe('resource cards', () => {
     );
   });
 
+  test('list_not_paginated', async () => {
+    const response = await sink.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+  });
+
+  test('list_not_paginated: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+        path: '/_stainless_unknown_path',
+      }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
   test('provision_foo', async () => {
     const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       digital_wallet: 'APPLE_PAY',

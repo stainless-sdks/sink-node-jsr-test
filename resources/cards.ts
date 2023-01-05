@@ -60,6 +60,13 @@ export class Cards extends APIResource {
   }
 
   /**
+   * Get card configuration such as spend limit and state.
+   */
+  listNotPaginated(cardToken: string, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
+    return this.get(`/cards/${cardToken}`, options);
+  }
+
+  /**
    * Allow your cardholders to directly add payment cards to the device's digital
    * wallet (e.g. Apple Pay) with one touch from your app.
    *
