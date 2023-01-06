@@ -5,6 +5,9 @@ import { APIResource } from '~/resource';
 import * as Shared from '~/resources/shared';
 
 export class Types extends APIResource {
+  /**
+   * Endpoint that has a `$ref`d enum type in the request body and the response body
+   */
   enums(body: TypeEnumsParams, options?: Core.RequestOptions): Promise<Core.APIResponse<TypeEnumsResponse>> {
     return this.post('/types/enums', { body, ...options });
   }

@@ -70,12 +70,22 @@ export class Sink extends Core.APIClient {
   params: API.Params = new API.Params(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
 
+  /**
+   * API status check
+   */
   status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
   }
+  /**
+   * Endpoint returning no response
+   */
   createNoResponse(options?: Core.RequestOptions): Promise<void> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
+  /**
+   * Should not generate return type for object without defined properties. See
+   * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
+   */
   sta_563PostEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<unknown>> {
     return this.post('/sta_563_empty_object', options);
   }

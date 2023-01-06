@@ -13,6 +13,9 @@ export class Responses extends APIResource {
     return this.get('/responses/anyof_null', options);
   }
 
+  /**
+   * Endpoint that returns a top-level array.
+   */
   arrayResponse(options?: Core.RequestOptions): Core.PagePromise<SimpleObjectsMyFakePage> {
     return this.getAPIList('/responses/array', SimpleObjectsMyFakePage, options);
   }
@@ -24,6 +27,10 @@ export class Responses extends APIResource {
     return this.get('/responses/oneof_null', options);
   }
 
+  /**
+   * Endpoint that returns a $ref to SimpleObject. This is used to test shared
+   * response models.
+   */
   sharedResponseObject(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.SimpleObject>> {
     return this.get('/responses/simple_object', options);
   }

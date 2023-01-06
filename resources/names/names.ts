@@ -7,6 +7,9 @@ import { Params } from './params';
 export class Names extends APIResource {
   params: Params = new Params(this.client);
 
+  /**
+   * Endpoint with a response model property that would clash with pydantic.
+   */
   responseShadowsPydantic(
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<NameResponseShadowsPydanticResponse>> {

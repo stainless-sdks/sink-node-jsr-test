@@ -4,6 +4,9 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
 export class Widgets extends APIResource {
+  /**
+   * Endpoint that tests using an integer and enum in the pathParams
+   */
   retrieveWithFilter(
     widgetId: number,
     filterType: 'available' | 'archived' | 'out_of_stock' | null,

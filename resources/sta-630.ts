@@ -4,6 +4,10 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
 export class Sta_630Resource extends APIResource {
+  /**
+   * Should return a GithubUser object with a `properties` field that we can rename
+   * in the Stainless config to a prettier name.
+   */
   nestedPath(options?: Core.RequestOptions): Promise<Core.APIResponse<GithubUser>> {
     return this.get('/sta_630/define_models_nested_path', options);
   }
