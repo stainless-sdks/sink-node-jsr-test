@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
-export class ChildResource extends APIResource {
+export class Child extends APIResource {
   /**
    * Method with inlined response model.
    */

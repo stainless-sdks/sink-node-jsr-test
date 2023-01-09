@@ -26,6 +26,17 @@ describe('resource responses', () => {
     );
   });
 
+  test('missing_required', async () => {
+    const response = await sink.responses.missingRequired();
+  });
+
+  test('missing_required: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.missingRequired({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('oneof_null', async () => {
     const response = await sink.responses.oneofNull();
   });

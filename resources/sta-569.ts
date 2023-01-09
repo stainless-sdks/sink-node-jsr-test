@@ -4,7 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 
-export class Sta_569Resource extends APIResource {
+export class Sta_569 extends APIResource {
   /**
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */

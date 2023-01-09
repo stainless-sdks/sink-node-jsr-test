@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from '~/resource';
-import { ChildResource } from './child';
+import { Child } from './child';
 
-export class ParentResource extends APIResource {
-  child: ChildResource = new ChildResource(this.client);
+export class Parent extends APIResource {
+  child: Child = new Child(this.client);
 }

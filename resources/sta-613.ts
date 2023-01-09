@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
-export class Sta_613Resource extends APIResource {
+export class Sta_613 extends APIResource {
   /**
    * The operation takes a path param that is able to be set at the client level
    * alongside a standard path param.

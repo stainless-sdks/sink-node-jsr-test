@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
-export class KeepThisResourceResource extends APIResource {
+export class KeepThisResource extends APIResource {
   /**
    * Nested method that should render because it is not skipped nor are its
    * ancestors.

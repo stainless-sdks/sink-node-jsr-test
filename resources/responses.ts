@@ -21,6 +21,13 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Endpoint with a response schema that doesn't set the `required` property.
+   */
+  missingRequired(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseMissingRequiredResponse>> {
+    return this.get('/responses/missing_required', options);
+  }
+
+  /**
    * Method with a response object that uses oneOf to indicate nullability.
    */
   oneofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithOneOfNullProperty>> {
@@ -56,4 +63,10 @@ export namespace ObjectWithOneOfNullProperty {
   export interface Foo {
     item?: string;
   }
+}
+
+export interface ResponseMissingRequiredResponse {
+  bar: boolean | null;
+
+  foo: string;
 }

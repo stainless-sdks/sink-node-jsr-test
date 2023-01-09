@@ -5,7 +5,7 @@ import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import * as Shared from '~/resources/shared';
 
-export class Sta_606Resource extends APIResource {
+export class Sta_606 extends APIResource {
   /**
    * The response body being set to a $ref that is a shared type in the stainless
    * config correctly references it.

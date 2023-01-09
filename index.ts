@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless.
+import qs from 'qs';
 import * as Core from './core';
 import * as Pagination from './pagination';
 import * as API from './resources';
 import type { Agent } from 'http';
 import * as FileFromPath from 'formdata-node/file-from-path';
-import qs from 'qs';
 
 const environments = {
   production: 'https://demo.stainlessapi.com/',
@@ -50,21 +50,21 @@ export class Sink extends Core.APIClient {
     this.username = username;
   }
 
-  testing: API.TestingResource = new API.TestingResource(this);
+  testing: API.Testing = new API.Testing(this);
   cards: API.Cards = new API.Cards(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
   company: API.CompanyResource = new API.CompanyResource(this);
-  sta_563: API.Sta_563Resource = new API.Sta_563Resource(this);
-  sta_569: API.Sta_569Resource = new API.Sta_569Resource(this);
-  sta_630: API.Sta_630Resource = new API.Sta_630Resource(this);
-  parent: API.ParentResource = new API.ParentResource(this);
-  sta_606: API.Sta_606Resource = new API.Sta_606Resource(this);
+  sta_563: API.Sta_563 = new API.Sta_563(this);
+  sta_569: API.Sta_569 = new API.Sta_569(this);
+  sta_630: API.Sta_630 = new API.Sta_630(this);
+  parent: API.Parent = new API.Parent(this);
+  sta_606: API.Sta_606 = new API.Sta_606(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
   types: API.Types = new API.Types(this);
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
-  sta_613: API.Sta_613Resource = new API.Sta_613Resource(this);
+  sta_613: API.Sta_613 = new API.Sta_613(this);
   pathParams: API.PathParams = new API.PathParams(this);
   responses: API.Responses = new API.Responses(this);
   params: API.Params = new API.Params(this);
@@ -219,6 +219,7 @@ export namespace Sink {
 
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
   export import SimpleObjectsMyFakePage = API.SimpleObjectsMyFakePage;
 
   export import MyModel = API.MyModel;

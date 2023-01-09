@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
-export class TestingResource extends APIResource {
+export class Testing extends APIResource {
   /**
    * Top level endpoint
    */
