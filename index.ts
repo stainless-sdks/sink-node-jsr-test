@@ -181,6 +181,7 @@ export namespace Sink {
   export import TestingRootResponse = API.TestingRootResponse;
 
   export import Card = API.Card;
+  export import FundingAccount = API.FundingAccount;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
   export import CardsPageNumber = API.CardsPageNumber;
   export import CardCreateParams = API.CardCreateParams;

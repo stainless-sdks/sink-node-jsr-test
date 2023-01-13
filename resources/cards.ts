@@ -4,6 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import { PageNumber, PageNumberParams } from '~/pagination';
+import * as Shared from '~/resources/shared';
 
 export class Cards extends APIResource {
   /**
@@ -104,7 +105,7 @@ export interface Card {
    */
   created: string;
 
-  funding: Card.Funding;
+  funding: FundingAccount;
 
   /**
    * Last four digits of the card number.
@@ -215,56 +216,54 @@ export interface Card {
   pan?: string;
 }
 
-export namespace Card {
-  export interface Funding {
-    /**
-     * An ISO 8601 string representing when this funding source was added to the Lithic
-     * account. This may be `null`. UTC time zone.
-     */
-    created: string;
+export interface FundingAccount {
+  /**
+   * An ISO 8601 string representing when this funding source was added to the Lithic
+   * account. This may be `null`. UTC time zone.
+   */
+  created: string;
 
-    /**
-     * The last 4 digits of the account (e.g. bank account, debit card) associated with
-     * this FundingAccount. This may be null.
-     */
-    lastFour: string;
+  /**
+   * The last 4 digits of the account (e.g. bank account, debit card) associated with
+   * this FundingAccount. This may be null.
+   */
+  lastFour: string;
 
-    /**
-     * State of funding source.
-     *
-     * Funding source states:
-     *
-     * - `ENABLED` - The funding account is available to use for card creation and
-     *   transactions.
-     * - `PENDING` - The funding account is still being verified e.g. bank
-     *   micro-deposits verification.
-     * - `DELETED` - The founding account has been deleted.
-     */
-    state: 'ENABLED' | 'PENDING' | 'DELETED';
+  /**
+   * State of funding source.
+   *
+   * Funding source states:
+   *
+   * - `ENABLED` - The funding account is available to use for card creation and
+   *   transactions.
+   * - `PENDING` - The funding account is still being verified e.g. bank
+   *   micro-deposits verification.
+   * - `DELETED` - The founding account has been deleted.
+   */
+  state: 'ENABLED' | 'PENDING' | 'DELETED';
 
-    /**
-     * A globally unique identifier for this FundingAccount.
-     */
-    token: string;
+  /**
+   * A globally unique identifier for this FundingAccount.
+   */
+  token: string;
 
-    /**
-     * Types of funding source:
-     *
-     * - `DEPOSITORY_CHECKING` - Bank checking account.
-     * - `DEPOSITORY_SAVINGS` - Bank savings account.
-     */
-    type: 'DEPOSITORY_CHECKING' | 'DEPOSITORY_SAVINGS';
+  /**
+   * Types of funding source:
+   *
+   * - `DEPOSITORY_CHECKING` - Bank checking account.
+   * - `DEPOSITORY_SAVINGS` - Bank savings account.
+   */
+  type: 'DEPOSITORY_CHECKING' | 'DEPOSITORY_SAVINGS';
 
-    /**
-     * Account name identifying the funding source. This may be `null`.
-     */
-    account_name?: string;
+  /**
+   * Account name identifying the funding source. This may be `null`.
+   */
+  account_name?: string;
 
-    /**
-     * The nickname given to the `FundingAccount` or `null` if it has no nickname.
-     */
-    nickname?: string;
-  }
+  /**
+   * The nickname given to the `FundingAccount` or `null` if it has no nickname.
+   */
+  nickname?: string;
 }
 
 export interface CardProvisionFooResponse {
@@ -358,7 +357,7 @@ export interface CardCreateParams {
    */
   shipping_method?: 'STANDARD' | 'STANDARD_WITH_TRACKING' | 'EXPEDITED';
 
-  shippingAddress?: CardCreateParams.ShippingAddress;
+  shippingAddress?: Shared.ShippingAddress;
 
   /**
    * Amount (in cents) to limit approved authorizations. Transaction requests above
@@ -389,71 +388,6 @@ export interface CardCreateParams {
    *   time.
    */
   state?: 'OPEN' | 'PAUSED';
-}
-
-export namespace CardCreateParams {
-  export interface ShippingAddress {
-    /**
-     * Valid USPS routable address.
-     */
-    address1: string;
-
-    /**
-     * City
-     */
-    city: string;
-
-    /**
-     * Uppercase ISO 3166-1 alpha-3 three character abbreviation.
-     */
-    country: string;
-
-    /**
-     * Customer's first name. This will be the first name printed on the physical card.
-     */
-    first_name: string;
-
-    /**
-     * Customer's surname (family name). This will be the last name printed on the
-     * physical card.
-     */
-    last_name: string;
-
-    /**
-     * Postal code (formerly zipcode). For US addresses, either five-digit zipcode or
-     * nine-digit "ZIP+4".
-     */
-    postal_code: string;
-
-    /**
-     * Uppercase ISO 3166-2 two character abbreviation for US and CA. Optional with a
-     * limit of 24 characters for other countries.
-     */
-    state: string;
-
-    /**
-     * Unit number (if applicable).
-     */
-    address2?: string;
-
-    /**
-     * Email address to be contacted for expedited shipping process purposes. Required
-     * if `shipping_method` is `EXPEDITED`.
-     */
-    email?: string;
-
-    /**
-     * Text to be printed on line two of the physical card. Use of this field requires
-     * additional permissions.
-     */
-    line2_text?: string;
-
-    /**
-     * Cardholder's phone number in E.164 format to be contacted for expedited shipping
-     * process purposes. Required if `shipping_method` is `EXPEDITED`.
-     */
-    phone_number?: string;
-  }
 }
 
 export interface CardUpdateParams {
@@ -602,70 +536,5 @@ export interface CardReissueParams {
   /**
    * If omitted, the previous shipping address will be used.
    */
-  shippingAddress: CardReissueParams.ShippingAddress;
-}
-
-export namespace CardReissueParams {
-  export interface ShippingAddress {
-    /**
-     * Valid USPS routable address.
-     */
-    address1: string;
-
-    /**
-     * City
-     */
-    city: string;
-
-    /**
-     * Uppercase ISO 3166-1 alpha-3 three character abbreviation.
-     */
-    country: string;
-
-    /**
-     * Customer's first name. This will be the first name printed on the physical card.
-     */
-    first_name: string;
-
-    /**
-     * Customer's surname (family name). This will be the last name printed on the
-     * physical card.
-     */
-    last_name: string;
-
-    /**
-     * Postal code (formerly zipcode). For US addresses, either five-digit zipcode or
-     * nine-digit "ZIP+4".
-     */
-    postal_code: string;
-
-    /**
-     * Uppercase ISO 3166-2 two character abbreviation for US and CA. Optional with a
-     * limit of 24 characters for other countries.
-     */
-    state: string;
-
-    /**
-     * Unit number (if applicable).
-     */
-    address2?: string;
-
-    /**
-     * Email address to be contacted for expedited shipping process purposes. Required
-     * if `shipping_method` is `EXPEDITED`.
-     */
-    email?: string;
-
-    /**
-     * Text to be printed on line two of the physical card. Use of this field requires
-     * additional permissions.
-     */
-    line2_text?: string;
-
-    /**
-     * Cardholder's phone number in E.164 format to be contacted for expedited shipping
-     * process purposes. Required if `shipping_method` is `EXPEDITED`.
-     */
-    phone_number?: string;
-  }
+  shippingAddress: Shared.ShippingAddress;
 }
