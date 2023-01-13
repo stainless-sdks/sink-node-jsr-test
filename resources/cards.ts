@@ -216,6 +216,8 @@ export interface Card {
   pan?: string;
 }
 
+export type CardAlias = Card;
+
 export interface FundingAccount {
   /**
    * An ISO 8601 string representing when this funding source was added to the Lithic

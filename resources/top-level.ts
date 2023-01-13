@@ -3,3 +3,5 @@
 export interface APIStatus {
   message: string;
 }
+
+export type APIStatusAlias = APIStatus;

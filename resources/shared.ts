@@ -22,10 +22,6 @@ export interface ObjectWithChildRef {
   foo?: string;
 }
 
-export interface SimpleObject {
-  bar?: number;
-}
-
 export interface ShippingAddress {
   /**
    * Valid USPS routable address.
@@ -88,3 +84,9 @@ export interface ShippingAddress {
    */
   phone_number?: string;
 }
+
+export interface SimpleObject {
+  bar?: number;
+}
+
+export type SimpleObjectAlias = SimpleObject;

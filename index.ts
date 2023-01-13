@@ -177,10 +177,12 @@ export namespace Sink {
   export import MyFakePageResponse = Pagination.MyFakePageResponse;
 
   export import APIStatus = API.APIStatus;
+  export import APIStatusAlias = API.APIStatusAlias;
 
   export import TestingRootResponse = API.TestingRootResponse;
 
   export import Card = API.Card;
+  export import CardAlias = API.CardAlias;
   export import FundingAccount = API.FundingAccount;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
   export import CardsPageNumber = API.CardsPageNumber;
