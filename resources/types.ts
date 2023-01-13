@@ -16,6 +16,8 @@ export class Types extends APIResource {
 export interface TypeEnumsResponse {
   currency: Shared.Currency;
 
+  number_enum: 200 | 201 | 404 | 403;
+
   problematic_enum: '123_FOO' | '30%';
 }
 
