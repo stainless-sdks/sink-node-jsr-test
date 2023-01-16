@@ -99,10 +99,6 @@ Methods:
 
 # Sta_606
 
-Models:
-
-- <code><a href="./resources/sta-606.ts">ObjectWithChildRef</a></code>
-
 Methods:
 
 - <code title="post /sta_606_shared_types/response">client.sta_606.<a href="./resources/sta-606.ts">withSharedModel</a>() -> Promise<Core.APIResponse<ObjectWithChildRef>></code>
@@ -187,7 +183,6 @@ Models:
 
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
-- <code><a href="./resources/responses.ts">SimpleObject</a></code>
 - <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
 
 Methods:
@@ -228,10 +223,6 @@ Methods:
 - <code title="get /decorator_tests/keep/me">client.decoratorTests.<a href="./resources/decorator-tests/decorator-tests.ts">keepMe</a>() -> Promise<Core.APIResponse<DecoratorTestKeepMeResponse>></code>
 
 ## Languages
-
-Models:
-
-- <code><a href="./resources/decorator-tests/languages.ts">SimpleObject</a></code>
 
 Methods:
 

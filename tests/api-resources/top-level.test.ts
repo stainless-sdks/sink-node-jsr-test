@@ -4,15 +4,6 @@ import Sink from '~/index';
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
 describe('resource top_level', () => {
-  test('status', async () => {
-    const response = await sink.status();
-  });
-
-  test('status: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.status({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
-  });
-
   test('create_no_response', async () => {
     const response = await sink.createNoResponse();
   });
@@ -21,6 +12,16 @@ describe('resource top_level', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.createNoResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
+    );
+  });
+
+  test('getAuthURL', () => {
+    const url = sink.getAuthURL({
+      clientId: '<client_id>',
+      redirectUri: 'http://localhost:8000/auth/success',
+    });
+    expect(url).toEqual(
+      'http://localhost:8000/auth?client_id=%3Cclient_id%3E&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fsuccess',
     );
   });
 
@@ -35,13 +36,12 @@ describe('resource top_level', () => {
     );
   });
 
-  test('getAuthURL', () => {
-    const url = sink.getAuthURL({
-      clientId: '<client_id>',
-      redirectUri: 'http://localhost:8000/auth/success',
-    });
-    expect(url).toEqual(
-      'http://localhost:8000/auth?client_id=%3Cclient_id%3E&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fsuccess',
-    );
+  test('status', async () => {
+    const response = await sink.status();
+  });
+
+  test('status: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.status({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
   });
 });
