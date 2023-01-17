@@ -108,3 +108,64 @@ export class MyFakePage<Item> extends AbstractPage<Item> {
     return null;
   }
 }
+
+export interface OffsetResponse<Item> {
+  /**
+   * The total number of elements for the entire query (not just the given page)
+   */
+  count: number;
+
+  /**
+   * The current start index of the returned list of elements
+   */
+  offset: number;
+
+  data?: Array<Item>;
+}
+
+export interface OffsetParams {
+  limit?: number;
+
+  offset?: number;
+}
+
+export class Offset<Item> extends AbstractPage<Item> implements OffsetResponse<Item> {
+  /** The total number of elements for the entire query (not just the given page) */
+  count: number;
+  /** The current start index of the returned list of elements */
+  offset: number;
+
+  data: Array<Item>;
+
+  constructor(client: APIClient, response: APIResponse<OffsetResponse<Item>>, options: FinalRequestOptions) {
+    super(client, response, options);
+
+    this.count = response.count;
+    this.offset = response.offset;
+    this.data = response.data || [];
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data;
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<OffsetParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    const offset = this.offset;
+    if (!offset) return null;
+
+    const length = this.data.length;
+    const currentCount = offset + length;
+
+    return { params: { offset: currentCount } };
+  }
+}

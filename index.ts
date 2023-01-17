@@ -51,6 +51,7 @@ export class Sink extends Core.APIClient {
   }
 
   testing: API.Testing = new API.Testing(this);
+  paginationTests: API.PaginationTests = new API.PaginationTests(this);
   cards: API.Cards = new API.Cards(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
@@ -175,6 +176,10 @@ export namespace Sink {
 
   export import MyFakePage = Pagination.MyFakePage;
   export import MyFakePageResponse = Pagination.MyFakePageResponse;
+
+  export import Offset = Pagination.Offset;
+  export import OffsetParams = Pagination.OffsetParams;
+  export import OffsetResponse = Pagination.OffsetResponse;
 
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;

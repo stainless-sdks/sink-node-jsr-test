@@ -5,6 +5,7 @@ export * from './config-tools';
 export * from './decorator-tests/decorator-tests';
 export * from './envelopes';
 export * from './names/names';
+export * from './pagination-tests/pagination-tests';
 export * from './params';
 export * from './parent/parent';
 export * from './path-params';

@@ -8,6 +8,14 @@ Methods:
 
 - <code title="get /">client.testing.<a href="./resources/testing.ts">root</a>() -> Promise<Core.APIResponse<TestingRootResponse>></code>
 
+# PaginationTests
+
+## OffsetCase
+
+Methods:
+
+- <code title="get /pagination-test/offset">client.paginationTests.offsetCase.<a href="./resources/pagination-tests/offset-case.ts">list</a>({ ...params }) -> Core.PagePromise<MyModelsOffset></code>
+
 # Cards
 
 Models:
