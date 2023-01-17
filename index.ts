@@ -238,6 +238,12 @@ export namespace Sink {
   export import ParamWithModelPropertyParams = API.ParamWithModelPropertyParams;
 
   export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
+
+  export import Currency = API.Currency;
+  export import ObjectWithChildRef = API.ObjectWithChildRef;
+  export import ShippingAddress = API.ShippingAddress;
+  export import SimpleObject = API.SimpleObject;
+  export import SimpleObjectAlias = API.SimpleObjectAlias;
 }
 
 exports = module.exports = Sink;
