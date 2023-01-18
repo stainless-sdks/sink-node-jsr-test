@@ -80,7 +80,7 @@ export class Sink extends Core.APIClient {
   /**
    * Endpoint returning no response
    */
-  createNoResponse(options?: Core.RequestOptions): Promise<void> {
+  createNoResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
   /**

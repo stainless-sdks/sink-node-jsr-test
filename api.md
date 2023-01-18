@@ -6,7 +6,7 @@ Models:
 
 Methods:
 
-- <code title="get /">client.testing.<a href="./resources/testing.ts">root</a>() -> Promise<Core.APIResponse<TestingRootResponse>></code>
+- <code title="get /">client.testing.<a href="./resources/testing.ts">root</a>() -> TestingRootResponse</code>
 
 # PaginationTests
 
@@ -14,7 +14,7 @@ Methods:
 
 Methods:
 
-- <code title="get /pagination-test/offset">client.paginationTests.offsetCase.<a href="./resources/pagination-tests/offset-case.ts">list</a>({ ...params }) -> Core.PagePromise<MyModelsOffset></code>
+- <code title="get /pagination-test/offset">client.paginationTests.offsetCase.<a href="./resources/pagination-tests/offset-case.ts">list</a>({ ...params }) -> MyModelsOffset</code>
 
 # Cards
 
@@ -27,14 +27,14 @@ Models:
 
 Methods:
 
-- <code title="post /cards">client.cards.<a href="./resources/cards.ts">create</a>({ ...params }) -> Promise<Core.APIResponse<Card>></code>
-- <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">retrieve</a>(cardToken) -> Promise<Core.APIResponse<Card>></code>
-- <code title="patch /cards/{card_token}">client.cards.<a href="./resources/cards.ts">update</a>(cardToken, { ...params }) -> Promise<Core.APIResponse<Card>></code>
-- <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> Core.PagePromise<CardsPageNumber></code>
-- <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>() -> Core.PagePromise<CardsPageNumber></code>
-- <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Promise<Core.APIResponse<Card>></code>
-- <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> Promise<Core.APIResponse<CardProvisionFooResponse>></code>
-- <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Promise<Core.APIResponse<Card>></code>
+- <code title="post /cards">client.cards.<a href="./resources/cards.ts">create</a>({ ...params }) -> Card</code>
+- <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
+- <code title="patch /cards/{card_token}">client.cards.<a href="./resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
+- <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> CardsPageNumber</code>
+- <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>() -> CardsPageNumber</code>
+- <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
+- <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
+- <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
 
 # Resources
 
@@ -58,7 +58,7 @@ Models:
 
 Methods:
 
-- <code title="get /company/payments/{payment_id}">client.company.payments.<a href="./resources/company/payments.ts">retrieve</a>(paymentId) -> Promise<Core.APIResponse<CompanyPayment>></code>
+- <code title="get /company/payments/{payment_id}">client.company.payments.<a href="./resources/company/payments.ts">retrieve</a>(paymentId) -> CompanyPayment</code>
 
 # Sta_563
 
@@ -68,7 +68,7 @@ Models:
 
 Methods:
 
-- <code title="delete /sta_563_empty_object">client.sta_563.<a href="./resources/sta-563.ts">deleteEmptyObject</a>() -> Promise<Core.APIResponse<unknown>></code>
+- <code title="delete /sta_563_empty_object">client.sta_563.<a href="./resources/sta-563.ts">deleteEmptyObject</a>() -> unknown</code>
 
 # Sta_569
 
@@ -79,8 +79,8 @@ Models:
 
 Methods:
 
-- <code title="post /sta_569_array_types/one_entry">client.sta_569.<a href="./resources/sta-569.ts">oneEntry</a>({ ...params }) -> Promise<Core.APIResponse<Sta_569OneEntryResponse>></code>
-- <code title="post /sta_569_array_types/one_entry_with_null">client.sta_569.<a href="./resources/sta-569.ts">oneEntryWithNull</a>({ ...params }) -> Promise<Core.APIResponse<Sta_569OneEntryWithNullResponse | null>></code>
+- <code title="post /sta_569_array_types/one_entry">client.sta_569.<a href="./resources/sta-569.ts">oneEntry</a>({ ...params }) -> Sta_569OneEntryResponse</code>
+- <code title="post /sta_569_array_types/one_entry_with_null">client.sta_569.<a href="./resources/sta-569.ts">oneEntryWithNull</a>({ ...params }) -> Sta_569OneEntryWithNullResponse | null</code>
 
 # Sta_630
 
@@ -91,7 +91,7 @@ Models:
 
 Methods:
 
-- <code title="get /sta_630/define_models_nested_path">client.sta_630.<a href="./resources/sta-630.ts">nestedPath</a>() -> Promise<Core.APIResponse<GithubUser>></code>
+- <code title="get /sta_630/define_models_nested_path">client.sta_630.<a href="./resources/sta-630.ts">nestedPath</a>() -> GithubUser</code>
 
 # Parent
 
@@ -103,13 +103,13 @@ Models:
 
 Methods:
 
-- <code title="get /inlined_response">client.parent.child.<a href="./resources/parent/child.ts">inlinedResponse</a>() -> Promise<Core.APIResponse<ChildInlinedResponseResponse>></code>
+- <code title="get /inlined_response">client.parent.child.<a href="./resources/parent/child.ts">inlinedResponse</a>() -> ChildInlinedResponseResponse</code>
 
 # Sta_606
 
 Methods:
 
-- <code title="post /sta_606_shared_types/response">client.sta_606.<a href="./resources/sta-606.ts">withSharedModel</a>() -> Promise<Core.APIResponse<ObjectWithChildRef>></code>
+- <code title="post /sta_606_shared_types/response">client.sta_606.<a href="./resources/sta-606.ts">withSharedModel</a>() -> ObjectWithChildRef</code>
 - <code title="post /sta_606_shared_types/request_params">client.sta_606.<a href="./resources/sta-606.ts">withSharedParams</a>({ ...params }) -> Promise<void></code>
 
 # Envelopes
@@ -121,9 +121,9 @@ Models:
 
 Methods:
 
-- <code title="get /envelopes/data">client.envelopes.<a href="./resources/envelopes.ts">explicit</a>() -> Promise<Address></code>
-- <code title="get /envelopes/items">client.envelopes.<a href="./resources/envelopes.ts">implicit</a>() -> Promise<Address></code>
-- <code title="get /envelopes/items/inline_response">client.envelopes.<a href="./resources/envelopes.ts">inlineResponse</a>() -> Promise<EnvelopeInlineResponseResponse></code>
+- <code title="get /envelopes/data">client.envelopes.<a href="./resources/envelopes.ts">explicit</a>() -> Address</code>
+- <code title="get /envelopes/items">client.envelopes.<a href="./resources/envelopes.ts">implicit</a>() -> Address</code>
+- <code title="get /envelopes/items/inline_response">client.envelopes.<a href="./resources/envelopes.ts">inlineResponse</a>() -> EnvelopeInlineResponseResponse</code>
 
 # Types
 
@@ -133,7 +133,7 @@ Models:
 
 Methods:
 
-- <code title="post /types/enums">client.types.<a href="./resources/types.ts">enums</a>({ ...params }) -> Promise<Core.APIResponse<TypeEnumsResponse>></code>
+- <code title="post /types/enums">client.types.<a href="./resources/types.ts">enums</a>({ ...params }) -> TypeEnumsResponse</code>
 
 # Names
 
@@ -143,7 +143,7 @@ Models:
 
 Methods:
 
-- <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./resources/names/names.ts">responseShadowsPydantic</a>() -> Promise<Core.APIResponse<NameResponseShadowsPydanticResponse>></code>
+- <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./resources/names/names.ts">responseShadowsPydantic</a>() -> NameResponseShadowsPydanticResponse</code>
 
 ## Params
 
@@ -159,7 +159,7 @@ Models:
 
 Methods:
 
-- <code title="get /widgets/{widgetId}/filter/{filterType}">client.widgets.<a href="./resources/widgets.ts">retrieveWithFilter</a>(widgetId, filterType) -> Promise<Core.APIResponse<Widget>></code>
+- <code title="get /widgets/{widgetId}/filter/{filterType}">client.widgets.<a href="./resources/widgets.ts">retrieveWithFilter</a>(widgetId, filterType) -> Widget</code>
 
 # Sta_613
 
@@ -170,8 +170,8 @@ Models:
 
 Methods:
 
-- <code title="post /sta_613/path_params/{camelCasedPath}/{id}">client.sta_613.<a href="./resources/sta-613.ts">globalWithStandard</a>(camelCasedPath, id) -> Promise<Core.APIResponse<Sta_613GlobalWithStandardResponse>></code>
-- <code title="post /sta_613/path_params/{client_path_param}">client.sta_613.<a href="./resources/sta-613.ts">onlyGlobal</a>(clientPathParam) -> Promise<Core.APIResponse<Sta_613OnlyGlobalResponse>></code>
+- <code title="post /sta_613/path_params/{camelCasedPath}/{id}">client.sta_613.<a href="./resources/sta-613.ts">globalWithStandard</a>(camelCasedPath, id) -> Sta_613GlobalWithStandardResponse</code>
+- <code title="post /sta_613/path_params/{client_path_param}">client.sta_613.<a href="./resources/sta-613.ts">onlyGlobal</a>(clientPathParam) -> Sta_613OnlyGlobalResponse</code>
 
 # PathParams
 
@@ -182,8 +182,8 @@ Models:
 
 Methods:
 
-- <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./resources/path-params.ts">multiple</a>(first, second, last) -> Promise<Core.APIResponse<PathParamMultipleResponse>></code>
-- <code title="post /path_params/{singular}">client.pathParams.<a href="./resources/path-params.ts">singular</a>(singular) -> Promise<Core.APIResponse<PathParamSingularResponse>></code>
+- <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
+- <code title="post /path_params/{singular}">client.pathParams.<a href="./resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 
 # Responses
 
@@ -195,11 +195,11 @@ Models:
 
 Methods:
 
-- <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> Promise<Core.APIResponse<ObjectWithAnyOfNullProperty>></code>
-- <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> Core.PagePromise<SimpleObjectsMyFakePage></code>
-- <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> Promise<Core.APIResponse<ResponseMissingRequiredResponse>></code>
-- <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> Promise<Core.APIResponse<ObjectWithOneOfNullProperty>></code>
-- <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> Promise<Core.APIResponse<SimpleObject>></code>
+- <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
+- <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> SimpleObjectsMyFakePage</code>
+- <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
+- <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
+- <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
 
 # Params
 
@@ -215,9 +215,9 @@ Methods:
 - <code title="post /params/read_only_properties">client.params.<a href="./resources/params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
 - <code title="post /params/top_level_allOf">client.params.<a href="./resources/params.ts">topLevelAllOf</a>({ ...params }) -> Promise<void></code>
 - <code title="post /params/top_level_allOf_nested_object">client.params.<a href="./resources/params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> Promise<void></code>
-- <code title="post /params/top_level_anyOf">client.params.<a href="./resources/params.ts">topLevelAnyOf</a>({ ...params }) -> Promise<Core.APIResponse<ParamTopLevelAnyOfResponse>></code>
-- <code title="post /params/top_level_oneOf">client.params.<a href="./resources/params.ts">topLevelOneOf</a>({ ...params }) -> Promise<Core.APIResponse<ParamTopLevelOneOfResponse>></code>
-- <code title="post /params/top_level_anyOf_overlapping_property">client.params.<a href="./resources/params.ts">unionOverlappingProp</a>({ ...params }) -> Promise<Core.APIResponse<ParamUnionOverlappingPropResponse>></code>
+- <code title="post /params/top_level_anyOf">client.params.<a href="./resources/params.ts">topLevelAnyOf</a>({ ...params }) -> ParamTopLevelAnyOfResponse</code>
+- <code title="post /params/top_level_oneOf">client.params.<a href="./resources/params.ts">topLevelOneOf</a>({ ...params }) -> ParamTopLevelOneOfResponse</code>
+- <code title="post /params/top_level_anyOf_overlapping_property">client.params.<a href="./resources/params.ts">unionOverlappingProp</a>({ ...params }) -> ParamUnionOverlappingPropResponse</code>
 - <code title="post /params/with_model_property">client.params.<a href="./resources/params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
 
 # DecoratorTests
@@ -228,13 +228,13 @@ Models:
 
 Methods:
 
-- <code title="get /decorator_tests/keep/me">client.decoratorTests.<a href="./resources/decorator-tests/decorator-tests.ts">keepMe</a>() -> Promise<Core.APIResponse<DecoratorTestKeepMeResponse>></code>
+- <code title="get /decorator_tests/keep/me">client.decoratorTests.<a href="./resources/decorator-tests/decorator-tests.ts">keepMe</a>() -> DecoratorTestKeepMeResponse</code>
 
 ## Languages
 
 Methods:
 
-- <code title="get /responses/simple_object">client.decoratorTests.languages.<a href="./resources/decorator-tests/languages.ts">skippedForPython</a>() -> Promise<Core.APIResponse<SimpleObject>></code>
+- <code title="get /responses/simple_object">client.decoratorTests.languages.<a href="./resources/decorator-tests/languages.ts">skippedForPython</a>() -> SimpleObject</code>
 
 ## KeepThisResource
 
@@ -244,4 +244,4 @@ Models:
 
 Methods:
 
-- <code title="get /decorator_tests/nested/keep/this/method">client.decoratorTests.keepThisResource.<a href="./resources/decorator-tests/keep-this-resource.ts">keepThisMethod</a>() -> Promise<Core.APIResponse<KeepThisResourceKeepThisMethodResponse>></code>
+- <code title="get /decorator_tests/nested/keep/this/method">client.decoratorTests.keepThisResource.<a href="./resources/decorator-tests/keep-this-resource.ts">keepThisMethod</a>() -> KeepThisResourceKeepThisMethodResponse</code>

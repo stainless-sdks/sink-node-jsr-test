@@ -7,7 +7,10 @@ export class Params extends APIResource {
   /**
    * Endpoint with a `requestBody` that has a property named `options`.
    */
-  optionsParam(body: ParamOptionsParamParams, options?: Core.RequestOptions): Promise<void> {
+  optionsParam(
+    body: ParamOptionsParamParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/names/params/options', {
       body,
       ...options,

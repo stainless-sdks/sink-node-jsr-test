@@ -9,7 +9,10 @@ export class Params extends APIResource {
    * Endpoint with a `requestBody` that sets `readOnly` to `true` on top level
    * properties
    */
-  readOnlyProperties(body: ParamReadOnlyPropertiesParams, options?: Core.RequestOptions): Promise<void> {
+  readOnlyProperties(
+    body: ParamReadOnlyPropertiesParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/params/read_only_properties', {
       body,
       ...options,
@@ -20,7 +23,10 @@ export class Params extends APIResource {
   /**
    * Endpoint with a `requestBody` making use of allOf.
    */
-  topLevelAllOf(body: ParamTopLevelAllOfParams, options?: Core.RequestOptions): Promise<void> {
+  topLevelAllOf(
+    body: ParamTopLevelAllOfParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/params/top_level_allOf', {
       body,
       ...options,
@@ -35,7 +41,7 @@ export class Params extends APIResource {
   topLevelAllOfNestedObject(
     body: ParamTopLevelAllOfNestedObjectParams,
     options?: Core.RequestOptions,
-  ): Promise<void> {
+  ): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/params/top_level_allOf_nested_object', {
       body,
       ...options,
@@ -89,7 +95,10 @@ export class Params extends APIResource {
    * Endpoint with a request body that contains a property that points to a model
    * reference.
    */
-  withModelProperty(body: ParamWithModelPropertyParams, options?: Core.RequestOptions): Promise<void> {
+  withModelProperty(
+    body: ParamWithModelPropertyParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/params/with_model_property', {
       body,
       ...options,

@@ -18,12 +18,15 @@ export class Sta_606 extends APIResource {
    * The request body being set to a $ref that is a shared type in the stainless
    * config correctly references it.
    */
-  withSharedParams(body?: Sta_606WithSharedParamsParams, options?: Core.RequestOptions): Promise<void>;
-  withSharedParams(options?: Core.RequestOptions): Promise<void>;
+  withSharedParams(
+    body?: Sta_606WithSharedParamsParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>>;
+  withSharedParams(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
   withSharedParams(
     body: Sta_606WithSharedParamsParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<void> {
+  ): Promise<Core.APIResponse<Promise<void>>> {
     if (isRequestOptions(body)) {
       return this.withSharedParams({}, body);
     }
