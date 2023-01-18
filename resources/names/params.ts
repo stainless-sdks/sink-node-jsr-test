@@ -20,5 +20,5 @@ export class Params extends APIResource {
 }
 
 export interface ParamOptionsParamParams {
-  options: string;
+  options?: string;
 }

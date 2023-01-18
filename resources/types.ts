@@ -22,7 +22,7 @@ export interface TypeEnumsResponse {
 }
 
 export interface TypeEnumsParams {
-  input_currency: Shared.Currency;
+  input_currency?: Shared.Currency;
 
-  problematic_enum: '123_FOO' | '30%';
+  problematic_enum?: '123_FOO' | '30%';
 }
