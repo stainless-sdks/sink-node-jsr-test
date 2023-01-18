@@ -72,6 +72,12 @@ export class Sink extends Core.APIClient {
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
 
   /**
+   * API status check
+   */
+  apiStatus(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
+    return this.get('/status', options);
+  }
+  /**
    * Endpoint returning no response
    */
   createNoResponse(options?: Core.RequestOptions): Promise<void> {
@@ -99,12 +105,6 @@ export class Sink extends Core.APIClient {
    */
   sta_563PostEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<unknown>> {
     return this.post('/sta_563_empty_object', options);
-  }
-  /**
-   * API status check
-   */
-  status(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
-    return this.get('/status', options);
   }
 
   protected override defaultHeaders(): Core.Headers {
