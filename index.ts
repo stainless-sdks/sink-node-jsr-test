@@ -21,11 +21,15 @@ type Config = {
   timeout?: number;
   httpAgent?: Agent;
   username?: string | null;
+  clientId?: string | null;
+  clientSecret?: string | null;
 };
 
 export class Sink extends Core.APIClient {
   userToken: string | null;
   username: string;
+  clientId?: string | null;
+  clientSecret?: string | null;
 
   constructor(config: Config) {
     const options: Config = {
@@ -48,6 +52,8 @@ export class Sink extends Core.APIClient {
       );
     }
     this.username = username;
+    this.clientId = config.clientId || process.env['SINK_CLIENT_ID'] || null;
+    this.clientSecret = config.clientSecret || process.env['SINK_CLIENT_SECRET'] || null;
   }
 
   testing: API.Testing = new API.Testing(this);
@@ -83,6 +89,7 @@ export class Sink extends Core.APIClient {
   createNoResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
+
   /**
    * A top level custom method on the sink.
    */
