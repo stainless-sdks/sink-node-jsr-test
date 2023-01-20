@@ -1,7 +1,9 @@
 // File generated from our OpenAPI spec by Stainless.
 
 export interface APIStatus {
-  message: string;
+  message: CustomAPIStatusMessage;
 }
 
 export type APIStatusAlias = APIStatus;
+
+export type CustomAPIStatusMessage = string;

@@ -86,6 +86,13 @@ export interface ShippingAddress {
 }
 
 export interface SimpleObject {
+  /**
+   * This is a long multi line description
+   *
+   * to be sure that we
+   *
+   * handle it correctly in our various SDKs.
+   */
   bar?: number;
 }
 

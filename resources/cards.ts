@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { PageNumber, PageNumberParams } from '~/pagination';
+import { CardPage, CardPageParams } from '~/pagination';
 import * as Shared from '~/resources/shared';
 
 export class Cards extends APIResource {
@@ -40,24 +40,24 @@ export class Cards extends APIResource {
   /**
    * List cards.
    */
-  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsPageNumber>;
-  list(options?: Core.RequestOptions): Core.PagePromise<CardsPageNumber>;
+  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
+  list(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
   list(
     query: CardListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsPageNumber> {
+  ): Core.PagePromise<CardsCardPage> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
 
-    return this.getAPIList('/cards', CardsPageNumber, { query, ...options });
+    return this.getAPIList('/cards', CardsCardPage, { query, ...options });
   }
 
   /**
    * List cards.
    */
-  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsPageNumber> {
-    return this.getAPIList('/cards/list', CardsPageNumber, { method: 'post', ...options });
+  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage> {
+    return this.getAPIList('/cards/list', CardsCardPage, { method: 'post', ...options });
   }
 
   /**
@@ -97,7 +97,7 @@ export class Cards extends APIResource {
   }
 }
 
-export class CardsPageNumber extends PageNumber<Card> {}
+export class CardsCardPage extends CardPage<Card> {}
 
 export interface Card {
   /**
@@ -458,7 +458,7 @@ export interface CardUpdateParams {
   state?: 'CLOSED' | 'OPEN' | 'PAUSED';
 }
 
-export interface CardListParams extends PageNumberParams {
+export interface CardListParams extends CardPageParams {
   /**
    * Only required for multi-account users. Returns cards associated with this
    * account. Only applicable if using account holder enrollment. See

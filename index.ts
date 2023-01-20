@@ -23,6 +23,9 @@ type Config = {
   username?: string | null;
   clientId?: string | null;
   clientSecret?: string | null;
+  someBooleanArg?: boolean | null;
+  someIntegerArg?: number | null;
+  someNumberArg?: number | null;
 };
 
 export class Sink extends Core.APIClient {
@@ -30,6 +33,9 @@ export class Sink extends Core.APIClient {
   username: string;
   clientId?: string | null;
   clientSecret?: string | null;
+  someBooleanArg?: boolean | null;
+  someIntegerArg?: number | null;
+  someNumberArg?: number | null;
 
   constructor(config: Config) {
     const options: Config = {
@@ -53,7 +59,19 @@ export class Sink extends Core.APIClient {
     }
     this.username = username;
     this.clientId = config.clientId || process.env['SINK_CLIENT_ID'] || null;
-    this.clientSecret = config.clientSecret || process.env['SINK_CLIENT_SECRET'] || null;
+    this.clientSecret = config.clientSecret || process.env['SINK_CLIENT_SECRET'] || 'hellosecret';
+    this.someBooleanArg =
+      config.someBooleanArg ||
+      (process.env['SINK_SOME_BOOLEAN_ARG'] && Core.coerceBoolean(process.env['SINK_SOME_BOOLEAN_ARG'])) ||
+      true;
+    this.someIntegerArg =
+      config.someIntegerArg ||
+      (process.env['SINK_SOME_INTEGER_ARG'] && Core.coerceInteger(process.env['SINK_SOME_INTEGER_ARG'])) ||
+      123;
+    this.someNumberArg =
+      config.someNumberArg ||
+      (process.env['SINK_SOME_NUMBER_ARG'] && Core.coerceFloat(process.env['SINK_SOME_NUMBER_ARG'])) ||
+      1.2;
   }
 
   testing: API.Testing = new API.Testing(this);
@@ -72,9 +90,10 @@ export class Sink extends Core.APIClient {
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
   sta_613: API.Sta_613 = new API.Sta_613(this);
-  pathParams: API.PathParams = new API.PathParams(this);
   responses: API.Responses = new API.Responses(this);
-  params: API.Params = new API.Params(this);
+  pathParams: API.PathParams = new API.PathParams(this);
+  queryParams: API.QueryParams = new API.QueryParams(this);
+  bodyParams: API.BodyParams = new API.BodyParams(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
 
   /**
@@ -177,19 +196,40 @@ export namespace Sink {
   // Helper functions
   export import fileFromPath = FileFromPath.fileFromPath;
 
-  export import PageNumber = Pagination.PageNumber;
-  export import PageNumberParams = Pagination.PageNumberParams;
-  export import PageNumberResponse = Pagination.PageNumberResponse;
+  export import CardPage = Pagination.CardPage;
+  export import CardPageParams = Pagination.CardPageParams;
+  export import CardPageResponse = Pagination.CardPageResponse;
 
-  export import MyFakePage = Pagination.MyFakePage;
-  export import MyFakePageResponse = Pagination.MyFakePageResponse;
+  export import PagePageNumber = Pagination.PagePageNumber;
+  export import PagePageNumberParams = Pagination.PagePageNumberParams;
+  export import PagePageNumberResponse = Pagination.PagePageNumberResponse;
 
-  export import Offset = Pagination.Offset;
-  export import OffsetParams = Pagination.OffsetParams;
-  export import OffsetResponse = Pagination.OffsetResponse;
+  export import PageCursor = Pagination.PageCursor;
+  export import PageCursorParams = Pagination.PageCursorParams;
+  export import PageCursorResponse = Pagination.PageCursorResponse;
+
+  export import PageCursorURL = Pagination.PageCursorURL;
+  export import PageCursorURLParams = Pagination.PageCursorURLParams;
+  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
+
+  export import PageOffset = Pagination.PageOffset;
+  export import PageOffsetParams = Pagination.PageOffsetParams;
+  export import PageOffsetResponse = Pagination.PageOffsetResponse;
+
+  export import PageHypermedia = Pagination.PageHypermedia;
+  export import PageHypermediaParams = Pagination.PageHypermediaParams;
+  export import PageHypermediaResponse = Pagination.PageHypermediaResponse;
+
+  export import PageHypermediaRaw = Pagination.PageHypermediaRaw;
+  export import PageHypermediaRawParams = Pagination.PageHypermediaRawParams;
+  export import PageHypermediaRawResponse = Pagination.PageHypermediaRawResponse;
+
+  export import FakePage = Pagination.FakePage;
+  export import FakePageResponse = Pagination.FakePageResponse;
 
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;
+  export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
 
   export import TestingRootResponse = API.TestingRootResponse;
 
@@ -197,7 +237,7 @@ export namespace Sink {
   export import CardAlias = API.CardAlias;
   export import FundingAccount = API.FundingAccount;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
-  export import CardsPageNumber = API.CardsPageNumber;
+  export import CardsCardPage = API.CardsCardPage;
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;
@@ -229,25 +269,30 @@ export namespace Sink {
   export import Sta_613GlobalWithStandardResponse = API.Sta_613GlobalWithStandardResponse;
   export import Sta_613OnlyGlobalResponse = API.Sta_613OnlyGlobalResponse;
 
+  export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
+  export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
+  export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
+  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
+  export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
+  export import SimpleObjectsFakePage = API.SimpleObjectsFakePage;
+
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
 
-  export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
-  export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
-  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import SimpleObjectsMyFakePage = API.SimpleObjectsMyFakePage;
+  export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
+  export import QueryParamArrayParams = API.QueryParamArrayParams;
+  export import QueryParamEnumParams = API.QueryParamEnumParams;
+  export import QueryParamObjectParams = API.QueryParamObjectParams;
+  export import QueryParamOneOfParams = API.QueryParamOneOfParams;
+  export import QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
 
   export import MyModel = API.MyModel;
-  export import ParamTopLevelAnyOfResponse = API.ParamTopLevelAnyOfResponse;
-  export import ParamTopLevelOneOfResponse = API.ParamTopLevelOneOfResponse;
-  export import ParamUnionOverlappingPropResponse = API.ParamUnionOverlappingPropResponse;
-  export import ParamReadOnlyPropertiesParams = API.ParamReadOnlyPropertiesParams;
-  export import ParamTopLevelAllOfParams = API.ParamTopLevelAllOfParams;
-  export import ParamTopLevelAllOfNestedObjectParams = API.ParamTopLevelAllOfNestedObjectParams;
-  export import ParamTopLevelAnyOfParams = API.ParamTopLevelAnyOfParams;
-  export import ParamTopLevelOneOfParams = API.ParamTopLevelOneOfParams;
-  export import ParamUnionOverlappingPropParams = API.ParamUnionOverlappingPropParams;
-  export import ParamWithModelPropertyParams = API.ParamWithModelPropertyParams;
+  export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
+  export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
+  export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
   export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
 

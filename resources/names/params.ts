@@ -11,7 +11,7 @@ export class Params extends APIResource {
     body: ParamOptionsParamParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Promise<void>>> {
-    return this.post('/names/params/options', {
+    return this.post('/names/body_params/options', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },

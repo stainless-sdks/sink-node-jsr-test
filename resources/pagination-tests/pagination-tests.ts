@@ -1,8 +1,18 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from '~/resource';
-import { OffsetCase } from './offset-case';
+import { PageNumber } from './page-number';
+import { Cursor } from './cursor';
+import { CursorURL } from './cursor-url';
+import { Offset } from './offset';
+import { Hypermedia } from './hypermedia';
+import { HypermediaRaw } from './hypermedia-raw';
 
 export class PaginationTests extends APIResource {
-  offsetCase: OffsetCase = new OffsetCase(this.client);
+  pageNumber: PageNumber = new PageNumber(this.client);
+  cursor: Cursor = new Cursor(this.client);
+  cursorURL: CursorURL = new CursorURL(this.client);
+  offset: Offset = new Offset(this.client);
+  hypermedia: Hypermedia = new Hypermedia(this.client);
+  hypermediaRaw: HypermediaRaw = new HypermediaRaw(this.client);
 }

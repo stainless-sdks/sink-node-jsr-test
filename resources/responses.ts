@@ -2,7 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
-import { MyFakePage } from '~/pagination';
+import { FakePage } from '~/pagination';
 import * as Shared from '~/resources/shared';
 
 export class Responses extends APIResource {
@@ -16,8 +16,29 @@ export class Responses extends APIResource {
   /**
    * Endpoint that returns a top-level array.
    */
-  arrayResponse(options?: Core.RequestOptions): Core.PagePromise<SimpleObjectsMyFakePage> {
-    return this.getAPIList('/responses/array', SimpleObjectsMyFakePage, options);
+  arrayResponse(options?: Core.RequestOptions): Core.PagePromise<SimpleObjectsFakePage> {
+    return this.getAPIList('/responses/array', SimpleObjectsFakePage, options);
+  }
+
+  /**
+   * Endpoint with a top level boolean response.
+   */
+  booleanResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseBooleanResponseResponse>> {
+    return this.post('/responses/boolean', options);
+  }
+
+  /**
+   * Endpoint with an empty response.
+   */
+  emptyResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
+    return this.post('/responses/empty', { ...options, headers: { Accept: '', ...options?.headers } });
+  }
+
+  /**
+   * Endpoint with a top level integer response.
+   */
+  integerResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseIntegerResponseResponse>> {
+    return this.post('/responses/integer', options);
   }
 
   /**
@@ -41,9 +62,19 @@ export class Responses extends APIResource {
   sharedResponseObject(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.SimpleObject>> {
     return this.get('/responses/simple_object', options);
   }
+
+  /**
+   * Endpoint with a top level string response.
+   */
+  stringResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<string>>> {
+    return this.post('/responses/string', {
+      ...options,
+      headers: { Accept: 'application/json', ...options?.headers },
+    });
+  }
 }
 
-export class SimpleObjectsMyFakePage extends MyFakePage<Shared.SimpleObject> {}
+export class SimpleObjectsFakePage extends FakePage<Shared.SimpleObject> {}
 
 export interface ObjectWithAnyOfNullProperty {
   foo?: ObjectWithAnyOfNullProperty.Foo | null;
@@ -65,8 +96,14 @@ export namespace ObjectWithOneOfNullProperty {
   }
 }
 
+export type ResponseBooleanResponseResponse = boolean;
+
+export type ResponseIntegerResponseResponse = number;
+
 export interface ResponseMissingRequiredResponse {
   bar: boolean | null;
 
   foo: string;
 }
+
+export type ResponseStringResponseResponse = string;

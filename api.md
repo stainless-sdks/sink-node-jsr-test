@@ -10,11 +10,41 @@ Methods:
 
 # PaginationTests
 
-## OffsetCase
+## PageNumber
 
 Methods:
 
-- <code title="get /pagination-test/offset">client.paginationTests.offsetCase.<a href="./resources/pagination-tests/offset-case.ts">list</a>({ ...params }) -> MyModelsOffset</code>
+- <code title="get /paginated/page_number">client.paginationTests.pageNumber.<a href="./resources/pagination-tests/page-number.ts">list</a>({ ...params }) -> MyModelsPagePageNumber</code>
+
+## Cursor
+
+Methods:
+
+- <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModelsPageCursor</code>
+
+## CursorURL
+
+Methods:
+
+- <code title="get /paginated/cursor_url">client.paginationTests.cursorURL.<a href="./resources/pagination-tests/cursor-url.ts">list</a>({ ...params }) -> MyModelsPageCursorURL</code>
+
+## Offset
+
+Methods:
+
+- <code title="get /paginated/offset">client.paginationTests.offset.<a href="./resources/pagination-tests/offset.ts">list</a>({ ...params }) -> MyModelsPageOffset</code>
+
+## Hypermedia
+
+Methods:
+
+- <code title="get /paginated/hypermedia">client.paginationTests.hypermedia.<a href="./resources/pagination-tests/hypermedia.ts">list</a>({ ...params }) -> MyModelsPageHypermedia</code>
+
+## HypermediaRaw
+
+Methods:
+
+- <code title="get /paginated/hypermedia_raw">client.paginationTests.hypermediaRaw.<a href="./resources/pagination-tests/hypermedia-raw.ts">list</a>({ ...params }) -> MyModelsPageHypermediaRaw</code>
 
 # Cards
 
@@ -30,8 +60,8 @@ Methods:
 - <code title="post /cards">client.cards.<a href="./resources/cards.ts">create</a>({ ...params }) -> Card</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
 - <code title="patch /cards/{card_token}">client.cards.<a href="./resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
-- <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> CardsPageNumber</code>
-- <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>() -> CardsPageNumber</code>
+- <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> CardsCardPage</code>
+- <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>() -> CardsCardPage</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
@@ -149,7 +179,7 @@ Methods:
 
 Methods:
 
-- <code title="post /names/params/options">client.names.params.<a href="./resources/names/params.ts">optionsParam</a>({ ...params }) -> Promise<void></code>
+- <code title="post /names/body_params/options">client.names.params.<a href="./resources/names/params.ts">optionsParam</a>({ ...params }) -> Promise<void></code>
 
 # Widgets
 
@@ -173,6 +203,29 @@ Methods:
 - <code title="post /sta_613/path_params/{camelCasedPath}/{id}">client.sta_613.<a href="./resources/sta-613.ts">globalWithStandard</a>(camelCasedPath, id) -> Sta_613GlobalWithStandardResponse</code>
 - <code title="post /sta_613/path_params/{client_path_param}">client.sta_613.<a href="./resources/sta-613.ts">onlyGlobal</a>(clientPathParam) -> Sta_613OnlyGlobalResponse</code>
 
+# Responses
+
+Models:
+
+- <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
+- <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
+- <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
+
+Methods:
+
+- <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
+- <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> SimpleObjectsFakePage</code>
+- <code title="post /responses/boolean">client.responses.<a href="./resources/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
+- <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> Promise<void></code>
+- <code title="post /responses/integer">client.responses.<a href="./resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
+- <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
+- <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
+- <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
+- <code title="post /responses/string">client.responses.<a href="./resources/responses.ts">stringResponse</a>() -> Promise<string></code>
+
 # PathParams
 
 Models:
@@ -185,40 +238,30 @@ Methods:
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 
-# Responses
-
-Models:
-
-- <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
-- <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
-- <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
+# QueryParams
 
 Methods:
 
-- <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
-- <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> SimpleObjectsMyFakePage</code>
-- <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
-- <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
-- <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
+- <code title="get /query_params/anyOf">client.queryParams.<a href="./resources/query-params.ts">anyOf</a>({ ...params }) -> Promise<void></code>
+- <code title="get /query_params/array">client.queryParams.<a href="./resources/query-params.ts">array</a>({ ...params }) -> Promise<void></code>
+- <code title="get /query_params/enum">client.queryParams.<a href="./resources/query-params.ts">enum</a>({ ...params }) -> Promise<void></code>
+- <code title="get /query_params/object">client.queryParams.<a href="./resources/query-params.ts">object</a>({ ...params }) -> Promise<void></code>
+- <code title="get /query_params/oneOf">client.queryParams.<a href="./resources/query-params.ts">oneOf</a>({ ...params }) -> Promise<void></code>
+- <code title="get /query_params/primitives">client.queryParams.<a href="./resources/query-params.ts">primitives</a>({ ...params }) -> Promise<void></code>
 
-# Params
+# BodyParams
 
 Models:
 
-- <code><a href="./resources/params.ts">MyModel</a></code>
-- <code><a href="./resources/params.ts">ParamTopLevelAnyOfResponse</a></code>
-- <code><a href="./resources/params.ts">ParamTopLevelOneOfResponse</a></code>
-- <code><a href="./resources/params.ts">ParamUnionOverlappingPropResponse</a></code>
+- <code><a href="./resources/body-params.ts">MyModel</a></code>
+- <code><a href="./resources/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
 
 Methods:
 
-- <code title="post /params/read_only_properties">client.params.<a href="./resources/params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
-- <code title="post /params/top_level_allOf">client.params.<a href="./resources/params.ts">topLevelAllOf</a>({ ...params }) -> Promise<void></code>
-- <code title="post /params/top_level_allOf_nested_object">client.params.<a href="./resources/params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> Promise<void></code>
-- <code title="post /params/top_level_anyOf">client.params.<a href="./resources/params.ts">topLevelAnyOf</a>({ ...params }) -> ParamTopLevelAnyOfResponse</code>
-- <code title="post /params/top_level_oneOf">client.params.<a href="./resources/params.ts">topLevelOneOf</a>({ ...params }) -> ParamTopLevelOneOfResponse</code>
-- <code title="post /params/top_level_anyOf_overlapping_property">client.params.<a href="./resources/params.ts">unionOverlappingProp</a>({ ...params }) -> ParamUnionOverlappingPropResponse</code>
-- <code title="post /params/with_model_property">client.params.<a href="./resources/params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
+- <code title="post /body_params/with_model_property">client.bodyParams.<a href="./resources/body-params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
 
 # DecoratorTests
 
