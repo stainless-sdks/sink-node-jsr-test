@@ -17,9 +17,9 @@ export type Currency =
   | 'BAM';
 
 export interface ObjectWithChildRef {
-  bar?: SimpleObject;
+  bar: SimpleObject;
 
-  foo?: string;
+  foo: string;
 }
 
 export interface ShippingAddress {
@@ -93,7 +93,7 @@ export interface SimpleObject {
    *
    * handle it correctly in our various SDKs.
    */
-  bar?: number;
+  bar: number;
 }
 
 export type SimpleObjectAlias = SimpleObject;

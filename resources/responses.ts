@@ -77,7 +77,7 @@ export class Responses extends APIResource {
 export class SimpleObjectsFakePage extends FakePage<Shared.SimpleObject> {}
 
 export interface ObjectWithAnyOfNullProperty {
-  foo?: ObjectWithAnyOfNullProperty.Foo | null;
+  foo: ObjectWithAnyOfNullProperty.Foo | null;
 }
 
 export namespace ObjectWithAnyOfNullProperty {
@@ -87,7 +87,7 @@ export namespace ObjectWithAnyOfNullProperty {
 }
 
 export interface ObjectWithOneOfNullProperty {
-  foo?: ObjectWithOneOfNullProperty.Foo | null;
+  foo: ObjectWithOneOfNullProperty.Foo | null;
 }
 
 export namespace ObjectWithOneOfNullProperty {

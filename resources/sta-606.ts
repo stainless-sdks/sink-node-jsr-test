@@ -2,7 +2,6 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
-import { isRequestOptions } from '~/core';
 import * as Shared from '~/resources/shared';
 
 export class Sta_606 extends APIResource {
@@ -19,18 +18,9 @@ export class Sta_606 extends APIResource {
    * config correctly references it.
    */
   withSharedParams(
-    body?: Sta_606WithSharedParamsParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>>;
-  withSharedParams(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
-  withSharedParams(
-    body: Sta_606WithSharedParamsParams | Core.RequestOptions = {},
+    body: Sta_606WithSharedParamsParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Promise<void>>> {
-    if (isRequestOptions(body)) {
-      return this.withSharedParams({}, body);
-    }
-
     return this.post('/sta_606_shared_types/request_params', {
       body,
       ...options,
@@ -40,7 +30,7 @@ export class Sta_606 extends APIResource {
 }
 
 export interface Sta_606WithSharedParamsParams {
-  bar?: Shared.SimpleObject;
+  bar: Shared.SimpleObject;
 
-  foo?: string;
+  foo: string;
 }
