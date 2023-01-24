@@ -126,7 +126,10 @@ export class Sink extends Core.APIClient {
     return url.toString();
   }
   /**
-   * Should not generate return type for object without defined properties. See
+   * Should not generate a named return type for object without defined properties;
+   * instead, it should simply use an `unknown` type or equivalent. In Java and Go,
+   * where we have fancier accessors for raw json stuff, we should generate a named
+   * type, but it should basically just have untyped additional properties. See
    * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
    */
   sta_563PostEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<unknown>> {
