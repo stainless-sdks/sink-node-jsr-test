@@ -103,6 +103,27 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('getAuthURL', () => {
+    const url = sink.getAuthURL({
+      clientId: '<client_id>',
+      redirectUri: 'http://localhost:8000/auth/success',
+    });
+    expect(url).toEqual(
+      'http://localhost:8000/auth?client_id=%3Cclient_id%3E&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fsuccess',
+    );
+  });
+
+  test('deprecated_method', async () => {
+    const response = await sink.cards.deprecatedMethod();
+  });
+
+  test('deprecated_method: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.cards.deprecatedMethod({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('list_non_get', async () => {
     const response = await sink.cards.listNonGet();
   });

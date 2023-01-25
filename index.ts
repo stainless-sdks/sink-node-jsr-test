@@ -115,13 +115,7 @@ export class Sink extends Core.APIClient {
   getAuthURL({ redirectUri, clientId }: { redirectUri: string; clientId: string }): string {
     const url = new URL('/auth', 'http://localhost:8000');
 
-    url.search = qs.stringify(
-      {
-        client_id: clientId,
-        redirect_uri: redirectUri,
-      },
-      this.qsOptions(),
-    );
+    url.search = `client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
 
     return url.toString();
   }

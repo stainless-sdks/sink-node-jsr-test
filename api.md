@@ -61,10 +61,24 @@ Methods:
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
 - <code title="patch /cards/{card_token}">client.cards.<a href="./resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
 - <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> CardsCardPage</code>
+- <code title="post /deprecations/method">client.cards.<a href="./resources/cards.ts">deprecatedMethod</a>() -> Promise<void></code>
 - <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>() -> CardsCardPage</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
+
+Custom Methods:
+
+- `create`
+- `retrieve`
+- `update`
+- `list`
+- `deprecatedGetAuthURL`
+- `deprecatedMethod`
+- `listNonGet`
+- `listNotPaginated`
+- `provisionFoo`
+- `reissue`
 
 # Resources
 
