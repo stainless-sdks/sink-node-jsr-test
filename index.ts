@@ -12,9 +12,7 @@ const environments = {
 };
 
 type Config = {
-  /**
-   * Defaults to to process.env["SINK_USER_TOKEN"]. Set it to null if you want to send unauthenticated requests.
-   */
+  /* Defaults to to process.env["SINK_CUSTOM_API_KEY_ENV"]. Set it to null if you want to send unauthenticated requests. */
   userToken?: string | null;
   environment?: keyof typeof environments;
   baseURL?: string;
@@ -39,7 +37,7 @@ export class Sink extends Core.APIClient {
 
   constructor(config: Config) {
     const options: Config = {
-      userToken: process.env['SINK_USER_TOKEN'] || '',
+      userToken: process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
       environment: 'production',
       ...config,
     };

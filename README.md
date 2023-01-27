@@ -23,7 +23,7 @@ yarn add sink-npm
 import Sink from 'sink-npm';
 
 const sink = new Sink({
-  userToken: 'my user token', // defaults to process.env["SINK_USER_TOKEN"]
+  userToken: 'my user token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
 });
@@ -48,7 +48,7 @@ If you like, you may reference our types directly:
 import Sink from 'sink-npm';
 
 const sink = new Sink({
-  userToken: 'my user token', // defaults to process.env["SINK_USER_TOKEN"]
+  userToken: 'my user token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
 });
