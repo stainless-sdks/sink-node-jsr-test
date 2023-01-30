@@ -73,6 +73,7 @@ Custom Methods:
 - `retrieve`
 - `update`
 - `list`
+- `createAliased`
 - `deprecatedGetAuthURL`
 - `deprecatedMethod`
 - `listNonGet`
@@ -209,8 +210,8 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/sta-613.ts">Sta_613GlobalWithStandardResponse</a></code>
 - <code><a href="./resources/sta-613.ts">Sta_613OnlyGlobalResponse</a></code>
+- <code><a href="./resources/sta-613.ts">Sta_613GlobalWithStandardResponse</a></code>
 
 Methods:
 
@@ -223,10 +224,10 @@ Models:
 
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
-- <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
 
 Methods:
 
@@ -244,8 +245,8 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/path-params.ts">PathParamMultipleResponse</a></code>
 - <code><a href="./resources/path-params.ts">PathParamSingularResponse</a></code>
+- <code><a href="./resources/path-params.ts">PathParamMultipleResponse</a></code>
 
 Methods:
 

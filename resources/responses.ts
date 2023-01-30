@@ -96,14 +96,14 @@ export namespace ObjectWithOneOfNullProperty {
   }
 }
 
-export type ResponseBooleanResponseResponse = boolean;
-
 export type ResponseIntegerResponseResponse = number;
+
+export type ResponseStringResponseResponse = string;
+
+export type ResponseBooleanResponseResponse = boolean;
 
 export interface ResponseMissingRequiredResponse {
   bar: boolean | null;
 
   foo: string;
 }
-
-export type ResponseStringResponseResponse = string;

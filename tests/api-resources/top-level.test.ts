@@ -13,6 +13,17 @@ describe('resource top_level', () => {
     await expect(sink.apiStatus({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('api_status_alias', async () => {
+    const response = await sink.apiStatusAlias();
+  });
+
+  test('api_status_alias: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.apiStatusAlias({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('create_no_response', async () => {
     const response = await sink.createNoResponse();
   });

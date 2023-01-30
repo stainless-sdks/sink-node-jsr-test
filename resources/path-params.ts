@@ -27,10 +27,10 @@ export class PathParams extends APIResource {
   }
 }
 
-export interface PathParamMultipleResponse {
+export interface PathParamSingularResponse {
   foo: string;
 }
 
-export interface PathParamSingularResponse {
+export interface PathParamMultipleResponse {
   foo: string;
 }

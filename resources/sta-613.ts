@@ -27,10 +27,10 @@ export class Sta_613 extends APIResource {
   }
 }
 
-export interface Sta_613GlobalWithStandardResponse {
+export interface Sta_613OnlyGlobalResponse {
   foo: string;
 }
 
-export interface Sta_613OnlyGlobalResponse {
+export interface Sta_613GlobalWithStandardResponse {
   foo: string;
 }

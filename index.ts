@@ -100,6 +100,7 @@ export class Sink extends Core.APIClient {
   apiStatus(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
   }
+  apiStatusAlias = this.apiStatus;
   /**
    * Endpoint returning no response
    */
@@ -236,6 +237,7 @@ export namespace Sink {
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;
+  export import CardCreateAliasedParams = API.CardCreateAliasedParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
 
@@ -261,19 +263,19 @@ export namespace Sink {
 
   export import Widget = API.Widget;
 
-  export import Sta_613GlobalWithStandardResponse = API.Sta_613GlobalWithStandardResponse;
   export import Sta_613OnlyGlobalResponse = API.Sta_613OnlyGlobalResponse;
+  export import Sta_613GlobalWithStandardResponse = API.Sta_613GlobalWithStandardResponse;
 
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
-  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
-  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
+  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
+  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
   export import SimpleObjectsFakePage = API.SimpleObjectsFakePage;
 
-  export import PathParamMultipleResponse = API.PathParamMultipleResponse;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
+  export import PathParamMultipleResponse = API.PathParamMultipleResponse;
 
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;

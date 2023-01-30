@@ -103,6 +103,42 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('create_aliased: only required params', async () => {
+    const response = await sink.cards.createAliased({ type: 'MERCHANT_LOCKED' });
+  });
+
+  test('create_aliased: required and optional params', async () => {
+    const response = await sink.cards.createAliased({
+      not: 'string',
+      account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      card_program_token: '00000000-0000-0000-1000-000000000000',
+      exp_month: '06',
+      exp_year: '2027',
+      funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
+      memo: 'New Card',
+      spend_limit: 0,
+      spend_limit_duration: 'ANNUALLY',
+      state: 'OPEN',
+      type: 'MERCHANT_LOCKED',
+      pin: 'string',
+      product_id: '1',
+      shippingAddress: {
+        first_name: 'Michael',
+        last_name: 'Bluth',
+        line2_text: 'The Bluth Company',
+        address1: '5 Broad Street',
+        address2: 'Unit 25A',
+        city: 'NEW YORK',
+        state: 'NY',
+        postal_code: '10001-1809',
+        country: 'USA',
+        email: 'johnny@appleseed.com',
+        phone_number: '+12124007676',
+      },
+      shipping_method: 'STANDARD',
+    });
+  });
+
   test('getAuthURL', () => {
     const url = sink.getAuthURL({
       clientId: '<client_id>',
