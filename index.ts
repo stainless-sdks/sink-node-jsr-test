@@ -109,7 +109,7 @@ export class Sink extends Core.APIClient {
   }
 
   /**
-   * A top level custom method on the sink.
+   * A top level custom method on the sink customer.
    */
   getAuthURL({ redirectUri, clientId }: { redirectUri: string; clientId: string }): string {
     const url = new URL('/auth', 'http://localhost:8000');

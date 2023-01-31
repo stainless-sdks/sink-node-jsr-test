@@ -56,7 +56,7 @@ export class Cards extends APIResource {
   createAliased = this.create;
 
   /**
-   * A top level custom method on the sink.
+   * A top level custom method on the sink customer.
    *
    * @deprecated This method will be removed in the next release. Please use `client.get_auth_url()` instead.
    */
