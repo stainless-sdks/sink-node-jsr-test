@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { PageCursor, PageCursorParams } from '~/pagination';
 import * as BodyParams from '~/resources/body-params';
+import { PageCursor, PageCursorParams } from '~/pagination';
 
 export class Cursor extends APIResource {
   /**

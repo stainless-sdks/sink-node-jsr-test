@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { PageHypermedia, PageHypermediaParams } from '~/pagination';
 import * as BodyParams from '~/resources/body-params';
+import { PageHypermedia, PageHypermediaParams } from '~/pagination';
 
 export class Hypermedia extends APIResource {
   /**

@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { PagePageNumber, PagePageNumberParams } from '~/pagination';
 import * as BodyParams from '~/resources/body-params';
+import { PagePageNumber, PagePageNumberParams } from '~/pagination';
 
 export class PageNumber extends APIResource {
   /**

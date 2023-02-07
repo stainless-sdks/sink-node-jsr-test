@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { PageOffset, PageOffsetParams } from '~/pagination';
 import * as BodyParams from '~/resources/body-params';
+import { PageOffset, PageOffsetParams } from '~/pagination';
 
 export class Offset extends APIResource {
   /**
