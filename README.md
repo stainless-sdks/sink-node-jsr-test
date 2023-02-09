@@ -222,4 +222,4 @@ The following runtimes are supported:
 - Deno v1.28.0 or higher (experimental).
   Use `import Sink from "npm:sink-npm"`.
 
-If you are interested in other runtime environments, please open or upvote an issue on Github.
+If you are interested in other runtime environments, please open or upvote an issue on GitHub.
