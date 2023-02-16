@@ -155,7 +155,7 @@ export class Sink extends Core.APIClient {
   }
 
   protected override authHeaders(): Core.Headers {
-    return { Authorization: `My Token: ${this.userToken}` };
+    return { Authorization: `Bearer ${this.userToken}` };
   }
 
   protected override qsOptions(): qs.IStringifyOptions {
