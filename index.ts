@@ -97,6 +97,7 @@ export class Sink extends Core.APIClient {
   queryParams: API.QueryParams = new API.QueryParams(this);
   bodyParams: API.BodyParams = new API.BodyParams(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
+  tests: API.Tests = new API.Tests(this);
 
   /**
    * API status check

@@ -303,3 +303,9 @@ Models:
 Methods:
 
 - <code title="get /decorator_tests/nested/keep/this/method">client.decoratorTests.keepThisResource.<a href="./resources/decorator-tests/keep-this-resource.ts">keepThisMethod</a>() -> KeepThisResourceKeepThisMethodResponse</code>
+
+# Tests
+
+Methods:
+
+- <code title="get /tests/run_codegen">client.tests.<a href="./resources/tests.ts">runCodegen</a>() -> Promise<void></code>
