@@ -49,6 +49,15 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Endpoint with an empty response.
+   */
+  objectNoProperties(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseObjectNoPropertiesResponse>> {
+    return this.post('/responses/object_no_properties', options);
+  }
+
+  /**
    * Method with a response object that uses oneOf to indicate nullability.
    */
   oneofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithOneOfNullProperty>> {
@@ -95,6 +104,8 @@ export namespace ObjectWithOneOfNullProperty {
     item?: string;
   }
 }
+
+export interface ResponseObjectNoPropertiesResponse {}
 
 export type ResponseIntegerResponseResponse = number;
 

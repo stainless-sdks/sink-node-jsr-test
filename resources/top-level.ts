@@ -7,3 +7,5 @@ export interface APIStatus {
 export type APIStatusAlias = APIStatus;
 
 export type CustomAPIStatusMessage = string;
+
+export interface Sta_563PostEmptyObjectResponse {}

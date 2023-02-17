@@ -113,7 +113,7 @@ Models:
 
 Methods:
 
-- <code title="delete /sta_563_empty_object">client.sta_563.<a href="./resources/sta-563.ts">deleteEmptyObject</a>() -> unknown</code>
+- <code title="delete /sta_563_empty_object">client.sta_563.<a href="./resources/sta-563.ts">deleteEmptyObject</a>() -> DeleteEmptyObjectResponse</code>
 
 # Sta_569
 
@@ -224,6 +224,7 @@ Models:
 
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
+- <code><a href="./resources/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
@@ -237,6 +238,7 @@ Methods:
 - <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> Promise<void></code>
 - <code title="post /responses/integer">client.responses.<a href="./resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
 - <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
+- <code title="post /responses/object_no_properties">client.responses.<a href="./resources/responses.ts">objectNoProperties</a>() -> ResponseObjectNoPropertiesResponse</code>
 - <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
 - <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
 - <code title="post /responses/string">client.responses.<a href="./resources/responses.ts">stringResponse</a>() -> Promise<string></code>

@@ -1,7 +1,12 @@
 // File generated from our OpenAPI spec by Stainless.
 
 export * from './shared';
-export { APIStatus, APIStatusAlias, CustomAPIStatusMessage } from './top-level';
+export {
+  APIStatus,
+  APIStatusAlias,
+  CustomAPIStatusMessage,
+  Sta_563PostEmptyObjectResponse,
+} from './top-level';
 export { Address, EnvelopeInlineResponseResponse, Envelopes } from './envelopes';
 export {
   Card,
@@ -20,6 +25,7 @@ export {
 export { Company, CompanyResource } from './company/company';
 export { ConfigTools } from './config-tools';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
+export { DeleteEmptyObjectResponse, Sta_563 } from './sta-563';
 export { GithubUser, GithubUserPreferences, Sta_630 } from './sta-630';
 export {
   MyModel,
@@ -34,6 +40,7 @@ export { NameResponseShadowsPydanticResponse, Names } from './names/names';
 export {
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,
+  ResponseObjectNoPropertiesResponse,
   ResponseIntegerResponseResponse,
   ResponseStringResponseResponse,
   ResponseBooleanResponseResponse,
@@ -54,7 +61,6 @@ export {
   QueryParams,
 } from './query-params';
 export { Resources } from './resources';
-export { Sta_563 } from './sta-563';
 export {
   Sta_569OneEntryResponse,
   Sta_569OneEntryWithNullResponse,

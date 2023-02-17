@@ -130,7 +130,9 @@ export class Sink extends Core.APIClient {
    * type, but it should basically just have untyped additional properties. See
    * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
    */
-  sta_563PostEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<unknown>> {
+  sta_563PostEmptyObject(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Sink.Sta_563PostEmptyObjectResponse>> {
     return this.post('/sta_563_empty_object', options);
   }
 
@@ -231,6 +233,7 @@ export namespace Sink {
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;
   export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
+  export import Sta_563PostEmptyObjectResponse = API.Sta_563PostEmptyObjectResponse;
 
   export import TestingRootResponse = API.TestingRootResponse;
 
@@ -247,6 +250,8 @@ export namespace Sink {
   export import CardReissueParams = API.CardReissueParams;
 
   export import Company = API.Company;
+
+  export import DeleteEmptyObjectResponse = API.DeleteEmptyObjectResponse;
 
   export import Sta_569OneEntryResponse = API.Sta_569OneEntryResponse;
   export import Sta_569OneEntryWithNullResponse = API.Sta_569OneEntryWithNullResponse;
@@ -273,6 +278,7 @@ export namespace Sink {
 
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;

@@ -70,6 +70,17 @@ describe('resource responses', () => {
     );
   });
 
+  test('object_no_properties', async () => {
+    const response = await sink.responses.objectNoProperties();
+  });
+
+  test('object_no_properties: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.objectNoProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('oneof_null', async () => {
     const response = await sink.responses.oneofNull();
   });
