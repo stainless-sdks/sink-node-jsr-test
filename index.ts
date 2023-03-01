@@ -267,6 +267,10 @@ export namespace Sink {
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
 
   export import TypeEnumsResponse = API.TypeEnumsResponse;
+  export import TypeDatesResponse = API.TypeDatesResponse;
+  export import TypeDatetimesResponse = API.TypeDatetimesResponse;
+  export import TypeDatesParams = API.TypeDatesParams;
+  export import TypeDatetimesParams = API.TypeDatetimesParams;
   export import TypeEnumsParams = API.TypeEnumsParams;
 
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;

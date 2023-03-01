@@ -175,9 +175,13 @@ Methods:
 Models:
 
 - <code><a href="./resources/types.ts">TypeEnumsResponse</a></code>
+- <code><a href="./resources/types.ts">TypeDatesResponse</a></code>
+- <code><a href="./resources/types.ts">TypeDatetimesResponse</a></code>
 
 Methods:
 
+- <code title="post /types/dates">client.types.<a href="./resources/types.ts">dates</a>({ ...params }) -> TypeDatesResponse</code>
+- <code title="post /types/datetimes">client.types.<a href="./resources/types.ts">datetimes</a>({ ...params }) -> TypeDatetimesResponse</code>
 - <code title="post /types/enums">client.types.<a href="./resources/types.ts">enums</a>({ ...params }) -> TypeEnumsResponse</code>
 
 # Names

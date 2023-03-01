@@ -72,5 +72,13 @@ export { Sta_606WithSharedParamsParams, Sta_606 } from './sta-606';
 export { Sta_613OnlyGlobalResponse, Sta_613GlobalWithStandardResponse, Sta_613 } from './sta-613';
 export { TestingRootResponse, Testing } from './testing';
 export { Tests } from './tests';
-export { TypeEnumsResponse, TypeEnumsParams, Types } from './types';
+export {
+  TypeEnumsResponse,
+  TypeDatesResponse,
+  TypeDatetimesResponse,
+  TypeDatesParams,
+  TypeDatetimesParams,
+  TypeEnumsParams,
+  Types,
+} from './types';
 export { Widget, Widgets } from './widgets';
