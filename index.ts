@@ -52,6 +52,7 @@ export class Sink extends Core.APIClient {
       httpAgent: options.httpAgent,
     });
     this.userToken = options.userToken || null;
+    this.idempotencyHeader = 'Idempotency-Key';
 
     const username = config.username || process.env['SINK_USER'];
     if (!username) {

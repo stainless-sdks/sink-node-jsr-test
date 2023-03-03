@@ -45,3 +45,14 @@ describe('instantiate client', () => {
     expect(client.userToken).toBeNull();
   });
 });
+
+describe('idempotency', () => {
+  test('key can be set per-request', async () => {
+    const client = new Sink({
+      userToken: 'my user token',
+      username: 'Robert',
+      baseURL: 'http://127.0.0.1:4010',
+    });
+    await client.cards.create({ type: 'MERCHANT_LOCKED' }, { idempotencyKey: 'my-idempotency-key' });
+  });
+});
