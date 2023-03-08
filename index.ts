@@ -113,7 +113,6 @@ export class Sink extends Core.APIClient {
   createNoResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
-
   /**
    * A top level custom method on the sink customer.
    */
@@ -165,6 +164,8 @@ export class Sink extends Core.APIClient {
     return { arrayFormat: 'comma' };
   }
 
+  static CONSTANT_WITH_NEWLINES = '\n\nHuman:';
+
   static APIError = Core.APIError;
 
   static APIConnectionError = Core.APIConnectionError;
@@ -194,6 +195,8 @@ export const {
   UnprocessableEntityError,
   RateLimitError,
   InternalServerError,
+
+  CONSTANT_WITH_NEWLINES,
 } = Sink;
 
 export namespace Sink {
