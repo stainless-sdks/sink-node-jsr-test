@@ -13,10 +13,7 @@ describe('resource body_params', () => {
   });
 
   test('top_level_allOf_nested_object: only required params', async () => {
-    const response = await sink.bodyParams.topLevelAllOfNestedObject({
-      kind: 'VIRTUAL',
-      nested_obj: { is_foo: true },
-    });
+    const response = await sink.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
   });
 
   test('top_level_allOf_nested_object: required and optional params', async () => {
