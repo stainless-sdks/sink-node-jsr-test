@@ -34,6 +34,12 @@ Methods:
 
 - <code title="get /paginated/offset">client.paginationTests.offset.<a href="./resources/pagination-tests/offset.ts">list</a>({ ...params }) -> MyModelsPageOffset</code>
 
+## FakePages
+
+Methods:
+
+- <code title="get /paginated/fake_page">client.paginationTests.fakePages.<a href="./resources/pagination-tests/fake-pages.ts">list</a>({ ...params }) -> SimpleObjectsFakePage</code>
+
 ## Hypermedia
 
 Methods:
@@ -235,13 +241,14 @@ Models:
 - <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseArrayResponseResponse</a></code>
 
 Methods:
 
 - <code title="post /responses/additional_properties">client.responses.<a href="./resources/responses.ts">additionalProperties</a>() -> ResponseAdditionalPropertiesResponse</code>
 - <code title="post /responses/additional_properties_nested_model_reference">client.responses.<a href="./resources/responses.ts">additionalPropertiesNestedModelReference</a>() -> ResponseAdditionalPropertiesNestedModelReferenceResponse</code>
 - <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
-- <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> SimpleObjectsFakePage</code>
+- <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
 - <code title="post /responses/boolean">client.responses.<a href="./resources/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
 - <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> Promise<void></code>
 - <code title="post /responses/integer">client.responses.<a href="./resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>

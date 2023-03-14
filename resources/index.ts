@@ -47,7 +47,7 @@ export {
   ResponseStringResponseResponse,
   ResponseBooleanResponseResponse,
   ResponseMissingRequiredResponse,
-  SimpleObjectsFakePage,
+  ResponseArrayResponseResponse,
   Responses,
 } from './responses';
 export { PaginationTests } from './pagination-tests/pagination-tests';

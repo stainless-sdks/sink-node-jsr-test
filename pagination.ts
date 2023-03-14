@@ -427,6 +427,10 @@ export class PageHypermediaRaw<Item> extends AbstractPage<Item> implements PageH
 
 export type FakePageResponse<Item> = Item[];
 
+export interface FakePageParams {
+  my_fake_page_param: string;
+}
+
 export class FakePage<Item> extends AbstractPage<Item> {
   items: Array<Item>;
 

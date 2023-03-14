@@ -2,6 +2,7 @@
 
 export { CursorListParams, MyModelsPageCursor } from './cursor';
 export { CursorURLListParams, MyModelsPageCursorURL } from './cursor-url';
+export { FakePageListParams, SimpleObjectsFakePage } from './fake-pages';
 export { HypermediaListParams, MyModelsPageHypermedia } from './hypermedia';
 export { HypermediaRawListParams, MyModelsPageHypermediaRaw } from './hypermedia-raw';
 export { OffsetListParams, MyModelsPageOffset } from './offset';

@@ -3,7 +3,6 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as BodyParams from '~/resources/body-params';
-import { FakePage } from '~/pagination';
 import * as Shared from '~/resources/shared';
 
 export class Responses extends APIResource {
@@ -36,8 +35,8 @@ export class Responses extends APIResource {
   /**
    * Endpoint that returns a top-level array.
    */
-  arrayResponse(options?: Core.RequestOptions): Core.PagePromise<SimpleObjectsFakePage> {
-    return this.getAPIList('/responses/array', SimpleObjectsFakePage, options);
+  arrayResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseArrayResponseResponse>> {
+    return this.get('/responses/array', options);
   }
 
   /**
@@ -103,8 +102,6 @@ export class Responses extends APIResource {
   }
 }
 
-export class SimpleObjectsFakePage extends FakePage<Shared.SimpleObject> {}
-
 export interface ObjectWithAnyOfNullProperty {
   foo: ObjectWithAnyOfNullProperty.Foo | null;
 }
@@ -142,3 +139,5 @@ export interface ResponseMissingRequiredResponse {
 
   foo: string;
 }
+
+export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;

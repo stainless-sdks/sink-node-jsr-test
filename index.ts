@@ -232,6 +232,7 @@ export namespace Sink {
   export import PageHypermediaRawResponse = Pagination.PageHypermediaRawResponse;
 
   export import FakePage = Pagination.FakePage;
+  export import FakePageParams = Pagination.FakePageParams;
   export import FakePageResponse = Pagination.FakePageResponse;
 
   export import APIStatus = API.APIStatus;
@@ -293,7 +294,7 @@ export namespace Sink {
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
   export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import SimpleObjectsFakePage = API.SimpleObjectsFakePage;
+  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
 
   export import PathParamSingularResponse = API.PathParamSingularResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
