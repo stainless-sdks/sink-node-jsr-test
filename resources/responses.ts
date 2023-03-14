@@ -2,10 +2,30 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as BodyParams from '~/resources/body-params';
 import { FakePage } from '~/pagination';
 import * as Shared from '~/resources/shared';
 
 export class Responses extends APIResource {
+  /**
+   * Endpoint with a top level additionalProperties response.
+   */
+  additionalProperties(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseAdditionalPropertiesResponse>> {
+    return this.post('/responses/additional_properties', options);
+  }
+
+  /**
+   * Endpoint with a top level additionalProperties response where the items type
+   * points to an object defined as a model in the config.
+   */
+  additionalPropertiesNestedModelReference(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseAdditionalPropertiesNestedModelReferenceResponse>> {
+    return this.post('/responses/additional_properties_nested_model_reference', options);
+  }
+
   /**
    * Method with a response object that uses anyOf to indicate nullability.
    */
@@ -106,6 +126,10 @@ export namespace ObjectWithOneOfNullProperty {
 }
 
 export interface ResponseObjectNoPropertiesResponse {}
+
+export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
+
+export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParams.MyModel>;
 
 export type ResponseIntegerResponseResponse = number;
 

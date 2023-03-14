@@ -4,6 +4,28 @@ import Sink from '~/index';
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
 describe('resource responses', () => {
+  test('additional_properties', async () => {
+    const response = await sink.responses.additionalProperties();
+  });
+
+  test('additional_properties: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.additionalProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('additional_properties_nested_model_reference', async () => {
+    const response = await sink.responses.additionalPropertiesNestedModelReference();
+  });
+
+  test('additional_properties_nested_model_reference: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.responses.additionalPropertiesNestedModelReference({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
   test('anyof_null', async () => {
     const response = await sink.responses.anyofNull();
   });

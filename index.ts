@@ -287,6 +287,8 @@ export namespace Sink {
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
   export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
+  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
+  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;

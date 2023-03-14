@@ -41,6 +41,8 @@ export {
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,
   ResponseObjectNoPropertiesResponse,
+  ResponseAdditionalPropertiesResponse,
+  ResponseAdditionalPropertiesNestedModelReferenceResponse,
   ResponseIntegerResponseResponse,
   ResponseStringResponseResponse,
   ResponseBooleanResponseResponse,

@@ -229,6 +229,8 @@ Models:
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
@@ -236,6 +238,8 @@ Models:
 
 Methods:
 
+- <code title="post /responses/additional_properties">client.responses.<a href="./resources/responses.ts">additionalProperties</a>() -> ResponseAdditionalPropertiesResponse</code>
+- <code title="post /responses/additional_properties_nested_model_reference">client.responses.<a href="./resources/responses.ts">additionalPropertiesNestedModelReference</a>() -> ResponseAdditionalPropertiesNestedModelReferenceResponse</code>
 - <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
 - <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> SimpleObjectsFakePage</code>
 - <code title="post /responses/boolean">client.responses.<a href="./resources/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
