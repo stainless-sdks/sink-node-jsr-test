@@ -199,6 +199,8 @@ export const {
   CONSTANT_WITH_NEWLINES,
 } = Sink;
 
+export import fileFromPath = FileFromPath.fileFromPath;
+
 export namespace Sink {
   // Helper functions
   export import fileFromPath = FileFromPath.fileFromPath;
