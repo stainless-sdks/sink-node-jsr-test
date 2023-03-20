@@ -141,6 +141,9 @@ export class Sink extends Core.APIClient {
       ...super.defaultHeaders(),
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
+      'X-Client-UserName': this.username,
+      'X-Client-Secret': this.clientSecret,
+      'X-Integer': this.someIntegerArg?.toString() ?? null,
     };
   }
 
