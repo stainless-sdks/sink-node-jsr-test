@@ -3,6 +3,14 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
+import {
+  PagePageNumber,
+  PageCursor,
+  PageCursorURL,
+  PageOffset,
+  PageHypermedia,
+  PageHypermediaRaw,
+} from '~/pagination';
 
 export class BodyParams extends APIResource {
   /**
@@ -72,6 +80,18 @@ export class BodyParams extends APIResource {
     });
   }
 }
+
+export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
+
+export class MyModelsPageCursor extends PageCursor<MyModel> {}
+
+export class MyModelsPageCursorURL extends PageCursorURL<MyModel> {}
+
+export class MyModelsPageOffset extends PageOffset<MyModel> {}
+
+export class MyModelsPageHypermedia extends PageHypermedia<MyModel> {}
+
+export class MyModelsPageHypermediaRaw extends PageHypermediaRaw<MyModel> {}
 
 export interface MyModel {
   bar?: boolean;

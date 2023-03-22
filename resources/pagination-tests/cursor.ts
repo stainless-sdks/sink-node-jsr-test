@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import * as BodyParams from '~/resources/body-params';
-import { PageCursor, PageCursorParams } from '~/pagination';
+import { MyModelsPageCursor } from '~/resources/body-params';
+import { PageCursorParams } from '~/pagination';
 
 export class Cursor extends APIResource {
   /**
@@ -24,6 +24,6 @@ export class Cursor extends APIResource {
   }
 }
 
-export class MyModelsPageCursor extends PageCursor<BodyParams.MyModel> {}
-
 export interface CursorListParams extends PageCursorParams {}
+
+export { MyModelsPageCursor };

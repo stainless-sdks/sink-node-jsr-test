@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import * as BodyParams from '~/resources/body-params';
-import { PagePageNumber, PagePageNumberParams } from '~/pagination';
+import { MyModelsPagePageNumber } from '~/resources/body-params';
+import { PagePageNumberParams } from '~/pagination';
 
 export class PageNumber extends APIResource {
   /**
@@ -24,6 +24,6 @@ export class PageNumber extends APIResource {
   }
 }
 
-export class MyModelsPagePageNumber extends PagePageNumber<BodyParams.MyModel> {}
-
 export interface PageNumberListParams extends PagePageNumberParams {}
+
+export { MyModelsPagePageNumber };

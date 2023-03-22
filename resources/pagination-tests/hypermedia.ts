@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import * as BodyParams from '~/resources/body-params';
-import { PageHypermedia, PageHypermediaParams } from '~/pagination';
+import { MyModelsPageHypermedia } from '~/resources/body-params';
+import { PageHypermediaParams } from '~/pagination';
 
 export class Hypermedia extends APIResource {
   /**
@@ -24,6 +24,6 @@ export class Hypermedia extends APIResource {
   }
 }
 
-export class MyModelsPageHypermedia extends PageHypermedia<BodyParams.MyModel> {}
-
 export interface HypermediaListParams extends PageHypermediaParams {}
+
+export { MyModelsPageHypermedia };

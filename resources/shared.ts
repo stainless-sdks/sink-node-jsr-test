@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
+import { FakePage } from '~/pagination';
+
 export type Currency =
   | 'USD'
   | 'GBP'
@@ -97,3 +99,5 @@ export interface SimpleObject {
 }
 
 export type SimpleObjectAlias = SimpleObject;
+
+export class SimpleObjectsFakePage extends FakePage<SimpleObject> {}

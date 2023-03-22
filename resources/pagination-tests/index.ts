@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export { CursorListParams, MyModelsPageCursor } from './cursor';
-export { CursorURLListParams, MyModelsPageCursorURL } from './cursor-url';
-export { FakePageListParams, SimpleObjectsFakePage } from './fake-pages';
-export { HypermediaListParams, MyModelsPageHypermedia } from './hypermedia';
-export { HypermediaRawListParams, MyModelsPageHypermediaRaw } from './hypermedia-raw';
-export { OffsetListParams, MyModelsPageOffset } from './offset';
-export { PageNumberListParams, MyModelsPagePageNumber } from './page-number';
+export { CursorListParams } from './cursor';
+export { CursorURLListParams } from './cursor-url';
+export { FakePageListParams } from './fake-pages';
+export { HypermediaListParams } from './hypermedia';
+export { HypermediaRawListParams } from './hypermedia-raw';
+export { OffsetListParams } from './offset';
+export { PageNumberListParams } from './page-number';

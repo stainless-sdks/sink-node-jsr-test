@@ -3,8 +3,8 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
-import { CardPage, CardPageParams } from '~/pagination';
 import * as Shared from '~/resources/shared';
+import { CardPage, CardPageParams, PageCursor } from '~/pagination';
 
 export class Cards extends APIResource {
   /**
@@ -125,6 +125,8 @@ export class Cards extends APIResource {
 }
 
 export class CardsCardPage extends CardPage<Card> {}
+
+export class CardsPageCursor extends PageCursor<Card> {}
 
 export interface Card {
   /**
