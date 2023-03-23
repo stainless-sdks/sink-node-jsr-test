@@ -6,7 +6,7 @@
   "types": "dist/cjs/index.d.ts",
   "main": "dist/cjs/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/sink-node",
+  "repository": "github:stainless-sdks/sink-node-public",
   "license": "Apache-2.0",
   "private": false,
   "scripts": {

@@ -1,11 +1,19 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export interface APIStatus {
-  message: CustomAPIStatusMessage;
+import * as Core from '~/core'
+import { APIResource } from '~/resource'
+import { isRequestOptions } from '~/core'
+import * as Shared from '~/resources/shared'
+
+export interface APIStatus  {
+
+message: CustomAPIStatusMessage
 }
 
-export type APIStatusAlias = APIStatus;
+export type APIStatusAlias = APIStatus
 
-export type CustomAPIStatusMessage = string;
+export type CustomAPIStatusMessage = string
 
-export interface Sta_563PostEmptyObjectResponse {}
+export interface Sta_563PostEmptyObjectResponse  {
+
+}
