@@ -52,6 +52,20 @@ Methods:
 
 - <code title="get /paginated/hypermedia_raw">client.paginationTests.hypermediaRaw.<a href="./resources/pagination-tests/hypermedia-raw.ts">list</a>({ ...params }) -> MyModelsPageHypermediaRaw</code>
 
+# ResourceRefs
+
+## PaginatedModelFirstRef
+
+Methods:
+
+- <code title="get /resource_refs/paginated_model_separate_resource">client.resourceRefs.paginatedModelFirstRef.<a href="./resources/resource-refs/paginated-model-first-ref.ts">list</a>({ ...params }) -> CardsPageCursor</code>
+
+## PaginatedModelSecondRef
+
+Methods:
+
+- <code title="get /resource_refs/paginated_model_separate_resource">client.resourceRefs.paginatedModelSecondRef.<a href="./resources/resource-refs/paginated-model-second-ref.ts">list</a>({ ...params }) -> CardsPageCursor</code>
+
 # Cards
 
 Models:

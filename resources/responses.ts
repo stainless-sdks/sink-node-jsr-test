@@ -24,6 +24,25 @@ export class Responses extends APIResource {
   };
 
   /**
+   * Endpoint with a top level additionalProperties response.
+   */
+  additionalProperties(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseAdditionalPropertiesResponse>> {
+    return this.post('/responses/additional_properties', options);
+  }
+
+  /**
+   * Endpoint with a top level additionalProperties response where the items type
+   * points to an object defined as a model in the config.
+   */
+  additionalPropertiesNestedModelReference(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseAdditionalPropertiesNestedModelReferenceResponse>> {
+    return this.post('/responses/additional_properties_nested_model_reference', options);
+  }
+
+  /**
    * Method with a response object that uses anyOf to indicate nullability.
    */
   anyofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithAnyOfNullProperty>>{
