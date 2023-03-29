@@ -39,7 +39,7 @@ export class Sink extends Core.APIClient {
   someIntegerArg?: number | null;
   someNumberArg?: number | null;
 
-  // Foo
+  // Bar
   constructor(config: Config) {
     const options: Config = {
       userToken: process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
@@ -80,7 +80,6 @@ export class Sink extends Core.APIClient {
 
   testing: API.Testing = new API.Testing(this);
   paginationTests: API.PaginationTests = new API.PaginationTests(this);
-  resourceRefs: API.ResourceRefs = new API.ResourceRefs(this);
   cards: API.Cards = new API.Cards(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
@@ -143,9 +142,6 @@ export class Sink extends Core.APIClient {
       ...super.defaultHeaders(),
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
-      'X-Client-UserName': this.username,
-      'X-Client-Secret': this.clientSecret,
-      'X-Integer': this.someIntegerArg?.toString() ?? null,
     };
   }
 
@@ -204,8 +200,6 @@ export const {
   CONSTANT_WITH_NEWLINES,
 } = Sink;
 
-export import fileFromPath = FileFromPath.fileFromPath;
-
 export namespace Sink {
   // Helper functions
   export import fileFromPath = FileFromPath.fileFromPath;
@@ -239,7 +233,6 @@ export namespace Sink {
   export import PageHypermediaRawResponse = Pagination.PageHypermediaRawResponse;
 
   export import FakePage = Pagination.FakePage;
-  export import FakePageParams = Pagination.FakePageParams;
   export import FakePageResponse = Pagination.FakePageResponse;
 
   export import APIStatus = API.APIStatus;
@@ -295,13 +288,11 @@ export namespace Sink {
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
   export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
-  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
-  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
   export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
+  export import SimpleObjectsFakePage = API.SimpleObjectsFakePage;
 
   export import PathParamSingularResponse = API.PathParamSingularResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
