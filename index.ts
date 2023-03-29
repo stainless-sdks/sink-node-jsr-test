@@ -39,7 +39,7 @@ export class Sink extends Core.APIClient {
   someIntegerArg?: number | null;
   someNumberArg?: number | null;
 
-  // Bar
+  // Baz
   constructor(config: Config) {
     const options: Config = {
       userToken: process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
