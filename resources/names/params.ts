@@ -5,7 +5,7 @@ import { APIResource } from '~/resource';
 
 export class Params extends APIResource {
   /**
-   * Endpoint with a `requestBody` that has a property named `options`.
+   * Endpoint with a `requestBody` that has a property named `options`
    */
   optionsParam(
     body: ParamOptionsParamParams,
@@ -20,5 +20,8 @@ export class Params extends APIResource {
 }
 
 export interface ParamOptionsParamParams {
+  /**
+   * bar
+   */
   options?: string;
 }
