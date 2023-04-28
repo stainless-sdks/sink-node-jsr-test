@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as BodyParams from '~/resources/body-params';
+import * as Payments from '~/resources/company/payments';
 import * as Shared from '~/resources/shared';
 
 export class Responses extends APIResource {
@@ -23,6 +24,13 @@ export class Responses extends APIResource {
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<ResponseAdditionalPropertiesNestedModelReferenceResponse>> {
     return this.post('/responses/additional_properties_nested_model_reference', options);
+  }
+
+  /**
+   * Method with a response object defined using allOf and inline schema definitions.
+   */
+  allofSimple(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseAllofSimpleResponse>> {
+    return this.get('/responses/allof/simple', options);
   }
 
   /**
@@ -68,12 +76,41 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Method with a response object with a different property for each supported type.
+   */
+  objectAllProperties(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseObjectAllPropertiesResponse>> {
+    return this.get('/responses/object/everything', options);
+  }
+
+  /**
    * Endpoint with an empty response.
    */
   objectNoProperties(
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<ResponseObjectNoPropertiesResponse>> {
     return this.post('/responses/object_no_properties', options);
+  }
+
+  /**
+   * Endpoint with an object response that contains an `additionalProperties`
+   * property with a nested schema.
+   */
+  objectWithAdditionalPropertiesProp(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseObjectWithAdditionalPropertiesPropResponse>> {
+    return this.post('/responses/object_with_additional_properties_prop', options);
+  }
+
+  /**
+   * Endpoint with an object response that contains a union property with multiple
+   * nested schemas.
+   */
+  objectWithHeavilyNestedUnion(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseObjectWithHeavilyNestedUnionResponse>> {
+    return this.post('/responses/object_with_heavily_nested_union', options);
   }
 
   /**
@@ -122,7 +159,51 @@ export namespace ObjectWithOneOfNullProperty {
   }
 }
 
+export interface SimpleAllof {
+  is_foo: boolean;
+
+  kind: 'VIRTUAL' | 'PHYSICAL';
+}
+
 export interface ResponseObjectNoPropertiesResponse {}
+
+export interface ResponseObjectWithAdditionalPropertiesPropResponse {
+  foo: Record<string, ResponseObjectWithAdditionalPropertiesPropResponse.Foo>;
+}
+
+export namespace ResponseObjectWithAdditionalPropertiesPropResponse {
+  export interface Foo {
+    bar?: string;
+  }
+}
+
+export interface ResponseObjectWithHeavilyNestedUnionResponse {
+  union_prop:
+    | ResponseObjectWithHeavilyNestedUnionResponse.UnionMember0
+    | ResponseObjectWithHeavilyNestedUnionResponse.UnionMember1;
+}
+
+export namespace ResponseObjectWithHeavilyNestedUnionResponse {
+  export interface UnionMember0 {
+    union_1_layer_1?: Array<UnionMember0.Union1Layer1>;
+  }
+
+  export namespace UnionMember0 {
+    export interface Union1Layer1 {
+      union_1_layer_2?: string;
+    }
+  }
+
+  export interface UnionMember1 {
+    union_2_layer_1?: UnionMember1.Union2Layer1;
+  }
+
+  export namespace UnionMember1 {
+    export interface Union2Layer1 {
+      union_2_layer_2?: string;
+    }
+  }
+}
 
 export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
 
@@ -141,3 +222,25 @@ export interface ResponseMissingRequiredResponse {
 }
 
 export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;
+
+export interface ResponseAllofSimpleResponse {
+  bar?: string;
+
+  foo?: string;
+}
+
+export interface ResponseObjectAllPropertiesResponse {
+  allof: SimpleAllof;
+
+  b: boolean;
+
+  i: number;
+
+  n: null;
+
+  object_array: Array<Payments.CompanyPayment>;
+
+  primitive_array: Array<string>;
+
+  s: string;
+}

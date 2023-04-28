@@ -22,7 +22,6 @@ export class HypermediaRaw extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-
     return this.getAPIList('/paginated/hypermedia_raw', MyModelsPageHypermediaRaw, { query, ...options });
   }
 }

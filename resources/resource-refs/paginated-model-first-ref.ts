@@ -23,7 +23,6 @@ export class PaginatedModelFirstRef extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-
     return this.getAPIList('/resource_refs/paginated_model_separate_resource', CardsPageCursor, {
       query,
       ...options,

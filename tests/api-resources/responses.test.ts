@@ -26,6 +26,17 @@ describe('resource responses', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('allof_simple', async () => {
+    const response = await sink.responses.allofSimple();
+  });
+
+  test('allof_simple: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.allofSimple({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('anyof_null', async () => {
     const response = await sink.responses.anyofNull();
   });
@@ -92,6 +103,17 @@ describe('resource responses', () => {
     );
   });
 
+  test('object_all_properties', async () => {
+    const response = await sink.responses.objectAllProperties();
+  });
+
+  test('object_all_properties: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.objectAllProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('object_no_properties', async () => {
     const response = await sink.responses.objectNoProperties();
   });
@@ -101,6 +123,28 @@ describe('resource responses', () => {
     await expect(sink.responses.objectNoProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
+  });
+
+  test('object_with_additional_properties_prop', async () => {
+    const response = await sink.responses.objectWithAdditionalPropertiesProp();
+  });
+
+  test('object_with_additional_properties_prop: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.responses.objectWithAdditionalPropertiesProp({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('object_with_heavily_nested_union', async () => {
+    const response = await sink.responses.objectWithHeavilyNestedUnion();
+  });
+
+  test('object_with_heavily_nested_union: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.responses.objectWithHeavilyNestedUnion({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('oneof_null', async () => {

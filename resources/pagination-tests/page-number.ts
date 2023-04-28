@@ -19,7 +19,6 @@ export class PageNumber extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-
     return this.getAPIList('/paginated/page_number', MyModelsPagePageNumber, { query, ...options });
   }
 }

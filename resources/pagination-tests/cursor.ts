@@ -19,7 +19,6 @@ export class Cursor extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-
     return this.getAPIList('/paginated/cursor', MyModelsPageCursor, { query, ...options });
   }
 }

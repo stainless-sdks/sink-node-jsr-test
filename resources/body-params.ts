@@ -61,7 +61,6 @@ export class BodyParams extends APIResource {
     if (isRequestOptions(body)) {
       return this.unionOverlappingProp({}, body);
     }
-
     return this.post('/body_params/top_level_anyOf_overlapping_property', { body, ...options });
   }
 
@@ -105,26 +104,21 @@ export interface BodyParamReadOnlyPropertiesParams {
   in_both?: boolean;
 }
 
-export type BodyParamTopLevelAllOfNestedObjectParams =
-  BodyParamTopLevelAllOfNestedObjectParams.ObjectWithRequiredEnum &
-    BodyParamTopLevelAllOfNestedObjectParams.ObjectWithNestedObjectRef;
+export interface BodyParamTopLevelAllOfNestedObjectParams {
+  kind: 'VIRTUAL' | 'PHYSICAL';
+
+  /**
+   * This is an object with required properties
+   */
+  nested_obj?: BodyParamTopLevelAllOfNestedObjectParams.NestedObj;
+}
 
 export namespace BodyParamTopLevelAllOfNestedObjectParams {
-  export interface ObjectWithRequiredEnum {
-    kind: 'VIRTUAL' | 'PHYSICAL';
-  }
-
-  export interface ObjectWithNestedObjectRef {
-    /**
-     * This is an object with required properties
-     */
-    nested_obj?: ObjectWithNestedObjectRef.NestedObj;
-  }
-
-  export namespace ObjectWithNestedObjectRef {
-    export interface NestedObj {
-      is_foo: boolean;
-    }
+  /**
+   * This is an object with required properties
+   */
+  export interface NestedObj {
+    is_foo: boolean;
   }
 }
 

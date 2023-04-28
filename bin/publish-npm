@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -eux
+
+echo "Not implemented yet."
+exit 1

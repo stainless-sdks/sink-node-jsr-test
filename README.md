@@ -143,7 +143,7 @@ Note that requests which time out will be [retried twice by default](#retries).
 ## Auto-pagination
 
 List methods in the Sink API are paginated.
-Use `for await … of` syntax to iterate through items across all pages.
+You can use `for await … of` syntax to iterate through items across all pages:
 
 ```ts
 async function fetchAllPaginationTestsOffsets(params) {
@@ -153,6 +153,21 @@ async function fetchAllPaginationTestsOffsets(params) {
     allPaginationTestsOffsets.push(offset);
   }
   return allPaginationTestsOffsets;
+}
+```
+
+Alternatively, you can make request a single page at a time:
+
+```ts
+let page = await sink.paginationTests.offset.list();
+for (const offset of page.data) {
+  console.log(offset);
+}
+
+// Convenience methods are provided for manually paginating:
+while (page.hasNextPage()) {
+  page = page.getNextPage();
+  // ...
 }
 ```
 

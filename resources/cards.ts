@@ -49,7 +49,6 @@ export class Cards extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-
     return this.getAPIList('/cards', CardsCardPage, { query, ...options });
   }
 
@@ -83,8 +82,21 @@ export class Cards extends APIResource {
   /**
    * List cards.
    */
-  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage> {
-    return this.getAPIList('/cards/list', CardsCardPage, { method: 'post', ...options });
+  listNonGet(body?: CardListNonGetParams, options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
+  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
+  listNonGet(
+    body: CardListNonGetParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<CardsCardPage> {
+    if (isRequestOptions(body)) {
+      return this.listNonGet({}, body);
+    }
+    const { account_token: accountToken, begin, end, page, page_size: pageSize } = body;
+    return this.getAPIList('/cards/list', CardsCardPage, {
+      query: { account_token: accountToken, begin, end, page, page_size: pageSize },
+      method: 'post',
+      ...options,
+    });
   }
 
   /**
@@ -303,22 +315,6 @@ export interface CardProvisionFooResponse {
 
 export interface CardCreateParams {
   /**
-   * Card types:
-   *
-   * - `MERCHANT_LOCKED` - Card is locked to first merchant that successfully
-   *   authorizes the card.
-   * - `PHYSICAL` - Manufactured and sent to the cardholder. We offer white label
-   *   branding, credit, ATM, PIN debit, chip/EMV, NFC and magstripe functionality.
-   *   Reach out at [lithic.com/contact](https://lithic.com/contact) for more
-   *   information.
-   * - `SINGLE_USE` - Card will close shortly after the first transaction.
-   * - `VIRTUAL` - Card will authorize at any merchant and can be added to a digital
-   *   wallet like Apple Pay or Google Pay (if the card program is digital
-   *   wallet-enabled).
-   */
-  type: 'MERCHANT_LOCKED' | 'PHYSICAL' | 'SINGLE_USE' | 'VIRTUAL';
-
-  /**
    * Only required for multi-account users. Token identifying the account the card
    * will be associated with. Only applicable if using account holder enrollment. See
    * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
@@ -419,6 +415,22 @@ export interface CardCreateParams {
    *   time.
    */
   state?: 'OPEN' | 'PAUSED';
+
+  /**
+   * Card types:
+   *
+   * - `MERCHANT_LOCKED` - Card is locked to first merchant that successfully
+   *   authorizes the card.
+   * - `PHYSICAL` - Manufactured and sent to the cardholder. We offer white label
+   *   branding, credit, ATM, PIN debit, chip/EMV, NFC and magstripe functionality.
+   *   Reach out at [lithic.com/contact](https://lithic.com/contact) for more
+   *   information.
+   * - `SINGLE_USE` - Card will close shortly after the first transaction.
+   * - `VIRTUAL` - Card will authorize at any merchant and can be added to a digital
+   *   wallet like Apple Pay or Google Pay (if the card program is digital
+   *   wallet-enabled).
+   */
+  type: 'MERCHANT_LOCKED' | 'PHYSICAL' | 'SINGLE_USE' | 'VIRTUAL';
 }
 
 export interface CardUpdateParams {
@@ -511,22 +523,6 @@ export interface CardListParams extends CardPageParams {
 
 export interface CardCreateAliasedParams {
   /**
-   * Card types:
-   *
-   * - `MERCHANT_LOCKED` - Card is locked to first merchant that successfully
-   *   authorizes the card.
-   * - `PHYSICAL` - Manufactured and sent to the cardholder. We offer white label
-   *   branding, credit, ATM, PIN debit, chip/EMV, NFC and magstripe functionality.
-   *   Reach out at [lithic.com/contact](https://lithic.com/contact) for more
-   *   information.
-   * - `SINGLE_USE` - Card will close shortly after the first transaction.
-   * - `VIRTUAL` - Card will authorize at any merchant and can be added to a digital
-   *   wallet like Apple Pay or Google Pay (if the card program is digital
-   *   wallet-enabled).
-   */
-  type: 'MERCHANT_LOCKED' | 'PHYSICAL' | 'SINGLE_USE' | 'VIRTUAL';
-
-  /**
    * Only required for multi-account users. Token identifying the account the card
    * will be associated with. Only applicable if using account holder enrollment. See
    * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
@@ -627,6 +623,44 @@ export interface CardCreateAliasedParams {
    *   time.
    */
   state?: 'OPEN' | 'PAUSED';
+
+  /**
+   * Card types:
+   *
+   * - `MERCHANT_LOCKED` - Card is locked to first merchant that successfully
+   *   authorizes the card.
+   * - `PHYSICAL` - Manufactured and sent to the cardholder. We offer white label
+   *   branding, credit, ATM, PIN debit, chip/EMV, NFC and magstripe functionality.
+   *   Reach out at [lithic.com/contact](https://lithic.com/contact) for more
+   *   information.
+   * - `SINGLE_USE` - Card will close shortly after the first transaction.
+   * - `VIRTUAL` - Card will authorize at any merchant and can be added to a digital
+   *   wallet like Apple Pay or Google Pay (if the card program is digital
+   *   wallet-enabled).
+   */
+  type: 'MERCHANT_LOCKED' | 'PHYSICAL' | 'SINGLE_USE' | 'VIRTUAL';
+}
+
+export interface CardListNonGetParams extends CardPageParams {
+  /**
+   * Only required for multi-account users. Returns cards associated with this
+   * account. Only applicable if using account holder enrollment. See
+   * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
+   * more information.
+   */
+  account_token?: string;
+
+  /**
+   * Date string in 8601 format. Only entries created after the specified date will
+   * be included. UTC time zone.
+   */
+  begin?: string;
+
+  /**
+   * Date string in 8601 format. Only entries created before the specified date will
+   * be included. UTC time zone.
+   */
+  end?: string;
 }
 
 export interface CardProvisionFooParams {

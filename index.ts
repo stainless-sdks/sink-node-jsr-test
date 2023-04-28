@@ -39,7 +39,6 @@ export class Sink extends Core.APIClient {
   someIntegerArg?: number | null;
   someNumberArg?: number | null;
 
-  // Bing
   constructor(config: Config) {
     const options: Config = {
       userToken: process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
@@ -80,26 +79,30 @@ export class Sink extends Core.APIClient {
 
   testing: API.Testing = new API.Testing(this);
   paginationTests: API.PaginationTests = new API.PaginationTests(this);
+  resourceRefs: API.ResourceRefs = new API.ResourceRefs(this);
   cards: API.Cards = new API.Cards(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
   company: API.CompanyResource = new API.CompanyResource(this);
-  sta_563: API.Sta_563 = new API.Sta_563(this);
-  sta_569: API.Sta_569 = new API.Sta_569(this);
-  sta_630: API.Sta_630 = new API.Sta_630(this);
+  sta563: API.Sta563 = new API.Sta563(this);
+  sta569: API.Sta569 = new API.Sta569(this);
+  sta630: API.Sta630 = new API.Sta630(this);
   parent: API.Parent = new API.Parent(this);
-  sta_606: API.Sta_606 = new API.Sta_606(this);
+  sta606: API.Sta606 = new API.Sta606(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
   types: API.Types = new API.Types(this);
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
-  sta_613: API.Sta_613 = new API.Sta_613(this);
+  sta613: API.Sta613 = new API.Sta613(this);
   responses: API.Responses = new API.Responses(this);
   pathParams: API.PathParams = new API.PathParams(this);
+  positionalParams: API.PositionalParams = new API.PositionalParams(this);
   queryParams: API.QueryParams = new API.QueryParams(this);
   bodyParams: API.BodyParams = new API.BodyParams(this);
+  headerParams: API.HeaderParams = new API.HeaderParams(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
   tests: API.Tests = new API.Tests(this);
+  version1_30Names: API.Version1_30Names = new API.Version1_30Names(this);
 
   /**
    * API status check
@@ -131,9 +134,9 @@ export class Sink extends Core.APIClient {
    * type, but it should basically just have untyped additional properties. See
    * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
    */
-  sta_563PostEmptyObject(
+  sta563PostEmptyObject(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sink.Sta_563PostEmptyObjectResponse>> {
+  ): Promise<Core.APIResponse<Sink.Sta563PostEmptyObjectResponse>> {
     return this.post('/sta_563_empty_object', options);
   }
 
@@ -142,6 +145,9 @@ export class Sink extends Core.APIClient {
       ...super.defaultHeaders(),
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
+      'X-Client-UserName': this.username,
+      'X-Client-Secret': this.clientSecret,
+      'X-Integer': this.someIntegerArg?.toString() ?? null,
     };
   }
 
@@ -149,15 +155,19 @@ export class Sink extends Core.APIClient {
     if (this.userToken && headers['Authorization']) {
       return;
     }
-
     if (customHeaders['Authorization'] === null) {
       return;
     }
 
-    throw new Error('Expected userToken to be set or Authorization header to be omitted.');
+    throw new Error(
+      'Could not resolve authentication method. Expected the userToken to be set. Or for the "Authorization" headers to be explicitly omitted',
+    );
   }
 
   protected override authHeaders(): Core.Headers {
+    if (this.userToken == null) {
+      return {};
+    }
     return { Authorization: `Bearer ${this.userToken}` };
   }
 
@@ -200,6 +210,8 @@ export const {
   CONSTANT_WITH_NEWLINES,
 } = Sink;
 
+export import fileFromPath = FileFromPath.fileFromPath;
+
 export namespace Sink {
   // Helper functions
   export import fileFromPath = FileFromPath.fileFromPath;
@@ -207,6 +219,10 @@ export namespace Sink {
   export import CardPage = Pagination.CardPage;
   export import CardPageParams = Pagination.CardPageParams;
   export import CardPageResponse = Pagination.CardPageResponse;
+
+  export import MyConcretePage = Pagination.MyConcretePage;
+  export import MyConcretePageParams = Pagination.MyConcretePageParams;
+  export import MyConcretePageResponse = Pagination.MyConcretePageResponse;
 
   export import PagePageNumber = Pagination.PagePageNumber;
   export import PagePageNumberParams = Pagination.PagePageNumberParams;
@@ -233,14 +249,15 @@ export namespace Sink {
   export import PageHypermediaRawResponse = Pagination.PageHypermediaRawResponse;
 
   export import FakePage = Pagination.FakePage;
+  export import FakePageParams = Pagination.FakePageParams;
   export import FakePageResponse = Pagination.FakePageResponse;
 
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;
   export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
-  export import Sta_563PostEmptyObjectResponse = API.Sta_563PostEmptyObjectResponse;
+  export import Sta563PostEmptyObjectResponse = API.Sta563PostEmptyObjectResponse;
 
-  export import TestingRootResponse = API.TestingRootResponse;
+  export import RootResponse = API.RootResponse;
 
   export import Card = API.Card;
   export import CardAlias = API.CardAlias;
@@ -251,6 +268,7 @@ export namespace Sink {
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;
   export import CardCreateAliasedParams = API.CardCreateAliasedParams;
+  export import CardListNonGetParams = API.CardListNonGetParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
 
@@ -258,15 +276,15 @@ export namespace Sink {
 
   export import DeleteEmptyObjectResponse = API.DeleteEmptyObjectResponse;
 
-  export import Sta_569OneEntryResponse = API.Sta_569OneEntryResponse;
-  export import Sta_569OneEntryWithNullResponse = API.Sta_569OneEntryWithNullResponse;
-  export import Sta_569OneEntryParams = API.Sta_569OneEntryParams;
-  export import Sta_569OneEntryWithNullParams = API.Sta_569OneEntryWithNullParams;
+  export import Sta569OneEntryResponse = API.Sta569OneEntryResponse;
+  export import Sta569OneEntryWithNullResponse = API.Sta569OneEntryWithNullResponse;
+  export import Sta569OneEntryParams = API.Sta569OneEntryParams;
+  export import Sta569OneEntryWithNullParams = API.Sta569OneEntryWithNullParams;
 
   export import GithubUser = API.GithubUser;
   export import GithubUserPreferences = API.GithubUserPreferences;
 
-  export import Sta_606WithSharedParamsParams = API.Sta_606WithSharedParamsParams;
+  export import Sta606WithSharedParamsParams = API.Sta606WithSharedParamsParams;
 
   export import Address = API.Address;
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
@@ -282,20 +300,36 @@ export namespace Sink {
 
   export import Widget = API.Widget;
 
-  export import Sta_613OnlyGlobalResponse = API.Sta_613OnlyGlobalResponse;
-  export import Sta_613GlobalWithStandardResponse = API.Sta_613GlobalWithStandardResponse;
+  export import Sta613OnlyGlobalResponse = API.Sta613OnlyGlobalResponse;
+  export import Sta613GlobalWithStandardResponse = API.Sta613GlobalWithStandardResponse;
 
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import SimpleAllof = API.SimpleAllof;
   export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
+  export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
+  export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
+  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
+  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
   export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import SimpleObjectsFakePage = API.SimpleObjectsFakePage;
+  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
+  export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
+  export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
 
   export import PathParamSingularResponse = API.PathParamSingularResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
+
+  export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
+  export import PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
+  export import PositionalParamBodyParams = API.PositionalParamBodyParams;
+  export import PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
+  export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
+  export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
+  export import PositionalParamQueryParams = API.PositionalParamQueryParams;
+  export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
 
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
@@ -311,7 +345,12 @@ export namespace Sink {
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
+  export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
+
   export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
+
+  export import Version1_30NameCreateResponse = API.Version1_30NameCreateResponse;
+  export import Version1_30NameCreateParams = API.Version1_30NameCreateParams;
 
   export import Currency = API.Currency;
   export import ObjectWithChildRef = API.ObjectWithChildRef;

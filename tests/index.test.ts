@@ -53,6 +53,33 @@ describe('idempotency', () => {
       username: 'Robert',
       baseURL: 'http://127.0.0.1:4010',
     });
-    await client.cards.create({ type: 'MERCHANT_LOCKED' }, { idempotencyKey: 'my-idempotency-key' });
+    await client.cards.create(
+      {
+        account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+        card_program_token: '00000000-0000-0000-1000-000000000000',
+        exp_month: '06',
+        exp_year: '2027',
+        funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
+        memo: 'New Card',
+        not: 'string',
+        pin: 'string',
+        product_id: '1',
+        shipping_method: 'STANDARD',
+        shippingAddress: {
+          first_name: 'Michael',
+          last_name: 'Bluth',
+          address1: '5 Broad Street',
+          city: 'NEW YORK',
+          state: 'NY',
+          postal_code: '10001-1809',
+          country: 'USA',
+        },
+        spend_limit: 0,
+        spend_limit_duration: 'ANNUALLY',
+        state: 'OPEN',
+        type: 'MERCHANT_LOCKED',
+      },
+      { idempotencyKey: 'my-idempotency-key' },
+    );
   });
 });

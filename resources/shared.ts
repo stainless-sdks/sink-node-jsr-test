@@ -2,6 +2,9 @@
 
 import { FakePage } from '~/pagination';
 
+/**
+ * This is my description for the Currency enum
+ */
 export type Currency =
   | 'USD'
   | 'GBP'
@@ -16,7 +19,8 @@ export type Currency =
   | 'AUD'
   | 'AWG'
   | 'AZN'
-  | 'BAM';
+  | 'BAM'
+  | null;
 
 export interface ObjectWithChildRef {
   bar: SimpleObject;

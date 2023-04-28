@@ -4,12 +4,8 @@ import Sink from '~/index';
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
 describe('resource page_number', () => {
-  test('list: only required params', async () => {
+  test('list', async () => {
     const response = await sink.paginationTests.pageNumber.list();
-  });
-
-  test('list: required and optional params', async () => {
-    const response = await sink.paginationTests.pageNumber.list({ page: 0, page_size: 0 });
   });
 
   test('list: request options instead of params are passed correctly', async () => {

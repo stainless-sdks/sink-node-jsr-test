@@ -4,14 +4,14 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 
-export class Sta_569 extends APIResource {
+export class Sta569 extends APIResource {
   /**
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */
   oneEntry(
-    body: Sta_569OneEntryParams,
+    body: Sta569OneEntryParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta_569OneEntryResponse>> {
+  ): Promise<Core.APIResponse<Sta569OneEntryResponse>> {
     return this.post('/sta_569_array_types/one_entry', { body, ...options });
   }
 
@@ -22,36 +22,35 @@ export class Sta_569 extends APIResource {
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */
   oneEntryWithNull(
-    body?: Sta_569OneEntryWithNullParams,
+    body?: Sta569OneEntryWithNullParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta_569OneEntryWithNullResponse | null>>;
+  ): Promise<Core.APIResponse<Sta569OneEntryWithNullResponse | null>>;
   oneEntryWithNull(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta_569OneEntryWithNullResponse | null>>;
+  ): Promise<Core.APIResponse<Sta569OneEntryWithNullResponse | null>>;
   oneEntryWithNull(
-    body: Sta_569OneEntryWithNullParams | Core.RequestOptions = {},
+    body: Sta569OneEntryWithNullParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta_569OneEntryWithNullResponse | null>> {
+  ): Promise<Core.APIResponse<Sta569OneEntryWithNullResponse | null>> {
     if (isRequestOptions(body)) {
       return this.oneEntryWithNull({}, body);
     }
-
     return this.post('/sta_569_array_types/one_entry_with_null', { body, ...options });
   }
 }
 
-export interface Sta_569OneEntryResponse {
+export interface Sta569OneEntryResponse {
   foo?: string;
 }
 
-export interface Sta_569OneEntryWithNullResponse {
+export interface Sta569OneEntryWithNullResponse {
   foo?: string;
 }
 
-export interface Sta_569OneEntryParams {
+export interface Sta569OneEntryParams {
   enable_debug_logging: boolean;
 }
 
-export interface Sta_569OneEntryWithNullParams {
+export interface Sta569OneEntryWithNullParams {
   enable_debug_logging?: boolean;
 }

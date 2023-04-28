@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { AbstractPage, APIResponse, APIClient, FinalRequestOptions, PageInfo } from './core';
+import * as PaginationTests from './resources/pagination-tests';
 
 export interface CardPageResponse<Item> {
   data: Array<Item>;
@@ -74,6 +75,61 @@ export class CardPage<Item> extends AbstractPage<Item> implements CardPageRespon
     if (currentPage >= this.total_pages) return null;
 
     return { params: { page: currentPage + 1 } };
+  }
+}
+
+export interface MyConcretePageResponse {
+  /**
+   * The cursor for the next page
+   */
+  cursor: string;
+
+  data: Array<PaginationTests.MyConcretePageItem>;
+}
+
+export interface MyConcretePageParams {
+  limit?: number;
+
+  my_cursor?: string;
+}
+
+export class MyConcretePage
+  extends AbstractPage<PaginationTests.MyConcretePageItem>
+  implements MyConcretePageResponse
+{
+  data: Array<PaginationTests.MyConcretePageItem>;
+  /** The cursor for the next page */
+  cursor: string;
+
+  constructor(
+    client: APIClient,
+    response: APIResponse<MyConcretePageResponse>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, options);
+
+    this.data = response.data;
+    this.cursor = response.cursor;
+  }
+
+  getPaginatedItems(): PaginationTests.MyConcretePageItem[] {
+    return this.data;
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<MyConcretePageParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    if (!this.cursor) return null;
+
+    return { params: { my_cursor: this.cursor } };
   }
 }
 
@@ -318,6 +374,9 @@ export interface PageHypermediaResponse<Item> {
 }
 
 export namespace PageHypermediaResponse {
+  /**
+   * A link object
+   */
   export interface Links {
     href: string;
 

@@ -7,11 +7,11 @@ export class Testing extends APIResource {
   /**
    * Top level endpoint
    */
-  root(options?: Core.RequestOptions): Promise<Core.APIResponse<TestingRootResponse>> {
+  root(options?: Core.RequestOptions): Promise<Core.APIResponse<RootResponse>> {
     return this.get('/', options);
   }
 }
 
-export interface TestingRootResponse {
+export interface RootResponse {
   message: string;
 }

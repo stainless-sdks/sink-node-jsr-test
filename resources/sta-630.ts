@@ -3,7 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 
-export class Sta_630 extends APIResource {
+export class Sta630 extends APIResource {
   /**
    * Should return a GithubUser object with a `properties` field that we can rename
    * in the Stainless config to a prettier name.

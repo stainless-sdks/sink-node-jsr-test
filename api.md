@@ -2,13 +2,23 @@
 
 Models:
 
-- <code><a href="./resources/testing.ts">TestingRootResponse</a></code>
+- <code><a href="./resources/testing.ts">RootResponse</a></code>
 
 Methods:
 
-- <code title="get /">client.testing.<a href="./resources/testing.ts">root</a>() -> TestingRootResponse</code>
+- <code title="get /">client.testing.<a href="./resources/testing.ts">root</a>() -> RootResponse</code>
 
 # PaginationTests
+
+## Concrete
+
+Models:
+
+- <code><a href="./resources/pagination-tests/concrete.ts">MyConcretePageItem</a></code>
+
+Methods:
+
+- <code title="get /paginated/concrete_cursor">client.paginationTests.concrete.<a href="./resources/pagination-tests/concrete.ts">list</a>({ ...params }) -> MyConcretePage</code>
 
 ## PageNumber
 
@@ -82,7 +92,7 @@ Methods:
 - <code title="patch /cards/{card_token}">client.cards.<a href="./resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
 - <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> CardsCardPage</code>
 - <code title="post /deprecations/method">client.cards.<a href="./resources/cards.ts">deprecatedMethod</a>() -> Promise<void></code>
-- <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>() -> CardsCardPage</code>
+- <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>({ ...params }) -> CardsCardPage</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
@@ -125,7 +135,7 @@ Methods:
 
 - <code title="get /company/payments/{payment_id}">client.company.payments.<a href="./resources/company/payments.ts">retrieve</a>(paymentId) -> CompanyPayment</code>
 
-# Sta_563
+# Sta563
 
 Models:
 
@@ -133,21 +143,21 @@ Models:
 
 Methods:
 
-- <code title="delete /sta_563_empty_object">client.sta_563.<a href="./resources/sta-563.ts">deleteEmptyObject</a>() -> DeleteEmptyObjectResponse</code>
+- <code title="delete /sta_563_empty_object">client.sta563.<a href="./resources/sta-563.ts">deleteEmptyObject</a>() -> DeleteEmptyObjectResponse</code>
 
-# Sta_569
+# Sta569
 
 Models:
 
-- <code><a href="./resources/sta-569.ts">Sta_569OneEntryResponse</a></code>
-- <code><a href="./resources/sta-569.ts">Sta_569OneEntryWithNullResponse</a></code>
+- <code><a href="./resources/sta-569.ts">Sta569OneEntryResponse</a></code>
+- <code><a href="./resources/sta-569.ts">Sta569OneEntryWithNullResponse</a></code>
 
 Methods:
 
-- <code title="post /sta_569_array_types/one_entry">client.sta_569.<a href="./resources/sta-569.ts">oneEntry</a>({ ...params }) -> Sta_569OneEntryResponse</code>
-- <code title="post /sta_569_array_types/one_entry_with_null">client.sta_569.<a href="./resources/sta-569.ts">oneEntryWithNull</a>({ ...params }) -> Sta_569OneEntryWithNullResponse | null</code>
+- <code title="post /sta_569_array_types/one_entry">client.sta569.<a href="./resources/sta-569.ts">oneEntry</a>({ ...params }) -> Sta569OneEntryResponse</code>
+- <code title="post /sta_569_array_types/one_entry_with_null">client.sta569.<a href="./resources/sta-569.ts">oneEntryWithNull</a>({ ...params }) -> Sta569OneEntryWithNullResponse | null</code>
 
-# Sta_630
+# Sta630
 
 Models:
 
@@ -156,7 +166,7 @@ Models:
 
 Methods:
 
-- <code title="get /sta_630/define_models_nested_path">client.sta_630.<a href="./resources/sta-630.ts">nestedPath</a>() -> GithubUser</code>
+- <code title="get /sta_630/define_models_nested_path">client.sta630.<a href="./resources/sta-630.ts">nestedPath</a>() -> GithubUser</code>
 
 # Parent
 
@@ -170,12 +180,12 @@ Methods:
 
 - <code title="get /inlined_response">client.parent.child.<a href="./resources/parent/child.ts">inlinedResponse</a>() -> ChildInlinedResponseResponse</code>
 
-# Sta_606
+# Sta606
 
 Methods:
 
-- <code title="post /sta_606_shared_types/response">client.sta_606.<a href="./resources/sta-606.ts">withSharedModel</a>() -> ObjectWithChildRef</code>
-- <code title="post /sta_606_shared_types/request_params">client.sta_606.<a href="./resources/sta-606.ts">withSharedParams</a>({ ...params }) -> Promise<void></code>
+- <code title="post /sta_606_shared_types/response">client.sta606.<a href="./resources/sta-606.ts">withSharedModel</a>() -> ObjectWithChildRef</code>
+- <code title="post /sta_606_shared_types/request_params">client.sta606.<a href="./resources/sta-606.ts">withSharedParams</a>({ ...params }) -> Promise<void></code>
 
 # Envelopes
 
@@ -194,15 +204,55 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/types.ts">TypeEnumsResponse</a></code>
-- <code><a href="./resources/types.ts">TypeDatesResponse</a></code>
-- <code><a href="./resources/types.ts">TypeDatetimesResponse</a></code>
+- <code><a href="./resources/types/types.ts">TypeEnumsResponse</a></code>
+- <code><a href="./resources/types/types.ts">TypeDatesResponse</a></code>
+- <code><a href="./resources/types/types.ts">TypeDatetimesResponse</a></code>
 
 Methods:
 
-- <code title="post /types/dates">client.types.<a href="./resources/types.ts">dates</a>({ ...params }) -> TypeDatesResponse</code>
-- <code title="post /types/datetimes">client.types.<a href="./resources/types.ts">datetimes</a>({ ...params }) -> TypeDatetimesResponse</code>
-- <code title="post /types/enums">client.types.<a href="./resources/types.ts">enums</a>({ ...params }) -> TypeEnumsResponse</code>
+- <code title="post /types/dates">client.types.<a href="./resources/types/types.ts">dates</a>({ ...params }) -> TypeDatesResponse</code>
+- <code title="post /types/datetimes">client.types.<a href="./resources/types/types.ts">datetimes</a>({ ...params }) -> TypeDatetimesResponse</code>
+- <code title="post /types/enums">client.types.<a href="./resources/types/types.ts">enums</a>({ ...params }) -> TypeEnumsResponse</code>
+
+## ReadOnlyParams
+
+Models:
+
+- <code><a href="./resources/types/read-only-params.ts">ReadOnlyParamSimpleResponse</a></code>
+
+Methods:
+
+- <code title="post /types/read_only_params/simple">client.types.readOnlyParams.<a href="./resources/types/read-only-params.ts">simple</a>({ ...params }) -> ReadOnlyParamSimpleResponse</code>
+
+## WriteOnlyResponses
+
+Models:
+
+- <code><a href="./resources/types/write-only-responses.ts">WriteOnlyResponseSimpleResponse</a></code>
+
+Methods:
+
+- <code title="get /types/write_only_responses/simple">client.types.writeOnlyResponses.<a href="./resources/types/write-only-responses.ts">simple</a>() -> WriteOnlyResponseSimpleResponse</code>
+
+## Maps
+
+Models:
+
+- <code><a href="./resources/types/maps.ts">MapNullableItemsResponse</a></code>
+
+Methods:
+
+- <code title="get /types/map/nullable_items">client.types.maps.<a href="./resources/types/maps.ts">nullableItems</a>() -> MapNullableItemsResponse</code>
+
+## Objects
+
+Models:
+
+- <code><a href="./resources/types/objects.ts">ObjectMixedKnownAndUnknownResponse</a></code>
+
+Methods:
+
+- <code title="get /types/object/mixed_known_and_unknown">client.types.objects.<a href="./resources/types/objects.ts">mixedKnownAndUnknown</a>() -> ObjectMixedKnownAndUnknownResponse</code>
 
 # Names
 
@@ -230,17 +280,17 @@ Methods:
 
 - <code title="get /widgets/{widgetId}/filter/{filterType}">client.widgets.<a href="./resources/widgets.ts">retrieveWithFilter</a>(widgetId, filterType) -> Widget</code>
 
-# Sta_613
+# Sta613
 
 Models:
 
-- <code><a href="./resources/sta-613.ts">Sta_613OnlyGlobalResponse</a></code>
-- <code><a href="./resources/sta-613.ts">Sta_613GlobalWithStandardResponse</a></code>
+- <code><a href="./resources/sta-613.ts">Sta613OnlyGlobalResponse</a></code>
+- <code><a href="./resources/sta-613.ts">Sta613GlobalWithStandardResponse</a></code>
 
 Methods:
 
-- <code title="post /sta_613/path_params/{camelCasedPath}/{id}">client.sta_613.<a href="./resources/sta-613.ts">globalWithStandard</a>(camelCasedPath, id) -> Sta_613GlobalWithStandardResponse</code>
-- <code title="post /sta_613/path_params/{client_path_param}">client.sta_613.<a href="./resources/sta-613.ts">onlyGlobal</a>(clientPathParam) -> Sta_613OnlyGlobalResponse</code>
+- <code title="post /sta_613/path_params/{camelCasedPath}/{id}">client.sta613.<a href="./resources/sta-613.ts">globalWithStandard</a>(camelCasedPath, id) -> Sta613GlobalWithStandardResponse</code>
+- <code title="post /sta_613/path_params/{client_path_param}">client.sta613.<a href="./resources/sta-613.ts">onlyGlobal</a>(clientPathParam) -> Sta613OnlyGlobalResponse</code>
 
 # Responses
 
@@ -248,7 +298,10 @@ Models:
 
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
+- <code><a href="./resources/responses.ts">SimpleAllof</a></code>
 - <code><a href="./resources/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseObjectWithAdditionalPropertiesPropResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseObjectWithHeavilyNestedUnionResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
@@ -256,18 +309,24 @@ Models:
 - <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseArrayResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseAllofSimpleResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseObjectAllPropertiesResponse</a></code>
 
 Methods:
 
 - <code title="post /responses/additional_properties">client.responses.<a href="./resources/responses.ts">additionalProperties</a>() -> ResponseAdditionalPropertiesResponse</code>
 - <code title="post /responses/additional_properties_nested_model_reference">client.responses.<a href="./resources/responses.ts">additionalPropertiesNestedModelReference</a>() -> ResponseAdditionalPropertiesNestedModelReferenceResponse</code>
+- <code title="get /responses/allof/simple">client.responses.<a href="./resources/responses.ts">allofSimple</a>() -> ResponseAllofSimpleResponse</code>
 - <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
 - <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
 - <code title="post /responses/boolean">client.responses.<a href="./resources/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
 - <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> Promise<void></code>
 - <code title="post /responses/integer">client.responses.<a href="./resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
 - <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
+- <code title="get /responses/object/everything">client.responses.<a href="./resources/responses.ts">objectAllProperties</a>() -> ResponseObjectAllPropertiesResponse</code>
 - <code title="post /responses/object_no_properties">client.responses.<a href="./resources/responses.ts">objectNoProperties</a>() -> ResponseObjectNoPropertiesResponse</code>
+- <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./resources/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
+- <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./resources/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
 - <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
 - <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
 - <code title="post /responses/string">client.responses.<a href="./resources/responses.ts">stringResponse</a>() -> Promise<string></code>
@@ -283,6 +342,21 @@ Methods:
 
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
+
+# PositionalParams
+
+Methods:
+
+- <code title="post /positional_params/basic_body">client.positionalParams.<a href="./resources/positional-params.ts">basicBody</a>({ ...params }) -> Promise<void></code>
+- <code title="get /positional_params/basic_query">client.positionalParams.<a href="./resources/positional-params.ts">basicQuery</a>({ ...params }) -> Promise<void></code>
+- <code title="post /positional_params/body">client.positionalParams.<a href="./resources/positional-params.ts">body</a>({ ...params }) -> Promise<void></code>
+- <code title="post /positional_params/body_extra_param">client.positionalParams.<a href="./resources/positional-params.ts">bodyExtraParam</a>({ ...params }) -> Promise<void></code>
+- <code title="post /positional_params/query/{id}/kitchen_sink/{key}">client.positionalParams.<a href="./resources/positional-params.ts">kitchenSink</a>(id, camelCase, { ...params }) -> Promise<void></code>
+- <code title="post /positional_params/{first}/{second}/{last}">client.positionalParams.<a href="./resources/positional-params.ts">multiplePathParams</a>(second, name, { ...params }) -> Promise<void></code>
+- <code title="get /positional_params/query">client.positionalParams.<a href="./resources/positional-params.ts">query</a>(foo) -> Promise<void></code>
+- <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./resources/positional-params.ts">queryAndPath</a>(bar, id) -> Promise<void></code>
+- <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./resources/positional-params.ts">queryMultiple</a>(foo, { ...params }) -> Promise<void></code>
+- <code title="get /positional_params/{single}">client.positionalParams.<a href="./resources/positional-params.ts">single</a>(single) -> Promise<void></code>
 
 # QueryParams
 
@@ -305,9 +379,15 @@ Models:
 Methods:
 
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
-- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> Promise<void></code>
-- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
+- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>() -> Promise<void></code>
+- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>() -> BodyParamUnionOverlappingPropResponse</code>
 - <code title="post /body_params/with_model_property">client.bodyParams.<a href="./resources/body-params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
+
+# HeaderParams
+
+Methods:
+
+- <code title="post /header_params/client_argument">client.headerParams.<a href="./resources/header-params.ts">clientArgument</a>({ ...params }) -> Promise<void></code>
 
 # DecoratorTests
 
@@ -340,3 +420,13 @@ Methods:
 Methods:
 
 - <code title="get /tests/run_codegen">client.tests.<a href="./resources/tests.ts">runCodegen</a>() -> Promise<void></code>
+
+# Version1_30Names
+
+Models:
+
+- <code><a href="./resources/version-1-30-names.ts">Version1_30NameCreateResponse</a></code>
+
+Methods:
+
+- <code title="post /version_1_30_names/query/{version_1_15}">client.version1_30Names.<a href="./resources/version-1-30-names.ts">create</a>(version1_15, { ...params }) -> Version1_30NameCreateResponse</code>

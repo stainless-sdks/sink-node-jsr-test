@@ -20,7 +20,6 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.anyOf({}, query);
     }
-
     return this.get('/query_params/anyOf', {
       query,
       ...options,
@@ -43,7 +42,6 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.array({}, query);
     }
-
     return this.get('/query_params/array', {
       query,
       ...options,
@@ -63,7 +61,6 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.enum({}, query);
     }
-
     return this.get('/query_params/enum', {
       query,
       ...options,
@@ -86,7 +83,6 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.object({}, query);
     }
-
     return this.get('/query_params/object', {
       query,
       ...options,
@@ -109,7 +105,6 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.oneOf({}, query);
     }
-
     return this.get('/query_params/oneOf', {
       query,
       ...options,
@@ -132,7 +127,6 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.primitives({}, query);
     }
-
     return this.get('/query_params/primitives', {
       query,
       ...options,
@@ -172,6 +166,14 @@ export interface QueryParamObjectParams {
 }
 
 export namespace QueryParamObjectParams {
+  export interface ObjectParam {
+    foo?: string;
+  }
+
+  export interface ObjectRefParam {
+    item?: string;
+  }
+
   export interface ObjectParam {
     foo?: string;
   }

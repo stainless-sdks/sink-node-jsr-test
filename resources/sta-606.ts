@@ -4,7 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as Shared from '~/resources/shared';
 
-export class Sta_606 extends APIResource {
+export class Sta606 extends APIResource {
   /**
    * The response body being set to a $ref that is a shared type in the stainless
    * config correctly references it.
@@ -18,7 +18,7 @@ export class Sta_606 extends APIResource {
    * config correctly references it.
    */
   withSharedParams(
-    body: Sta_606WithSharedParamsParams,
+    body: Sta606WithSharedParamsParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Promise<void>>> {
     return this.post('/sta_606_shared_types/request_params', {
@@ -29,7 +29,7 @@ export class Sta_606 extends APIResource {
   }
 }
 
-export interface Sta_606WithSharedParamsParams {
+export interface Sta606WithSharedParamsParams {
   bar: Shared.SimpleObject;
 
   foo: string;
