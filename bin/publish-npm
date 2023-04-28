@@ -2,5 +2,5 @@
 
 set -eux
 
-echo "Not implemented yet."
-exit 1
+npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+yarn publish --build
