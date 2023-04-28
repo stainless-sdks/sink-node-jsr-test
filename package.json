@@ -1,6 +1,6 @@
 {
   "name": "sink-npm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Client library for the Sink API",
   "author": "Sink <dev@stainlessapi.com>",
   "types": "dist/cjs/index.d.ts",
