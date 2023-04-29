@@ -100,6 +100,8 @@ export class Sink extends Core.APIClient {
   queryParams: API.QueryParams = new API.QueryParams(this);
   bodyParams: API.BodyParams = new API.BodyParams(this);
   headerParams: API.HeaderParams = new API.HeaderParams(this);
+  makeAmbiguousSchemasLooser: API.MakeAmbiguousSchemasLooser = new API.MakeAmbiguousSchemasLooser(this);
+  makeAmbiguousSchemasExplicit: API.MakeAmbiguousSchemasExplicit = new API.MakeAmbiguousSchemasExplicit(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
   tests: API.Tests = new API.Tests(this);
   version1_30Names: API.Version1_30Names = new API.Version1_30Names(this);
@@ -346,6 +348,10 @@ export namespace Sink {
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
   export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
+
+  export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = API.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
+
+  export import MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse = API.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
 
   export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
 

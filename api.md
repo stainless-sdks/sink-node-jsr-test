@@ -389,6 +389,26 @@ Methods:
 
 - <code title="post /header_params/client_argument">client.headerParams.<a href="./resources/header-params.ts">clientArgument</a>({ ...params }) -> Promise<void></code>
 
+# MakeAmbiguousSchemasLooser
+
+Models:
+
+- <code><a href="./resources/make-ambiguous-schemas-looser.ts">MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse</a></code>
+
+Methods:
+
+- <code title="get /make-ambiguous-schemas-looser">client.makeAmbiguousSchemasLooser.<a href="./resources/make-ambiguous-schemas-looser.ts">makeAmbiguousSchemasLooser</a>() -> MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse</code>
+
+# MakeAmbiguousSchemasExplicit
+
+Models:
+
+- <code><a href="./resources/make-ambiguous-schemas-explicit.ts">MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse</a></code>
+
+Methods:
+
+- <code title="get /make-ambiguous-schemas-explicit">client.makeAmbiguousSchemasExplicit.<a href="./resources/make-ambiguous-schemas-explicit.ts">makeAmbiguousSchemasExplicit</a>() -> MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse</code>
+
 # DecoratorTests
 
 Models:

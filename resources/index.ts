@@ -31,6 +31,14 @@ export { DeleteEmptyObjectResponse, Sta563 } from './sta-563';
 export { GithubUser, GithubUserPreferences, Sta630 } from './sta-630';
 export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
 export {
+  MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse,
+  MakeAmbiguousSchemasExplicit,
+} from './make-ambiguous-schemas-explicit';
+export {
+  MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse,
+  MakeAmbiguousSchemasLooser,
+} from './make-ambiguous-schemas-looser';
+export {
   MyModel,
   BodyParamUnionOverlappingPropResponse,
   BodyParamReadOnlyPropertiesParams,
