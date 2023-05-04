@@ -1,22 +1,23 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from '~/index';
+
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
-describe('resource positional_params', () => {
-  test('basic_body: only required params', async () => {
+describe('resource positionalParams', () => {
+  test('basicBody: only required params', async () => {
     const response = await sink.positionalParams.basicBody({ key1: 'string', options: 'string' });
   });
 
-  test('basic_body: required and optional params', async () => {
+  test('basicBody: required and optional params', async () => {
     const response = await sink.positionalParams.basicBody({ key1: 'string', options: 'string' });
   });
 
-  test('basic_query: only required params', async () => {
+  test('basicQuery: only required params', async () => {
     const response = await sink.positionalParams.basicQuery({ key1: 'string' });
   });
 
-  test('basic_query: required and optional params', async () => {
+  test('basicQuery: required and optional params', async () => {
     const response = await sink.positionalParams.basicQuery({ key1: 'string' });
   });
 
@@ -24,15 +25,15 @@ describe('resource positional_params', () => {
     const response = await sink.positionalParams.body({ foo: 'string' });
   });
 
-  test('body_extra_param: only required params', async () => {
+  test('bodyExtraParam: only required params', async () => {
     const response = await sink.positionalParams.bodyExtraParam({ extra_key: 'string', foo: 'string' });
   });
 
-  test('body_extra_param: required and optional params', async () => {
+  test('bodyExtraParam: required and optional params', async () => {
     const response = await sink.positionalParams.bodyExtraParam({ extra_key: 'string', foo: 'string' });
   });
 
-  test('kitchen_sink: only required params', async () => {
+  test('kitchenSink: only required params', async () => {
     const response = await sink.positionalParams.kitchenSink('string', 'string', {
       key: 'string',
       imACamel: 'string',
@@ -45,7 +46,7 @@ describe('resource positional_params', () => {
     });
   });
 
-  test('kitchen_sink: required and optional params', async () => {
+  test('kitchenSink: required and optional params', async () => {
     const response = await sink.positionalParams.kitchenSink('string', 'string', {
       key: 'string',
       imACamel: 'string',
@@ -58,7 +59,7 @@ describe('resource positional_params', () => {
     });
   });
 
-  test('multiple_path_params: only required params', async () => {
+  test('multiplePathParams: only required params', async () => {
     const response = await sink.positionalParams.multiplePathParams('string', 'string', {
       first: 'string',
       last: 'string',
@@ -66,7 +67,7 @@ describe('resource positional_params', () => {
     });
   });
 
-  test('multiple_path_params: required and optional params', async () => {
+  test('multiplePathParams: required and optional params', async () => {
     const response = await sink.positionalParams.multiplePathParams('string', 'string', {
       first: 'string',
       last: 'string',
@@ -85,22 +86,22 @@ describe('resource positional_params', () => {
     );
   });
 
-  test('query_and_path', async () => {
+  test('queryAndPath', async () => {
     const response = await sink.positionalParams.queryAndPath(0, 'string');
   });
 
-  test('query_and_path: request options instead of params are passed correctly', async () => {
+  test('queryAndPath: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.positionalParams.queryAndPath(0, 'string', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('query_multiple: only required params', async () => {
+  test('queryMultiple: only required params', async () => {
     const response = await sink.positionalParams.queryMultiple('string', { bar: 'string' });
   });
 
-  test('query_multiple: required and optional params', async () => {
+  test('queryMultiple: required and optional params', async () => {
     const response = await sink.positionalParams.queryMultiple('string', { bar: 'string' });
   });
 

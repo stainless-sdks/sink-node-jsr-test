@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from '~/index';
+
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
 describe('resource cards', () => {
@@ -113,7 +114,7 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('create_aliased: only required params', async () => {
+  test('createAliased: only required params', async () => {
     const response = await sink.cards.createAliased({
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '00000000-0000-0000-1000-000000000000',
@@ -141,7 +142,7 @@ describe('resource cards', () => {
     });
   });
 
-  test('create_aliased: required and optional params', async () => {
+  test('createAliased: required and optional params', async () => {
     const response = await sink.cards.createAliased({
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '00000000-0000-0000-1000-000000000000',
@@ -183,29 +184,29 @@ describe('resource cards', () => {
     );
   });
 
-  test('deprecated_method', async () => {
+  test('deprecatedMethod', async () => {
     const response = await sink.cards.deprecatedMethod();
   });
 
-  test('deprecated_method: request options instead of params are passed correctly', async () => {
+  test('deprecatedMethod: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.cards.deprecatedMethod({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
-  test('list_non_get', async () => {
+  test('listNonGet', async () => {
     const response = await sink.cards.listNonGet();
   });
 
-  test('list_non_get: request options instead of params are passed correctly', async () => {
+  test('listNonGet: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.cards.listNonGet({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
-  test('list_non_get: request options and params are passed correctly', async () => {
+  test('listNonGet: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.cards.listNonGet(
@@ -221,11 +222,11 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('list_not_paginated', async () => {
+  test('listNotPaginated', async () => {
     const response = await sink.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
   });
 
-  test('list_not_paginated: request options instead of params are passed correctly', async () => {
+  test('listNotPaginated: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
@@ -234,7 +235,7 @@ describe('resource cards', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('provision_foo', async () => {
+  test('provisionFoo', async () => {
     const response = await sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       certificate: 'U3RhaW5sZXNzIHJvY2tz',

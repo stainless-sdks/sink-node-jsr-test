@@ -1,34 +1,35 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from '~/index';
+
 const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
 
-describe('resource top_level', () => {
-  test('api_status', async () => {
+describe('top level methods', () => {
+  test('apiStatus', async () => {
     const response = await sink.apiStatus();
   });
 
-  test('api_status: request options instead of params are passed correctly', async () => {
+  test('apiStatus: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.apiStatus({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('api_status_alias', async () => {
+  test('apiStatusAlias', async () => {
     const response = await sink.apiStatusAlias();
   });
 
-  test('api_status_alias: request options instead of params are passed correctly', async () => {
+  test('apiStatusAlias: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.apiStatusAlias({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
-  test('create_no_response', async () => {
+  test('createNoResponse', async () => {
     const response = await sink.createNoResponse();
   });
 
-  test('create_no_response: request options instead of params are passed correctly', async () => {
+  test('createNoResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.createNoResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
@@ -45,11 +46,11 @@ describe('resource top_level', () => {
     );
   });
 
-  test('sta_563_post_empty_object', async () => {
+  test('sta563PostEmptyObject', async () => {
     const response = await sink.sta563PostEmptyObject();
   });
 
-  test('sta_563_post_empty_object: request options instead of params are passed correctly', async () => {
+  test('sta563PostEmptyObject: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.sta563PostEmptyObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
