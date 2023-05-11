@@ -16,6 +16,15 @@ describe('instantiate client', () => {
     process.env = env;
   });
 
+  test('maxRetries option is correctly set', () => {
+    const client = new Sink({ maxRetries: 1, username: 'Robert', userToken: 'my user token' });
+    expect(client.maxRetries).toEqual(1);
+
+    // default
+    const client2 = new Sink({ username: 'Robert', userToken: 'my user token' });
+    expect(client2.maxRetries).toEqual(2);
+  });
+
   test('with minimal arguments', () => {
     // set user token via env var
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';

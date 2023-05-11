@@ -21,6 +21,7 @@ type Config = {
   baseURL?: string;
   timeout?: number;
   httpAgent?: Agent;
+  maxRetries?: number;
   username?: string | null;
   clientId?: string | null;
   clientSecret?: string | null;
@@ -50,6 +51,7 @@ export class Sink extends Core.APIClient {
       baseURL: options.baseURL || environments[options.environment || 'production'],
       timeout: options.timeout,
       httpAgent: options.httpAgent,
+      maxRetries: options.maxRetries,
     });
     this.userToken = options.userToken || null;
     this.idempotencyHeader = 'Idempotency-Key';
