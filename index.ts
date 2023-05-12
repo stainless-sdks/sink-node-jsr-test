@@ -80,6 +80,7 @@ export class Sink extends Core.APIClient {
   }
 
   testing: API.Testing = new API.Testing(this);
+  casing: API.Casing = new API.Casing(this);
   paginationTests: API.PaginationTests = new API.PaginationTests(this);
   resourceRefs: API.ResourceRefs = new API.ResourceRefs(this);
   cards: API.Cards = new API.Cards(this);

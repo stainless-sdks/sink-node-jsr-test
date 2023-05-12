@@ -8,6 +8,18 @@ Methods:
 
 - <code title="get /">client.testing.<a href="./resources/testing.ts">root</a>() -> RootResponse</code>
 
+# Casing
+
+## EEOCResource
+
+Models:
+
+- <code><a href="./resources/casing/eeoc.ts">EEOC</a></code>
+
+Methods:
+
+- <code title="get /casing/eeoc">client.casing.eeoc.<a href="./resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
+
 # PaginationTests
 
 ## Concrete

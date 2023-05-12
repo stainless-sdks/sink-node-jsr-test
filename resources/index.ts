@@ -24,6 +24,7 @@ export {
   CardsCardPage,
   Cards,
 } from './cards';
+export { Casing } from './casing/casing';
 export { Company, CompanyResource } from './company/company';
 export { ConfigTools } from './config-tools';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
