@@ -2,9 +2,22 @@
 
 import Sink from '~/index';
 
-const sink = new Sink({ userToken: 'something1234', baseURL: 'http://127.0.0.1:4010', username: 'Robert' });
+const sink = new Sink({
+  userToken: 'something1234',
+  baseURL: 'http://127.0.0.1:4010',
+  username: 'Robert',
+  requiredArgNoEnv: '<example>',
+});
 
 describe('resource names', () => {
+  test('propertiesCommonConflicts: only required params', async () => {
+    const response = await sink.names.propertiesCommonConflicts({ date: '2019-12-27' });
+  });
+
+  test('propertiesCommonConflicts: required and optional params', async () => {
+    const response = await sink.names.propertiesCommonConflicts({ date: '2019-12-27' });
+  });
+
   test('responseShadowsPydantic', async () => {
     const response = await sink.names.responseShadowsPydantic();
   });

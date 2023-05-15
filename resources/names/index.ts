@@ -1,4 +1,8 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export { NameResponseShadowsPydanticResponse } from './names';
+export {
+  NameResponseShadowsPydanticResponse,
+  NamePropertiesCommonConflictsResponse,
+  NamePropertiesCommonConflictsParams,
+} from './names';
 export { ParamOptionsParamParams } from './params';

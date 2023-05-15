@@ -17,26 +17,40 @@ describe('instantiate client', () => {
   });
 
   test('maxRetries option is correctly set', () => {
-    const client = new Sink({ maxRetries: 1, username: 'Robert', userToken: 'my user token' });
+    const client = new Sink({
+      maxRetries: 1,
+      username: 'Robert',
+      requiredArgNoEnv: '<example>',
+      userToken: 'my user token',
+    });
     expect(client.maxRetries).toEqual(1);
 
     // default
-    const client2 = new Sink({ username: 'Robert', userToken: 'my user token' });
+    const client2 = new Sink({
+      username: 'Robert',
+      requiredArgNoEnv: '<example>',
+      userToken: 'my user token',
+    });
     expect(client2.maxRetries).toEqual(2);
   });
 
   test('with minimal arguments', () => {
     // set user token via env var
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
-    const client = new Sink({ username: 'Robert' });
+    const client = new Sink({ username: 'Robert', requiredArgNoEnv: '<example>' });
     expect(client.userToken).toBe('env var user token');
     expect(client.username).toBe('Robert');
+    expect(client.requiredArgNoEnv).toBe('<example>');
   });
 
   test('with userToken argument', () => {
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
 
-    const client = new Sink({ userToken: 'another user token', username: 'Robert' });
+    const client = new Sink({
+      userToken: 'another user token',
+      username: 'Robert',
+      requiredArgNoEnv: '<example>',
+    });
     expect(client.userToken).toBe('another user token');
   });
 
@@ -44,13 +58,17 @@ describe('instantiate client', () => {
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
 
     // userToken and custom options
-    const client = new Sink({ userToken: 'my user token', username: 'Robert' });
+    const client = new Sink({
+      userToken: 'my user token',
+      username: 'Robert',
+      requiredArgNoEnv: '<example>',
+    });
     expect(client.userToken).toBe('my user token');
   });
 
   test('with disabled authentication', () => {
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
-    const client = new Sink({ userToken: null, username: 'Robert' });
+    const client = new Sink({ userToken: null, username: 'Robert', requiredArgNoEnv: '<example>' });
     expect(client.userToken).toBeNull();
   });
 });
@@ -60,6 +78,7 @@ describe('idempotency', () => {
     const client = new Sink({
       userToken: 'my user token',
       username: 'Robert',
+      requiredArgNoEnv: '<example>',
       baseURL: 'http://127.0.0.1:4010',
     });
     await client.cards.create(

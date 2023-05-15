@@ -28,6 +28,7 @@ type Config = {
   someBooleanArg?: boolean | null;
   someIntegerArg?: number | null;
   someNumberArg?: number | null;
+  requiredArgNoEnv: string;
 };
 
 /** Instantiate the API Client. */
@@ -39,6 +40,7 @@ export class Sink extends Core.APIClient {
   someBooleanArg?: boolean | null;
   someIntegerArg?: number | null;
   someNumberArg?: number | null;
+  requiredArgNoEnv: string;
 
   constructor(config: Config) {
     const options: Config = {
@@ -77,6 +79,7 @@ export class Sink extends Core.APIClient {
       config.someNumberArg ||
       (process.env['SINK_SOME_NUMBER_ARG'] && Core.coerceFloat(process.env['SINK_SOME_NUMBER_ARG'])) ||
       1.2;
+    this.requiredArgNoEnv = config.requiredArgNoEnv;
   }
 
   testing: API.Testing = new API.Testing(this);
@@ -303,6 +306,8 @@ export namespace Sink {
   export import TypeEnumsParams = API.TypeEnumsParams;
 
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
+  export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
 
   export import Widget = API.Widget;
 

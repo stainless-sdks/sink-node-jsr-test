@@ -71,7 +71,12 @@ export {
   MyModelsPageHypermediaRaw,
   BodyParams,
 } from './body-params';
-export { NameResponseShadowsPydanticResponse, Names } from './names/names';
+export {
+  NameResponseShadowsPydanticResponse,
+  NamePropertiesCommonConflictsResponse,
+  NamePropertiesCommonConflictsParams,
+  Names,
+} from './names/names';
 export {
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,

@@ -277,9 +277,11 @@ Methods:
 Models:
 
 - <code><a href="./resources/names/names.ts">NameResponseShadowsPydanticResponse</a></code>
+- <code><a href="./resources/names/names.ts">NamePropertiesCommonConflictsResponse</a></code>
 
 Methods:
 
+- <code title="post /names/properties_common_conflicts">client.names.<a href="./resources/names/names.ts">propertiesCommonConflicts</a>({ ...params }) -> NamePropertiesCommonConflictsResponse</code>
 - <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./resources/names/names.ts">responseShadowsPydantic</a>() -> NameResponseShadowsPydanticResponse</code>
 
 ## Params

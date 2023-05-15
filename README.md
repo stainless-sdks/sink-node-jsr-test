@@ -26,6 +26,7 @@ const sink = new Sink({
   userToken: 'my user token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
+  requiredArgNoEnv: '<example>',
 });
 
 async function main() {
@@ -51,6 +52,7 @@ const sink = new Sink({
   userToken: 'my user token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
+  requiredArgNoEnv: '<example>',
 });
 
 async function main() {
@@ -110,6 +112,7 @@ You can use the `maxRetries` option to configure or disable this:
 const sink = new Sink({
   maxRetries: 0, // default is 2
   username: 'Robert',
+  requiredArgNoEnv: '<example>',
 });
 
 // Or, configure per-request:
@@ -128,6 +131,7 @@ Requests time out after 60 seconds by default. You can configure this with a `ti
 const sink = new Sink({
   timeout: 20 * 1000, // 20 seconds (default is 60s)
   username: 'Robert',
+  requiredArgNoEnv: '<example>',
 });
 
 // Override per-request:
@@ -211,6 +215,7 @@ import HttpsProxyAgent from 'https-proxy-agent';
 const sink = new Sink({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
   username: 'Robert',
+  requiredArgNoEnv: '<example>',
 });
 
 // Override per-request:
