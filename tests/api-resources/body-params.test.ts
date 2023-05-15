@@ -13,6 +13,10 @@ describe('resource bodyParams', () => {
     const response = await sink.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
   });
 
+  test('topLevelAnyOfWithRef', async () => {
+    const response = await sink.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
+  });
+
   test('unionOverlappingProp', async () => {
     const response = await sink.bodyParams.unionOverlappingProp();
   });

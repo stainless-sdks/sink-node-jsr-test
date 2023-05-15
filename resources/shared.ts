@@ -2,6 +2,10 @@
 
 import { FakePage } from '~/pagination';
 
+export interface BasicSharedModelObject {
+  foo: string;
+}
+
 /**
  * This is my description for the Currency enum
  */
@@ -26,6 +30,20 @@ export interface ObjectWithChildRef {
   bar: SimpleObject;
 
   foo: string;
+}
+
+export interface SharedMutualRecursionA {
+  b?: SharedMutualRecursionB;
+}
+
+export interface SharedMutualRecursionB {
+  a?: SharedMutualRecursionA;
+}
+
+export interface SharedSelfRecursion {
+  name: string;
+
+  child?: SharedSelfRecursion;
 }
 
 export interface ShippingAddress {

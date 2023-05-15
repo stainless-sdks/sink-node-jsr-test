@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as BodyParams from '~/resources/body-params';
 
 export class Objects extends APIResource {
   /**
@@ -13,9 +14,93 @@ export class Objects extends APIResource {
   ): Promise<Core.APIResponse<ObjectMixedKnownAndUnknownResponse>> {
     return this.get('/types/object/mixed_known_and_unknown', options);
   }
+
+  /**
+   * Endpoint with a response schema object that contains multiple properties that
+   * reference the same $ref in array items that is _not_ a model in the config.
+   * Three child types should be generated. One for each property.
+   */
+  multipleArrayPropertiesSameRef(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ObjectMultipleArrayPropertiesSameRefResponse>> {
+    return this.get('/types/object/multiple_array_properties_same_ref', options);
+  }
+
+  /**
+   * Endpoint with a response schema object that contains multiple properties that
+   * reference the same model.
+   */
+  multiplePropertiesSameModel(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ObjectMultiplePropertiesSameModelResponse>> {
+    return this.get('/types/object/multiple_properties_same_model', options);
+  }
+
+  /**
+   * Endpoint with a response schema object that contains multiple properties that
+   * reference the same $ref that is _not_ a model in the config. Three child types
+   * should be generated. One for each property.
+   */
+  multiplePropertiesSameRef(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ObjectMultiplePropertiesSameRefResponse>> {
+    return this.get('/types/object/multiple_properties_same_ref', options);
+  }
 }
 
 export interface ObjectMixedKnownAndUnknownResponse {
   foo?: number;
   [k: string]: number;
+}
+
+export interface ObjectMultiplePropertiesSameRefResponse {
+  required_prop: ObjectMultiplePropertiesSameRefResponse.RequiredProp;
+
+  bar?: ObjectMultiplePropertiesSameRefResponse.Bar;
+
+  foo?: ObjectMultiplePropertiesSameRefResponse.Foo;
+}
+
+export namespace ObjectMultiplePropertiesSameRefResponse {
+  export interface Foo {
+    foo?: string;
+  }
+
+  export interface Bar {
+    foo?: string;
+  }
+
+  export interface RequiredProp {
+    foo?: string;
+  }
+}
+
+export interface ObjectMultipleArrayPropertiesSameRefResponse {
+  required_prop: Array<ObjectMultipleArrayPropertiesSameRefResponse.RequiredProp>;
+
+  bar?: Array<ObjectMultipleArrayPropertiesSameRefResponse.Bar>;
+
+  foo?: Array<ObjectMultipleArrayPropertiesSameRefResponse.Foo>;
+}
+
+export namespace ObjectMultipleArrayPropertiesSameRefResponse {
+  export interface Foo {
+    foo?: string;
+  }
+
+  export interface Bar {
+    foo?: string;
+  }
+
+  export interface RequiredProp {
+    foo?: string;
+  }
+}
+
+export interface ObjectMultiplePropertiesSameModelResponse {
+  required_prop: BodyParams.MyModel;
+
+  bar?: BodyParams.MyModel;
+
+  foo?: BodyParams.MyModel;
 }

@@ -108,6 +108,7 @@ export class Sink extends Core.APIClient {
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
   tests: API.Tests = new API.Tests(this);
   version1_30Names: API.Version1_30Names = new API.Version1_30Names(this);
+  recursion: API.Recursion = new API.Recursion(this);
 
   /**
    * API status check
@@ -347,6 +348,7 @@ export namespace Sink {
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
+  export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
@@ -361,8 +363,26 @@ export namespace Sink {
   export import Version1_30NameCreateResponse = API.Version1_30NameCreateResponse;
   export import Version1_30NameCreateParams = API.Version1_30NameCreateParams;
 
+  export import ArrayRecursion = API.ArrayRecursion;
+  export import BranchRecursion = API.BranchRecursion;
+  export import BranchRecursionChildA = API.BranchRecursionChildA;
+  export import BranchRecursionChildB = API.BranchRecursionChildB;
+  export import MutualRecursionA = API.MutualRecursionA;
+  export import MutualRecursionB = API.MutualRecursionB;
+  export import SelfRecursion = API.SelfRecursion;
+  export import RecursionCreateEnvelopeResponse = API.RecursionCreateEnvelopeResponse;
+  export import RecursionCreateBranchParams = API.RecursionCreateBranchParams;
+  export import RecursionCreateEnvelopeParams = API.RecursionCreateEnvelopeParams;
+  export import RecursionCreateMutualAParams = API.RecursionCreateMutualAParams;
+  export import RecursionCreateMutualBParams = API.RecursionCreateMutualBParams;
+  export import RecursionCreateSelfParams = API.RecursionCreateSelfParams;
+
+  export import BasicSharedModelObject = API.BasicSharedModelObject;
   export import Currency = API.Currency;
   export import ObjectWithChildRef = API.ObjectWithChildRef;
+  export import SharedMutualRecursionA = API.SharedMutualRecursionA;
+  export import SharedMutualRecursionB = API.SharedMutualRecursionB;
+  export import SharedSelfRecursion = API.SharedSelfRecursion;
   export import ShippingAddress = API.ShippingAddress;
   export import SimpleObject = API.SimpleObject;
   export import SimpleObjectAlias = API.SimpleObjectAlias;

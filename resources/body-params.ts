@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
+import * as Shared from '~/resources/shared';
 import {
   PagePageNumber,
   PageCursor,
@@ -41,6 +42,16 @@ export class BodyParams extends APIResource {
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
+  }
+
+  /**
+   * Endpoint with a `requestBody` pointing to a $ref'd schema that is an `anyOf`.
+   */
+  topLevelAnyOfWithRef(
+    body: BodyParamTopLevelAnyOfWithRefParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+    return this.post('/body_params/top_level_anyOf_with_ref', { body, ...options });
   }
 
   /**
@@ -118,6 +129,26 @@ export namespace BodyParamTopLevelAllOfNestedObjectParams {
    * This is an object with required properties
    */
   export interface NestedObj {
+    is_foo: boolean;
+  }
+}
+
+export type BodyParamTopLevelAnyOfWithRefParams =
+  | BodyParamTopLevelAnyOfWithRefParams.ObjectWithRequiredEnum
+  | BodyParamTopLevelAnyOfWithRefParams.SimpleObjectWithRequiredProperty;
+
+export namespace BodyParamTopLevelAnyOfWithRefParams {
+  /**
+   * This is an object with required enum values
+   */
+  export interface ObjectWithRequiredEnum {
+    kind: 'VIRTUAL' | 'PHYSICAL';
+  }
+
+  /**
+   * This is an object with required properties
+   */
+  export interface SimpleObjectWithRequiredProperty {
     is_foo: boolean;
   }
 }

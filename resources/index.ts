@@ -9,6 +9,22 @@ export {
 } from './top-level';
 export { Address, EnvelopeInlineResponseResponse, Envelopes } from './envelopes';
 export {
+  ArrayRecursion,
+  BranchRecursion,
+  BranchRecursionChildA,
+  BranchRecursionChildB,
+  MutualRecursionA,
+  MutualRecursionB,
+  SelfRecursion,
+  RecursionCreateEnvelopeResponse,
+  RecursionCreateBranchParams,
+  RecursionCreateEnvelopeParams,
+  RecursionCreateMutualAParams,
+  RecursionCreateMutualBParams,
+  RecursionCreateSelfParams,
+  Recursion,
+} from './recursion/recursion';
+export {
   Card,
   CardAlias,
   FundingAccount,
@@ -44,6 +60,7 @@ export {
   BodyParamUnionOverlappingPropResponse,
   BodyParamReadOnlyPropertiesParams,
   BodyParamTopLevelAllOfNestedObjectParams,
+  BodyParamTopLevelAnyOfWithRefParams,
   BodyParamUnionOverlappingPropParams,
   BodyParamWithModelPropertyParams,
   MyModelsPagePageNumber,

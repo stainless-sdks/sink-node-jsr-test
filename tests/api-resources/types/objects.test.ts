@@ -15,4 +15,37 @@ describe('resource objects', () => {
       sink.types.objects.mixedKnownAndUnknown({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
+
+  test('multipleArrayPropertiesSameRef', async () => {
+    const response = await sink.types.objects.multipleArrayPropertiesSameRef();
+  });
+
+  test('multipleArrayPropertiesSameRef: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.types.objects.multipleArrayPropertiesSameRef({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('multiplePropertiesSameModel', async () => {
+    const response = await sink.types.objects.multiplePropertiesSameModel();
+  });
+
+  test('multiplePropertiesSameModel: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.types.objects.multiplePropertiesSameModel({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('multiplePropertiesSameRef', async () => {
+    const response = await sink.types.objects.multiplePropertiesSameRef();
+  });
+
+  test('multiplePropertiesSameRef: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.types.objects.multiplePropertiesSameRef({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
 });

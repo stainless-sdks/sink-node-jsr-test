@@ -261,10 +261,16 @@ Methods:
 Models:
 
 - <code><a href="./resources/types/objects.ts">ObjectMixedKnownAndUnknownResponse</a></code>
+- <code><a href="./resources/types/objects.ts">ObjectMultiplePropertiesSameRefResponse</a></code>
+- <code><a href="./resources/types/objects.ts">ObjectMultipleArrayPropertiesSameRefResponse</a></code>
+- <code><a href="./resources/types/objects.ts">ObjectMultiplePropertiesSameModelResponse</a></code>
 
 Methods:
 
 - <code title="get /types/object/mixed_known_and_unknown">client.types.objects.<a href="./resources/types/objects.ts">mixedKnownAndUnknown</a>() -> ObjectMixedKnownAndUnknownResponse</code>
+- <code title="get /types/object/multiple_array_properties_same_ref">client.types.objects.<a href="./resources/types/objects.ts">multipleArrayPropertiesSameRef</a>() -> ObjectMultipleArrayPropertiesSameRefResponse</code>
+- <code title="get /types/object/multiple_properties_same_model">client.types.objects.<a href="./resources/types/objects.ts">multiplePropertiesSameModel</a>() -> ObjectMultiplePropertiesSameModelResponse</code>
+- <code title="get /types/object/multiple_properties_same_ref">client.types.objects.<a href="./resources/types/objects.ts">multiplePropertiesSameRef</a>() -> ObjectMultiplePropertiesSameRefResponse</code>
 
 # Names
 
@@ -392,6 +398,7 @@ Methods:
 
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
 - <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>() -> Promise<void></code>
+- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./resources/body-params.ts">topLevelAnyOfWithRef</a>() -> BasicSharedModelObject</code>
 - <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>() -> BodyParamUnionOverlappingPropResponse</code>
 - <code title="post /body_params/with_model_property">client.bodyParams.<a href="./resources/body-params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
 
@@ -462,3 +469,32 @@ Models:
 Methods:
 
 - <code title="post /version_1_30_names/query/{version_1_15}">client.version1_30Names.<a href="./resources/version-1-30-names.ts">create</a>(version1_15, { ...params }) -> Version1_30NameCreateResponse</code>
+
+# Recursion
+
+Models:
+
+- <code><a href="./resources/recursion/recursion.ts">ArrayRecursion</a></code>
+- <code><a href="./resources/recursion/recursion.ts">BranchRecursion</a></code>
+- <code><a href="./resources/recursion/recursion.ts">BranchRecursionChildA</a></code>
+- <code><a href="./resources/recursion/recursion.ts">BranchRecursionChildB</a></code>
+- <code><a href="./resources/recursion/recursion.ts">MutualRecursionA</a></code>
+- <code><a href="./resources/recursion/recursion.ts">MutualRecursionB</a></code>
+- <code><a href="./resources/recursion/recursion.ts">SelfRecursion</a></code>
+- <code><a href="./resources/recursion/recursion.ts">RecursionCreateEnvelopeResponse</a></code>
+
+Methods:
+
+- <code title="post /recursion/branch">client.recursion.<a href="./resources/recursion/recursion.ts">createBranch</a>({ ...params }) -> BranchRecursion</code>
+- <code title="post /recursion/envelope">client.recursion.<a href="./resources/recursion/recursion.ts">createEnvelope</a>({ ...params }) -> RecursionCreateEnvelopeResponse</code>
+- <code title="post /recursion/mutual-a">client.recursion.<a href="./resources/recursion/recursion.ts">createMutualA</a>({ ...params }) -> MutualRecursionA</code>
+- <code title="post /recursion/mutual-b">client.recursion.<a href="./resources/recursion/recursion.ts">createMutualB</a>({ ...params }) -> MutualRecursionB</code>
+- <code title="post /recursion/self">client.recursion.<a href="./resources/recursion/recursion.ts">createSelf</a>({ ...params }) -> SelfRecursion</code>
+
+## SharedResponses
+
+Methods:
+
+- <code title="post /recursion/shared/responses/mutual-a">client.recursion.sharedResponses.<a href="./resources/recursion/shared-responses.ts">createMutualA</a>() -> SharedMutualRecursionA</code>
+- <code title="post /recursion/shared/responses/mutual-b">client.recursion.sharedResponses.<a href="./resources/recursion/shared-responses.ts">createMutualB</a>() -> SharedMutualRecursionB</code>
+- <code title="post /recursion/shared/responses/self">client.recursion.sharedResponses.<a href="./resources/recursion/shared-responses.ts">createSelf</a>() -> SharedSelfRecursion</code>
