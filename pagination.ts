@@ -82,15 +82,15 @@ export interface MyConcretePageResponse {
   /**
    * The cursor for the next page
    */
-  cursor: string;
+  cursor: string | null;
 
   data: Array<PaginationTests.MyConcretePageItem>;
 }
 
 export interface MyConcretePageParams {
-  limit?: number;
+  my_cursor: string;
 
-  my_cursor?: string;
+  limit?: number;
 }
 
 export class MyConcretePage
@@ -99,7 +99,7 @@ export class MyConcretePage
 {
   data: Array<PaginationTests.MyConcretePageItem>;
   /** The cursor for the next page */
-  cursor: string;
+  cursor: string | null;
 
   constructor(
     client: APIClient,
@@ -198,20 +198,20 @@ export interface PageCursorResponse<Item> {
   /**
    * The cursor for the next page
    */
-  cursor: string;
+  cursor: string | null;
 
   data?: Array<Item>;
 }
 
 export interface PageCursorParams {
-  cursor?: string;
+  cursor?: string | null;
 
   limit?: number;
 }
 
 export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorResponse<Item> {
   /** The cursor for the next page */
-  cursor: string;
+  cursor: string | null;
 
   data: Array<Item>;
 
