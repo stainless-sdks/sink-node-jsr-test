@@ -16,6 +16,28 @@ describe('instantiate client', () => {
     process.env = env;
   });
 
+  describe('baseUrl', () => {
+    test('trailing slash', () => {
+      const client = new Sink({
+        baseURL: 'http://localhost:5000/custom/path/',
+        username: 'Robert',
+        requiredArgNoEnv: '<example>',
+        userToken: 'my user token',
+      });
+      expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
+    });
+
+    test('no trailing slash', () => {
+      const client = new Sink({
+        baseURL: 'http://localhost:5000/custom/path',
+        username: 'Robert',
+        requiredArgNoEnv: '<example>',
+        userToken: 'my user token',
+      });
+      expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
+    });
+  });
+
   test('maxRetries option is correctly set', () => {
     const client = new Sink({
       maxRetries: 1,
