@@ -22,6 +22,7 @@ type Config = {
   timeout?: number;
   httpAgent?: Agent;
   maxRetries?: number;
+  defaultHeaders?: Core.Headers;
   username?: string | null;
   clientId?: string | null;
   clientSecret?: string | null;
@@ -42,6 +43,8 @@ export class Sink extends Core.APIClient {
   someNumberArg?: number | null;
   requiredArgNoEnv: string;
 
+  private _options: Config;
+
   constructor(config: Config) {
     const options: Config = {
       userToken: process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
@@ -56,6 +59,7 @@ export class Sink extends Core.APIClient {
       maxRetries: options.maxRetries,
     });
     this.userToken = options.userToken || null;
+    this._options = options;
     this.idempotencyHeader = 'Idempotency-Key';
 
     const username = config.username || process.env['SINK_USER'];
@@ -157,6 +161,7 @@ export class Sink extends Core.APIClient {
       'X-Client-UserName': this.username,
       'X-Client-Secret': this.clientSecret,
       'X-Integer': this.someIntegerArg?.toString() ?? null,
+      ...this._options.defaultHeaders,
     };
   }
 
