@@ -20,6 +20,16 @@ Methods:
 
 - <code title="get /casing/eeoc">client.casing.eeoc.<a href="./resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
 
+# Streaming
+
+Models:
+
+- <code><a href="./resources/streaming.ts">StreamingBasicResponse</a></code>
+
+Methods:
+
+- <code title="post /streaming/basic">client.streaming.<a href="./resources/streaming.ts">basic</a>() -> StreamingBasicResponse</code>
+
 # PaginationTests
 
 ## Concrete

@@ -130,6 +130,7 @@ export {
 } from './sta-569';
 export { Sta606WithSharedParamsParams, Sta606 } from './sta-606';
 export { Sta613OnlyGlobalResponse, Sta613GlobalWithStandardResponse, Sta613 } from './sta-613';
+export { StreamingBasicResponse, StreamingBasicParams, Streaming } from './streaming';
 export { Tests } from './tests';
 export {
   TypeEnumsResponse,

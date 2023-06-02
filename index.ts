@@ -88,6 +88,7 @@ export class Sink extends Core.APIClient {
 
   testing: API.Testing = new API.Testing(this);
   casing: API.Casing = new API.Casing(this);
+  streaming: API.Streaming = new API.Streaming(this);
   paginationTests: API.PaginationTests = new API.PaginationTests(this);
   resourceRefs: API.ResourceRefs = new API.ResourceRefs(this);
   cards: API.Cards = new API.Cards(this);
@@ -272,6 +273,9 @@ export namespace Sink {
   export import Sta563PostEmptyObjectResponse = API.Sta563PostEmptyObjectResponse;
 
   export import RootResponse = API.RootResponse;
+
+  export import StreamingBasicResponse = API.StreamingBasicResponse;
+  export import StreamingBasicParams = API.StreamingBasicParams;
 
   export import Card = API.Card;
   export import CardAlias = API.CardAlias;
