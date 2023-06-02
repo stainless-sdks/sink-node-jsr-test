@@ -153,6 +153,21 @@ export class PositionalParams extends APIResource {
       headers: { Accept: '', ...options?.headers },
     });
   }
+
+  /**
+   * Endpoint with no positional params and a body object.
+   */
+  unionBodyAndPath(
+    id: string,
+    body: PositionalParamUnionBodyAndPathParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
+    return this.post(`/positional_params/body/union/${id}`, {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
 }
 
 export interface PositionalParamBasicBodyParams {
@@ -234,13 +249,13 @@ export interface PositionalParamMultiplePathParamsParams {
   options?: string;
 }
 
-export interface PositionalParamQueryParams {
-  foo: string;
-}
-
 export interface PositionalParamQueryMultipleParams {
   /**
    * Some description about bar.
    */
   bar: string;
+}
+
+export interface PositionalParamUnionBodyAndPathParams {
+  kind: 'VIRTUAL' | 'PHYSICAL';
 }

@@ -76,18 +76,22 @@ export interface TypeDatetimesResponse {
 }
 
 export interface TypeDatesParams {
+  required_date: string;
+
+  required_nullable_date: string | null;
+
   list_date?: Array<string>;
 
   oneof_date?: string | number;
 
   optional_date?: string;
-
-  required_date: string;
-
-  required_nullable_date: string | null;
 }
 
 export interface TypeDatetimesParams {
+  required_datetime: string;
+
+  required_nullable_datetime: string | null;
+
   list_datetime?: Array<string>;
 
   /**
@@ -96,10 +100,6 @@ export interface TypeDatetimesParams {
   oneof_datetime?: string | number;
 
   optional_datetime?: string;
-
-  required_datetime: string;
-
-  required_nullable_datetime: string | null;
 }
 
 export interface TypeEnumsParams {

@@ -11,26 +11,26 @@ const sink = new Sink({
 
 describe('resource recursion', () => {
   test('createBranch', async () => {
-    const response = await sink.recursion.createBranch({ child: { a: {} } });
+    const response = await sink.recursion.createBranch({});
   });
 
   test('createEnvelope', async () => {
-    const response = await sink.recursion.createEnvelope({ data: { name: 'Robert' } });
+    const response = await sink.recursion.createEnvelope({});
   });
 
   test('createMutualA', async () => {
-    const response = await sink.recursion.createMutualA({ b: {} });
+    const response = await sink.recursion.createMutualA({});
   });
 
   test('createMutualB', async () => {
-    const response = await sink.recursion.createMutualB({ a: {} });
+    const response = await sink.recursion.createMutualB({});
   });
 
   test('createSelf: only required params', async () => {
-    const response = await sink.recursion.createSelf({ child: { name: 'Robert' }, name: 'string' });
+    const response = await sink.recursion.createSelf({ name: 'string' });
   });
 
   test('createSelf: required and optional params', async () => {
-    const response = await sink.recursion.createSelf({ child: { name: 'Robert' }, name: 'string' });
+    const response = await sink.recursion.createSelf({ name: 'string', child: { name: 'Robert' } });
   });
 });

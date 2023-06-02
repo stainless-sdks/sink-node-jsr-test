@@ -11,6 +11,6 @@ const sink = new Sink({
 
 describe('resource readOnlyParams', () => {
   test('simple', async () => {
-    const response = await sink.types.readOnlyParams.simple({ should_show_up: 'string' });
+    const response = await sink.types.readOnlyParams.simple({});
   });
 });

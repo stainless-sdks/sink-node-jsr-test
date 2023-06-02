@@ -61,6 +61,9 @@ export {
   BodyParamReadOnlyPropertiesParams,
   BodyParamTopLevelAllOfNestedObjectParams,
   BodyParamTopLevelAnyOfWithRefParams,
+  BodyParamTopLevelArrayParams,
+  BodyParamTopLevelArrayWithChildrenParams,
+  BodyParamTopLevelOneOfOneEntryParams,
   BodyParamUnionOverlappingPropParams,
   BodyParamWithModelPropertyParams,
   MyModelsPagePageNumber,
@@ -105,8 +108,8 @@ export {
   PositionalParamBodyExtraParamParams,
   PositionalParamKitchenSinkParams,
   PositionalParamMultiplePathParamsParams,
-  PositionalParamQueryParams,
   PositionalParamQueryMultipleParams,
+  PositionalParamUnionBodyAndPathParams,
   PositionalParams,
 } from './positional-params';
 export {

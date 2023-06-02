@@ -11,10 +11,10 @@ const sink = new Sink({
 
 describe('resource concrete', () => {
   test('list: only required params', async () => {
-    const response = await sink.paginationTests.concrete.list({ limit: 0, my_cursor: 'string' });
+    const response = await sink.paginationTests.concrete.list({ my_cursor: 'string' });
   });
 
   test('list: required and optional params', async () => {
-    const response = await sink.paginationTests.concrete.list({ limit: 0, my_cursor: 'string' });
+    const response = await sink.paginationTests.concrete.list({ my_cursor: 'string', limit: 0 });
   });
 });

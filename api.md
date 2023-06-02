@@ -28,7 +28,7 @@ Models:
 
 Methods:
 
-- <code title="post /streaming/basic">client.streaming.<a href="./resources/streaming.ts">basic</a>() -> StreamingBasicResponse</code>
+- <code title="post /streaming/basic">client.streaming.<a href="./resources/streaming.ts">basic</a>({ ...params }) -> StreamingBasicResponse</code>
 
 # PaginationTests
 
@@ -299,6 +299,7 @@ Methods:
 Methods:
 
 - <code title="post /names/body_params/options">client.names.params.<a href="./resources/names/params.ts">optionsParam</a>({ ...params }) -> Promise<void></code>
+- <code title="post /names/body_params/timeout">client.names.params.<a href="./resources/names/params.ts">timeoutParam</a>({ ...params }) -> Promise<void></code>
 
 # Widgets
 
@@ -387,6 +388,7 @@ Methods:
 - <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./resources/positional-params.ts">queryAndPath</a>(bar, id) -> Promise<void></code>
 - <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./resources/positional-params.ts">queryMultiple</a>(foo, { ...params }) -> Promise<void></code>
 - <code title="get /positional_params/{single}">client.positionalParams.<a href="./resources/positional-params.ts">single</a>(single) -> Promise<void></code>
+- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./resources/positional-params.ts">unionBodyAndPath</a>(id, { ...params }) -> Promise<void></code>
 
 # QueryParams
 
@@ -409,9 +411,12 @@ Models:
 Methods:
 
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
-- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>() -> Promise<void></code>
-- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./resources/body-params.ts">topLevelAnyOfWithRef</a>() -> BasicSharedModelObject</code>
-- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>() -> BodyParamUnionOverlappingPropResponse</code>
+- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> BasicSharedModelObject</code>
+- <code title="post /body_params/top_level_array">client.bodyParams.<a href="./resources/body-params.ts">topLevelArray</a>([ ...items ]) -> Promise<void></code>
+- <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> Promise<void></code>
+- <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
 - <code title="post /body_params/with_model_property">client.bodyParams.<a href="./resources/body-params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
 
 # HeaderParams

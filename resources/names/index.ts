@@ -5,4 +5,4 @@ export {
   NamePropertiesCommonConflictsResponse,
   NamePropertiesCommonConflictsParams,
 } from './names';
-export { ParamOptionsParamParams } from './params';
+export { ParamOptionsParamParams, ParamTimeoutParamParams } from './params';

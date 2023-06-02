@@ -92,7 +92,7 @@ export interface RecursionCreateMutualBParams {
 }
 
 export interface RecursionCreateSelfParams {
-  child?: SelfRecursion;
-
   name: string;
+
+  child?: SelfRecursion;
 }

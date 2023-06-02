@@ -11,10 +11,6 @@ const sink = new Sink({
 
 describe('resource version1_30Names', () => {
   test('create', async () => {
-    const response = await sink.version1_30Names.create('string', {
-      version_1_16: 'string',
-      version_1_17: 'string',
-      version_1_14: 'string',
-    });
+    const response = await sink.version1_30Names.create('string', {});
   });
 });

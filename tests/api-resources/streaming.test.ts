@@ -10,7 +10,11 @@ const sink = new Sink({
 });
 
 describe('resource streaming', () => {
-  test('basic', async () => {
+  test('basic: only required params', async () => {
+    const response = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: true });
+  });
+
+  test('basic: required and optional params', async () => {
     const response = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: true });
   });
 });

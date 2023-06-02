@@ -2,7 +2,6 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
-import { isRequestOptions } from '~/core';
 import * as Shared from '~/resources/shared';
 import {
   PagePageNumber,
@@ -55,23 +54,56 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` that is an `array` type.
+   */
+  topLevelArray(
+    body: BodyParamTopLevelArrayParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
+    return this.post('/body_params/top_level_array', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
+   * Endpoint with a `requestBody` that is an `array` type with non-model children.
+   */
+  topLevelArrayWithChildren(
+    body: BodyParamTopLevelArrayWithChildrenParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
+    return this.post('/body_params/top_level_array_with_children', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
+   * Endpoint with a `requestBody` making use of oneOf but only contains one entry in
+   * the union.
+   */
+  topLevelOneOfOneEntry(
+    body: BodyParamTopLevelOneOfOneEntryParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Promise<void>>> {
+    return this.post('/body_params/top_level_oneOf_one_entry', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` making use of anyOf where the same property is
    * defined in both variants.
    */
   unionOverlappingProp(
-    body?: BodyParamUnionOverlappingPropParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>>;
-  unionOverlappingProp(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>>;
-  unionOverlappingProp(
-    body: BodyParamUnionOverlappingPropParams | Core.RequestOptions = {},
+    body: BodyParamUnionOverlappingPropParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>> {
-    if (isRequestOptions(body)) {
-      return this.unionOverlappingProp({}, body);
-    }
     return this.post('/body_params/top_level_anyOf_overlapping_property', { body, ...options });
   }
 
@@ -115,21 +147,25 @@ export interface BodyParamReadOnlyPropertiesParams {
   in_both?: boolean;
 }
 
-export interface BodyParamTopLevelAllOfNestedObjectParams {
-  kind: 'VIRTUAL' | 'PHYSICAL';
-
-  /**
-   * This is an object with required properties
-   */
-  nested_obj?: BodyParamTopLevelAllOfNestedObjectParams.NestedObj;
-}
+export type BodyParamTopLevelAllOfNestedObjectParams = BodyParamTopLevelAllOfNestedObjectParams.Body;
 
 export namespace BodyParamTopLevelAllOfNestedObjectParams {
-  /**
-   * This is an object with required properties
-   */
-  export interface NestedObj {
-    is_foo: boolean;
+  export interface Body {
+    kind: 'VIRTUAL' | 'PHYSICAL';
+
+    /**
+     * This is an object with required properties
+     */
+    nested_obj?: Body.NestedObj;
+  }
+
+  export namespace Body {
+    /**
+     * This is an object with required properties
+     */
+    export interface NestedObj {
+      is_foo: boolean;
+    }
   }
 }
 
@@ -138,19 +174,27 @@ export type BodyParamTopLevelAnyOfWithRefParams =
   | BodyParamTopLevelAnyOfWithRefParams.SimpleObjectWithRequiredProperty;
 
 export namespace BodyParamTopLevelAnyOfWithRefParams {
-  /**
-   * This is an object with required enum values
-   */
   export interface ObjectWithRequiredEnum {
     kind: 'VIRTUAL' | 'PHYSICAL';
   }
 
-  /**
-   * This is an object with required properties
-   */
   export interface SimpleObjectWithRequiredProperty {
     is_foo: boolean;
   }
+}
+
+export type BodyParamTopLevelArrayParams = Array<Shared.BasicSharedModelObject>;
+
+export type BodyParamTopLevelArrayWithChildrenParams = Array<BodyParamTopLevelArrayWithChildrenParams.Item>;
+
+export namespace BodyParamTopLevelArrayWithChildrenParams {
+  export interface Item {
+    id: string;
+  }
+}
+
+export interface BodyParamTopLevelOneOfOneEntryParams {
+  kind: 'VIRTUAL' | 'PHYSICAL';
 }
 
 export type BodyParamUnionOverlappingPropParams =

@@ -11,7 +11,7 @@ const sink = new Sink({
 
 describe('resource positionalParams', () => {
   test('basicBody: only required params', async () => {
-    const response = await sink.positionalParams.basicBody({ key1: 'string', options: 'string' });
+    const response = await sink.positionalParams.basicBody({ key1: 'string' });
   });
 
   test('basicBody: required and optional params', async () => {
@@ -27,11 +27,11 @@ describe('resource positionalParams', () => {
   });
 
   test('body', async () => {
-    const response = await sink.positionalParams.body({ foo: 'string' });
+    const response = await sink.positionalParams.body({});
   });
 
   test('bodyExtraParam: only required params', async () => {
-    const response = await sink.positionalParams.bodyExtraParam({ extra_key: 'string', foo: 'string' });
+    const response = await sink.positionalParams.bodyExtraParam({ extra_key: 'string' });
   });
 
   test('bodyExtraParam: required and optional params', async () => {
@@ -43,11 +43,6 @@ describe('resource positionalParams', () => {
       key: 'string',
       imACamel: 'string',
       option1: true,
-      option2: 'string',
-      really_cool_snake: 'string',
-      bar: 0,
-      options: 'string',
-      'X-Custom-Header': 'string',
     });
   });
 
@@ -68,7 +63,6 @@ describe('resource positionalParams', () => {
     const response = await sink.positionalParams.multiplePathParams('string', 'string', {
       first: 'string',
       last: 'string',
-      options: 'string',
     });
   });
 
@@ -119,5 +113,13 @@ describe('resource positionalParams', () => {
     await expect(
       sink.positionalParams.single('string', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('unionBodyAndPath: only required params', async () => {
+    const response = await sink.positionalParams.unionBodyAndPath('string', { kind: 'VIRTUAL' });
+  });
+
+  test('unionBodyAndPath: required and optional params', async () => {
+    const response = await sink.positionalParams.unionBodyAndPath('string', { kind: 'VIRTUAL' });
   });
 });

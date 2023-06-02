@@ -11,9 +11,6 @@ const sink = new Sink({
 
 describe('resource headerParams', () => {
   test('clientArgument', async () => {
-    const response = await sink.headerParams.clientArgument({
-      foo: 'string',
-      'X-Custom-Endpoint-Header': 'string',
-    });
+    const response = await sink.headerParams.clientArgument({});
   });
 });

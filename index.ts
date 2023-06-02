@@ -348,8 +348,8 @@ export namespace Sink {
   export import PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
   export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
   export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
-  export import PositionalParamQueryParams = API.PositionalParamQueryParams;
   export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
+  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
@@ -363,6 +363,9 @@ export namespace Sink {
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
   export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
+  export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
+  export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
+  export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 

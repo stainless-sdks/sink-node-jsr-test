@@ -11,6 +11,10 @@ const sink = new Sink({
 
 describe('resource params', () => {
   test('optionsParam', async () => {
-    const response = await sink.names.params.optionsParam({ options: 'string' });
+    const response = await sink.names.params.optionsParam({});
+  });
+
+  test('timeoutParam', async () => {
+    const response = await sink.names.params.timeoutParam({});
   });
 });

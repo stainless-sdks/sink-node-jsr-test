@@ -173,14 +173,6 @@ export namespace QueryParamObjectParams {
   export interface ObjectRefParam {
     item?: string;
   }
-
-  export interface ObjectParam {
-    foo?: string;
-  }
-
-  export interface ObjectRefParam {
-    item?: string;
-  }
 }
 
 export interface QueryParamOneOfParams {
