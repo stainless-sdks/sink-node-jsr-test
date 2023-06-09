@@ -112,6 +112,7 @@ export class Sink extends Core.APIClient {
   queryParams: API.QueryParams = new API.QueryParams(this);
   bodyParams: API.BodyParams = new API.BodyParams(this);
   headerParams: API.HeaderParams = new API.HeaderParams(this);
+  mixedParams: API.MixedParams = new API.MixedParams(this);
   makeAmbiguousSchemasLooser: API.MakeAmbiguousSchemasLooser = new API.MakeAmbiguousSchemasLooser(this);
   makeAmbiguousSchemasExplicit: API.MakeAmbiguousSchemasExplicit = new API.MakeAmbiguousSchemasExplicit(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
@@ -374,6 +375,9 @@ export namespace Sink {
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
   export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
+
+  export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
+  export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
 
   export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = API.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
 

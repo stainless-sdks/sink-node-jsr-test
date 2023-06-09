@@ -57,6 +57,7 @@ export {
   MakeAmbiguousSchemasLooser,
 } from './make-ambiguous-schemas-looser';
 export { MethodConfigSkippedTestsAllResponse, MethodConfig } from './method-config';
+export { MixedParamQueryAndBodyParams, MixedParamQueryBodyAndPathParams, MixedParams } from './mixed-params';
 export {
   MyModel,
   BodyParamUnionOverlappingPropResponse,
