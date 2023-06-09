@@ -20,6 +20,22 @@ Methods:
 
 - <code title="get /casing/eeoc">client.casing.eeoc.<a href="./resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
 
+# MethodConfig
+
+Models:
+
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsAllResponse</a></code>
+
+Methods:
+
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsAll</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsGo</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsJava</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsKotlin</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsNode</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsNodeAndPython</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsPython</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+
 # Streaming
 
 Models:

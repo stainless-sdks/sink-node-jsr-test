@@ -55,6 +55,7 @@ export {
   MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse,
   MakeAmbiguousSchemasLooser,
 } from './make-ambiguous-schemas-looser';
+export { MethodConfigSkippedTestsAllResponse, MethodConfig } from './method-config';
 export {
   MyModel,
   BodyParamUnionOverlappingPropResponse,
