@@ -116,6 +116,7 @@ export class Sink extends Core.APIClient {
   makeAmbiguousSchemasExplicit: API.MakeAmbiguousSchemasExplicit = new API.MakeAmbiguousSchemasExplicit(this);
   decoratorTests: API.DecoratorTests = new API.DecoratorTests(this);
   tests: API.Tests = new API.Tests(this);
+  deeplyNested: API.DeeplyNested = new API.DeeplyNested(this);
   version1_30Names: API.Version1_30Names = new API.Version1_30Names(this);
   recursion: API.Recursion = new API.Recursion(this);
 

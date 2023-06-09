@@ -493,6 +493,38 @@ Methods:
 
 - <code title="get /tests/run_codegen">client.tests.<a href="./resources/tests.ts">runCodegen</a>() -> Promise<void></code>
 
+# DeeplyNested
+
+## LevelOne
+
+Models:
+
+- <code><a href="./resources/deeply-nested/level-one/level-one.ts">ModelLevel1</a></code>
+
+Methods:
+
+- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.<a href="./resources/deeply-nested/level-one/level-one.ts">methodLevel1</a>(cardToken) -> Card</code>
+
+### LevelTwo
+
+Models:
+
+- <code><a href="./resources/deeply-nested/level-one/level-two/level-two.ts">ModelLevel2</a></code>
+
+Methods:
+
+- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.levelTwo.<a href="./resources/deeply-nested/level-one/level-two/level-two.ts">methodLevel2</a>(cardToken) -> Card</code>
+
+#### LevelThree
+
+Models:
+
+- <code><a href="./resources/deeply-nested/level-one/level-two/level-three.ts">ModelLevel3</a></code>
+
+Methods:
+
+- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.levelTwo.levelThree.<a href="./resources/deeply-nested/level-one/level-two/level-three.ts">methodLevel3</a>(cardToken) -> Card</code>
+
 # Version1_30Names
 
 Models:

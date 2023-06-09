@@ -44,6 +44,7 @@ export { Casing } from './casing/casing';
 export { Company, CompanyResource } from './company/company';
 export { ConfigTools } from './config-tools';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
+export { DeeplyNested } from './deeply-nested/deeply-nested';
 export { DeleteEmptyObjectResponse, Sta563 } from './sta-563';
 export { GithubUser, GithubUserPreferences, Sta630 } from './sta-630';
 export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
