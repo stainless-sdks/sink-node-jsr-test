@@ -93,6 +93,7 @@ export class Sink extends Core.APIClient {
   paginationTests: API.PaginationTests = new API.PaginationTests(this);
   resourceRefs: API.ResourceRefs = new API.ResourceRefs(this);
   cards: API.Cards = new API.Cards(this);
+  files: API.Files = new API.Files(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
   company: API.CompanyResource = new API.CompanyResource(this);
@@ -294,6 +295,9 @@ export namespace Sink {
   export import CardListNonGetParams = API.CardListNonGetParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
+
+  export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
+  export import FileCreateMultipartParams = API.FileCreateMultipartParams;
 
   export import Company = API.Company;
 

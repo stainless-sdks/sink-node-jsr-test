@@ -149,6 +149,16 @@ Custom Methods:
 - `provisionFoo`
 - `reissue`
 
+# Files
+
+Models:
+
+- <code><a href="./resources/files.ts">FileCreateMultipartResponse</a></code>
+
+Methods:
+
+- <code title="post /files/multipart">client.files.<a href="./resources/files.ts">createMultipart</a>({ ...params }) -> FileCreateMultipartResponse</code>
+
 # Resources
 
 Methods:

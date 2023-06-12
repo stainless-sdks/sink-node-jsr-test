@@ -64,6 +64,21 @@ main().catch(console.error);
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
 
+## File Uploads
+
+Request parameters that correspond to file uploads can be passed as either a `FormData.Blob` or a `FormData.File` instance.
+
+We provide a `fileFromPath` helper function to easily create `FormData.File` instances from a given class.
+
+```ts
+import Sink, { fileFromPath } from 'sink-npm';
+
+const sink = new Sink();
+
+const file = await fileFromPath('foo/bar.txt');
+await sink.files.createMultipart({ file: file });
+```
+
 ## Handling errors
 
 When the library is unable to connect to the API,
