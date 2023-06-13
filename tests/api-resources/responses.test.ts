@@ -185,4 +185,26 @@ describe('resource responses', () => {
       Sink.NotFoundError,
     );
   });
+
+  test('unionOfMixedTypes', async () => {
+    const response = await sink.responses.unionOfMixedTypes();
+  });
+
+  test('unionOfMixedTypes: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.unionOfMixedTypes({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('unionOfObjects', async () => {
+    const response = await sink.responses.unionOfObjects();
+  });
+
+  test('unionOfObjects: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.unionOfObjects({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
 });

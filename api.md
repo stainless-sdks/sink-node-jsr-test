@@ -364,6 +364,8 @@ Models:
 - <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseUnionOfObjectsResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseUnionOfMixedTypesResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseArrayResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseAllofSimpleResponse</a></code>
@@ -387,6 +389,8 @@ Methods:
 - <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
 - <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
 - <code title="post /responses/string">client.responses.<a href="./resources/responses.ts">stringResponse</a>() -> Promise<string></code>
+- <code title="post /responses/union_of_mixed_types">client.responses.<a href="./resources/responses.ts">unionOfMixedTypes</a>() -> ResponseUnionOfMixedTypesResponse</code>
+- <code title="post /responses/union_of_objects">client.responses.<a href="./resources/responses.ts">unionOfObjects</a>() -> ResponseUnionOfObjectsResponse</code>
 
 # PathParams
 

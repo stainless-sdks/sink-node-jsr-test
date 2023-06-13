@@ -96,6 +96,8 @@ export {
   ResponseIntegerResponseResponse,
   ResponseStringResponseResponse,
   ResponseBooleanResponseResponse,
+  ResponseUnionOfObjectsResponse,
+  ResponseUnionOfMixedTypesResponse,
   ResponseMissingRequiredResponse,
   ResponseArrayResponseResponse,
   ResponseAllofSimpleResponse,

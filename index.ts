@@ -343,6 +343,8 @@ export namespace Sink {
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
+  export import ResponseUnionOfObjectsResponse = API.ResponseUnionOfObjectsResponse;
+  export import ResponseUnionOfMixedTypesResponse = API.ResponseUnionOfMixedTypesResponse;
   export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
   export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
   export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;

@@ -137,6 +137,22 @@ export class Responses extends APIResource {
       headers: { Accept: 'application/json', ...options?.headers },
     });
   }
+
+  /**
+   * Endpoint with a top level union response of different types.
+   */
+  unionOfMixedTypes(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseUnionOfMixedTypesResponse>> {
+    return this.post('/responses/union_of_mixed_types', options);
+  }
+
+  /**
+   * Endpoint with a top level union response of just object variants.
+   */
+  unionOfObjects(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseUnionOfObjectsResponse>> {
+    return this.post('/responses/union_of_objects', options);
+  }
 }
 
 export interface ObjectWithAnyOfNullProperty {
@@ -214,6 +230,25 @@ export type ResponseIntegerResponseResponse = number;
 export type ResponseStringResponseResponse = string;
 
 export type ResponseBooleanResponseResponse = boolean;
+
+export type ResponseUnionOfObjectsResponse = Shared.SimpleObject | ResponseUnionOfObjectsResponse.BasicObject;
+
+export namespace ResponseUnionOfObjectsResponse {
+  export interface BasicObject {
+    item?: string;
+  }
+}
+
+export type ResponseUnionOfMixedTypesResponse =
+  | Shared.SimpleObject
+  | ResponseUnionOfMixedTypesResponse.BasicObject
+  | boolean;
+
+export namespace ResponseUnionOfMixedTypesResponse {
+  export interface BasicObject {
+    item?: string;
+  }
+}
 
 export interface ResponseMissingRequiredResponse {
   bar: boolean | null;
