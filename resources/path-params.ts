@@ -16,6 +16,16 @@ export class PathParams extends APIResource {
   }
 
   /**
+   * Endpoint with a singular path parameter that is of an integer type.
+   */
+  integerParam(
+    integerParam: number,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+    return this.post(`/path_params/${integerParam}`, options);
+  }
+
+  /**
    * Endpoint with multiple path parameters.
    */
   multiple(
@@ -25,6 +35,18 @@ export class PathParams extends APIResource {
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<PathParamMultipleResponse>> {
     return this.post(`/path_params/${first}/${second}/${last}`, options);
+  }
+
+  /**
+   * Endpoint with multiple path parameters that are of different types, e.g. one
+   * integer type and the other string type.
+   */
+  paramsMixedTypes(
+    integerParam: number,
+    stringParam: string,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+    return this.post(`/path_params/mixed/${integerParam}/${stringParam}`, options);
   }
 
   /**

@@ -427,7 +427,9 @@ Models:
 Methods:
 
 - <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./resources/path-params.ts">dashedParam</a>(dashedParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/{integer_param}">client.pathParams.<a href="./resources/path-params.ts">integerParam</a>(integerParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
+- <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 
 # PositionalParams

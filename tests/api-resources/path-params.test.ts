@@ -21,6 +21,17 @@ describe('resource pathParams', () => {
     );
   });
 
+  test('integerParam', async () => {
+    const response = await sink.pathParams.integerParam(0);
+  });
+
+  test('integerParam: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.pathParams.integerParam(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('multiple', async () => {
     const response = await sink.pathParams.multiple('string', 'string', 'string');
   });
@@ -29,6 +40,17 @@ describe('resource pathParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.pathParams.multiple('string', 'string', 'string', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('paramsMixedTypes', async () => {
+    const response = await sink.pathParams.paramsMixedTypes(0, 'string');
+  });
+
+  test('paramsMixedTypes: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.pathParams.paramsMixedTypes(0, 'string', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
