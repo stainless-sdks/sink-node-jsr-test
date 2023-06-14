@@ -46,9 +46,15 @@ export { ConfigTools } from './config-tools';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
 export { DeeplyNested } from './deeply-nested/deeply-nested';
 export { DeleteEmptyObjectResponse, Sta563 } from './sta-563';
+export {
+  DocstringLeadingDoubleQuoteResponse,
+  DocstringTrailingDoubleQuoteResponse,
+  Docstrings,
+} from './docstrings';
 export { FileCreateMultipartResponse, FileCreateMultipartParams, Files } from './files';
 export { GithubUser, GithubUserPreferences, Sta630 } from './sta-630';
 export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
+export { InvalidSchemas } from './invalid-schemas/invalid-schemas';
 export {
   MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse,
   MakeAmbiguousSchemasExplicit,

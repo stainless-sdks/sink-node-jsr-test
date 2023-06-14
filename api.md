@@ -100,6 +100,30 @@ Methods:
 
 - <code title="get /paginated/hypermedia_raw">client.paginationTests.hypermediaRaw.<a href="./resources/pagination-tests/hypermedia-raw.ts">list</a>({ ...params }) -> MyModelsPageHypermediaRaw</code>
 
+# Docstrings
+
+Models:
+
+- <code><a href="./resources/docstrings.ts">DocstringLeadingDoubleQuoteResponse</a></code>
+- <code><a href="./resources/docstrings.ts">DocstringTrailingDoubleQuoteResponse</a></code>
+
+Methods:
+
+- <code title="get /docstrings/property_leading_double_quote">client.docstrings.<a href="./resources/docstrings.ts">leadingDoubleQuote</a>() -> DocstringLeadingDoubleQuoteResponse</code>
+- <code title="get /docstrings/property_trailing_double_quote">client.docstrings.<a href="./resources/docstrings.ts">trailingDoubleQuote</a>() -> DocstringTrailingDoubleQuoteResponse</code>
+
+# InvalidSchemas
+
+## Arrays
+
+Models:
+
+- <code><a href="./resources/invalid-schemas/arrays.ts">ArrayMissingItemsResponse</a></code>
+
+Methods:
+
+- <code title="get /invalid_schemas/arrays/missing_items">client.invalidSchemas.arrays.<a href="./resources/invalid-schemas/arrays.ts">missingItems</a>() -> ArrayMissingItemsResponse</code>
+
 # ResourceRefs
 
 ## PaginatedModelFirstRef
@@ -401,6 +425,7 @@ Models:
 
 Methods:
 
+- <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./resources/path-params.ts">dashedParam</a>(dashedParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 

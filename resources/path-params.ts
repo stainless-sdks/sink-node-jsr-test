@@ -2,8 +2,19 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as Shared from '~/resources/shared';
 
 export class PathParams extends APIResource {
+  /**
+   * Endpoint with a singular path parameter that uses a `dash` separator.
+   */
+  dashedParam(
+    dashedParam: string,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+    return this.post(`/path_params/${dashedParam}`, options);
+  }
+
   /**
    * Endpoint with multiple path parameters.
    */

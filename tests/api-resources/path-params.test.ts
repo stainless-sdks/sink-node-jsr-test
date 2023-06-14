@@ -10,6 +10,17 @@ const sink = new Sink({
 });
 
 describe('resource pathParams', () => {
+  test('dashedParam', async () => {
+    const response = await sink.pathParams.dashedParam('string');
+  });
+
+  test('dashedParam: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.pathParams.dashedParam('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('multiple', async () => {
     const response = await sink.pathParams.multiple('string', 'string', 'string');
   });
