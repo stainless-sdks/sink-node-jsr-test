@@ -284,6 +284,7 @@ export namespace Sink {
 
   export import StreamingBasicResponse = API.StreamingBasicResponse;
   export import StreamingBasicParams = API.StreamingBasicParams;
+  export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
 
   export import DocstringLeadingDoubleQuoteResponse = API.DocstringLeadingDoubleQuoteResponse;
   export import DocstringTrailingDoubleQuoteResponse = API.DocstringTrailingDoubleQuoteResponse;

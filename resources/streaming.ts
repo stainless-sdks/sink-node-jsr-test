@@ -6,18 +6,33 @@ import { Stream } from '~/streaming';
 
 export class Streaming extends APIResource {
   basic(
-    body: StreamingBasicParams.BasicStreamingEnabledRequest,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Stream<StreamingBasicResponse>>>;
-  basic(
-    body: StreamingBasicParams.BasicStreamingRequest,
+    body: StreamingBasicParams.BasicStreamingRequestNonStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<StreamingBasicResponse>>;
+  basic(
+    body: StreamingBasicParams.BasicStreamingRequestStreaming,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Stream<StreamingBasicResponse>>>;
   basic(
     body: StreamingBasicParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<StreamingBasicResponse | Stream<StreamingBasicResponse>>> {
-    return this.post('/streaming/basic', { body, ...options, stream: body.stream });
+    return this.post('/streaming/basic', { body, ...options, stream: body.stream ?? false });
+  }
+
+  nestedParams(
+    body: StreamingNestedParamsParams.NestedStreamingRequestNonStreaming,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<StreamingBasicResponse>>;
+  nestedParams(
+    body: StreamingNestedParamsParams.NestedStreamingRequestStreaming,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<Stream<StreamingBasicResponse>>>;
+  nestedParams(
+    body: StreamingNestedParamsParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<StreamingBasicResponse | Stream<StreamingBasicResponse>>> {
+    return this.post('/streaming/nested_params', { body, ...options, stream: body.stream ?? false });
   }
 }
 
@@ -28,23 +43,85 @@ export interface StreamingBasicResponse {
 }
 
 export type StreamingBasicParams =
-  | StreamingBasicParams.BasicStreamingEnabledRequest
-  | StreamingBasicParams.BasicStreamingRequest;
+  | StreamingBasicParams.BasicStreamingRequestNonStreaming
+  | StreamingBasicParams.BasicStreamingRequestStreaming;
 
 export namespace StreamingBasicParams {
-  export interface BasicStreamingEnabledRequest {
+  export interface BasicStreamingRequestNonStreaming {
+    model: string;
+
+    prompt: string;
+
+    stream?: false;
+  }
+
+  export interface BasicStreamingRequestStreaming {
     model: string;
 
     prompt: string;
 
     stream: true;
   }
+}
 
-  export interface BasicStreamingRequest {
+export type StreamingNestedParamsParams =
+  | StreamingNestedParamsParams.NestedStreamingRequestNonStreaming
+  | StreamingNestedParamsParams.NestedStreamingRequestStreaming;
+
+export namespace StreamingNestedParamsParams {
+  export interface NestedStreamingRequestNonStreaming {
     model: string;
 
     prompt: string;
 
+    parent_object?: StreamingNestedParamsParams.NestedStreamingRequestNonStreaming.ParentObject;
+
     stream?: false;
+  }
+
+  export namespace NestedStreamingRequestNonStreaming {
+    export interface ParentObject {
+      array_prop?: Array<ParentObject.ArrayProp>;
+
+      child_prop?: ParentObject.ChildProp;
+    }
+
+    export namespace ParentObject {
+      export interface ChildProp {
+        from_object?: string;
+      }
+
+      export interface ArrayProp {
+        from_array_items?: boolean;
+      }
+    }
+  }
+
+  export interface NestedStreamingRequestStreaming {
+    model: string;
+
+    prompt: string;
+
+    stream: true;
+
+    parent_object?: StreamingNestedParamsParams.NestedStreamingRequestStreaming.ParentObject;
+  }
+
+  export namespace NestedStreamingRequestStreaming {
+    export interface ParentObject {
+      array_prop?: Array<ParentObject.ArrayProp>;
+
+      child_prop?: ParentObject.ChildProp;
+    }
+
+    export namespace ParentObject {
+      export interface ChildProp {
+        from_object?: string;
+      }
+
+      export interface ArrayProp {
+        from_array_items?: boolean;
+      }
+    }
   }
 }

@@ -11,10 +11,26 @@ const sink = new Sink({
 
 describe('resource streaming', () => {
   test('basic: only required params', async () => {
-    const response = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: true });
+    const response = await sink.streaming.basic({ model: 'string', prompt: 'string' });
   });
 
   test('basic: required and optional params', async () => {
-    const response = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: true });
+    const response = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: false });
+  });
+
+  test('nestedParams: only required params', async () => {
+    const response = await sink.streaming.nestedParams({ model: 'string', prompt: 'string' });
+  });
+
+  test('nestedParams: required and optional params', async () => {
+    const response = await sink.streaming.nestedParams({
+      model: 'string',
+      prompt: 'string',
+      parent_object: {
+        child_prop: { from_object: 'string' },
+        array_prop: [{ from_array_items: true }, { from_array_items: true }, { from_array_items: true }],
+      },
+      stream: false,
+    });
   });
 });

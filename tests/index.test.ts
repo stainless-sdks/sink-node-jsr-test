@@ -117,7 +117,7 @@ describe('idempotency', () => {
       baseURL: 'http://127.0.0.1:4010',
     });
     await client.streaming.basic(
-      { model: 'string', prompt: 'string', stream: true },
+      { model: 'string', prompt: 'string' },
       { idempotencyKey: 'my-idempotency-key' },
     );
   });
