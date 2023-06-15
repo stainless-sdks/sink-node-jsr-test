@@ -33,4 +33,12 @@ describe('resource streaming', () => {
       stream: false,
     });
   });
+
+  test('queryParamDiscriminator: only required params', async () => {
+    const response = await sink.streaming.queryParamDiscriminator({ prompt: 'string' });
+  });
+
+  test('queryParamDiscriminator: required and optional params', async () => {
+    const response = await sink.streaming.queryParamDiscriminator({ prompt: 'string', should_stream: false });
+  });
 });

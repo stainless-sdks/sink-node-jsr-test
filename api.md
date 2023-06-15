@@ -46,6 +46,7 @@ Methods:
 
 - <code title="post /streaming/basic">client.streaming.<a href="./resources/streaming.ts">basic</a>({ ...params }) -> StreamingBasicResponse</code>
 - <code title="post /streaming/nested_params">client.streaming.<a href="./resources/streaming.ts">nestedParams</a>({ ...params }) -> StreamingBasicResponse</code>
+- <code title="get /streaming/query_param_discriminator">client.streaming.<a href="./resources/streaming.ts">queryParamDiscriminator</a>({ ...params }) -> StreamingBasicResponse</code>
 
 # PaginationTests
 
