@@ -1,6 +1,7 @@
 import type { Response } from 'node-fetch';
 import { APIResponse, Headers, createResponseHeaders } from '~/core';
-import { APIError, safeJSON } from '~/core';
+import { safeJSON } from '~/core';
+import { APIError } from '~/error';
 
 type ServerSentEvent = {
   event: string | null;
