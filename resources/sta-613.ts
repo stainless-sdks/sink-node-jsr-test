@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Sta613 extends APIResource {
   /**
@@ -33,4 +34,9 @@ export interface Sta613OnlyGlobalResponse {
 
 export interface Sta613GlobalWithStandardResponse {
   foo: string;
+}
+
+export namespace Sta613 {
+  export import Sta613OnlyGlobalResponse = API.Sta613OnlyGlobalResponse;
+  export import Sta613GlobalWithStandardResponse = API.Sta613GlobalWithStandardResponse;
 }

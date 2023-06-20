@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 import { Stream } from '~/streaming';
 
 export class Streaming extends APIResource {
@@ -161,4 +162,11 @@ export namespace StreamingQueryParamDiscriminatorParams {
 
     should_stream: true;
   }
+}
+
+export namespace Streaming {
+  export import StreamingBasicResponse = API.StreamingBasicResponse;
+  export import StreamingBasicParams = API.StreamingBasicParams;
+  export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
+  export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
 }

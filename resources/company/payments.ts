@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Payments extends APIResource {
   /**
@@ -14,4 +15,8 @@ export class Payments extends APIResource {
 
 export interface CompanyPayment {
   amount: number;
+}
+
+export namespace Payments {
+  export import CompanyPayment = API.CompanyPayment;
 }

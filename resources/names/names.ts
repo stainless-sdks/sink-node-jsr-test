@@ -3,9 +3,12 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { Params } from './params';
+import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
+import * as API from './';
 
 export class Names extends APIResource {
   params: Params = new Params(this.client);
+  canCauseClashes: CanCauseClashes = new CanCauseClashes(this.client);
 
   /**
    * Endpoint with request & response properties that are likely to cause name
@@ -44,4 +47,16 @@ export interface NamePropertiesCommonConflictsParams {
    * This shadows the stdlib `datetime.date` type in Python & causes type errors.
    */
   date: string;
+}
+
+export namespace Names {
+  export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
+  export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
+
+  export import Params = API.Params;
+  export import ParamOptionsParamParams = API.ParamOptionsParamParams;
+  export import ParamTimeoutParamParams = API.ParamTimeoutParamParams;
+
+  export import CanCauseClashes = API.CanCauseClashes;
 }

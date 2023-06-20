@@ -4,6 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 
 export class MixedParams extends APIResource {
   /**
@@ -80,4 +81,9 @@ export interface MixedParamQueryBodyAndPathParams {
    * Body param: Body param description
    */
   body_param?: string;
+}
+
+export namespace MixedParams {
+  export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
+  export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
 }

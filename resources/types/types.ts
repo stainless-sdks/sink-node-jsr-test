@@ -7,6 +7,7 @@ import { WriteOnlyResponses } from './write-only-responses';
 import { Maps } from './maps';
 import { Objects } from './objects';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 
 export class Types extends APIResource {
   readOnlyParams: ReadOnlyParams = new ReadOnlyParams(this.client);
@@ -109,4 +110,29 @@ export interface TypeEnumsParams {
   input_currency?: Shared.Currency | null;
 
   problematic_enum?: '123_FOO' | '30%';
+}
+
+export namespace Types {
+  export import TypeEnumsResponse = API.TypeEnumsResponse;
+  export import TypeDatesResponse = API.TypeDatesResponse;
+  export import TypeDatetimesResponse = API.TypeDatetimesResponse;
+  export import TypeDatesParams = API.TypeDatesParams;
+  export import TypeDatetimesParams = API.TypeDatetimesParams;
+  export import TypeEnumsParams = API.TypeEnumsParams;
+
+  export import ReadOnlyParams = API.ReadOnlyParams;
+  export import ReadOnlyParamSimpleResponse = API.ReadOnlyParamSimpleResponse;
+  export import ReadOnlyParamSimpleParams = API.ReadOnlyParamSimpleParams;
+
+  export import WriteOnlyResponses = API.WriteOnlyResponses;
+  export import WriteOnlyResponseSimpleResponse = API.WriteOnlyResponseSimpleResponse;
+
+  export import Maps = API.Maps;
+  export import MapNullableItemsResponse = API.MapNullableItemsResponse;
+
+  export import Objects = API.Objects;
+  export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
+  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
+  export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
+  export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
 }

@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class KeepThisResource extends APIResource {
   /**
@@ -17,4 +18,8 @@ export class KeepThisResource extends APIResource {
 
 export interface KeepThisResourceKeepThisMethodResponse {
   foo: string;
+}
+
+export namespace KeepThisResource {
+  export import KeepThisResourceKeepThisMethodResponse = API.KeepThisResourceKeepThisMethodResponse;
 }

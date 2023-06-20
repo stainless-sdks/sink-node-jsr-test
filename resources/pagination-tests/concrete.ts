@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 import { MyConcretePage, MyConcretePageParams } from '~/pagination';
 
 export class Concrete extends APIResource {
@@ -18,3 +19,8 @@ export interface MyConcretePageItem {
 }
 
 export interface ConcreteListParams extends MyConcretePageParams {}
+
+export namespace Concrete {
+  export import MyConcretePageItem = API.MyConcretePageItem;
+  export import ConcreteListParams = API.ConcreteListParams;
+}

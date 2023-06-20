@@ -4,6 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 import { CardPage, CardPageParams, PageCursor } from '~/pagination';
 
 export class Cards extends APIResource {
@@ -722,4 +723,19 @@ export interface CardReissueParams {
    * If omitted, the previous shipping address will be used.
    */
   shippingAddress?: Shared.ShippingAddress;
+}
+
+export namespace Cards {
+  export import Card = API.Card;
+  export import CardAlias = API.CardAlias;
+  export import FundingAccount = API.FundingAccount;
+  export import CardProvisionFooResponse = API.CardProvisionFooResponse;
+  export import CardsCardPage = API.CardsCardPage;
+  export import CardCreateParams = API.CardCreateParams;
+  export import CardUpdateParams = API.CardUpdateParams;
+  export import CardListParams = API.CardListParams;
+  export import CardCreateAliasedParams = API.CardCreateAliasedParams;
+  export import CardListNonGetParams = API.CardListNonGetParams;
+  export import CardProvisionFooParams = API.CardProvisionFooParams;
+  export import CardReissueParams = API.CardReissueParams;
 }

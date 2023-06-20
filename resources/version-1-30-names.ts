@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Version1_30Names extends APIResource {
   /**
@@ -45,4 +46,9 @@ export interface Version1_30NameCreateParams {
    * Header param:
    */
   version_1_14?: string;
+}
+
+export namespace Version1_30Names {
+  export import Version1_30NameCreateResponse = API.Version1_30NameCreateResponse;
+  export import Version1_30NameCreateParams = API.Version1_30NameCreateParams;
 }

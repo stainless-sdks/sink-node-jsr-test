@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Docstrings extends APIResource {
   leadingDoubleQuote(
@@ -29,4 +30,9 @@ export interface DocstringTrailingDoubleQuoteResponse {
    * This description ends in a "
    */
   prop: boolean;
+}
+
+export namespace Docstrings {
+  export import DocstringLeadingDoubleQuoteResponse = API.DocstringLeadingDoubleQuoteResponse;
+  export import DocstringTrailingDoubleQuoteResponse = API.DocstringTrailingDoubleQuoteResponse;
 }

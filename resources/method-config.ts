@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class MethodConfig extends APIResource {
   /**
@@ -77,4 +78,8 @@ export class MethodConfig extends APIResource {
 
 export interface MethodConfigSkippedTestsAllResponse {
   foo: string;
+}
+
+export namespace MethodConfig {
+  export import MethodConfigSkippedTestsAllResponse = API.MethodConfigSkippedTestsAllResponse;
 }

@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 import {
   PagePageNumber,
   PageCursor,
@@ -221,4 +222,17 @@ export interface BodyParamWithModelPropertyParams {
   foo?: string;
 
   my_model?: MyModel;
+}
+
+export namespace BodyParams {
+  export import MyModel = API.MyModel;
+  export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
+  export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
+  export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
+  export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
+  export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
+  export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
+  export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 }

@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Envelopes extends APIResource {
   /**
@@ -70,4 +71,9 @@ export interface Address {
 
 export interface EnvelopeInlineResponseResponse {
   foo?: string;
+}
+
+export namespace Envelopes {
+  export import Address = API.Address;
+  export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
 }

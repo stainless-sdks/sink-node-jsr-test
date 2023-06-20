@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Testing extends APIResource {
   /**
@@ -14,4 +15,8 @@ export class Testing extends APIResource {
 
 export interface RootResponse {
   message: string;
+}
+
+export namespace Testing {
+  export import RootResponse = API.RootResponse;
 }

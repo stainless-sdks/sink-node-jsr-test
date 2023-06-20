@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class HeaderParams extends APIResource {
   /**
@@ -34,4 +35,8 @@ export interface HeaderParamClientArgumentParams {
    * Header param:
    */
   'X-Custom-Endpoint-Header'?: string;
+}
+
+export namespace HeaderParams {
+  export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
 }

@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 
 export class Maps extends APIResource {
   /**
@@ -20,4 +21,8 @@ export interface MapNullableItemsResponse {
   shared_model?: Record<string, Shared.ShippingAddress | null>;
 
   shared_model_that_uses_null_itself?: Record<string, Shared.Currency | null>;
+}
+
+export namespace Maps {
+  export import MapNullableItemsResponse = API.MapNullableItemsResponse;
 }

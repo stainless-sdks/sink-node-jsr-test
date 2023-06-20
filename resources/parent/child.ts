@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Child extends APIResource {
   /**
@@ -14,4 +15,8 @@ export class Child extends APIResource {
 
 export interface ChildInlinedResponseResponse {
   foo: number;
+}
+
+export namespace Child {
+  export import ChildInlinedResponseResponse = API.ChildInlinedResponseResponse;
 }

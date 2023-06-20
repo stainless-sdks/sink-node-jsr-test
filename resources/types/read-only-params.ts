@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class ReadOnlyParams extends APIResource {
   /**
@@ -23,4 +24,9 @@ export interface ReadOnlyParamSimpleParams {
    * This should be generated in the request params type.
    */
   should_show_up?: string;
+}
+
+export namespace ReadOnlyParams {
+  export import ReadOnlyParamSimpleResponse = API.ReadOnlyParamSimpleResponse;
+  export import ReadOnlyParamSimpleParams = API.ReadOnlyParamSimpleParams;
 }

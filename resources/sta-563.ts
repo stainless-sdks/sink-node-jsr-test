@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Sta563 extends APIResource {
   /**
@@ -14,3 +15,7 @@ export class Sta563 extends APIResource {
 }
 
 export interface DeleteEmptyObjectResponse {}
+
+export namespace Sta563 {
+  export import DeleteEmptyObjectResponse = API.DeleteEmptyObjectResponse;
+}

@@ -353,6 +353,14 @@ Methods:
 - <code title="post /names/body_params/options">client.names.params.<a href="./resources/names/params.ts">optionsParam</a>({ ...params }) -> Promise<void></code>
 - <code title="post /names/body_params/timeout">client.names.params.<a href="./resources/names/params.ts">timeoutParam</a>({ ...params }) -> Promise<void></code>
 
+## CanCauseClashes
+
+### EmploymentData
+
+Models:
+
+- <code><a href="./resources/names/can-cause-clashes/employment-data.ts">EmploymentData</a></code>
+
 # Widgets
 
 Models:

@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 
 export class Sta606 extends APIResource {
   /**
@@ -33,4 +34,8 @@ export interface Sta606WithSharedParamsParams {
   bar: Shared.SimpleObject;
 
   foo: string;
+}
+
+export namespace Sta606 {
+  export import Sta606WithSharedParamsParams = API.Sta606WithSharedParamsParams;
 }

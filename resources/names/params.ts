@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Params extends APIResource {
   /**
@@ -45,4 +46,9 @@ export interface ParamTimeoutParamParams {
    * my timeout request parameter
    */
   timeout?: number;
+}
+
+export namespace Params {
+  export import ParamOptionsParamParams = API.ParamOptionsParamParams;
+  export import ParamTimeoutParamParams = API.ParamTimeoutParamParams;
 }

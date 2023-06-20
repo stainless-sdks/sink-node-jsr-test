@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as BodyParams from '~/resources/body-params';
+import * as API from './';
 
 export class Objects extends APIResource {
   /**
@@ -103,4 +104,11 @@ export interface ObjectMultiplePropertiesSameModelResponse {
   bar?: BodyParams.MyModel;
 
   foo?: BodyParams.MyModel;
+}
+
+export namespace Objects {
+  export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
+  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
+  export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
+  export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
 }

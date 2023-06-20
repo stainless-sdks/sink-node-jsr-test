@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 
 export class PathParams extends APIResource {
   /**
@@ -66,4 +67,9 @@ export interface PathParamSingularResponse {
 
 export interface PathParamMultipleResponse {
   foo: string;
+}
+
+export namespace PathParams {
+  export import PathParamSingularResponse = API.PathParamSingularResponse;
+  export import PathParamMultipleResponse = API.PathParamMultipleResponse;
 }

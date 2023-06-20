@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
+import * as API from './';
 
 export class Sta569 extends APIResource {
   /**
@@ -53,4 +54,11 @@ export interface Sta569OneEntryParams {
 
 export interface Sta569OneEntryWithNullParams {
   enable_debug_logging?: boolean;
+}
+
+export namespace Sta569 {
+  export import Sta569OneEntryResponse = API.Sta569OneEntryResponse;
+  export import Sta569OneEntryWithNullResponse = API.Sta569OneEntryWithNullResponse;
+  export import Sta569OneEntryParams = API.Sta569OneEntryParams;
+  export import Sta569OneEntryWithNullParams = API.Sta569OneEntryWithNullParams;
 }

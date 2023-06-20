@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Widgets extends APIResource {
   /**
@@ -21,4 +22,8 @@ export interface Widget {
    * The numeric unique ID for this widget.
    */
   id: number;
+}
+
+export namespace Widgets {
+  export import Widget = API.Widget;
 }

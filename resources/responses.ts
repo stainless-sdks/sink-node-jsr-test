@@ -5,6 +5,7 @@ import { APIResource } from '~/resource';
 import * as BodyParams from '~/resources/body-params';
 import * as Payments from '~/resources/company/payments';
 import * as Shared from '~/resources/shared';
+import * as API from './';
 
 export class Responses extends APIResource {
   /**
@@ -278,4 +279,24 @@ export interface ResponseObjectAllPropertiesResponse {
   primitive_array: Array<string>;
 
   s: string;
+}
+
+export namespace Responses {
+  export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
+  export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import SimpleAllof = API.SimpleAllof;
+  export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
+  export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
+  export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
+  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
+  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
+  export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
+  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
+  export import ResponseUnionOfObjectsResponse = API.ResponseUnionOfObjectsResponse;
+  export import ResponseUnionOfMixedTypesResponse = API.ResponseUnionOfMixedTypesResponse;
+  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
+  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
+  export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
+  export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
 }

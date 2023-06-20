@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class Sta630 extends APIResource {
   /**
@@ -37,4 +38,9 @@ export interface GithubUserPreferences {
    * Do they prefer view Git diffs side by side, or interleaved?
    */
   diff_style: 'interleaved' | 'side_by_side';
+}
+
+export namespace Sta630 {
+  export import GithubUser = API.GithubUser;
+  export import GithubUserPreferences = API.GithubUserPreferences;
 }

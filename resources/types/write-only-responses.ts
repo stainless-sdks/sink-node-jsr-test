@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class WriteOnlyResponses extends APIResource {
   /**
@@ -13,3 +14,7 @@ export class WriteOnlyResponses extends APIResource {
 }
 
 export interface WriteOnlyResponseSimpleResponse {}
+
+export namespace WriteOnlyResponses {
+  export import WriteOnlyResponseSimpleResponse = API.WriteOnlyResponseSimpleResponse;
+}

@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
+import * as API from './';
 
 export class QueryParams extends APIResource {
   /**
@@ -187,4 +188,13 @@ export interface QueryParamPrimitivesParams {
   number_param?: number;
 
   string_param?: string;
+}
+
+export namespace QueryParams {
+  export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
+  export import QueryParamArrayParams = API.QueryParamArrayParams;
+  export import QueryParamEnumParams = API.QueryParamEnumParams;
+  export import QueryParamObjectParams = API.QueryParamObjectParams;
+  export import QueryParamOneOfParams = API.QueryParamOneOfParams;
+  export import QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
 }

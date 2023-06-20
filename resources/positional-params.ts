@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 
 export class PositionalParams extends APIResource {
   /**
@@ -258,4 +259,15 @@ export interface PositionalParamQueryMultipleParams {
 
 export interface PositionalParamUnionBodyAndPathParams {
   kind: 'VIRTUAL' | 'PHYSICAL';
+}
+
+export namespace PositionalParams {
+  export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
+  export import PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
+  export import PositionalParamBodyParams = API.PositionalParamBodyParams;
+  export import PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
+  export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
+  export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
+  export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
+  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 }

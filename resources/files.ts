@@ -2,6 +2,7 @@
 
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
+import * as API from './';
 import type * as FormData from 'formdata-node';
 import { multipartFormRequestOptions } from '~/core';
 
@@ -25,4 +26,9 @@ export interface FileCreateMultipartParams {
   file: FormData.Blob | FormData.File;
 
   purpose: string;
+}
+
+export namespace Files {
+  export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
+  export import FileCreateMultipartParams = API.FileCreateMultipartParams;
 }

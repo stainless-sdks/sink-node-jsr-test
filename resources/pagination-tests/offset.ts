@@ -4,6 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import { MyModelsPageOffset } from '~/resources/body-params';
+import * as API from './';
 import { PageOffsetParams } from '~/pagination';
 
 export class Offset extends APIResource {
@@ -24,5 +25,9 @@ export class Offset extends APIResource {
 }
 
 export interface OffsetListParams extends PageOffsetParams {}
+
+export namespace Offset {
+  export import OffsetListParams = API.OffsetListParams;
+}
 
 export { MyModelsPageOffset };

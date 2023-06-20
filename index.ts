@@ -275,18 +275,31 @@ export namespace Sink {
   export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
   export import Sta563PostEmptyObjectResponse = API.Sta563PostEmptyObjectResponse;
 
+  export import Testing = API.Testing;
   export import RootResponse = API.RootResponse;
 
+  export import Casing = API.Casing;
+
+  export import MethodConfig = API.MethodConfig;
   export import MethodConfigSkippedTestsAllResponse = API.MethodConfigSkippedTestsAllResponse;
 
+  export import Streaming = API.Streaming;
   export import StreamingBasicResponse = API.StreamingBasicResponse;
   export import StreamingBasicParams = API.StreamingBasicParams;
   export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
   export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
 
+  export import PaginationTests = API.PaginationTests;
+
+  export import Docstrings = API.Docstrings;
   export import DocstringLeadingDoubleQuoteResponse = API.DocstringLeadingDoubleQuoteResponse;
   export import DocstringTrailingDoubleQuoteResponse = API.DocstringTrailingDoubleQuoteResponse;
 
+  export import InvalidSchemas = API.InvalidSchemas;
+
+  export import ResourceRefs = API.ResourceRefs;
+
+  export import Cards = API.Cards;
   export import Card = API.Card;
   export import CardAlias = API.CardAlias;
   export import FundingAccount = API.FundingAccount;
@@ -300,26 +313,40 @@ export namespace Sink {
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
 
+  export import Files = API.Files;
   export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
   export import FileCreateMultipartParams = API.FileCreateMultipartParams;
 
+  export import Resources = API.Resources;
+
+  export import ConfigTools = API.ConfigTools;
+
+  export import CompanyResource = API.CompanyResource;
   export import Company = API.Company;
 
+  export import Sta563 = API.Sta563;
   export import DeleteEmptyObjectResponse = API.DeleteEmptyObjectResponse;
 
+  export import Sta569 = API.Sta569;
   export import Sta569OneEntryResponse = API.Sta569OneEntryResponse;
   export import Sta569OneEntryWithNullResponse = API.Sta569OneEntryWithNullResponse;
   export import Sta569OneEntryParams = API.Sta569OneEntryParams;
   export import Sta569OneEntryWithNullParams = API.Sta569OneEntryWithNullParams;
 
+  export import Sta630 = API.Sta630;
   export import GithubUser = API.GithubUser;
   export import GithubUserPreferences = API.GithubUserPreferences;
 
+  export import Parent = API.Parent;
+
+  export import Sta606 = API.Sta606;
   export import Sta606WithSharedParamsParams = API.Sta606WithSharedParamsParams;
 
+  export import Envelopes = API.Envelopes;
   export import Address = API.Address;
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
 
+  export import Types = API.Types;
   export import TypeEnumsResponse = API.TypeEnumsResponse;
   export import TypeDatesResponse = API.TypeDatesResponse;
   export import TypeDatetimesResponse = API.TypeDatetimesResponse;
@@ -327,15 +354,19 @@ export namespace Sink {
   export import TypeDatetimesParams = API.TypeDatetimesParams;
   export import TypeEnumsParams = API.TypeEnumsParams;
 
+  export import Names = API.Names;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
   export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
 
+  export import Widgets = API.Widgets;
   export import Widget = API.Widget;
 
+  export import Sta613 = API.Sta613;
   export import Sta613OnlyGlobalResponse = API.Sta613OnlyGlobalResponse;
   export import Sta613GlobalWithStandardResponse = API.Sta613GlobalWithStandardResponse;
 
+  export import Responses = API.Responses;
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
   export import SimpleAllof = API.SimpleAllof;
@@ -354,9 +385,11 @@ export namespace Sink {
   export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
   export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
 
+  export import PathParams = API.PathParams;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
 
+  export import PositionalParams = API.PositionalParams;
   export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
   export import PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
   export import PositionalParamBodyParams = API.PositionalParamBodyParams;
@@ -366,6 +399,7 @@ export namespace Sink {
   export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
   export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 
+  export import QueryParams = API.QueryParams;
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
   export import QueryParamEnumParams = API.QueryParamEnumParams;
@@ -373,6 +407,7 @@ export namespace Sink {
   export import QueryParamOneOfParams = API.QueryParamOneOfParams;
   export import QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
 
+  export import BodyParams = API.BodyParams;
   export import MyModel = API.MyModel;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
@@ -384,20 +419,31 @@ export namespace Sink {
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
+  export import HeaderParams = API.HeaderParams;
   export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
 
+  export import MixedParams = API.MixedParams;
   export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
   export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
 
+  export import MakeAmbiguousSchemasLooser = API.MakeAmbiguousSchemasLooser;
   export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = API.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
 
+  export import MakeAmbiguousSchemasExplicit = API.MakeAmbiguousSchemasExplicit;
   export import MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse = API.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
 
+  export import DecoratorTests = API.DecoratorTests;
   export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
 
+  export import Tests = API.Tests;
+
+  export import DeeplyNested = API.DeeplyNested;
+
+  export import Version1_30Names = API.Version1_30Names;
   export import Version1_30NameCreateResponse = API.Version1_30NameCreateResponse;
   export import Version1_30NameCreateParams = API.Version1_30NameCreateParams;
 
+  export import Recursion = API.Recursion;
   export import ArrayRecursion = API.ArrayRecursion;
   export import BranchRecursion = API.BranchRecursion;
   export import BranchRecursionChildA = API.BranchRecursionChildA;

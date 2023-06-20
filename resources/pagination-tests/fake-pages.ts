@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { SimpleObjectsFakePage } from '~/resources/shared';
+import * as API from './';
 import { FakePageParams } from '~/pagination';
 
 export class FakePages extends APIResource {
@@ -15,5 +16,9 @@ export class FakePages extends APIResource {
 }
 
 export interface FakePageListParams extends FakePageParams {}
+
+export namespace FakePages {
+  export import FakePageListParams = API.FakePageListParams;
+}
 
 export { SimpleObjectsFakePage };

@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as Cards from '~/resources/cards';
+import * as API from './';
 
 export class LevelThree extends APIResource {
   /**
@@ -15,4 +16,8 @@ export class LevelThree extends APIResource {
 
 export interface ModelLevel3 {
   depth?: 'level 3' | null;
+}
+
+export namespace LevelThree {
+  export import ModelLevel3 = API.ModelLevel3;
 }

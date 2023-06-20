@@ -4,6 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import { CardsPageCursor } from '~/resources/cards';
+import * as API from './';
 import { PageCursorParams } from '~/pagination';
 
 export class PaginatedModelSecondRef extends APIResource {
@@ -31,5 +32,9 @@ export class PaginatedModelSecondRef extends APIResource {
 }
 
 export interface PaginatedModelSecondRefListParams extends PageCursorParams {}
+
+export namespace PaginatedModelSecondRef {
+  export import PaginatedModelSecondRefListParams = API.PaginatedModelSecondRefListParams;
+}
 
 export { CardsPageCursor };

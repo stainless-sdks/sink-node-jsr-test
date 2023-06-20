@@ -3,6 +3,7 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
+import * as API from './';
 import { PageCursor, PageCursorParams } from '~/pagination';
 
 export class EEOCResource extends APIResource {
@@ -29,3 +30,9 @@ export interface EEOC {
 }
 
 export interface EEOCListParams extends PageCursorParams {}
+
+export namespace EEOCResource {
+  export import EEOC = API.EEOC;
+  export import EEOCsPageCursor = API.EEOCsPageCursor;
+  export import EEOCListParams = API.EEOCListParams;
+}

@@ -4,6 +4,7 @@ import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import { isRequestOptions } from '~/core';
 import { MyModelsPagePageNumber } from '~/resources/body-params';
+import * as API from './';
 import { PagePageNumberParams } from '~/pagination';
 
 export class PageNumber extends APIResource {
@@ -24,5 +25,9 @@ export class PageNumber extends APIResource {
 }
 
 export interface PageNumberListParams extends PagePageNumberParams {}
+
+export namespace PageNumber {
+  export import PageNumberListParams = API.PageNumberListParams;
+}
 
 export { MyModelsPagePageNumber };

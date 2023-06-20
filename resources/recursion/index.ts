@@ -14,4 +14,6 @@ export {
   RecursionCreateMutualAParams,
   RecursionCreateMutualBParams,
   RecursionCreateSelfParams,
+  Recursion,
 } from './recursion';
+export { SharedResponses } from './shared-responses';
