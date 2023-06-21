@@ -402,6 +402,7 @@ Models:
 - <code><a href="./resources/responses.ts">ResponseUnionOfMixedTypesResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseArrayResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseNestedArrayResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseAllofSimpleResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseObjectAllPropertiesResponse</a></code>
 
@@ -416,6 +417,7 @@ Methods:
 - <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> Promise<void></code>
 - <code title="post /responses/integer">client.responses.<a href="./resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
 - <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
+- <code title="get /responses/nested_array">client.responses.<a href="./resources/responses.ts">nestedArray</a>() -> ResponseNestedArrayResponse</code>
 - <code title="get /responses/object/everything">client.responses.<a href="./resources/responses.ts">objectAllProperties</a>() -> ResponseObjectAllPropertiesResponse</code>
 - <code title="post /responses/object_no_properties">client.responses.<a href="./resources/responses.ts">objectNoProperties</a>() -> ResponseObjectNoPropertiesResponse</code>
 - <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./resources/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>

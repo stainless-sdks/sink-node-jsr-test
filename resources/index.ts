@@ -106,6 +106,7 @@ export {
   ResponseUnionOfMixedTypesResponse,
   ResponseMissingRequiredResponse,
   ResponseArrayResponseResponse,
+  ResponseNestedArrayResponse,
   ResponseAllofSimpleResponse,
   ResponseObjectAllPropertiesResponse,
   Responses,

@@ -36,11 +36,20 @@ export interface CardPageParams {
 
 export class CardPage<Item> extends AbstractPage<Item> implements CardPageResponse<Item> {
   data: Array<Item>;
-  /** Page number. */
+
+  /**
+   * Page number.
+   */
   page: number;
-  /** Total number of entries. */
+
+  /**
+   * Total number of entries.
+   */
   total_entries: number;
-  /** Total number of pages. */
+
+  /**
+   * Total number of pages.
+   */
   total_pages: number;
 
   constructor(
@@ -98,7 +107,10 @@ export class MyConcretePage
   implements MyConcretePageResponse
 {
   data: Array<PaginationTests.MyConcretePageItem>;
-  /** The cursor for the next page */
+
+  /**
+   * The cursor for the next page
+   */
   cursor: string | null;
 
   constructor(
@@ -155,9 +167,15 @@ export interface PagePageNumberParams {
 
 export class PagePageNumber<Item> extends AbstractPage<Item> implements PagePageNumberResponse<Item> {
   data: Array<Item>;
-  /** The last page number */
+
+  /**
+   * The last page number
+   */
   last_page: number;
-  /** The page number */
+
+  /**
+   * The page number
+   */
   page: number;
 
   constructor(
@@ -210,7 +228,9 @@ export interface PageCursorParams {
 }
 
 export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorResponse<Item> {
-  /** The cursor for the next page */
+  /**
+   * The cursor for the next page
+   */
   cursor: string | null;
 
   data: Array<Item>;
@@ -263,7 +283,9 @@ export interface PageCursorURLParams {
 }
 
 export class PageCursorURL<Item> extends AbstractPage<Item> implements PageCursorURLResponse<Item> {
-  /** The URL for the next page */
+  /**
+   * The URL for the next page
+   */
   next_page: string;
 
   data: Array<Item>;
@@ -320,9 +342,14 @@ export interface PageOffsetParams {
 }
 
 export class PageOffset<Item> extends AbstractPage<Item> implements PageOffsetResponse<Item> {
-  /** The total number of elements for the entire query (not just the given page) */
+  /**
+   * The total number of elements for the entire query (not just the given page)
+   */
   count: number;
-  /** The current start index of the returned list of elements */
+
+  /**
+   * The current start index of the returned list of elements
+   */
   offset: number;
 
   data: Array<Item>;
@@ -368,7 +395,7 @@ export interface PageHypermediaResponse<Item> {
   /**
    * Set of links associated with the page
    */
-  links: Array<PageHypermediaResponse.Links>;
+  links: Array<PageHypermediaResponse.Link>;
 
   data?: Array<Item>;
 }
@@ -377,7 +404,7 @@ export namespace PageHypermediaResponse {
   /**
    * A link object
    */
-  export interface Links {
+  export interface Link {
     href: string;
 
     rel: string;
@@ -389,8 +416,10 @@ export interface PageHypermediaParams {
 }
 
 export class PageHypermedia<Item> extends AbstractPage<Item> implements PageHypermediaResponse<Item> {
-  /** Set of links associated with the page */
-  links: Array<PageHypermediaResponse.Links>;
+  /**
+   * Set of links associated with the page
+   */
+  links: Array<PageHypermediaResponse.Link>;
 
   data: Array<Item>;
 

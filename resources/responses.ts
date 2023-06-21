@@ -77,6 +77,13 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Endpoint that returns a nested array.
+   */
+  nestedArray(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseNestedArrayResponse>> {
+    return this.get('/responses/nested_array', options);
+  }
+
+  /**
    * Method with a response object with a different property for each supported type.
    */
   objectAllProperties(
@@ -259,6 +266,18 @@ export interface ResponseMissingRequiredResponse {
 
 export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;
 
+export interface ResponseNestedArrayResponse {
+  objects: Array<ResponseNestedArrayResponse.Object>;
+}
+
+export namespace ResponseNestedArrayResponse {
+  export interface Object {
+    bar?: number;
+
+    foo?: string;
+  }
+}
+
 export interface ResponseAllofSimpleResponse {
   bar?: string;
 
@@ -297,6 +316,7 @@ export namespace Responses {
   export import ResponseUnionOfMixedTypesResponse = API.ResponseUnionOfMixedTypesResponse;
   export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
   export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
+  export import ResponseNestedArrayResponse = API.ResponseNestedArrayResponse;
   export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
   export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
 }

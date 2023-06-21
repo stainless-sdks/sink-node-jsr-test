@@ -109,6 +109,17 @@ describe('resource responses', () => {
     );
   });
 
+  test('nestedArray', async () => {
+    const response = await sink.responses.nestedArray();
+  });
+
+  test('nestedArray: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.nestedArray({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('objectAllProperties', async () => {
     const response = await sink.responses.objectAllProperties();
   });
