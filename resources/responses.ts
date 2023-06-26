@@ -189,6 +189,56 @@ export interface SimpleAllof {
   kind: 'VIRTUAL' | 'PHYSICAL';
 }
 
+export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
+
+export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParams.MyModel>;
+
+export interface ResponseAllofSimpleResponse {
+  bar?: string;
+
+  foo?: string;
+}
+
+export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;
+
+export type ResponseBooleanResponseResponse = boolean;
+
+export type ResponseIntegerResponseResponse = number;
+
+export interface ResponseMissingRequiredResponse {
+  bar: boolean | null;
+
+  foo: string;
+}
+
+export interface ResponseNestedArrayResponse {
+  objects: Array<ResponseNestedArrayResponse.Object>;
+}
+
+export namespace ResponseNestedArrayResponse {
+  export interface Object {
+    bar?: number;
+
+    foo?: string;
+  }
+}
+
+export interface ResponseObjectAllPropertiesResponse {
+  allof: SimpleAllof;
+
+  b: boolean;
+
+  i: number;
+
+  n: null;
+
+  object_array: Array<Payments.CompanyPayment>;
+
+  primitive_array: Array<string>;
+
+  s: string;
+}
+
 export interface ResponseObjectNoPropertiesResponse {}
 
 export interface ResponseObjectWithAdditionalPropertiesPropResponse {
@@ -229,23 +279,7 @@ export namespace ResponseObjectWithHeavilyNestedUnionResponse {
   }
 }
 
-export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
-
-export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParams.MyModel>;
-
-export type ResponseIntegerResponseResponse = number;
-
 export type ResponseStringResponseResponse = string;
-
-export type ResponseBooleanResponseResponse = boolean;
-
-export type ResponseUnionOfObjectsResponse = Shared.SimpleObject | ResponseUnionOfObjectsResponse.BasicObject;
-
-export namespace ResponseUnionOfObjectsResponse {
-  export interface BasicObject {
-    item?: string;
-  }
-}
 
 export type ResponseUnionOfMixedTypesResponse =
   | Shared.SimpleObject
@@ -258,65 +292,31 @@ export namespace ResponseUnionOfMixedTypesResponse {
   }
 }
 
-export interface ResponseMissingRequiredResponse {
-  bar: boolean | null;
+export type ResponseUnionOfObjectsResponse = Shared.SimpleObject | ResponseUnionOfObjectsResponse.BasicObject;
 
-  foo: string;
-}
-
-export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;
-
-export interface ResponseNestedArrayResponse {
-  objects: Array<ResponseNestedArrayResponse.Object>;
-}
-
-export namespace ResponseNestedArrayResponse {
-  export interface Object {
-    bar?: number;
-
-    foo?: string;
+export namespace ResponseUnionOfObjectsResponse {
+  export interface BasicObject {
+    item?: string;
   }
-}
-
-export interface ResponseAllofSimpleResponse {
-  bar?: string;
-
-  foo?: string;
-}
-
-export interface ResponseObjectAllPropertiesResponse {
-  allof: SimpleAllof;
-
-  b: boolean;
-
-  i: number;
-
-  n: null;
-
-  object_array: Array<Payments.CompanyPayment>;
-
-  primitive_array: Array<string>;
-
-  s: string;
 }
 
 export namespace Responses {
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
   export import SimpleAllof = API.SimpleAllof;
+  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
+  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
+  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
+  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
+  export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
+  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
+  export import ResponseNestedArrayResponse = API.ResponseNestedArrayResponse;
+  export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
   export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
   export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
   export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
-  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
-  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
-  export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
-  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
-  export import ResponseUnionOfObjectsResponse = API.ResponseUnionOfObjectsResponse;
   export import ResponseUnionOfMixedTypesResponse = API.ResponseUnionOfMixedTypesResponse;
-  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
-  export import ResponseNestedArrayResponse = API.ResponseNestedArrayResponse;
-  export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
-  export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
+  export import ResponseUnionOfObjectsResponse = API.ResponseUnionOfObjectsResponse;
 }

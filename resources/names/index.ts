@@ -2,8 +2,8 @@
 
 export { CanCauseClashes } from './can-cause-clashes';
 export {
-  NameResponseShadowsPydanticResponse,
   NamePropertiesCommonConflictsResponse,
+  NameResponseShadowsPydanticResponse,
   NamePropertiesCommonConflictsParams,
   Names,
 } from './names';

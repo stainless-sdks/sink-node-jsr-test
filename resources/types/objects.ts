@@ -54,28 +54,6 @@ export interface ObjectMixedKnownAndUnknownResponse {
   [k: string]: number;
 }
 
-export interface ObjectMultiplePropertiesSameRefResponse {
-  required_prop: ObjectMultiplePropertiesSameRefResponse.RequiredProp;
-
-  bar?: ObjectMultiplePropertiesSameRefResponse.Bar;
-
-  foo?: ObjectMultiplePropertiesSameRefResponse.Foo;
-}
-
-export namespace ObjectMultiplePropertiesSameRefResponse {
-  export interface Foo {
-    foo?: string;
-  }
-
-  export interface Bar {
-    foo?: string;
-  }
-
-  export interface RequiredProp {
-    foo?: string;
-  }
-}
-
 export interface ObjectMultipleArrayPropertiesSameRefResponse {
   required_prop: Array<ObjectMultipleArrayPropertiesSameRefResponse.RequiredProp>;
 
@@ -106,9 +84,31 @@ export interface ObjectMultiplePropertiesSameModelResponse {
   foo?: BodyParams.MyModel;
 }
 
+export interface ObjectMultiplePropertiesSameRefResponse {
+  required_prop: ObjectMultiplePropertiesSameRefResponse.RequiredProp;
+
+  bar?: ObjectMultiplePropertiesSameRefResponse.Bar;
+
+  foo?: ObjectMultiplePropertiesSameRefResponse.Foo;
+}
+
+export namespace ObjectMultiplePropertiesSameRefResponse {
+  export interface Foo {
+    foo?: string;
+  }
+
+  export interface Bar {
+    foo?: string;
+  }
+
+  export interface RequiredProp {
+    foo?: string;
+  }
+}
+
 export namespace Objects {
   export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
   export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
+  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
 }

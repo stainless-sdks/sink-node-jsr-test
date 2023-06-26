@@ -28,15 +28,15 @@ export class Sta613 extends APIResource {
   }
 }
 
-export interface Sta613OnlyGlobalResponse {
-  foo: string;
-}
-
 export interface Sta613GlobalWithStandardResponse {
   foo: string;
 }
 
+export interface Sta613OnlyGlobalResponse {
+  foo: string;
+}
+
 export namespace Sta613 {
-  export import Sta613OnlyGlobalResponse = API.Sta613OnlyGlobalResponse;
   export import Sta613GlobalWithStandardResponse = API.Sta613GlobalWithStandardResponse;
+  export import Sta613OnlyGlobalResponse = API.Sta613OnlyGlobalResponse;
 }

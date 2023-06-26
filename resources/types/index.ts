@@ -3,16 +3,16 @@
 export { MapNullableItemsResponse, Maps } from './maps';
 export {
   ObjectMixedKnownAndUnknownResponse,
-  ObjectMultiplePropertiesSameRefResponse,
   ObjectMultipleArrayPropertiesSameRefResponse,
   ObjectMultiplePropertiesSameModelResponse,
+  ObjectMultiplePropertiesSameRefResponse,
   Objects,
 } from './objects';
 export { ReadOnlyParamSimpleResponse, ReadOnlyParamSimpleParams, ReadOnlyParams } from './read-only-params';
 export {
-  TypeEnumsResponse,
   TypeDatesResponse,
   TypeDatetimesResponse,
+  TypeEnumsResponse,
   TypeDatesParams,
   TypeDatetimesParams,
   TypeEnumsParams,

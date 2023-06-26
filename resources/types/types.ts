@@ -41,17 +41,6 @@ export class Types extends APIResource {
   }
 }
 
-export interface TypeEnumsResponse {
-  /**
-   * This is my description for the Currency enum
-   */
-  currency: Shared.Currency | null;
-
-  my_problematic_enum: '123_FOO' | '30%';
-
-  number_enum: 200 | 201 | 404 | 403;
-}
-
 export interface TypeDatesResponse {
   required_date: string;
 
@@ -74,6 +63,17 @@ export interface TypeDatetimesResponse {
   oneof_datetime?: string | number;
 
   optional_datetime?: string;
+}
+
+export interface TypeEnumsResponse {
+  /**
+   * This is my description for the Currency enum
+   */
+  currency: Shared.Currency | null;
+
+  my_problematic_enum: '123_FOO' | '30%';
+
+  number_enum: 200 | 201 | 404 | 403;
 }
 
 export interface TypeDatesParams {
@@ -113,9 +113,9 @@ export interface TypeEnumsParams {
 }
 
 export namespace Types {
-  export import TypeEnumsResponse = API.TypeEnumsResponse;
   export import TypeDatesResponse = API.TypeDatesResponse;
   export import TypeDatetimesResponse = API.TypeDatetimesResponse;
+  export import TypeEnumsResponse = API.TypeEnumsResponse;
   export import TypeDatesParams = API.TypeDatesParams;
   export import TypeDatetimesParams = API.TypeDatetimesParams;
   export import TypeEnumsParams = API.TypeEnumsParams;
@@ -132,7 +132,7 @@ export namespace Types {
 
   export import Objects = API.Objects;
   export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
   export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
+  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
 }

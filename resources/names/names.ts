@@ -31,15 +31,15 @@ export class Names extends APIResource {
   }
 }
 
-export interface NameResponseShadowsPydanticResponse {
-  parse_raw: string;
-}
-
 export interface NamePropertiesCommonConflictsResponse {
   /**
    * This shadows the stdlib `datetime.date` type in Python & causes type errors.
    */
   date: string;
+}
+
+export interface NameResponseShadowsPydanticResponse {
+  parse_raw: string;
 }
 
 export interface NamePropertiesCommonConflictsParams {
@@ -50,8 +50,8 @@ export interface NamePropertiesCommonConflictsParams {
 }
 
 export namespace Names {
-  export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
 
   export import Params = API.Params;

@@ -24,30 +24,34 @@ export class Streaming extends APIResource {
   nestedParams(
     body: StreamingNestedParamsParams.NestedStreamingRequestNonStreaming,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<StreamingBasicResponse>>;
+  ): Promise<Core.APIResponse<StreamingNestedParamsResponse>>;
   nestedParams(
     body: StreamingNestedParamsParams.NestedStreamingRequestStreaming,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Stream<StreamingBasicResponse>>>;
+  ): Promise<Core.APIResponse<Stream<StreamingNestedParamsResponse>>>;
   nestedParams(
     body: StreamingNestedParamsParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<StreamingBasicResponse | Stream<StreamingBasicResponse>>> {
+  ): Promise<Core.APIResponse<StreamingNestedParamsResponse | Stream<StreamingNestedParamsResponse>>> {
     return this.post('/streaming/nested_params', { body, ...options, stream: body.stream ?? false });
   }
 
   queryParamDiscriminator(
     query: StreamingQueryParamDiscriminatorParams.QueryParamDiscriminatorRequestNonStreaming,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<StreamingBasicResponse>>;
+  ): Promise<Core.APIResponse<StreamingQueryParamDiscriminatorResponse>>;
   queryParamDiscriminator(
     query: StreamingQueryParamDiscriminatorParams.QueryParamDiscriminatorRequestStreaming,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Stream<StreamingBasicResponse>>>;
+  ): Promise<Core.APIResponse<Stream<StreamingQueryParamDiscriminatorResponse>>>;
   queryParamDiscriminator(
     query: StreamingQueryParamDiscriminatorParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<StreamingBasicResponse | Stream<StreamingBasicResponse>>> {
+  ): Promise<
+    Core.APIResponse<
+      StreamingQueryParamDiscriminatorResponse | Stream<StreamingQueryParamDiscriminatorResponse>
+    >
+  > {
     return this.get('/streaming/query_param_discriminator', {
       query,
       ...options,
@@ -57,6 +61,18 @@ export class Streaming extends APIResource {
 }
 
 export interface StreamingBasicResponse {
+  completion: string;
+
+  model?: string;
+}
+
+export interface StreamingNestedParamsResponse {
+  completion: string;
+
+  model?: string;
+}
+
+export interface StreamingQueryParamDiscriminatorResponse {
   completion: string;
 
   model?: string;
@@ -166,6 +182,8 @@ export namespace StreamingQueryParamDiscriminatorParams {
 
 export namespace Streaming {
   export import StreamingBasicResponse = API.StreamingBasicResponse;
+  export import StreamingNestedParamsResponse = API.StreamingNestedParamsResponse;
+  export import StreamingQueryParamDiscriminatorResponse = API.StreamingQueryParamDiscriminatorResponse;
   export import StreamingBasicParams = API.StreamingBasicParams;
   export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
   export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;

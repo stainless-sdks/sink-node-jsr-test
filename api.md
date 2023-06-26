@@ -25,28 +25,36 @@ Methods:
 Models:
 
 - <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsAllResponse</a></code>
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsGoResponse</a></code>
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsJavaResponse</a></code>
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsKotlinResponse</a></code>
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsNodeResponse</a></code>
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsNodeAndPythonResponse</a></code>
+- <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsPythonResponse</a></code>
 
 Methods:
 
 - <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsAll</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
-- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsGo</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
-- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsJava</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
-- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsKotlin</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
-- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsNode</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
-- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsNodeAndPython</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
-- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsPython</a>(id) -> MethodConfigSkippedTestsAllResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsGo</a>(id) -> MethodConfigSkippedTestsGoResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsJava</a>(id) -> MethodConfigSkippedTestsJavaResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsKotlin</a>(id) -> MethodConfigSkippedTestsKotlinResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsNode</a>(id) -> MethodConfigSkippedTestsNodeResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsNodeAndPython</a>(id) -> MethodConfigSkippedTestsNodeAndPythonResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./resources/method-config.ts">skippedTestsPython</a>(id) -> MethodConfigSkippedTestsPythonResponse</code>
 
 # Streaming
 
 Models:
 
 - <code><a href="./resources/streaming.ts">StreamingBasicResponse</a></code>
+- <code><a href="./resources/streaming.ts">StreamingNestedParamsResponse</a></code>
+- <code><a href="./resources/streaming.ts">StreamingQueryParamDiscriminatorResponse</a></code>
 
 Methods:
 
 - <code title="post /streaming/basic">client.streaming.<a href="./resources/streaming.ts">basic</a>({ ...params }) -> StreamingBasicResponse</code>
-- <code title="post /streaming/nested_params">client.streaming.<a href="./resources/streaming.ts">nestedParams</a>({ ...params }) -> StreamingBasicResponse</code>
-- <code title="get /streaming/query_param_discriminator">client.streaming.<a href="./resources/streaming.ts">queryParamDiscriminator</a>({ ...params }) -> StreamingBasicResponse</code>
+- <code title="post /streaming/nested_params">client.streaming.<a href="./resources/streaming.ts">nestedParams</a>({ ...params }) -> StreamingNestedParamsResponse</code>
+- <code title="get /streaming/query_param_discriminator">client.streaming.<a href="./resources/streaming.ts">queryParamDiscriminator</a>({ ...params }) -> StreamingQueryParamDiscriminatorResponse</code>
 
 # PaginationTests
 
@@ -163,17 +171,7 @@ Methods:
 
 Custom Methods:
 
-- `create`
-- `retrieve`
-- `update`
-- `list`
-- `createAliased`
 - `deprecatedGetAuthURL`
-- `deprecatedMethod`
-- `listNonGet`
-- `listNotPaginated`
-- `provisionFoo`
-- `reissue`
 
 # Files
 
@@ -278,9 +276,9 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/types/types.ts">TypeEnumsResponse</a></code>
 - <code><a href="./resources/types/types.ts">TypeDatesResponse</a></code>
 - <code><a href="./resources/types/types.ts">TypeDatetimesResponse</a></code>
+- <code><a href="./resources/types/types.ts">TypeEnumsResponse</a></code>
 
 Methods:
 
@@ -323,9 +321,9 @@ Methods:
 Models:
 
 - <code><a href="./resources/types/objects.ts">ObjectMixedKnownAndUnknownResponse</a></code>
-- <code><a href="./resources/types/objects.ts">ObjectMultiplePropertiesSameRefResponse</a></code>
 - <code><a href="./resources/types/objects.ts">ObjectMultipleArrayPropertiesSameRefResponse</a></code>
 - <code><a href="./resources/types/objects.ts">ObjectMultiplePropertiesSameModelResponse</a></code>
+- <code><a href="./resources/types/objects.ts">ObjectMultiplePropertiesSameRefResponse</a></code>
 
 Methods:
 
@@ -338,8 +336,8 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/names/names.ts">NameResponseShadowsPydanticResponse</a></code>
 - <code><a href="./resources/names/names.ts">NamePropertiesCommonConflictsResponse</a></code>
+- <code><a href="./resources/names/names.ts">NameResponseShadowsPydanticResponse</a></code>
 
 Methods:
 
@@ -375,8 +373,8 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/sta-613.ts">Sta613OnlyGlobalResponse</a></code>
 - <code><a href="./resources/sta-613.ts">Sta613GlobalWithStandardResponse</a></code>
+- <code><a href="./resources/sta-613.ts">Sta613OnlyGlobalResponse</a></code>
 
 Methods:
 
@@ -390,21 +388,21 @@ Models:
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">SimpleAllof</a></code>
+- <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseAllofSimpleResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseArrayResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseNestedArrayResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseObjectAllPropertiesResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseObjectWithAdditionalPropertiesPropResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseObjectWithHeavilyNestedUnionResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseIntegerResponseResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseStringResponseResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseBooleanResponseResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseUnionOfObjectsResponse</a></code>
 - <code><a href="./resources/responses.ts">ResponseUnionOfMixedTypesResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseMissingRequiredResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseArrayResponseResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseNestedArrayResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseAllofSimpleResponse</a></code>
-- <code><a href="./resources/responses.ts">ResponseObjectAllPropertiesResponse</a></code>
+- <code><a href="./resources/responses.ts">ResponseUnionOfObjectsResponse</a></code>
 
 Methods:
 
@@ -432,8 +430,8 @@ Methods:
 
 Models:
 
-- <code><a href="./resources/path-params.ts">PathParamSingularResponse</a></code>
 - <code><a href="./resources/path-params.ts">PathParamMultipleResponse</a></code>
+- <code><a href="./resources/path-params.ts">PathParamSingularResponse</a></code>
 
 Methods:
 

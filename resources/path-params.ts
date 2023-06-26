@@ -61,15 +61,15 @@ export class PathParams extends APIResource {
   }
 }
 
-export interface PathParamSingularResponse {
-  foo: string;
-}
-
 export interface PathParamMultipleResponse {
   foo: string;
 }
 
+export interface PathParamSingularResponse {
+  foo: string;
+}
+
 export namespace PathParams {
-  export import PathParamSingularResponse = API.PathParamSingularResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
+  export import PathParamSingularResponse = API.PathParamSingularResponse;
 }
