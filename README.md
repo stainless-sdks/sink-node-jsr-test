@@ -1,8 +1,8 @@
-# Sink Node API Library
+# Sink Custom Node Title API Library
 
 [![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm)
 
-The Sink Node library provides convenient access to the Sink REST API from applications written in server-side JavaScript.
+The Sink Custom Node Title library provides convenient access to the Sink REST API from applications written in server-side JavaScript.
 It includes TypeScript definitions for all request params and response fields.
 
 ## Documentation
