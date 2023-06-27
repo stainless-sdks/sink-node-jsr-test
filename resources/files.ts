@@ -3,18 +3,17 @@
 import * as Core from '~/core';
 import { APIResource } from '~/resource';
 import * as API from './';
-import type * as FormData from 'formdata-node';
-import { multipartFormRequestOptions } from '~/core';
+import { type Uploadable, multipartFormRequestOptions } from '~/core';
 
 export class Files extends APIResource {
   /**
    * Endpoint for testing file uploads
    */
-  createMultipart(
+  async createMultipart(
     body: FileCreateMultipartParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<FileCreateMultipartResponse>> {
-    return this.post('/files/multipart', multipartFormRequestOptions({ body, ...options }));
+    return this.post('/files/multipart', await multipartFormRequestOptions({ body, ...options }));
   }
 }
 
@@ -23,7 +22,7 @@ export interface FileCreateMultipartResponse {
 }
 
 export interface FileCreateMultipartParams {
-  file: FormData.Blob | FormData.File;
+  file: Uploadable;
 
   purpose: string;
 }

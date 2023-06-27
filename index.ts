@@ -4,9 +4,9 @@ import qs from 'qs';
 import * as Core from './core';
 import * as Pagination from './pagination';
 import * as API from './resources';
-import * as Errors from '~/error';
+import * as Errors from './error';
 import type { Agent } from 'http';
-import * as FileFromPath from 'formdata-node/file-from-path';
+import * as Uploads from './uploads';
 
 const environments = {
   production: 'https://demo.stainlessapi.com/',
@@ -48,7 +48,7 @@ export class Sink extends Core.APIClient {
 
   constructor(config: Config) {
     const options: Config = {
-      userToken: process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
+      userToken: typeof process === 'undefined' ? '' : process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
       environment: 'production',
       ...config,
     };
@@ -228,11 +228,13 @@ export const {
   UnprocessableEntityError,
 } = Errors;
 
-export import fileFromPath = FileFromPath.fileFromPath;
+export import toFile = Uploads.toFile;
+export import fileFromPath = Uploads.fileFromPath;
 
 export namespace Sink {
   // Helper functions
-  export import fileFromPath = FileFromPath.fileFromPath;
+  export import toFile = Uploads.toFile;
+  export import fileFromPath = Uploads.fileFromPath;
 
   export import CardPage = Pagination.CardPage;
   export import CardPageParams = Pagination.CardPageParams;
@@ -477,6 +479,4 @@ export namespace Sink {
   export import SimpleObject = API.SimpleObject;
   export import SimpleObjectAlias = API.SimpleObjectAlias;
 }
-
-exports = module.exports = Sink;
 export default Sink;

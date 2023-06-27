@@ -66,17 +66,32 @@ Documentation for each method, request param, and response field are available i
 
 ## File Uploads
 
-Request parameters that correspond to file uploads can be passed as either a `FormData.Blob` or a `FormData.File` instance.
+Request parameters that correspond to file uploads can be passed in many different forms:
 
-We provide a `fileFromPath` helper function to easily create `FormData.File` instances from a given class.
+- `File` (or an object with the same structure)
+- a `fetch` `Response` (or an object with the same structure)
+- an `fs.ReadStream`
+- the return value of our `toFile` helper
 
 ```ts
-import Sink, { fileFromPath } from 'sink-npm';
+import fs from 'fs';
+import fetch from 'node-fetch';
+import Sink, { toFile } from 'sink-npm';
 
 const sink = new Sink();
 
-const file = await fileFromPath('foo/bar.txt');
-await sink.files.createMultipart({ file: file });
+// If you have access to Node `fs` we recommend using `fs.createReadStream()`:
+await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt') });
+
+// Or if you have the web `File` API you can pass a `File` instance:
+await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt') });
+
+// You can also pass a `fetch` `Response`:
+await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt') });
+
+// Finally, if none of the above are convenient, you can use our `toFile` helper:
+await sink.files.createMultipart({ file: await toFile(Buffer.from('my bytes'), 'bar.txt') });
+await sink.files.createMultipart({ file: await toFile(new Uint8Array([0, 1, 2]), 'bar.txt') });
 ```
 
 ## Handling errors
