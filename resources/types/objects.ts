@@ -63,7 +63,7 @@ export interface ObjectMultipleArrayPropertiesSameRefResponse {
 }
 
 export namespace ObjectMultipleArrayPropertiesSameRefResponse {
-  export interface Foo {
+  export interface RequiredProp {
     foo?: string;
   }
 
@@ -71,7 +71,7 @@ export namespace ObjectMultipleArrayPropertiesSameRefResponse {
     foo?: string;
   }
 
-  export interface RequiredProp {
+  export interface Foo {
     foo?: string;
   }
 }
@@ -93,7 +93,7 @@ export interface ObjectMultiplePropertiesSameRefResponse {
 }
 
 export namespace ObjectMultiplePropertiesSameRefResponse {
-  export interface Foo {
+  export interface RequiredProp {
     foo?: string;
   }
 
@@ -101,7 +101,7 @@ export namespace ObjectMultiplePropertiesSameRefResponse {
     foo?: string;
   }
 
-  export interface RequiredProp {
+  export interface Foo {
     foo?: string;
   }
 }

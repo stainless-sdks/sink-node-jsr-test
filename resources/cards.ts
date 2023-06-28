@@ -143,6 +143,11 @@ export class CardsPageCursor extends PageCursor<Card> {}
 
 export interface Card {
   /**
+   * Globally unique identifier.
+   */
+  token: string;
+
+  /**
    * An ISO 8601 timestamp for when the card was created. UTC time zone.
    */
   created: string;
@@ -198,11 +203,6 @@ export interface Card {
    * manufactured.
    */
   state: 'CLOSED' | 'OPEN' | 'PAUSED' | 'PENDING_ACTIVATION' | 'PENDING_FULFILLMENT';
-
-  /**
-   * Globally unique identifier.
-   */
-  token: string;
 
   /**
    * Card types:
@@ -262,6 +262,11 @@ export type CardAlias = Card;
 
 export interface FundingAccount {
   /**
+   * A globally unique identifier for this FundingAccount.
+   */
+  token: string;
+
+  /**
    * An ISO 8601 string representing when this funding source was added to the Lithic
    * account. This may be `null`. UTC time zone.
    */
@@ -285,11 +290,6 @@ export interface FundingAccount {
    * - `DELETED` - The founding account has been deleted.
    */
   state: 'ENABLED' | 'PENDING' | 'DELETED';
-
-  /**
-   * A globally unique identifier for this FundingAccount.
-   */
-  token: string;
 
   /**
    * Types of funding source:

@@ -123,12 +123,12 @@ export namespace StreamingNestedParamsParams {
     }
 
     export namespace ParentObject {
-      export interface ChildProp {
-        from_object?: string;
-      }
-
       export interface ArrayProp {
         from_array_items?: boolean;
+      }
+
+      export interface ChildProp {
+        from_object?: string;
       }
     }
   }
@@ -151,12 +151,12 @@ export namespace StreamingNestedParamsParams {
     }
 
     export namespace ParentObject {
-      export interface ChildProp {
-        from_object?: string;
-      }
-
       export interface ArrayProp {
         from_array_items?: boolean;
+      }
+
+      export interface ChildProp {
+        from_object?: string;
       }
     }
   }
