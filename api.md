@@ -1,6 +1,6 @@
 # Testing
 
-Models:
+Types:
 
 - <code><a href="./resources/testing.ts">RootResponse</a></code>
 
@@ -12,7 +12,7 @@ Methods:
 
 ## EEOCResource
 
-Models:
+Types:
 
 - <code><a href="./resources/casing/eeoc.ts">EEOC</a></code>
 
@@ -22,7 +22,7 @@ Methods:
 
 # MethodConfig
 
-Models:
+Types:
 
 - <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsAllResponse</a></code>
 - <code><a href="./resources/method-config.ts">MethodConfigSkippedTestsGoResponse</a></code>
@@ -44,7 +44,7 @@ Methods:
 
 # Streaming
 
-Models:
+Types:
 
 - <code><a href="./resources/streaming.ts">StreamingBasicResponse</a></code>
 - <code><a href="./resources/streaming.ts">StreamingNestedParamsResponse</a></code>
@@ -60,7 +60,7 @@ Methods:
 
 ## Concrete
 
-Models:
+Types:
 
 - <code><a href="./resources/pagination-tests/concrete.ts">MyConcretePageItem</a></code>
 
@@ -112,7 +112,7 @@ Methods:
 
 # Docstrings
 
-Models:
+Types:
 
 - <code><a href="./resources/docstrings.ts">DocstringLeadingDoubleQuoteResponse</a></code>
 - <code><a href="./resources/docstrings.ts">DocstringTrailingDoubleQuoteResponse</a></code>
@@ -126,7 +126,7 @@ Methods:
 
 ## Arrays
 
-Models:
+Types:
 
 - <code><a href="./resources/invalid-schemas/arrays.ts">ArrayMissingItemsResponse</a></code>
 
@@ -150,7 +150,7 @@ Methods:
 
 # Cards
 
-Models:
+Types:
 
 - <code><a href="./resources/cards.ts">Card</a></code>
 - <code><a href="./resources/cards.ts">CardAlias</a></code>
@@ -168,14 +168,11 @@ Methods:
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
-
-Custom Methods:
-
 - `deprecatedGetAuthURL`
 
 # Files
 
-Models:
+Types:
 
 - <code><a href="./resources/files.ts">FileCreateMultipartResponse</a></code>
 
@@ -193,13 +190,13 @@ Methods:
 
 # CompanyResource
 
-Models:
+Types:
 
 - <code><a href="./resources/company/company.ts">Company</a></code>
 
 ## Payments
 
-Models:
+Types:
 
 - <code><a href="./resources/company/payments.ts">CompanyPayment</a></code>
 
@@ -209,7 +206,7 @@ Methods:
 
 # Sta563
 
-Models:
+Types:
 
 - <code><a href="./resources/sta-563.ts">DeleteEmptyObjectResponse</a></code>
 
@@ -219,7 +216,7 @@ Methods:
 
 # Sta569
 
-Models:
+Types:
 
 - <code><a href="./resources/sta-569.ts">Sta569OneEntryResponse</a></code>
 - <code><a href="./resources/sta-569.ts">Sta569OneEntryWithNullResponse</a></code>
@@ -231,7 +228,7 @@ Methods:
 
 # Sta630
 
-Models:
+Types:
 
 - <code><a href="./resources/sta-630.ts">GithubUser</a></code>
 - <code><a href="./resources/sta-630.ts">GithubUserPreferences</a></code>
@@ -244,7 +241,7 @@ Methods:
 
 ## Child
 
-Models:
+Types:
 
 - <code><a href="./resources/parent/child.ts">ChildInlinedResponseResponse</a></code>
 
@@ -261,7 +258,7 @@ Methods:
 
 # Envelopes
 
-Models:
+Types:
 
 - <code><a href="./resources/envelopes.ts">Address</a></code>
 - <code><a href="./resources/envelopes.ts">EnvelopeInlineResponseResponse</a></code>
@@ -274,7 +271,7 @@ Methods:
 
 # Types
 
-Models:
+Types:
 
 - <code><a href="./resources/types/types.ts">TypeDatesResponse</a></code>
 - <code><a href="./resources/types/types.ts">TypeDatetimesResponse</a></code>
@@ -288,7 +285,7 @@ Methods:
 
 ## ReadOnlyParams
 
-Models:
+Types:
 
 - <code><a href="./resources/types/read-only-params.ts">ReadOnlyParamSimpleResponse</a></code>
 
@@ -298,7 +295,7 @@ Methods:
 
 ## WriteOnlyResponses
 
-Models:
+Types:
 
 - <code><a href="./resources/types/write-only-responses.ts">WriteOnlyResponseSimpleResponse</a></code>
 
@@ -308,7 +305,7 @@ Methods:
 
 ## Maps
 
-Models:
+Types:
 
 - <code><a href="./resources/types/maps.ts">MapNullableItemsResponse</a></code>
 
@@ -318,7 +315,7 @@ Methods:
 
 ## Objects
 
-Models:
+Types:
 
 - <code><a href="./resources/types/objects.ts">ObjectMixedKnownAndUnknownResponse</a></code>
 - <code><a href="./resources/types/objects.ts">ObjectMultipleArrayPropertiesSameRefResponse</a></code>
@@ -334,7 +331,7 @@ Methods:
 
 # Names
 
-Models:
+Types:
 
 - <code><a href="./resources/names/names.ts">NamePropertiesCommonConflictsResponse</a></code>
 - <code><a href="./resources/names/names.ts">NameResponseShadowsPydanticResponse</a></code>
@@ -355,13 +352,13 @@ Methods:
 
 ### EmploymentData
 
-Models:
+Types:
 
 - <code><a href="./resources/names/can-cause-clashes/employment-data.ts">EmploymentData</a></code>
 
 # Widgets
 
-Models:
+Types:
 
 - <code><a href="./resources/widgets.ts">Widget</a></code>
 
@@ -371,7 +368,7 @@ Methods:
 
 # Sta613
 
-Models:
+Types:
 
 - <code><a href="./resources/sta-613.ts">Sta613GlobalWithStandardResponse</a></code>
 - <code><a href="./resources/sta-613.ts">Sta613OnlyGlobalResponse</a></code>
@@ -383,7 +380,7 @@ Methods:
 
 # Responses
 
-Models:
+Types:
 
 - <code><a href="./resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
@@ -428,7 +425,7 @@ Methods:
 
 # PathParams
 
-Models:
+Types:
 
 - <code><a href="./resources/path-params.ts">PathParamMultipleResponse</a></code>
 - <code><a href="./resources/path-params.ts">PathParamSingularResponse</a></code>
@@ -470,7 +467,7 @@ Methods:
 
 # BodyParams
 
-Models:
+Types:
 
 - <code><a href="./resources/body-params.ts">MyModel</a></code>
 - <code><a href="./resources/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
@@ -501,7 +498,7 @@ Methods:
 
 # MakeAmbiguousSchemasLooser
 
-Models:
+Types:
 
 - <code><a href="./resources/make-ambiguous-schemas-looser.ts">MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse</a></code>
 
@@ -511,7 +508,7 @@ Methods:
 
 # MakeAmbiguousSchemasExplicit
 
-Models:
+Types:
 
 - <code><a href="./resources/make-ambiguous-schemas-explicit.ts">MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse</a></code>
 
@@ -521,7 +518,7 @@ Methods:
 
 # DecoratorTests
 
-Models:
+Types:
 
 - <code><a href="./resources/decorator-tests/decorator-tests.ts">DecoratorTestKeepMeResponse</a></code>
 
@@ -537,7 +534,7 @@ Methods:
 
 ## KeepThisResource
 
-Models:
+Types:
 
 - <code><a href="./resources/decorator-tests/keep-this-resource.ts">KeepThisResourceKeepThisMethodResponse</a></code>
 
@@ -555,7 +552,7 @@ Methods:
 
 ## LevelOne
 
-Models:
+Types:
 
 - <code><a href="./resources/deeply-nested/level-one/level-one.ts">ModelLevel1</a></code>
 
@@ -565,7 +562,7 @@ Methods:
 
 ### LevelTwo
 
-Models:
+Types:
 
 - <code><a href="./resources/deeply-nested/level-one/level-two/level-two.ts">ModelLevel2</a></code>
 
@@ -575,7 +572,7 @@ Methods:
 
 #### LevelThree
 
-Models:
+Types:
 
 - <code><a href="./resources/deeply-nested/level-one/level-two/level-three.ts">ModelLevel3</a></code>
 
@@ -585,7 +582,7 @@ Methods:
 
 # Version1_30Names
 
-Models:
+Types:
 
 - <code><a href="./resources/version-1-30-names.ts">Version1_30NameCreateResponse</a></code>
 
@@ -595,7 +592,7 @@ Methods:
 
 # Recursion
 
-Models:
+Types:
 
 - <code><a href="./resources/recursion/recursion.ts">ArrayRecursion</a></code>
 - <code><a href="./resources/recursion/recursion.ts">BranchRecursion</a></code>
