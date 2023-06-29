@@ -1,3 +1,19 @@
+# Sink
+
+Types:
+
+- <code><a href="./resources/top-level.ts">APIStatus</a></code>
+- <code><a href="./resources/top-level.ts">APIStatusAlias</a></code>
+- <code><a href="./resources/top-level.ts">CustomAPIStatusMessage</a></code>
+- <code><a href="./resources/top-level.ts">Sta563PostEmptyObjectResponse</a></code>
+
+Methods:
+
+- <code title="get /status">client.<a href="./index.ts">apiStatus</a>() -> APIStatus</code>
+- <code title="post /no_response">client.<a href="./index.ts">createNoResponse</a>() -> void</code>
+- <code title="post /sta_563_empty_object">client.<a href="./index.ts">sta563PostEmptyObject</a>() -> Sta563PostEmptyObjectResponse</code>
+- <code>client.<a href="./index.ts">getAuthURL</a>(...args) -> string</code>
+
 # Testing
 
 Types:
@@ -168,7 +184,7 @@ Methods:
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
-- `deprecatedGetAuthURL`
+- <code>client.cards.<a href="./resources/cards.ts">deprecatedGetAuthURL</a>(...args) -> string</code>
 
 # Files
 
