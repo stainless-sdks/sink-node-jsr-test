@@ -11,7 +11,7 @@ export class Params extends APIResource {
   optionsParam(
     body: ParamOptionsParamParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/names/body_params/options', {
       body,
       ...options,
@@ -25,7 +25,7 @@ export class Params extends APIResource {
   timeoutParam(
     body: ParamTimeoutParamParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/names/body_params/timeout', {
       body,
       ...options,

@@ -15,7 +15,7 @@ export class HeaderParams extends APIResource {
   clientArgument(
     params: HeaderParamClientArgumentParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     const { 'X-Custom-Endpoint-Header': xCustomEndpointHeader, ...body } = params;
     return this.post('/header_params/client_argument', {
       body,

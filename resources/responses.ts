@@ -58,7 +58,7 @@ export class Responses extends APIResource {
   /**
    * Endpoint with an empty response.
    */
-  emptyResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
+  emptyResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
     return this.post('/responses/empty', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 
@@ -139,7 +139,7 @@ export class Responses extends APIResource {
   /**
    * Endpoint with a top level string response.
    */
-  stringResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<string>>> {
+  stringResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<string>> {
     return this.post('/responses/string', {
       ...options,
       headers: { Accept: 'application/json', ...options?.headers },

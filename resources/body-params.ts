@@ -21,7 +21,7 @@ export class BodyParams extends APIResource {
   readOnlyProperties(
     body: BodyParamReadOnlyPropertiesParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/body_params/read_only_properties', {
       body,
       ...options,
@@ -36,7 +36,7 @@ export class BodyParams extends APIResource {
   topLevelAllOfNestedObject(
     body: BodyParamTopLevelAllOfNestedObjectParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/body_params/top_level_allOf_nested_object', {
       body,
       ...options,
@@ -60,7 +60,7 @@ export class BodyParams extends APIResource {
   topLevelArray(
     body: BodyParamTopLevelArrayParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/body_params/top_level_array', {
       body,
       ...options,
@@ -74,7 +74,7 @@ export class BodyParams extends APIResource {
   topLevelArrayWithChildren(
     body: BodyParamTopLevelArrayWithChildrenParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/body_params/top_level_array_with_children', {
       body,
       ...options,
@@ -89,7 +89,7 @@ export class BodyParams extends APIResource {
   topLevelOneOfOneEntry(
     body: BodyParamTopLevelOneOfOneEntryParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/body_params/top_level_oneOf_one_entry', {
       body,
       ...options,
@@ -115,7 +115,7 @@ export class BodyParams extends APIResource {
   withModelProperty(
     body: BodyParamWithModelPropertyParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/body_params/with_model_property', {
       body,
       ...options,

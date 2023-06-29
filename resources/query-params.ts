@@ -9,15 +9,12 @@ export class QueryParams extends APIResource {
   /**
    * Endpoint with anyOf query params
    */
-  anyOf(
-    query?: QueryParamAnyOfParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>>;
-  anyOf(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
+  anyOf(query?: QueryParamAnyOfParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  anyOf(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
   anyOf(
     query: QueryParamAnyOfParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     if (isRequestOptions(query)) {
       return this.anyOf({}, query);
     }
@@ -31,15 +28,12 @@ export class QueryParams extends APIResource {
   /**
    * Endpoint with array query params
    */
-  array(
-    query?: QueryParamArrayParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>>;
-  array(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
+  array(query?: QueryParamArrayParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  array(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
   array(
     query: QueryParamArrayParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     if (isRequestOptions(query)) {
       return this.array({}, query);
     }
@@ -53,12 +47,12 @@ export class QueryParams extends APIResource {
   /**
    * Endpoint with enum query params
    */
-  enum(query?: QueryParamEnumParams, options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
-  enum(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
+  enum(query?: QueryParamEnumParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  enum(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
   enum(
     query: QueryParamEnumParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     if (isRequestOptions(query)) {
       return this.enum({}, query);
     }
@@ -72,15 +66,12 @@ export class QueryParams extends APIResource {
   /**
    * Endpoint with object query params
    */
-  object(
-    query?: QueryParamObjectParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>>;
-  object(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
+  object(query?: QueryParamObjectParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  object(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
   object(
     query: QueryParamObjectParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     if (isRequestOptions(query)) {
       return this.object({}, query);
     }
@@ -94,15 +85,12 @@ export class QueryParams extends APIResource {
   /**
    * Endpoint with oneOf query params
    */
-  oneOf(
-    query?: QueryParamOneOfParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>>;
-  oneOf(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
+  oneOf(query?: QueryParamOneOfParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  oneOf(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
   oneOf(
     query: QueryParamOneOfParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     if (isRequestOptions(query)) {
       return this.oneOf({}, query);
     }
@@ -119,12 +107,12 @@ export class QueryParams extends APIResource {
   primitives(
     query?: QueryParamPrimitivesParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>>;
-  primitives(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>>;
+  ): Promise<Core.APIResponse<void>>;
+  primitives(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
   primitives(
     query: QueryParamPrimitivesParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     if (isRequestOptions(query)) {
       return this.primitives({}, query);
     }

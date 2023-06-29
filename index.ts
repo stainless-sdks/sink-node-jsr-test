@@ -131,13 +131,16 @@ export class Sink extends Core.APIClient {
   apiStatus(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
     return this.get('/status', options);
   }
+
   apiStatusAlias = this.apiStatus;
+
   /**
    * Endpoint returning no response
    */
-  createNoResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
+  createNoResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
+
   /**
    * A top level custom method on the sink customer.
    */
@@ -148,6 +151,7 @@ export class Sink extends Core.APIClient {
 
     return url.toString();
   }
+
   /**
    * Should not generate a named return type for object without defined properties;
    * instead, it should simply use an `unknown` type or equivalent. In Java and Go,

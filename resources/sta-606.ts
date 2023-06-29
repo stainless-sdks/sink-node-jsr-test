@@ -21,7 +21,7 @@ export class Sta606 extends APIResource {
   withSharedParams(
     body: Sta606WithSharedParamsParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Promise<void>>> {
+  ): Promise<Core.APIResponse<void>> {
     return this.post('/sta_606_shared_types/request_params', {
       body,
       ...options,

@@ -7,7 +7,7 @@ export class Tests extends APIResource {
   /**
    * Testing codegen change with new Github action
    */
-  runCodegen(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
+  runCodegen(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
     return this.get('/tests/run_codegen', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 }

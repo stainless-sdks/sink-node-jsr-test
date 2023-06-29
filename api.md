@@ -163,7 +163,7 @@ Methods:
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
 - <code title="patch /cards/{card_token}">client.cards.<a href="./resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
 - <code title="get /cards">client.cards.<a href="./resources/cards.ts">list</a>({ ...params }) -> CardsCardPage</code>
-- <code title="post /deprecations/method">client.cards.<a href="./resources/cards.ts">deprecatedMethod</a>() -> Promise<void></code>
+- <code title="post /deprecations/method">client.cards.<a href="./resources/cards.ts">deprecatedMethod</a>() -> void</code>
 - <code title="post /cards/list">client.cards.<a href="./resources/cards.ts">listNonGet</a>({ ...params }) -> CardsCardPage</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
@@ -184,7 +184,7 @@ Methods:
 
 Methods:
 
-- <code title="post /no_response">client.resources.<a href="./resources/resources.ts">foo</a>() -> Promise<void></code>
+- <code title="post /no_response">client.resources.<a href="./resources/resources.ts">foo</a>() -> void</code>
 
 # ConfigTools
 
@@ -254,7 +254,7 @@ Methods:
 Methods:
 
 - <code title="post /sta_606_shared_types/response">client.sta606.<a href="./resources/sta-606.ts">withSharedModel</a>() -> ObjectWithChildRef</code>
-- <code title="post /sta_606_shared_types/request_params">client.sta606.<a href="./resources/sta-606.ts">withSharedParams</a>({ ...params }) -> Promise<void></code>
+- <code title="post /sta_606_shared_types/request_params">client.sta606.<a href="./resources/sta-606.ts">withSharedParams</a>({ ...params }) -> void</code>
 
 # Envelopes
 
@@ -345,8 +345,8 @@ Methods:
 
 Methods:
 
-- <code title="post /names/body_params/options">client.names.params.<a href="./resources/names/params.ts">optionsParam</a>({ ...params }) -> Promise<void></code>
-- <code title="post /names/body_params/timeout">client.names.params.<a href="./resources/names/params.ts">timeoutParam</a>({ ...params }) -> Promise<void></code>
+- <code title="post /names/body_params/options">client.names.params.<a href="./resources/names/params.ts">optionsParam</a>({ ...params }) -> void</code>
+- <code title="post /names/body_params/timeout">client.names.params.<a href="./resources/names/params.ts">timeoutParam</a>({ ...params }) -> void</code>
 
 ## CanCauseClashes
 
@@ -409,7 +409,7 @@ Methods:
 - <code title="get /responses/anyof_null">client.responses.<a href="./resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
 - <code title="get /responses/array">client.responses.<a href="./resources/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
 - <code title="post /responses/boolean">client.responses.<a href="./resources/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
-- <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> Promise<void></code>
+- <code title="post /responses/empty">client.responses.<a href="./resources/responses.ts">emptyResponse</a>() -> void</code>
 - <code title="post /responses/integer">client.responses.<a href="./resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
 - <code title="get /responses/missing_required">client.responses.<a href="./resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
 - <code title="get /responses/nested_array">client.responses.<a href="./resources/responses.ts">nestedArray</a>() -> ResponseNestedArrayResponse</code>
@@ -419,7 +419,7 @@ Methods:
 - <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./resources/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
 - <code title="get /responses/oneof_null">client.responses.<a href="./resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
 - <code title="get /responses/simple_object">client.responses.<a href="./resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
-- <code title="post /responses/string">client.responses.<a href="./resources/responses.ts">stringResponse</a>() -> Promise<string></code>
+- <code title="post /responses/string">client.responses.<a href="./resources/responses.ts">stringResponse</a>() -> string</code>
 - <code title="post /responses/union_of_mixed_types">client.responses.<a href="./resources/responses.ts">unionOfMixedTypes</a>() -> ResponseUnionOfMixedTypesResponse</code>
 - <code title="post /responses/union_of_objects">client.responses.<a href="./resources/responses.ts">unionOfObjects</a>() -> ResponseUnionOfObjectsResponse</code>
 
@@ -442,28 +442,28 @@ Methods:
 
 Methods:
 
-- <code title="post /positional_params/basic_body">client.positionalParams.<a href="./resources/positional-params.ts">basicBody</a>({ ...params }) -> Promise<void></code>
-- <code title="get /positional_params/basic_query">client.positionalParams.<a href="./resources/positional-params.ts">basicQuery</a>({ ...params }) -> Promise<void></code>
-- <code title="post /positional_params/body">client.positionalParams.<a href="./resources/positional-params.ts">body</a>({ ...params }) -> Promise<void></code>
-- <code title="post /positional_params/body_extra_param">client.positionalParams.<a href="./resources/positional-params.ts">bodyExtraParam</a>({ ...params }) -> Promise<void></code>
-- <code title="post /positional_params/query/{id}/kitchen_sink/{key}">client.positionalParams.<a href="./resources/positional-params.ts">kitchenSink</a>(id, camelCase, { ...params }) -> Promise<void></code>
-- <code title="post /positional_params/{first}/{second}/{last}">client.positionalParams.<a href="./resources/positional-params.ts">multiplePathParams</a>(second, name, { ...params }) -> Promise<void></code>
-- <code title="get /positional_params/query">client.positionalParams.<a href="./resources/positional-params.ts">query</a>(foo) -> Promise<void></code>
-- <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./resources/positional-params.ts">queryAndPath</a>(bar, id) -> Promise<void></code>
-- <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./resources/positional-params.ts">queryMultiple</a>(foo, { ...params }) -> Promise<void></code>
-- <code title="get /positional_params/{single}">client.positionalParams.<a href="./resources/positional-params.ts">single</a>(single) -> Promise<void></code>
-- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./resources/positional-params.ts">unionBodyAndPath</a>(id, { ...params }) -> Promise<void></code>
+- <code title="post /positional_params/basic_body">client.positionalParams.<a href="./resources/positional-params.ts">basicBody</a>({ ...params }) -> void</code>
+- <code title="get /positional_params/basic_query">client.positionalParams.<a href="./resources/positional-params.ts">basicQuery</a>({ ...params }) -> void</code>
+- <code title="post /positional_params/body">client.positionalParams.<a href="./resources/positional-params.ts">body</a>({ ...params }) -> void</code>
+- <code title="post /positional_params/body_extra_param">client.positionalParams.<a href="./resources/positional-params.ts">bodyExtraParam</a>({ ...params }) -> void</code>
+- <code title="post /positional_params/query/{id}/kitchen_sink/{key}">client.positionalParams.<a href="./resources/positional-params.ts">kitchenSink</a>(id, camelCase, { ...params }) -> void</code>
+- <code title="post /positional_params/{first}/{second}/{last}">client.positionalParams.<a href="./resources/positional-params.ts">multiplePathParams</a>(second, name, { ...params }) -> void</code>
+- <code title="get /positional_params/query">client.positionalParams.<a href="./resources/positional-params.ts">query</a>(foo) -> void</code>
+- <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./resources/positional-params.ts">queryAndPath</a>(bar, id) -> void</code>
+- <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./resources/positional-params.ts">queryMultiple</a>(foo, { ...params }) -> void</code>
+- <code title="get /positional_params/{single}">client.positionalParams.<a href="./resources/positional-params.ts">single</a>(single) -> void</code>
+- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./resources/positional-params.ts">unionBodyAndPath</a>(id, { ...params }) -> void</code>
 
 # QueryParams
 
 Methods:
 
-- <code title="get /query_params/anyOf">client.queryParams.<a href="./resources/query-params.ts">anyOf</a>({ ...params }) -> Promise<void></code>
-- <code title="get /query_params/array">client.queryParams.<a href="./resources/query-params.ts">array</a>({ ...params }) -> Promise<void></code>
-- <code title="get /query_params/enum">client.queryParams.<a href="./resources/query-params.ts">enum</a>({ ...params }) -> Promise<void></code>
-- <code title="get /query_params/object">client.queryParams.<a href="./resources/query-params.ts">object</a>({ ...params }) -> Promise<void></code>
-- <code title="get /query_params/oneOf">client.queryParams.<a href="./resources/query-params.ts">oneOf</a>({ ...params }) -> Promise<void></code>
-- <code title="get /query_params/primitives">client.queryParams.<a href="./resources/query-params.ts">primitives</a>({ ...params }) -> Promise<void></code>
+- <code title="get /query_params/anyOf">client.queryParams.<a href="./resources/query-params.ts">anyOf</a>({ ...params }) -> void</code>
+- <code title="get /query_params/array">client.queryParams.<a href="./resources/query-params.ts">array</a>({ ...params }) -> void</code>
+- <code title="get /query_params/enum">client.queryParams.<a href="./resources/query-params.ts">enum</a>({ ...params }) -> void</code>
+- <code title="get /query_params/object">client.queryParams.<a href="./resources/query-params.ts">object</a>({ ...params }) -> void</code>
+- <code title="get /query_params/oneOf">client.queryParams.<a href="./resources/query-params.ts">oneOf</a>({ ...params }) -> void</code>
+- <code title="get /query_params/primitives">client.queryParams.<a href="./resources/query-params.ts">primitives</a>({ ...params }) -> void</code>
 
 # BodyParams
 
@@ -474,20 +474,20 @@ Types:
 
 Methods:
 
-- <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> Promise<void></code>
-- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> BasicSharedModelObject</code>
-- <code title="post /body_params/top_level_array">client.bodyParams.<a href="./resources/body-params.ts">topLevelArray</a>([ ...items ]) -> Promise<void></code>
-- <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> Promise<void></code>
-- <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/top_level_array">client.bodyParams.<a href="./resources/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>
+- <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
+- <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
-- <code title="post /body_params/with_model_property">client.bodyParams.<a href="./resources/body-params.ts">withModelProperty</a>({ ...params }) -> Promise<void></code>
+- <code title="post /body_params/with_model_property">client.bodyParams.<a href="./resources/body-params.ts">withModelProperty</a>({ ...params }) -> void</code>
 
 # HeaderParams
 
 Methods:
 
-- <code title="post /header_params/client_argument">client.headerParams.<a href="./resources/header-params.ts">clientArgument</a>({ ...params }) -> Promise<void></code>
+- <code title="post /header_params/client_argument">client.headerParams.<a href="./resources/header-params.ts">clientArgument</a>({ ...params }) -> void</code>
 
 # MixedParams
 
@@ -546,7 +546,7 @@ Methods:
 
 Methods:
 
-- <code title="get /tests/run_codegen">client.tests.<a href="./resources/tests.ts">runCodegen</a>() -> Promise<void></code>
+- <code title="get /tests/run_codegen">client.tests.<a href="./resources/tests.ts">runCodegen</a>() -> void</code>
 
 # DeeplyNested
 

@@ -76,7 +76,7 @@ export class Cards extends APIResource {
    *
    * It will be removed in v0.99.0
    */
-  deprecatedMethod(options?: Core.RequestOptions): Promise<Core.APIResponse<Promise<void>>> {
+  deprecatedMethod(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
     return this.post('/deprecations/method', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 
