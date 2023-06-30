@@ -1,4 +1,4 @@
-import { createResponseHeaders } from '../core';
+import { createResponseHeaders } from 'sink-npm/core';
 import { Headers } from 'sink-npm/_shims/fetch';
 
 describe('response parsing', () => {

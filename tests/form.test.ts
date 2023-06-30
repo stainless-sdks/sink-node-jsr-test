@@ -1,4 +1,4 @@
-import { multipartFormRequestOptions, createForm } from '../core';
+import { multipartFormRequestOptions, createForm } from 'sink-npm/core';
 import { Blob } from 'sink-npm/_shims/formdata';
 import { toFile } from 'sink-npm';
 

@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
-import { Headers } from '~/core';
-import Sink from '../index';
+import { Headers } from 'sink-npm/core';
+import Sink from 'sink-npm';
 
 describe('instantiate client', () => {
   const env = process.env;

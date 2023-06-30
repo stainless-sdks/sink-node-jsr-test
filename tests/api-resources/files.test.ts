@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
-import { toFile } from 'sink-npm';
-import Sink from '~/index';
+import Sink, { toFile } from 'sink-npm';
 
 const sink = new Sink({
   userToken: 'something1234',
