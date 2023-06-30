@@ -137,6 +137,9 @@ export class Cards extends APIResource {
   }
 }
 
+/**
+ * Test description for card pages.
+ */
 export class CardsCardPage extends CardPage<Card> {}
 
 export class CardsPageCursor extends PageCursor<Card> {}

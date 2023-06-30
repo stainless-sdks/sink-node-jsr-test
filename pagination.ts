@@ -34,6 +34,9 @@ export interface CardPageParams {
   page_size?: number;
 }
 
+/**
+ * Test description for card pages.
+ */
 export class CardPage<Item> extends AbstractPage<Item> implements CardPageResponse<Item> {
   data: Array<Item>;
 
