@@ -141,8 +141,12 @@ export class Cards extends APIResource {
  * Test description for card pages.
  */
 export class CardsCardPage extends CardPage<Card> {}
+// alias so we can export it in the namespace
+type _CardsCardPage = CardsCardPage;
 
 export class CardsPageCursor extends PageCursor<Card> {}
+// alias so we can export it in the namespace
+type _CardsPageCursor = CardsPageCursor;
 
 export interface Card {
   /**
@@ -733,7 +737,7 @@ export namespace Cards {
   export import CardAlias = API.CardAlias;
   export import FundingAccount = API.FundingAccount;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
-  export import CardsCardPage = API.CardsCardPage;
+  export type CardsCardPage = _CardsCardPage;
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;

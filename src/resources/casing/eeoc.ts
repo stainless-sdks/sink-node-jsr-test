@@ -24,6 +24,8 @@ export class EEOCResource extends APIResource {
 }
 
 export class EEOCsPageCursor extends PageCursor<EEOC> {}
+// alias so we can export it in the namespace
+type _EEOCsPageCursor = EEOCsPageCursor;
 
 export interface EEOC {
   foo?: string;
@@ -33,6 +35,6 @@ export interface EEOCListParams extends PageCursorParams {}
 
 export namespace EEOCResource {
   export import EEOC = API.EEOC;
-  export import EEOCsPageCursor = API.EEOCsPageCursor;
+  export type EEOCsPageCursor = _EEOCsPageCursor;
   export import EEOCListParams = API.EEOCListParams;
 }

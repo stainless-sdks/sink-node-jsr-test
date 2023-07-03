@@ -125,16 +125,28 @@ export class BodyParams extends APIResource {
 }
 
 export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPagePageNumber = MyModelsPagePageNumber;
 
 export class MyModelsPageCursor extends PageCursor<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPageCursor = MyModelsPageCursor;
 
 export class MyModelsPageCursorURL extends PageCursorURL<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPageCursorURL = MyModelsPageCursorURL;
 
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPageOffset = MyModelsPageOffset;
 
 export class MyModelsPageHypermedia extends PageHypermedia<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPageHypermedia = MyModelsPageHypermedia;
 
 export class MyModelsPageHypermediaRaw extends PageHypermediaRaw<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPageHypermediaRaw = MyModelsPageHypermediaRaw;
 
 export interface MyModel {
   bar?: boolean;

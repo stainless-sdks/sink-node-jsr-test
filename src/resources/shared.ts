@@ -123,3 +123,5 @@ export interface SimpleObject {
 export type SimpleObjectAlias = SimpleObject;
 
 export class SimpleObjectsFakePage extends FakePage<SimpleObject> {}
+// alias so we can export it in the namespace
+type _SimpleObjectsFakePage = SimpleObjectsFakePage;
