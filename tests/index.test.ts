@@ -29,6 +29,41 @@ describe('instantiate client', () => {
     expect((req.headers as Headers)['X-My-Default-Header']).toEqual('2');
   });
 
+  describe('defaultQuery', () => {
+    test('with null query params given', () => {
+      const client = new Sink({
+        baseURL: 'http://localhost:5000/',
+        defaultQuery: { apiVersion: 'foo' },
+        username: 'Robert',
+        requiredArgNoEnv: '<example>',
+        userToken: 'my user token',
+      });
+      expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo');
+    });
+
+    test('multiple default query params', () => {
+      const client = new Sink({
+        baseURL: 'http://localhost:5000/',
+        defaultQuery: { apiVersion: 'foo', hello: 'world' },
+        username: 'Robert',
+        requiredArgNoEnv: '<example>',
+        userToken: 'my user token',
+      });
+      expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo&hello=world');
+    });
+
+    test('overriding with `undefined`', () => {
+      const client = new Sink({
+        baseURL: 'http://localhost:5000/',
+        defaultQuery: { hello: 'world' },
+        username: 'Robert',
+        requiredArgNoEnv: '<example>',
+        userToken: 'my user token',
+      });
+      expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
+    });
+  });
+
   describe('baseUrl', () => {
     test('trailing slash', () => {
       const client = new Sink({

@@ -24,6 +24,7 @@ type Config = {
   httpAgent?: Agent;
   maxRetries?: number;
   defaultHeaders?: Core.Headers;
+  defaultQuery?: Core.DefaultQuery;
   username?: string | null;
   clientId?: string | null;
   clientSecret?: string | null;
@@ -163,6 +164,10 @@ export class Sink extends Core.APIClient {
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Sink.Sta563PostEmptyObjectResponse>> {
     return this.post('/sta_563_empty_object', options);
+  }
+
+  protected override defaultQuery(): Core.DefaultQuery | undefined {
+    return this._options.defaultQuery;
   }
 
   protected override defaultHeaders(): Core.Headers {
