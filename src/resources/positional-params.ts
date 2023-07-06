@@ -128,11 +128,11 @@ export class PositionalParams extends APIResource {
    */
   queryMultiple(
     foo: string,
-    params: PositionalParamQueryMultipleParams,
+    query: PositionalParamQueryMultipleParams,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<void>> {
     return this.get('/positional_params/query_multiple', {
-      query: { foo, ...params },
+      query: { foo, ...query },
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -245,7 +245,7 @@ export interface PositionalParamMultiplePathParamsParams {
 
 export interface PositionalParamQueryMultipleParams {
   /**
-   * Some description about bar.
+   * Query param: Some description about bar.
    */
   bar: string;
 }

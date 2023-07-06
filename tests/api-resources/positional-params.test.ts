@@ -78,22 +78,8 @@ describe('resource positionalParams', () => {
     const response = await sink.positionalParams.query('string');
   });
 
-  test('query: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.positionalParams.query('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
-  });
-
   test('queryAndPath', async () => {
     const response = await sink.positionalParams.queryAndPath(0, 'string');
-  });
-
-  test('queryAndPath: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      sink.positionalParams.queryAndPath(0, 'string', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('queryMultiple: only required params', async () => {

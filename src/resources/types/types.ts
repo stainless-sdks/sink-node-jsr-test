@@ -2,11 +2,11 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as Shared from 'sink-npm/resources/shared';
 import { ReadOnlyParams } from './read-only-params';
 import { WriteOnlyResponses } from './write-only-responses';
 import { Maps } from './maps';
 import { Objects } from './objects';
-import * as Shared from 'sink-npm/resources/shared';
 import * as API from './';
 
 export class Types extends APIResource {

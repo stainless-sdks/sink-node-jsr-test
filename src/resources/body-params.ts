@@ -2,6 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import { isRequestOptions } from 'sink-npm/core';
 import * as Shared from 'sink-npm/resources/shared';
 import * as API from './';
 import {
@@ -102,9 +103,19 @@ export class BodyParams extends APIResource {
    * defined in both variants.
    */
   unionOverlappingProp(
-    body: BodyParamUnionOverlappingPropParams,
+    body?: BodyParamUnionOverlappingPropParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>>;
+  unionOverlappingProp(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>>;
+  unionOverlappingProp(
+    body: BodyParamUnionOverlappingPropParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>> {
+    if (isRequestOptions(body)) {
+      return this.unionOverlappingProp({}, body);
+    }
     return this.post('/body_params/top_level_anyOf_overlapping_property', { body, ...options });
   }
 

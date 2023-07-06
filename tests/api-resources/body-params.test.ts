@@ -74,11 +74,25 @@ describe('resource bodyParams', () => {
   });
 
   test('unionOverlappingProp: only required params', async () => {
-    const response = await sink.bodyParams.unionOverlappingProp({ foo: 'string' });
+    const response = await sink.bodyParams.unionOverlappingProp();
   });
 
   test('unionOverlappingProp: required and optional params', async () => {
     const response = await sink.bodyParams.unionOverlappingProp({ foo: 'string' });
+  });
+
+  test('unionOverlappingProp: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.bodyParams.unionOverlappingProp({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('unionOverlappingProp: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.bodyParams.unionOverlappingProp({ foo: 'string' }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('withModelProperty', async () => {

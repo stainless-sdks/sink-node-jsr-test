@@ -269,7 +269,7 @@ Methods:
 
 Methods:
 
-- <code title="post /sta_606_shared_types/response">client.sta606.<a href="./src/resources/sta-606.ts">withSharedModel</a>() -> ObjectWithChildRef</code>
+- <code title="post /sta_606_shared_types/response">client.sta606.<a href="./src/resources/sta-606.ts">withSharedModel</a>() -> Shared.ObjectWithChildRef</code>
 - <code title="post /sta_606_shared_types/request_params">client.sta606.<a href="./src/resources/sta-606.ts">withSharedParams</a>({ ...params }) -> void</code>
 
 # Envelopes
@@ -434,7 +434,7 @@ Methods:
 - <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./src/resources/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
 - <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./src/resources/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
 - <code title="get /responses/oneof_null">client.responses.<a href="./src/resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
-- <code title="get /responses/simple_object">client.responses.<a href="./src/resources/responses.ts">sharedResponseObject</a>() -> SimpleObject</code>
+- <code title="get /responses/simple_object">client.responses.<a href="./src/resources/responses.ts">sharedResponseObject</a>() -> Shared.SimpleObject</code>
 - <code title="post /responses/string">client.responses.<a href="./src/resources/responses.ts">stringResponse</a>() -> string</code>
 - <code title="post /responses/union_of_mixed_types">client.responses.<a href="./src/resources/responses.ts">unionOfMixedTypes</a>() -> ResponseUnionOfMixedTypesResponse</code>
 - <code title="post /responses/union_of_objects">client.responses.<a href="./src/resources/responses.ts">unionOfObjects</a>() -> ResponseUnionOfObjectsResponse</code>
@@ -448,10 +448,10 @@ Types:
 
 Methods:
 
-- <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./src/resources/path-params.ts">dashedParam</a>(dashedParam) -> BasicSharedModelObject</code>
-- <code title="post /path_params/{integer_param}">client.pathParams.<a href="./src/resources/path-params.ts">integerParam</a>(integerParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./src/resources/path-params.ts">dashedParam</a>(dashedParam) -> Shared.BasicSharedModelObject</code>
+- <code title="post /path_params/{integer_param}">client.pathParams.<a href="./src/resources/path-params.ts">integerParam</a>(integerParam) -> Shared.BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./src/resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
-- <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./src/resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./src/resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> Shared.BasicSharedModelObject</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./src/resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 
 # PositionalParams
@@ -492,7 +492,7 @@ Methods:
 
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./src/resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>
-- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> BasicSharedModelObject</code>
+- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
 - <code title="post /body_params/top_level_array">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
@@ -509,8 +509,8 @@ Methods:
 
 Methods:
 
-- <code title="post /mixed_params/query_and_body">client.mixedParams.<a href="./src/resources/mixed-params.ts">queryAndBody</a>({ ...params }) -> BasicSharedModelObject</code>
-- <code title="post /mixed_params/query_body_and_path/{path_param}">client.mixedParams.<a href="./src/resources/mixed-params.ts">queryBodyAndPath</a>(pathParam, { ...params }) -> BasicSharedModelObject</code>
+- <code title="post /mixed_params/query_and_body">client.mixedParams.<a href="./src/resources/mixed-params.ts">queryAndBody</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
+- <code title="post /mixed_params/query_body_and_path/{path_param}">client.mixedParams.<a href="./src/resources/mixed-params.ts">queryBodyAndPath</a>(pathParam, { ...params }) -> Shared.BasicSharedModelObject</code>
 
 # MakeAmbiguousSchemasLooser
 
@@ -546,7 +546,7 @@ Methods:
 
 Methods:
 
-- <code title="get /responses/simple_object">client.decoratorTests.languages.<a href="./src/resources/decorator-tests/languages.ts">skippedForPython</a>() -> SimpleObject</code>
+- <code title="get /responses/simple_object">client.decoratorTests.languages.<a href="./src/resources/decorator-tests/languages.ts">skippedForPython</a>() -> Shared.SimpleObject</code>
 
 ## KeepThisResource
 
@@ -574,7 +574,7 @@ Types:
 
 Methods:
 
-- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.<a href="./src/resources/deeply-nested/level-one/level-one.ts">methodLevel1</a>(cardToken) -> Card</code>
+- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.<a href="./src/resources/deeply-nested/level-one/level-one.ts">methodLevel1</a>(cardToken) -> Cards.Card</code>
 
 ### LevelTwo
 
@@ -584,7 +584,7 @@ Types:
 
 Methods:
 
-- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.levelTwo.<a href="./src/resources/deeply-nested/level-one/level-two/level-two.ts">methodLevel2</a>(cardToken) -> Card</code>
+- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.levelTwo.<a href="./src/resources/deeply-nested/level-one/level-two/level-two.ts">methodLevel2</a>(cardToken) -> Cards.Card</code>
 
 #### LevelThree
 
@@ -594,7 +594,7 @@ Types:
 
 Methods:
 
-- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.levelTwo.levelThree.<a href="./src/resources/deeply-nested/level-one/level-two/level-three.ts">methodLevel3</a>(cardToken) -> Card</code>
+- <code title="get /cards/{card_token}">client.deeplyNested.levelOne.levelTwo.levelThree.<a href="./src/resources/deeply-nested/level-one/level-two/level-three.ts">methodLevel3</a>(cardToken) -> Cards.Card</code>
 
 # Version1_30Names
 
@@ -631,6 +631,6 @@ Methods:
 
 Methods:
 
-- <code title="post /recursion/shared/responses/mutual-a">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualA</a>() -> SharedMutualRecursionA</code>
-- <code title="post /recursion/shared/responses/mutual-b">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualB</a>() -> SharedMutualRecursionB</code>
-- <code title="post /recursion/shared/responses/self">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createSelf</a>() -> SharedSelfRecursion</code>
+- <code title="post /recursion/shared/responses/mutual-a">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualA</a>() -> Shared.SharedMutualRecursionA</code>
+- <code title="post /recursion/shared/responses/mutual-b">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualB</a>() -> Shared.SharedMutualRecursionB</code>
+- <code title="post /recursion/shared/responses/self">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createSelf</a>() -> Shared.SharedSelfRecursion</code>

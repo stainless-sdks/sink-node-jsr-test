@@ -172,9 +172,6 @@ describe('idempotency', () => {
       requiredArgNoEnv: '<example>',
       baseURL: 'http://127.0.0.1:4010',
     });
-    await client.streaming.basic(
-      { model: 'string', prompt: 'string' },
-      { idempotencyKey: 'my-idempotency-key' },
-    );
+    await client.createNoResponse({ idempotencyKey: 'my-idempotency-key' });
   });
 });
