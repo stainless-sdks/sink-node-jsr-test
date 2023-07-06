@@ -5,9 +5,6 @@ import { APIResource } from 'sink-npm/resource';
 import * as API from './';
 
 export class Testing extends APIResource {
-  /**
-   * Top level endpoint
-   */
   root(options?: Core.RequestOptions): Promise<Core.APIResponse<RootResponse>> {
     return this.get('/', options);
   }

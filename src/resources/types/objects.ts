@@ -19,7 +19,7 @@ export class Objects extends APIResource {
   /**
    * Endpoint with a response schema object that contains multiple properties that
    * reference the same $ref in array items that is _not_ a model in the config.
-   * Three child types should be generated. One for each property.
+   * Three child types should be generated, one for each property.
    */
   multipleArrayPropertiesSameRef(
     options?: Core.RequestOptions,
