@@ -2,6 +2,7 @@
 
 import { Headers } from 'sink-npm/core';
 import Sink from 'sink-npm';
+import { Response } from 'sink-npm/_shims/fetch';
 
 describe('instantiate client', () => {
   const env = process.env;
@@ -83,6 +84,25 @@ describe('instantiate client', () => {
       });
       expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
     });
+  });
+
+  test('custom fetch', async () => {
+    const client = new Sink({
+      baseURL: 'http://localhost:5000/',
+      username: 'Robert',
+      requiredArgNoEnv: '<example>',
+      userToken: 'my user token',
+      fetch: (url) => {
+        return Promise.resolve(
+          new Response(JSON.stringify({ url, custom: true }), {
+            headers: { 'Content-Type': 'application/json' },
+          }),
+        );
+      },
+    });
+
+    const response = await client.get('/foo');
+    expect(response).toEqual({ url: 'http://localhost:5000/foo', custom: true });
   });
 
   describe('baseUrl', () => {
