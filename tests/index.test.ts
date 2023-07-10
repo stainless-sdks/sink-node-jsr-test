@@ -195,3 +195,19 @@ describe('idempotency', () => {
     await client.createNoResponse({ idempotencyKey: 'my-idempotency-key' });
   });
 });
+
+describe('request building', () => {
+  const client = new Sink({ username: 'Robert', requiredArgNoEnv: '<example>', userToken: 'my user token' });
+
+  describe('Content-Length', () => {
+    test('handles multi-byte characters', () => {
+      const { req } = client.buildRequest({ path: '/foo', method: 'post', body: { value: '—' } });
+      expect((req.headers as Record<string, string>)['Content-Length']).toEqual('20');
+    });
+
+    test('handles standard characters', () => {
+      const { req } = client.buildRequest({ path: '/foo', method: 'post', body: { value: 'hello' } });
+      expect((req.headers as Record<string, string>)['Content-Length']).toEqual('22');
+    });
+  });
+});
