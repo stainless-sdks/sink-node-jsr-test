@@ -37,7 +37,8 @@ async function main() {
 
   console.log(card.token);
 }
-main().catch(console.error);
+
+main();
 ```
 
 ### Usage with TypeScript
@@ -59,7 +60,8 @@ async function main() {
   const params: Sink.CardCreateParams = { type: 'SINGLE_USE', not: 'TEST' };
   const card: Sink.Card = await sink.cards.create(params);
 }
-main().catch(console.error);
+
+main();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -109,10 +111,13 @@ async function main() {
       console.log(err.error?.message); // Invalid parameter(s): type
       console.log(err.error?.debugging_request_id); // 94d5e915-xxxx-4cee-a4f5-2xd6ebd279ac
       console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
     }
   });
 }
-main().catch(console.error);
+
+main();
 ```
 
 Error codes are as followed:
@@ -146,7 +151,7 @@ const sink = new Sink({
 });
 
 // Or, configure per-request:
-sink.cards.list({ page_size: 10 }, {
+await sink.cards.list({ page_size: 10 }, {
   maxRetries: 5,
 });
 ```
@@ -165,7 +170,7 @@ const sink = new Sink({
 });
 
 // Override per-request:
-sink.cards.list({ page_size: 10 }, {
+await sink.cards.list({ page_size: 10 }, {
   timeout: 5 * 1000,
 });
 ```
@@ -249,7 +254,7 @@ const sink = new Sink({
 });
 
 // Override per-request:
-sink.cards.list({
+await sink.cards.list({
   baseURL: 'http://localhost:8080/test-api',
   httpAgent: new http.Agent({ keepAlive: false }),
 })
