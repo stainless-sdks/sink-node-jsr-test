@@ -30,10 +30,7 @@ const sink = new Sink({
 });
 
 async function main() {
-  const card = await sink.cards.create({
-    type: 'SINGLE_USE',
-    not: 'TEST',
-  });
+  const card = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' });
 
   console.log(card.token);
 }
@@ -83,17 +80,23 @@ import Sink, { toFile } from 'sink-npm';
 const sink = new Sink();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt') });
+await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'string' });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt') });
+await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'string' });
 
 // You can also pass a `fetch` `Response`:
-await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt') });
+await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'string' });
 
 // Finally, if none of the above are convenient, you can use our `toFile` helper:
-await sink.files.createMultipart({ file: await toFile(Buffer.from('my bytes'), 'bar.txt') });
-await sink.files.createMultipart({ file: await toFile(new Uint8Array([0, 1, 2]), 'bar.txt') });
+await sink.files.createMultipart({
+  file: await toFile(Buffer.from('my bytes'), 'bar.txt'),
+  purpose: 'string',
+});
+await sink.files.createMultipart({
+  file: await toFile(new Uint8Array([0, 1, 2]), 'bar.txt'),
+  purpose: 'string',
+});
 ```
 
 ## Handling errors
@@ -227,10 +230,7 @@ import Sink from 'sink-npm';
 const sink = new Sink();
 
 const card = await sink.cards.create(
-  {
-    type: 'SINGLE_USE',
-    not: 'TEST',
-  },
+  { type: 'SINGLE_USE', not: 'TEST' },
   { headers: { 'My-Api-Version': 'My-Custom-Value' } },
 );
 ```
