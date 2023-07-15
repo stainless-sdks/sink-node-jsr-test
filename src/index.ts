@@ -270,6 +270,7 @@ export class Sink extends Core.APIClient {
     return { arrayFormat: 'comma' };
   }
 
+  static Sink = this;
   static CONSTANT_WITH_NEWLINES = '\n\nHuman:';
 
   static APIError = Errors.APIError;
