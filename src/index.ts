@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless.
 
-import * as qs from 'qs';
 import * as Core from './core';
 import * as Pagination from './pagination';
 import * as API from './resources/index';
 import * as Errors from './error';
 import type { Agent } from 'sink-npm/_shims/agent';
 import * as Uploads from './uploads';
+import * as qs from 'qs';
 
 const environments = {
   production: 'https://demo.stainlessapi.com/',
@@ -153,6 +153,7 @@ export class Sink extends Core.APIClient {
   }
 
   testing: API.Testing = new API.Testing(this);
+  complexQueries: API.ComplexQueries = new API.ComplexQueries(this);
   casing: API.Casing = new API.Casing(this);
   methodConfig: API.MethodConfig = new API.MethodConfig(this);
   streaming: API.Streaming = new API.Streaming(this);
@@ -266,8 +267,8 @@ export class Sink extends Core.APIClient {
     return { Authorization: `Bearer ${this.userToken}` };
   }
 
-  protected override qsOptions(): qs.IStringifyOptions {
-    return { arrayFormat: 'comma' };
+  protected override stringifyQuery(query: Record<string, unknown>): string {
+    return qs.stringify(query, { arrayFormat: 'comma' });
   }
 
   static Sink = this;
@@ -355,6 +356,12 @@ export namespace Sink {
 
   export import Testing = API.Testing;
   export import RootResponse = API.RootResponse;
+
+  export import ComplexQueries = API.ComplexQueries;
+  export import ComplexQueryArrayQueryResponse = API.ComplexQueryArrayQueryResponse;
+  export import ComplexQueryObjectQueryResponse = API.ComplexQueryObjectQueryResponse;
+  export import ComplexQueryArrayQueryParams = API.ComplexQueryArrayQueryParams;
+  export import ComplexQueryObjectQueryParams = API.ComplexQueryObjectQueryParams;
 
   export import Casing = API.Casing;
 

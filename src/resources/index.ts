@@ -42,6 +42,13 @@ export {
 } from './cards';
 export { Casing } from './casing/casing';
 export { Company, CompanyResource } from './company/company';
+export {
+  ComplexQueryArrayQueryResponse,
+  ComplexQueryObjectQueryResponse,
+  ComplexQueryArrayQueryParams,
+  ComplexQueryObjectQueryParams,
+  ComplexQueries,
+} from './complex-queries';
 export { ConfigTools } from './config-tools';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
 export { DeeplyNested } from './deeply-nested/deeply-nested';

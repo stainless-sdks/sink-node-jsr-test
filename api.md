@@ -24,6 +24,18 @@ Methods:
 
 - <code title="get /">client.testing.<a href="./src/resources/testing.ts">root</a>() -> RootResponse</code>
 
+# ComplexQueries
+
+Types:
+
+- <code><a href="./src/resources/complex-queries.ts">ComplexQueryArrayQueryResponse</a></code>
+- <code><a href="./src/resources/complex-queries.ts">ComplexQueryObjectQueryResponse</a></code>
+
+Methods:
+
+- <code title="get /array_query">client.complexQueries.<a href="./src/resources/complex-queries.ts">arrayQuery</a>({ ...params }) -> ComplexQueryArrayQueryResponse</code>
+- <code title="get /object_query">client.complexQueries.<a href="./src/resources/complex-queries.ts">objectQuery</a>({ ...params }) -> ComplexQueryObjectQueryResponse</code>
+
 # Casing
 
 ## EEOCResource
