@@ -13,7 +13,7 @@ const environments = {
   sandbox: 'https://demo-sanbox.stainlessapi.com/',
 };
 
-type Config = {
+export interface ClientOptions {
   /**
    * Defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]. Set it to null if you want to send unauthenticated requests.
    */
@@ -95,7 +95,7 @@ type Config = {
   someNumberArg?: number | null;
 
   requiredArgNoEnv: string;
-};
+}
 
 /** Instantiate the API Client. */
 export class Sink extends Core.APIClient {
@@ -108,13 +108,13 @@ export class Sink extends Core.APIClient {
   someNumberArg?: number | null;
   requiredArgNoEnv: string;
 
-  private _options: Config;
+  private _options: ClientOptions;
 
-  constructor(config: Config) {
-    const options: Config = {
+  constructor(opts: ClientOptions) {
+    const options: ClientOptions = {
       userToken: typeof process === 'undefined' ? '' : process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
       environment: 'production',
-      ...config,
+      ...opts,
     };
 
     super({
@@ -128,28 +128,28 @@ export class Sink extends Core.APIClient {
     this._options = options;
     this.idempotencyHeader = 'Idempotency-Key';
 
-    const username = config.username || process.env['SINK_USER'];
+    const username = opts.username || process.env['SINK_USER'];
     if (!username) {
       throw new Error(
         "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
       );
     }
     this.username = username;
-    this.clientId = config.clientId || process.env['SINK_CLIENT_ID'] || null;
-    this.clientSecret = config.clientSecret || process.env['SINK_CLIENT_SECRET'] || 'hellosecret';
+    this.clientId = opts.clientId || process.env['SINK_CLIENT_ID'] || null;
+    this.clientSecret = opts.clientSecret || process.env['SINK_CLIENT_SECRET'] || 'hellosecret';
     this.someBooleanArg =
-      config.someBooleanArg ||
+      opts.someBooleanArg ||
       (process.env['SINK_SOME_BOOLEAN_ARG'] && Core.coerceBoolean(process.env['SINK_SOME_BOOLEAN_ARG'])) ||
       true;
     this.someIntegerArg =
-      config.someIntegerArg ||
+      opts.someIntegerArg ||
       (process.env['SINK_SOME_INTEGER_ARG'] && Core.coerceInteger(process.env['SINK_SOME_INTEGER_ARG'])) ||
       123;
     this.someNumberArg =
-      config.someNumberArg ||
+      opts.someNumberArg ||
       (process.env['SINK_SOME_NUMBER_ARG'] && Core.coerceFloat(process.env['SINK_SOME_NUMBER_ARG'])) ||
       1.2;
-    this.requiredArgNoEnv = config.requiredArgNoEnv;
+    this.requiredArgNoEnv = opts.requiredArgNoEnv;
   }
 
   testing: API.Testing = new API.Testing(this);
