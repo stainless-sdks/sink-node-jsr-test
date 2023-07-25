@@ -31,6 +31,16 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` making use of allOf.
+   */
+  topLevelAllOf(
+    body: BodyParamTopLevelAllOfParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<BodyParamTopLevelAllOfResponse>> {
+    return this.post('/body_params/top_level_allOf', { body, ...options });
+  }
+
+  /**
    * Endpoint with a `requestBody` making use of allOf where one of the properties is
    * an object type.
    */
@@ -163,6 +173,12 @@ export interface MyModel {
   bar?: boolean;
 }
 
+export interface BodyParamTopLevelAllOfResponse {
+  is_foo: boolean;
+
+  kind: 'VIRTUAL' | 'PHYSICAL';
+}
+
 export interface BodyParamUnionOverlappingPropResponse {
   foo: string;
 }
@@ -171,25 +187,27 @@ export interface BodyParamReadOnlyPropertiesParams {
   in_both?: boolean;
 }
 
-export type BodyParamTopLevelAllOfNestedObjectParams = BodyParamTopLevelAllOfNestedObjectParams.Body;
+export interface BodyParamTopLevelAllOfParams {
+  is_foo: boolean;
+
+  kind: 'VIRTUAL' | 'PHYSICAL';
+}
+
+export interface BodyParamTopLevelAllOfNestedObjectParams {
+  kind: 'VIRTUAL' | 'PHYSICAL';
+
+  /**
+   * This is an object with required properties
+   */
+  nested_obj?: BodyParamTopLevelAllOfNestedObjectParams.NestedObj;
+}
 
 export namespace BodyParamTopLevelAllOfNestedObjectParams {
-  export interface Body {
-    kind: 'VIRTUAL' | 'PHYSICAL';
-
-    /**
-     * This is an object with required properties
-     */
-    nested_obj?: Body.NestedObj;
-  }
-
-  export namespace Body {
-    /**
-     * This is an object with required properties
-     */
-    export interface NestedObj {
-      is_foo: boolean;
-    }
+  /**
+   * This is an object with required properties
+   */
+  export interface NestedObj {
+    is_foo: boolean;
   }
 }
 
@@ -249,8 +267,10 @@ export interface BodyParamWithModelPropertyParams {
 
 export namespace BodyParams {
   export import MyModel = API.MyModel;
+  export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
   export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
   export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;

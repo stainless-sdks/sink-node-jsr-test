@@ -462,9 +462,11 @@ export namespace Sink {
   export import Responses = API.Responses;
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
   export import SimpleAllof = API.SimpleAllof;
   export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
   export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
   export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
   export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
@@ -494,6 +496,7 @@ export namespace Sink {
   export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 
   export import QueryParams = API.QueryParams;
+  export import QueryParamAllOfParams = API.QueryParamAllOfParams;
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
   export import QueryParamEnumParams = API.QueryParamEnumParams;
@@ -503,8 +506,10 @@ export namespace Sink {
 
   export import BodyParams = API.BodyParams;
   export import MyModel = API.MyModel;
+  export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
   export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
   export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;

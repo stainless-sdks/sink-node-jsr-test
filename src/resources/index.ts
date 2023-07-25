@@ -83,8 +83,10 @@ export {
 export { MixedParamQueryAndBodyParams, MixedParamQueryBodyAndPathParams, MixedParams } from './mixed-params';
 export {
   MyModel,
+  BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
   BodyParamReadOnlyPropertiesParams,
+  BodyParamTopLevelAllOfParams,
   BodyParamTopLevelAllOfNestedObjectParams,
   BodyParamTopLevelAnyOfWithRefParams,
   BodyParamTopLevelArrayParams,
@@ -109,9 +111,11 @@ export {
 export {
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,
+  ResponsesAllofCrossObject,
   SimpleAllof,
   ResponseAdditionalPropertiesResponse,
   ResponseAdditionalPropertiesNestedModelReferenceResponse,
+  ResponseAllofCrossResourceResponse,
   ResponseAllofSimpleResponse,
   ResponseArrayResponseResponse,
   ResponseBooleanResponseResponse,
@@ -142,6 +146,7 @@ export {
   PositionalParams,
 } from './positional-params';
 export {
+  QueryParamAllOfParams,
   QueryParamAnyOfParams,
   QueryParamArrayParams,
   QueryParamEnumParams,

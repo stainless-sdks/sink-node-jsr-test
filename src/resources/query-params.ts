@@ -7,6 +7,25 @@ import * as API from './';
 
 export class QueryParams extends APIResource {
   /**
+   * Endpoint with allOf query params
+   */
+  allOf(query?: QueryParamAllOfParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  allOf(options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
+  allOf(
+    query: QueryParamAllOfParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<void>> {
+    if (isRequestOptions(query)) {
+      return this.allOf({}, query);
+    }
+    return this.get('/query_params/allOf', {
+      query,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with anyOf query params
    */
   anyOf(query?: QueryParamAnyOfParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>>;
@@ -124,6 +143,18 @@ export class QueryParams extends APIResource {
   }
 }
 
+export interface QueryParamAllOfParams {
+  foo_and_bar?: QueryParamAllOfParams.FooAndBar;
+}
+
+export namespace QueryParamAllOfParams {
+  export interface FooAndBar {
+    bar?: number;
+
+    foo?: string;
+  }
+}
+
 export interface QueryParamAnyOfParams {
   string_or_integer?: string | number;
 }
@@ -179,6 +210,7 @@ export interface QueryParamPrimitivesParams {
 }
 
 export namespace QueryParams {
+  export import QueryParamAllOfParams = API.QueryParamAllOfParams;
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
   export import QueryParamEnumParams = API.QueryParamEnumParams;

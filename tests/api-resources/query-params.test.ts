@@ -10,6 +10,27 @@ const sink = new Sink({
 });
 
 describe('resource queryParams', () => {
+  test('allOf', async () => {
+    const response = await sink.queryParams.allOf();
+  });
+
+  test('allOf: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.queryParams.allOf({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('allOf: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.queryParams.allOf(
+        { foo_and_bar: { foo: 'string', bar: 0 } },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
   test('anyOf', async () => {
     const response = await sink.queryParams.anyOf();
   });

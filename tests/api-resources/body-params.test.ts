@@ -14,6 +14,14 @@ describe('resource bodyParams', () => {
     const response = await sink.bodyParams.readOnlyProperties({});
   });
 
+  test('topLevelAllOf: only required params', async () => {
+    const response = await sink.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
+  });
+
+  test('topLevelAllOf: required and optional params', async () => {
+    const response = await sink.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
+  });
+
   test('topLevelAllOfNestedObject: only required params', async () => {
     const response = await sink.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
   });

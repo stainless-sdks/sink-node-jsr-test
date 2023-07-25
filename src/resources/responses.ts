@@ -28,6 +28,16 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Method with a response object defined using allOf and two models, one from
+   * another resource and one from this resource, as well as a nested allOf.
+   */
+  allofCrossResource(
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<ResponseAllofCrossResourceResponse>> {
+    return this.get('/responses/allof/cross', options);
+  }
+
+  /**
    * Method with a response object defined using allOf and inline schema definitions.
    */
   allofSimple(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseAllofSimpleResponse>> {
@@ -183,6 +193,12 @@ export namespace ObjectWithOneOfNullProperty {
   }
 }
 
+export interface ResponsesAllofCrossObject {
+  bar?: number;
+
+  foo?: string;
+}
+
 export interface SimpleAllof {
   is_foo: boolean;
 
@@ -192,6 +208,14 @@ export interface SimpleAllof {
 export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
 
 export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParams.MyModel>;
+
+export interface ResponseAllofCrossResourceResponse extends ResponsesAllofCrossObject {
+  is_foo: boolean;
+
+  kind: 'VIRTUAL' | 'PHYSICAL';
+
+  baz?: string;
+}
 
 export interface ResponseAllofSimpleResponse {
   bar?: string;
@@ -303,9 +327,11 @@ export namespace ResponseUnionOfObjectsResponse {
 export namespace Responses {
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
   export import SimpleAllof = API.SimpleAllof;
   export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
   export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
   export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
   export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;

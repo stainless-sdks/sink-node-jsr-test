@@ -412,9 +412,11 @@ Types:
 
 - <code><a href="./src/resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./src/resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
+- <code><a href="./src/resources/responses.ts">ResponsesAllofCrossObject</a></code>
 - <code><a href="./src/resources/responses.ts">SimpleAllof</a></code>
 - <code><a href="./src/resources/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
 - <code><a href="./src/resources/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
+- <code><a href="./src/resources/responses.ts">ResponseAllofCrossResourceResponse</a></code>
 - <code><a href="./src/resources/responses.ts">ResponseAllofSimpleResponse</a></code>
 - <code><a href="./src/resources/responses.ts">ResponseArrayResponseResponse</a></code>
 - <code><a href="./src/resources/responses.ts">ResponseBooleanResponseResponse</a></code>
@@ -433,6 +435,7 @@ Methods:
 
 - <code title="post /responses/additional_properties">client.responses.<a href="./src/resources/responses.ts">additionalProperties</a>() -> ResponseAdditionalPropertiesResponse</code>
 - <code title="post /responses/additional_properties_nested_model_reference">client.responses.<a href="./src/resources/responses.ts">additionalPropertiesNestedModelReference</a>() -> ResponseAdditionalPropertiesNestedModelReferenceResponse</code>
+- <code title="get /responses/allof/cross">client.responses.<a href="./src/resources/responses.ts">allofCrossResource</a>() -> ResponseAllofCrossResourceResponse</code>
 - <code title="get /responses/allof/simple">client.responses.<a href="./src/resources/responses.ts">allofSimple</a>() -> ResponseAllofSimpleResponse</code>
 - <code title="get /responses/anyof_null">client.responses.<a href="./src/resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
 - <code title="get /responses/array">client.responses.<a href="./src/resources/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
@@ -486,6 +489,7 @@ Methods:
 
 Methods:
 
+- <code title="get /query_params/allOf">client.queryParams.<a href="./src/resources/query-params.ts">allOf</a>({ ...params }) -> void</code>
 - <code title="get /query_params/anyOf">client.queryParams.<a href="./src/resources/query-params.ts">anyOf</a>({ ...params }) -> void</code>
 - <code title="get /query_params/array">client.queryParams.<a href="./src/resources/query-params.ts">array</a>({ ...params }) -> void</code>
 - <code title="get /query_params/enum">client.queryParams.<a href="./src/resources/query-params.ts">enum</a>({ ...params }) -> void</code>
@@ -498,11 +502,13 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/body-params.ts">MyModel</a></code>
+- <code><a href="./src/resources/body-params.ts">BodyParamTopLevelAllOfResponse</a></code>
 - <code><a href="./src/resources/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
 
 Methods:
 
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./src/resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_allOf">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOf</a>({ ...params }) -> BodyParamTopLevelAllOfResponse</code>
 - <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
 - <code title="post /body_params/top_level_array">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>

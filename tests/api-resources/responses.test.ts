@@ -32,6 +32,17 @@ describe('resource responses', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('allofCrossResource', async () => {
+    const response = await sink.responses.allofCrossResource();
+  });
+
+  test('allofCrossResource: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.allofCrossResource({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('allofSimple', async () => {
     const response = await sink.responses.allofSimple();
   });
