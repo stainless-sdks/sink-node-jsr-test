@@ -128,28 +128,22 @@ export class Sink extends Core.APIClient {
     this._options = options;
     this.idempotencyHeader = 'Idempotency-Key';
 
-    const username = opts.username || process.env['SINK_USER'];
+    const username = options.username || Core.readEnv('SINK_USER');
     if (!username) {
       throw new Error(
         "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
       );
     }
     this.username = username;
-    this.clientId = opts.clientId || process.env['SINK_CLIENT_ID'] || null;
-    this.clientSecret = opts.clientSecret || process.env['SINK_CLIENT_SECRET'] || 'hellosecret';
+    this.clientId = options.clientId || Core.readEnv('SINK_CLIENT_ID') || null;
+    this.clientSecret = options.clientSecret || Core.readEnv('SINK_CLIENT_SECRET') || 'hellosecret';
     this.someBooleanArg =
-      opts.someBooleanArg ||
-      (process.env['SINK_SOME_BOOLEAN_ARG'] && Core.coerceBoolean(process.env['SINK_SOME_BOOLEAN_ARG'])) ||
-      true;
+      options.someBooleanArg || Core.coerceBoolean(Core.readEnv('SINK_SOME_BOOLEAN_ARG')) || true;
     this.someIntegerArg =
-      opts.someIntegerArg ||
-      (process.env['SINK_SOME_INTEGER_ARG'] && Core.coerceInteger(process.env['SINK_SOME_INTEGER_ARG'])) ||
-      123;
+      options.someIntegerArg || Core.coerceInteger(Core.readEnv('SINK_SOME_INTEGER_ARG')) || 123;
     this.someNumberArg =
-      opts.someNumberArg ||
-      (process.env['SINK_SOME_NUMBER_ARG'] && Core.coerceFloat(process.env['SINK_SOME_NUMBER_ARG'])) ||
-      1.2;
-    this.requiredArgNoEnv = opts.requiredArgNoEnv;
+      options.someNumberArg || Core.coerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')) || 1.2;
+    this.requiredArgNoEnv = options.requiredArgNoEnv;
   }
 
   testing: API.Testing = new API.Testing(this);
