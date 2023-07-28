@@ -82,7 +82,7 @@ export interface ClientOptions {
    */
   defaultQuery?: Core.DefaultQuery;
 
-  username?: string | null;
+  username?: string;
 
   clientId?: string | null;
 
@@ -111,10 +111,37 @@ export class Sink extends Core.APIClient {
   private _options: ClientOptions;
 
   constructor(opts: ClientOptions) {
+    const username = opts.username || Core.readEnv('SINK_USER');
+    if (username === undefined) {
+      throw new Error(
+        "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
+      );
+    }
+    const clientId = opts.clientId || Core.readEnv('SINK_CLIENT_ID') || null;
+    const clientSecret = opts.clientSecret || Core.readEnv('SINK_CLIENT_SECRET') || 'hellosecret';
+    const someBooleanArg =
+      opts.someBooleanArg || Core.coerceBoolean(Core.readEnv('SINK_SOME_BOOLEAN_ARG')) || true;
+    const someIntegerArg =
+      opts.someIntegerArg || Core.coerceInteger(Core.readEnv('SINK_SOME_INTEGER_ARG')) || 123;
+    const someNumberArg = opts.someNumberArg || Core.coerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')) || 1.2;
+    const requiredArgNoEnv = opts.requiredArgNoEnv;
+    if (requiredArgNoEnv === undefined) {
+      throw new Error(
+        "Missing required client option requiredArgNoEnv; you need to instantiate the Sink client with an requiredArgNoEnv option, like new Sink({ requiredArgNoEnv: '<example>' }).",
+      );
+    }
+
     const options: ClientOptions = {
       userToken: typeof process === 'undefined' ? '' : process.env['SINK_CUSTOM_API_KEY_ENV'] || '',
       environment: 'production',
       ...opts,
+      username,
+      clientId,
+      clientSecret,
+      someBooleanArg,
+      someIntegerArg,
+      someNumberArg,
+      requiredArgNoEnv,
     };
 
     super({
@@ -128,22 +155,13 @@ export class Sink extends Core.APIClient {
     this._options = options;
     this.idempotencyHeader = 'Idempotency-Key';
 
-    const username = options.username || Core.readEnv('SINK_USER');
-    if (!username) {
-      throw new Error(
-        "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
-      );
-    }
     this.username = username;
-    this.clientId = options.clientId || Core.readEnv('SINK_CLIENT_ID') || null;
-    this.clientSecret = options.clientSecret || Core.readEnv('SINK_CLIENT_SECRET') || 'hellosecret';
-    this.someBooleanArg =
-      options.someBooleanArg || Core.coerceBoolean(Core.readEnv('SINK_SOME_BOOLEAN_ARG')) || true;
-    this.someIntegerArg =
-      options.someIntegerArg || Core.coerceInteger(Core.readEnv('SINK_SOME_INTEGER_ARG')) || 123;
-    this.someNumberArg =
-      options.someNumberArg || Core.coerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')) || 1.2;
-    this.requiredArgNoEnv = options.requiredArgNoEnv;
+    this.clientId = clientId;
+    this.clientSecret = clientSecret;
+    this.someBooleanArg = someBooleanArg;
+    this.someIntegerArg = someIntegerArg;
+    this.someNumberArg = someNumberArg;
+    this.requiredArgNoEnv = requiredArgNoEnv;
   }
 
   testing: API.Testing = new API.Testing(this);
