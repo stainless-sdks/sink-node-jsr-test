@@ -10,16 +10,14 @@ const sink = new Sink({
 });
 
 describe('resource files', () => {
-  // skipped: prism mock server is broken for file uploads
-  test.skip('createMultipart: only required params', async () => {
+  test('createMultipart: only required params', async () => {
     const response = await sink.files.createMultipart({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       purpose: 'string',
     });
   });
 
-  // skipped: prism mock server is broken for file uploads
-  test.skip('createMultipart: required and optional params', async () => {
+  test('createMultipart: required and optional params', async () => {
     const response = await sink.files.createMultipart({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       purpose: 'string',
