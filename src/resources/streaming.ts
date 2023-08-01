@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './';
+import * as API from './index';
 import { Stream } from 'sink-npm/streaming';
 
 export class Streaming extends APIResource {

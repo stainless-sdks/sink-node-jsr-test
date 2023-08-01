@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { SharedResponses } from './shared-responses';
-import * as API from './';
+import * as API from './index';
 
 export class Recursion extends APIResource {
   sharedResponses: SharedResponses = new SharedResponses(this.client);

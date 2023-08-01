@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as Cards from 'sink-npm/resources/cards';
 import { LevelThree } from './level-three';
-import * as API from './';
+import * as API from './index';
 
 export class LevelTwo extends APIResource {
   levelThree: LevelThree = new LevelThree(this.client);

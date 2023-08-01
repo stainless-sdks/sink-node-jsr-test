@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export { CanCauseClashes } from './can-cause-clashes';
+export { CanCauseClashes } from './can-cause-clashes/index';
 export {
   NamePropertiesCommonConflictsResponse,
   NameResponseShadowsPydanticResponse,

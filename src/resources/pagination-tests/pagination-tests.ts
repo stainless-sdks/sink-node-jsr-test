@@ -9,7 +9,7 @@ import { Offset } from './offset';
 import { FakePages } from './fake-pages';
 import { Hypermedia } from './hypermedia';
 import { HypermediaRaw } from './hypermedia-raw';
-import * as API from './';
+import * as API from './index';
 
 export class PaginationTests extends APIResource {
   concrete: Concrete = new Concrete(this.client);

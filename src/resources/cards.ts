@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './';
+import * as API from './index';
 import { CardPage, CardPageParams, PageCursor } from 'sink-npm/pagination';
 
 export class Cards extends APIResource {

@@ -2,7 +2,7 @@
 
 import { APIResource } from 'sink-npm/resource';
 import { Payments } from './payments';
-import * as API from './';
+import * as API from './index';
 
 export class CompanyResource extends APIResource {
   payments: Payments = new Payments(this.client);

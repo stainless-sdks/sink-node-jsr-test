@@ -7,7 +7,7 @@ import { ReadOnlyParams } from './read-only-params';
 import { WriteOnlyResponses } from './write-only-responses';
 import { Maps } from './maps';
 import { Objects } from './objects';
-import * as API from './';
+import * as API from './index';
 
 export class Types extends APIResource {
   readOnlyParams: ReadOnlyParams = new ReadOnlyParams(this.client);

@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import { CardsPageCursor } from 'sink-npm/resources/cards';
-import * as API from './';
+import * as API from './index';
 import { PageCursorParams } from 'sink-npm/pagination';
 
 export class PaginatedModelSecondRef extends APIResource {

@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { SimpleObjectsFakePage } from 'sink-npm/resources/shared';
-import * as API from './';
+import * as API from './index';
 import { FakePageParams } from 'sink-npm/pagination';
 
 export class FakePages extends APIResource {

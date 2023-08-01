@@ -2,7 +2,7 @@
 
 import { APIResource } from 'sink-npm/resource';
 import { EEOCResource } from './eeoc';
-import * as API from './';
+import * as API from './index';
 
 export class Casing extends APIResource {
   eeoc: EEOCResource = new EEOCResource(this.client);

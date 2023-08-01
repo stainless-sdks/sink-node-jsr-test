@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as Cards from 'sink-npm/resources/cards';
-import * as API from './';
+import * as API from './index';
 
 export class LevelThree extends APIResource {
   /**

@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { Languages } from './languages';
 import { KeepThisResource } from './keep-this-resource';
-import * as API from './';
+import * as API from './index';
 
 export class DecoratorTests extends APIResource {
   languages: Languages = new Languages(this.client);

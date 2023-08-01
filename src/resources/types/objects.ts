@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as BodyParams from 'sink-npm/resources/body-params';
-import * as API from './';
+import * as API from './index';
 
 export class Objects extends APIResource {
   /**

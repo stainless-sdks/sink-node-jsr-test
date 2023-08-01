@@ -2,7 +2,7 @@
 
 import { APIResource } from 'sink-npm/resource';
 import { Arrays } from './arrays';
-import * as API from './';
+import * as API from './index';
 
 export class InvalidSchemas extends APIResource {
   arrays: Arrays = new Arrays(this.client);

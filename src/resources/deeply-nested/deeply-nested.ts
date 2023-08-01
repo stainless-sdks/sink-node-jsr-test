@@ -2,7 +2,7 @@
 
 import { APIResource } from 'sink-npm/resource';
 import { LevelOne } from './level-one/level-one';
-import * as API from './';
+import * as API from './index';
 
 export class DeeplyNested extends APIResource {
   levelOne: LevelOne = new LevelOne(this.client);

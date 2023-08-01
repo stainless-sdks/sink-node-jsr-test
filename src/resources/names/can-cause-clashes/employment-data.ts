@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import * as API from './';
+import * as API from './index';
 
 export class EmploymentData extends APIResource {}
 

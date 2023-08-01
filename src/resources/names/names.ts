@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { Params } from './params';
 import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
-import * as API from './';
+import * as API from './index';
 
 export class Names extends APIResource {
   params: Params = new Params(this.client);

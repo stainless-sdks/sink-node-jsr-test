@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { AbstractPage, APIResponse, APIClient, FinalRequestOptions, PageInfo } from './core';
-import * as PaginationTests from './resources/pagination-tests';
+import * as PaginationTests from './resources/pagination-tests/index';
 
 export interface CardPageResponse<Item> {
   data: Array<Item>;

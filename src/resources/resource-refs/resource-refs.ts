@@ -3,7 +3,7 @@
 import { APIResource } from 'sink-npm/resource';
 import { PaginatedModelFirstRef } from './paginated-model-first-ref';
 import { PaginatedModelSecondRef } from './paginated-model-second-ref';
-import * as API from './';
+import * as API from './index';
 
 export class ResourceRefs extends APIResource {
   paginatedModelFirstRef: PaginatedModelFirstRef = new PaginatedModelFirstRef(this.client);
