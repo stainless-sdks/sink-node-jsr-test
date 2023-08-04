@@ -82,6 +82,12 @@ export interface ClientOptions {
    */
   defaultQuery?: Core.DefaultQuery;
 
+  /**
+   * By default, client-side use of this library is not allowed, as it risks exposing your secret API credentials to attackers.
+   * Only set this option to `true` if you understand the risks and have appropriate mitigations in place.
+   */
+  dangerouslyAllowBrowser?: boolean;
+
   username?: string;
 
   clientId?: string | null;
@@ -145,6 +151,12 @@ export class Sink extends Core.APIClient {
       environment: 'production',
       ...opts,
     };
+
+    if (!options.dangerouslyAllowBrowser && Core.isRunningInBrowser()) {
+      throw new Error(
+        'This is disabled by default, as it risks exposing your secret API credentials to attackers. \nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })',
+      );
+    }
 
     super({
       baseURL: options.baseURL || environments[options.environment || 'production'],
