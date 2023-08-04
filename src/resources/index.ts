@@ -172,8 +172,14 @@ export {
   StreamingNestedParamsResponse,
   StreamingQueryParamDiscriminatorResponse,
   StreamingBasicParams,
+  StreamingBasicParamsNonStreaming,
+  StreamingBasicParamsStreaming,
   StreamingNestedParamsParams,
+  StreamingNestedParamsParamsNonStreaming,
+  StreamingNestedParamsParamsStreaming,
   StreamingQueryParamDiscriminatorParams,
+  StreamingQueryParamDiscriminatorParamsNonStreaming,
+  StreamingQueryParamDiscriminatorParamsStreaming,
   Streaming,
 } from './streaming';
 export { Tests } from './tests';

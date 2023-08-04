@@ -7,13 +7,17 @@ import { Stream } from 'sink-npm/streaming';
 
 export class Streaming extends APIResource {
   basic(
-    body: StreamingBasicParams.BasicStreamingRequestNonStreaming,
+    body: StreamingBasicParamsNonStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<StreamingBasicResponse>>;
   basic(
-    body: StreamingBasicParams.BasicStreamingRequestStreaming,
+    body: StreamingBasicParamsStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Stream<StreamingBasicResponse>>>;
+  basic(
+    body: StreamingBasicParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<StreamingBasicResponse | Stream<StreamingBasicResponse>>>;
   basic(
     body: StreamingBasicParams,
     options?: Core.RequestOptions,
@@ -22,13 +26,17 @@ export class Streaming extends APIResource {
   }
 
   nestedParams(
-    body: StreamingNestedParamsParams.NestedStreamingRequestNonStreaming,
+    body: StreamingNestedParamsParamsNonStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<StreamingNestedParamsResponse>>;
   nestedParams(
-    body: StreamingNestedParamsParams.NestedStreamingRequestStreaming,
+    body: StreamingNestedParamsParamsStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Stream<StreamingNestedParamsResponse>>>;
+  nestedParams(
+    body: StreamingNestedParamsParams,
+    options?: Core.RequestOptions,
+  ): Promise<Core.APIResponse<StreamingNestedParamsResponse | Stream<StreamingNestedParamsResponse>>>;
   nestedParams(
     body: StreamingNestedParamsParams,
     options?: Core.RequestOptions,
@@ -37,13 +45,21 @@ export class Streaming extends APIResource {
   }
 
   queryParamDiscriminator(
-    query: StreamingQueryParamDiscriminatorParams.QueryParamDiscriminatorRequestNonStreaming,
+    query: StreamingQueryParamDiscriminatorParamsNonStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<StreamingQueryParamDiscriminatorResponse>>;
   queryParamDiscriminator(
-    query: StreamingQueryParamDiscriminatorParams.QueryParamDiscriminatorRequestStreaming,
+    query: StreamingQueryParamDiscriminatorParamsStreaming,
     options?: Core.RequestOptions,
   ): Promise<Core.APIResponse<Stream<StreamingQueryParamDiscriminatorResponse>>>;
+  queryParamDiscriminator(
+    query: StreamingQueryParamDiscriminatorParams,
+    options?: Core.RequestOptions,
+  ): Promise<
+    Core.APIResponse<
+      StreamingQueryParamDiscriminatorResponse | Stream<StreamingQueryParamDiscriminatorResponse>
+    >
+  >;
   queryParamDiscriminator(
     query: StreamingQueryParamDiscriminatorParams,
     options?: Core.RequestOptions,
@@ -78,106 +94,87 @@ export interface StreamingQueryParamDiscriminatorResponse {
   model?: string;
 }
 
-export type StreamingBasicParams =
-  | StreamingBasicParams.BasicStreamingRequestNonStreaming
-  | StreamingBasicParams.BasicStreamingRequestStreaming;
+export interface StreamingBasicParams {
+  model: string;
+
+  prompt: string;
+
+  stream?: boolean;
+}
 
 export namespace StreamingBasicParams {
-  export interface BasicStreamingRequestNonStreaming {
-    model: string;
-
-    prompt: string;
-
-    stream?: false;
-  }
-
-  export interface BasicStreamingRequestStreaming {
-    model: string;
-
-    prompt: string;
-
-    stream: true;
-  }
+  export type StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
+  export type StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
 }
 
-export type StreamingNestedParamsParams =
-  | StreamingNestedParamsParams.NestedStreamingRequestNonStreaming
-  | StreamingNestedParamsParams.NestedStreamingRequestStreaming;
+export interface StreamingBasicParamsNonStreaming extends StreamingBasicParams {
+  stream?: false;
+}
+
+export interface StreamingBasicParamsStreaming extends StreamingBasicParams {
+  stream: true;
+}
+
+export interface StreamingNestedParamsParams {
+  model: string;
+
+  prompt: string;
+
+  parent_object?: StreamingNestedParamsParams.ParentObject;
+
+  stream?: boolean;
+}
 
 export namespace StreamingNestedParamsParams {
-  export interface NestedStreamingRequestNonStreaming {
-    model: string;
+  export interface ParentObject {
+    array_prop?: Array<ParentObject.ArrayProp>;
 
-    prompt: string;
-
-    parent_object?: StreamingNestedParamsParams.NestedStreamingRequestNonStreaming.ParentObject;
-
-    stream?: false;
+    child_prop?: ParentObject.ChildProp;
   }
 
-  export namespace NestedStreamingRequestNonStreaming {
-    export interface ParentObject {
-      array_prop?: Array<ParentObject.ArrayProp>;
-
-      child_prop?: ParentObject.ChildProp;
+  export namespace ParentObject {
+    export interface ArrayProp {
+      from_array_items?: boolean;
     }
 
-    export namespace ParentObject {
-      export interface ArrayProp {
-        from_array_items?: boolean;
-      }
-
-      export interface ChildProp {
-        from_object?: string;
-      }
+    export interface ChildProp {
+      from_object?: string;
     }
   }
 
-  export interface NestedStreamingRequestStreaming {
-    model: string;
-
-    prompt: string;
-
-    stream: true;
-
-    parent_object?: StreamingNestedParamsParams.NestedStreamingRequestStreaming.ParentObject;
-  }
-
-  export namespace NestedStreamingRequestStreaming {
-    export interface ParentObject {
-      array_prop?: Array<ParentObject.ArrayProp>;
-
-      child_prop?: ParentObject.ChildProp;
-    }
-
-    export namespace ParentObject {
-      export interface ArrayProp {
-        from_array_items?: boolean;
-      }
-
-      export interface ChildProp {
-        from_object?: string;
-      }
-    }
-  }
+  export type StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
+  export type StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
 }
 
-export type StreamingQueryParamDiscriminatorParams =
-  | StreamingQueryParamDiscriminatorParams.QueryParamDiscriminatorRequestNonStreaming
-  | StreamingQueryParamDiscriminatorParams.QueryParamDiscriminatorRequestStreaming;
+export interface StreamingNestedParamsParamsNonStreaming extends StreamingNestedParamsParams {
+  stream?: false;
+}
+
+export interface StreamingNestedParamsParamsStreaming extends StreamingNestedParamsParams {
+  stream: true;
+}
+
+export interface StreamingQueryParamDiscriminatorParams {
+  prompt: string;
+
+  should_stream?: boolean;
+}
 
 export namespace StreamingQueryParamDiscriminatorParams {
-  export interface QueryParamDiscriminatorRequestNonStreaming {
-    prompt: string;
+  export type StreamingQueryParamDiscriminatorParamsNonStreaming =
+    API.StreamingQueryParamDiscriminatorParamsNonStreaming;
+  export type StreamingQueryParamDiscriminatorParamsStreaming =
+    API.StreamingQueryParamDiscriminatorParamsStreaming;
+}
 
-    should_stream?: false;
-  }
+export interface StreamingQueryParamDiscriminatorParamsNonStreaming
+  extends StreamingQueryParamDiscriminatorParams {
+  should_stream?: false;
+}
 
-  export interface QueryParamDiscriminatorRequestStreaming {
-    prompt: string;
-
-    should_stream: true;
-  }
+export interface StreamingQueryParamDiscriminatorParamsStreaming
+  extends StreamingQueryParamDiscriminatorParams {
+  should_stream: true;
 }
 
 export namespace Streaming {
@@ -185,6 +182,12 @@ export namespace Streaming {
   export import StreamingNestedParamsResponse = API.StreamingNestedParamsResponse;
   export import StreamingQueryParamDiscriminatorResponse = API.StreamingQueryParamDiscriminatorResponse;
   export import StreamingBasicParams = API.StreamingBasicParams;
+  export import StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
+  export import StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
   export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
+  export import StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
+  export import StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
   export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
+  export import StreamingQueryParamDiscriminatorParamsNonStreaming = API.StreamingQueryParamDiscriminatorParamsNonStreaming;
+  export import StreamingQueryParamDiscriminatorParamsStreaming = API.StreamingQueryParamDiscriminatorParamsStreaming;
 }
