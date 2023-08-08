@@ -9,7 +9,10 @@ export class Concrete extends APIResource {
   /**
    * Test case for concrete page types using cursor based pagination.
    */
-  list(query: ConcreteListParams, options?: Core.RequestOptions): Core.PagePromise<MyConcretePage> {
+  list(
+    query: ConcreteListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyConcretePage, MyConcretePageItem> {
     return this.getAPIList('/paginated/concrete_cursor', MyConcretePage, { query, ...options });
   }
 }

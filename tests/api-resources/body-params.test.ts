@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,11 +12,25 @@ const sink = new Sink({
 
 describe('resource bodyParams', () => {
   test('readOnlyProperties', async () => {
-    const response = await sink.bodyParams.readOnlyProperties({});
+    const responsePromise = sink.bodyParams.readOnlyProperties({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelAllOf: only required params', async () => {
-    const response = await sink.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
+    const responsePromise = sink.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelAllOf: required and optional params', async () => {
@@ -23,7 +38,14 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelAllOfNestedObject: only required params', async () => {
-    const response = await sink.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
+    const responsePromise = sink.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelAllOfNestedObject: required and optional params', async () => {
@@ -34,7 +56,14 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelAnyOfWithRef: only required params', async () => {
-    const response = await sink.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
+    const responsePromise = sink.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelAnyOfWithRef: required and optional params', async () => {
@@ -42,11 +71,18 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArray: only required params', async () => {
-    const response = await sink.bodyParams.topLevelArray([
+    const responsePromise = sink.bodyParams.topLevelArray([
       { foo: 'string' },
       { foo: 'string' },
       { foo: 'string' },
     ]);
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelArray: required and optional params', async () => {
@@ -58,11 +94,18 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArrayWithChildren: only required params', async () => {
-    const response = await sink.bodyParams.topLevelArrayWithChildren([
+    const responsePromise = sink.bodyParams.topLevelArrayWithChildren([
       { id: 'string' },
       { id: 'string' },
       { id: 'string' },
     ]);
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelArrayWithChildren: required and optional params', async () => {
@@ -74,7 +117,14 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelOneOfOneEntry: only required params', async () => {
-    const response = await sink.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
+    const responsePromise = sink.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('topLevelOneOfOneEntry: required and optional params', async () => {
@@ -82,7 +132,14 @@ describe('resource bodyParams', () => {
   });
 
   test('unionOverlappingProp: only required params', async () => {
-    const response = await sink.bodyParams.unionOverlappingProp();
+    const responsePromise = sink.bodyParams.unionOverlappingProp();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('unionOverlappingProp: required and optional params', async () => {
@@ -104,6 +161,13 @@ describe('resource bodyParams', () => {
   });
 
   test('withModelProperty', async () => {
-    const response = await sink.bodyParams.withModelProperty({});
+    const responsePromise = sink.bodyParams.withModelProperty({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 });

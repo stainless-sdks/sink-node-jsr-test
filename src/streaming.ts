@@ -1,9 +1,7 @@
 import type { Response } from 'sink-npm/_shims/fetch';
 import { ReadableStream } from 'sink-npm/_shims/ReadableStream';
 
-import { APIResponse, Headers, createResponseHeaders } from './core';
-
-import { safeJSON } from 'sink-npm/core';
+import { safeJSON, createResponseHeaders } from 'sink-npm/core';
 import { APIError } from 'sink-npm/error';
 
 type Bytes = string | ArrayBuffer | Uint8Array | Buffer | null | undefined;
@@ -14,20 +12,11 @@ type ServerSentEvent = {
   raw: string[];
 };
 
-export class Stream<Item> implements AsyncIterable<Item>, APIResponse<Stream<Item>> {
-  /** @deprecated - please use the async iterator instead. We plan to add additional helper methods shortly. */
-  response: Response;
-  /** @deprecated - we plan to add a different way to access raw response information shortly. */
-  responseHeaders: Headers;
-  controller: AbortController;
-
+export class Stream<Item> implements AsyncIterable<Item> {
   private decoder: SSEDecoder;
 
-  constructor(response: Response, controller: AbortController) {
-    this.response = response;
-    this.controller = controller;
+  constructor(private response: Response, private controller: AbortController) {
     this.decoder = new SSEDecoder();
-    this.responseHeaders = createResponseHeaders(response.headers);
   }
 
   private async *iterMessages(): AsyncGenerator<ServerSentEvent, void, unknown> {
@@ -70,7 +59,12 @@ export class Stream<Item> implements AsyncIterable<Item>, APIResponse<Stream<Ite
           const errJSON = safeJSON(errText);
           const errMessage = errJSON ? undefined : errText;
 
-          throw APIError.generate(undefined, errJSON, errMessage, this.responseHeaders);
+          throw APIError.generate(
+            undefined,
+            errJSON,
+            errMessage,
+            createResponseHeaders(this.response.headers),
+          );
         }
 
         if (sse.data.startsWith('[DONE]')) {

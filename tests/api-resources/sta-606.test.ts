@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource sta606', () => {
   test('withSharedModel', async () => {
-    const response = await sink.sta606.withSharedModel();
+    const responsePromise = sink.sta606.withSharedModel();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('withSharedModel: request options instead of params are passed correctly', async () => {
@@ -22,7 +30,14 @@ describe('resource sta606', () => {
   });
 
   test('withSharedParams: only required params', async () => {
-    const response = await sink.sta606.withSharedParams({ bar: { bar: 0 }, foo: 'string' });
+    const responsePromise = sink.sta606.withSharedParams({ bar: { bar: 0 }, foo: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('withSharedParams: required and optional params', async () => {

@@ -9,9 +9,7 @@ export class KeepThisResource extends APIResource {
    * Nested method that should render because it is not skipped nor are its
    * ancestors.
    */
-  keepThisMethod(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<KeepThisResourceKeepThisMethodResponse>> {
+  keepThisMethod(options?: Core.RequestOptions): Core.APIPromise<KeepThisResourceKeepThisMethodResponse> {
     return this.get('/decorator_tests/nested/keep/this/method', options);
   }
 }

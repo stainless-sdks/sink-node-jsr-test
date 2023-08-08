@@ -8,29 +8,31 @@ export class Envelopes extends APIResource {
   /**
    * Endpoint with a response wrapped within a `data` property.
    */
-  async explicit(options?: Core.RequestOptions): Promise<Address> {
-    // Note that this method does not support accessing responseHeaders
-    const response = (await this.get('/envelopes/data', options)) as any;
-    return response.data;
+  explicit(options?: Core.RequestOptions): Core.APIPromise<Address> {
+    return (this.get('/envelopes/data', options) as Core.APIPromise<{ data: Address }>)._thenUnwrap(
+      (obj) => obj.data,
+    );
   }
 
   /**
    * Endpoint with a response wrapped within a `items` property.
    */
-  async implicit(options?: Core.RequestOptions): Promise<Address> {
-    // Note that this method does not support accessing responseHeaders
-    const response = (await this.get('/envelopes/items', options)) as any;
-    return response.items;
+  implicit(options?: Core.RequestOptions): Core.APIPromise<Address> {
+    return (this.get('/envelopes/items', options) as Core.APIPromise<{ items: Address }>)._thenUnwrap(
+      (obj) => obj.items,
+    );
   }
 
   /**
    * Endpoint with a response wrapped within a `items` property that doesn't use a
    * $ref.
    */
-  async inlineResponse(options?: Core.RequestOptions): Promise<EnvelopeInlineResponseResponse> {
-    // Note that this method does not support accessing responseHeaders
-    const response = (await this.get('/envelopes/items/inline_response', options)) as any;
-    return response.items;
+  inlineResponse(options?: Core.RequestOptions): Core.APIPromise<EnvelopeInlineResponseResponse> {
+    return (
+      this.get('/envelopes/items/inline_response', options) as Core.APIPromise<{
+        items: EnvelopeInlineResponseResponse;
+      }>
+    )._thenUnwrap((obj) => obj.items);
   }
 }
 

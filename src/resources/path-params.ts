@@ -12,7 +12,7 @@ export class PathParams extends APIResource {
   dashedParam(
     dashedParam: string,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     return this.post(`/path_params/${dashedParam}`, options);
   }
 
@@ -22,7 +22,7 @@ export class PathParams extends APIResource {
   integerParam(
     integerParam: number,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     return this.post(`/path_params/${integerParam}`, options);
   }
 
@@ -34,7 +34,7 @@ export class PathParams extends APIResource {
     second: string,
     last: string,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<PathParamMultipleResponse>> {
+  ): Core.APIPromise<PathParamMultipleResponse> {
     return this.post(`/path_params/${first}/${second}/${last}`, options);
   }
 
@@ -46,17 +46,14 @@ export class PathParams extends APIResource {
     integerParam: number,
     stringParam: string,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     return this.post(`/path_params/mixed/${integerParam}/${stringParam}`, options);
   }
 
   /**
    * Endpoint with a singular path parameter.
    */
-  singular(
-    singular: string,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<PathParamSingularResponse>> {
+  singular(singular: string, options?: Core.RequestOptions): Core.APIPromise<PathParamSingularResponse> {
     return this.post(`/path_params/${singular}`, options);
   }
 }

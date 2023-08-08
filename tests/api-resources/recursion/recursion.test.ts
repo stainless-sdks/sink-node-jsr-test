@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,23 +12,58 @@ const sink = new Sink({
 
 describe('resource recursion', () => {
   test('createBranch', async () => {
-    const response = await sink.recursion.createBranch({});
+    const responsePromise = sink.recursion.createBranch({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createEnvelope', async () => {
-    const response = await sink.recursion.createEnvelope({});
+    const responsePromise = sink.recursion.createEnvelope({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createMutualA', async () => {
-    const response = await sink.recursion.createMutualA({});
+    const responsePromise = sink.recursion.createMutualA({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createMutualB', async () => {
-    const response = await sink.recursion.createMutualB({});
+    const responsePromise = sink.recursion.createMutualB({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createSelf: only required params', async () => {
-    const response = await sink.recursion.createSelf({ name: 'string' });
+    const responsePromise = sink.recursion.createSelf({ name: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createSelf: required and optional params', async () => {

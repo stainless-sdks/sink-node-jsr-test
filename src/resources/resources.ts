@@ -7,7 +7,7 @@ export class Resources extends APIResource {
   /**
    * Endpoint returning no response
    */
-  foo(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  foo(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 }

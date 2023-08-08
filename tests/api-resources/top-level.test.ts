@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('top level methods', () => {
   test('apiStatus', async () => {
-    const response = await sink.apiStatus();
+    const responsePromise = sink.apiStatus();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('apiStatus: request options instead of params are passed correctly', async () => {
@@ -20,7 +28,14 @@ describe('top level methods', () => {
   });
 
   test('apiStatusAlias', async () => {
-    const response = await sink.apiStatusAlias();
+    const responsePromise = sink.apiStatusAlias();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('apiStatusAlias: request options instead of params are passed correctly', async () => {
@@ -31,7 +46,14 @@ describe('top level methods', () => {
   });
 
   test('createNoResponse', async () => {
-    const response = await sink.createNoResponse();
+    const responsePromise = sink.createNoResponse();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createNoResponse: request options instead of params are passed correctly', async () => {
@@ -52,7 +74,14 @@ describe('top level methods', () => {
   });
 
   test('sta563PostEmptyObject', async () => {
-    const response = await sink.sta563PostEmptyObject();
+    const responsePromise = sink.sta563PostEmptyObject();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('sta563PostEmptyObject: request options instead of params are passed correctly', async () => {

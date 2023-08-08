@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource names', () => {
   test('propertiesCommonConflicts: only required params', async () => {
-    const response = await sink.names.propertiesCommonConflicts({ date: '2019-12-27' });
+    const responsePromise = sink.names.propertiesCommonConflicts({ date: '2019-12-27' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('propertiesCommonConflicts: required and optional params', async () => {
@@ -19,7 +27,14 @@ describe('resource names', () => {
   });
 
   test('responseShadowsPydantic', async () => {
-    const response = await sink.names.responseShadowsPydantic();
+    const responsePromise = sink.names.responseShadowsPydantic();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('responseShadowsPydantic: request options instead of params are passed correctly', async () => {

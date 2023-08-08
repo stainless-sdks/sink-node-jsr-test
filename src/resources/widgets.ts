@@ -12,7 +12,7 @@ export class Widgets extends APIResource {
     widgetId: number,
     filterType: 'available' | 'archived' | 'out_of_stock' | null,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Widget>> {
+  ): Core.APIPromise<Widget> {
     return this.get(`/widgets/${widgetId}/filter/${filterType}`, options);
   }
 }

@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource levelOne', () => {
   test('methodLevel1', async () => {
-    const response = await sink.deeplyNested.levelOne.methodLevel1('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const responsePromise = sink.deeplyNested.levelOne.methodLevel1('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('methodLevel1: request options instead of params are passed correctly', async () => {

@@ -154,7 +154,7 @@ export class Sink extends Core.APIClient {
 
     if (!options.dangerouslyAllowBrowser && Core.isRunningInBrowser()) {
       throw new Error(
-        'This is disabled by default, as it risks exposing your secret API credentials to attackers. \nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })',
+        'This is disabled by default, as it risks exposing your secret API credentials to attackers.\nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })',
       );
     }
 
@@ -220,7 +220,7 @@ export class Sink extends Core.APIClient {
   /**
    * API status check
    */
-  apiStatus(options?: Core.RequestOptions): Promise<Core.APIResponse<Sink.APIStatus>> {
+  apiStatus(options?: Core.RequestOptions): Core.APIPromise<Sink.APIStatus> {
     return this.get('/status', options);
   }
 
@@ -229,7 +229,7 @@ export class Sink extends Core.APIClient {
   /**
    * Endpoint returning no response
    */
-  createNoResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  createNoResponse(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/no_response', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 
@@ -251,9 +251,7 @@ export class Sink extends Core.APIClient {
    * type, but it should basically just have untyped additional properties. See
    * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
    */
-  sta563PostEmptyObject(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sink.Sta563PostEmptyObjectResponse>> {
+  sta563PostEmptyObject(options?: Core.RequestOptions): Core.APIPromise<Sink.Sta563PostEmptyObjectResponse> {
     return this.post('/sta_563_empty_object', options);
   }
 

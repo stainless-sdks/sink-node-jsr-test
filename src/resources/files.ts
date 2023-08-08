@@ -9,21 +9,21 @@ export class Files extends APIResource {
   /**
    * Endpoint for testing file uploads
    */
-  async createMultipart(
+  createMultipart(
     body: FileCreateMultipartParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<FileCreateMultipartResponse>> {
-    return this.post('/files/multipart', await multipartFormRequestOptions({ body, ...options }));
+  ): Core.APIPromise<FileCreateMultipartResponse> {
+    return this.post('/files/multipart', multipartFormRequestOptions({ body, ...options }));
   }
 
   /**
    * Endpoint for testing file uploads with all kinds of properties
    */
-  async everythingMultipart(
+  everythingMultipart(
     body: FileEverythingMultipartParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<FileEverythingMultipartResponse>> {
-    return this.post('/files/multipart_everything', await multipartFormRequestOptions({ body, ...options }));
+  ): Core.APIPromise<FileEverythingMultipartResponse> {
+    return this.post('/files/multipart_everything', multipartFormRequestOptions({ body, ...options }));
   }
 }
 

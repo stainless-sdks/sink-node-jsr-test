@@ -9,7 +9,7 @@ export class Languages extends APIResource {
    * Endpoint that returns a $ref to SimpleObject. This is used to test shared
    * response models.
    */
-  skippedForPython(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.SimpleObject>> {
+  skippedForPython(options?: Core.RequestOptions): Core.APIPromise<Shared.SimpleObject> {
     return this.get('/responses/simple_object', options);
   }
 }

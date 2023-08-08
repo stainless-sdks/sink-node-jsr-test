@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource streaming', () => {
   test('basic: only required params', async () => {
-    const response = await sink.streaming.basic({ model: 'string', prompt: 'string' });
+    const responsePromise = sink.streaming.basic({ model: 'string', prompt: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('basic: required and optional params', async () => {
@@ -19,7 +27,14 @@ describe('resource streaming', () => {
   });
 
   test('nestedParams: only required params', async () => {
-    const response = await sink.streaming.nestedParams({ model: 'string', prompt: 'string' });
+    const responsePromise = sink.streaming.nestedParams({ model: 'string', prompt: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('nestedParams: required and optional params', async () => {
@@ -35,7 +50,14 @@ describe('resource streaming', () => {
   });
 
   test('queryParamDiscriminator: only required params', async () => {
-    const response = await sink.streaming.queryParamDiscriminator({ prompt: 'string' });
+    const responsePromise = sink.streaming.queryParamDiscriminator({ prompt: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('queryParamDiscriminator: required and optional params', async () => {

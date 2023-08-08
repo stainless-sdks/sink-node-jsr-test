@@ -16,7 +16,7 @@ export class Version1_30Names extends APIResource {
     version1_15: string,
     params: Version1_30NameCreateParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Version1_30NameCreateResponse>> {
+  ): Core.APIPromise<Version1_30NameCreateResponse> {
     const { version_1_16: version1_16, version_1_14: version1_14, ...body } = params;
     return this.post(`/version_1_30_names/query/${version1_15}`, {
       query: { version_1_16: version1_16 },

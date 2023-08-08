@@ -9,7 +9,7 @@ export class Sta630 extends APIResource {
    * Should return a GithubUser object with a `properties` field that we can rename
    * in the Stainless config to a prettier name.
    */
-  nestedPath(options?: Core.RequestOptions): Promise<Core.APIResponse<GithubUser>> {
+  nestedPath(options?: Core.RequestOptions): Core.APIPromise<GithubUser> {
     return this.get('/sta_630/define_models_nested_path', options);
   }
 }

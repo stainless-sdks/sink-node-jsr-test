@@ -8,7 +8,7 @@ export class WriteOnlyResponses extends APIResource {
   /**
    * Endpoint with a response schema object that contains a `writeOnly` property.
    */
-  simple(options?: Core.RequestOptions): Promise<Core.APIResponse<WriteOnlyResponseSimpleResponse>> {
+  simple(options?: Core.RequestOptions): Core.APIPromise<WriteOnlyResponseSimpleResponse> {
     return this.get('/types/write_only_responses/simple', options);
   }
 }

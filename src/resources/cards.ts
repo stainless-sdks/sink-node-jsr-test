@@ -12,14 +12,14 @@ export class Cards extends APIResource {
    * Create a new virtual or physical card. Parameters `pin`, `shippingAddress`, and
    * `product_id` only apply to physical cards.
    */
-  create(body: CardCreateParams, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
+  create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
     return this.post('/cards', { body, ...options });
   }
 
   /**
    * Get card configuration such as spend limit and state.
    */
-  retrieve(cardToken: string, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
+  retrieve(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<Card> {
     return this.get(`/cards/${cardToken}`, options);
   }
 
@@ -30,23 +30,19 @@ export class Cards extends APIResource {
    * _Note: setting a card to a `CLOSED` state is a final action that cannot be
    * undone._
    */
-  update(
-    cardToken: string,
-    body: CardUpdateParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Card>> {
+  update(cardToken: string, body: CardUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
     return this.patch(`/cards/${cardToken}`, { body, ...options });
   }
 
   /**
    * List cards.
    */
-  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
-  list(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
+  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
+  list(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
   list(
     query: CardListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsCardPage> {
+  ): Core.PagePromise<CardsCardPage, Card> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -76,19 +72,22 @@ export class Cards extends APIResource {
    *
    * It will be removed in v0.99.0
    */
-  deprecatedMethod(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  deprecatedMethod(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/deprecations/method', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 
   /**
    * List cards.
    */
-  listNonGet(body?: CardListNonGetParams, options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
-  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage>;
+  listNonGet(
+    body?: CardListNonGetParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<CardsCardPage, Card>;
+  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
   listNonGet(
     body: CardListNonGetParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsCardPage> {
+  ): Core.PagePromise<CardsCardPage, Card> {
     if (isRequestOptions(body)) {
       return this.listNonGet({}, body);
     }
@@ -103,7 +102,7 @@ export class Cards extends APIResource {
   /**
    * Get card configuration such as spend limit and state.
    */
-  listNotPaginated(cardToken: string, options?: Core.RequestOptions): Promise<Core.APIResponse<Card>> {
+  listNotPaginated(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<Card> {
     return this.get(`/cards/${cardToken}`, options);
   }
 
@@ -119,7 +118,7 @@ export class Cards extends APIResource {
     cardToken: string,
     body: CardProvisionFooParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<CardProvisionFooResponse>> {
+  ): Core.APIPromise<CardProvisionFooResponse> {
     return this.post(`/cards/${cardToken}/provision`, { body, ...options });
   }
 
@@ -128,11 +127,7 @@ export class Cards extends APIResource {
    *
    * Only applies to cards of type `PHYSICAL` [beta].
    */
-  reissue(
-    cardToken: string,
-    body: CardReissueParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Card>> {
+  reissue(cardToken: string, body: CardReissueParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
     return this.post(`/cards/${cardToken}/reissue`, { body, ...options });
   }
 }

@@ -3,6 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as Cards from 'sink-npm/resources/cards';
 import { CardsPageCursor } from 'sink-npm/resources/cards';
 import * as API from './index';
 import { PageCursorParams } from 'sink-npm/pagination';
@@ -15,12 +16,12 @@ export class PaginatedModelSecondRef extends APIResource {
   list(
     query?: PaginatedModelSecondRefListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsPageCursor>;
-  list(options?: Core.RequestOptions): Core.PagePromise<CardsPageCursor>;
+  ): Core.PagePromise<CardsPageCursor, Cards.Card>;
+  list(options?: Core.RequestOptions): Core.PagePromise<CardsPageCursor, Cards.Card>;
   list(
     query: PaginatedModelSecondRefListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsPageCursor> {
+  ): Core.PagePromise<CardsPageCursor, Cards.Card> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }

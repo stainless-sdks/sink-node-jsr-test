@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -12,7 +13,14 @@ const sink = new Sink({
 describe('resource methodConfig', () => {
   // Because of this error
   test.skip('skippedTestsAll', async () => {
-    const response = await sink.methodConfig.skippedTestsAll('string');
+    const responsePromise = sink.methodConfig.skippedTestsAll('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   // Because of this error
@@ -24,7 +32,14 @@ describe('resource methodConfig', () => {
   });
 
   test('skippedTestsGo', async () => {
-    const response = await sink.methodConfig.skippedTestsGo('string');
+    const responsePromise = sink.methodConfig.skippedTestsGo('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('skippedTestsGo: request options instead of params are passed correctly', async () => {
@@ -35,7 +50,14 @@ describe('resource methodConfig', () => {
   });
 
   test('skippedTestsJava', async () => {
-    const response = await sink.methodConfig.skippedTestsJava('string');
+    const responsePromise = sink.methodConfig.skippedTestsJava('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('skippedTestsJava: request options instead of params are passed correctly', async () => {
@@ -46,7 +68,14 @@ describe('resource methodConfig', () => {
   });
 
   test('skippedTestsKotlin', async () => {
-    const response = await sink.methodConfig.skippedTestsKotlin('string');
+    const responsePromise = sink.methodConfig.skippedTestsKotlin('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('skippedTestsKotlin: request options instead of params are passed correctly', async () => {
@@ -58,7 +87,14 @@ describe('resource methodConfig', () => {
 
   // Because of this error
   test.skip('skippedTestsNode', async () => {
-    const response = await sink.methodConfig.skippedTestsNode('string');
+    const responsePromise = sink.methodConfig.skippedTestsNode('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   // Because of this error
@@ -71,7 +107,14 @@ describe('resource methodConfig', () => {
 
   // Because of this error
   test.skip('skippedTestsNodeAndPython', async () => {
-    const response = await sink.methodConfig.skippedTestsNodeAndPython('string');
+    const responsePromise = sink.methodConfig.skippedTestsNodeAndPython('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   // Because of this error
@@ -83,7 +126,14 @@ describe('resource methodConfig', () => {
   });
 
   test('skippedTestsPython', async () => {
-    const response = await sink.methodConfig.skippedTestsPython('string');
+    const responsePromise = sink.methodConfig.skippedTestsPython('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('skippedTestsPython: request options instead of params are passed correctly', async () => {

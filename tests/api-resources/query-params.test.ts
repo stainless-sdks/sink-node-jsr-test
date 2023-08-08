@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource queryParams', () => {
   test('allOf', async () => {
-    const response = await sink.queryParams.allOf();
+    const responsePromise = sink.queryParams.allOf();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('allOf: request options instead of params are passed correctly', async () => {
@@ -32,7 +40,14 @@ describe('resource queryParams', () => {
   });
 
   test('anyOf', async () => {
-    const response = await sink.queryParams.anyOf();
+    const responsePromise = sink.queryParams.anyOf();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('anyOf: request options instead of params are passed correctly', async () => {
@@ -50,7 +65,14 @@ describe('resource queryParams', () => {
   });
 
   test('array', async () => {
-    const response = await sink.queryParams.array();
+    const responsePromise = sink.queryParams.array();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('array: request options instead of params are passed correctly', async () => {
@@ -71,7 +93,14 @@ describe('resource queryParams', () => {
   });
 
   test('enum', async () => {
-    const response = await sink.queryParams.enum();
+    const responsePromise = sink.queryParams.enum();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('enum: request options instead of params are passed correctly', async () => {
@@ -99,7 +128,14 @@ describe('resource queryParams', () => {
   });
 
   test('object', async () => {
-    const response = await sink.queryParams.object();
+    const responsePromise = sink.queryParams.object();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('object: request options instead of params are passed correctly', async () => {
@@ -120,7 +156,14 @@ describe('resource queryParams', () => {
   });
 
   test('oneOf', async () => {
-    const response = await sink.queryParams.oneOf();
+    const responsePromise = sink.queryParams.oneOf();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('oneOf: request options instead of params are passed correctly', async () => {
@@ -138,7 +181,14 @@ describe('resource queryParams', () => {
   });
 
   test('primitives', async () => {
-    const response = await sink.queryParams.primitives();
+    const responsePromise = sink.queryParams.primitives();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('primitives: request options instead of params are passed correctly', async () => {

@@ -5,15 +5,11 @@ import { APIResource } from 'sink-npm/resource';
 import * as API from './index';
 
 export class Docstrings extends APIResource {
-  leadingDoubleQuote(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<DocstringLeadingDoubleQuoteResponse>> {
+  leadingDoubleQuote(options?: Core.RequestOptions): Core.APIPromise<DocstringLeadingDoubleQuoteResponse> {
     return this.get('/docstrings/property_leading_double_quote', options);
   }
 
-  trailingDoubleQuote(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<DocstringTrailingDoubleQuoteResponse>> {
+  trailingDoubleQuote(options?: Core.RequestOptions): Core.APIPromise<DocstringTrailingDoubleQuoteResponse> {
     return this.get('/docstrings/property_trailing_double_quote', options);
   }
 }

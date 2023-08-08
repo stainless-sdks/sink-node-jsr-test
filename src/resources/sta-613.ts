@@ -13,7 +13,7 @@ export class Sta613 extends APIResource {
     camelCasedPath: string,
     id: string,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta613GlobalWithStandardResponse>> {
+  ): Core.APIPromise<Sta613GlobalWithStandardResponse> {
     return this.post(`/sta_613/path_params/${camelCasedPath}/${id}`, options);
   }
 
@@ -23,7 +23,7 @@ export class Sta613 extends APIResource {
   onlyGlobal(
     clientPathParam: string,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta613OnlyGlobalResponse>> {
+  ): Core.APIPromise<Sta613OnlyGlobalResponse> {
     return this.post(`/sta_613/path_params/${clientPathParam}`, options);
   }
 }

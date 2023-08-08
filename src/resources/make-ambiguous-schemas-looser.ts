@@ -10,7 +10,7 @@ export class MakeAmbiguousSchemasLooser extends APIResource {
    */
   makeAmbiguousSchemasLooser(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse>> {
+  ): Core.APIPromise<MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse> {
     return this.get('/make-ambiguous-schemas-looser', options);
   }
 }

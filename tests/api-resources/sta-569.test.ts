@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource sta569', () => {
   test('oneEntry: only required params', async () => {
-    const response = await sink.sta569.oneEntry({ enable_debug_logging: true });
+    const responsePromise = sink.sta569.oneEntry({ enable_debug_logging: true });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('oneEntry: required and optional params', async () => {
@@ -19,7 +27,14 @@ describe('resource sta569', () => {
   });
 
   test('oneEntryWithNull', async () => {
-    const response = await sink.sta569.oneEntryWithNull();
+    const responsePromise = sink.sta569.oneEntryWithNull();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('oneEntryWithNull: request options instead of params are passed correctly', async () => {

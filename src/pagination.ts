@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
-import { AbstractPage, APIResponse, APIClient, FinalRequestOptions, PageInfo } from './core';
+import { AbstractPage, Response, APIClient, FinalRequestOptions, PageInfo } from './core';
 import * as PaginationTests from './resources/pagination-tests/index';
 
 export interface CardPageResponse<Item> {
@@ -57,15 +57,16 @@ export class CardPage<Item> extends AbstractPage<Item> implements CardPageRespon
 
   constructor(
     client: APIClient,
-    response: APIResponse<CardPageResponse<Item>>,
+    response: Response,
+    body: CardPageResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.data = response.data;
-    this.page = response.page;
-    this.total_entries = response.total_entries;
-    this.total_pages = response.total_pages;
+    this.data = body.data;
+    this.page = body.page;
+    this.total_entries = body.total_entries;
+    this.total_pages = body.total_pages;
   }
 
   getPaginatedItems(): Item[] {
@@ -118,13 +119,14 @@ export class MyConcretePage
 
   constructor(
     client: APIClient,
-    response: APIResponse<MyConcretePageResponse>,
+    response: Response,
+    body: MyConcretePageResponse,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.data = response.data;
-    this.cursor = response.cursor;
+    this.data = body.data;
+    this.cursor = body.cursor;
   }
 
   getPaginatedItems(): PaginationTests.MyConcretePageItem[] {
@@ -183,14 +185,15 @@ export class PagePageNumber<Item> extends AbstractPage<Item> implements PagePage
 
   constructor(
     client: APIClient,
-    response: APIResponse<PagePageNumberResponse<Item>>,
+    response: Response,
+    body: PagePageNumberResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.data = response.data;
-    this.last_page = response.last_page;
-    this.page = response.page;
+    this.data = body.data;
+    this.last_page = body.last_page;
+    this.page = body.page;
   }
 
   getPaginatedItems(): Item[] {
@@ -240,13 +243,14 @@ export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorRe
 
   constructor(
     client: APIClient,
-    response: APIResponse<PageCursorResponse<Item>>,
+    response: Response,
+    body: PageCursorResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.cursor = response.cursor;
-    this.data = response.data || [];
+    this.cursor = body.cursor;
+    this.data = body.data || [];
   }
 
   getPaginatedItems(): Item[] {
@@ -295,13 +299,14 @@ export class PageCursorURL<Item> extends AbstractPage<Item> implements PageCurso
 
   constructor(
     client: APIClient,
-    response: APIResponse<PageCursorURLResponse<Item>>,
+    response: Response,
+    body: PageCursorURLResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.next_page = response.next_page;
-    this.data = response.data || [];
+    this.next_page = body.next_page;
+    this.data = body.data || [];
   }
 
   getPaginatedItems(): Item[] {
@@ -359,14 +364,15 @@ export class PageOffset<Item> extends AbstractPage<Item> implements PageOffsetRe
 
   constructor(
     client: APIClient,
-    response: APIResponse<PageOffsetResponse<Item>>,
+    response: Response,
+    body: PageOffsetResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.count = response.count;
-    this.offset = response.offset;
-    this.data = response.data || [];
+    this.count = body.count;
+    this.offset = body.offset;
+    this.data = body.data || [];
   }
 
   getPaginatedItems(): Item[] {
@@ -428,13 +434,14 @@ export class PageHypermedia<Item> extends AbstractPage<Item> implements PageHype
 
   constructor(
     client: APIClient,
-    response: APIResponse<PageHypermediaResponse<Item>>,
+    response: Response,
+    body: PageHypermediaResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.links = response.links;
-    this.data = response.data || [];
+    this.links = body.links;
+    this.data = body.data || [];
   }
 
   getPaginatedItems(): Item[] {
@@ -476,13 +483,14 @@ export class PageHypermediaRaw<Item> extends AbstractPage<Item> implements PageH
 
   constructor(
     client: APIClient,
-    response: APIResponse<PageHypermediaRawResponse<Item>>,
+    response: Response,
+    body: PageHypermediaRawResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.data = response.data;
-    this.next_page_link = response.responseHeaders['nextpage'] || null;
+    this.data = body.data;
+    this.next_page_link = this.response.headers.get('nextpage') || null;
   }
 
   getPaginatedItems(): Item[] {
@@ -527,12 +535,13 @@ export class FakePage<Item> extends AbstractPage<Item> {
 
   constructor(
     client: APIClient,
-    response: APIResponse<FakePageResponse<Item>>,
+    response: Response,
+    body: FakePageResponse<Item>,
     options: FinalRequestOptions,
   ) {
-    super(client, response, options);
+    super(client, response, body, options);
 
-    this.items = response || [];
+    this.items = body || [];
   }
 
   getPaginatedItems(): Item[] {

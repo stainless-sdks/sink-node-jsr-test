@@ -3,6 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as BodyParams from 'sink-npm/resources/body-params';
 import { MyModelsPageCursorURL } from 'sink-npm/resources/body-params';
 import * as API from './index';
 import { PageCursorURLParams } from 'sink-npm/pagination';
@@ -11,12 +12,15 @@ export class CursorURL extends APIResource {
   /**
    * Test case for cursor_url pagination
    */
-  list(query?: CursorURLListParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageCursorURL>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageCursorURL>;
+  list(
+    query?: CursorURLListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageCursorURL, BodyParams.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageCursorURL, BodyParams.MyModel>;
   list(
     query: CursorURLListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageCursorURL> {
+  ): Core.PagePromise<MyModelsPageCursorURL, BodyParams.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }

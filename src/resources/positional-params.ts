@@ -8,10 +8,7 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with no positional params and a body param.
    */
-  basicBody(
-    body: PositionalParamBasicBodyParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  basicBody(body: PositionalParamBasicBodyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/positional_params/basic_body', {
       body,
       ...options,
@@ -22,10 +19,7 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with no positional params and a query object.
    */
-  basicQuery(
-    query: PositionalParamBasicQueryParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  basicQuery(query: PositionalParamBasicQueryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.get('/positional_params/basic_query', {
       query,
       ...options,
@@ -36,7 +30,7 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with no positional params and a body object.
    */
-  body(body: PositionalParamBodyParams, options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  body(body: PositionalParamBodyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/positional_params/body', {
       body,
       ...options,
@@ -50,7 +44,7 @@ export class PositionalParams extends APIResource {
   bodyExtraParam(
     body: PositionalParamBodyExtraParamParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post('/positional_params/body_extra_param', {
       body,
       ...options,
@@ -66,7 +60,7 @@ export class PositionalParams extends APIResource {
     camelCase: string,
     params: PositionalParamKitchenSinkParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     const {
       key,
       imACamel,
@@ -92,7 +86,7 @@ export class PositionalParams extends APIResource {
     name: string,
     params: PositionalParamMultiplePathParamsParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     const { first, last, ...body } = params;
     return this.post(`/positional_params/${first}/${second}/${last}`, {
       body: { name, ...body },
@@ -104,7 +98,7 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with a positional query parameter.
    */
-  query(foo: string, options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  query(foo: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.get('/positional_params/query', {
       query: { foo },
       ...options,
@@ -115,7 +109,7 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with a positional path parameter and a query parameter.
    */
-  queryAndPath(bar: number, id: string, options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  queryAndPath(bar: number, id: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post(`/positional_params/query/${id}`, {
       query: { bar },
       ...options,
@@ -130,7 +124,7 @@ export class PositionalParams extends APIResource {
     foo: string,
     query: PositionalParamQueryMultipleParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.get('/positional_params/query_multiple', {
       query: { foo, ...query },
       ...options,
@@ -141,7 +135,7 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with a single positional path parameter.
    */
-  single(single: string, options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  single(single: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.get(`/positional_params/${single}`, {
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -155,7 +149,7 @@ export class PositionalParams extends APIResource {
     id: string,
     body: PositionalParamUnionBodyAndPathParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post(`/positional_params/body/union/${id}`, {
       body,
       ...options,

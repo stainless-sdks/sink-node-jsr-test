@@ -11,9 +11,7 @@ export class Responses extends APIResource {
   /**
    * Endpoint with a top level additionalProperties response.
    */
-  additionalProperties(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseAdditionalPropertiesResponse>> {
+  additionalProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseAdditionalPropertiesResponse> {
     return this.post('/responses/additional_properties', options);
   }
 
@@ -23,7 +21,7 @@ export class Responses extends APIResource {
    */
   additionalPropertiesNestedModelReference(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseAdditionalPropertiesNestedModelReferenceResponse>> {
+  ): Core.APIPromise<ResponseAdditionalPropertiesNestedModelReferenceResponse> {
     return this.post('/responses/additional_properties_nested_model_reference', options);
   }
 
@@ -31,83 +29,77 @@ export class Responses extends APIResource {
    * Method with a response object defined using allOf and two models, one from
    * another resource and one from this resource, as well as a nested allOf.
    */
-  allofCrossResource(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseAllofCrossResourceResponse>> {
+  allofCrossResource(options?: Core.RequestOptions): Core.APIPromise<ResponseAllofCrossResourceResponse> {
     return this.get('/responses/allof/cross', options);
   }
 
   /**
    * Method with a response object defined using allOf and inline schema definitions.
    */
-  allofSimple(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseAllofSimpleResponse>> {
+  allofSimple(options?: Core.RequestOptions): Core.APIPromise<ResponseAllofSimpleResponse> {
     return this.get('/responses/allof/simple', options);
   }
 
   /**
    * Method with a response object that uses anyOf to indicate nullability.
    */
-  anyofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithAnyOfNullProperty>> {
+  anyofNull(options?: Core.RequestOptions): Core.APIPromise<ObjectWithAnyOfNullProperty> {
     return this.get('/responses/anyof_null', options);
   }
 
   /**
    * Endpoint that returns a top-level array.
    */
-  arrayResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseArrayResponseResponse>> {
+  arrayResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseArrayResponseResponse> {
     return this.get('/responses/array', options);
   }
 
   /**
    * Endpoint with a top level boolean response.
    */
-  booleanResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseBooleanResponseResponse>> {
+  booleanResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseBooleanResponseResponse> {
     return this.post('/responses/boolean', options);
   }
 
   /**
    * Endpoint with an empty response.
    */
-  emptyResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<void>> {
+  emptyResponse(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/responses/empty', { ...options, headers: { Accept: '', ...options?.headers } });
   }
 
   /**
    * Endpoint with a top level integer response.
    */
-  integerResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseIntegerResponseResponse>> {
+  integerResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseIntegerResponseResponse> {
     return this.post('/responses/integer', options);
   }
 
   /**
    * Endpoint with a response schema that doesn't set the `required` property.
    */
-  missingRequired(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseMissingRequiredResponse>> {
+  missingRequired(options?: Core.RequestOptions): Core.APIPromise<ResponseMissingRequiredResponse> {
     return this.get('/responses/missing_required', options);
   }
 
   /**
    * Endpoint that returns a nested array.
    */
-  nestedArray(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseNestedArrayResponse>> {
+  nestedArray(options?: Core.RequestOptions): Core.APIPromise<ResponseNestedArrayResponse> {
     return this.get('/responses/nested_array', options);
   }
 
   /**
    * Method with a response object with a different property for each supported type.
    */
-  objectAllProperties(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseObjectAllPropertiesResponse>> {
+  objectAllProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseObjectAllPropertiesResponse> {
     return this.get('/responses/object/everything', options);
   }
 
   /**
    * Endpoint with an empty response.
    */
-  objectNoProperties(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseObjectNoPropertiesResponse>> {
+  objectNoProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseObjectNoPropertiesResponse> {
     return this.post('/responses/object_no_properties', options);
   }
 
@@ -117,7 +109,7 @@ export class Responses extends APIResource {
    */
   objectWithAdditionalPropertiesProp(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseObjectWithAdditionalPropertiesPropResponse>> {
+  ): Core.APIPromise<ResponseObjectWithAdditionalPropertiesPropResponse> {
     return this.post('/responses/object_with_additional_properties_prop', options);
   }
 
@@ -127,14 +119,14 @@ export class Responses extends APIResource {
    */
   objectWithHeavilyNestedUnion(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseObjectWithHeavilyNestedUnionResponse>> {
+  ): Core.APIPromise<ResponseObjectWithHeavilyNestedUnionResponse> {
     return this.post('/responses/object_with_heavily_nested_union', options);
   }
 
   /**
    * Method with a response object that uses oneOf to indicate nullability.
    */
-  oneofNull(options?: Core.RequestOptions): Promise<Core.APIResponse<ObjectWithOneOfNullProperty>> {
+  oneofNull(options?: Core.RequestOptions): Core.APIPromise<ObjectWithOneOfNullProperty> {
     return this.get('/responses/oneof_null', options);
   }
 
@@ -142,14 +134,14 @@ export class Responses extends APIResource {
    * Endpoint that returns a $ref to SimpleObject. This is used to test shared
    * response models.
    */
-  sharedResponseObject(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.SimpleObject>> {
+  sharedResponseObject(options?: Core.RequestOptions): Core.APIPromise<Shared.SimpleObject> {
     return this.get('/responses/simple_object', options);
   }
 
   /**
    * Endpoint with a top level string response.
    */
-  stringResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<string>> {
+  stringResponse(options?: Core.RequestOptions): Core.APIPromise<string> {
     return this.post('/responses/string', {
       ...options,
       headers: { Accept: 'application/json', ...options?.headers },
@@ -159,16 +151,14 @@ export class Responses extends APIResource {
   /**
    * Endpoint with a top level union response of different types.
    */
-  unionOfMixedTypes(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ResponseUnionOfMixedTypesResponse>> {
+  unionOfMixedTypes(options?: Core.RequestOptions): Core.APIPromise<ResponseUnionOfMixedTypesResponse> {
     return this.post('/responses/union_of_mixed_types', options);
   }
 
   /**
    * Endpoint with a top level union response of just object variants.
    */
-  unionOfObjects(options?: Core.RequestOptions): Promise<Core.APIResponse<ResponseUnionOfObjectsResponse>> {
+  unionOfObjects(options?: Core.RequestOptions): Core.APIPromise<ResponseUnionOfObjectsResponse> {
     return this.post('/responses/union_of_objects', options);
   }
 }

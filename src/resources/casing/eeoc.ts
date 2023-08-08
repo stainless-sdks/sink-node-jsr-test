@@ -10,12 +10,12 @@ export class EEOCResource extends APIResource {
   /**
    * Test case for paginated initialism model
    */
-  list(query?: EEOCListParams, options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor>;
-  list(options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor>;
+  list(query?: EEOCListParams, options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC>;
+  list(options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC>;
   list(
     query: EEOCListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<EEOCsPageCursor> {
+  ): Core.PagePromise<EEOCsPageCursor, EEOC> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }

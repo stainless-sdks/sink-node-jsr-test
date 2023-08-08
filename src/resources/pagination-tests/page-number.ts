@@ -3,6 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as BodyParams from 'sink-npm/resources/body-params';
 import { MyModelsPagePageNumber } from 'sink-npm/resources/body-params';
 import * as API from './index';
 import { PagePageNumberParams } from 'sink-npm/pagination';
@@ -11,12 +12,15 @@ export class PageNumber extends APIResource {
   /**
    * Test case for page_number pagination
    */
-  list(query?: PageNumberListParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber>;
+  list(
+    query?: PageNumberListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPagePageNumber, BodyParams.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParams.MyModel>;
   list(
     query: PageNumberListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumber> {
+  ): Core.PagePromise<MyModelsPagePageNumber, BodyParams.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }

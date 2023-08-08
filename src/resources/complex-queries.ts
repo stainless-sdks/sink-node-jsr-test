@@ -9,12 +9,12 @@ export class ComplexQueries extends APIResource {
   arrayQuery(
     query?: ComplexQueryArrayQueryParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ComplexQueryArrayQueryResponse>>;
-  arrayQuery(options?: Core.RequestOptions): Promise<Core.APIResponse<ComplexQueryArrayQueryResponse>>;
+  ): Core.APIPromise<ComplexQueryArrayQueryResponse>;
+  arrayQuery(options?: Core.RequestOptions): Core.APIPromise<ComplexQueryArrayQueryResponse>;
   arrayQuery(
     query: ComplexQueryArrayQueryParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ComplexQueryArrayQueryResponse>> {
+  ): Core.APIPromise<ComplexQueryArrayQueryResponse> {
     if (isRequestOptions(query)) {
       return this.arrayQuery({}, query);
     }
@@ -24,12 +24,12 @@ export class ComplexQueries extends APIResource {
   objectQuery(
     query?: ComplexQueryObjectQueryParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ComplexQueryObjectQueryResponse>>;
-  objectQuery(options?: Core.RequestOptions): Promise<Core.APIResponse<ComplexQueryObjectQueryResponse>>;
+  ): Core.APIPromise<ComplexQueryObjectQueryResponse>;
+  objectQuery(options?: Core.RequestOptions): Core.APIPromise<ComplexQueryObjectQueryResponse>;
   objectQuery(
     query: ComplexQueryObjectQueryParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ComplexQueryObjectQueryResponse>> {
+  ): Core.APIPromise<ComplexQueryObjectQueryResponse> {
     if (isRequestOptions(query)) {
       return this.objectQuery({}, query);
     }

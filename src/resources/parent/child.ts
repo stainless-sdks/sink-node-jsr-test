@@ -8,7 +8,7 @@ export class Child extends APIResource {
   /**
    * Method with inlined response model.
    */
-  inlinedResponse(options?: Core.RequestOptions): Promise<Core.APIResponse<ChildInlinedResponseResponse>> {
+  inlinedResponse(options?: Core.RequestOptions): Core.APIPromise<ChildInlinedResponseResponse> {
     return this.get('/inlined_response', options);
   }
 }

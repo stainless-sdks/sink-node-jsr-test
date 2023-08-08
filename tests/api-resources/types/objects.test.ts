@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource objects', () => {
   test('mixedKnownAndUnknown', async () => {
-    const response = await sink.types.objects.mixedKnownAndUnknown();
+    const responsePromise = sink.types.objects.mixedKnownAndUnknown();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('mixedKnownAndUnknown: request options instead of params are passed correctly', async () => {
@@ -22,7 +30,14 @@ describe('resource objects', () => {
   });
 
   test('multipleArrayPropertiesSameRef', async () => {
-    const response = await sink.types.objects.multipleArrayPropertiesSameRef();
+    const responsePromise = sink.types.objects.multipleArrayPropertiesSameRef();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('multipleArrayPropertiesSameRef: request options instead of params are passed correctly', async () => {
@@ -33,7 +48,14 @@ describe('resource objects', () => {
   });
 
   test('multiplePropertiesSameModel', async () => {
-    const response = await sink.types.objects.multiplePropertiesSameModel();
+    const responsePromise = sink.types.objects.multiplePropertiesSameModel();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('multiplePropertiesSameModel: request options instead of params are passed correctly', async () => {
@@ -44,7 +66,14 @@ describe('resource objects', () => {
   });
 
   test('multiplePropertiesSameRef', async () => {
-    const response = await sink.types.objects.multiplePropertiesSameRef();
+    const responsePromise = sink.types.objects.multiplePropertiesSameRef();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('multiplePropertiesSameRef: request options instead of params are passed correctly', async () => {

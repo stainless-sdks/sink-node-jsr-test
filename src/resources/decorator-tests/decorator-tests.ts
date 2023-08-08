@@ -13,7 +13,7 @@ export class DecoratorTests extends APIResource {
   /**
    * Top-level method that should not be skipped.
    */
-  keepMe(options?: Core.RequestOptions): Promise<Core.APIResponse<DecoratorTestKeepMeResponse>> {
+  keepMe(options?: Core.RequestOptions): Core.APIPromise<DecoratorTestKeepMeResponse> {
     return this.get('/decorator_tests/keep/me', options);
   }
 }

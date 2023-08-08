@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource responses', () => {
   test('additionalProperties', async () => {
-    const response = await sink.responses.additionalProperties();
+    const responsePromise = sink.responses.additionalProperties();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('additionalProperties: request options instead of params are passed correctly', async () => {
@@ -22,7 +30,14 @@ describe('resource responses', () => {
   });
 
   test('additionalPropertiesNestedModelReference', async () => {
-    const response = await sink.responses.additionalPropertiesNestedModelReference();
+    const responsePromise = sink.responses.additionalPropertiesNestedModelReference();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('additionalPropertiesNestedModelReference: request options instead of params are passed correctly', async () => {
@@ -33,7 +48,14 @@ describe('resource responses', () => {
   });
 
   test('allofCrossResource', async () => {
-    const response = await sink.responses.allofCrossResource();
+    const responsePromise = sink.responses.allofCrossResource();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('allofCrossResource: request options instead of params are passed correctly', async () => {
@@ -44,7 +66,14 @@ describe('resource responses', () => {
   });
 
   test('allofSimple', async () => {
-    const response = await sink.responses.allofSimple();
+    const responsePromise = sink.responses.allofSimple();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('allofSimple: request options instead of params are passed correctly', async () => {
@@ -55,7 +84,14 @@ describe('resource responses', () => {
   });
 
   test('anyofNull', async () => {
-    const response = await sink.responses.anyofNull();
+    const responsePromise = sink.responses.anyofNull();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('anyofNull: request options instead of params are passed correctly', async () => {
@@ -66,7 +102,14 @@ describe('resource responses', () => {
   });
 
   test('arrayResponse', async () => {
-    const response = await sink.responses.arrayResponse();
+    const responsePromise = sink.responses.arrayResponse();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('arrayResponse: request options instead of params are passed correctly', async () => {
@@ -77,7 +120,14 @@ describe('resource responses', () => {
   });
 
   test('booleanResponse', async () => {
-    const response = await sink.responses.booleanResponse();
+    const responsePromise = sink.responses.booleanResponse();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('booleanResponse: request options instead of params are passed correctly', async () => {
@@ -88,7 +138,14 @@ describe('resource responses', () => {
   });
 
   test('emptyResponse', async () => {
-    const response = await sink.responses.emptyResponse();
+    const responsePromise = sink.responses.emptyResponse();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('emptyResponse: request options instead of params are passed correctly', async () => {
@@ -99,7 +156,14 @@ describe('resource responses', () => {
   });
 
   test('integerResponse', async () => {
-    const response = await sink.responses.integerResponse();
+    const responsePromise = sink.responses.integerResponse();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('integerResponse: request options instead of params are passed correctly', async () => {
@@ -110,7 +174,14 @@ describe('resource responses', () => {
   });
 
   test('missingRequired', async () => {
-    const response = await sink.responses.missingRequired();
+    const responsePromise = sink.responses.missingRequired();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('missingRequired: request options instead of params are passed correctly', async () => {
@@ -121,7 +192,14 @@ describe('resource responses', () => {
   });
 
   test('nestedArray', async () => {
-    const response = await sink.responses.nestedArray();
+    const responsePromise = sink.responses.nestedArray();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('nestedArray: request options instead of params are passed correctly', async () => {
@@ -132,7 +210,14 @@ describe('resource responses', () => {
   });
 
   test('objectAllProperties', async () => {
-    const response = await sink.responses.objectAllProperties();
+    const responsePromise = sink.responses.objectAllProperties();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('objectAllProperties: request options instead of params are passed correctly', async () => {
@@ -143,7 +228,14 @@ describe('resource responses', () => {
   });
 
   test('objectNoProperties', async () => {
-    const response = await sink.responses.objectNoProperties();
+    const responsePromise = sink.responses.objectNoProperties();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('objectNoProperties: request options instead of params are passed correctly', async () => {
@@ -154,7 +246,14 @@ describe('resource responses', () => {
   });
 
   test('objectWithAdditionalPropertiesProp', async () => {
-    const response = await sink.responses.objectWithAdditionalPropertiesProp();
+    const responsePromise = sink.responses.objectWithAdditionalPropertiesProp();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('objectWithAdditionalPropertiesProp: request options instead of params are passed correctly', async () => {
@@ -165,7 +264,14 @@ describe('resource responses', () => {
   });
 
   test('objectWithHeavilyNestedUnion', async () => {
-    const response = await sink.responses.objectWithHeavilyNestedUnion();
+    const responsePromise = sink.responses.objectWithHeavilyNestedUnion();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('objectWithHeavilyNestedUnion: request options instead of params are passed correctly', async () => {
@@ -176,7 +282,14 @@ describe('resource responses', () => {
   });
 
   test('oneofNull', async () => {
-    const response = await sink.responses.oneofNull();
+    const responsePromise = sink.responses.oneofNull();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('oneofNull: request options instead of params are passed correctly', async () => {
@@ -187,7 +300,14 @@ describe('resource responses', () => {
   });
 
   test('sharedResponseObject', async () => {
-    const response = await sink.responses.sharedResponseObject();
+    const responsePromise = sink.responses.sharedResponseObject();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('sharedResponseObject: request options instead of params are passed correctly', async () => {
@@ -198,7 +318,14 @@ describe('resource responses', () => {
   });
 
   test('stringResponse', async () => {
-    const response = await sink.responses.stringResponse();
+    const responsePromise = sink.responses.stringResponse();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('stringResponse: request options instead of params are passed correctly', async () => {
@@ -209,7 +336,14 @@ describe('resource responses', () => {
   });
 
   test('unionOfMixedTypes', async () => {
-    const response = await sink.responses.unionOfMixedTypes();
+    const responsePromise = sink.responses.unionOfMixedTypes();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('unionOfMixedTypes: request options instead of params are passed correctly', async () => {
@@ -220,7 +354,14 @@ describe('resource responses', () => {
   });
 
   test('unionOfObjects', async () => {
-    const response = await sink.responses.unionOfObjects();
+    const responsePromise = sink.responses.unionOfObjects();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('unionOfObjects: request options instead of params are passed correctly', async () => {

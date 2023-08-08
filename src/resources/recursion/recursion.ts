@@ -11,35 +11,32 @@ export class Recursion extends APIResource {
   createBranch(
     body: RecursionCreateBranchParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BranchRecursion>> {
+  ): Core.APIPromise<BranchRecursion> {
     return this.post('/recursion/branch', { body, ...options });
   }
 
   createEnvelope(
     body: RecursionCreateEnvelopeParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<RecursionCreateEnvelopeResponse>> {
+  ): Core.APIPromise<RecursionCreateEnvelopeResponse> {
     return this.post('/recursion/envelope', { body, ...options });
   }
 
   createMutualA(
     body: RecursionCreateMutualAParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<MutualRecursionA>> {
+  ): Core.APIPromise<MutualRecursionA> {
     return this.post('/recursion/mutual-a', { body, ...options });
   }
 
   createMutualB(
     body: RecursionCreateMutualBParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<MutualRecursionB>> {
+  ): Core.APIPromise<MutualRecursionB> {
     return this.post('/recursion/mutual-b', { body, ...options });
   }
 
-  createSelf(
-    body: RecursionCreateSelfParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<SelfRecursion>> {
+  createSelf(body: RecursionCreateSelfParams, options?: Core.RequestOptions): Core.APIPromise<SelfRecursion> {
     return this.post('/recursion/self', { body, ...options });
   }
 }

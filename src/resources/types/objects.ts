@@ -10,9 +10,7 @@ export class Objects extends APIResource {
    * Endpoint with a response schema object that contains a mix of known & unknown
    * properties with the same value types.
    */
-  mixedKnownAndUnknown(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ObjectMixedKnownAndUnknownResponse>> {
+  mixedKnownAndUnknown(options?: Core.RequestOptions): Core.APIPromise<ObjectMixedKnownAndUnknownResponse> {
     return this.get('/types/object/mixed_known_and_unknown', options);
   }
 
@@ -23,7 +21,7 @@ export class Objects extends APIResource {
    */
   multipleArrayPropertiesSameRef(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ObjectMultipleArrayPropertiesSameRefResponse>> {
+  ): Core.APIPromise<ObjectMultipleArrayPropertiesSameRefResponse> {
     return this.get('/types/object/multiple_array_properties_same_ref', options);
   }
 
@@ -33,7 +31,7 @@ export class Objects extends APIResource {
    */
   multiplePropertiesSameModel(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ObjectMultiplePropertiesSameModelResponse>> {
+  ): Core.APIPromise<ObjectMultiplePropertiesSameModelResponse> {
     return this.get('/types/object/multiple_properties_same_model', options);
   }
 
@@ -44,7 +42,7 @@ export class Objects extends APIResource {
    */
   multiplePropertiesSameRef(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<ObjectMultiplePropertiesSameRefResponse>> {
+  ): Core.APIPromise<ObjectMultiplePropertiesSameRefResponse> {
     return this.get('/types/object/multiple_properties_same_ref', options);
   }
 }

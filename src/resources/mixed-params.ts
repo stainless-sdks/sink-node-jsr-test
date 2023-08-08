@@ -13,12 +13,12 @@ export class MixedParams extends APIResource {
   queryAndBody(
     params?: MixedParamQueryAndBodyParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>>;
-  queryAndBody(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.BasicSharedModelObject>>;
+  ): Core.APIPromise<Shared.BasicSharedModelObject>;
+  queryAndBody(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject>;
   queryAndBody(
     params: MixedParamQueryAndBodyParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     if (isRequestOptions(params)) {
       return this.queryAndBody({}, params);
     }
@@ -37,16 +37,16 @@ export class MixedParams extends APIResource {
     pathParam: string,
     params?: MixedParamQueryBodyAndPathParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>>;
+  ): Core.APIPromise<Shared.BasicSharedModelObject>;
   queryBodyAndPath(
     pathParam: string,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>>;
+  ): Core.APIPromise<Shared.BasicSharedModelObject>;
   queryBodyAndPath(
     pathParam: string,
     params: MixedParamQueryBodyAndPathParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     if (isRequestOptions(params)) {
       return this.queryBodyAndPath(pathParam, {}, params);
     }

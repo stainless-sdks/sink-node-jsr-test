@@ -12,7 +12,7 @@ export class LevelTwo extends APIResource {
   /**
    * Get card configuration such as spend limit and state.
    */
-  methodLevel2(cardToken: string, options?: Core.RequestOptions): Promise<Core.APIResponse<Cards.Card>> {
+  methodLevel2(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<Cards.Card> {
     return this.get(`/cards/${cardToken}`, options);
   }
 }

@@ -10,7 +10,7 @@ export class Sta606 extends APIResource {
    * The response body being set to a $ref that is a shared type in the stainless
    * config correctly references it.
    */
-  withSharedModel(options?: Core.RequestOptions): Promise<Core.APIResponse<Shared.ObjectWithChildRef>> {
+  withSharedModel(options?: Core.RequestOptions): Core.APIPromise<Shared.ObjectWithChildRef> {
     return this.post('/sta_606_shared_types/response', options);
   }
 
@@ -18,10 +18,7 @@ export class Sta606 extends APIResource {
    * The request body being set to a $ref that is a shared type in the stainless
    * config correctly references it.
    */
-  withSharedParams(
-    body: Sta606WithSharedParamsParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  withSharedParams(body: Sta606WithSharedParamsParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/sta_606_shared_types/request_params', {
       body,
       ...options,

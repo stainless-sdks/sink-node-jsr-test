@@ -22,7 +22,7 @@ export class BodyParams extends APIResource {
   readOnlyProperties(
     body: BodyParamReadOnlyPropertiesParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post('/body_params/read_only_properties', {
       body,
       ...options,
@@ -36,7 +36,7 @@ export class BodyParams extends APIResource {
   topLevelAllOf(
     body: BodyParamTopLevelAllOfParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BodyParamTopLevelAllOfResponse>> {
+  ): Core.APIPromise<BodyParamTopLevelAllOfResponse> {
     return this.post('/body_params/top_level_allOf', { body, ...options });
   }
 
@@ -47,7 +47,7 @@ export class BodyParams extends APIResource {
   topLevelAllOfNestedObject(
     body: BodyParamTopLevelAllOfNestedObjectParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post('/body_params/top_level_allOf_nested_object', {
       body,
       ...options,
@@ -61,17 +61,14 @@ export class BodyParams extends APIResource {
   topLevelAnyOfWithRef(
     body: BodyParamTopLevelAnyOfWithRefParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Shared.BasicSharedModelObject>> {
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     return this.post('/body_params/top_level_anyOf_with_ref', { body, ...options });
   }
 
   /**
    * Endpoint with a `requestBody` that is an `array` type.
    */
-  topLevelArray(
-    body: BodyParamTopLevelArrayParams,
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  topLevelArray(body: BodyParamTopLevelArrayParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/body_params/top_level_array', {
       body,
       ...options,
@@ -85,7 +82,7 @@ export class BodyParams extends APIResource {
   topLevelArrayWithChildren(
     body: BodyParamTopLevelArrayWithChildrenParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post('/body_params/top_level_array_with_children', {
       body,
       ...options,
@@ -100,7 +97,7 @@ export class BodyParams extends APIResource {
   topLevelOneOfOneEntry(
     body: BodyParamTopLevelOneOfOneEntryParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post('/body_params/top_level_oneOf_one_entry', {
       body,
       ...options,
@@ -115,14 +112,12 @@ export class BodyParams extends APIResource {
   unionOverlappingProp(
     body?: BodyParamUnionOverlappingPropParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>>;
-  unionOverlappingProp(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>>;
+  ): Core.APIPromise<BodyParamUnionOverlappingPropResponse>;
+  unionOverlappingProp(options?: Core.RequestOptions): Core.APIPromise<BodyParamUnionOverlappingPropResponse>;
   unionOverlappingProp(
     body: BodyParamUnionOverlappingPropParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<BodyParamUnionOverlappingPropResponse>> {
+  ): Core.APIPromise<BodyParamUnionOverlappingPropResponse> {
     if (isRequestOptions(body)) {
       return this.unionOverlappingProp({}, body);
     }
@@ -136,7 +131,7 @@ export class BodyParams extends APIResource {
   withModelProperty(
     body: BodyParamWithModelPropertyParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<void>> {
+  ): Core.APIPromise<void> {
     return this.post('/body_params/with_model_property', {
       body,
       ...options,

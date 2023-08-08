@@ -10,7 +10,7 @@ export class MakeAmbiguousSchemasExplicit extends APIResource {
    */
   makeAmbiguousSchemasExplicit(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse>> {
+  ): Core.APIPromise<MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse> {
     return this.get('/make-ambiguous-schemas-explicit', options);
   }
 }

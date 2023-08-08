@@ -19,7 +19,7 @@ export class Types extends APIResource {
    * Endpoint that has date types should generate params/responses with rich date
    * types.
    */
-  dates(body: TypeDatesParams, options?: Core.RequestOptions): Promise<Core.APIResponse<TypeDatesResponse>> {
+  dates(body: TypeDatesParams, options?: Core.RequestOptions): Core.APIPromise<TypeDatesResponse> {
     return this.post('/types/dates', { body, ...options });
   }
 
@@ -29,14 +29,14 @@ export class Types extends APIResource {
   datetimes(
     body: TypeDatetimesParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<TypeDatetimesResponse>> {
+  ): Core.APIPromise<TypeDatetimesResponse> {
     return this.post('/types/datetimes', { body, ...options });
   }
 
   /**
    * Endpoint that has a `$ref`d enum type in the request body and the response body.
    */
-  enums(body: TypeEnumsParams, options?: Core.RequestOptions): Promise<Core.APIResponse<TypeEnumsResponse>> {
+  enums(body: TypeEnumsParams, options?: Core.RequestOptions): Core.APIPromise<TypeEnumsResponse> {
     return this.post('/types/enums', { body, ...options });
   }
 }

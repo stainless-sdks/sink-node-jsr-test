@@ -5,7 +5,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as API from './index';
 
 export class Arrays extends APIResource {
-  missingItems(options?: Core.RequestOptions): Promise<Core.APIResponse<ArrayMissingItemsResponse>> {
+  missingItems(options?: Core.RequestOptions): Core.APIPromise<ArrayMissingItemsResponse> {
     return this.get('/invalid_schemas/arrays/missing_items', options);
   }
 }

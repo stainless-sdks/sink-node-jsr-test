@@ -12,7 +12,7 @@ export class Sta569 extends APIResource {
   oneEntry(
     body: Sta569OneEntryParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta569OneEntryResponse>> {
+  ): Core.APIPromise<Sta569OneEntryResponse> {
     return this.post('/sta_569_array_types/one_entry', { body, ...options });
   }
 
@@ -25,14 +25,12 @@ export class Sta569 extends APIResource {
   oneEntryWithNull(
     body?: Sta569OneEntryWithNullParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta569OneEntryWithNullResponse | null>>;
-  oneEntryWithNull(
-    options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta569OneEntryWithNullResponse | null>>;
+  ): Core.APIPromise<Sta569OneEntryWithNullResponse | null>;
+  oneEntryWithNull(options?: Core.RequestOptions): Core.APIPromise<Sta569OneEntryWithNullResponse | null>;
   oneEntryWithNull(
     body: Sta569OneEntryWithNullParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<Sta569OneEntryWithNullResponse | null>> {
+  ): Core.APIPromise<Sta569OneEntryWithNullResponse | null> {
     if (isRequestOptions(body)) {
       return this.oneEntryWithNull({}, body);
     }

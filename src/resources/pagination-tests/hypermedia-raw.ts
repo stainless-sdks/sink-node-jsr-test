@@ -3,6 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as BodyParams from 'sink-npm/resources/body-params';
 import { MyModelsPageHypermediaRaw } from 'sink-npm/resources/body-params';
 import * as API from './index';
 import { PageHypermediaRawParams } from 'sink-npm/pagination';
@@ -14,12 +15,12 @@ export class HypermediaRaw extends APIResource {
   list(
     query?: HypermediaRawListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageHypermediaRaw>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageHypermediaRaw>;
+  ): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParams.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParams.MyModel>;
   list(
     query: HypermediaRawListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageHypermediaRaw> {
+  ): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParams.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }

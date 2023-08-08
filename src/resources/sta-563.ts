@@ -9,7 +9,7 @@ export class Sta563 extends APIResource {
    * Should not generate return type for object without defined properties. See
    * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
    */
-  deleteEmptyObject(options?: Core.RequestOptions): Promise<Core.APIResponse<DeleteEmptyObjectResponse>> {
+  deleteEmptyObject(options?: Core.RequestOptions): Core.APIPromise<DeleteEmptyObjectResponse> {
     return this.delete('/sta_563_empty_object', options);
   }
 }

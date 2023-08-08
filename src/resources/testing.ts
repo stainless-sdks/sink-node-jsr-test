@@ -5,7 +5,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as API from './index';
 
 export class Testing extends APIResource {
-  root(options?: Core.RequestOptions): Promise<Core.APIResponse<RootResponse>> {
+  root(options?: Core.RequestOptions): Core.APIPromise<RootResponse> {
     return this.get('/', options);
   }
 }

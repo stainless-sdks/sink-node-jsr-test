@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import Sink from 'sink-npm';
+import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
@@ -11,7 +12,14 @@ const sink = new Sink({
 
 describe('resource sharedResponses', () => {
   test('createMutualA', async () => {
-    const response = await sink.recursion.sharedResponses.createMutualA();
+    const responsePromise = sink.recursion.sharedResponses.createMutualA();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createMutualA: request options instead of params are passed correctly', async () => {
@@ -22,7 +30,14 @@ describe('resource sharedResponses', () => {
   });
 
   test('createMutualB', async () => {
-    const response = await sink.recursion.sharedResponses.createMutualB();
+    const responsePromise = sink.recursion.sharedResponses.createMutualB();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createMutualB: request options instead of params are passed correctly', async () => {
@@ -33,7 +48,14 @@ describe('resource sharedResponses', () => {
   });
 
   test('createSelf', async () => {
-    const response = await sink.recursion.sharedResponses.createSelf();
+    const responsePromise = sink.recursion.sharedResponses.createSelf();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 
   test('createSelf: request options instead of params are passed correctly', async () => {

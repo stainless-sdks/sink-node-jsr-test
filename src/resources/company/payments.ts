@@ -8,7 +8,7 @@ export class Payments extends APIResource {
   /**
    * Get a payment that the company made.
    */
-  retrieve(paymentId: string, options?: Core.RequestOptions): Promise<Core.APIResponse<CompanyPayment>> {
+  retrieve(paymentId: string, options?: Core.RequestOptions): Core.APIPromise<CompanyPayment> {
     return this.get(`/company/payments/${paymentId}`, options);
   }
 }

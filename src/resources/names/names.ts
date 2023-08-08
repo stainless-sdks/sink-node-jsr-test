@@ -17,7 +17,7 @@ export class Names extends APIResource {
   propertiesCommonConflicts(
     body: NamePropertiesCommonConflictsParams,
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<NamePropertiesCommonConflictsResponse>> {
+  ): Core.APIPromise<NamePropertiesCommonConflictsResponse> {
     return this.post('/names/properties_common_conflicts', { body, ...options });
   }
 
@@ -26,7 +26,7 @@ export class Names extends APIResource {
    */
   responseShadowsPydantic(
     options?: Core.RequestOptions,
-  ): Promise<Core.APIResponse<NameResponseShadowsPydanticResponse>> {
+  ): Core.APIPromise<NameResponseShadowsPydanticResponse> {
     return this.get('/names/response_property_shadows_pydantic', options);
   }
 }
