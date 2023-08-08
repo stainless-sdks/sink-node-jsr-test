@@ -440,7 +440,9 @@ export namespace Sink {
 
   export import Files = API.Files;
   export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
+  export import FileEverythingMultipartResponse = API.FileEverythingMultipartResponse;
   export import FileCreateMultipartParams = API.FileCreateMultipartParams;
+  export import FileEverythingMultipartParams = API.FileEverythingMultipartParams;
 
   export import Resources = API.Resources;
 

@@ -58,7 +58,13 @@ export {
   DocstringTrailingDoubleQuoteResponse,
   Docstrings,
 } from './docstrings';
-export { FileCreateMultipartResponse, FileCreateMultipartParams, Files } from './files';
+export {
+  FileCreateMultipartResponse,
+  FileEverythingMultipartResponse,
+  FileCreateMultipartParams,
+  FileEverythingMultipartParams,
+  Files,
+} from './files';
 export { GithubUser, GithubUserPreferences, Sta630 } from './sta-630';
 export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
 export { InvalidSchemas } from './invalid-schemas/invalid-schemas';

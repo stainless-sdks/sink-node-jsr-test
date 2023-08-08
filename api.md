@@ -203,10 +203,12 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/files.ts">FileCreateMultipartResponse</a></code>
+- <code><a href="./src/resources/files.ts">FileEverythingMultipartResponse</a></code>
 
 Methods:
 
 - <code title="post /files/multipart">client.files.<a href="./src/resources/files.ts">createMultipart</a>({ ...params }) -> FileCreateMultipartResponse</code>
+- <code title="post /files/multipart_everything">client.files.<a href="./src/resources/files.ts">everythingMultipart</a>({ ...params }) -> FileEverythingMultipartResponse</code>
 
 # Resources
 

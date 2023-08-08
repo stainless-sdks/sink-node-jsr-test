@@ -23,4 +23,28 @@ describe('resource files', () => {
       purpose: 'string',
     });
   });
+
+  test('everythingMultipart: only required params', async () => {
+    const response = await sink.files.everythingMultipart({
+      b: true,
+      e: 'a',
+      file: await toFile(Buffer.from('# my file contents'), 'README.md'),
+      i: 0,
+      n: 0,
+      purpose: 'string',
+      s: 'string',
+    });
+  });
+
+  test('everythingMultipart: required and optional params', async () => {
+    const response = await sink.files.everythingMultipart({
+      b: true,
+      e: 'a',
+      file: await toFile(Buffer.from('# my file contents'), 'README.md'),
+      i: 0,
+      n: 0,
+      purpose: 'string',
+      s: 'string',
+    });
+  });
 });

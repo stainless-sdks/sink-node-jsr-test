@@ -252,6 +252,8 @@ export interface ResponseObjectAllPropertiesResponse {
 
   b: boolean;
 
+  e: 'active' | 'inactive' | 'pending';
+
   i: number;
 
   n: null;
