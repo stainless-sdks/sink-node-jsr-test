@@ -22,6 +22,16 @@ export class Names extends APIResource {
   }
 
   /**
+   * Endpoint with a response model property that can cause clashes with a model
+   * import.
+   */
+  responsePropertyClashesModelImport(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NameResponsePropertyClashesModelImportResponse> {
+    return this.get('/names/response_property_clashes_model_import', options);
+  }
+
+  /**
    * Endpoint with a response model property that would clash with pydantic.
    */
   responseShadowsPydantic(
@@ -31,11 +41,51 @@ export class Names extends APIResource {
   }
 }
 
+export interface Balance {
+  foo?: string;
+}
+
 export interface NamePropertiesCommonConflictsResponse {
+  bool: boolean;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `bool`
+   * property declaration.
+   */
+  bool_2: boolean;
+
   /**
    * This shadows the stdlib `datetime.date` type in Python & causes type errors.
    */
   date: string;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `date`
+   * property declaration.
+   */
+  date_2: string;
+
+  float: number;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `float`
+   * property declaration.
+   */
+  float_2: number;
+
+  int: number;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `int`
+   * property declaration.
+   */
+  int_2: number;
+}
+
+export interface NameResponsePropertyClashesModelImportResponse {
+  balance: Balance;
+
+  optional_balance?: Balance;
 }
 
 export interface NameResponseShadowsPydanticResponse {
@@ -43,14 +93,46 @@ export interface NameResponseShadowsPydanticResponse {
 }
 
 export interface NamePropertiesCommonConflictsParams {
+  bool: boolean;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `bool`
+   * property declaration.
+   */
+  bool_2: boolean;
+
   /**
    * This shadows the stdlib `datetime.date` type in Python & causes type errors.
    */
   date: string;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `date`
+   * property declaration.
+   */
+  date_2: string;
+
+  float: number;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `float`
+   * property declaration.
+   */
+  float_2: number;
+
+  int: number;
+
+  /**
+   * In certain languages the type declaration for this prop can shadow the `int`
+   * property declaration.
+   */
+  int_2: number;
 }
 
 export namespace Names {
+  export import Balance = API.Balance;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
 

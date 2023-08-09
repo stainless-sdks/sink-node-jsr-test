@@ -25,6 +25,14 @@ export {
   Recursion,
 } from './recursion/recursion';
 export {
+  Balance,
+  NamePropertiesCommonConflictsResponse,
+  NameResponsePropertyClashesModelImportResponse,
+  NameResponseShadowsPydanticResponse,
+  NamePropertiesCommonConflictsParams,
+  Names,
+} from './names/names';
+export {
   Card,
   CardAlias,
   FundingAccount,
@@ -108,12 +116,6 @@ export {
   MyModelsPageHypermediaRaw,
   BodyParams,
 } from './body-params';
-export {
-  NamePropertiesCommonConflictsResponse,
-  NameResponseShadowsPydanticResponse,
-  NamePropertiesCommonConflictsParams,
-  Names,
-} from './names/names';
 export {
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,

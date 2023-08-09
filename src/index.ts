@@ -480,7 +480,9 @@ export namespace Sink {
   export import TypeEnumsParams = API.TypeEnumsParams;
 
   export import Names = API.Names;
+  export import Balance = API.Balance;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
 
