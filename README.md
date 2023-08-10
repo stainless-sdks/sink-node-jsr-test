@@ -2,10 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm)
 
-The Sink Custom Node Title library provides convenient access to the Sink REST API from applications written in server-side JavaScript.
-It includes TypeScript definitions for all request params and response fields.
-
-## Documentation
+This library provides convenient access to the Sink Custom Node Title REST API from server-side TypeScript or JavaScript.
 
 The API documentation can be found [here](https://stainlessapi.com).
 
@@ -38,10 +35,9 @@ async function main() {
 main();
 ```
 
-### Usage with TypeScript
+### Request & Response types
 
-Importing, instantiating, and interacting with the library are the same as above.
-If you like, you may reference our types directly:
+This library includes TypeScript definitions for all request params and response fields. You may import and use them like so:
 
 ```ts
 import Sink from 'sink-npm';
@@ -299,7 +295,9 @@ We are keen for your feedback; please open an [issue](https://www.github.com/sta
 The following runtimes are supported:
 
 - Node.js 16 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
-- Deno v1.28.0 or higher (experimental).
-  Use `import Sink from "npm:sink-npm"`.
+- Deno v1.28.0 or higher, using `import Sink from "npm:sink-npm"`.
+  Deno Deploy is not yet supported.
+- Cloudflare Workers.
+- Vercel Edge Runtime.
 
 If you are interested in other runtime environments, please open or upvote an issue on GitHub.
