@@ -199,11 +199,7 @@ export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
 
 export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParams.MyModel>;
 
-export interface ResponseAllofCrossResourceResponse extends ResponsesAllofCrossObject {
-  is_foo: boolean;
-
-  kind: 'VIRTUAL' | 'PHYSICAL';
-
+export interface ResponseAllofCrossResourceResponse extends SimpleAllof, ResponsesAllofCrossObject {
   baz?: string;
 }
 
