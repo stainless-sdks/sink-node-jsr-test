@@ -45,6 +45,28 @@ export class QueryParams extends APIResource {
   }
 
   /**
+   * Endpoint with anyOf query param that's string or array of strings
+   */
+  anyOfStringOrArray(
+    query?: QueryParamAnyOfStringOrArrayParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void>;
+  anyOfStringOrArray(options?: Core.RequestOptions): Core.APIPromise<void>;
+  anyOfStringOrArray(
+    query: QueryParamAnyOfStringOrArrayParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    if (isRequestOptions(query)) {
+      return this.anyOfStringOrArray({}, query);
+    }
+    return this.get('/query_params/anyOfStringOrArray', {
+      query,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with array query params
    */
   array(query?: QueryParamArrayParams, options?: Core.RequestOptions): Core.APIPromise<void>;
@@ -156,6 +178,10 @@ export interface QueryParamAnyOfParams {
   string_or_integer?: string | number;
 }
 
+export interface QueryParamAnyOfStringOrArrayParams {
+  ids?: string | Array<string>;
+}
+
 export interface QueryParamArrayParams {
   integer_array_param?: Array<number>;
 
@@ -209,6 +235,7 @@ export interface QueryParamPrimitivesParams {
 export namespace QueryParams {
   export import QueryParamAllOfParams = API.QueryParamAllOfParams;
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
+  export import QueryParamAnyOfStringOrArrayParams = API.QueryParamAnyOfStringOrArrayParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
   export import QueryParamEnumParams = API.QueryParamEnumParams;
   export import QueryParamObjectParams = API.QueryParamObjectParams;

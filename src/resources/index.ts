@@ -156,6 +156,7 @@ export {
 export {
   QueryParamAllOfParams,
   QueryParamAnyOfParams,
+  QueryParamAnyOfStringOrArrayParams,
   QueryParamArrayParams,
   QueryParamEnumParams,
   QueryParamObjectParams,

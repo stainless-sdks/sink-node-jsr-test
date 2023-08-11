@@ -496,6 +496,7 @@ Methods:
 
 - <code title="get /query_params/allOf">client.queryParams.<a href="./src/resources/query-params.ts">allOf</a>({ ...params }) -> void</code>
 - <code title="get /query_params/anyOf">client.queryParams.<a href="./src/resources/query-params.ts">anyOf</a>({ ...params }) -> void</code>
+- <code title="get /query_params/anyOfStringOrArray">client.queryParams.<a href="./src/resources/query-params.ts">anyOfStringOrArray</a>({ ...params }) -> void</code>
 - <code title="get /query_params/array">client.queryParams.<a href="./src/resources/query-params.ts">array</a>({ ...params }) -> void</code>
 - <code title="get /query_params/enum">client.queryParams.<a href="./src/resources/query-params.ts">enum</a>({ ...params }) -> void</code>
 - <code title="get /query_params/object">client.queryParams.<a href="./src/resources/query-params.ts">object</a>({ ...params }) -> void</code>

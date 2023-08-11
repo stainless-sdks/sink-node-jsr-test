@@ -532,6 +532,7 @@ export namespace Sink {
   export import QueryParams = API.QueryParams;
   export import QueryParamAllOfParams = API.QueryParamAllOfParams;
   export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
+  export import QueryParamAnyOfStringOrArrayParams = API.QueryParamAnyOfStringOrArrayParams;
   export import QueryParamArrayParams = API.QueryParamArrayParams;
   export import QueryParamEnumParams = API.QueryParamEnumParams;
   export import QueryParamObjectParams = API.QueryParamObjectParams;
