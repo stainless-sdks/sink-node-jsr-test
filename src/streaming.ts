@@ -1,5 +1,4 @@
 import type { Response } from 'sink-npm/_shims/fetch';
-import { ReadableStream } from 'sink-npm/_shims/ReadableStream';
 
 import { safeJSON, createResponseHeaders } from 'sink-npm/core';
 import { APIError } from 'sink-npm/error';
@@ -80,38 +79,6 @@ export class Stream<Item> implements AsyncIterable<Item> {
       // If the user `break`s, abort the ongoing request.
       if (!done) this.controller.abort();
     }
-  }
-
-  toReadableStream(): ReadableStream {
-    const self = this;
-    let iter: AsyncIterator<Item>;
-    const encoder = new TextEncoder();
-
-    return new ReadableStream({
-      async start() {
-        iter = self[Symbol.asyncIterator]();
-      },
-      async pull(ctrl) {
-        try {
-          const { value, done } = await iter.next();
-          if (done) return ctrl.close();
-
-          const str =
-            typeof value === 'string' ? value : (
-              // Add a newline after JSON to make it easier to parse newline-separated JSON on the frontend.
-              JSON.stringify(value) + '\n'
-            );
-          const bytes = encoder.encode(str);
-
-          ctrl.enqueue(bytes);
-        } catch (err) {
-          ctrl.error(err);
-        }
-      },
-      async cancel() {
-        await iter.return?.();
-      },
-    });
   }
 }
 
