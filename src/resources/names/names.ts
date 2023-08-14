@@ -11,6 +11,14 @@ export class Names extends APIResource {
   canCauseClashes: CanCauseClashes = new CanCauseClashes(this.client);
 
   /**
+   * Endpoint with request & response properties that could cause clashes due to
+   * imports.
+   */
+  childPropImportClash(options?: Core.RequestOptions): Core.APIPromise<NameChildPropImportClashResponse> {
+    return this.post('/names/child_prop_import_clash', options);
+  }
+
+  /**
    * Endpoint with request & response properties that are likely to cause name
    * conflicts.
    */
@@ -43,6 +51,18 @@ export class Names extends APIResource {
 
 export interface Balance {
   foo?: string;
+}
+
+export interface NameChildPropImportClashResponse {
+  balance: NameChildPropImportClashResponse.Balance;
+
+  balance_model: Balance;
+}
+
+export namespace NameChildPropImportClashResponse {
+  export interface Balance {
+    bar?: string;
+  }
 }
 
 export interface NamePropertiesCommonConflictsResponse {
@@ -131,6 +151,7 @@ export interface NamePropertiesCommonConflictsParams {
 
 export namespace Names {
   export import Balance = API.Balance;
+  export import NameChildPropImportClashResponse = API.NameChildPropImportClashResponse;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
   export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;

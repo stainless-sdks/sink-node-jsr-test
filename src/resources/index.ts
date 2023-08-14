@@ -26,6 +26,7 @@ export {
 } from './recursion/recursion';
 export {
   Balance,
+  NameChildPropImportClashResponse,
   NamePropertiesCommonConflictsResponse,
   NameResponsePropertyClashesModelImportResponse,
   NameResponseShadowsPydanticResponse,

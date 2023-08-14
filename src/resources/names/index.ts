@@ -2,6 +2,7 @@
 
 export {
   Balance,
+  NameChildPropImportClashResponse,
   NamePropertiesCommonConflictsResponse,
   NameResponsePropertyClashesModelImportResponse,
   NameResponseShadowsPydanticResponse,

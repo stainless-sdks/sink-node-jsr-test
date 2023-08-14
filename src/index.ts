@@ -481,6 +481,7 @@ export namespace Sink {
 
   export import Names = API.Names;
   export import Balance = API.Balance;
+  export import NameChildPropImportClashResponse = API.NameChildPropImportClashResponse;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
   export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
