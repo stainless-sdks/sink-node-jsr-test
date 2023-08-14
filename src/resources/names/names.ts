@@ -110,6 +110,8 @@ export interface NameResponsePropertyClashesModelImportResponse {
 
 export interface NameResponseShadowsPydanticResponse {
   parse_raw: string;
+
+  model_id?: string;
 }
 
 export interface NamePropertiesCommonConflictsParams {
