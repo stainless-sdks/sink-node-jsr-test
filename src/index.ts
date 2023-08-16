@@ -492,6 +492,7 @@ export namespace Sink {
   export import Envelopes = API.Envelopes;
   export import Address = API.Address;
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
+  export import EnvelopeWrappedArrayResponse = API.EnvelopeWrappedArrayResponse;
 
   export import Types = API.Types;
   export import TypeDatesResponse = API.TypeDatesResponse;

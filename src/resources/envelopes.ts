@@ -2,6 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as Shared from 'sink-npm/resources/shared';
 import * as API from './index';
 
 export class Envelopes extends APIResource {
@@ -31,6 +32,18 @@ export class Envelopes extends APIResource {
     return (
       this.get('/envelopes/items/inline_response', options) as Core.APIPromise<{
         items: EnvelopeInlineResponseResponse;
+      }>
+    )._thenUnwrap((obj) => obj.items);
+  }
+
+  /**
+   * Endpoint with a response wrapped within a `items` property that is an array
+   * type.
+   */
+  wrappedArray(options?: Core.RequestOptions): Core.APIPromise<EnvelopeWrappedArrayResponse> {
+    return (
+      this.get('/envelopes/items/wrapped_array', options) as Core.APIPromise<{
+        items: EnvelopeWrappedArrayResponse;
       }>
     )._thenUnwrap((obj) => obj.items);
   }
@@ -75,7 +88,10 @@ export interface EnvelopeInlineResponseResponse {
   foo?: string;
 }
 
+export type EnvelopeWrappedArrayResponse = Array<Shared.ObjectWithChildRef>;
+
 export namespace Envelopes {
   export import Address = API.Address;
   export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
+  export import EnvelopeWrappedArrayResponse = API.EnvelopeWrappedArrayResponse;
 }

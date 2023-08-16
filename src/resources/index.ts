@@ -7,7 +7,12 @@ export {
   CustomAPIStatusMessage,
   Sta563PostEmptyObjectResponse,
 } from './top-level';
-export { Address, EnvelopeInlineResponseResponse, Envelopes } from './envelopes';
+export {
+  Address,
+  EnvelopeInlineResponseResponse,
+  EnvelopeWrappedArrayResponse,
+  Envelopes,
+} from './envelopes';
 export {
   ArrayRecursion,
   BranchRecursion,

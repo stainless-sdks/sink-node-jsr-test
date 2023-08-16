@@ -292,12 +292,14 @@ Types:
 
 - <code><a href="./src/resources/envelopes.ts">Address</a></code>
 - <code><a href="./src/resources/envelopes.ts">EnvelopeInlineResponseResponse</a></code>
+- <code><a href="./src/resources/envelopes.ts">EnvelopeWrappedArrayResponse</a></code>
 
 Methods:
 
 - <code title="get /envelopes/data">client.envelopes.<a href="./src/resources/envelopes.ts">explicit</a>() -> Address</code>
 - <code title="get /envelopes/items">client.envelopes.<a href="./src/resources/envelopes.ts">implicit</a>() -> Address</code>
 - <code title="get /envelopes/items/inline_response">client.envelopes.<a href="./src/resources/envelopes.ts">inlineResponse</a>() -> EnvelopeInlineResponseResponse</code>
+- <code title="get /envelopes/items/wrapped_array">client.envelopes.<a href="./src/resources/envelopes.ts">wrappedArray</a>() -> EnvelopeWrappedArrayResponse</code>
 
 # Types
 
