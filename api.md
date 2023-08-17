@@ -48,6 +48,16 @@ Methods:
 
 - <code title="get /casing/eeoc">client.casing.eeoc.<a href="./src/resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
 
+# Tools
+
+Types:
+
+- <code><a href="./src/resources/tools.ts">ObjectSkippedProps</a></code>
+
+Methods:
+
+- <code title="post /tools/skipped_params">client.tools.<a href="./src/resources/tools.ts">skippedParams</a>({ ...params }) -> ObjectSkippedProps</code>
+
 # MethodConfig
 
 Types:

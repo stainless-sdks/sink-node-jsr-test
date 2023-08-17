@@ -122,6 +122,7 @@ export {
   MyModelsPageHypermediaRaw,
   BodyParams,
 } from './body-params';
+export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
 export {
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,
