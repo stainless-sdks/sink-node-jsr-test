@@ -18,6 +18,10 @@ export class Streaming extends APIResource {
   basic(
     body: StreamingBasicParams,
     options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingBasicResponse> | StreamingBasicResponse>;
+  basic(
+    body: StreamingBasicParams,
+    options?: Core.RequestOptions,
   ): APIPromise<StreamingBasicResponse> | APIPromise<Stream<StreamingBasicResponse>> {
     return this.post('/streaming/basic', { body, ...options, stream: body.stream ?? false }) as
       | APIPromise<StreamingBasicResponse>
@@ -35,6 +39,10 @@ export class Streaming extends APIResource {
   nestedParams(
     body: StreamingNestedParamsParams,
     options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingNestedParamsResponse> | StreamingNestedParamsResponse>;
+  nestedParams(
+    body: StreamingNestedParamsParams,
+    options?: Core.RequestOptions,
   ): APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>> {
     return this.post('/streaming/nested_params', { body, ...options, stream: body.stream ?? false }) as
       | APIPromise<StreamingNestedParamsResponse>
@@ -49,6 +57,10 @@ export class Streaming extends APIResource {
     query: StreamingQueryParamDiscriminatorParamsStreaming,
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>>;
+  queryParamDiscriminator(
+    query: StreamingQueryParamDiscriminatorParams,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse> | StreamingQueryParamDiscriminatorResponse>;
   queryParamDiscriminator(
     query: StreamingQueryParamDiscriminatorParams,
     options?: Core.RequestOptions,
