@@ -16,7 +16,7 @@ export class Streaming extends APIResource {
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingBasicResponse>>;
   basic(
-    body: StreamingBasicParams,
+    body: StreamingBasicParamsBase,
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingBasicResponse> | StreamingBasicResponse>;
   basic(
@@ -37,7 +37,7 @@ export class Streaming extends APIResource {
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingNestedParamsResponse>>;
   nestedParams(
-    body: StreamingNestedParamsParams,
+    body: StreamingNestedParamsParamsBase,
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingNestedParamsResponse> | StreamingNestedParamsResponse>;
   nestedParams(
@@ -58,7 +58,7 @@ export class Streaming extends APIResource {
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>>;
   queryParamDiscriminator(
-    query: StreamingQueryParamDiscriminatorParams,
+    query: StreamingQueryParamDiscriminatorParamsBase,
     options?: Core.RequestOptions,
   ): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse> | StreamingQueryParamDiscriminatorResponse>;
   queryParamDiscriminator(
@@ -95,7 +95,9 @@ export interface StreamingQueryParamDiscriminatorResponse {
   model?: string;
 }
 
-export interface StreamingBasicParams {
+export type StreamingBasicParams = StreamingBasicParamsNonStreaming | StreamingBasicParamsStreaming;
+
+export interface StreamingBasicParamsBase {
   model: string;
 
   prompt: string;
@@ -108,15 +110,19 @@ export namespace StreamingBasicParams {
   export type StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
 }
 
-export interface StreamingBasicParamsNonStreaming extends StreamingBasicParams {
+export interface StreamingBasicParamsNonStreaming extends StreamingBasicParamsBase {
   stream?: false;
 }
 
-export interface StreamingBasicParamsStreaming extends StreamingBasicParams {
+export interface StreamingBasicParamsStreaming extends StreamingBasicParamsBase {
   stream: true;
 }
 
-export interface StreamingNestedParamsParams {
+export type StreamingNestedParamsParams =
+  | StreamingNestedParamsParamsNonStreaming
+  | StreamingNestedParamsParamsStreaming;
+
+export interface StreamingNestedParamsParamsBase {
   model: string;
 
   prompt: string;
@@ -147,15 +153,19 @@ export namespace StreamingNestedParamsParams {
   export type StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
 }
 
-export interface StreamingNestedParamsParamsNonStreaming extends StreamingNestedParamsParams {
+export interface StreamingNestedParamsParamsNonStreaming extends StreamingNestedParamsParamsBase {
   stream?: false;
 }
 
-export interface StreamingNestedParamsParamsStreaming extends StreamingNestedParamsParams {
+export interface StreamingNestedParamsParamsStreaming extends StreamingNestedParamsParamsBase {
   stream: true;
 }
 
-export interface StreamingQueryParamDiscriminatorParams {
+export type StreamingQueryParamDiscriminatorParams =
+  | StreamingQueryParamDiscriminatorParamsNonStreaming
+  | StreamingQueryParamDiscriminatorParamsStreaming;
+
+export interface StreamingQueryParamDiscriminatorParamsBase {
   prompt: string;
 
   should_stream?: boolean;
@@ -169,12 +179,12 @@ export namespace StreamingQueryParamDiscriminatorParams {
 }
 
 export interface StreamingQueryParamDiscriminatorParamsNonStreaming
-  extends StreamingQueryParamDiscriminatorParams {
+  extends StreamingQueryParamDiscriminatorParamsBase {
   should_stream?: false;
 }
 
 export interface StreamingQueryParamDiscriminatorParamsStreaming
-  extends StreamingQueryParamDiscriminatorParams {
+  extends StreamingQueryParamDiscriminatorParamsBase {
   should_stream: true;
 }
 
