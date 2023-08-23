@@ -360,6 +360,8 @@ export namespace Sink {
   export import toFile = Uploads.toFile;
   export import fileFromPath = Uploads.fileFromPath;
 
+  export import RequestOptions = Core.RequestOptions;
+
   export import CardPage = Pagination.CardPage;
   export import CardPageParams = Pagination.CardPageParams;
   export import CardPageResponse = Pagination.CardPageResponse;
