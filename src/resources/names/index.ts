@@ -11,3 +11,4 @@ export {
 } from './names';
 export { CanCauseClashes } from './can-cause-clashes/index';
 export { ParamOptionsParamParams, ParamTimeoutParamParams, Params } from './params';
+export { ReservedNames } from './reserved-names/index';

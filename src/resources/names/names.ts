@@ -2,11 +2,13 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import { ReservedNames } from './reserved-names/reserved-names';
 import { Params } from './params';
 import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
 import * as API from './index';
 
 export class Names extends APIResource {
+  reservedNames: ReservedNames = new ReservedNames(this.client);
   params: Params = new Params(this.client);
   canCauseClashes: CanCauseClashes = new CanCauseClashes(this.client);
 
@@ -158,6 +160,8 @@ export namespace Names {
   export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
+
+  export import ReservedNames = API.ReservedNames;
 
   export import Params = API.Params;
   export import ParamOptionsParamParams = API.ParamOptionsParamParams;

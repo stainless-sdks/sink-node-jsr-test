@@ -388,6 +388,18 @@ Methods:
 - <code title="get /names/response_property_clashes_model_import">client.names.<a href="./src/resources/names/names.ts">responsePropertyClashesModelImport</a>() -> NameResponsePropertyClashesModelImportResponse</code>
 - <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./src/resources/names/names.ts">responseShadowsPydantic</a>() -> NameResponseShadowsPydanticResponse</code>
 
+## ReservedNames
+
+### ImportResource
+
+Types:
+
+- <code><a href="./src/resources/names/reserved-names/import.ts">Import</a></code>
+
+Methods:
+
+- <code title="get /names/reserved_names/import">client.names.reservedNames.import.<a href="./src/resources/names/reserved-names/import.ts">import</a>() -> Import</code>
+
 ## Params
 
 Methods:
