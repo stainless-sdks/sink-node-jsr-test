@@ -149,7 +149,6 @@ export class Sink extends Core.APIClient {
     requiredArgNoEnv,
     ...opts
   }: ClientOptions) {
-    undefined;
     if (username === undefined) {
       throw new Error(
         "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
