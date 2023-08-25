@@ -559,8 +559,10 @@ Methods:
 
 Methods:
 
-- <code title="post /mixed_params/query_and_body">client.mixedParams.<a href="./src/resources/mixed-params.ts">queryAndBody</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
-- <code title="post /mixed_params/query_body_and_path/{path_param}">client.mixedParams.<a href="./src/resources/mixed-params.ts">queryBodyAndPath</a>(pathParam, { ...params }) -> Shared.BasicSharedModelObject</code>
+- <code title="post /mixed_params/query_and_body">client.mixedParams.<a href="./src/resources/mixed-params/mixed-params.ts">queryAndBody</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
+- <code title="post /mixed_params/query_body_and_path/{path_param}">client.mixedParams.<a href="./src/resources/mixed-params/mixed-params.ts">queryBodyAndPath</a>(pathParam, { ...params }) -> Shared.BasicSharedModelObject</code>
+
+## Duplicates
 
 # MakeAmbiguousSchemasLooser
 

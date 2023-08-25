@@ -4,9 +4,12 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as Shared from 'sink-npm/resources/shared';
+import { Duplicates } from './duplicates';
 import * as API from './index';
 
 export class MixedParams extends APIResource {
+  duplicates: Duplicates = new Duplicates(this.client);
+
   /**
    * Endpoint with a `requestBody` that defines both query and body params
    */
@@ -86,4 +89,6 @@ export interface MixedParamQueryBodyAndPathParams {
 export namespace MixedParams {
   export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
   export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
+
+  export import Duplicates = API.Duplicates;
 }

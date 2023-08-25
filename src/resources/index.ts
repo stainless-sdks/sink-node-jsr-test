@@ -100,7 +100,11 @@ export {
   MethodConfigSkippedTestsPythonResponse,
   MethodConfig,
 } from './method-config';
-export { MixedParamQueryAndBodyParams, MixedParamQueryBodyAndPathParams, MixedParams } from './mixed-params';
+export {
+  MixedParamQueryAndBodyParams,
+  MixedParamQueryBodyAndPathParams,
+  MixedParams,
+} from './mixed-params/mixed-params';
 export {
   MyModel,
   BodyParamTopLevelAllOfResponse,
