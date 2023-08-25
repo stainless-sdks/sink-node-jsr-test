@@ -9,6 +9,7 @@ import {
   type RequestInfo,
   type RequestInit,
   type Response,
+  type HeadersInit,
 } from 'sink-npm/_shims/fetch';
 export { type Response };
 import { isMultipartBody } from './uploads';
@@ -153,7 +154,7 @@ export abstract class APIClient {
     this.fetch = overridenFetch ?? fetch;
   }
 
-  protected authHeaders(): Headers {
+  protected authHeaders(opts: FinalRequestOptions): Headers {
     return {};
   }
 
@@ -165,13 +166,13 @@ export abstract class APIClient {
    *    Authorization: 'Bearer 123',
    *  }
    */
-  protected defaultHeaders(): Headers {
+  protected defaultHeaders(opts: FinalRequestOptions): Headers {
     return {
       Accept: 'application/json',
       'Content-Type': 'application/json',
       'User-Agent': this.getUserAgent(),
       ...getPlatformHeaders(),
-      ...this.authHeaders(),
+      ...this.authHeaders(opts),
     };
   }
 
@@ -272,7 +273,7 @@ export abstract class APIClient {
 
     const reqHeaders: Record<string, string> = {
       ...(contentLength && { 'Content-Length': contentLength }),
-      ...this.defaultHeaders(),
+      ...this.defaultHeaders(options),
       ...headers,
     };
     // let builtin fetch set the Content-Type for multipart bodies
@@ -304,7 +305,18 @@ export abstract class APIClient {
    * This is useful for cases where you want to add certain headers based off of
    * the request properties, e.g. `method` or `url`.
    */
-  protected async prepareRequest(request: RequestInit, { url }: { url: string }): Promise<void> {}
+  protected async prepareRequest(
+    request: RequestInit,
+    { url, options }: { url: string; options: FinalRequestOptions },
+  ): Promise<void> {}
+
+  protected parseHeaders(headers: HeadersInit | null | undefined): Record<string, string> {
+    return (
+      !headers ? {}
+      : Symbol.iterator in headers ? Object.fromEntries(Array.from(headers).map((header) => [...header]))
+      : { ...headers }
+    );
+  }
 
   protected makeStatusError(
     status: number | undefined,
@@ -333,7 +345,7 @@ export abstract class APIClient {
 
     const { req, url, timeout } = this.buildRequest(options);
 
-    await this.prepareRequest(req, { url });
+    await this.prepareRequest(req, { url, options });
 
     debug('request', url, options, req.headers);
 
@@ -682,6 +694,11 @@ export type RequestOptions<Req extends {} = Record<string, unknown> | Readable> 
   httpAgent?: Agent;
   signal?: AbortSignal | undefined | null;
   idempotencyKey?: string;
+
+  stringOpt?: string | undefined;
+  booleanOpt?: boolean | undefined;
+  integerOpt?: number | undefined;
+  numberOpt?: number | undefined;
 };
 
 // This is required so that we can determine if a given object matches the RequestOptions
@@ -700,6 +717,11 @@ const requestOptionsKeys: KeysEnum<RequestOptions> = {
   httpAgent: true,
   signal: true,
   idempotencyKey: true,
+
+  stringOpt: true,
+  booleanOpt: true,
+  integerOpt: true,
+  numberOpt: true,
 };
 
 export const isRequestOptions = (obj: unknown): obj is RequestOptions => {

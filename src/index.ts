@@ -281,9 +281,9 @@ export class Sink extends Core.APIClient {
     return this._options.defaultQuery;
   }
 
-  protected override defaultHeaders(): Core.Headers {
+  protected override defaultHeaders(opts: Core.FinalRequestOptions): Core.Headers {
     return {
-      ...super.defaultHeaders(),
+      ...super.defaultHeaders(opts),
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
       'X-Client-UserName': this.username,
@@ -306,7 +306,7 @@ export class Sink extends Core.APIClient {
     );
   }
 
-  protected override authHeaders(): Core.Headers {
+  protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
     if (this.userToken == null) {
       return {};
     }
