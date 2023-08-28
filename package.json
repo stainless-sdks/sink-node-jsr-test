@@ -1,79 +1,25 @@
 {
   "name": "sink-npm",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Client library for the Sink API",
   "author": "Sink <dev@stainlessapi.com>",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "main": "dist/cjs/index.js",
   "type": "commonjs",
   "repository": "github:stainless-sdks/sink-node-public",
   "license": "Apache-2.0",
   "private": false,
-  "exports": {
-    "./_shims/*": {
-      "deno": {
-        "types": "./dist/_shims/*.d.ts",
-        "require": "./dist/_shims/*.js",
-        "default": "./dist/_shims/*.mjs"
-      },
-      "browser": {
-        "types": "./dist/_shims/*.d.ts",
-        "require": "./dist/_shims/*.js",
-        "default": "./dist/_shims/*.mjs"
-      },
-      "worker": {
-        "types": "./dist/_shims/*.d.ts",
-        "require": "./dist/_shims/*.js",
-        "default": "./dist/_shims/*.mjs"
-      },
-      "workerd": {
-        "types": "./dist/_shims/*.d.ts",
-        "require": "./dist/_shims/*.js",
-        "default": "./dist/_shims/*.mjs"
-      },
-      "node": {
-        "types": "./dist/_shims/*.node.d.ts",
-        "require": "./dist/_shims/*.node.js",
-        "default": "./dist/_shims/*.node.mjs"
-      },
-      "types": "./dist/_shims/*.d.ts",
-      "require": "./dist/_shims/*.js",
-      "default": "./dist/_shims/*.mjs"
-    },
-    ".": {
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
-    },
-    "./*.mjs": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*.mjs"
-    },
-    "./*.js": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*.js"
-    },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "require": "./dist/*.js",
-      "default": "./dist/*.mjs"
-    }
-  },
   "scripts": {
     "test": "bin/check-test-server && yarn jest",
     "build": "bash ./build",
-    "prepack": "echo 'to pack, run yarn build && (cd dist; yarn pack)' && exit 1",
-    "prepublishOnly": "echo 'to publish, run yarn build && (cd dist; yarn publish)' && exit 1",
-    "format": "prettier --write --cache  --cache-strategy metadata . !dist",
+    "prepack": "yarn build",
+    "format": "prettier --write .",
     "tsn": "ts-node -r tsconfig-paths/register",
     "fix": "eslint --fix --ext ts,js ."
   },
   "dependencies": {
     "@types/node": "^18.11.18",
-    "@types/node-fetch": "^2.6.4",
+    "@types/node-fetch": "^2.6.1",
     "@types/qs": "^6.9.7",
     "abort-controller": "^3.0.0",
     "agentkeepalive": "^4.2.1",
@@ -85,23 +31,18 @@
     "qs": "^6.10.3"
   },
   "devDependencies": {
-    "@types/jest": "^29.4.0",
+    "sink-npm": "link:.",
+    "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
-    "deep-object-diff": "^1.1.9",
     "eslint": "^8.22.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "jest": "^29.4.0",
+    "jest": "^28.1.0",
     "prettier": "rattrayalex/prettier#postfix-ternaries",
-    "sink-npm": "link:.",
-    "ts-jest": "^29.1.0",
-    "ts-morph": "^19.0.0",
+    "ts-jest": "^28.0.2",
     "ts-node": "^10.5.0",
-    "tsc-alias": "^1.8.6",
-    "tsc-multi": "^1.1.0",
-    "tsconfig-paths": "^4.0.0",
+    "tsc-alias": "^1.6.9",
+    "tsconfig-paths": "^3.12.0",
     "typescript": "^4.8.2"
-  },
-  "bin": "./bin/cli"
+  }
 }
