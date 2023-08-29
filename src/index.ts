@@ -576,6 +576,7 @@ export namespace Sink {
   export import MyModel = API.MyModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
   export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;

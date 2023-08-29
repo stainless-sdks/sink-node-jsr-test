@@ -113,6 +113,7 @@ export {
   MyModel,
   BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
+  BodyParamPropertyWithComplexUnionParams,
   BodyParamReadOnlyPropertiesParams,
   BodyParamTopLevelAllOfParams,
   BodyParamTopLevelAllOfNestedObjectParams,

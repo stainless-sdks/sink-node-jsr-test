@@ -551,6 +551,7 @@ Types:
 
 Methods:
 
+- <code title="post /body_params/property_with_complex_union">client.bodyParams.<a href="./src/resources/body-params.ts">propertyWithComplexUnion</a>({ ...params }) -> void</code>
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./src/resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_allOf">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOf</a>({ ...params }) -> BodyParamTopLevelAllOfResponse</code>
 - <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>

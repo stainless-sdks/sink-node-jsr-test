@@ -11,6 +11,24 @@ const sink = new Sink({
 });
 
 describe('resource bodyParams', () => {
+  test('propertyWithComplexUnion: only required params', async () => {
+    const responsePromise = sink.bodyParams.propertyWithComplexUnion({ name: 'string', unions: {} });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('propertyWithComplexUnion: required and optional params', async () => {
+    const response = await sink.bodyParams.propertyWithComplexUnion({
+      name: 'string',
+      unions: { in_both: true },
+    });
+  });
+
   test('readOnlyProperties', async () => {
     const responsePromise = sink.bodyParams.readOnlyProperties({});
     const rawResponse = await responsePromise.asResponse();

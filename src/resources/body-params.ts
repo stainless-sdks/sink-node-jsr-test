@@ -16,6 +16,21 @@ import {
 
 export class BodyParams extends APIResource {
   /**
+   * Endpoint with a `requestBody` that has a property that is a union type of
+   * complex types.
+   */
+  propertyWithComplexUnion(
+    body: BodyParamPropertyWithComplexUnionParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this.post('/body_params/property_with_complex_union', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` that sets `readOnly` to `true` on top level
    * properties
    */
@@ -178,6 +193,30 @@ export interface BodyParamUnionOverlappingPropResponse {
   foo: string;
 }
 
+export interface BodyParamPropertyWithComplexUnionParams {
+  name: string;
+
+  /**
+   * This is an object with required properties
+   */
+  unions:
+    | BodyParamPropertyWithComplexUnionParams.ObjectWithReadOnlyProperty
+    | BodyParamPropertyWithComplexUnionParams.SimpleObjectWithRequiredProperty;
+}
+
+export namespace BodyParamPropertyWithComplexUnionParams {
+  export interface ObjectWithReadOnlyProperty {
+    in_both?: boolean;
+  }
+
+  /**
+   * This is an object with required properties
+   */
+  export interface SimpleObjectWithRequiredProperty {
+    is_foo: boolean;
+  }
+}
+
 export interface BodyParamReadOnlyPropertiesParams {
   in_both?: boolean;
 }
@@ -264,6 +303,7 @@ export namespace BodyParams {
   export import MyModel = API.MyModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
   export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
