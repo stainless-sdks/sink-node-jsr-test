@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
+export { ArrayFloatItemsResponse, ArrayObjectItemsResponse, Arrays } from './arrays';
 export { MapNullableItemsResponse, Maps } from './maps';
 export {
   ObjectMixedKnownAndUnknownResponse,

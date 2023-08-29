@@ -106,6 +106,10 @@ export {
   MixedParams,
 } from './mixed-params/mixed-params';
 export {
+  ModelReferencedInParentAndChild,
+  ModelReferencedInParentAndChildResource,
+} from './model-referenced-in-parent-and-child/model-referenced-in-parent-and-child';
+export {
   MyModel,
   BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
@@ -178,6 +182,13 @@ export {
 export { ResourceRefs } from './resource-refs/resource-refs';
 export { Resources } from './resources';
 export { RootResponse, Testing } from './testing';
+export {
+  SharedQueryParamRetrieveResponse,
+  SharedQueryParamDelResponse,
+  SharedQueryParamRetrieveParams,
+  SharedQueryParamDelParams,
+  SharedQueryParams,
+} from './shared-query-params';
 export {
   Sta569OneEntryResponse,
   Sta569OneEntryWithNullResponse,

@@ -38,7 +38,7 @@ Methods:
 
 # Casing
 
-## EEOCResource
+## EEOC
 
 Types:
 
@@ -228,7 +228,7 @@ Methods:
 
 # ConfigTools
 
-# CompanyResource
+# Company
 
 Types:
 
@@ -371,6 +371,18 @@ Methods:
 - <code title="get /types/object/multiple_properties_same_model">client.types.objects.<a href="./src/resources/types/objects.ts">multiplePropertiesSameModel</a>() -> ObjectMultiplePropertiesSameModelResponse</code>
 - <code title="get /types/object/multiple_properties_same_ref">client.types.objects.<a href="./src/resources/types/objects.ts">multiplePropertiesSameRef</a>() -> ObjectMultiplePropertiesSameRefResponse</code>
 
+## Arrays
+
+Types:
+
+- <code><a href="./src/resources/types/arrays.ts">ArrayFloatItemsResponse</a></code>
+- <code><a href="./src/resources/types/arrays.ts">ArrayObjectItemsResponse</a></code>
+
+Methods:
+
+- <code title="get /types/array/float_items">client.types.arrays.<a href="./src/resources/types/arrays.ts">floatItems</a>() -> ArrayFloatItemsResponse</code>
+- <code title="get /types/array/object_items">client.types.arrays.<a href="./src/resources/types/arrays.ts">objectItems</a>() -> ArrayObjectItemsResponse</code>
+
 # Names
 
 Types:
@@ -390,7 +402,7 @@ Methods:
 
 ## ReservedNames
 
-### ImportResource
+### Import
 
 Types:
 
@@ -686,3 +698,31 @@ Methods:
 - <code title="post /recursion/shared/responses/mutual-a">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualA</a>() -> Shared.SharedMutualRecursionA</code>
 - <code title="post /recursion/shared/responses/mutual-b">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualB</a>() -> Shared.SharedMutualRecursionB</code>
 - <code title="post /recursion/shared/responses/self">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createSelf</a>() -> Shared.SharedSelfRecursion</code>
+
+# SharedQueryParams
+
+Types:
+
+- <code><a href="./src/resources/shared-query-params.ts">SharedQueryParamRetrieveResponse</a></code>
+- <code><a href="./src/resources/shared-query-params.ts">SharedQueryParamDelResponse</a></code>
+
+Methods:
+
+- <code title="get /shared-query-params">client.sharedQueryParams.<a href="./src/resources/shared-query-params.ts">retrieve</a>({ ...params }) -> string</code>
+- <code title="delete /shared-query-params">client.sharedQueryParams.<a href="./src/resources/shared-query-params.ts">del</a>({ ...params }) -> string</code>
+
+# ModelReferencedInParentAndChild
+
+Types:
+
+- <code><a href="./src/resources/model-referenced-in-parent-and-child/model-referenced-in-parent-and-child.ts">ModelReferencedInParentAndChild</a></code>
+
+Methods:
+
+- <code title="get /model_referenced_in_parent_and_child">client.modelReferencedInParentAndChild.<a href="./src/resources/model-referenced-in-parent-and-child/model-referenced-in-parent-and-child.ts">retrieve</a>() -> ModelReferencedInParentAndChild</code>
+
+## Child
+
+Methods:
+
+- <code title="get /model_referenced_in_parent_and_child/child">client.modelReferencedInParentAndChild.child.<a href="./src/resources/model-referenced-in-parent-and-child/child.ts">retrieve</a>() -> ModelReferencedInParentAndChild.ModelReferencedInParentAndChild</code>

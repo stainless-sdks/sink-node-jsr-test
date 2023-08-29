@@ -7,6 +7,7 @@ import { ReadOnlyParams } from './read-only-params';
 import { WriteOnlyResponses } from './write-only-responses';
 import { Maps } from './maps';
 import { Objects } from './objects';
+import { Arrays } from './arrays';
 import * as API from './index';
 
 export class Types extends APIResource {
@@ -14,6 +15,7 @@ export class Types extends APIResource {
   writeOnlyResponses: WriteOnlyResponses = new WriteOnlyResponses(this.client);
   maps: Maps = new Maps(this.client);
   objects: Objects = new Objects(this.client);
+  arrays: Arrays = new Arrays(this.client);
 
   /**
    * Endpoint that has date types should generate params/responses with rich date
@@ -135,4 +137,8 @@ export namespace Types {
   export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
   export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
+
+  export import Arrays = API.Arrays;
+  export import ArrayFloatItemsResponse = API.ArrayFloatItemsResponse;
+  export import ArrayObjectItemsResponse = API.ArrayObjectItemsResponse;
 }

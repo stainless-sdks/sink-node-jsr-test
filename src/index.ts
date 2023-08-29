@@ -238,6 +238,9 @@ export class Sink extends Core.APIClient {
   deeplyNested: API.DeeplyNested = new API.DeeplyNested(this);
   version1_30Names: API.Version1_30Names = new API.Version1_30Names(this);
   recursion: API.Recursion = new API.Recursion(this);
+  sharedQueryParams: API.SharedQueryParams = new API.SharedQueryParams(this);
+  modelReferencedInParentAndChild: API.ModelReferencedInParentAndChildResource =
+    new API.ModelReferencedInParentAndChildResource(this);
 
   /**
    * API status check
@@ -621,6 +624,15 @@ export namespace Sink {
   export import RecursionCreateMutualAParams = API.RecursionCreateMutualAParams;
   export import RecursionCreateMutualBParams = API.RecursionCreateMutualBParams;
   export import RecursionCreateSelfParams = API.RecursionCreateSelfParams;
+
+  export import SharedQueryParams = API.SharedQueryParams;
+  export import SharedQueryParamRetrieveResponse = API.SharedQueryParamRetrieveResponse;
+  export import SharedQueryParamDelResponse = API.SharedQueryParamDelResponse;
+  export import SharedQueryParamRetrieveParams = API.SharedQueryParamRetrieveParams;
+  export import SharedQueryParamDelParams = API.SharedQueryParamDelParams;
+
+  export import ModelReferencedInParentAndChildResource = API.ModelReferencedInParentAndChildResource;
+  export import ModelReferencedInParentAndChild = API.ModelReferencedInParentAndChild;
 
   export import BasicSharedModelObject = API.BasicSharedModelObject;
   export import Currency = API.Currency;
