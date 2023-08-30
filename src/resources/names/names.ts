@@ -2,6 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as Shared from 'sink-npm/resources/shared';
 import { ReservedNames } from './reserved-names/reserved-names';
 import { Params } from './params';
 import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
@@ -18,6 +19,13 @@ export class Names extends APIResource {
    */
   childPropImportClash(options?: Core.RequestOptions): Core.APIPromise<NameChildPropImportClashResponse> {
     return this.post('/names/child_prop_import_clash', options);
+  }
+
+  /**
+   * Endpoint with the name `get` in the config.
+   */
+  get_(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+    return this.get('/names/method_name_get', options);
   }
 
   /**
