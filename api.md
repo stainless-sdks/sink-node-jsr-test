@@ -172,6 +172,16 @@ Methods:
 
 - <code title="get /invalid_schemas/arrays/missing_items">client.invalidSchemas.arrays.<a href="./src/resources/invalid-schemas/arrays.ts">missingItems</a>() -> ArrayMissingItemsResponse</code>
 
+## Objects
+
+Types:
+
+- <code><a href="./src/resources/invalid-schemas/objects.ts">ObjectMissingItemsResponse</a></code>
+
+Methods:
+
+- <code title="get /invalid_schemas/objects/property_missing_def">client.invalidSchemas.objects.<a href="./src/resources/invalid-schemas/objects.ts">missingItems</a>() -> ObjectMissingItemsResponse</code>
+
 # ResourceRefs
 
 ## PaginatedModelFirstRef
