@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.1 (2023-08-31)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.0...v0.1.1)
+
+### Features
+
+* add test case for null property ([#170](https://github.com/stainless-sdks/sink-node-public/issues/170)) ([38f1f6a](https://github.com/stainless-sdks/sink-node-public/commit/38f1f6aa0e23f8a1e9b5cb7fd0a413cb6ed74f4e))
+* add test for method named get ([#171](https://github.com/stainless-sdks/sink-node-public/issues/171)) ([084a8ab](https://github.com/stainless-sdks/sink-node-public/commit/084a8abe31345748742210884b67280a70adcb0d))
+* add tests for complex union types in params ([#169](https://github.com/stainless-sdks/sink-node-public/issues/169)) ([de15cc4](https://github.com/stainless-sdks/sink-node-public/commit/de15cc4d167bd237712e2cc5ff3e66a5e61ac8cb))
+* **package:** add Bun export map ([#172](https://github.com/stainless-sdks/sink-node-public/issues/172)) ([edeaf35](https://github.com/stainless-sdks/sink-node-public/commit/edeaf350d7bd55a9d0be90143252f024395a98ca))
+* sync ([#168](https://github.com/stainless-sdks/sink-node-public/issues/168)) ([e6b26d0](https://github.com/stainless-sdks/sink-node-public/commit/e6b26d07dfd9bc81d14bb7618ae646ff4b3fb117))
+
+
+### Bug Fixes
+
+* **types:** improve getNextPage() return type ([#165](https://github.com/stainless-sdks/sink-node-public/issues/165)) ([341e853](https://github.com/stainless-sdks/sink-node-public/commit/341e853e20612c9cc8207627f0a84eaed862099a))
+
 ## 0.1.0 (2023-08-28)
 
 Full Changelog: [sink-npm-v0.0.2...sink-npm-v0.1.0](https://github.com/stainless-sdks/sink-node-public/compare/sink-npm-v0.0.2...sink-npm-v0.1.0)
