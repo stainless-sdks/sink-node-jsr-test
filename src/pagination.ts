@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { AbstractPage, Response, APIClient, FinalRequestOptions, PageInfo } from './core';
+import * as Shared from './resources/shared';
 import * as PaginationTests from './resources/pagination-tests/index';
 
 export interface CardPageResponse<Item> {
@@ -271,6 +272,59 @@ export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorRe
     if (!this.cursor) return null;
 
     return { params: { cursor: this.cursor } };
+  }
+}
+
+export interface PageCursorNestedResponsePropResponse<Item> {
+  meta: Shared.SharedCursorNestedResponsePropMeta;
+
+  data?: Array<Item>;
+}
+
+export interface PageCursorNestedResponsePropParams {
+  cursor?: string | null;
+
+  limit?: number;
+}
+
+export class PageCursorNestedResponseProp<Item>
+  extends AbstractPage<Item>
+  implements PageCursorNestedResponsePropResponse<Item>
+{
+  meta: Shared.SharedCursorNestedResponsePropMeta;
+
+  data: Array<Item>;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: PageCursorNestedResponsePropResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.meta = body.meta;
+    this.data = body.data || [];
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data;
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<PageCursorNestedResponsePropParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    if (!this.meta.pagination.cursor) return null;
+
+    return { params: { cursor: this.meta.pagination.cursor } };
   }
 }
 

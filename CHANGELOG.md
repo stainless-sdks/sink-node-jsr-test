@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.1.2 (2023-09-06)
+
+Full Changelog: [v0.1.1...v0.1.2](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.1...v0.1.2)
+
+### Features
+
+* add `x-stainless-useDefault` testcase ([#181](https://github.com/stainless-sdks/sink-node-public/issues/181)) ([17f7b5b](https://github.com/stainless-sdks/sink-node-public/commit/17f7b5bca25354d510f7e5b42719238056d582ac))
+* add nested pagination property test ([#178](https://github.com/stainless-sdks/sink-node-public/issues/178)) ([04b1bcb](https://github.com/stainless-sdks/sink-node-public/commit/04b1bcb2f49e64fc27133dad08f736fe7392a653))
+* add test cases for `only` config usage ([#183](https://github.com/stainless-sdks/sink-node-public/issues/183)) ([a0bec63](https://github.com/stainless-sdks/sink-node-public/commit/a0bec63d171b493639bbfa0688428f0feebf2981))
+* add test for doc escaping ([#185](https://github.com/stainless-sdks/sink-node-public/issues/185)) ([533cec7](https://github.com/stainless-sdks/sink-node-public/commit/533cec788882b82aa11d746aa94d07de40dbd81c))
+* add test for params model with param in name ([#186](https://github.com/stainless-sdks/sink-node-public/issues/186)) ([f29a5c3](https://github.com/stainless-sdks/sink-node-public/commit/f29a5c34984b9a8b8b1affff22ce604dd1dff522))
+* add test for union of numbers ([#179](https://github.com/stainless-sdks/sink-node-public/issues/179)) ([49e10fd](https://github.com/stainless-sdks/sink-node-public/commit/49e10fd3df079a6abc0e245f543d5a2b087f3554))
+* add tests for child model references ([#174](https://github.com/stainless-sdks/sink-node-public/issues/174)) ([5e1c57d](https://github.com/stainless-sdks/sink-node-public/commit/5e1c57df5b7b3891354a0db8ce44a64526ff49d0))
+* add tests for optional file params ([#187](https://github.com/stainless-sdks/sink-node-public/issues/187)) ([c0856dd](https://github.com/stainless-sdks/sink-node-public/commit/c0856ddc53abd68d08b7b150e8efe694ee1195cf))
+* add tests for union items in arrays ([#177](https://github.com/stainless-sdks/sink-node-public/issues/177)) ([23cc577](https://github.com/stainless-sdks/sink-node-public/commit/23cc5773b5b613c32808a697b40e70ed99dd36f7))
+* fixes tests where an array has to have unique enum values ([#188](https://github.com/stainless-sdks/sink-node-public/issues/188)) ([54722b6](https://github.com/stainless-sdks/sink-node-public/commit/54722b6de96a591438911064f47771129747e44e))
+* more params types tests ([#176](https://github.com/stainless-sdks/sink-node-public/issues/176)) ([bdae883](https://github.com/stainless-sdks/sink-node-public/commit/bdae8835ab2d0fd1e434693a0995dff3a17e1aa3))
+
+
+### Bug Fixes
+
+* **client:** fix TS errors that appear when users Go to Source in VSCode ([#182](https://github.com/stainless-sdks/sink-node-public/issues/182)) ([39c8833](https://github.com/stainless-sdks/sink-node-public/commit/39c88331213054954fee9b557658f5eef578a01c))
+* **client:** handle case where the client is instantiated with a undefined baseURL ([#184](https://github.com/stainless-sdks/sink-node-public/issues/184)) ([7bdd0d3](https://github.com/stainless-sdks/sink-node-public/commit/7bdd0d36c5470016ad7d136b1f4be2a05924d785))
+* **client:** use explicit file extensions in _shims imports ([#180](https://github.com/stainless-sdks/sink-node-public/issues/180)) ([322308c](https://github.com/stainless-sdks/sink-node-public/commit/322308cf2026cc62ba7157724bbe9623a54fa717))
+* **readme:** update link to api.md to use the correct branch ([#190](https://github.com/stainless-sdks/sink-node-public/issues/190)) ([fc3f45c](https://github.com/stainless-sdks/sink-node-public/commit/fc3f45c21e941afe68be79d51ee7584a05d1c5dc))
+
+
+### Documentation
+
+* **readme:** add link to api.md ([#189](https://github.com/stainless-sdks/sink-node-public/issues/189)) ([9369d89](https://github.com/stainless-sdks/sink-node-public/commit/9369d8938241e7efbfe4a564e6ffdb8bf7776552))
+
 ## 0.1.1 (2023-08-31)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.0...v0.1.1)

@@ -117,6 +117,7 @@ Methods:
 Methods:
 
 - <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModelsPageCursor</code>
+- <code title="get /paginated/cursor_nested_response_prop">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">listNestedResponseProp</a>({ ...params }) -> MyModelsPageCursorNestedResponseProp</code>
 
 ## CursorURL
 
@@ -157,6 +158,8 @@ Types:
 
 Methods:
 
+- <code title="get /docstrings/description_contains_comments">client.docstrings.<a href="./src/resources/docstrings.ts">descriptionContainsJsDoc</a>() -> Shared.BasicSharedModelObject</code>
+- <code title="get /docstrings/description_contains_comment_enders">client.docstrings.<a href="./src/resources/docstrings.ts">descriptionContainsJsDocEnd</a>() -> Shared.BasicSharedModelObject</code>
 - <code title="get /docstrings/property_leading_double_quote">client.docstrings.<a href="./src/resources/docstrings.ts">leadingDoubleQuote</a>() -> DocstringLeadingDoubleQuoteResponse</code>
 - <code title="get /docstrings/property_trailing_double_quote">client.docstrings.<a href="./src/resources/docstrings.ts">trailingDoubleQuote</a>() -> DocstringTrailingDoubleQuoteResponse</code>
 
@@ -224,11 +227,13 @@ Types:
 
 - <code><a href="./src/resources/files.ts">FileCreateMultipartResponse</a></code>
 - <code><a href="./src/resources/files.ts">FileEverythingMultipartResponse</a></code>
+- <code><a href="./src/resources/files.ts">FileWithOptionalParamResponse</a></code>
 
 Methods:
 
 - <code title="post /files/multipart">client.files.<a href="./src/resources/files.ts">createMultipart</a>({ ...params }) -> FileCreateMultipartResponse</code>
 - <code title="post /files/multipart_everything">client.files.<a href="./src/resources/files.ts">everythingMultipart</a>({ ...params }) -> FileEverythingMultipartResponse</code>
+- <code title="post /files/with_optional_param">client.files.<a href="./src/resources/files.ts">withOptionalParam</a>({ ...params }) -> FileWithOptionalParamResponse</code>
 
 # Resources
 
@@ -237,6 +242,14 @@ Methods:
 - <code title="post /no_response">client.resources.<a href="./src/resources/resources.ts">foo</a>() -> void</code>
 
 # ConfigTools
+
+Types:
+
+- <code><a href="./src/resources/config-tools.ts">OnlyNodeModel</a></code>
+
+Methods:
+
+- <code title="post /cards">client.configTools.<a href="./src/resources/config-tools.ts">onlyInNode</a>({ ...params }) -> Cards.Card</code>
 
 # Company
 
@@ -333,6 +346,9 @@ Methods:
 
 - <code title="post /types/dates">client.types.<a href="./src/resources/types/types.ts">dates</a>({ ...params }) -> TypeDatesResponse</code>
 - <code title="post /types/datetimes">client.types.<a href="./src/resources/types/types.ts">datetimes</a>({ ...params }) -> TypeDatetimesResponse</code>
+- <code title="post /types/enum_tests_array_unique_values">client.types.<a href="./src/resources/types/types.ts">enumTestsArrayUniqueValues</a>([ ...body ]) -> void</code>
+- <code title="post /types/enum_tests_array_unique_values_2_values">client.types.<a href="./src/resources/types/types.ts">enumTestsArrayUniqueValues2Values</a>([ ...body ]) -> void</code>
+- <code title="post /types/enum_tests_array_unique_values_numbers">client.types.<a href="./src/resources/types/types.ts">enumTestsArrayUniqueValuesNumbers</a>([ ...body ]) -> void</code>
 - <code title="post /types/enums">client.types.<a href="./src/resources/types/types.ts">enums</a>({ ...params }) -> TypeEnumsResponse</code>
 
 ## ReadOnlyParams
@@ -464,49 +480,59 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/responses.ts">ObjectWithAnyOfNullProperty</a></code>
-- <code><a href="./src/resources/responses.ts">ObjectWithOneOfNullProperty</a></code>
-- <code><a href="./src/resources/responses.ts">ResponsesAllofCrossObject</a></code>
-- <code><a href="./src/resources/responses.ts">SimpleAllof</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseAllofCrossResourceResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseAllofSimpleResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseArrayResponseResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseBooleanResponseResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseIntegerResponseResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseMissingRequiredResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseNestedArrayResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseObjectAllPropertiesResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseObjectWithAdditionalPropertiesPropResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseObjectWithHeavilyNestedUnionResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseStringResponseResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseUnionOfMixedTypesResponse</a></code>
-- <code><a href="./src/resources/responses.ts">ResponseUnionOfObjectsResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ObjectWithAnyOfNullProperty</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ObjectWithOneOfNullProperty</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponsesAllofCrossObject</a></code>
+- <code><a href="./src/resources/responses/responses.ts">SimpleAllof</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseAllofCrossResourceResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseAllofSimpleResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseArrayResponseResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseBooleanResponseResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseIntegerResponseResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseMissingRequiredResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseNestedArrayResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseObjectAllPropertiesResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseObjectWithAdditionalPropertiesPropResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseObjectWithHeavilyNestedUnionResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseStringResponseResponse</a></code>
 
 Methods:
 
-- <code title="post /responses/additional_properties">client.responses.<a href="./src/resources/responses.ts">additionalProperties</a>() -> ResponseAdditionalPropertiesResponse</code>
-- <code title="post /responses/additional_properties_nested_model_reference">client.responses.<a href="./src/resources/responses.ts">additionalPropertiesNestedModelReference</a>() -> ResponseAdditionalPropertiesNestedModelReferenceResponse</code>
-- <code title="get /responses/allof/cross">client.responses.<a href="./src/resources/responses.ts">allofCrossResource</a>() -> ResponseAllofCrossResourceResponse</code>
-- <code title="get /responses/allof/simple">client.responses.<a href="./src/resources/responses.ts">allofSimple</a>() -> ResponseAllofSimpleResponse</code>
-- <code title="get /responses/anyof_null">client.responses.<a href="./src/resources/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
-- <code title="get /responses/array">client.responses.<a href="./src/resources/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
-- <code title="post /responses/boolean">client.responses.<a href="./src/resources/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
-- <code title="post /responses/empty">client.responses.<a href="./src/resources/responses.ts">emptyResponse</a>() -> void</code>
-- <code title="post /responses/integer">client.responses.<a href="./src/resources/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
-- <code title="get /responses/missing_required">client.responses.<a href="./src/resources/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
-- <code title="get /responses/nested_array">client.responses.<a href="./src/resources/responses.ts">nestedArray</a>() -> ResponseNestedArrayResponse</code>
-- <code title="get /responses/object/everything">client.responses.<a href="./src/resources/responses.ts">objectAllProperties</a>() -> ResponseObjectAllPropertiesResponse</code>
-- <code title="post /responses/object_no_properties">client.responses.<a href="./src/resources/responses.ts">objectNoProperties</a>() -> ResponseObjectNoPropertiesResponse</code>
-- <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./src/resources/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
-- <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./src/resources/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
-- <code title="get /responses/oneof_null">client.responses.<a href="./src/resources/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
-- <code title="get /responses/simple_object">client.responses.<a href="./src/resources/responses.ts">sharedResponseObject</a>() -> Shared.SimpleObject</code>
-- <code title="post /responses/string">client.responses.<a href="./src/resources/responses.ts">stringResponse</a>() -> string</code>
-- <code title="post /responses/union_of_mixed_types">client.responses.<a href="./src/resources/responses.ts">unionOfMixedTypes</a>() -> ResponseUnionOfMixedTypesResponse</code>
-- <code title="post /responses/union_of_objects">client.responses.<a href="./src/resources/responses.ts">unionOfObjects</a>() -> ResponseUnionOfObjectsResponse</code>
+- <code title="post /responses/additional_properties">client.responses.<a href="./src/resources/responses/responses.ts">additionalProperties</a>() -> ResponseAdditionalPropertiesResponse</code>
+- <code title="post /responses/additional_properties_nested_model_reference">client.responses.<a href="./src/resources/responses/responses.ts">additionalPropertiesNestedModelReference</a>() -> ResponseAdditionalPropertiesNestedModelReferenceResponse</code>
+- <code title="get /responses/allof/cross">client.responses.<a href="./src/resources/responses/responses.ts">allofCrossResource</a>() -> ResponseAllofCrossResourceResponse</code>
+- <code title="get /responses/allof/simple">client.responses.<a href="./src/resources/responses/responses.ts">allofSimple</a>() -> ResponseAllofSimpleResponse</code>
+- <code title="get /responses/anyof_null">client.responses.<a href="./src/resources/responses/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
+- <code title="get /responses/array">client.responses.<a href="./src/resources/responses/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
+- <code title="post /responses/boolean">client.responses.<a href="./src/resources/responses/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
+- <code title="post /responses/empty">client.responses.<a href="./src/resources/responses/responses.ts">emptyResponse</a>() -> void</code>
+- <code title="post /responses/integer">client.responses.<a href="./src/resources/responses/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
+- <code title="get /responses/missing_required">client.responses.<a href="./src/resources/responses/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
+- <code title="get /responses/nested_array">client.responses.<a href="./src/resources/responses/responses.ts">nestedArray</a>() -> ResponseNestedArrayResponse</code>
+- <code title="get /responses/object/everything">client.responses.<a href="./src/resources/responses/responses.ts">objectAllProperties</a>() -> ResponseObjectAllPropertiesResponse</code>
+- <code title="post /responses/object_no_properties">client.responses.<a href="./src/resources/responses/responses.ts">objectNoProperties</a>() -> ResponseObjectNoPropertiesResponse</code>
+- <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./src/resources/responses/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
+- <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./src/resources/responses/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
+- <code title="get /responses/oneof_null">client.responses.<a href="./src/resources/responses/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
+- <code title="get /responses/simple_object">client.responses.<a href="./src/resources/responses/responses.ts">sharedResponseObject</a>() -> Shared.SimpleObject</code>
+- <code title="post /responses/string">client.responses.<a href="./src/resources/responses/responses.ts">stringResponse</a>() -> string</code>
+
+## UnionTypes
+
+Types:
+
+- <code><a href="./src/resources/responses/union-types.ts">UnionTypeMixedTypesResponse</a></code>
+- <code><a href="./src/resources/responses/union-types.ts">UnionTypeNumbersResponse</a></code>
+- <code><a href="./src/resources/responses/union-types.ts">UnionTypeObjectsResponse</a></code>
+
+Methods:
+
+- <code title="post /responses/unions/mixed_types">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">mixedTypes</a>() -> UnionTypeMixedTypesResponse</code>
+- <code title="post /responses/unions/numbers">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">numbers</a>() -> UnionTypeNumbersResponse</code>
+- <code title="post /responses/unions/objects">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">objects</a>() -> UnionTypeObjectsResponse</code>
 
 # PathParams
 
@@ -556,14 +582,20 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/body-params.ts">ModelWithParamInName</a></code>
 - <code><a href="./src/resources/body-params.ts">MyModel</a></code>
+- <code><a href="./src/resources/body-params.ts">StringMapModel</a></code>
 - <code><a href="./src/resources/body-params.ts">BodyParamTopLevelAllOfResponse</a></code>
 - <code><a href="./src/resources/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
 
 Methods:
 
+- <code title="post /body_params/param_in_model_name_ref">client.bodyParams.<a href="./src/resources/body-params.ts">paramInModelNameRef</a>({ ...params }) -> void</code>
+- <code title="post /body_params/property_model_ref">client.bodyParams.<a href="./src/resources/body-params.ts">propertyModelRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/property_with_complex_union">client.bodyParams.<a href="./src/resources/body-params.ts">propertyWithComplexUnion</a>({ ...params }) -> void</code>
+- <code title="post /body_params/property_with_heavily_nested_complex_union">client.bodyParams.<a href="./src/resources/body-params.ts">propertyWithHeavilyNestedComplexUnion</a>({ ...params }) -> void</code>
 - <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./src/resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
+- <code title="post /body_params/string_map_model_ref">client.bodyParams.<a href="./src/resources/body-params.ts">stringMapModelRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_allOf">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOf</a>({ ...params }) -> BodyParamTopLevelAllOfResponse</code>
 - <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
@@ -571,6 +603,8 @@ Methods:
 - <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./src/resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
+- <code title="post /body_params/with_default_body_param_optional">client.bodyParams.<a href="./src/resources/body-params.ts">withDefaultBodyParamOptional</a>({ ...params }) -> void</code>
+- <code title="post /body_params/with_default_body_param_required">client.bodyParams.<a href="./src/resources/body-params.ts">withDefaultBodyParamRequired</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_model_property">client.bodyParams.<a href="./src/resources/body-params.ts">withModelProperty</a>({ ...params }) -> void</code>
 
 # HeaderParams

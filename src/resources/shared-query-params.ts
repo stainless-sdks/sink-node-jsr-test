@@ -22,16 +22,16 @@ export class SharedQueryParams extends APIResource {
     });
   }
 
-  del(body?: SharedQueryParamDelParams, options?: Core.RequestOptions): Core.APIPromise<string>;
+  del(params?: SharedQueryParamDelParams, options?: Core.RequestOptions): Core.APIPromise<string>;
   del(options?: Core.RequestOptions): Core.APIPromise<string>;
   del(
-    body: SharedQueryParamDelParams | Core.RequestOptions = {},
+    params: SharedQueryParamDelParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<string> {
-    if (isRequestOptions(body)) {
-      return this.del({}, body);
+    if (isRequestOptions(params)) {
+      return this.del({}, params);
     }
-    const { get1, shared1, shared2 } = body;
+    const { get1, shared1, shared2 } = params;
     return this.delete('/shared-query-params', {
       query: { get1, shared1, shared2 },
       ...options,

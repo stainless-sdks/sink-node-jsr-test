@@ -16,6 +16,8 @@ yarn add sink-npm
 
 ## Usage
 
+The full API of this library can be found in [api.md](https://www.github.com/stainless-sdks/sink-node-public/blob/main/api.md).
+
 ```js
 import Sink from 'sink-npm';
 
@@ -291,6 +293,8 @@ We take backwards-compatibility seriously and work hard to ensure you can rely o
 We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/sink-node-public/issues) with questions, bugs, or suggestions.
 
 ## Requirements
+
+TypeScript >= 4.5 is supported.
 
 The following runtimes are supported:
 

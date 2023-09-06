@@ -33,7 +33,7 @@ describe('resource complexQueries', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.complexQueries.arrayQuery(
-        { include: ['users', 'users', 'users'] },
+        { include: ['users', 'users.comments', 'users.posts'] },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

@@ -11,6 +11,42 @@ const sink = new Sink({
 });
 
 describe('resource docstrings', () => {
+  test('descriptionContainsJsDoc', async () => {
+    const responsePromise = sink.docstrings.descriptionContainsJsDoc();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('descriptionContainsJsDoc: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.docstrings.descriptionContainsJsDoc({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('descriptionContainsJsDocEnd', async () => {
+    const responsePromise = sink.docstrings.descriptionContainsJsDocEnd();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('descriptionContainsJsDocEnd: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.docstrings.descriptionContainsJsDocEnd({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
   test('leadingDoubleQuote', async () => {
     const responsePromise = sink.docstrings.leadingDoubleQuote();
     const rawResponse = await responsePromise.asResponse();

@@ -59,6 +59,51 @@ describe('resource types', () => {
     });
   });
 
+  test('enumTestsArrayUniqueValues: only required params', async () => {
+    const responsePromise = sink.types.enumTestsArrayUniqueValues(['USD', 'GBP', 'PAB']);
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('enumTestsArrayUniqueValues: required and optional params', async () => {
+    const response = await sink.types.enumTestsArrayUniqueValues(['USD', 'GBP', 'PAB']);
+  });
+
+  test('enumTestsArrayUniqueValues2Values: only required params', async () => {
+    const responsePromise = sink.types.enumTestsArrayUniqueValues2Values(['USD', 'GBP']);
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('enumTestsArrayUniqueValues2Values: required and optional params', async () => {
+    const response = await sink.types.enumTestsArrayUniqueValues2Values(['USD', 'GBP']);
+  });
+
+  test('enumTestsArrayUniqueValuesNumbers: only required params', async () => {
+    const responsePromise = sink.types.enumTestsArrayUniqueValuesNumbers([5, 6, 7]);
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('enumTestsArrayUniqueValuesNumbers: required and optional params', async () => {
+    const response = await sink.types.enumTestsArrayUniqueValuesNumbers([5, 6, 7]);
+  });
+
   test('enums', async () => {
     const responsePromise = sink.types.enums({});
     const rawResponse = await responsePromise.asResponse();

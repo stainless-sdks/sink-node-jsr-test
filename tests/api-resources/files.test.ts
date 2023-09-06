@@ -62,4 +62,26 @@ describe('resource files', () => {
       s: 'string',
     });
   });
+
+  test('withOptionalParam: only required params', async () => {
+    const responsePromise = sink.files.withOptionalParam({
+      image: await toFile(Buffer.from('# my file contents'), 'README.md'),
+      prompt: 'A cute baby sea otter wearing a beret',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('withOptionalParam: required and optional params', async () => {
+    const response = await sink.files.withOptionalParam({
+      image: await toFile(Buffer.from('# my file contents'), 'README.md'),
+      prompt: 'A cute baby sea otter wearing a beret',
+      mask: await toFile(Buffer.from('# my file contents'), 'README.md'),
+    });
+  });
 });

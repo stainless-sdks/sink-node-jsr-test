@@ -32,6 +32,7 @@ export namespace PaginationTests {
 
   export import Cursor = API.Cursor;
   export import CursorListParams = API.CursorListParams;
+  export import CursorListNestedResponsePropParams = API.CursorListNestedResponsePropParams;
 
   export import CursorURL = API.CursorURL;
   export import CursorURLListParams = API.CursorURLListParams;

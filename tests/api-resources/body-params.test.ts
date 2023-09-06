@@ -11,6 +11,42 @@ const sink = new Sink({
 });
 
 describe('resource bodyParams', () => {
+  test('paramInModelNameRef: only required params', async () => {
+    const responsePromise = sink.bodyParams.paramInModelNameRef({
+      model_ref: { foo: 'string' },
+      name: 'string',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('paramInModelNameRef: required and optional params', async () => {
+    const response = await sink.bodyParams.paramInModelNameRef({
+      model_ref: { foo: 'string' },
+      name: 'string',
+    });
+  });
+
+  test('propertyModelRef: only required params', async () => {
+    const responsePromise = sink.bodyParams.propertyModelRef({ model_ref: {}, name: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('propertyModelRef: required and optional params', async () => {
+    const response = await sink.bodyParams.propertyModelRef({ model_ref: { bar: true }, name: 'string' });
+  });
+
   test('propertyWithComplexUnion: only required params', async () => {
     const responsePromise = sink.bodyParams.propertyWithComplexUnion({ name: 'string', unions: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -29,6 +65,17 @@ describe('resource bodyParams', () => {
     });
   });
 
+  test('propertyWithHeavilyNestedComplexUnion', async () => {
+    const responsePromise = sink.bodyParams.propertyWithHeavilyNestedComplexUnion({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
   test('readOnlyProperties', async () => {
     const responsePromise = sink.bodyParams.readOnlyProperties({});
     const rawResponse = await responsePromise.asResponse();
@@ -38,6 +85,27 @@ describe('resource bodyParams', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('stringMapModelRef: only required params', async () => {
+    const responsePromise = sink.bodyParams.stringMapModelRef({
+      model_ref: { foo: 'string' },
+      name: 'string',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('stringMapModelRef: required and optional params', async () => {
+    const response = await sink.bodyParams.stringMapModelRef({
+      model_ref: { foo: 'string' },
+      name: 'string',
+    });
   });
 
   test('topLevelAllOf: only required params', async () => {
@@ -176,6 +244,38 @@ describe('resource bodyParams', () => {
     await expect(
       sink.bodyParams.unionOverlappingProp({ foo: 'string' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('withDefaultBodyParamOptional', async () => {
+    const responsePromise = sink.bodyParams.withDefaultBodyParamOptional({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('withDefaultBodyParamRequired: only required params', async () => {
+    const responsePromise = sink.bodyParams.withDefaultBodyParamRequired({
+      my_version_body_param: 'string',
+      normal_param: true,
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('withDefaultBodyParamRequired: required and optional params', async () => {
+    const response = await sink.bodyParams.withDefaultBodyParamRequired({
+      my_version_body_param: 'string',
+      normal_param: true,
+    });
   });
 
   test('withModelProperty', async () => {

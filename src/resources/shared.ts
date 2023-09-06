@@ -32,6 +32,19 @@ export interface ObjectWithChildRef {
   foo: string;
 }
 
+export interface SharedCursorNestedResponsePropMeta {
+  pagination: SharedCursorNestedResponsePropMeta.Pagination;
+}
+
+export namespace SharedCursorNestedResponsePropMeta {
+  export interface Pagination {
+    /**
+     * The cursor for the next page
+     */
+    cursor?: string | null;
+  }
+}
+
 export interface SharedMutualRecursionA {
   b?: SharedMutualRecursionB;
 }

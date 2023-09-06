@@ -8,6 +8,7 @@ import * as API from './index';
 import {
   PagePageNumber,
   PageCursor,
+  PageCursorNestedResponseProp,
   PageCursorURL,
   PageOffset,
   PageHypermedia,
@@ -15,6 +16,36 @@ import {
 } from 'sink-npm/pagination';
 
 export class BodyParams extends APIResource {
+  /**
+   * Endpoint with a `requestBody` that has a schema that is defined as a model in
+   * the config with "param" in the name.
+   */
+  paramInModelNameRef(
+    body: BodyParamParamInModelNameRefParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this.post('/body_params/param_in_model_name_ref', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
+   * Endpoint with a `requestBody` that has a property that is defined as a model in
+   * the config.
+   */
+  propertyModelRef(
+    body: BodyParamPropertyModelRefParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this.post('/body_params/property_model_ref', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
   /**
    * Endpoint with a `requestBody` that has a property that is a union type of
    * complex types.
@@ -31,6 +62,21 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` that has a property that is a union type of
+   * complex types with a lot of nesting.
+   */
+  propertyWithHeavilyNestedComplexUnion(
+    body: BodyParamPropertyWithHeavilyNestedComplexUnionParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this.post('/body_params/property_with_heavily_nested_complex_union', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` that sets `readOnly` to `true` on top level
    * properties
    */
@@ -39,6 +85,21 @@ export class BodyParams extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     return this.post('/body_params/read_only_properties', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
+   * Endpoint with a `requestBody` that has an `additionalProperties` string schema
+   * that is defined as a model in the config.
+   */
+  stringMapModelRef(
+    body: BodyParamStringMapModelRefParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this.post('/body_params/string_map_model_ref', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -140,6 +201,36 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with an optional request property that has a default value set.
+   */
+  withDefaultBodyParamOptional(
+    params: BodyParamWithDefaultBodyParamOptionalParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    const { my_version_body_param: myVersionBodyParam = 'v1.4', ...body } = params;
+    return this.post('/body_params/with_default_body_param_optional', {
+      body: { my_version_body_param: myVersionBodyParam, ...body },
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
+   * Endpoint with a required request property that has a default value set.
+   */
+  withDefaultBodyParamRequired(
+    params: BodyParamWithDefaultBodyParamRequiredParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    const { my_version_body_param: myVersionBodyParam = 'v1.4', ...body } = params;
+    return this.post('/body_params/with_default_body_param_required', {
+      body: { my_version_body_param: myVersionBodyParam, ...body },
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a request body that contains a property that points to a model
    * reference.
    */
@@ -163,6 +254,10 @@ export class MyModelsPageCursor extends PageCursor<MyModel> {}
 // alias so we can export it in the namespace
 type _MyModelsPageCursor = MyModelsPageCursor;
 
+export class MyModelsPageCursorNestedResponseProp extends PageCursorNestedResponseProp<MyModel> {}
+// alias so we can export it in the namespace
+type _MyModelsPageCursorNestedResponseProp = MyModelsPageCursorNestedResponseProp;
+
 export class MyModelsPageCursorURL extends PageCursorURL<MyModel> {}
 // alias so we can export it in the namespace
 type _MyModelsPageCursorURL = MyModelsPageCursorURL;
@@ -179,9 +274,13 @@ export class MyModelsPageHypermediaRaw extends PageHypermediaRaw<MyModel> {}
 // alias so we can export it in the namespace
 type _MyModelsPageHypermediaRaw = MyModelsPageHypermediaRaw;
 
+export type ModelWithParamInName = Record<string, string>;
+
 export interface MyModel {
   bar?: boolean;
 }
+
+export type StringMapModel = Record<string, string>;
 
 export interface BodyParamTopLevelAllOfResponse {
   is_foo: boolean;
@@ -191,6 +290,18 @@ export interface BodyParamTopLevelAllOfResponse {
 
 export interface BodyParamUnionOverlappingPropResponse {
   foo: string;
+}
+
+export interface BodyParamParamInModelNameRefParams {
+  model_ref: ModelWithParamInName;
+
+  name: string;
+}
+
+export interface BodyParamPropertyModelRefParams {
+  model_ref: MyModel;
+
+  name: string;
 }
 
 export interface BodyParamPropertyWithComplexUnionParams {
@@ -217,8 +328,91 @@ export namespace BodyParamPropertyWithComplexUnionParams {
   }
 }
 
+export interface BodyParamPropertyWithHeavilyNestedComplexUnionParams {
+  filters?: Array<
+    | BodyParamPropertyWithHeavilyNestedComplexUnionParams.Variant1
+    | BodyParamPropertyWithHeavilyNestedComplexUnionParams.Variant2
+  >;
+}
+
+export namespace BodyParamPropertyWithHeavilyNestedComplexUnionParams {
+  export interface Variant1 {
+    /**
+     * Match where document[field] is in value list.
+     */
+    match?: Variant1.Match;
+
+    /**
+     * Used to perform NOT filter. Can be a single filter or a list of filters to
+     * perform a !(AND). {not:[A,B]} is equivalent to !(A AND B)
+     */
+    not?: unknown;
+
+    /**
+     * Used to perform a logical OR of filters. each element of the OR list can itself
+     * be a list to perform a nested AND. {or:[[A,B],C]} is equivalent to (A AND B) OR
+     * C
+     */
+    or?: Array<unknown>;
+
+    selfreference?: Variant1.Selfreference;
+  }
+
+  export namespace Variant1 {
+    /**
+     * Match where document[field] is in value list.
+     */
+    export interface Match {
+      value: unknown;
+
+      /**
+       * Field to match on.
+       */
+      field?: string;
+
+      fuzzy?: boolean;
+    }
+
+    export interface Selfreference {
+      /**
+       * First field in comparison.
+       */
+      a: string;
+
+      /**
+       * Second field in comparison.
+       */
+      b: string;
+    }
+  }
+
+  export interface Variant2 {
+    case_insensitive?: boolean;
+
+    condition?: string;
+
+    condition_value?: unknown;
+
+    field?: string;
+
+    filter_type?: 'text_match' | 'word_match';
+
+    fuzzy?: number;
+
+    join?: boolean;
+
+    strict?: 'must' | 'should' | 'must_or';
+  }
+}
+
 export interface BodyParamReadOnlyPropertiesParams {
   in_both?: boolean;
+}
+
+export interface BodyParamStringMapModelRefParams {
+  model_ref: StringMapModel;
+
+  name: string;
 }
 
 export interface BodyParamTopLevelAllOfParams {
@@ -293,6 +487,18 @@ export namespace BodyParamUnionOverlappingPropParams {
   }
 }
 
+export interface BodyParamWithDefaultBodyParamOptionalParams {
+  my_version_body_param?: string;
+
+  normal_param?: boolean;
+}
+
+export interface BodyParamWithDefaultBodyParamRequiredParams {
+  my_version_body_param?: string;
+
+  normal_param: boolean;
+}
+
 export interface BodyParamWithModelPropertyParams {
   foo?: string;
 
@@ -300,11 +506,17 @@ export interface BodyParamWithModelPropertyParams {
 }
 
 export namespace BodyParams {
+  export import ModelWithParamInName = API.ModelWithParamInName;
   export import MyModel = API.MyModel;
+  export import StringMapModel = API.StringMapModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
+  export import BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;
   export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
+  export import BodyParamPropertyWithHeavilyNestedComplexUnionParams = API.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export import BodyParamStringMapModelRefParams = API.BodyParamStringMapModelRefParams;
   export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
   export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
@@ -312,5 +524,7 @@ export namespace BodyParams {
   export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
   export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
+  export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
+  export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 }

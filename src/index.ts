@@ -169,8 +169,8 @@ export class Sink extends Core.APIClient {
       someIntegerArg,
       someNumberArg,
       requiredArgNoEnv,
-      environment: 'production',
       ...opts,
+      environment: opts.environment ?? 'production',
     };
 
     if (!options.dangerouslyAllowBrowser && Core.isRunningInBrowser()) {
@@ -380,6 +380,10 @@ export namespace Sink {
   export import PageCursorParams = Pagination.PageCursorParams;
   export import PageCursorResponse = Pagination.PageCursorResponse;
 
+  export import PageCursorNestedResponseProp = Pagination.PageCursorNestedResponseProp;
+  export import PageCursorNestedResponsePropParams = Pagination.PageCursorNestedResponsePropParams;
+  export import PageCursorNestedResponsePropResponse = Pagination.PageCursorNestedResponsePropResponse;
+
   export import PageCursorURL = Pagination.PageCursorURL;
   export import PageCursorURLParams = Pagination.PageCursorURLParams;
   export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
@@ -470,12 +474,16 @@ export namespace Sink {
   export import Files = API.Files;
   export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
   export import FileEverythingMultipartResponse = API.FileEverythingMultipartResponse;
+  export import FileWithOptionalParamResponse = API.FileWithOptionalParamResponse;
   export import FileCreateMultipartParams = API.FileCreateMultipartParams;
   export import FileEverythingMultipartParams = API.FileEverythingMultipartParams;
+  export import FileWithOptionalParamParams = API.FileWithOptionalParamParams;
 
   export import Resources = API.Resources;
 
   export import ConfigTools = API.ConfigTools;
+  export import OnlyNodeModel = API.OnlyNodeModel;
+  export import ConfigToolOnlyInNodeParams = API.ConfigToolOnlyInNodeParams;
 
   export import CompanyResource = API.CompanyResource;
   export import Company = API.Company;
@@ -509,6 +517,9 @@ export namespace Sink {
   export import TypeEnumsResponse = API.TypeEnumsResponse;
   export import TypeDatesParams = API.TypeDatesParams;
   export import TypeDatetimesParams = API.TypeDatetimesParams;
+  export import TypeEnumTestsArrayUniqueValuesParams = API.TypeEnumTestsArrayUniqueValuesParams;
+  export import TypeEnumTestsArrayUniqueValues2ValuesParams = API.TypeEnumTestsArrayUniqueValues2ValuesParams;
+  export import TypeEnumTestsArrayUniqueValuesNumbersParams = API.TypeEnumTestsArrayUniqueValuesNumbersParams;
   export import TypeEnumsParams = API.TypeEnumsParams;
 
   export import Names = API.Names;
@@ -545,8 +556,6 @@ export namespace Sink {
   export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
   export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
-  export import ResponseUnionOfMixedTypesResponse = API.ResponseUnionOfMixedTypesResponse;
-  export import ResponseUnionOfObjectsResponse = API.ResponseUnionOfObjectsResponse;
 
   export import PathParams = API.PathParams;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
@@ -573,11 +582,17 @@ export namespace Sink {
   export import QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
 
   export import BodyParams = API.BodyParams;
+  export import ModelWithParamInName = API.ModelWithParamInName;
   export import MyModel = API.MyModel;
+  export import StringMapModel = API.StringMapModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
+  export import BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;
   export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
+  export import BodyParamPropertyWithHeavilyNestedComplexUnionParams = API.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
   export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export import BodyParamStringMapModelRefParams = API.BodyParamStringMapModelRefParams;
   export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
   export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
   export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
@@ -585,6 +600,8 @@ export namespace Sink {
   export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
   export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
+  export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
+  export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
   export import HeaderParams = API.HeaderParams;
@@ -638,6 +655,7 @@ export namespace Sink {
   export import BasicSharedModelObject = API.BasicSharedModelObject;
   export import Currency = API.Currency;
   export import ObjectWithChildRef = API.ObjectWithChildRef;
+  export import SharedCursorNestedResponsePropMeta = API.SharedCursorNestedResponsePropMeta;
   export import SharedMutualRecursionA = API.SharedMutualRecursionA;
   export import SharedMutualRecursionB = API.SharedMutualRecursionB;
   export import SharedSelfRecursion = API.SharedSelfRecursion;

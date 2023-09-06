@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { toFile, type ResponseLike } from 'sink-npm/uploads';
-import { File } from 'sink-npm/_shims/formdata';
+import { File } from 'sink-npm/_shims/form-data';
 
 class MyClass {
   name: string = 'foo';

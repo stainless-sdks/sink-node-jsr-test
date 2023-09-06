@@ -10,9 +10,9 @@ const sink = new Sink({
   requiredArgNoEnv: '<example>',
 });
 
-describe('resource cursor', () => {
-  test('list', async () => {
-    const responsePromise = sink.paginationTests.cursor.list();
+describe('resource unionTypes', () => {
+  test('mixedTypes', async () => {
+    const responsePromise = sink.responses.unionTypes.mixedTypes();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,22 +22,15 @@ describe('resource cursor', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('list: request options instead of params are passed correctly', async () => {
+  test('mixedTypes: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.paginationTests.cursor.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(sink.responses.unionTypes.mixedTypes({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
-  test('list: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      sink.paginationTests.cursor.list({ cursor: 'string', limit: 0 }, { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
-  });
-
-  test('listNestedResponseProp', async () => {
-    const responsePromise = sink.paginationTests.cursor.listNestedResponseProp();
+  test('numbers', async () => {
+    const responsePromise = sink.responses.unionTypes.numbers();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -47,20 +40,28 @@ describe('resource cursor', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('listNestedResponseProp: request options instead of params are passed correctly', async () => {
+  test('numbers: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      sink.paginationTests.cursor.listNestedResponseProp({ path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
+    await expect(sink.responses.unionTypes.numbers({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
-  test('listNestedResponseProp: request options and params are passed correctly', async () => {
+  test('objects', async () => {
+    const responsePromise = sink.responses.unionTypes.objects();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('objects: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      sink.paginationTests.cursor.listNestedResponseProp(
-        { cursor: 'string', limit: 0 },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(Sink.NotFoundError);
+    await expect(sink.responses.unionTypes.objects({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 });

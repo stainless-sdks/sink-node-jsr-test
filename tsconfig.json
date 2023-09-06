@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "sink-npm/_shims/*": ["src/_shims/*.node"],
+      "sink-npm/_shims/*": ["src/_shims/*-node"],
       "sink-npm": ["src/index.ts"],
       "sink-npm/*": ["src/*"],
       "digest-fetch": ["./typings/digest-fetch"]

@@ -63,7 +63,6 @@ export {
   ComplexQueryObjectQueryParams,
   ComplexQueries,
 } from './complex-queries';
-export { ConfigTools } from './config-tools';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
 export { DeeplyNested } from './deeply-nested/deeply-nested';
 export { DeleteEmptyObjectResponse, Sta563 } from './sta-563';
@@ -75,8 +74,10 @@ export {
 export {
   FileCreateMultipartResponse,
   FileEverythingMultipartResponse,
+  FileWithOptionalParamResponse,
   FileCreateMultipartParams,
   FileEverythingMultipartParams,
+  FileWithOptionalParamParams,
   Files,
 } from './files';
 export { GithubUser, GithubUserPreferences, Sta630 } from './sta-630';
@@ -110,11 +111,17 @@ export {
   ModelReferencedInParentAndChildResource,
 } from './model-referenced-in-parent-and-child/model-referenced-in-parent-and-child';
 export {
+  ModelWithParamInName,
   MyModel,
+  StringMapModel,
   BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
+  BodyParamParamInModelNameRefParams,
+  BodyParamPropertyModelRefParams,
   BodyParamPropertyWithComplexUnionParams,
+  BodyParamPropertyWithHeavilyNestedComplexUnionParams,
   BodyParamReadOnlyPropertiesParams,
+  BodyParamStringMapModelRefParams,
   BodyParamTopLevelAllOfParams,
   BodyParamTopLevelAllOfNestedObjectParams,
   BodyParamTopLevelAnyOfWithRefParams,
@@ -122,9 +129,12 @@ export {
   BodyParamTopLevelArrayWithChildrenParams,
   BodyParamTopLevelOneOfOneEntryParams,
   BodyParamUnionOverlappingPropParams,
+  BodyParamWithDefaultBodyParamOptionalParams,
+  BodyParamWithDefaultBodyParamRequiredParams,
   BodyParamWithModelPropertyParams,
   MyModelsPagePageNumber,
   MyModelsPageCursor,
+  MyModelsPageCursorNestedResponseProp,
   MyModelsPageCursorURL,
   MyModelsPageOffset,
   MyModelsPageHypermedia,
@@ -151,10 +161,9 @@ export {
   ResponseObjectWithAdditionalPropertiesPropResponse,
   ResponseObjectWithHeavilyNestedUnionResponse,
   ResponseStringResponseResponse,
-  ResponseUnionOfMixedTypesResponse,
-  ResponseUnionOfObjectsResponse,
   Responses,
-} from './responses';
+} from './responses/responses';
+export { OnlyNodeModel, ConfigToolOnlyInNodeParams, ConfigTools } from './config-tools';
 export { PaginationTests } from './pagination-tests/pagination-tests';
 export { Parent } from './parent/parent';
 export { PathParamMultipleResponse, PathParamSingularResponse, PathParams } from './path-params';
@@ -221,6 +230,9 @@ export {
   TypeEnumsResponse,
   TypeDatesParams,
   TypeDatetimesParams,
+  TypeEnumTestsArrayUniqueValuesParams,
+  TypeEnumTestsArrayUniqueValues2ValuesParams,
+  TypeEnumTestsArrayUniqueValuesNumbersParams,
   TypeEnumsParams,
   Types,
 } from './types/types';

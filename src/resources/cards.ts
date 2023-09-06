@@ -80,18 +80,18 @@ export class Cards extends APIResource {
    * List cards.
    */
   listNonGet(
-    body?: CardListNonGetParams,
+    params?: CardListNonGetParams,
     options?: Core.RequestOptions,
   ): Core.PagePromise<CardsCardPage, Card>;
   listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
   listNonGet(
-    body: CardListNonGetParams | Core.RequestOptions = {},
+    params: CardListNonGetParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.PagePromise<CardsCardPage, Card> {
-    if (isRequestOptions(body)) {
-      return this.listNonGet({}, body);
+    if (isRequestOptions(params)) {
+      return this.listNonGet({}, params);
     }
-    const { account_token: accountToken, begin, end, page, page_size: pageSize } = body;
+    const { account_token: accountToken, begin, end, page, page_size: pageSize } = params;
     return this.getAPIList('/cards/list', CardsCardPage, {
       query: { account_token: accountToken, begin, end, page, page_size: pageSize },
       method: 'post',

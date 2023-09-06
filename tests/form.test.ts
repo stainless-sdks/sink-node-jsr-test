@@ -1,5 +1,5 @@
 import { multipartFormRequestOptions, createForm } from 'sink-npm/core';
-import { Blob } from 'sink-npm/_shims/formdata';
+import { Blob } from 'sink-npm/_shims/form-data';
 import { toFile } from 'sink-npm';
 
 describe('form data validation', () => {

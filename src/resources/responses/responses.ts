@@ -5,9 +5,12 @@ import { APIResource } from 'sink-npm/resource';
 import * as BodyParams from 'sink-npm/resources/body-params';
 import * as Payments from 'sink-npm/resources/company/payments';
 import * as Shared from 'sink-npm/resources/shared';
+import { UnionTypes } from './union-types';
 import * as API from './index';
 
 export class Responses extends APIResource {
+  unionTypes: UnionTypes = new UnionTypes(this.client);
+
   /**
    * Endpoint with a top level additionalProperties response.
    */
@@ -147,20 +150,6 @@ export class Responses extends APIResource {
       headers: { Accept: 'application/json', ...options?.headers },
     });
   }
-
-  /**
-   * Endpoint with a top level union response of different types.
-   */
-  unionOfMixedTypes(options?: Core.RequestOptions): Core.APIPromise<ResponseUnionOfMixedTypesResponse> {
-    return this.post('/responses/union_of_mixed_types', options);
-  }
-
-  /**
-   * Endpoint with a top level union response of just object variants.
-   */
-  unionOfObjects(options?: Core.RequestOptions): Core.APIPromise<ResponseUnionOfObjectsResponse> {
-    return this.post('/responses/union_of_objects', options);
-  }
 }
 
 export interface ObjectWithAnyOfNullProperty {
@@ -293,25 +282,6 @@ export namespace ResponseObjectWithHeavilyNestedUnionResponse {
 
 export type ResponseStringResponseResponse = string;
 
-export type ResponseUnionOfMixedTypesResponse =
-  | Shared.SimpleObject
-  | ResponseUnionOfMixedTypesResponse.BasicObject
-  | boolean;
-
-export namespace ResponseUnionOfMixedTypesResponse {
-  export interface BasicObject {
-    item?: string;
-  }
-}
-
-export type ResponseUnionOfObjectsResponse = Shared.SimpleObject | ResponseUnionOfObjectsResponse.BasicObject;
-
-export namespace ResponseUnionOfObjectsResponse {
-  export interface BasicObject {
-    item?: string;
-  }
-}
-
 export namespace Responses {
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
@@ -331,6 +301,9 @@ export namespace Responses {
   export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
   export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
-  export import ResponseUnionOfMixedTypesResponse = API.ResponseUnionOfMixedTypesResponse;
-  export import ResponseUnionOfObjectsResponse = API.ResponseUnionOfObjectsResponse;
+
+  export import UnionTypes = API.UnionTypes;
+  export import UnionTypeMixedTypesResponse = API.UnionTypeMixedTypesResponse;
+  export import UnionTypeNumbersResponse = API.UnionTypeNumbersResponse;
+  export import UnionTypeObjectsResponse = API.UnionTypeObjectsResponse;
 }

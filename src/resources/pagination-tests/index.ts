@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export { CursorListParams, Cursor } from './cursor';
+export { CursorListParams, CursorListNestedResponsePropParams, Cursor } from './cursor';
 export { CursorURLListParams, CursorURL } from './cursor-url';
 export { FakePageListParams, FakePages } from './fake-pages';
 export { HypermediaListParams, Hypermedia } from './hypermedia';

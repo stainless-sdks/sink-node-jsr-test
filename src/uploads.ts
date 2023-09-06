@@ -1,7 +1,7 @@
 import { type RequestOptions } from './core';
 import { type Readable } from 'sink-npm/_shims/node-readable';
 import { type BodyInit } from 'sink-npm/_shims/fetch';
-import { FormData, File, type Blob, type FilePropertyBag } from 'sink-npm/_shims/formdata';
+import { FormData, File, type Blob, type FilePropertyBag } from 'sink-npm/_shims/form-data';
 import { getMultipartRequestOptions } from 'sink-npm/_shims/getMultipartRequestOptions';
 import { fileFromPath } from 'sink-npm/_shims/fileFromPath';
 import { type FsReadStream, isFsReadStream } from 'sink-npm/_shims/node-readable';
