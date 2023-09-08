@@ -60,7 +60,7 @@ describe('resource types', () => {
   });
 
   test('enumTestsArrayUniqueValues: only required params', async () => {
-    const responsePromise = sink.types.enumTestsArrayUniqueValues(['USD', 'GBP', 'PAB']);
+    const responsePromise = sink.types.enumTestsArrayUniqueValues(['USD']);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -71,11 +71,11 @@ describe('resource types', () => {
   });
 
   test('enumTestsArrayUniqueValues: required and optional params', async () => {
-    const response = await sink.types.enumTestsArrayUniqueValues(['USD', 'GBP', 'PAB']);
+    const response = await sink.types.enumTestsArrayUniqueValues(['USD']);
   });
 
   test('enumTestsArrayUniqueValues2Values: only required params', async () => {
-    const responsePromise = sink.types.enumTestsArrayUniqueValues2Values(['USD', 'GBP']);
+    const responsePromise = sink.types.enumTestsArrayUniqueValues2Values(['USD']);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -86,11 +86,11 @@ describe('resource types', () => {
   });
 
   test('enumTestsArrayUniqueValues2Values: required and optional params', async () => {
-    const response = await sink.types.enumTestsArrayUniqueValues2Values(['USD', 'GBP']);
+    const response = await sink.types.enumTestsArrayUniqueValues2Values(['USD']);
   });
 
   test('enumTestsArrayUniqueValuesNumbers: only required params', async () => {
-    const responsePromise = sink.types.enumTestsArrayUniqueValuesNumbers([5, 6, 7]);
+    const responsePromise = sink.types.enumTestsArrayUniqueValuesNumbers([5]);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -101,7 +101,7 @@ describe('resource types', () => {
   });
 
   test('enumTestsArrayUniqueValuesNumbers: required and optional params', async () => {
-    const response = await sink.types.enumTestsArrayUniqueValuesNumbers([5, 6, 7]);
+    const response = await sink.types.enumTestsArrayUniqueValuesNumbers([5]);
   });
 
   test('enums', async () => {

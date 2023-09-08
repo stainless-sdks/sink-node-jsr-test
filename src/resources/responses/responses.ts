@@ -3,8 +3,8 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as BodyParams from 'sink-npm/resources/body-params';
-import * as Payments from 'sink-npm/resources/company/payments';
 import * as Shared from 'sink-npm/resources/shared';
+import * as Payments from 'sink-npm/resources/company/payments';
 import { UnionTypes } from './union-types';
 import * as API from './index';
 
