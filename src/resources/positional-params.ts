@@ -66,12 +66,12 @@ export class PositionalParams extends APIResource {
       imACamel,
       option1,
       option2,
-      really_cool_snake: reallyCoolSnake,
+      really_cool_snake,
       'X-Custom-Header': xCustomHeader,
       ...body
     } = params;
     return this.post(`/positional_params/query/${id}/kitchen_sink/${key}`, {
-      query: { imACamel, option1, option2, really_cool_snake: reallyCoolSnake },
+      query: { imACamel, option1, option2, really_cool_snake },
       body: { camel_case: camelCase, ...body },
       ...options,
       headers: { Accept: '', 'X-Custom-Header': xCustomHeader || '', ...options?.headers },

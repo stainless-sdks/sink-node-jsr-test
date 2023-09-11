@@ -25,12 +25,8 @@ export class MixedParams extends APIResource {
     if (isRequestOptions(params)) {
       return this.queryAndBody({}, params);
     }
-    const { query_param: queryParam, ...body } = params;
-    return this.post('/mixed_params/query_and_body', {
-      query: { query_param: queryParam },
-      body,
-      ...options,
-    });
+    const { query_param, ...body } = params;
+    return this.post('/mixed_params/query_and_body', { query: { query_param }, body, ...options });
   }
 
   /**
@@ -53,9 +49,9 @@ export class MixedParams extends APIResource {
     if (isRequestOptions(params)) {
       return this.queryBodyAndPath(pathParam, {}, params);
     }
-    const { query_param: queryParam, ...body } = params;
+    const { query_param, ...body } = params;
     return this.post(`/mixed_params/query_body_and_path/${pathParam}`, {
-      query: { query_param: queryParam },
+      query: { query_param },
       body,
       ...options,
     });

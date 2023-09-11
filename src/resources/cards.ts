@@ -91,9 +91,9 @@ export class Cards extends APIResource {
     if (isRequestOptions(params)) {
       return this.listNonGet({}, params);
     }
-    const { account_token: accountToken, begin, end, page, page_size: pageSize } = params;
+    const { account_token, begin, end, page, page_size } = params;
     return this.getAPIList('/cards/list', CardsCardPage, {
-      query: { account_token: accountToken, begin, end, page, page_size: pageSize },
+      query: { account_token, begin, end, page, page_size },
       method: 'post',
       ...options,
     });

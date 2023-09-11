@@ -17,12 +17,12 @@ export class Version1_30Names extends APIResource {
     params: Version1_30NameCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Version1_30NameCreateResponse> {
-    const { version_1_16: version1_16, version_1_14: version1_14, ...body } = params;
+    const { version_1_16, version_1_14, ...body } = params;
     return this.post(`/version_1_30_names/query/${version1_15}`, {
-      query: { version_1_16: version1_16 },
+      query: { version_1_16 },
       body,
       ...options,
-      headers: { version_1_14: version1_14 || '', ...options?.headers },
+      headers: { version_1_14: version_1_14 || '', ...options?.headers },
     });
   }
 }

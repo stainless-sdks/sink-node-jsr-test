@@ -207,9 +207,9 @@ export class BodyParams extends APIResource {
     params: BodyParamWithDefaultBodyParamOptionalParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    const { my_version_body_param: myVersionBodyParam = 'v1.4', ...body } = params;
+    const { my_version_body_param = 'v1.4', ...body } = params;
     return this.post('/body_params/with_default_body_param_optional', {
-      body: { my_version_body_param: myVersionBodyParam, ...body },
+      body: { my_version_body_param, ...body },
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -222,9 +222,9 @@ export class BodyParams extends APIResource {
     params: BodyParamWithDefaultBodyParamRequiredParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    const { my_version_body_param: myVersionBodyParam = 'v1.4', ...body } = params;
+    const { my_version_body_param = 'v1.4', ...body } = params;
     return this.post('/body_params/with_default_body_param_required', {
-      body: { my_version_body_param: myVersionBodyParam, ...body },
+      body: { my_version_body_param, ...body },
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
