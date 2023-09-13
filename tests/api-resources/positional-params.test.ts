@@ -172,8 +172,8 @@ describe('resource positionalParams', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('unionBodyAndPath: only required params', async () => {
-    const responsePromise = sink.positionalParams.unionBodyAndPath('string', { kind: 'VIRTUAL' });
+  test('unionBodyAndPath', async () => {
+    const responsePromise = sink.positionalParams.unionBodyAndPath('VIRTUAL', 'string');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -181,9 +181,5 @@ describe('resource positionalParams', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('unionBodyAndPath: required and optional params', async () => {
-    const response = await sink.positionalParams.unionBodyAndPath('string', { kind: 'VIRTUAL' });
   });
 });

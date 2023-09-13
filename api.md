@@ -563,7 +563,7 @@ Methods:
 - <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">queryAndPath</a>(bar, id) -> void</code>
 - <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./src/resources/positional-params.ts">queryMultiple</a>(foo, { ...params }) -> void</code>
 - <code title="get /positional_params/{single}">client.positionalParams.<a href="./src/resources/positional-params.ts">single</a>(single) -> void</code>
-- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">unionBodyAndPath</a>(id, { ...params }) -> void</code>
+- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">unionBodyAndPath</a>(kind, id) -> void</code>
 
 # QueryParams
 

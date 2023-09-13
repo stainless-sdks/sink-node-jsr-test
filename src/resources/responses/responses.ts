@@ -254,26 +254,26 @@ export namespace ResponseObjectWithAdditionalPropertiesPropResponse {
 
 export interface ResponseObjectWithHeavilyNestedUnionResponse {
   union_prop:
-    | ResponseObjectWithHeavilyNestedUnionResponse.UnionMember0
-    | ResponseObjectWithHeavilyNestedUnionResponse.UnionMember1;
+    | ResponseObjectWithHeavilyNestedUnionResponse.UnionPropVariant1
+    | ResponseObjectWithHeavilyNestedUnionResponse.UnionPropVariant2;
 }
 
 export namespace ResponseObjectWithHeavilyNestedUnionResponse {
-  export interface UnionMember0 {
-    union_1_layer_1?: Array<UnionMember0.Union1Layer1>;
+  export interface UnionPropVariant1 {
+    union_1_layer_1?: Array<UnionPropVariant1.Union1Layer1>;
   }
 
-  export namespace UnionMember0 {
+  export namespace UnionPropVariant1 {
     export interface Union1Layer1 {
       union_1_layer_2?: string;
     }
   }
 
-  export interface UnionMember1 {
-    union_2_layer_1?: UnionMember1.Union2Layer1;
+  export interface UnionPropVariant2 {
+    union_2_layer_1?: UnionPropVariant2.Union2Layer1;
   }
 
-  export namespace UnionMember1 {
+  export namespace UnionPropVariant2 {
     export interface Union2Layer1 {
       union_2_layer_2?: string;
     }

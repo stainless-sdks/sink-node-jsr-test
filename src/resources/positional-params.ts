@@ -146,12 +146,12 @@ export class PositionalParams extends APIResource {
    * Endpoint with no positional params and a body object.
    */
   unionBodyAndPath(
+    kind: 'VIRTUAL' | 'PHYSICAL',
     id: string,
-    body: PositionalParamUnionBodyAndPathParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     return this.post(`/positional_params/body/union/${id}`, {
-      body,
+      body: { kind },
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -244,10 +244,6 @@ export interface PositionalParamQueryMultipleParams {
   bar: string;
 }
 
-export interface PositionalParamUnionBodyAndPathParams {
-  kind: 'VIRTUAL' | 'PHYSICAL';
-}
-
 export namespace PositionalParams {
   export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
   export import PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
@@ -256,5 +252,4 @@ export namespace PositionalParams {
   export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
   export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
   export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
-  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 }

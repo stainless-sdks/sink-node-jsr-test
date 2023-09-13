@@ -569,7 +569,6 @@ export namespace Sink {
   export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
   export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
   export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
-  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 
   export import QueryParams = API.QueryParams;
   export import QueryParamAllOfParams = API.QueryParamAllOfParams;

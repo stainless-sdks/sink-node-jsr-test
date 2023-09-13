@@ -175,7 +175,6 @@ export {
   PositionalParamKitchenSinkParams,
   PositionalParamMultiplePathParamsParams,
   PositionalParamQueryMultipleParams,
-  PositionalParamUnionBodyAndPathParams,
   PositionalParams,
 } from './positional-params';
 export {
