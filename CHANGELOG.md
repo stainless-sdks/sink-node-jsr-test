@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.3 (2023-09-14)
+
+Full Changelog: [v0.1.2...v0.1.3](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.2...v0.1.3)
+
+### Features
+
+* **client:** retry on 408 Request Timeout ([#199](https://github.com/stainless-sdks/sink-node-public/issues/199)) ([6f967d6](https://github.com/stainless-sdks/sink-node-public/commit/6f967d687f24395e856981ba7c3c1e943dc111b0))
+
+
+### Bug Fixes
+
+* **config:** use correct positional params name in tests ([#197](https://github.com/stainless-sdks/sink-node-public/issues/197)) ([4ff921c](https://github.com/stainless-sdks/sink-node-public/commit/4ff921c0fca0800619298d9149308e7262f311c5))
+* fix module not found errors in Vercel edge ([#195](https://github.com/stainless-sdks/sink-node-public/issues/195)) ([2642056](https://github.com/stainless-sdks/sink-node-public/commit/264205619bd7a35c5ca22206c8ecf145b7615611))
+
+
+### Chores
+
+* bump stats ([#194](https://github.com/stainless-sdks/sink-node-public/issues/194)) ([032cf93](https://github.com/stainless-sdks/sink-node-public/commit/032cf93fca914ecc0a1b3877f463c592d1329f53))
+* **internal:** export helper from core ([#191](https://github.com/stainless-sdks/sink-node-public/issues/191)) ([3aaec3c](https://github.com/stainless-sdks/sink-node-public/commit/3aaec3ce82e6a7b2906f1851869ecf41f1ea4358))
+* **internal:** minor formatting changes ([#193](https://github.com/stainless-sdks/sink-node-public/issues/193)) ([b262d65](https://github.com/stainless-sdks/sink-node-public/commit/b262d652cb259ea03cdef285bd65346fc113001c))
+* **style:** remove redundant renaming in destructures ([#196](https://github.com/stainless-sdks/sink-node-public/issues/196)) ([653a9ba](https://github.com/stainless-sdks/sink-node-public/commit/653a9ba40a9d310e2b5959ed25a2f52f2849672f))
+
 ## 0.1.2 (2023-09-06)
 
 Full Changelog: [v0.1.1...v0.1.2](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.1...v0.1.2)
