@@ -557,13 +557,13 @@ Methods:
 - <code title="get /positional_params/basic_query">client.positionalParams.<a href="./src/resources/positional-params.ts">basicQuery</a>({ ...params }) -> void</code>
 - <code title="post /positional_params/body">client.positionalParams.<a href="./src/resources/positional-params.ts">body</a>({ ...params }) -> void</code>
 - <code title="post /positional_params/body_extra_param">client.positionalParams.<a href="./src/resources/positional-params.ts">bodyExtraParam</a>({ ...params }) -> void</code>
-- <code title="post /positional_params/query/{id}/kitchen_sink/{key}">client.positionalParams.<a href="./src/resources/positional-params.ts">kitchenSink</a>(id, camelCase, { ...params }) -> void</code>
-- <code title="post /positional_params/{first}/{second}/{last}">client.positionalParams.<a href="./src/resources/positional-params.ts">multiplePathParams</a>(second, name, { ...params }) -> void</code>
-- <code title="get /positional_params/query">client.positionalParams.<a href="./src/resources/positional-params.ts">query</a>(foo) -> void</code>
-- <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">queryAndPath</a>(bar, id) -> void</code>
-- <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./src/resources/positional-params.ts">queryMultiple</a>(foo, { ...params }) -> void</code>
+- <code title="post /positional_params/query/{id}/kitchen_sink/{key}">client.positionalParams.<a href="./src/resources/positional-params.ts">kitchenSink</a>(id, { ...params }) -> void</code>
+- <code title="post /positional_params/{first}/{second}/{last}">client.positionalParams.<a href="./src/resources/positional-params.ts">multiplePathParams</a>(second, { ...params }) -> void</code>
+- <code title="get /positional_params/query">client.positionalParams.<a href="./src/resources/positional-params.ts">query</a>({ ...params }) -> void</code>
+- <code title="post /positional_params/query/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">queryAndPath</a>(id, { ...params }) -> void</code>
+- <code title="get /positional_params/query_multiple">client.positionalParams.<a href="./src/resources/positional-params.ts">queryMultiple</a>({ ...params }) -> void</code>
 - <code title="get /positional_params/{single}">client.positionalParams.<a href="./src/resources/positional-params.ts">single</a>(single) -> void</code>
-- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">unionBodyAndPath</a>(kind, id) -> void</code>
+- <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">unionBodyAndPath</a>(id, { ...params }) -> void</code>
 
 # QueryParams
 
