@@ -57,7 +57,6 @@ export class PositionalParams extends APIResource {
    */
   kitchenSink(
     id: string,
-    camelCase: string,
     params: PositionalParamKitchenSinkParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
@@ -72,7 +71,7 @@ export class PositionalParams extends APIResource {
     } = params;
     return this.post(`/positional_params/query/${id}/kitchen_sink/${key}`, {
       query: { imACamel, option1, option2, really_cool_snake },
-      body: { camel_case: camelCase, ...body },
+      body,
       ...options,
       headers: { Accept: '', 'X-Custom-Header': xCustomHeader || '', ...options?.headers },
     });
@@ -83,13 +82,12 @@ export class PositionalParams extends APIResource {
    */
   multiplePathParams(
     second: string,
-    name: string,
     params: PositionalParamMultiplePathParamsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { first, last, ...body } = params;
     return this.post(`/positional_params/${first}/${second}/${last}`, {
-      body: { name, ...body },
+      body,
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -98,9 +96,9 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with a positional query parameter.
    */
-  query(foo: string, options?: Core.RequestOptions): Core.APIPromise<void> {
+  query(query: PositionalParamQueryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.get('/positional_params/query', {
-      query: { foo },
+      query,
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -109,7 +107,12 @@ export class PositionalParams extends APIResource {
   /**
    * Endpoint with a positional path parameter and a query parameter.
    */
-  queryAndPath(bar: number, id: string, options?: Core.RequestOptions): Core.APIPromise<void> {
+  queryAndPath(
+    id: string,
+    params: PositionalParamQueryAndPathParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    const { bar } = params;
     return this.post(`/positional_params/query/${id}`, {
       query: { bar },
       ...options,
@@ -121,12 +124,11 @@ export class PositionalParams extends APIResource {
    * Endpoint with a positional query parameter.
    */
   queryMultiple(
-    foo: string,
     query: PositionalParamQueryMultipleParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     return this.get('/positional_params/query_multiple', {
-      query: { foo, ...query },
+      query,
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -146,12 +148,12 @@ export class PositionalParams extends APIResource {
    * Endpoint with no positional params and a body object.
    */
   unionBodyAndPath(
-    kind: 'VIRTUAL' | 'PHYSICAL',
     id: string,
+    body: PositionalParamUnionBodyAndPathParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     return this.post(`/positional_params/body/union/${id}`, {
-      body: { kind },
+      body,
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -195,6 +197,11 @@ export interface PositionalParamKitchenSinkParams {
   option1: boolean;
 
   /**
+   * Body param:
+   */
+  camel_case: string;
+
+  /**
    * Query param:
    */
   option2?: string;
@@ -234,14 +241,36 @@ export interface PositionalParamMultiplePathParamsParams {
   /**
    * Body param:
    */
+  name: string;
+
+  /**
+   * Body param:
+   */
   options?: string;
+}
+
+export interface PositionalParamQueryParams {
+  foo: string;
+}
+
+export interface PositionalParamQueryAndPathParams {
+  bar: number;
 }
 
 export interface PositionalParamQueryMultipleParams {
   /**
-   * Query param: Some description about bar.
+   * Some description about bar.
    */
   bar: string;
+
+  /**
+   * Some description about foo.
+   */
+  foo: string;
+}
+
+export interface PositionalParamUnionBodyAndPathParams {
+  kind: 'VIRTUAL' | 'PHYSICAL';
 }
 
 export namespace PositionalParams {
@@ -251,5 +280,8 @@ export namespace PositionalParams {
   export import PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
   export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
   export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
+  export import PositionalParamQueryParams = API.PositionalParamQueryParams;
+  export import PositionalParamQueryAndPathParams = API.PositionalParamQueryAndPathParams;
   export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
+  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 }
