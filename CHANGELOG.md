@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.2.0 (2023-09-15)
+
+Full Changelog: [v0.1.4...v0.2.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.4...v0.2.0)
+
+### ⚠ BREAKING CHANGES
+
+* add an enum value ([#207](https://github.com/stainless-sdks/sink-node-public/issues/207))
+
+### Features
+
+* add an enum value ([#207](https://github.com/stainless-sdks/sink-node-public/issues/207)) ([62cef23](https://github.com/stainless-sdks/sink-node-public/commit/62cef23f9674e7ec38ab445d606ecf25bdba6b56))
+* **errors:** add status code to error message ([#206](https://github.com/stainless-sdks/sink-node-public/issues/206)) ([d34d70e](https://github.com/stainless-sdks/sink-node-public/commit/d34d70e2d4d109dbda562bdb87fd0eb143499346))
+
+
+### Documentation
+
+* declare Bun 1.0 officially supported ([#205](https://github.com/stainless-sdks/sink-node-public/issues/205)) ([9557bb3](https://github.com/stainless-sdks/sink-node-public/commit/9557bb350353ed5de0d6be3d3b97334917e9a6ba))
+
 ## 0.1.4 (2023-09-15)
 
 Full Changelog: [v0.1.3...v0.1.4](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.3...v0.1.4)
