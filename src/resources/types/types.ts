@@ -154,7 +154,7 @@ export type TypeEnumTestsArrayUniqueValuesParams = Array<'USD' | 'GBP' | 'PAB' |
 
 export type TypeEnumTestsArrayUniqueValues2ValuesParams = Array<'USD' | 'GBP'>;
 
-export type TypeEnumTestsArrayUniqueValuesNumbersParams = Array<5 | 6 | 7 | 8>;
+export type TypeEnumTestsArrayUniqueValuesNumbersParams = Array<5 | 6 | 7 | 8 | 9>;
 
 export interface TypeEnumsParams {
   /**

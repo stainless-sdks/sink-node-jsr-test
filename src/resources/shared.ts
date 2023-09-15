@@ -3,6 +3,8 @@
 import { FakePage } from 'sink-npm/pagination';
 
 export interface BasicSharedModelObject {
+  bar: string;
+
   foo: string;
 }
 
@@ -128,7 +130,9 @@ export interface SimpleObject {
    *
    * to be sure that we
    *
-   * handle it correctly in our various SDKs.
+   * handle it correctly in our
+   *
+   * various SDKs.
    */
   bar: number;
 }

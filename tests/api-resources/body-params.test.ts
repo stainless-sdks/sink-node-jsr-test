@@ -158,9 +158,9 @@ describe('resource bodyParams', () => {
 
   test('topLevelArray: only required params', async () => {
     const responsePromise = sink.bodyParams.topLevelArray([
-      { foo: 'string' },
-      { foo: 'string' },
-      { foo: 'string' },
+      { foo: 'string', bar: 'string' },
+      { foo: 'string', bar: 'string' },
+      { foo: 'string', bar: 'string' },
     ]);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -173,9 +173,9 @@ describe('resource bodyParams', () => {
 
   test('topLevelArray: required and optional params', async () => {
     const response = await sink.bodyParams.topLevelArray([
-      { foo: 'string' },
-      { foo: 'string' },
-      { foo: 'string' },
+      { foo: 'string', bar: 'string' },
+      { foo: 'string', bar: 'string' },
+      { foo: 'string', bar: 'string' },
     ]);
   });
 
