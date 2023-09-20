@@ -57,7 +57,12 @@
       "hidden": true
     }
   ],
-  "reviewers": ["marcel-stainless", "dgellow"],
+  "reviewers": [
+    "marcel-stainless",
+    "dgellow"
+  ],
   "release-type": "node",
-  "extra-files": ["src/version.ts"]
+  "extra-files": [
+    "src/version.ts"
+  ]
 }

@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { APIUserAbortError } from 'sink-npm';
 import { Headers } from 'sink-npm/core';
-import { Response, fetch as defaultFetch, type RequestInit, type RequestInfo } from 'sink-npm/_shims/fetch';
+import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {
   const env = process.env;

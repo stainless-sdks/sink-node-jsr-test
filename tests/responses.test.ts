@@ -1,5 +1,5 @@
 import { createResponseHeaders } from 'sink-npm/core';
-import { Headers } from 'sink-npm/_shims/fetch';
+import { Headers } from 'sink-npm/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

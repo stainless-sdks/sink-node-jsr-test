@@ -1,4 +1,4 @@
-import type { Response } from 'sink-npm/_shims/fetch';
+import { type Response } from './_shims/index';
 
 import { safeJSON, createResponseHeaders } from 'sink-npm/core';
 import { APIError } from 'sink-npm/error';
