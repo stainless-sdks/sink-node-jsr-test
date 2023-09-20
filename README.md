@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm)
 
-This library provides convenient access to the Sink Custom Node Title REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
 The API documentation can be found [here](https://stainlessapi.com).
 
