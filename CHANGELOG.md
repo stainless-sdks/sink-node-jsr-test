@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 (2023-09-20)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.0...v0.2.1)
+
+### Documentation
+
+* **readme:** remove incorrect wording in opening ([#208](https://github.com/stainless-sdks/sink-node-public/issues/208)) ([a3ec243](https://github.com/stainless-sdks/sink-node-public/commit/a3ec2431847e25ccf78bbe5c6ed291adc4b0b1d4))
+
 ## 0.2.0 (2023-09-15)
 
 Full Changelog: [v0.1.4...v0.2.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.1.4...v0.2.0)
