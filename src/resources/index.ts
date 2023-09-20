@@ -47,6 +47,7 @@ export {
   CardUpdateParams,
   CardListParams,
   CardCreateAliasedParams,
+  CardCreateAliasedDeprecatedParams,
   CardListNonGetParams,
   CardProvisionFooParams,
   CardReissueParams,

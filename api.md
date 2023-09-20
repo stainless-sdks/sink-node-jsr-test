@@ -214,7 +214,10 @@ Methods:
 - <code title="get /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
 - <code title="patch /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
 - <code title="get /cards">client.cards.<a href="./src/resources/cards.ts">list</a>({ ...params }) -> CardsCardPage</code>
+- <code title="post /deprecations/method_all_but_go_diff_message">client.cards.<a href="./src/resources/cards.ts">deprecatedAllButGoDiffMessage</a>() -> void</code>
+- <code title="post /deprecations/method_all_but_go_diff_message">client.cards.<a href="./src/resources/cards.ts">deprecatedAllDiffMessage</a>() -> void</code>
 - <code title="post /deprecations/method">client.cards.<a href="./src/resources/cards.ts">deprecatedMethod</a>() -> void</code>
+- <code title="post /deprecations/method_only_go">client.cards.<a href="./src/resources/cards.ts">deprecatedOnlyGo</a>() -> void</code>
 - <code title="post /cards/list">client.cards.<a href="./src/resources/cards.ts">listNonGet</a>({ ...params }) -> CardsCardPage</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./src/resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>

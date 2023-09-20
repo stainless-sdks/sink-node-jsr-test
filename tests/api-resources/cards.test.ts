@@ -158,6 +158,85 @@ describe('resource cards', () => {
     });
   });
 
+  test('createAliasedDeprecated: only required params', async () => {
+    const responsePromise = sink.cards.createAliasedDeprecated({ type: 'MERCHANT_LOCKED' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('createAliasedDeprecated: required and optional params', async () => {
+    const response = await sink.cards.createAliasedDeprecated({
+      type: 'MERCHANT_LOCKED',
+      account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      card_program_token: '00000000-0000-0000-1000-000000000000',
+      exp_month: '06',
+      exp_year: '2027',
+      funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
+      memo: 'New Card',
+      not: 'string',
+      pin: 'string',
+      product_id: '1',
+      shipping_method: 'STANDARD',
+      shippingAddress: {
+        first_name: 'Michael',
+        last_name: 'Bluth',
+        line2_text: 'The Bluth Company',
+        address1: '5 Broad Street',
+        address2: 'Unit 25A',
+        city: 'NEW YORK',
+        state: 'NY',
+        postal_code: '10001-1809',
+        country: 'USA',
+        email: 'johnny@appleseed.com',
+        phone_number: '+12124007676',
+      },
+      spend_limit: 0,
+      spend_limit_duration: 'ANNUALLY',
+      state: 'OPEN',
+    });
+  });
+
+  test('deprecatedAllButGoDiffMessage', async () => {
+    const responsePromise = sink.cards.deprecatedAllButGoDiffMessage();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('deprecatedAllButGoDiffMessage: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.cards.deprecatedAllButGoDiffMessage({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('deprecatedAllDiffMessage', async () => {
+    const responsePromise = sink.cards.deprecatedAllDiffMessage();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('deprecatedAllDiffMessage: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.cards.deprecatedAllDiffMessage({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('getAuthURL', () => {
     const url = sink.getAuthURL({
       clientId: '<client_id>',
@@ -182,6 +261,24 @@ describe('resource cards', () => {
   test('deprecatedMethod: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.cards.deprecatedMethod({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('deprecatedOnlyGo', async () => {
+    const responsePromise = sink.cards.deprecatedOnlyGo();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('deprecatedOnlyGo: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.cards.deprecatedOnlyGo({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
