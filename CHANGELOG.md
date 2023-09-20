@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 (2023-09-20)
+
+Full Changelog: [v0.2.1...v0.2.2](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.1...v0.2.2)
+
+### Bug Fixes
+
+* allow deprecated method aliases ([#210](https://github.com/stainless-sdks/sink-node-public/issues/210)) ([3bed897](https://github.com/stainless-sdks/sink-node-public/commit/3bed8976693fe6ea0b1ec91e14b4e366847c073e))
+
 ## 0.2.1 (2023-09-20)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.0...v0.2.1)

@@ -467,6 +467,7 @@ export namespace Sink {
   export import CardUpdateParams = API.CardUpdateParams;
   export import CardListParams = API.CardListParams;
   export import CardCreateAliasedParams = API.CardCreateAliasedParams;
+  export import CardCreateAliasedDeprecatedParams = API.CardCreateAliasedDeprecatedParams;
   export import CardListNonGetParams = API.CardListNonGetParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
