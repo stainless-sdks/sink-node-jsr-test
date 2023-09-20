@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.3 (2023-09-20)
+
+Full Changelog: [v0.2.2...v0.2.3](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.2...v0.2.3)
+
+### Features
+
+* **client:** support importing node or web shims manually ([#212](https://github.com/stainless-sdks/sink-node-public/issues/212)) ([eed9024](https://github.com/stainless-sdks/sink-node-public/commit/eed9024ed679fb9e25145ba71f90011d56aec348))
+
 ## 0.2.2 (2023-09-20)
 
 Full Changelog: [v0.2.1...v0.2.2](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.1...v0.2.2)
