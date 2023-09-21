@@ -499,8 +499,8 @@ export namespace Sink {
   export import Sta569OneEntryWithNullParams = API.Sta569OneEntryWithNullParams;
 
   export import Sta630 = API.Sta630;
-  export import GithubUser = API.GithubUser;
-  export import GithubUserPreferences = API.GithubUserPreferences;
+  export import GitHubUser = API.GitHubUser;
+  export import GitHubUserPreferences = API.GitHubUserPreferences;
 
   export import Parent = API.Parent;
 

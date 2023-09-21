@@ -9,21 +9,21 @@ export class Sta630 extends APIResource {
    * Should return a GithubUser object with a `properties` field that we can rename
    * in the Stainless config to a prettier name.
    */
-  nestedPath(options?: Core.RequestOptions): Core.APIPromise<GithubUser> {
+  nestedPath(options?: Core.RequestOptions): Core.APIPromise<GitHubUser> {
     return this.get('/sta_630/define_models_nested_path', options);
   }
 }
 
-export interface GithubUser {
+export interface GitHubUser {
   /**
    * Someone's email address.
    */
   email: string;
 
-  preferences: GithubUserPreferences;
+  preferences: GitHubUserPreferences;
 }
 
-export interface GithubUserPreferences {
+export interface GitHubUserPreferences {
   /**
    * What email they want in their commit messages
    */
@@ -41,6 +41,6 @@ export interface GithubUserPreferences {
 }
 
 export namespace Sta630 {
-  export import GithubUser = API.GithubUser;
-  export import GithubUserPreferences = API.GithubUserPreferences;
+  export import GitHubUser = API.GitHubUser;
+  export import GitHubUserPreferences = API.GitHubUserPreferences;
 }

@@ -81,7 +81,7 @@ export {
   FileWithOptionalParamParams,
   Files,
 } from './files';
-export { GithubUser, GithubUserPreferences, Sta630 } from './sta-630';
+export { GitHubUser, GitHubUserPreferences, Sta630 } from './sta-630';
 export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
 export { InvalidSchemas } from './invalid-schemas/invalid-schemas';
 export {
