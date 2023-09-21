@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "sink-npm/_shims/*": ["deno/_shims/*"],
-      "sink-npm": ["deno/index.ts"],
+      "sink-npm/_shims/auto/*": ["deno/_shims/auto/*-deno"],
       "sink-npm/*": ["deno/*"],
+      "sink-npm": ["deno/index.ts"],
       "digest-fetch": ["./typings/digest-fetch"]
     },
     "noEmit": true,
