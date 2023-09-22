@@ -189,8 +189,8 @@ You can use `for await … of` syntax to iterate through items across all pages:
 async function fetchAllPaginationTestsOffsets(params) {
   const allPaginationTestsOffsets = [];
   // Automatically fetches more pages as needed.
-  for await (const offset of sink.paginationTests.offset.list()) {
-    allPaginationTestsOffsets.push(offset);
+  for await (const myModel of sink.paginationTests.offset.list()) {
+    allPaginationTestsOffsets.push(myModel);
   }
   return allPaginationTestsOffsets;
 }
@@ -200,8 +200,8 @@ Alternatively, you can make request a single page at a time:
 
 ```ts
 let page = await sink.paginationTests.offset.list();
-for (const offset of page.data) {
-  console.log(offset);
+for (const myModel of page.data) {
+  console.log(myModel);
 }
 
 // Convenience methods are provided for manually paginating:
@@ -248,11 +248,11 @@ const response = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).as
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: cards, response: raw } = await sink.cards
+const { data: card, response: raw } = await sink.cards
   .create({ type: 'SINGLE_USE', not: 'TEST' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(cards.token);
+console.log(card.token);
 ```
 
 ## Configuring an HTTP(S) Agent (e.g., for proxies)

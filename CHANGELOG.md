@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.0 (2023-09-21)
+
+Full Changelog: [v0.2.3...v0.3.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.3...v0.3.0)
+
+### ⚠ BREAKING CHANGES
+
+* fix capitalization of `Github` to `GitHub` in some places ([#216](https://github.com/stainless-sdks/sink-node-public/issues/216))
+
+### Features
+
+* **api:** add more reserved word testcases ([#214](https://github.com/stainless-sdks/sink-node-public/issues/214)) ([c45055e](https://github.com/stainless-sdks/sink-node-public/commit/c45055e5d7b0ecf36f9f11eec1d30a1bf0666684))
+
+
+### Refactors
+
+* fix capitalization of `Github` to `GitHub` in some places ([#216](https://github.com/stainless-sdks/sink-node-public/issues/216)) ([77f80cc](https://github.com/stainless-sdks/sink-node-public/commit/77f80cc66d733927197b9463e433701215738e53))
+
 ## 0.2.3 (2023-09-20)
 
 Full Changelog: [v0.2.2...v0.2.3](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.2...v0.2.3)

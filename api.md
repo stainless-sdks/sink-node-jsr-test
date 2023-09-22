@@ -296,12 +296,12 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/sta-630.ts">GithubUser</a></code>
-- <code><a href="./src/resources/sta-630.ts">GithubUserPreferences</a></code>
+- <code><a href="./src/resources/sta-630.ts">GitHubUser</a></code>
+- <code><a href="./src/resources/sta-630.ts">GitHubUserPreferences</a></code>
 
 Methods:
 
-- <code title="get /sta_630/define_models_nested_path">client.sta630.<a href="./src/resources/sta-630.ts">nestedPath</a>() -> GithubUser</code>
+- <code title="get /sta_630/define_models_nested_path">client.sta630.<a href="./src/resources/sta-630.ts">nestedPath</a>() -> GitHubUser</code>
 
 # Parent
 
@@ -441,6 +441,17 @@ Types:
 Methods:
 
 - <code title="get /names/reserved_names/import">client.names.reservedNames.import.<a href="./src/resources/names/reserved-names/import.ts">import</a>() -> Import</code>
+
+### Methods
+
+Types:
+
+- <code><a href="./src/resources/names/reserved-names/methods.ts">Export</a></code>
+- <code><a href="./src/resources/names/reserved-names/methods.ts">Return</a></code>
+
+Methods:
+
+- <code title="post /names/reserved_names/methods/export/{class}">client.names.reservedNames.methods.<a href="./src/resources/names/reserved-names/methods.ts">export</a>(\_class, { ...params }) -> Export</code>
 
 ## Params
 
