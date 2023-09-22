@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2023-09-22)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.0...v0.3.1)
+
+### Documentation
+
+* **api.md:** add shared models ([#217](https://github.com/stainless-sdks/sink-node-public/issues/217)) ([97a63d1](https://github.com/stainless-sdks/sink-node-public/commit/97a63d1954ae62805267bfaf72f710d1e7dcc8ff))
+
 ## 0.3.0 (2023-09-21)
 
 Full Changelog: [v0.2.3...v0.3.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.2.3...v0.3.0)
