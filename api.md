@@ -14,6 +14,21 @@ Methods:
 - <code title="post /sta_563_empty_object">client.<a href="./src/index.ts">sta563PostEmptyObject</a>() -> Sta563PostEmptyObjectResponse</code>
 - <code>client.<a href="./src/index.ts">getAuthURL</a>({ redirectUri, clientId }) -> string</code>
 
+# Shared
+
+Types:
+
+- <code><a href="./src/resources/shared.ts">BasicSharedModelObject</a></code>
+- <code><a href="./src/resources/shared.ts">Currency</a></code>
+- <code><a href="./src/resources/shared.ts">ObjectWithChildRef</a></code>
+- <code><a href="./src/resources/shared.ts">SharedCursorNestedResponsePropMeta</a></code>
+- <code><a href="./src/resources/shared.ts">SharedMutualRecursionA</a></code>
+- <code><a href="./src/resources/shared.ts">SharedMutualRecursionB</a></code>
+- <code><a href="./src/resources/shared.ts">SharedSelfRecursion</a></code>
+- <code><a href="./src/resources/shared.ts">ShippingAddress</a></code>
+- <code><a href="./src/resources/shared.ts">SimpleObject</a></code>
+- <code><a href="./src/resources/shared.ts">SimpleObjectAlias</a></code>
+
 # Testing
 
 Types:

@@ -221,7 +221,7 @@ describe('idempotency', () => {
       requiredArgNoEnv: '<example>',
       baseURL: 'http://127.0.0.1:4010',
     });
-    await client.createNoResponse({ idempotencyKey: 'my-idempotency-key' });
+    await client.tools.skippedParams({}, { idempotencyKey: 'my-idempotency-key' });
   });
 });
 
