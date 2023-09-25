@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.2 (2023-09-25)
+
+Full Changelog: [v0.3.1...v0.3.2](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.1...v0.3.2)
+
+### Features
+
+* **client:** handle retry-after with a date ([#221](https://github.com/stainless-sdks/sink-node-public/issues/221)) ([0889b3b](https://github.com/stainless-sdks/sink-node-public/commit/0889b3b79bb279de881c6cee121302e401de32f3))
+* **package:** export a root error type ([#219](https://github.com/stainless-sdks/sink-node-public/issues/219)) ([21d9f91](https://github.com/stainless-sdks/sink-node-public/commit/21d9f910231ea3aaa3f7b3947e143f4d413a838a))
+
 ## 0.3.1 (2023-09-22)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.0...v0.3.1)
