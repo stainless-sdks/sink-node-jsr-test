@@ -150,12 +150,12 @@ export class Sink extends Core.APIClient {
     ...opts
   }: ClientOptions) {
     if (username === undefined) {
-      throw new Error(
+      throw new Errors.SinkError(
         "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
       );
     }
     if (requiredArgNoEnv === undefined) {
-      throw new Error(
+      throw new Errors.SinkError(
         "Missing required client option requiredArgNoEnv; you need to instantiate the Sink client with an requiredArgNoEnv option, like new Sink({ requiredArgNoEnv: '<example>' }).",
       );
     }
@@ -174,7 +174,7 @@ export class Sink extends Core.APIClient {
     };
 
     if (!options.dangerouslyAllowBrowser && Core.isRunningInBrowser()) {
-      throw new Error(
+      throw new Errors.SinkError(
         'This is disabled by default, as it risks exposing your secret API credentials to attackers.\nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })',
       );
     }
@@ -323,6 +323,7 @@ export class Sink extends Core.APIClient {
   static Sink = this;
   static CONSTANT_WITH_NEWLINES = '\n\nHuman:';
 
+  static SinkError = Errors.SinkError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -340,6 +341,7 @@ export class Sink extends Core.APIClient {
 export const { CONSTANT_WITH_NEWLINES } = Sink;
 
 export const {
+  SinkError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,

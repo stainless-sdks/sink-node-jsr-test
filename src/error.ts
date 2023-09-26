@@ -2,7 +2,9 @@
 
 import { castToError, Headers } from './core';
 
-export class APIError extends Error {
+export class SinkError extends Error {}
+
+export class APIError extends SinkError {
   readonly status: number | undefined;
   readonly headers: Headers | undefined;
   readonly error: Object | undefined;
