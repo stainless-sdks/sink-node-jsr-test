@@ -191,6 +191,7 @@ export namespace Types {
   export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
   export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
+  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = API.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
 
   export import Arrays = API.Arrays;
   export import ArrayFloatItemsResponse = API.ArrayFloatItemsResponse;

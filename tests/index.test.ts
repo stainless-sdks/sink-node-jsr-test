@@ -108,7 +108,7 @@ describe('instantiate client', () => {
 
   test('custom signal', async () => {
     const client = new Sink({
-      baseURL: 'http://127.0.0.1:4010',
+      baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
       username: 'Robert',
       requiredArgNoEnv: '<example>',
       userToken: 'my user token',
@@ -217,9 +217,9 @@ describe('idempotency', () => {
   test('key can be set per-request', async () => {
     const client = new Sink({
       userToken: 'my user token',
+      baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
       username: 'Robert',
       requiredArgNoEnv: '<example>',
-      baseURL: 'http://127.0.0.1:4010',
     });
     await client.tools.skippedParams({}, { idempotencyKey: 'my-idempotency-key' });
   });

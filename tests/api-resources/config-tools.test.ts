@@ -5,14 +5,14 @@ import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
-  baseURL: 'http://127.0.0.1:4010',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
   username: 'Robert',
   requiredArgNoEnv: '<example>',
 });
 
 describe('resource configTools', () => {
   test('onlyInNode: only required params', async () => {
-    const responsePromise = sink.configTools.onlyInNode({ type: 'MERCHANT_LOCKED' });
+    const responsePromise = sink.configTools.onlyInNode({ type: 'SINGLE_USE' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -24,7 +24,7 @@ describe('resource configTools', () => {
 
   test('onlyInNode: required and optional params', async () => {
     const response = await sink.configTools.onlyInNode({
-      type: 'MERCHANT_LOCKED',
+      type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '00000000-0000-0000-1000-000000000000',
       exp_month: '06',
@@ -49,7 +49,7 @@ describe('resource configTools', () => {
         phone_number: '+12124007676',
       },
       spend_limit: 0,
-      spend_limit_duration: 'ANNUALLY',
+      spend_limit_duration: 'TRANSACTION',
       state: 'OPEN',
     });
   });

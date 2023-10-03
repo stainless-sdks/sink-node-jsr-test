@@ -7,6 +7,7 @@ export {
   ObjectMultipleArrayPropertiesSameRefResponse,
   ObjectMultiplePropertiesSameModelResponse,
   ObjectMultiplePropertiesSameRefResponse,
+  ObjectTwoDimensionalArrayPrimitivePropertyResponse,
   Objects,
 } from './objects';
 export { ReadOnlyParamSimpleResponse, ReadOnlyParamSimpleParams, ReadOnlyParams } from './read-only-params';

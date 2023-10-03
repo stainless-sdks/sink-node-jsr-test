@@ -25,5 +25,6 @@ export {
   UnionTypeMixedTypesResponse,
   UnionTypeNumbersResponse,
   UnionTypeObjectsResponse,
+  UnionTypeSuperMixedTypesResponse,
   UnionTypes,
 } from './union-types';

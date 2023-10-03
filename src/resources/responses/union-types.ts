@@ -26,6 +26,13 @@ export class UnionTypes extends APIResource {
   objects(options?: Core.RequestOptions): Core.APIPromise<UnionTypeObjectsResponse> {
     return this.post('/responses/unions/objects', options);
   }
+
+  /**
+   * Endpoint with a top level union response of different types.
+   */
+  superMixedTypes(options?: Core.RequestOptions): Core.APIPromise<UnionTypeSuperMixedTypesResponse> {
+    return this.post('/responses/unions/super_mixed_types', options);
+  }
 }
 
 export type UnionTypeMixedTypesResponse =
@@ -49,8 +56,23 @@ export namespace UnionTypeObjectsResponse {
   }
 }
 
+export type UnionTypeSuperMixedTypesResponse =
+  | Shared.SimpleObject
+  | UnionTypeSuperMixedTypesResponse.BasicObject
+  | boolean
+  | unknown
+  | string
+  | unknown;
+
+export namespace UnionTypeSuperMixedTypesResponse {
+  export interface BasicObject {
+    item?: string;
+  }
+}
+
 export namespace UnionTypes {
   export import UnionTypeMixedTypesResponse = API.UnionTypeMixedTypesResponse;
   export import UnionTypeNumbersResponse = API.UnionTypeNumbersResponse;
   export import UnionTypeObjectsResponse = API.UnionTypeObjectsResponse;
+  export import UnionTypeSuperMixedTypesResponse = API.UnionTypeSuperMixedTypesResponse;
 }

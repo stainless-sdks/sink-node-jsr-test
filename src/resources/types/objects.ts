@@ -45,6 +45,16 @@ export class Objects extends APIResource {
   ): Core.APIPromise<ObjectMultiplePropertiesSameRefResponse> {
     return this.get('/types/object/multiple_properties_same_ref', options);
   }
+
+  /**
+   * Endpoint with a response schema object that contains properties that are
+   * primitive 2d arrays
+   */
+  twoDimensionalArrayPrimitiveProperty(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ObjectTwoDimensionalArrayPrimitivePropertyResponse> {
+    return this.get('/types/object/2d_array_primitive_properties', options);
+  }
 }
 
 export interface ObjectMixedKnownAndUnknownResponse {
@@ -104,9 +114,20 @@ export namespace ObjectMultiplePropertiesSameRefResponse {
   }
 }
 
+export interface ObjectTwoDimensionalArrayPrimitivePropertyResponse {
+  boolean_prop: Array<Array<boolean>>;
+
+  integer_prop: Array<Array<number>>;
+
+  number_prop: Array<Array<number>>;
+
+  string_prop: Array<Array<string>>;
+}
+
 export namespace Objects {
   export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
   export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
   export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
+  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = API.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
 }

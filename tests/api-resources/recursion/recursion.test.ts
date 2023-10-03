@@ -5,7 +5,7 @@ import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'something1234',
-  baseURL: 'http://127.0.0.1:4010',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
   username: 'Robert',
   requiredArgNoEnv: '<example>',
 });
@@ -56,7 +56,7 @@ describe('resource recursion', () => {
   });
 
   test('createSelf: only required params', async () => {
-    const responsePromise = sink.recursion.createSelf({ name: 'string' });
+    const responsePromise = sink.recursion.createSelf({ name: 'Robert' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -67,6 +67,6 @@ describe('resource recursion', () => {
   });
 
   test('createSelf: required and optional params', async () => {
-    const response = await sink.recursion.createSelf({ name: 'string', child: { name: 'Robert' } });
+    const response = await sink.recursion.createSelf({ name: 'Robert', child: { name: 'Foo' } });
   });
 });

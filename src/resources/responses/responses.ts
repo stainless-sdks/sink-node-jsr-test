@@ -306,4 +306,5 @@ export namespace Responses {
   export import UnionTypeMixedTypesResponse = API.UnionTypeMixedTypesResponse;
   export import UnionTypeNumbersResponse = API.UnionTypeNumbersResponse;
   export import UnionTypeObjectsResponse = API.UnionTypeObjectsResponse;
+  export import UnionTypeSuperMixedTypesResponse = API.UnionTypeSuperMixedTypesResponse;
 }

@@ -407,6 +407,7 @@ Types:
 - <code><a href="./src/resources/types/objects.ts">ObjectMultipleArrayPropertiesSameRefResponse</a></code>
 - <code><a href="./src/resources/types/objects.ts">ObjectMultiplePropertiesSameModelResponse</a></code>
 - <code><a href="./src/resources/types/objects.ts">ObjectMultiplePropertiesSameRefResponse</a></code>
+- <code><a href="./src/resources/types/objects.ts">ObjectTwoDimensionalArrayPrimitivePropertyResponse</a></code>
 
 Methods:
 
@@ -414,6 +415,7 @@ Methods:
 - <code title="get /types/object/multiple_array_properties_same_ref">client.types.objects.<a href="./src/resources/types/objects.ts">multipleArrayPropertiesSameRef</a>() -> ObjectMultipleArrayPropertiesSameRefResponse</code>
 - <code title="get /types/object/multiple_properties_same_model">client.types.objects.<a href="./src/resources/types/objects.ts">multiplePropertiesSameModel</a>() -> ObjectMultiplePropertiesSameModelResponse</code>
 - <code title="get /types/object/multiple_properties_same_ref">client.types.objects.<a href="./src/resources/types/objects.ts">multiplePropertiesSameRef</a>() -> ObjectMultiplePropertiesSameRefResponse</code>
+- <code title="get /types/object/2d_array_primitive_properties">client.types.objects.<a href="./src/resources/types/objects.ts">twoDimensionalArrayPrimitiveProperty</a>() -> ObjectTwoDimensionalArrayPrimitivePropertyResponse</code>
 
 ## Arrays
 
@@ -556,12 +558,14 @@ Types:
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeMixedTypesResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeNumbersResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeObjectsResponse</a></code>
+- <code><a href="./src/resources/responses/union-types.ts">UnionTypeSuperMixedTypesResponse</a></code>
 
 Methods:
 
 - <code title="post /responses/unions/mixed_types">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">mixedTypes</a>() -> UnionTypeMixedTypesResponse</code>
 - <code title="post /responses/unions/numbers">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">numbers</a>() -> UnionTypeNumbersResponse</code>
 - <code title="post /responses/unions/objects">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">objects</a>() -> UnionTypeObjectsResponse</code>
+- <code title="post /responses/unions/super_mixed_types">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">superMixedTypes</a>() -> UnionTypeSuperMixedTypesResponse</code>
 
 # PathParams
 
