@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.4 (2023-10-05)
+
+Full Changelog: [v0.3.3...v0.3.4](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.3...v0.3.4)
+
+### Features
+
+* now supporting x-stainless-param ([#232](https://github.com/stainless-sdks/sink-node-public/issues/232)) ([869c13a](https://github.com/stainless-sdks/sink-node-public/commit/869c13ac84369e3ed03967c0706bbb6a73ce1534))
+
+
+### Chores
+
+* **internal:** bump stats ([#229](https://github.com/stainless-sdks/sink-node-public/issues/229)) ([1c9692a](https://github.com/stainless-sdks/sink-node-public/commit/1c9692a4ce47d1373cf432d3452a1d7d749e5c99))
+* **internal:** minor formatting improvement ([#233](https://github.com/stainless-sdks/sink-node-public/issues/233)) ([efc0c33](https://github.com/stainless-sdks/sink-node-public/commit/efc0c335608e058754d6ba8243abfd52f0824132))
+* restructuring ([#231](https://github.com/stainless-sdks/sink-node-public/issues/231)) ([6ddbab8](https://github.com/stainless-sdks/sink-node-public/commit/6ddbab8662f1923285b847a5e512d0701d4260a4))
+
 ## 0.3.3 (2023-10-03)
 
 Full Changelog: [v0.3.2...v0.3.3](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.2...v0.3.3)
