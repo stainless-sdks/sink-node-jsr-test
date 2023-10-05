@@ -29,9 +29,9 @@ export type Currency =
   | null;
 
 export interface ObjectWithChildRef {
-  bar: SimpleObject;
+  bar?: SimpleObject;
 
-  foo: string;
+  foo?: string;
 }
 
 export interface SharedCursorNestedResponsePropMeta {

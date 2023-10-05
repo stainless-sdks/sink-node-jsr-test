@@ -1,12 +1,7 @@
 // File generated from our OpenAPI spec by Stainless.
 
 export * from './shared';
-export {
-  APIStatus,
-  APIStatusAlias,
-  CustomAPIStatusMessage,
-  Sta563PostEmptyObjectResponse,
-} from './top-level';
+export { APIStatus, APIStatusAlias, CustomAPIStatusMessage } from './top-level';
 export {
   Address,
   EnvelopeInlineResponseResponse,
@@ -66,7 +61,11 @@ export {
 } from './complex-queries';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
 export { DeeplyNested } from './deeply-nested/deeply-nested';
-export { DeleteEmptyObjectResponse, Sta563 } from './sta-563';
+export {
+  DefaultPathParamGlobalWithStandardResponse,
+  DefaultPathParamOnlyGlobalResponse,
+  DefaultPathParams,
+} from './default-path-params';
 export {
   DocstringLeadingDoubleQuoteResponse,
   DocstringTrailingDoubleQuoteResponse,
@@ -81,7 +80,6 @@ export {
   FileWithOptionalParamParams,
   Files,
 } from './files';
-export { GitHubUser, GitHubUserPreferences, Sta630 } from './sta-630';
 export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
 export { InvalidSchemas } from './invalid-schemas/invalid-schemas';
 export {
@@ -108,6 +106,30 @@ export {
   MixedParams,
 } from './mixed-params/mixed-params';
 export {
+  ModelFromNestedPath,
+  ModelWithNestedModel,
+  ObjectWithAnyOfNullProperty,
+  ObjectWithOneOfNullProperty,
+  ResponsesAllofCrossObject,
+  SimpleAllof,
+  UnknownObject,
+  ResponseAdditionalPropertiesResponse,
+  ResponseAdditionalPropertiesNestedModelReferenceResponse,
+  ResponseAllofCrossResourceResponse,
+  ResponseAllofSimpleResponse,
+  ResponseArrayResponseResponse,
+  ResponseBooleanResponseResponse,
+  ResponseIntegerResponseResponse,
+  ResponseMissingRequiredResponse,
+  ResponseNestedArrayResponse,
+  ResponseObjectAllPropertiesResponse,
+  ResponseObjectNoPropertiesResponse,
+  ResponseObjectWithAdditionalPropertiesPropResponse,
+  ResponseObjectWithHeavilyNestedUnionResponse,
+  ResponseStringResponseResponse,
+  Responses,
+} from './responses/responses';
+export {
   ModelReferencedInParentAndChild,
   ModelReferencedInParentAndChildResource,
 } from './model-referenced-in-parent-and-child/model-referenced-in-parent-and-child';
@@ -129,6 +151,7 @@ export {
   BodyParamTopLevelArrayParams,
   BodyParamTopLevelArrayWithChildrenParams,
   BodyParamTopLevelOneOfOneEntryParams,
+  BodyParamTopLevelSharedTypeParams,
   BodyParamUnionOverlappingPropParams,
   BodyParamWithDefaultBodyParamOptionalParams,
   BodyParamWithDefaultBodyParamRequiredParams,
@@ -143,28 +166,14 @@ export {
   BodyParams,
 } from './body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
-export {
-  ObjectWithAnyOfNullProperty,
-  ObjectWithOneOfNullProperty,
-  ResponsesAllofCrossObject,
-  SimpleAllof,
-  ResponseAdditionalPropertiesResponse,
-  ResponseAdditionalPropertiesNestedModelReferenceResponse,
-  ResponseAllofCrossResourceResponse,
-  ResponseAllofSimpleResponse,
-  ResponseArrayResponseResponse,
-  ResponseBooleanResponseResponse,
-  ResponseIntegerResponseResponse,
-  ResponseMissingRequiredResponse,
-  ResponseNestedArrayResponse,
-  ResponseObjectAllPropertiesResponse,
-  ResponseObjectNoPropertiesResponse,
-  ResponseObjectWithAdditionalPropertiesPropResponse,
-  ResponseObjectWithHeavilyNestedUnionResponse,
-  ResponseStringResponseResponse,
-  Responses,
-} from './responses/responses';
 export { OnlyNodeModel, ConfigToolOnlyInNodeParams, ConfigTools } from './config-tools';
+export {
+  OpenapiFormatArrayTypeOneEntryResponse,
+  OpenapiFormatArrayTypeOneEntryWithNullResponse,
+  OpenapiFormatArrayTypeOneEntryParams,
+  OpenapiFormatArrayTypeOneEntryWithNullParams,
+  OpenapiFormats,
+} from './openapi-formats';
 export { PaginationTests } from './pagination-tests/pagination-tests';
 export { Parent } from './parent/parent';
 export { PathParamMultipleResponse, PathParamSingularResponse, PathParams } from './path-params';
@@ -202,15 +211,6 @@ export {
   SharedQueryParamDelParams,
   SharedQueryParams,
 } from './shared-query-params';
-export {
-  Sta569OneEntryResponse,
-  Sta569OneEntryWithNullResponse,
-  Sta569OneEntryParams,
-  Sta569OneEntryWithNullParams,
-  Sta569,
-} from './sta-569';
-export { Sta606WithSharedParamsParams, Sta606 } from './sta-606';
-export { Sta613GlobalWithStandardResponse, Sta613OnlyGlobalResponse, Sta613 } from './sta-613';
 export {
   StreamingBasicResponse,
   StreamingNestedParamsResponse,

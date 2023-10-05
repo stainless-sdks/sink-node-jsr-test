@@ -5,13 +5,11 @@ Types:
 - <code><a href="./src/resources/top-level.ts">APIStatus</a></code>
 - <code><a href="./src/resources/top-level.ts">APIStatusAlias</a></code>
 - <code><a href="./src/resources/top-level.ts">CustomAPIStatusMessage</a></code>
-- <code><a href="./src/resources/top-level.ts">Sta563PostEmptyObjectResponse</a></code>
 
 Methods:
 
 - <code title="get /status">client.<a href="./src/index.ts">apiStatus</a>() -> APIStatus</code>
 - <code title="post /no_response">client.<a href="./src/index.ts">createNoResponse</a>() -> void</code>
-- <code title="post /sta_563_empty_object">client.<a href="./src/index.ts">sta563PostEmptyObject</a>() -> Sta563PostEmptyObjectResponse</code>
 - <code>client.<a href="./src/index.ts">getAuthURL</a>({ redirectUri, clientId }) -> string</code>
 
 # Shared
@@ -285,38 +283,17 @@ Methods:
 
 - <code title="get /company/payments/{payment_id}">client.company.payments.<a href="./src/resources/company/payments.ts">retrieve</a>(paymentId) -> CompanyPayment</code>
 
-# Sta563
+# OpenapiFormats
 
 Types:
 
-- <code><a href="./src/resources/sta-563.ts">DeleteEmptyObjectResponse</a></code>
+- <code><a href="./src/resources/openapi-formats.ts">OpenapiFormatArrayTypeOneEntryResponse</a></code>
+- <code><a href="./src/resources/openapi-formats.ts">OpenapiFormatArrayTypeOneEntryWithNullResponse</a></code>
 
 Methods:
 
-- <code title="delete /sta_563_empty_object">client.sta563.<a href="./src/resources/sta-563.ts">deleteEmptyObject</a>() -> DeleteEmptyObjectResponse</code>
-
-# Sta569
-
-Types:
-
-- <code><a href="./src/resources/sta-569.ts">Sta569OneEntryResponse</a></code>
-- <code><a href="./src/resources/sta-569.ts">Sta569OneEntryWithNullResponse</a></code>
-
-Methods:
-
-- <code title="post /sta_569_array_types/one_entry">client.sta569.<a href="./src/resources/sta-569.ts">oneEntry</a>({ ...params }) -> Sta569OneEntryResponse</code>
-- <code title="post /sta_569_array_types/one_entry_with_null">client.sta569.<a href="./src/resources/sta-569.ts">oneEntryWithNull</a>({ ...params }) -> Sta569OneEntryWithNullResponse | null</code>
-
-# Sta630
-
-Types:
-
-- <code><a href="./src/resources/sta-630.ts">GitHubUser</a></code>
-- <code><a href="./src/resources/sta-630.ts">GitHubUserPreferences</a></code>
-
-Methods:
-
-- <code title="get /sta_630/define_models_nested_path">client.sta630.<a href="./src/resources/sta-630.ts">nestedPath</a>() -> GitHubUser</code>
+- <code title="post /openapi_formats/array_type_one_entry">client.openapiFormats.<a href="./src/resources/openapi-formats.ts">arrayTypeOneEntry</a>({ ...params }) -> OpenapiFormatArrayTypeOneEntryResponse</code>
+- <code title="post /openapi_formats/array_type_one_entry_with_null">client.openapiFormats.<a href="./src/resources/openapi-formats.ts">arrayTypeOneEntryWithNull</a>({ ...params }) -> OpenapiFormatArrayTypeOneEntryWithNullResponse | null</code>
 
 # Parent
 
@@ -329,13 +306,6 @@ Types:
 Methods:
 
 - <code title="get /inlined_response">client.parent.child.<a href="./src/resources/parent/child.ts">inlinedResponse</a>() -> ChildInlinedResponseResponse</code>
-
-# Sta606
-
-Methods:
-
-- <code title="post /sta_606_shared_types/response">client.sta606.<a href="./src/resources/sta-606.ts">withSharedModel</a>() -> Shared.ObjectWithChildRef</code>
-- <code title="post /sta_606_shared_types/request_params">client.sta606.<a href="./src/resources/sta-606.ts">withSharedParams</a>({ ...params }) -> void</code>
 
 # Envelopes
 
@@ -495,26 +465,29 @@ Methods:
 
 - <code title="get /widgets/{widgetId}/filter/{filterType}">client.widgets.<a href="./src/resources/widgets.ts">retrieveWithFilter</a>(widgetId, filterType) -> Widget</code>
 
-# Sta613
+# DefaultPathParams
 
 Types:
 
-- <code><a href="./src/resources/sta-613.ts">Sta613GlobalWithStandardResponse</a></code>
-- <code><a href="./src/resources/sta-613.ts">Sta613OnlyGlobalResponse</a></code>
+- <code><a href="./src/resources/default-path-params.ts">DefaultPathParamGlobalWithStandardResponse</a></code>
+- <code><a href="./src/resources/default-path-params.ts">DefaultPathParamOnlyGlobalResponse</a></code>
 
 Methods:
 
-- <code title="post /sta_613/path_params/{camelCasedPath}/{id}">client.sta613.<a href="./src/resources/sta-613.ts">globalWithStandard</a>(camelCasedPath, id) -> Sta613GlobalWithStandardResponse</code>
-- <code title="post /sta_613/path_params/{client_path_param}">client.sta613.<a href="./src/resources/sta-613.ts">onlyGlobal</a>(clientPathParam) -> Sta613OnlyGlobalResponse</code>
+- <code title="post /default_path_params/path_params/{camelCasedPath}/{id}">client.defaultPathParams.<a href="./src/resources/default-path-params.ts">globalWithStandard</a>(camelCasedPath, id) -> DefaultPathParamGlobalWithStandardResponse</code>
+- <code title="post /default_path_params/path_params/{client_path_param}">client.defaultPathParams.<a href="./src/resources/default-path-params.ts">onlyGlobal</a>(clientPathParam) -> DefaultPathParamOnlyGlobalResponse</code>
 
 # Responses
 
 Types:
 
+- <code><a href="./src/resources/responses/responses.ts">ModelFromNestedPath</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ModelWithNestedModel</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ObjectWithOneOfNullProperty</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponsesAllofCrossObject</a></code>
 - <code><a href="./src/resources/responses/responses.ts">SimpleAllof</a></code>
+- <code><a href="./src/resources/responses/responses.ts">UnknownObject</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseAdditionalPropertiesResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseAllofCrossResourceResponse</a></code>
@@ -548,8 +521,10 @@ Methods:
 - <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./src/resources/responses/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
 - <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./src/resources/responses/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
 - <code title="get /responses/oneof_null">client.responses.<a href="./src/resources/responses/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
-- <code title="get /responses/simple_object">client.responses.<a href="./src/resources/responses/responses.ts">sharedResponseObject</a>() -> Shared.SimpleObject</code>
+- <code title="get /responses/shared_simple_object">client.responses.<a href="./src/resources/responses/responses.ts">sharedSimpleObject</a>() -> Shared.SimpleObject</code>
 - <code title="post /responses/string">client.responses.<a href="./src/resources/responses/responses.ts">stringResponse</a>() -> string</code>
+- <code title="post /responses/unknown_object">client.responses.<a href="./src/resources/responses/responses.ts">unknownObject</a>() -> unknown</code>
+- <code title="get /responses/with_model_in_nested_path">client.responses.<a href="./src/resources/responses/responses.ts">withModelInNestedPath</a>() -> ModelWithNestedModel</code>
 
 ## UnionTypes
 
@@ -635,6 +610,7 @@ Methods:
 - <code title="post /body_params/top_level_array">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_shared_type">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelSharedType</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./src/resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
 - <code title="post /body_params/with_default_body_param_optional">client.bodyParams.<a href="./src/resources/body-params.ts">withDefaultBodyParamOptional</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_default_body_param_required">client.bodyParams.<a href="./src/resources/body-params.ts">withDefaultBodyParamRequired</a>({ ...params }) -> void</code>
@@ -689,7 +665,7 @@ Methods:
 
 Methods:
 
-- <code title="get /responses/simple_object">client.decoratorTests.languages.<a href="./src/resources/decorator-tests/languages.ts">skippedForPython</a>() -> Shared.SimpleObject</code>
+- <code title="get /responses/shared_simple_object">client.decoratorTests.languages.<a href="./src/resources/decorator-tests/languages.ts">skippedForPython</a>() -> Shared.SimpleObject</code>
 
 ## KeepThisResource
 

@@ -299,8 +299,8 @@ describe('resource responses', () => {
     );
   });
 
-  test('sharedResponseObject', async () => {
-    const responsePromise = sink.responses.sharedResponseObject();
+  test('sharedSimpleObject', async () => {
+    const responsePromise = sink.responses.sharedSimpleObject();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -310,9 +310,9 @@ describe('resource responses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('sharedResponseObject: request options instead of params are passed correctly', async () => {
+  test('sharedSimpleObject: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.sharedResponseObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(sink.responses.sharedSimpleObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -331,6 +331,42 @@ describe('resource responses', () => {
   test('stringResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(sink.responses.stringResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('unknownObject', async () => {
+    const responsePromise = sink.responses.unknownObject();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('unknownObject: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.unknownObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
+  test('withModelInNestedPath', async () => {
+    const responsePromise = sink.responses.withModelInNestedPath();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('withModelInNestedPath: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.responses.withModelInNestedPath({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

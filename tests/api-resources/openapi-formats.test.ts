@@ -10,9 +10,9 @@ const sink = new Sink({
   requiredArgNoEnv: '<example>',
 });
 
-describe('resource sta569', () => {
-  test('oneEntry: only required params', async () => {
-    const responsePromise = sink.sta569.oneEntry({ enable_debug_logging: true });
+describe('resource openapiFormats', () => {
+  test('arrayTypeOneEntry: only required params', async () => {
+    const responsePromise = sink.openapiFormats.arrayTypeOneEntry({ enable_debug_logging: true });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,12 +22,12 @@ describe('resource sta569', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('oneEntry: required and optional params', async () => {
-    const response = await sink.sta569.oneEntry({ enable_debug_logging: true });
+  test('arrayTypeOneEntry: required and optional params', async () => {
+    const response = await sink.openapiFormats.arrayTypeOneEntry({ enable_debug_logging: true });
   });
 
-  test('oneEntryWithNull', async () => {
-    const responsePromise = sink.sta569.oneEntryWithNull();
+  test('arrayTypeOneEntryWithNull', async () => {
+    const responsePromise = sink.openapiFormats.arrayTypeOneEntryWithNull();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,17 +37,20 @@ describe('resource sta569', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('oneEntryWithNull: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.sta569.oneEntryWithNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
-  });
-
-  test('oneEntryWithNull: request options and params are passed correctly', async () => {
+  test('arrayTypeOneEntryWithNull: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.sta569.oneEntryWithNull({ enable_debug_logging: true }, { path: '/_stainless_unknown_path' }),
+      sink.openapiFormats.arrayTypeOneEntryWithNull({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('arrayTypeOneEntryWithNull: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.openapiFormats.arrayTypeOneEntryWithNull(
+        { enable_debug_logging: true },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 });

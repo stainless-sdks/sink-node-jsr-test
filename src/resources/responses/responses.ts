@@ -137,8 +137,8 @@ export class Responses extends APIResource {
    * Endpoint that returns a $ref to SimpleObject. This is used to test shared
    * response models.
    */
-  sharedResponseObject(options?: Core.RequestOptions): Core.APIPromise<Shared.SimpleObject> {
-    return this.get('/responses/simple_object', options);
+  sharedSimpleObject(options?: Core.RequestOptions): Core.APIPromise<Shared.SimpleObject> {
+    return this.get('/responses/shared_simple_object', options);
   }
 
   /**
@@ -150,6 +150,51 @@ export class Responses extends APIResource {
       headers: { Accept: 'application/json', ...options?.headers },
     });
   }
+
+  /**
+   * Should not generate a named return type for object without defined properties;
+   * instead, it should simply use an `unknown` type or equivalent. In Java and Go,
+   * where we have fancier accessors for raw json stuff, we should generate a named
+   * type, but it should basically just have untyped additional properties. See
+   * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
+   */
+  unknownObject(options?: Core.RequestOptions): Core.APIPromise<unknown> {
+    return this.post('/responses/unknown_object', options);
+  }
+
+  /**
+   * Should return a ModelWithNestedModel object with a `properties` field that we
+   * can rename in the Stainless config to a prettier name.
+   */
+  withModelInNestedPath(options?: Core.RequestOptions): Core.APIPromise<ModelWithNestedModel> {
+    return this.get('/responses/with_model_in_nested_path', options);
+  }
+}
+
+export interface ModelFromNestedPath {
+  /**
+   * What email they want in their commit messages
+   */
+  commit_email: string;
+
+  /**
+   * What name they want in their commit messages
+   */
+  commit_name: string;
+
+  /**
+   * Do they prefer view Git diffs side by side, or interleaved?
+   */
+  diff_style: 'interleaved' | 'side_by_side';
+}
+
+export interface ModelWithNestedModel {
+  /**
+   * Someone's email address.
+   */
+  email: string;
+
+  preferences: ModelFromNestedPath;
 }
 
 export interface ObjectWithAnyOfNullProperty {
@@ -183,6 +228,8 @@ export interface SimpleAllof {
 
   kind: 'VIRTUAL' | 'PHYSICAL';
 }
+
+export type UnknownObject = unknown;
 
 export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
 
@@ -283,10 +330,13 @@ export namespace ResponseObjectWithHeavilyNestedUnionResponse {
 export type ResponseStringResponseResponse = string;
 
 export namespace Responses {
+  export import ModelFromNestedPath = API.ModelFromNestedPath;
+  export import ModelWithNestedModel = API.ModelWithNestedModel;
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
   export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
   export import SimpleAllof = API.SimpleAllof;
+  export import UnknownObject = API.UnknownObject;
   export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
   export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;

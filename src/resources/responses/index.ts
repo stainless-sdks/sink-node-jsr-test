@@ -1,10 +1,13 @@
 // File generated from our OpenAPI spec by Stainless.
 
 export {
+  ModelFromNestedPath,
+  ModelWithNestedModel,
   ObjectWithAnyOfNullProperty,
   ObjectWithOneOfNullProperty,
   ResponsesAllofCrossObject,
   SimpleAllof,
+  UnknownObject,
   ResponseAdditionalPropertiesResponse,
   ResponseAdditionalPropertiesNestedModelReferenceResponse,
   ResponseAllofCrossResourceResponse,

@@ -182,6 +182,29 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * The request body being set to a $ref that is a shared type in the stainless
+   * config correctly references it.
+   */
+  topLevelSharedType(
+    body?: BodyParamTopLevelSharedTypeParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void>;
+  topLevelSharedType(options?: Core.RequestOptions): Core.APIPromise<void>;
+  topLevelSharedType(
+    body: BodyParamTopLevelSharedTypeParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    if (isRequestOptions(body)) {
+      return this.topLevelSharedType({}, body);
+    }
+    return this.post('/body_params/top_level_shared_type', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` making use of anyOf where the same property is
    * defined in both variants.
    */
@@ -467,6 +490,12 @@ export interface BodyParamTopLevelOneOfOneEntryParams {
   kind: 'VIRTUAL' | 'PHYSICAL';
 }
 
+export interface BodyParamTopLevelSharedTypeParams {
+  bar?: Shared.SimpleObject;
+
+  foo?: string;
+}
+
 export type BodyParamUnionOverlappingPropParams =
   | BodyParamUnionOverlappingPropParams.ObjectWithFooProperty1
   | BodyParamUnionOverlappingPropParams.ObjectWithFooProperty2;
@@ -523,6 +552,7 @@ export namespace BodyParams {
   export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
   export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
   export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
+  export import BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
   export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
   export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;

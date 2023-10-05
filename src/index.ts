@@ -214,16 +214,13 @@ export class Sink extends Core.APIClient {
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
   company: API.CompanyResource = new API.CompanyResource(this);
-  sta563: API.Sta563 = new API.Sta563(this);
-  sta569: API.Sta569 = new API.Sta569(this);
-  sta630: API.Sta630 = new API.Sta630(this);
+  openapiFormats: API.OpenapiFormats = new API.OpenapiFormats(this);
   parent: API.Parent = new API.Parent(this);
-  sta606: API.Sta606 = new API.Sta606(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
   types: API.Types = new API.Types(this);
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
-  sta613: API.Sta613 = new API.Sta613(this);
+  defaultPathParams: API.DefaultPathParams = new API.DefaultPathParams(this);
   responses: API.Responses = new API.Responses(this);
   pathParams: API.PathParams = new API.PathParams(this);
   positionalParams: API.PositionalParams = new API.PositionalParams(this);
@@ -267,17 +264,6 @@ export class Sink extends Core.APIClient {
     url.search = `client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
 
     return url.toString();
-  }
-
-  /**
-   * Should not generate a named return type for object without defined properties;
-   * instead, it should simply use an `unknown` type or equivalent. In Java and Go,
-   * where we have fancier accessors for raw json stuff, we should generate a named
-   * type, but it should basically just have untyped additional properties. See
-   * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
-   */
-  sta563PostEmptyObject(options?: Core.RequestOptions): Core.APIPromise<Sink.Sta563PostEmptyObjectResponse> {
-    return this.post('/sta_563_empty_object', options);
   }
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -409,7 +395,6 @@ export namespace Sink {
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;
   export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
-  export import Sta563PostEmptyObjectResponse = API.Sta563PostEmptyObjectResponse;
 
   export import Testing = API.Testing;
   export import RootResponse = API.RootResponse;
@@ -491,23 +476,13 @@ export namespace Sink {
   export import CompanyResource = API.CompanyResource;
   export import Company = API.Company;
 
-  export import Sta563 = API.Sta563;
-  export import DeleteEmptyObjectResponse = API.DeleteEmptyObjectResponse;
-
-  export import Sta569 = API.Sta569;
-  export import Sta569OneEntryResponse = API.Sta569OneEntryResponse;
-  export import Sta569OneEntryWithNullResponse = API.Sta569OneEntryWithNullResponse;
-  export import Sta569OneEntryParams = API.Sta569OneEntryParams;
-  export import Sta569OneEntryWithNullParams = API.Sta569OneEntryWithNullParams;
-
-  export import Sta630 = API.Sta630;
-  export import GitHubUser = API.GitHubUser;
-  export import GitHubUserPreferences = API.GitHubUserPreferences;
+  export import OpenapiFormats = API.OpenapiFormats;
+  export import OpenapiFormatArrayTypeOneEntryResponse = API.OpenapiFormatArrayTypeOneEntryResponse;
+  export import OpenapiFormatArrayTypeOneEntryWithNullResponse = API.OpenapiFormatArrayTypeOneEntryWithNullResponse;
+  export import OpenapiFormatArrayTypeOneEntryParams = API.OpenapiFormatArrayTypeOneEntryParams;
+  export import OpenapiFormatArrayTypeOneEntryWithNullParams = API.OpenapiFormatArrayTypeOneEntryWithNullParams;
 
   export import Parent = API.Parent;
-
-  export import Sta606 = API.Sta606;
-  export import Sta606WithSharedParamsParams = API.Sta606WithSharedParamsParams;
 
   export import Envelopes = API.Envelopes;
   export import Address = API.Address;
@@ -536,15 +511,18 @@ export namespace Sink {
   export import Widgets = API.Widgets;
   export import Widget = API.Widget;
 
-  export import Sta613 = API.Sta613;
-  export import Sta613GlobalWithStandardResponse = API.Sta613GlobalWithStandardResponse;
-  export import Sta613OnlyGlobalResponse = API.Sta613OnlyGlobalResponse;
+  export import DefaultPathParams = API.DefaultPathParams;
+  export import DefaultPathParamGlobalWithStandardResponse = API.DefaultPathParamGlobalWithStandardResponse;
+  export import DefaultPathParamOnlyGlobalResponse = API.DefaultPathParamOnlyGlobalResponse;
 
   export import Responses = API.Responses;
+  export import ModelFromNestedPath = API.ModelFromNestedPath;
+  export import ModelWithNestedModel = API.ModelWithNestedModel;
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
   export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
   export import SimpleAllof = API.SimpleAllof;
+  export import UnknownObject = API.UnknownObject;
   export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
   export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
@@ -604,6 +582,7 @@ export namespace Sink {
   export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
   export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
   export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
+  export import BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
   export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
   export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;

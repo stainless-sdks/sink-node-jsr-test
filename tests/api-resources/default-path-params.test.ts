@@ -10,9 +10,9 @@ const sink = new Sink({
   requiredArgNoEnv: '<example>',
 });
 
-describe('resource sta606', () => {
-  test('withSharedModel', async () => {
-    const responsePromise = sink.sta606.withSharedModel();
+describe('resource defaultPathParams', () => {
+  test('globalWithStandard', async () => {
+    const responsePromise = sink.defaultPathParams.globalWithStandard('string', 'string');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,15 +22,15 @@ describe('resource sta606', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('withSharedModel: request options instead of params are passed correctly', async () => {
+  test('globalWithStandard: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.sta606.withSharedModel({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(
+      sink.defaultPathParams.globalWithStandard('string', 'string', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
-  test('withSharedParams: only required params', async () => {
-    const responsePromise = sink.sta606.withSharedParams({ bar: { bar: 0 }, foo: 'string' });
+  test('onlyGlobal', async () => {
+    const responsePromise = sink.defaultPathParams.onlyGlobal('string');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -40,7 +40,10 @@ describe('resource sta606', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('withSharedParams: required and optional params', async () => {
-    const response = await sink.sta606.withSharedParams({ bar: { bar: 0 }, foo: 'string' });
+  test('onlyGlobal: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.defaultPathParams.onlyGlobal('string', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 });

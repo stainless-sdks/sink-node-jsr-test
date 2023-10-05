@@ -72,22 +72,4 @@ describe('top level methods', () => {
       'http://localhost:8000/auth?client_id=%3Cclient_id%3E&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fsuccess',
     );
   });
-
-  test('sta563PostEmptyObject', async () => {
-    const responsePromise = sink.sta563PostEmptyObject();
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('sta563PostEmptyObject: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.sta563PostEmptyObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
-  });
 });
