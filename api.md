@@ -631,6 +631,12 @@ Methods:
 
 ## Duplicates
 
+Methods:
+
+- <code title="post /mixed_params/duplicates/body_and_path/{id}">client.mixedParams.duplicates.<a href="./src/resources/mixed-params/duplicates.ts">bodyAndPath</a>(pathId, { ...params }) -> Shared.BasicSharedModelObject</code>
+- <code title="post /mixed_params/duplicates/query_and_body">client.mixedParams.duplicates.<a href="./src/resources/mixed-params/duplicates.ts">queryAndBody</a>({ ...params }) -> Shared.BasicSharedModelObject</code>
+- <code title="post /mixed_params/duplicates/query_and_path/{id}">client.mixedParams.duplicates.<a href="./src/resources/mixed-params/duplicates.ts">queryAndPath</a>(pathId, { ...params }) -> Shared.BasicSharedModelObject</code>
+
 # MakeAmbiguousSchemasLooser
 
 Types:

@@ -87,4 +87,7 @@ export namespace MixedParams {
   export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
 
   export import Duplicates = API.Duplicates;
+  export import DuplicateBodyAndPathParams = API.DuplicateBodyAndPathParams;
+  export import DuplicateQueryAndBodyParams = API.DuplicateQueryAndBodyParams;
+  export import DuplicateQueryAndPathParams = API.DuplicateQueryAndPathParams;
 }
