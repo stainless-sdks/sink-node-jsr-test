@@ -592,12 +592,16 @@ Types:
 
 - <code><a href="./src/resources/body-params.ts">ModelWithParamInName</a></code>
 - <code><a href="./src/resources/body-params.ts">MyModel</a></code>
+- <code><a href="./src/resources/body-params.ts">NestedRequestModelA</a></code>
+- <code><a href="./src/resources/body-params.ts">NestedRequestModelB</a></code>
+- <code><a href="./src/resources/body-params.ts">NestedRequestModelC</a></code>
 - <code><a href="./src/resources/body-params.ts">StringMapModel</a></code>
 - <code><a href="./src/resources/body-params.ts">BodyParamTopLevelAllOfResponse</a></code>
 - <code><a href="./src/resources/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
 
 Methods:
 
+- <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params.ts">nestedRequestModels</a>({ ...params }) -> Responses.ModelWithNestedModel</code>
 - <code title="post /body_params/param_in_model_name_ref">client.bodyParams.<a href="./src/resources/body-params.ts">paramInModelNameRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/property_model_ref">client.bodyParams.<a href="./src/resources/body-params.ts">propertyModelRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/property_with_complex_union">client.bodyParams.<a href="./src/resources/body-params.ts">propertyWithComplexUnion</a>({ ...params }) -> void</code>

@@ -3,6 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as Responses from 'sink-npm/resources/responses/index';
 import * as Shared from 'sink-npm/resources/shared';
 import * as API from './index';
 import {
@@ -16,6 +17,17 @@ import {
 } from 'sink-npm/pagination';
 
 export class BodyParams extends APIResource {
+  /**
+   * Should return a ModelWithNestedModel object with a `properties` field that we
+   * can rename in the Stainless config to a prettier name.
+   */
+  nestedRequestModels(
+    body: BodyParamNestedRequestModelsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Responses.ModelWithNestedModel> {
+    return this.post('/body_params/with_nested_models', { body, ...options });
+  }
+
   /**
    * Endpoint with a `requestBody` that has a schema that is defined as a model in
    * the config with "param" in the name.
@@ -303,6 +315,24 @@ export interface MyModel {
   bar?: boolean;
 }
 
+export interface NestedRequestModelA {
+  foo?: NestedRequestModelB;
+}
+
+export interface NestedRequestModelB {
+  bar?: NestedRequestModelC;
+}
+
+export interface NestedRequestModelC {
+  baz?: NestedRequestModelC.Baz;
+}
+
+export namespace NestedRequestModelC {
+  export interface Baz {
+    hello?: string;
+  }
+}
+
 export type StringMapModel = Record<string, string>;
 
 export interface BodyParamTopLevelAllOfResponse {
@@ -313,6 +343,10 @@ export interface BodyParamTopLevelAllOfResponse {
 
 export interface BodyParamUnionOverlappingPropResponse {
   foo: string;
+}
+
+export interface BodyParamNestedRequestModelsParams {
+  data?: NestedRequestModelA;
 }
 
 export interface BodyParamParamInModelNameRefParams {
@@ -537,9 +571,13 @@ export interface BodyParamWithModelPropertyParams {
 export namespace BodyParams {
   export import ModelWithParamInName = API.ModelWithParamInName;
   export import MyModel = API.MyModel;
+  export import NestedRequestModelA = API.NestedRequestModelA;
+  export import NestedRequestModelB = API.NestedRequestModelB;
+  export import NestedRequestModelC = API.NestedRequestModelC;
   export import StringMapModel = API.StringMapModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
   export import BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
   export import BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;
   export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;

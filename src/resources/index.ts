@@ -136,9 +136,13 @@ export {
 export {
   ModelWithParamInName,
   MyModel,
+  NestedRequestModelA,
+  NestedRequestModelB,
+  NestedRequestModelC,
   StringMapModel,
   BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
+  BodyParamNestedRequestModelsParams,
   BodyParamParamInModelNameRefParams,
   BodyParamPropertyModelRefParams,
   BodyParamPropertyWithComplexUnionParams,

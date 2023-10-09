@@ -11,6 +11,17 @@ const sink = new Sink({
 });
 
 describe('resource bodyParams', () => {
+  test('nestedRequestModels', async () => {
+    const responsePromise = sink.bodyParams.nestedRequestModels({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
   test('paramInModelNameRef: only required params', async () => {
     const responsePromise = sink.bodyParams.paramInModelNameRef({
       model_ref: { foo: 'string' },
