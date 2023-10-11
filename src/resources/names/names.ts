@@ -162,16 +162,15 @@ export interface NamePropertiesCommonConflictsParams {
 }
 
 export namespace Names {
-  export type Balance = NamesAPI.Balance;
-  export type NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
-  export type NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
-  export type NameResponsePropertyClashesModelImportResponse =
-    NamesAPI.NameResponsePropertyClashesModelImportResponse;
-  export type NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
-  export type NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
+  export import Balance = NamesAPI.Balance;
+  export import NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
+  export import NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
+  export import NameResponsePropertyClashesModelImportResponse = NamesAPI.NameResponsePropertyClashesModelImportResponse;
+  export import NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
+  export import NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
   export import ReservedNames = ReservedNamesAPI.ReservedNames;
   export import Params = ParamsAPI.Params;
-  export type ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
-  export type ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
+  export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
+  export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
   export import CanCauseClashes = CanCauseClashesAPI.CanCauseClashes;
 }

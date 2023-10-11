@@ -35,7 +35,7 @@ export class PaginatedModelFirstRef extends APIResource {
 export interface PaginatedModelFirstRefListParams extends PageCursorParams {}
 
 export namespace PaginatedModelFirstRef {
-  export type PaginatedModelFirstRefListParams = PaginatedModelFirstRefAPI.PaginatedModelFirstRefListParams;
+  export import PaginatedModelFirstRefListParams = PaginatedModelFirstRefAPI.PaginatedModelFirstRefListParams;
 }
 
 export { CardsPageCursor };

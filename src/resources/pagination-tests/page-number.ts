@@ -31,7 +31,7 @@ export class PageNumber extends APIResource {
 export interface PageNumberListParams extends PagePageNumberParams {}
 
 export namespace PageNumber {
-  export type PageNumberListParams = PageNumberAPI.PageNumberListParams;
+  export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
 }
 
 export { MyModelsPagePageNumber };

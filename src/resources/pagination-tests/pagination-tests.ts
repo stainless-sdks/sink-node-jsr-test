@@ -23,21 +23,21 @@ export class PaginationTests extends APIResource {
 
 export namespace PaginationTests {
   export import Concrete = ConcreteAPI.Concrete;
-  export type MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
-  export type ConcreteListParams = ConcreteAPI.ConcreteListParams;
+  export import MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
+  export import ConcreteListParams = ConcreteAPI.ConcreteListParams;
   export import PageNumber = PageNumberAPI.PageNumber;
-  export type PageNumberListParams = PageNumberAPI.PageNumberListParams;
+  export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
   export import Cursor = CursorAPI.Cursor;
-  export type CursorListParams = CursorAPI.CursorListParams;
-  export type CursorListNestedResponsePropParams = CursorAPI.CursorListNestedResponsePropParams;
+  export import CursorListParams = CursorAPI.CursorListParams;
+  export import CursorListNestedResponsePropParams = CursorAPI.CursorListNestedResponsePropParams;
   export import CursorURL = CursorURLAPI.CursorURL;
-  export type CursorURLListParams = CursorURLAPI.CursorURLListParams;
+  export import CursorURLListParams = CursorURLAPI.CursorURLListParams;
   export import Offset = OffsetAPI.Offset;
-  export type OffsetListParams = OffsetAPI.OffsetListParams;
+  export import OffsetListParams = OffsetAPI.OffsetListParams;
   export import FakePages = FakePagesAPI.FakePages;
-  export type FakePageListParams = FakePagesAPI.FakePageListParams;
+  export import FakePageListParams = FakePagesAPI.FakePageListParams;
   export import Hypermedia = HypermediaAPI.Hypermedia;
-  export type HypermediaListParams = HypermediaAPI.HypermediaListParams;
+  export import HypermediaListParams = HypermediaAPI.HypermediaListParams;
   export import HypermediaRaw = HypermediaRawAPI.HypermediaRaw;
-  export type HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
+  export import HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
 }

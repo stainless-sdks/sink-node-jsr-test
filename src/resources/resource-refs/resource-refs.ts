@@ -13,8 +13,7 @@ export class ResourceRefs extends APIResource {
 
 export namespace ResourceRefs {
   export import PaginatedModelFirstRef = PaginatedModelFirstRefAPI.PaginatedModelFirstRef;
-  export type PaginatedModelFirstRefListParams = PaginatedModelFirstRefAPI.PaginatedModelFirstRefListParams;
+  export import PaginatedModelFirstRefListParams = PaginatedModelFirstRefAPI.PaginatedModelFirstRefListParams;
   export import PaginatedModelSecondRef = PaginatedModelSecondRefAPI.PaginatedModelSecondRef;
-  export type PaginatedModelSecondRefListParams =
-    PaginatedModelSecondRefAPI.PaginatedModelSecondRefListParams;
+  export import PaginatedModelSecondRefListParams = PaginatedModelSecondRefAPI.PaginatedModelSecondRefListParams;
 }

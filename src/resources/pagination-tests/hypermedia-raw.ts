@@ -31,7 +31,7 @@ export class HypermediaRaw extends APIResource {
 export interface HypermediaRawListParams extends PageHypermediaRawParams {}
 
 export namespace HypermediaRaw {
-  export type HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
+  export import HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
 }
 
 export { MyModelsPageHypermediaRaw };

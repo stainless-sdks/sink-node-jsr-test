@@ -83,10 +83,10 @@ export interface MixedParamQueryBodyAndPathParams {
 }
 
 export namespace MixedParams {
-  export type MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
-  export type MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
+  export import MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
+  export import MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
   export import Duplicates = DuplicatesAPI.Duplicates;
-  export type DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
-  export type DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
-  export type DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
+  export import DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
+  export import DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
+  export import DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
 }

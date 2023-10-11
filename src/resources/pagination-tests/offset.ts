@@ -31,7 +31,7 @@ export class Offset extends APIResource {
 export interface OffsetListParams extends PageOffsetParams {}
 
 export namespace Offset {
-  export type OffsetListParams = OffsetAPI.OffsetListParams;
+  export import OffsetListParams = OffsetAPI.OffsetListParams;
 }
 
 export { MyModelsPageOffset };

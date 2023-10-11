@@ -144,6 +144,6 @@ export interface ConfigToolOnlyInNodeParams {
 }
 
 export namespace ConfigTools {
-  export type OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
-  export type ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
+  export import OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
+  export import ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
 }

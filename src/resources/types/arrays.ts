@@ -31,6 +31,6 @@ export namespace ArrayObjectItemsResponse {
 }
 
 export namespace Arrays {
-  export type ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
-  export type ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
+  export import ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
+  export import ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
 }

@@ -24,6 +24,6 @@ export interface MyConcretePageItem {
 export interface ConcreteListParams extends MyConcretePageParams {}
 
 export namespace Concrete {
-  export type MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
-  export type ConcreteListParams = ConcreteAPI.ConcreteListParams;
+  export import MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
+  export import ConcreteListParams = ConcreteAPI.ConcreteListParams;
 }

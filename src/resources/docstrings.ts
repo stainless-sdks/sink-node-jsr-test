@@ -71,6 +71,6 @@ export interface DocstringTrailingDoubleQuoteResponse {
 }
 
 export namespace Docstrings {
-  export type DocstringLeadingDoubleQuoteResponse = DocstringsAPI.DocstringLeadingDoubleQuoteResponse;
-  export type DocstringTrailingDoubleQuoteResponse = DocstringsAPI.DocstringTrailingDoubleQuoteResponse;
+  export import DocstringLeadingDoubleQuoteResponse = DocstringsAPI.DocstringLeadingDoubleQuoteResponse;
+  export import DocstringTrailingDoubleQuoteResponse = DocstringsAPI.DocstringTrailingDoubleQuoteResponse;
 }

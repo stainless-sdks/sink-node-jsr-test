@@ -37,7 +37,6 @@ export interface DefaultPathParamOnlyGlobalResponse {
 }
 
 export namespace DefaultPathParams {
-  export type DefaultPathParamGlobalWithStandardResponse =
-    DefaultPathParamsAPI.DefaultPathParamGlobalWithStandardResponse;
-  export type DefaultPathParamOnlyGlobalResponse = DefaultPathParamsAPI.DefaultPathParamOnlyGlobalResponse;
+  export import DefaultPathParamGlobalWithStandardResponse = DefaultPathParamsAPI.DefaultPathParamGlobalWithStandardResponse;
+  export import DefaultPathParamOnlyGlobalResponse = DefaultPathParamsAPI.DefaultPathParamOnlyGlobalResponse;
 }

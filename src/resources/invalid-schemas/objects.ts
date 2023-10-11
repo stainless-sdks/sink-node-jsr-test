@@ -15,5 +15,5 @@ export interface ObjectMissingItemsResponse {
 }
 
 export namespace Objects {
-  export type ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
+  export import ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
 }

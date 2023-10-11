@@ -43,6 +43,6 @@ export interface ParamTimeoutParamParams {
 }
 
 export namespace Params {
-  export type ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
-  export type ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
+  export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
+  export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
 }

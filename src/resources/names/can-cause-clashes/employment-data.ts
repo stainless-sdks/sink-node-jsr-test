@@ -10,5 +10,5 @@ export interface EmploymentData {
 }
 
 export namespace EmploymentData {
-  export type EmploymentData = EmploymentDataAPI.EmploymentData;
+  export import EmploymentData = EmploymentDataAPI.EmploymentData;
 }

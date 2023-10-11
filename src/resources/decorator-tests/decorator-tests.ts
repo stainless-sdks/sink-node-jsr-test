@@ -25,9 +25,8 @@ export interface DecoratorTestKeepMeResponse {
 }
 
 export namespace DecoratorTests {
-  export type DecoratorTestKeepMeResponse = DecoratorTestsAPI.DecoratorTestKeepMeResponse;
+  export import DecoratorTestKeepMeResponse = DecoratorTestsAPI.DecoratorTestKeepMeResponse;
   export import Languages = LanguagesAPI.Languages;
   export import KeepThisResource = KeepThisResourceAPI.KeepThisResource;
-  export type KeepThisResourceKeepThisMethodResponse =
-    KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
+  export import KeepThisResourceKeepThisMethodResponse = KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
 }

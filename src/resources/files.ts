@@ -93,10 +93,10 @@ export interface FileWithOptionalParamParams {
 }
 
 export namespace Files {
-  export type FileCreateMultipartResponse = FilesAPI.FileCreateMultipartResponse;
-  export type FileEverythingMultipartResponse = FilesAPI.FileEverythingMultipartResponse;
-  export type FileWithOptionalParamResponse = FilesAPI.FileWithOptionalParamResponse;
-  export type FileCreateMultipartParams = FilesAPI.FileCreateMultipartParams;
-  export type FileEverythingMultipartParams = FilesAPI.FileEverythingMultipartParams;
-  export type FileWithOptionalParamParams = FilesAPI.FileWithOptionalParamParams;
+  export import FileCreateMultipartResponse = FilesAPI.FileCreateMultipartResponse;
+  export import FileEverythingMultipartResponse = FilesAPI.FileEverythingMultipartResponse;
+  export import FileWithOptionalParamResponse = FilesAPI.FileWithOptionalParamResponse;
+  export import FileCreateMultipartParams = FilesAPI.FileCreateMultipartParams;
+  export import FileEverythingMultipartParams = FilesAPI.FileEverythingMultipartParams;
+  export import FileWithOptionalParamParams = FilesAPI.FileWithOptionalParamParams;
 }

@@ -168,34 +168,29 @@ export interface TypeEnumsParams {
 }
 
 export namespace Types {
-  export type TypeDatesResponse = TypesAPI.TypeDatesResponse;
-  export type TypeDatetimesResponse = TypesAPI.TypeDatetimesResponse;
-  export type TypeEnumsResponse = TypesAPI.TypeEnumsResponse;
-  export type TypeDatesParams = TypesAPI.TypeDatesParams;
-  export type TypeDatetimesParams = TypesAPI.TypeDatetimesParams;
-  export type TypeEnumTestsArrayUniqueValuesParams = TypesAPI.TypeEnumTestsArrayUniqueValuesParams;
-  export type TypeEnumTestsArrayUniqueValues2ValuesParams =
-    TypesAPI.TypeEnumTestsArrayUniqueValues2ValuesParams;
-  export type TypeEnumTestsArrayUniqueValuesNumbersParams =
-    TypesAPI.TypeEnumTestsArrayUniqueValuesNumbersParams;
-  export type TypeEnumsParams = TypesAPI.TypeEnumsParams;
+  export import TypeDatesResponse = TypesAPI.TypeDatesResponse;
+  export import TypeDatetimesResponse = TypesAPI.TypeDatetimesResponse;
+  export import TypeEnumsResponse = TypesAPI.TypeEnumsResponse;
+  export import TypeDatesParams = TypesAPI.TypeDatesParams;
+  export import TypeDatetimesParams = TypesAPI.TypeDatetimesParams;
+  export import TypeEnumTestsArrayUniqueValuesParams = TypesAPI.TypeEnumTestsArrayUniqueValuesParams;
+  export import TypeEnumTestsArrayUniqueValues2ValuesParams = TypesAPI.TypeEnumTestsArrayUniqueValues2ValuesParams;
+  export import TypeEnumTestsArrayUniqueValuesNumbersParams = TypesAPI.TypeEnumTestsArrayUniqueValuesNumbersParams;
+  export import TypeEnumsParams = TypesAPI.TypeEnumsParams;
   export import ReadOnlyParams = ReadOnlyParamsAPI.ReadOnlyParams;
-  export type ReadOnlyParamSimpleResponse = ReadOnlyParamsAPI.ReadOnlyParamSimpleResponse;
-  export type ReadOnlyParamSimpleParams = ReadOnlyParamsAPI.ReadOnlyParamSimpleParams;
+  export import ReadOnlyParamSimpleResponse = ReadOnlyParamsAPI.ReadOnlyParamSimpleResponse;
+  export import ReadOnlyParamSimpleParams = ReadOnlyParamsAPI.ReadOnlyParamSimpleParams;
   export import WriteOnlyResponses = WriteOnlyResponsesAPI.WriteOnlyResponses;
-  export type WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
+  export import WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
   export import Maps = MapsAPI.Maps;
-  export type MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
+  export import MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
   export import Objects = ObjectsAPI.Objects;
-  export type ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
-  export type ObjectMultipleArrayPropertiesSameRefResponse =
-    ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
-  export type ObjectMultiplePropertiesSameModelResponse =
-    ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
-  export type ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
-  export type ObjectTwoDimensionalArrayPrimitivePropertyResponse =
-    ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
+  export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
+  export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
+  export import ObjectMultiplePropertiesSameModelResponse = ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
+  export import ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
+  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
   export import Arrays = ArraysAPI.Arrays;
-  export type ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
-  export type ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
+  export import ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
+  export import ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
 }

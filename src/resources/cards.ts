@@ -886,17 +886,17 @@ export interface CardReissueParams {
 }
 
 export namespace Cards {
-  export type Card = CardsAPI.Card;
-  export type CardAlias = CardsAPI.CardAlias;
-  export type FundingAccount = CardsAPI.FundingAccount;
-  export type CardProvisionFooResponse = CardsAPI.CardProvisionFooResponse;
+  export import Card = CardsAPI.Card;
+  export import CardAlias = CardsAPI.CardAlias;
+  export import FundingAccount = CardsAPI.FundingAccount;
+  export import CardProvisionFooResponse = CardsAPI.CardProvisionFooResponse;
   export import CardsCardPage = CardsAPI.CardsCardPage;
-  export type CardCreateParams = CardsAPI.CardCreateParams;
-  export type CardUpdateParams = CardsAPI.CardUpdateParams;
-  export type CardListParams = CardsAPI.CardListParams;
-  export type CardCreateAliasedParams = CardsAPI.CardCreateAliasedParams;
-  export type CardCreateAliasedDeprecatedParams = CardsAPI.CardCreateAliasedDeprecatedParams;
-  export type CardListNonGetParams = CardsAPI.CardListNonGetParams;
-  export type CardProvisionFooParams = CardsAPI.CardProvisionFooParams;
-  export type CardReissueParams = CardsAPI.CardReissueParams;
+  export import CardCreateParams = CardsAPI.CardCreateParams;
+  export import CardUpdateParams = CardsAPI.CardUpdateParams;
+  export import CardListParams = CardsAPI.CardListParams;
+  export import CardCreateAliasedParams = CardsAPI.CardCreateAliasedParams;
+  export import CardCreateAliasedDeprecatedParams = CardsAPI.CardCreateAliasedDeprecatedParams;
+  export import CardListNonGetParams = CardsAPI.CardListNonGetParams;
+  export import CardProvisionFooParams = CardsAPI.CardProvisionFooParams;
+  export import CardReissueParams = CardsAPI.CardReissueParams;
 }

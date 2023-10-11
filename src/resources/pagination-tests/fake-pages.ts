@@ -22,7 +22,7 @@ export class FakePages extends APIResource {
 export interface FakePageListParams extends FakePageParams {}
 
 export namespace FakePages {
-  export type FakePageListParams = FakePagesAPI.FakePageListParams;
+  export import FakePageListParams = FakePagesAPI.FakePageListParams;
 }
 
 export { SimpleObjectsFakePage };

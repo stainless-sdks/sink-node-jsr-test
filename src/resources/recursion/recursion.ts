@@ -96,18 +96,18 @@ export interface RecursionCreateSelfParams {
 }
 
 export namespace Recursion {
-  export type ArrayRecursion = RecursionAPI.ArrayRecursion;
-  export type BranchRecursion = RecursionAPI.BranchRecursion;
-  export type BranchRecursionChildA = RecursionAPI.BranchRecursionChildA;
-  export type BranchRecursionChildB = RecursionAPI.BranchRecursionChildB;
-  export type MutualRecursionA = RecursionAPI.MutualRecursionA;
-  export type MutualRecursionB = RecursionAPI.MutualRecursionB;
-  export type SelfRecursion = RecursionAPI.SelfRecursion;
-  export type RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
-  export type RecursionCreateBranchParams = RecursionAPI.RecursionCreateBranchParams;
-  export type RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
-  export type RecursionCreateMutualAParams = RecursionAPI.RecursionCreateMutualAParams;
-  export type RecursionCreateMutualBParams = RecursionAPI.RecursionCreateMutualBParams;
-  export type RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
+  export import ArrayRecursion = RecursionAPI.ArrayRecursion;
+  export import BranchRecursion = RecursionAPI.BranchRecursion;
+  export import BranchRecursionChildA = RecursionAPI.BranchRecursionChildA;
+  export import BranchRecursionChildB = RecursionAPI.BranchRecursionChildB;
+  export import MutualRecursionA = RecursionAPI.MutualRecursionA;
+  export import MutualRecursionB = RecursionAPI.MutualRecursionB;
+  export import SelfRecursion = RecursionAPI.SelfRecursion;
+  export import RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
+  export import RecursionCreateBranchParams = RecursionAPI.RecursionCreateBranchParams;
+  export import RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
+  export import RecursionCreateMutualAParams = RecursionAPI.RecursionCreateMutualAParams;
+  export import RecursionCreateMutualBParams = RecursionAPI.RecursionCreateMutualBParams;
+  export import RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
   export import SharedResponses = SharedResponsesAPI.SharedResponses;
 }

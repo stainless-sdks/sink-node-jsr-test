@@ -274,16 +274,14 @@ export interface PositionalParamUnionBodyAndPathParams {
 }
 
 export namespace PositionalParams {
-  export type PositionalParamBasicBodyParams = PositionalParamsAPI.PositionalParamBasicBodyParams;
-  export type PositionalParamBasicQueryParams = PositionalParamsAPI.PositionalParamBasicQueryParams;
-  export type PositionalParamBodyParams = PositionalParamsAPI.PositionalParamBodyParams;
-  export type PositionalParamBodyExtraParamParams = PositionalParamsAPI.PositionalParamBodyExtraParamParams;
-  export type PositionalParamKitchenSinkParams = PositionalParamsAPI.PositionalParamKitchenSinkParams;
-  export type PositionalParamMultiplePathParamsParams =
-    PositionalParamsAPI.PositionalParamMultiplePathParamsParams;
-  export type PositionalParamQueryParams = PositionalParamsAPI.PositionalParamQueryParams;
-  export type PositionalParamQueryAndPathParams = PositionalParamsAPI.PositionalParamQueryAndPathParams;
-  export type PositionalParamQueryMultipleParams = PositionalParamsAPI.PositionalParamQueryMultipleParams;
-  export type PositionalParamUnionBodyAndPathParams =
-    PositionalParamsAPI.PositionalParamUnionBodyAndPathParams;
+  export import PositionalParamBasicBodyParams = PositionalParamsAPI.PositionalParamBasicBodyParams;
+  export import PositionalParamBasicQueryParams = PositionalParamsAPI.PositionalParamBasicQueryParams;
+  export import PositionalParamBodyParams = PositionalParamsAPI.PositionalParamBodyParams;
+  export import PositionalParamBodyExtraParamParams = PositionalParamsAPI.PositionalParamBodyExtraParamParams;
+  export import PositionalParamKitchenSinkParams = PositionalParamsAPI.PositionalParamKitchenSinkParams;
+  export import PositionalParamMultiplePathParamsParams = PositionalParamsAPI.PositionalParamMultiplePathParamsParams;
+  export import PositionalParamQueryParams = PositionalParamsAPI.PositionalParamQueryParams;
+  export import PositionalParamQueryAndPathParams = PositionalParamsAPI.PositionalParamQueryAndPathParams;
+  export import PositionalParamQueryMultipleParams = PositionalParamsAPI.PositionalParamQueryMultipleParams;
+  export import PositionalParamUnionBodyAndPathParams = PositionalParamsAPI.PositionalParamUnionBodyAndPathParams;
 }

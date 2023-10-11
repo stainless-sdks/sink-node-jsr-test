@@ -57,11 +57,8 @@ export interface OpenapiFormatArrayTypeOneEntryWithNullParams {
 }
 
 export namespace OpenapiFormats {
-  export type OpenapiFormatArrayTypeOneEntryResponse =
-    OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryResponse;
-  export type OpenapiFormatArrayTypeOneEntryWithNullResponse =
-    OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullResponse;
-  export type OpenapiFormatArrayTypeOneEntryParams = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryParams;
-  export type OpenapiFormatArrayTypeOneEntryWithNullParams =
-    OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullParams;
+  export import OpenapiFormatArrayTypeOneEntryResponse = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryResponse;
+  export import OpenapiFormatArrayTypeOneEntryWithNullResponse = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullResponse;
+  export import OpenapiFormatArrayTypeOneEntryParams = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryParams;
+  export import OpenapiFormatArrayTypeOneEntryWithNullParams = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullParams;
 }

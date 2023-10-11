@@ -56,8 +56,8 @@ export interface CursorListParams extends PageCursorParams {}
 export interface CursorListNestedResponsePropParams extends PageCursorNestedResponsePropParams {}
 
 export namespace Cursor {
-  export type CursorListParams = CursorAPI.CursorListParams;
-  export type CursorListNestedResponsePropParams = CursorAPI.CursorListNestedResponsePropParams;
+  export import CursorListParams = CursorAPI.CursorListParams;
+  export import CursorListNestedResponsePropParams = CursorAPI.CursorListNestedResponsePropParams;
 }
 
 export { MyModelsPageCursor, MyModelsPageCursorNestedResponseProp };

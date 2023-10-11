@@ -38,5 +38,5 @@ export interface HeaderParamClientArgumentParams {
 }
 
 export namespace HeaderParams {
-  export type HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
+  export import HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
 }

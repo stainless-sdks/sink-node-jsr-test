@@ -13,7 +13,7 @@ export interface Company {
 }
 
 export namespace CompanyResource {
-  export type Company = CompanyAPI.Company;
+  export import Company = CompanyAPI.Company;
   export import Payments = PaymentsAPI.Payments;
-  export type CompanyPayment = PaymentsAPI.CompanyPayment;
+  export import CompanyPayment = PaymentsAPI.CompanyPayment;
 }

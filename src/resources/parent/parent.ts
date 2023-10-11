@@ -9,5 +9,5 @@ export class Parent extends APIResource {
 
 export namespace Parent {
   export import Child = ChildAPI.Child;
-  export type ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
+  export import ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
 }

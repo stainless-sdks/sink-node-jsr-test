@@ -11,9 +11,9 @@ export class ReservedNames extends APIResource {
 
 export namespace ReservedNames {
   export import ImportResource = ImportAPI.ImportResource;
-  export type Import = ImportAPI.Import;
+  export import Import = ImportAPI.Import;
   export import Methods = MethodsAPI.Methods;
-  export type Export = MethodsAPI.Export;
-  export type Return = MethodsAPI.Return;
-  export type MethodExportParams = MethodsAPI.MethodExportParams;
+  export import Export = MethodsAPI.Export;
+  export import Return = MethodsAPI.Return;
+  export import MethodExportParams = MethodsAPI.MethodExportParams;
 }

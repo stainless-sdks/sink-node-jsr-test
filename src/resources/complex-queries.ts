@@ -52,8 +52,8 @@ export interface ComplexQueryObjectQueryParams {
 }
 
 export namespace ComplexQueries {
-  export type ComplexQueryArrayQueryResponse = ComplexQueriesAPI.ComplexQueryArrayQueryResponse;
-  export type ComplexQueryObjectQueryResponse = ComplexQueriesAPI.ComplexQueryObjectQueryResponse;
-  export type ComplexQueryArrayQueryParams = ComplexQueriesAPI.ComplexQueryArrayQueryParams;
-  export type ComplexQueryObjectQueryParams = ComplexQueriesAPI.ComplexQueryObjectQueryParams;
+  export import ComplexQueryArrayQueryResponse = ComplexQueriesAPI.ComplexQueryArrayQueryResponse;
+  export import ComplexQueryObjectQueryResponse = ComplexQueriesAPI.ComplexQueryObjectQueryResponse;
+  export import ComplexQueryArrayQueryParams = ComplexQueriesAPI.ComplexQueryArrayQueryParams;
+  export import ComplexQueryObjectQueryParams = ComplexQueriesAPI.ComplexQueryObjectQueryParams;
 }

@@ -67,6 +67,6 @@ export interface PathParamSingularResponse {
 }
 
 export namespace PathParams {
-  export type PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
-  export type PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
+  export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
+  export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
 }

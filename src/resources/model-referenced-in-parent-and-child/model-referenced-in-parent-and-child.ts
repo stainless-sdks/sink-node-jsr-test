@@ -18,7 +18,6 @@ export interface ModelReferencedInParentAndChild {
 }
 
 export namespace ModelReferencedInParentAndChildResource {
-  export type ModelReferencedInParentAndChild =
-    ModelReferencedInParentAndChildAPI.ModelReferencedInParentAndChild;
+  export import ModelReferencedInParentAndChild = ModelReferencedInParentAndChildAPI.ModelReferencedInParentAndChild;
   export import Child = ChildAPI.Child;
 }

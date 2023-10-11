@@ -31,7 +31,7 @@ export class CursorURL extends APIResource {
 export interface CursorURLListParams extends PageCursorURLParams {}
 
 export namespace CursorURL {
-  export type CursorURLListParams = CursorURLAPI.CursorURLListParams;
+  export import CursorURLListParams = CursorURLAPI.CursorURLListParams;
 }
 
 export { MyModelsPageCursorURL };

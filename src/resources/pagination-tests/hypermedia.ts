@@ -31,7 +31,7 @@ export class Hypermedia extends APIResource {
 export interface HypermediaListParams extends PageHypermediaParams {}
 
 export namespace Hypermedia {
-  export type HypermediaListParams = HypermediaAPI.HypermediaListParams;
+  export import HypermediaListParams = HypermediaAPI.HypermediaListParams;
 }
 
 export { MyModelsPageHypermedia };
