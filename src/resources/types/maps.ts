@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as MapsAPI from 'sink-npm/resources/types/maps';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class Maps extends APIResource {
   /**
@@ -24,5 +24,5 @@ export interface MapNullableItemsResponse {
 }
 
 export namespace Maps {
-  export import MapNullableItemsResponse = API.MapNullableItemsResponse;
+  export type MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
 }

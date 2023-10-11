@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as API from './index';
+import * as QueryParamsAPI from 'sink-npm/resources/query-params';
 
 export class QueryParams extends APIResource {
   /**
@@ -233,12 +233,12 @@ export interface QueryParamPrimitivesParams {
 }
 
 export namespace QueryParams {
-  export import QueryParamAllOfParams = API.QueryParamAllOfParams;
-  export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
-  export import QueryParamAnyOfStringOrArrayParams = API.QueryParamAnyOfStringOrArrayParams;
-  export import QueryParamArrayParams = API.QueryParamArrayParams;
-  export import QueryParamEnumParams = API.QueryParamEnumParams;
-  export import QueryParamObjectParams = API.QueryParamObjectParams;
-  export import QueryParamOneOfParams = API.QueryParamOneOfParams;
-  export import QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
+  export type QueryParamAllOfParams = QueryParamsAPI.QueryParamAllOfParams;
+  export type QueryParamAnyOfParams = QueryParamsAPI.QueryParamAnyOfParams;
+  export type QueryParamAnyOfStringOrArrayParams = QueryParamsAPI.QueryParamAnyOfStringOrArrayParams;
+  export type QueryParamArrayParams = QueryParamsAPI.QueryParamArrayParams;
+  export type QueryParamEnumParams = QueryParamsAPI.QueryParamEnumParams;
+  export type QueryParamObjectParams = QueryParamsAPI.QueryParamObjectParams;
+  export type QueryParamOneOfParams = QueryParamsAPI.QueryParamOneOfParams;
+  export type QueryParamPrimitivesParams = QueryParamsAPI.QueryParamPrimitivesParams;
 }

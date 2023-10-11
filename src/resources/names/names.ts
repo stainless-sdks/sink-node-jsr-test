@@ -2,16 +2,16 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as NamesAPI from 'sink-npm/resources/names/names';
 import * as Shared from 'sink-npm/resources/shared';
-import { ReservedNames } from './reserved-names/reserved-names';
-import { Params } from './params';
-import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
-import * as API from './index';
+import * as ParamsAPI from 'sink-npm/resources/names/params';
+import * as CanCauseClashesAPI from 'sink-npm/resources/names/can-cause-clashes/can-cause-clashes';
+import * as ReservedNamesAPI from 'sink-npm/resources/names/reserved-names/reserved-names';
 
 export class Names extends APIResource {
-  reservedNames: ReservedNames = new ReservedNames(this.client);
-  params: Params = new Params(this.client);
-  canCauseClashes: CanCauseClashes = new CanCauseClashes(this.client);
+  reservedNames: ReservedNamesAPI.ReservedNames = new ReservedNamesAPI.ReservedNames(this.client);
+  params: ParamsAPI.Params = new ParamsAPI.Params(this.client);
+  canCauseClashes: CanCauseClashesAPI.CanCauseClashes = new CanCauseClashesAPI.CanCauseClashes(this.client);
 
   /**
    * Endpoint with request & response properties that could cause clashes due to
@@ -162,18 +162,16 @@ export interface NamePropertiesCommonConflictsParams {
 }
 
 export namespace Names {
-  export import Balance = API.Balance;
-  export import NameChildPropImportClashResponse = API.NameChildPropImportClashResponse;
-  export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
-  export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
-  export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
-  export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
-
-  export import ReservedNames = API.ReservedNames;
-
-  export import Params = API.Params;
-  export import ParamOptionsParamParams = API.ParamOptionsParamParams;
-  export import ParamTimeoutParamParams = API.ParamTimeoutParamParams;
-
-  export import CanCauseClashes = API.CanCauseClashes;
+  export type Balance = NamesAPI.Balance;
+  export type NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
+  export type NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
+  export type NameResponsePropertyClashesModelImportResponse =
+    NamesAPI.NameResponsePropertyClashesModelImportResponse;
+  export type NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
+  export type NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
+  export import ReservedNames = ReservedNamesAPI.ReservedNames;
+  export import Params = ParamsAPI.Params;
+  export type ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
+  export type ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
+  export import CanCauseClashes = CanCauseClashesAPI.CanCauseClashes;
 }

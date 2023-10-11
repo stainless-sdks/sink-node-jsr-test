@@ -2,10 +2,10 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
 import * as Shared from 'sink-npm/resources/shared';
 import { SimpleObjectsFakePage } from 'sink-npm/resources/shared';
-import * as API from './index';
-import { FakePageParams } from 'sink-npm/pagination';
+import { type FakePageParams } from 'sink-npm/pagination';
 
 export class FakePages extends APIResource {
   /**
@@ -22,7 +22,7 @@ export class FakePages extends APIResource {
 export interface FakePageListParams extends FakePageParams {}
 
 export namespace FakePages {
-  export import FakePageListParams = API.FakePageListParams;
+  export type FakePageListParams = FakePagesAPI.FakePageListParams;
 }
 
 export { SimpleObjectsFakePage };

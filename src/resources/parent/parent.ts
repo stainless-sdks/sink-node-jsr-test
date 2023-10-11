@@ -1,14 +1,13 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import { Child } from './child';
-import * as API from './index';
+import * as ChildAPI from 'sink-npm/resources/parent/child';
 
 export class Parent extends APIResource {
-  child: Child = new Child(this.client);
+  child: ChildAPI.Child = new ChildAPI.Child(this.client);
 }
 
 export namespace Parent {
-  export import Child = API.Child;
-  export import ChildInlinedResponseResponse = API.ChildInlinedResponseResponse;
+  export import Child = ChildAPI.Child;
+  export type ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
 }

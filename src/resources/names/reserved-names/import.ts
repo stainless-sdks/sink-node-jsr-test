@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ImportAPI from 'sink-npm/resources/names/reserved-names/import';
 
 export class ImportResource extends APIResource {
   /**
@@ -19,5 +19,5 @@ export interface Import {
 }
 
 export namespace ImportResource {
-  export import Import = API.Import;
+  export type Import = ImportAPI.Import;
 }

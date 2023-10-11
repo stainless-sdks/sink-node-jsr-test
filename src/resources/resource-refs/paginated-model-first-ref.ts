@@ -3,10 +3,10 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as Cards from 'sink-npm/resources/cards';
+import * as PaginatedModelFirstRefAPI from 'sink-npm/resources/resource-refs/paginated-model-first-ref';
+import * as CardsAPI from 'sink-npm/resources/cards';
 import { CardsPageCursor } from 'sink-npm/resources/cards';
-import * as API from './index';
-import { PageCursorParams } from 'sink-npm/pagination';
+import { type PageCursorParams } from 'sink-npm/pagination';
 
 export class PaginatedModelFirstRef extends APIResource {
   /**
@@ -16,12 +16,12 @@ export class PaginatedModelFirstRef extends APIResource {
   list(
     query?: PaginatedModelFirstRefListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsPageCursor, Cards.Card>;
-  list(options?: Core.RequestOptions): Core.PagePromise<CardsPageCursor, Cards.Card>;
+  ): Core.PagePromise<CardsPageCursor, CardsAPI.Card>;
+  list(options?: Core.RequestOptions): Core.PagePromise<CardsPageCursor, CardsAPI.Card>;
   list(
     query: PaginatedModelFirstRefListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsPageCursor, Cards.Card> {
+  ): Core.PagePromise<CardsPageCursor, CardsAPI.Card> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -35,7 +35,7 @@ export class PaginatedModelFirstRef extends APIResource {
 export interface PaginatedModelFirstRefListParams extends PageCursorParams {}
 
 export namespace PaginatedModelFirstRef {
-  export import PaginatedModelFirstRefListParams = API.PaginatedModelFirstRefListParams;
+  export type PaginatedModelFirstRefListParams = PaginatedModelFirstRefAPI.PaginatedModelFirstRefListParams;
 }
 
 export { CardsPageCursor };

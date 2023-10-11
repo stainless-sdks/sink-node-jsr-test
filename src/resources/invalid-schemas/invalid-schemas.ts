@@ -1,19 +1,17 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import { Arrays } from './arrays';
-import { Objects } from './objects';
-import * as API from './index';
+import * as ArraysAPI from 'sink-npm/resources/invalid-schemas/arrays';
+import * as ObjectsAPI from 'sink-npm/resources/invalid-schemas/objects';
 
 export class InvalidSchemas extends APIResource {
-  arrays: Arrays = new Arrays(this.client);
-  objects: Objects = new Objects(this.client);
+  arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this.client);
+  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this.client);
 }
 
 export namespace InvalidSchemas {
-  export import Arrays = API.Arrays;
-  export import ArrayMissingItemsResponse = API.ArrayMissingItemsResponse;
-
-  export import Objects = API.Objects;
-  export import ObjectMissingItemsResponse = API.ObjectMissingItemsResponse;
+  export import Arrays = ArraysAPI.Arrays;
+  export type ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
+  export import Objects = ObjectsAPI.Objects;
+  export type ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
 }

@@ -2,16 +2,19 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as Cards from 'sink-npm/resources/cards';
+import * as ConfigToolsAPI from 'sink-npm/resources/config-tools';
+import * as CardsAPI from 'sink-npm/resources/cards';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class ConfigTools extends APIResource {
   /**
    * Create a new virtual or physical card. Parameters `pin`, `shippingAddress`, and
    * `product_id` only apply to physical cards.
    */
-  onlyInNode(body: ConfigToolOnlyInNodeParams, options?: Core.RequestOptions): Core.APIPromise<Cards.Card> {
+  onlyInNode(
+    body: ConfigToolOnlyInNodeParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CardsAPI.Card> {
     return this.post('/cards', { body, ...options });
   }
 }
@@ -141,6 +144,6 @@ export interface ConfigToolOnlyInNodeParams {
 }
 
 export namespace ConfigTools {
-  export import OnlyNodeModel = API.OnlyNodeModel;
-  export import ConfigToolOnlyInNodeParams = API.ConfigToolOnlyInNodeParams;
+  export type OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
+  export type ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
 }

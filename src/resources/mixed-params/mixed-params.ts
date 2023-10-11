@@ -3,12 +3,12 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as MixedParamsAPI from 'sink-npm/resources/mixed-params/mixed-params';
 import * as Shared from 'sink-npm/resources/shared';
-import { Duplicates } from './duplicates';
-import * as API from './index';
+import * as DuplicatesAPI from 'sink-npm/resources/mixed-params/duplicates';
 
 export class MixedParams extends APIResource {
-  duplicates: Duplicates = new Duplicates(this.client);
+  duplicates: DuplicatesAPI.Duplicates = new DuplicatesAPI.Duplicates(this.client);
 
   /**
    * Endpoint with a `requestBody` that defines both query and body params
@@ -83,11 +83,10 @@ export interface MixedParamQueryBodyAndPathParams {
 }
 
 export namespace MixedParams {
-  export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
-  export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
-
-  export import Duplicates = API.Duplicates;
-  export import DuplicateBodyAndPathParams = API.DuplicateBodyAndPathParams;
-  export import DuplicateQueryAndBodyParams = API.DuplicateQueryAndBodyParams;
-  export import DuplicateQueryAndPathParams = API.DuplicateQueryAndPathParams;
+  export type MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
+  export type MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
+  export import Duplicates = DuplicatesAPI.Duplicates;
+  export type DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
+  export type DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
+  export type DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
 }

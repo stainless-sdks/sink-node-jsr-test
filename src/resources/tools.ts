@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ToolsAPI from 'sink-npm/resources/tools';
 
 export class Tools extends APIResource {
   skippedParams(
@@ -30,6 +30,6 @@ export interface ToolSkippedParamsParams {
 }
 
 export namespace Tools {
-  export import ObjectSkippedProps = API.ObjectSkippedProps;
-  export import ToolSkippedParamsParams = API.ToolSkippedParamsParams;
+  export type ObjectSkippedProps = ToolsAPI.ObjectSkippedProps;
+  export type ToolSkippedParamsParams = ToolsAPI.ToolSkippedParamsParams;
 }

@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ReadOnlyParamsAPI from 'sink-npm/resources/types/read-only-params';
 
 export class ReadOnlyParams extends APIResource {
   /**
@@ -27,6 +27,6 @@ export interface ReadOnlyParamSimpleParams {
 }
 
 export namespace ReadOnlyParams {
-  export import ReadOnlyParamSimpleResponse = API.ReadOnlyParamSimpleResponse;
-  export import ReadOnlyParamSimpleParams = API.ReadOnlyParamSimpleParams;
+  export type ReadOnlyParamSimpleResponse = ReadOnlyParamsAPI.ReadOnlyParamSimpleResponse;
+  export type ReadOnlyParamSimpleParams = ReadOnlyParamsAPI.ReadOnlyParamSimpleParams;
 }

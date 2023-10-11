@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ObjectsAPI from 'sink-npm/resources/invalid-schemas/objects';
 
 export class Objects extends APIResource {
   missingItems(options?: Core.RequestOptions): Core.APIPromise<ObjectMissingItemsResponse> {
@@ -15,5 +15,5 @@ export interface ObjectMissingItemsResponse {
 }
 
 export namespace Objects {
-  export import ObjectMissingItemsResponse = API.ObjectMissingItemsResponse;
+  export type ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
 }

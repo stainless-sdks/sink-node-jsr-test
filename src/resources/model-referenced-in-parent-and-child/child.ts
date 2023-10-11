@@ -2,12 +2,12 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as ModelReferencedInParentAndChild from 'sink-npm/resources/model-referenced-in-parent-and-child/index';
+import * as ModelReferencedInParentAndChildAPI from 'sink-npm/resources/model-referenced-in-parent-and-child/model-referenced-in-parent-and-child';
 
 export class Child extends APIResource {
   retrieve(
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ModelReferencedInParentAndChild.ModelReferencedInParentAndChild> {
+  ): Core.APIPromise<ModelReferencedInParentAndChildAPI.ModelReferencedInParentAndChild> {
     return this.get('/model_referenced_in_parent_and_child/child', options);
   }
 }

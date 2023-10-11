@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as MakeAmbiguousSchemasExplicitAPI from 'sink-npm/resources/make-ambiguous-schemas-explicit';
 
 export class MakeAmbiguousSchemasExplicit extends APIResource {
   /**
@@ -30,5 +30,6 @@ export interface MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitRespons
 }
 
 export namespace MakeAmbiguousSchemasExplicit {
-  export import MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse = API.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
+  export type MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse =
+    MakeAmbiguousSchemasExplicitAPI.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
 }

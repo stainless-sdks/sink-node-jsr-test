@@ -3,11 +3,10 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as BodyParams from 'sink-npm/resources/body-params';
-import { MyModelsPageCursor } from 'sink-npm/resources/body-params';
-import { MyModelsPageCursorNestedResponseProp } from 'sink-npm/resources/body-params';
-import * as API from './index';
-import { PageCursorParams, PageCursorNestedResponsePropParams } from 'sink-npm/pagination';
+import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
+import { MyModelsPageCursor, MyModelsPageCursorNestedResponseProp } from 'sink-npm/resources/body-params';
+import { type PageCursorNestedResponsePropParams, type PageCursorParams } from 'sink-npm/pagination';
 
 export class Cursor extends APIResource {
   /**
@@ -16,12 +15,12 @@ export class Cursor extends APIResource {
   list(
     query?: CursorListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageCursor, BodyParams.MyModel>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageCursor, BodyParams.MyModel>;
+  ): Core.PagePromise<MyModelsPageCursor, BodyParamsAPI.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageCursor, BodyParamsAPI.MyModel>;
   list(
     query: CursorListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageCursor, BodyParams.MyModel> {
+  ): Core.PagePromise<MyModelsPageCursor, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -34,14 +33,14 @@ export class Cursor extends APIResource {
   listNestedResponseProp(
     query?: CursorListNestedResponsePropParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageCursorNestedResponseProp, BodyParams.MyModel>;
+  ): Core.PagePromise<MyModelsPageCursorNestedResponseProp, BodyParamsAPI.MyModel>;
   listNestedResponseProp(
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageCursorNestedResponseProp, BodyParams.MyModel>;
+  ): Core.PagePromise<MyModelsPageCursorNestedResponseProp, BodyParamsAPI.MyModel>;
   listNestedResponseProp(
     query: CursorListNestedResponsePropParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageCursorNestedResponseProp, BodyParams.MyModel> {
+  ): Core.PagePromise<MyModelsPageCursorNestedResponseProp, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.listNestedResponseProp({}, query);
     }
@@ -57,8 +56,8 @@ export interface CursorListParams extends PageCursorParams {}
 export interface CursorListNestedResponsePropParams extends PageCursorNestedResponsePropParams {}
 
 export namespace Cursor {
-  export import CursorListParams = API.CursorListParams;
-  export import CursorListNestedResponsePropParams = API.CursorListNestedResponsePropParams;
+  export type CursorListParams = CursorAPI.CursorListParams;
+  export type CursorListNestedResponsePropParams = CursorAPI.CursorListNestedResponsePropParams;
 }
 
 export { MyModelsPageCursor, MyModelsPageCursorNestedResponseProp };

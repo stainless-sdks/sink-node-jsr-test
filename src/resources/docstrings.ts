@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as DocstringsAPI from 'sink-npm/resources/docstrings';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class Docstrings extends APIResource {
   /**
@@ -71,6 +71,6 @@ export interface DocstringTrailingDoubleQuoteResponse {
 }
 
 export namespace Docstrings {
-  export import DocstringLeadingDoubleQuoteResponse = API.DocstringLeadingDoubleQuoteResponse;
-  export import DocstringTrailingDoubleQuoteResponse = API.DocstringTrailingDoubleQuoteResponse;
+  export type DocstringLeadingDoubleQuoteResponse = DocstringsAPI.DocstringLeadingDoubleQuoteResponse;
+  export type DocstringTrailingDoubleQuoteResponse = DocstringsAPI.DocstringTrailingDoubleQuoteResponse;
 }

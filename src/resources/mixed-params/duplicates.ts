@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as DuplicatesAPI from 'sink-npm/resources/mixed-params/duplicates';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class Duplicates extends APIResource {
   /**
@@ -82,7 +82,7 @@ export interface DuplicateQueryAndPathParams {
 }
 
 export namespace Duplicates {
-  export import DuplicateBodyAndPathParams = API.DuplicateBodyAndPathParams;
-  export import DuplicateQueryAndBodyParams = API.DuplicateQueryAndBodyParams;
-  export import DuplicateQueryAndPathParams = API.DuplicateQueryAndPathParams;
+  export type DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
+  export type DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
+  export type DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
 }

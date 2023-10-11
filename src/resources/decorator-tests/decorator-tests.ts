@@ -2,13 +2,15 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import { Languages } from './languages';
-import { KeepThisResource } from './keep-this-resource';
-import * as API from './index';
+import * as DecoratorTestsAPI from 'sink-npm/resources/decorator-tests/decorator-tests';
+import * as KeepThisResourceAPI from 'sink-npm/resources/decorator-tests/keep-this-resource';
+import * as LanguagesAPI from 'sink-npm/resources/decorator-tests/languages';
 
 export class DecoratorTests extends APIResource {
-  languages: Languages = new Languages(this.client);
-  keepThisResource: KeepThisResource = new KeepThisResource(this.client);
+  languages: LanguagesAPI.Languages = new LanguagesAPI.Languages(this.client);
+  keepThisResource: KeepThisResourceAPI.KeepThisResource = new KeepThisResourceAPI.KeepThisResource(
+    this.client,
+  );
 
   /**
    * Top-level method that should not be skipped.
@@ -23,10 +25,9 @@ export interface DecoratorTestKeepMeResponse {
 }
 
 export namespace DecoratorTests {
-  export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
-
-  export import Languages = API.Languages;
-
-  export import KeepThisResource = API.KeepThisResource;
-  export import KeepThisResourceKeepThisMethodResponse = API.KeepThisResourceKeepThisMethodResponse;
+  export type DecoratorTestKeepMeResponse = DecoratorTestsAPI.DecoratorTestKeepMeResponse;
+  export import Languages = LanguagesAPI.Languages;
+  export import KeepThisResource = KeepThisResourceAPI.KeepThisResource;
+  export type KeepThisResourceKeepThisMethodResponse =
+    KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
 }

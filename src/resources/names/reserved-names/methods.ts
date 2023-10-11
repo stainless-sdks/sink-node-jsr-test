@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as API from './index';
+import * as MethodsAPI from 'sink-npm/resources/names/reserved-names/methods';
 
 export class Methods extends APIResource {
   /**
@@ -55,7 +55,7 @@ export interface MethodExportParams {
 }
 
 export namespace Methods {
-  export import Export = API.Export;
-  export import Return = API.Return;
-  export import MethodExportParams = API.MethodExportParams;
+  export type Export = MethodsAPI.Export;
+  export type Return = MethodsAPI.Return;
+  export type MethodExportParams = MethodsAPI.MethodExportParams;
 }

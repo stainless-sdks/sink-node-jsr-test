@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
 
 export class WriteOnlyResponses extends APIResource {
   /**
@@ -16,5 +16,5 @@ export class WriteOnlyResponses extends APIResource {
 export interface WriteOnlyResponseSimpleResponse {}
 
 export namespace WriteOnlyResponses {
-  export import WriteOnlyResponseSimpleResponse = API.WriteOnlyResponseSimpleResponse;
+  export type WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
 }

@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
-import { MyConcretePage, MyConcretePageParams } from 'sink-npm/pagination';
+import * as ConcreteAPI from 'sink-npm/resources/pagination-tests/concrete';
+import { MyConcretePage, type MyConcretePageParams } from 'sink-npm/pagination';
 
 export class Concrete extends APIResource {
   /**
@@ -24,6 +24,6 @@ export interface MyConcretePageItem {
 export interface ConcreteListParams extends MyConcretePageParams {}
 
 export namespace Concrete {
-  export import MyConcretePageItem = API.MyConcretePageItem;
-  export import ConcreteListParams = API.ConcreteListParams;
+  export type MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
+  export type ConcreteListParams = ConcreteAPI.ConcreteListParams;
 }

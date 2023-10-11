@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { AbstractPage, Response, APIClient, FinalRequestOptions, PageInfo } from './core';
-import * as Shared from './resources/shared';
-import * as PaginationTests from './resources/pagination-tests/index';
+import * as Shared from 'sink-npm/resources/shared';
+import * as ConcreteAPI from 'sink-npm/resources/pagination-tests/concrete';
 
 export interface CardPageResponse<Item> {
   data: Array<Item>;
@@ -98,7 +98,7 @@ export interface MyConcretePageResponse {
    */
   cursor: string | null;
 
-  data: Array<PaginationTests.MyConcretePageItem>;
+  data: Array<ConcreteAPI.MyConcretePageItem>;
 }
 
 export interface MyConcretePageParams {
@@ -108,10 +108,10 @@ export interface MyConcretePageParams {
 }
 
 export class MyConcretePage
-  extends AbstractPage<PaginationTests.MyConcretePageItem>
+  extends AbstractPage<ConcreteAPI.MyConcretePageItem>
   implements MyConcretePageResponse
 {
-  data: Array<PaginationTests.MyConcretePageItem>;
+  data: Array<ConcreteAPI.MyConcretePageItem>;
 
   /**
    * The cursor for the next page
@@ -130,7 +130,7 @@ export class MyConcretePage
     this.cursor = body.cursor;
   }
 
-  getPaginatedItems(): PaginationTests.MyConcretePageItem[] {
+  getPaginatedItems(): ConcreteAPI.MyConcretePageItem[] {
     return this.data;
   }
 

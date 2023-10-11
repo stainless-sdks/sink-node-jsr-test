@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ChildAPI from 'sink-npm/resources/parent/child';
 
 export class Child extends APIResource {
   /**
@@ -18,5 +18,5 @@ export interface ChildInlinedResponseResponse {
 }
 
 export namespace Child {
-  export import ChildInlinedResponseResponse = API.ChildInlinedResponseResponse;
+  export type ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
 }

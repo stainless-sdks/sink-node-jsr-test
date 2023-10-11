@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ArraysAPI from 'sink-npm/resources/types/arrays';
 
 export class Arrays extends APIResource {
   /**
@@ -31,6 +31,6 @@ export namespace ArrayObjectItemsResponse {
 }
 
 export namespace Arrays {
-  export import ArrayFloatItemsResponse = API.ArrayFloatItemsResponse;
-  export import ArrayObjectItemsResponse = API.ArrayObjectItemsResponse;
+  export type ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
+  export type ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
 }

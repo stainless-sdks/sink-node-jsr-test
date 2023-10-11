@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as TestingAPI from 'sink-npm/resources/testing';
 
 export class Testing extends APIResource {
   root(options?: Core.RequestOptions): Core.APIPromise<RootResponse> {
@@ -15,5 +15,5 @@ export interface RootResponse {
 }
 
 export namespace Testing {
-  export import RootResponse = API.RootResponse;
+  export type RootResponse = TestingAPI.RootResponse;
 }

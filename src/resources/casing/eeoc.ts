@@ -3,8 +3,8 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as API from './index';
-import { PageCursor, PageCursorParams } from 'sink-npm/pagination';
+import * as EEOCAPI from 'sink-npm/resources/casing/eeoc';
+import { PageCursor, type PageCursorParams } from 'sink-npm/pagination';
 
 export class EEOCResource extends APIResource {
   /**
@@ -24,8 +24,6 @@ export class EEOCResource extends APIResource {
 }
 
 export class EEOCsPageCursor extends PageCursor<EEOC> {}
-// alias so we can export it in the namespace
-type _EEOCsPageCursor = EEOCsPageCursor;
 
 export interface EEOC {
   foo?: string;
@@ -34,7 +32,7 @@ export interface EEOC {
 export interface EEOCListParams extends PageCursorParams {}
 
 export namespace EEOCResource {
-  export import EEOC = API.EEOC;
-  export type EEOCsPageCursor = _EEOCsPageCursor;
-  export import EEOCListParams = API.EEOCListParams;
+  export type EEOC = EEOCAPI.EEOC;
+  export import EEOCsPageCursor = EEOCAPI.EEOCsPageCursor;
+  export type EEOCListParams = EEOCAPI.EEOCListParams;
 }

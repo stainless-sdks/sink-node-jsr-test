@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as PositionalParamsAPI from 'sink-npm/resources/positional-params';
 
 export class PositionalParams extends APIResource {
   /**
@@ -274,14 +274,16 @@ export interface PositionalParamUnionBodyAndPathParams {
 }
 
 export namespace PositionalParams {
-  export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
-  export import PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
-  export import PositionalParamBodyParams = API.PositionalParamBodyParams;
-  export import PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
-  export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
-  export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
-  export import PositionalParamQueryParams = API.PositionalParamQueryParams;
-  export import PositionalParamQueryAndPathParams = API.PositionalParamQueryAndPathParams;
-  export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
-  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
+  export type PositionalParamBasicBodyParams = PositionalParamsAPI.PositionalParamBasicBodyParams;
+  export type PositionalParamBasicQueryParams = PositionalParamsAPI.PositionalParamBasicQueryParams;
+  export type PositionalParamBodyParams = PositionalParamsAPI.PositionalParamBodyParams;
+  export type PositionalParamBodyExtraParamParams = PositionalParamsAPI.PositionalParamBodyExtraParamParams;
+  export type PositionalParamKitchenSinkParams = PositionalParamsAPI.PositionalParamKitchenSinkParams;
+  export type PositionalParamMultiplePathParamsParams =
+    PositionalParamsAPI.PositionalParamMultiplePathParamsParams;
+  export type PositionalParamQueryParams = PositionalParamsAPI.PositionalParamQueryParams;
+  export type PositionalParamQueryAndPathParams = PositionalParamsAPI.PositionalParamQueryAndPathParams;
+  export type PositionalParamQueryMultipleParams = PositionalParamsAPI.PositionalParamQueryMultipleParams;
+  export type PositionalParamUnionBodyAndPathParams =
+    PositionalParamsAPI.PositionalParamUnionBodyAndPathParams;
 }

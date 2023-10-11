@@ -2,20 +2,22 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as TypesAPI from 'sink-npm/resources/types/types';
 import * as Shared from 'sink-npm/resources/shared';
-import { ReadOnlyParams } from './read-only-params';
-import { WriteOnlyResponses } from './write-only-responses';
-import { Maps } from './maps';
-import { Objects } from './objects';
-import { Arrays } from './arrays';
-import * as API from './index';
+import * as ArraysAPI from 'sink-npm/resources/types/arrays';
+import * as MapsAPI from 'sink-npm/resources/types/maps';
+import * as ObjectsAPI from 'sink-npm/resources/types/objects';
+import * as ReadOnlyParamsAPI from 'sink-npm/resources/types/read-only-params';
+import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
 
 export class Types extends APIResource {
-  readOnlyParams: ReadOnlyParams = new ReadOnlyParams(this.client);
-  writeOnlyResponses: WriteOnlyResponses = new WriteOnlyResponses(this.client);
-  maps: Maps = new Maps(this.client);
-  objects: Objects = new Objects(this.client);
-  arrays: Arrays = new Arrays(this.client);
+  readOnlyParams: ReadOnlyParamsAPI.ReadOnlyParams = new ReadOnlyParamsAPI.ReadOnlyParams(this.client);
+  writeOnlyResponses: WriteOnlyResponsesAPI.WriteOnlyResponses = new WriteOnlyResponsesAPI.WriteOnlyResponses(
+    this.client,
+  );
+  maps: MapsAPI.Maps = new MapsAPI.Maps(this.client);
+  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this.client);
+  arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this.client);
 
   /**
    * Endpoint that has date types should generate params/responses with rich date
@@ -166,34 +168,34 @@ export interface TypeEnumsParams {
 }
 
 export namespace Types {
-  export import TypeDatesResponse = API.TypeDatesResponse;
-  export import TypeDatetimesResponse = API.TypeDatetimesResponse;
-  export import TypeEnumsResponse = API.TypeEnumsResponse;
-  export import TypeDatesParams = API.TypeDatesParams;
-  export import TypeDatetimesParams = API.TypeDatetimesParams;
-  export import TypeEnumTestsArrayUniqueValuesParams = API.TypeEnumTestsArrayUniqueValuesParams;
-  export import TypeEnumTestsArrayUniqueValues2ValuesParams = API.TypeEnumTestsArrayUniqueValues2ValuesParams;
-  export import TypeEnumTestsArrayUniqueValuesNumbersParams = API.TypeEnumTestsArrayUniqueValuesNumbersParams;
-  export import TypeEnumsParams = API.TypeEnumsParams;
-
-  export import ReadOnlyParams = API.ReadOnlyParams;
-  export import ReadOnlyParamSimpleResponse = API.ReadOnlyParamSimpleResponse;
-  export import ReadOnlyParamSimpleParams = API.ReadOnlyParamSimpleParams;
-
-  export import WriteOnlyResponses = API.WriteOnlyResponses;
-  export import WriteOnlyResponseSimpleResponse = API.WriteOnlyResponseSimpleResponse;
-
-  export import Maps = API.Maps;
-  export import MapNullableItemsResponse = API.MapNullableItemsResponse;
-
-  export import Objects = API.Objects;
-  export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
-  export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
-  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = API.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
-
-  export import Arrays = API.Arrays;
-  export import ArrayFloatItemsResponse = API.ArrayFloatItemsResponse;
-  export import ArrayObjectItemsResponse = API.ArrayObjectItemsResponse;
+  export type TypeDatesResponse = TypesAPI.TypeDatesResponse;
+  export type TypeDatetimesResponse = TypesAPI.TypeDatetimesResponse;
+  export type TypeEnumsResponse = TypesAPI.TypeEnumsResponse;
+  export type TypeDatesParams = TypesAPI.TypeDatesParams;
+  export type TypeDatetimesParams = TypesAPI.TypeDatetimesParams;
+  export type TypeEnumTestsArrayUniqueValuesParams = TypesAPI.TypeEnumTestsArrayUniqueValuesParams;
+  export type TypeEnumTestsArrayUniqueValues2ValuesParams =
+    TypesAPI.TypeEnumTestsArrayUniqueValues2ValuesParams;
+  export type TypeEnumTestsArrayUniqueValuesNumbersParams =
+    TypesAPI.TypeEnumTestsArrayUniqueValuesNumbersParams;
+  export type TypeEnumsParams = TypesAPI.TypeEnumsParams;
+  export import ReadOnlyParams = ReadOnlyParamsAPI.ReadOnlyParams;
+  export type ReadOnlyParamSimpleResponse = ReadOnlyParamsAPI.ReadOnlyParamSimpleResponse;
+  export type ReadOnlyParamSimpleParams = ReadOnlyParamsAPI.ReadOnlyParamSimpleParams;
+  export import WriteOnlyResponses = WriteOnlyResponsesAPI.WriteOnlyResponses;
+  export type WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
+  export import Maps = MapsAPI.Maps;
+  export type MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
+  export import Objects = ObjectsAPI.Objects;
+  export type ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
+  export type ObjectMultipleArrayPropertiesSameRefResponse =
+    ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
+  export type ObjectMultiplePropertiesSameModelResponse =
+    ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
+  export type ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
+  export type ObjectTwoDimensionalArrayPrimitivePropertyResponse =
+    ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
+  export import Arrays = ArraysAPI.Arrays;
+  export type ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
+  export type ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
 }

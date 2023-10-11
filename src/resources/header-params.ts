@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as HeaderParamsAPI from 'sink-npm/resources/header-params';
 
 export class HeaderParams extends APIResource {
   /**
@@ -38,5 +38,5 @@ export interface HeaderParamClientArgumentParams {
 }
 
 export namespace HeaderParams {
-  export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
+  export type HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
 }

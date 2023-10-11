@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as API from './index';
+import * as SharedQueryParamsAPI from 'sink-npm/resources/shared-query-params';
 
 export class SharedQueryParams extends APIResource {
   retrieve(query?: SharedQueryParamRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<string>;
@@ -61,8 +61,8 @@ export interface SharedQueryParamDelParams {
 }
 
 export namespace SharedQueryParams {
-  export import SharedQueryParamRetrieveResponse = API.SharedQueryParamRetrieveResponse;
-  export import SharedQueryParamDelResponse = API.SharedQueryParamDelResponse;
-  export import SharedQueryParamRetrieveParams = API.SharedQueryParamRetrieveParams;
-  export import SharedQueryParamDelParams = API.SharedQueryParamDelParams;
+  export type SharedQueryParamRetrieveResponse = SharedQueryParamsAPI.SharedQueryParamRetrieveResponse;
+  export type SharedQueryParamDelResponse = SharedQueryParamsAPI.SharedQueryParamDelResponse;
+  export type SharedQueryParamRetrieveParams = SharedQueryParamsAPI.SharedQueryParamRetrieveParams;
+  export type SharedQueryParamDelParams = SharedQueryParamsAPI.SharedQueryParamDelParams;
 }

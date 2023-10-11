@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as FilesAPI from 'sink-npm/resources/files';
 import { type Uploadable, multipartFormRequestOptions } from 'sink-npm/core';
 
 export class Files extends APIResource {
@@ -93,10 +93,10 @@ export interface FileWithOptionalParamParams {
 }
 
 export namespace Files {
-  export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
-  export import FileEverythingMultipartResponse = API.FileEverythingMultipartResponse;
-  export import FileWithOptionalParamResponse = API.FileWithOptionalParamResponse;
-  export import FileCreateMultipartParams = API.FileCreateMultipartParams;
-  export import FileEverythingMultipartParams = API.FileEverythingMultipartParams;
-  export import FileWithOptionalParamParams = API.FileWithOptionalParamParams;
+  export type FileCreateMultipartResponse = FilesAPI.FileCreateMultipartResponse;
+  export type FileEverythingMultipartResponse = FilesAPI.FileEverythingMultipartResponse;
+  export type FileWithOptionalParamResponse = FilesAPI.FileWithOptionalParamResponse;
+  export type FileCreateMultipartParams = FilesAPI.FileCreateMultipartParams;
+  export type FileEverythingMultipartParams = FilesAPI.FileEverythingMultipartParams;
+  export type FileWithOptionalParamParams = FilesAPI.FileWithOptionalParamParams;
 }

@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as MakeAmbiguousSchemasLooserAPI from 'sink-npm/resources/make-ambiguous-schemas-looser';
 
 export class MakeAmbiguousSchemasLooser extends APIResource {
   /**
@@ -30,5 +30,6 @@ export interface MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse {
 }
 
 export namespace MakeAmbiguousSchemasLooser {
-  export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = API.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
+  export type MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse =
+    MakeAmbiguousSchemasLooserAPI.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
 }

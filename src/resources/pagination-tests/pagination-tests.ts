@@ -1,51 +1,43 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import { Concrete } from './concrete';
-import { PageNumber } from './page-number';
-import { Cursor } from './cursor';
-import { CursorURL } from './cursor-url';
-import { Offset } from './offset';
-import { FakePages } from './fake-pages';
-import { Hypermedia } from './hypermedia';
-import { HypermediaRaw } from './hypermedia-raw';
-import * as API from './index';
+import * as ConcreteAPI from 'sink-npm/resources/pagination-tests/concrete';
+import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
+import * as CursorURLAPI from 'sink-npm/resources/pagination-tests/cursor-url';
+import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
+import * as HypermediaAPI from 'sink-npm/resources/pagination-tests/hypermedia';
+import * as HypermediaRawAPI from 'sink-npm/resources/pagination-tests/hypermedia-raw';
+import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
+import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
 
 export class PaginationTests extends APIResource {
-  concrete: Concrete = new Concrete(this.client);
-  pageNumber: PageNumber = new PageNumber(this.client);
-  cursor: Cursor = new Cursor(this.client);
-  cursorURL: CursorURL = new CursorURL(this.client);
-  offset: Offset = new Offset(this.client);
-  fakePages: FakePages = new FakePages(this.client);
-  hypermedia: Hypermedia = new Hypermedia(this.client);
-  hypermediaRaw: HypermediaRaw = new HypermediaRaw(this.client);
+  concrete: ConcreteAPI.Concrete = new ConcreteAPI.Concrete(this.client);
+  pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this.client);
+  cursor: CursorAPI.Cursor = new CursorAPI.Cursor(this.client);
+  cursorURL: CursorURLAPI.CursorURL = new CursorURLAPI.CursorURL(this.client);
+  offset: OffsetAPI.Offset = new OffsetAPI.Offset(this.client);
+  fakePages: FakePagesAPI.FakePages = new FakePagesAPI.FakePages(this.client);
+  hypermedia: HypermediaAPI.Hypermedia = new HypermediaAPI.Hypermedia(this.client);
+  hypermediaRaw: HypermediaRawAPI.HypermediaRaw = new HypermediaRawAPI.HypermediaRaw(this.client);
 }
 
 export namespace PaginationTests {
-  export import Concrete = API.Concrete;
-  export import MyConcretePageItem = API.MyConcretePageItem;
-  export import ConcreteListParams = API.ConcreteListParams;
-
-  export import PageNumber = API.PageNumber;
-  export import PageNumberListParams = API.PageNumberListParams;
-
-  export import Cursor = API.Cursor;
-  export import CursorListParams = API.CursorListParams;
-  export import CursorListNestedResponsePropParams = API.CursorListNestedResponsePropParams;
-
-  export import CursorURL = API.CursorURL;
-  export import CursorURLListParams = API.CursorURLListParams;
-
-  export import Offset = API.Offset;
-  export import OffsetListParams = API.OffsetListParams;
-
-  export import FakePages = API.FakePages;
-  export import FakePageListParams = API.FakePageListParams;
-
-  export import Hypermedia = API.Hypermedia;
-  export import HypermediaListParams = API.HypermediaListParams;
-
-  export import HypermediaRaw = API.HypermediaRaw;
-  export import HypermediaRawListParams = API.HypermediaRawListParams;
+  export import Concrete = ConcreteAPI.Concrete;
+  export type MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
+  export type ConcreteListParams = ConcreteAPI.ConcreteListParams;
+  export import PageNumber = PageNumberAPI.PageNumber;
+  export type PageNumberListParams = PageNumberAPI.PageNumberListParams;
+  export import Cursor = CursorAPI.Cursor;
+  export type CursorListParams = CursorAPI.CursorListParams;
+  export type CursorListNestedResponsePropParams = CursorAPI.CursorListNestedResponsePropParams;
+  export import CursorURL = CursorURLAPI.CursorURL;
+  export type CursorURLListParams = CursorURLAPI.CursorURLListParams;
+  export import Offset = OffsetAPI.Offset;
+  export type OffsetListParams = OffsetAPI.OffsetListParams;
+  export import FakePages = FakePagesAPI.FakePages;
+  export type FakePageListParams = FakePagesAPI.FakePageListParams;
+  export import Hypermedia = HypermediaAPI.Hypermedia;
+  export type HypermediaListParams = HypermediaAPI.HypermediaListParams;
+  export import HypermediaRaw = HypermediaRawAPI.HypermediaRaw;
+  export type HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
 }

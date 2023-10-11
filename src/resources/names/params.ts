@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ParamsAPI from 'sink-npm/resources/names/params';
 
 export class Params extends APIResource {
   /**
@@ -43,6 +43,6 @@ export interface ParamTimeoutParamParams {
 }
 
 export namespace Params {
-  export import ParamOptionsParamParams = API.ParamOptionsParamParams;
-  export import ParamTimeoutParamParams = API.ParamTimeoutParamParams;
+  export type ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
+  export type ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
 }

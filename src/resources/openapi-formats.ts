@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as API from './index';
+import * as OpenapiFormatsAPI from 'sink-npm/resources/openapi-formats';
 
 export class OpenapiFormats extends APIResource {
   /**
@@ -57,8 +57,11 @@ export interface OpenapiFormatArrayTypeOneEntryWithNullParams {
 }
 
 export namespace OpenapiFormats {
-  export import OpenapiFormatArrayTypeOneEntryResponse = API.OpenapiFormatArrayTypeOneEntryResponse;
-  export import OpenapiFormatArrayTypeOneEntryWithNullResponse = API.OpenapiFormatArrayTypeOneEntryWithNullResponse;
-  export import OpenapiFormatArrayTypeOneEntryParams = API.OpenapiFormatArrayTypeOneEntryParams;
-  export import OpenapiFormatArrayTypeOneEntryWithNullParams = API.OpenapiFormatArrayTypeOneEntryWithNullParams;
+  export type OpenapiFormatArrayTypeOneEntryResponse =
+    OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryResponse;
+  export type OpenapiFormatArrayTypeOneEntryWithNullResponse =
+    OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullResponse;
+  export type OpenapiFormatArrayTypeOneEntryParams = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryParams;
+  export type OpenapiFormatArrayTypeOneEntryWithNullParams =
+    OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullParams;
 }

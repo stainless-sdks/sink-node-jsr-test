@@ -2,11 +2,11 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import { SharedResponses } from './shared-responses';
-import * as API from './index';
+import * as RecursionAPI from 'sink-npm/resources/recursion/recursion';
+import * as SharedResponsesAPI from 'sink-npm/resources/recursion/shared-responses';
 
 export class Recursion extends APIResource {
-  sharedResponses: SharedResponses = new SharedResponses(this.client);
+  sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this.client);
 
   createBranch(
     body: RecursionCreateBranchParams,
@@ -96,19 +96,18 @@ export interface RecursionCreateSelfParams {
 }
 
 export namespace Recursion {
-  export import ArrayRecursion = API.ArrayRecursion;
-  export import BranchRecursion = API.BranchRecursion;
-  export import BranchRecursionChildA = API.BranchRecursionChildA;
-  export import BranchRecursionChildB = API.BranchRecursionChildB;
-  export import MutualRecursionA = API.MutualRecursionA;
-  export import MutualRecursionB = API.MutualRecursionB;
-  export import SelfRecursion = API.SelfRecursion;
-  export import RecursionCreateEnvelopeResponse = API.RecursionCreateEnvelopeResponse;
-  export import RecursionCreateBranchParams = API.RecursionCreateBranchParams;
-  export import RecursionCreateEnvelopeParams = API.RecursionCreateEnvelopeParams;
-  export import RecursionCreateMutualAParams = API.RecursionCreateMutualAParams;
-  export import RecursionCreateMutualBParams = API.RecursionCreateMutualBParams;
-  export import RecursionCreateSelfParams = API.RecursionCreateSelfParams;
-
-  export import SharedResponses = API.SharedResponses;
+  export type ArrayRecursion = RecursionAPI.ArrayRecursion;
+  export type BranchRecursion = RecursionAPI.BranchRecursion;
+  export type BranchRecursionChildA = RecursionAPI.BranchRecursionChildA;
+  export type BranchRecursionChildB = RecursionAPI.BranchRecursionChildB;
+  export type MutualRecursionA = RecursionAPI.MutualRecursionA;
+  export type MutualRecursionB = RecursionAPI.MutualRecursionB;
+  export type SelfRecursion = RecursionAPI.SelfRecursion;
+  export type RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
+  export type RecursionCreateBranchParams = RecursionAPI.RecursionCreateBranchParams;
+  export type RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
+  export type RecursionCreateMutualAParams = RecursionAPI.RecursionCreateMutualAParams;
+  export type RecursionCreateMutualBParams = RecursionAPI.RecursionCreateMutualBParams;
+  export type RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
+  export import SharedResponses = SharedResponsesAPI.SharedResponses;
 }

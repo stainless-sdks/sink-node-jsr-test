@@ -3,10 +3,10 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as BodyParams from 'sink-npm/resources/body-params';
+import * as HypermediaAPI from 'sink-npm/resources/pagination-tests/hypermedia';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 import { MyModelsPageHypermedia } from 'sink-npm/resources/body-params';
-import * as API from './index';
-import { PageHypermediaParams } from 'sink-npm/pagination';
+import { type PageHypermediaParams } from 'sink-npm/pagination';
 
 export class Hypermedia extends APIResource {
   /**
@@ -15,12 +15,12 @@ export class Hypermedia extends APIResource {
   list(
     query?: HypermediaListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageHypermedia, BodyParams.MyModel>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageHypermedia, BodyParams.MyModel>;
+  ): Core.PagePromise<MyModelsPageHypermedia, BodyParamsAPI.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageHypermedia, BodyParamsAPI.MyModel>;
   list(
     query: HypermediaListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageHypermedia, BodyParams.MyModel> {
+  ): Core.PagePromise<MyModelsPageHypermedia, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -31,7 +31,7 @@ export class Hypermedia extends APIResource {
 export interface HypermediaListParams extends PageHypermediaParams {}
 
 export namespace Hypermedia {
-  export import HypermediaListParams = API.HypermediaListParams;
+  export type HypermediaListParams = HypermediaAPI.HypermediaListParams;
 }
 
 export { MyModelsPageHypermedia };

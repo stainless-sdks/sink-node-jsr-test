@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as PathParamsAPI from 'sink-npm/resources/path-params';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class PathParams extends APIResource {
   /**
@@ -67,6 +67,6 @@ export interface PathParamSingularResponse {
 }
 
 export namespace PathParams {
-  export import PathParamMultipleResponse = API.PathParamMultipleResponse;
-  export import PathParamSingularResponse = API.PathParamSingularResponse;
+  export type PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
+  export type PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
 }

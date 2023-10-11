@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import { Payments } from './payments';
-import * as API from './index';
+import * as CompanyAPI from 'sink-npm/resources/company/company';
+import * as PaymentsAPI from 'sink-npm/resources/company/payments';
 
 export class CompanyResource extends APIResource {
-  payments: Payments = new Payments(this.client);
+  payments: PaymentsAPI.Payments = new PaymentsAPI.Payments(this.client);
 }
 
 export interface Company {
@@ -13,8 +13,7 @@ export interface Company {
 }
 
 export namespace CompanyResource {
-  export import Company = API.Company;
-
-  export import Payments = API.Payments;
-  export import CompanyPayment = API.CompanyPayment;
+  export type Company = CompanyAPI.Company;
+  export import Payments = PaymentsAPI.Payments;
+  export type CompanyPayment = PaymentsAPI.CompanyPayment;
 }

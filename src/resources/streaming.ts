@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIPromise } from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as StreamingAPI from 'sink-npm/resources/streaming';
 import { Stream } from 'sink-npm/streaming';
 
 export class Streaming extends APIResource {
@@ -106,8 +106,8 @@ export interface StreamingBasicParamsBase {
 }
 
 export namespace StreamingBasicParams {
-  export type StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
-  export type StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
+  export type StreamingBasicParamsNonStreaming = StreamingAPI.StreamingBasicParamsNonStreaming;
+  export type StreamingBasicParamsStreaming = StreamingAPI.StreamingBasicParamsStreaming;
 }
 
 export interface StreamingBasicParamsNonStreaming extends StreamingBasicParamsBase {
@@ -149,8 +149,8 @@ export namespace StreamingNestedParamsParams {
     }
   }
 
-  export type StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
-  export type StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
+  export type StreamingNestedParamsParamsNonStreaming = StreamingAPI.StreamingNestedParamsParamsNonStreaming;
+  export type StreamingNestedParamsParamsStreaming = StreamingAPI.StreamingNestedParamsParamsStreaming;
 }
 
 export interface StreamingNestedParamsParamsNonStreaming extends StreamingNestedParamsParamsBase {
@@ -173,9 +173,9 @@ export interface StreamingQueryParamDiscriminatorParamsBase {
 
 export namespace StreamingQueryParamDiscriminatorParams {
   export type StreamingQueryParamDiscriminatorParamsNonStreaming =
-    API.StreamingQueryParamDiscriminatorParamsNonStreaming;
+    StreamingAPI.StreamingQueryParamDiscriminatorParamsNonStreaming;
   export type StreamingQueryParamDiscriminatorParamsStreaming =
-    API.StreamingQueryParamDiscriminatorParamsStreaming;
+    StreamingAPI.StreamingQueryParamDiscriminatorParamsStreaming;
 }
 
 export interface StreamingQueryParamDiscriminatorParamsNonStreaming
@@ -189,16 +189,19 @@ export interface StreamingQueryParamDiscriminatorParamsStreaming
 }
 
 export namespace Streaming {
-  export import StreamingBasicResponse = API.StreamingBasicResponse;
-  export import StreamingNestedParamsResponse = API.StreamingNestedParamsResponse;
-  export import StreamingQueryParamDiscriminatorResponse = API.StreamingQueryParamDiscriminatorResponse;
-  export import StreamingBasicParams = API.StreamingBasicParams;
-  export import StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
-  export import StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
-  export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
-  export import StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
-  export import StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
-  export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
-  export import StreamingQueryParamDiscriminatorParamsNonStreaming = API.StreamingQueryParamDiscriminatorParamsNonStreaming;
-  export import StreamingQueryParamDiscriminatorParamsStreaming = API.StreamingQueryParamDiscriminatorParamsStreaming;
+  export type StreamingBasicResponse = StreamingAPI.StreamingBasicResponse;
+  export type StreamingNestedParamsResponse = StreamingAPI.StreamingNestedParamsResponse;
+  export type StreamingQueryParamDiscriminatorResponse =
+    StreamingAPI.StreamingQueryParamDiscriminatorResponse;
+  export type StreamingBasicParams = StreamingAPI.StreamingBasicParams;
+  export type StreamingBasicParamsNonStreaming = StreamingAPI.StreamingBasicParamsNonStreaming;
+  export type StreamingBasicParamsStreaming = StreamingAPI.StreamingBasicParamsStreaming;
+  export type StreamingNestedParamsParams = StreamingAPI.StreamingNestedParamsParams;
+  export type StreamingNestedParamsParamsNonStreaming = StreamingAPI.StreamingNestedParamsParamsNonStreaming;
+  export type StreamingNestedParamsParamsStreaming = StreamingAPI.StreamingNestedParamsParamsStreaming;
+  export type StreamingQueryParamDiscriminatorParams = StreamingAPI.StreamingQueryParamDiscriminatorParams;
+  export type StreamingQueryParamDiscriminatorParamsNonStreaming =
+    StreamingAPI.StreamingQueryParamDiscriminatorParamsNonStreaming;
+  export type StreamingQueryParamDiscriminatorParamsStreaming =
+    StreamingAPI.StreamingQueryParamDiscriminatorParamsStreaming;
 }

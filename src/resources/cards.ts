@@ -3,9 +3,9 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
+import * as CardsAPI from 'sink-npm/resources/cards';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
-import { CardPage, CardPageParams, PageCursor } from 'sink-npm/pagination';
+import { CardPage, type CardPageParams, PageCursor } from 'sink-npm/pagination';
 
 export class Cards extends APIResource {
   /**
@@ -178,12 +178,8 @@ export class Cards extends APIResource {
  * Test description for card pages.
  */
 export class CardsCardPage extends CardPage<Card> {}
-// alias so we can export it in the namespace
-type _CardsCardPage = CardsCardPage;
 
 export class CardsPageCursor extends PageCursor<Card> {}
-// alias so we can export it in the namespace
-type _CardsPageCursor = CardsPageCursor;
 
 export interface Card {
   /**
@@ -890,17 +886,17 @@ export interface CardReissueParams {
 }
 
 export namespace Cards {
-  export import Card = API.Card;
-  export import CardAlias = API.CardAlias;
-  export import FundingAccount = API.FundingAccount;
-  export import CardProvisionFooResponse = API.CardProvisionFooResponse;
-  export type CardsCardPage = _CardsCardPage;
-  export import CardCreateParams = API.CardCreateParams;
-  export import CardUpdateParams = API.CardUpdateParams;
-  export import CardListParams = API.CardListParams;
-  export import CardCreateAliasedParams = API.CardCreateAliasedParams;
-  export import CardCreateAliasedDeprecatedParams = API.CardCreateAliasedDeprecatedParams;
-  export import CardListNonGetParams = API.CardListNonGetParams;
-  export import CardProvisionFooParams = API.CardProvisionFooParams;
-  export import CardReissueParams = API.CardReissueParams;
+  export type Card = CardsAPI.Card;
+  export type CardAlias = CardsAPI.CardAlias;
+  export type FundingAccount = CardsAPI.FundingAccount;
+  export type CardProvisionFooResponse = CardsAPI.CardProvisionFooResponse;
+  export import CardsCardPage = CardsAPI.CardsCardPage;
+  export type CardCreateParams = CardsAPI.CardCreateParams;
+  export type CardUpdateParams = CardsAPI.CardUpdateParams;
+  export type CardListParams = CardsAPI.CardListParams;
+  export type CardCreateAliasedParams = CardsAPI.CardCreateAliasedParams;
+  export type CardCreateAliasedDeprecatedParams = CardsAPI.CardCreateAliasedDeprecatedParams;
+  export type CardListNonGetParams = CardsAPI.CardListNonGetParams;
+  export type CardProvisionFooParams = CardsAPI.CardProvisionFooParams;
+  export type CardReissueParams = CardsAPI.CardReissueParams;
 }

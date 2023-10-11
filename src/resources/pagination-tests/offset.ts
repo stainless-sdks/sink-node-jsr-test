@@ -3,10 +3,10 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as BodyParams from 'sink-npm/resources/body-params';
+import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 import { MyModelsPageOffset } from 'sink-npm/resources/body-params';
-import * as API from './index';
-import { PageOffsetParams } from 'sink-npm/pagination';
+import { type PageOffsetParams } from 'sink-npm/pagination';
 
 export class Offset extends APIResource {
   /**
@@ -15,12 +15,12 @@ export class Offset extends APIResource {
   list(
     query?: OffsetListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageOffset, BodyParams.MyModel>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffset, BodyParams.MyModel>;
+  ): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel>;
   list(
     query: OffsetListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageOffset, BodyParams.MyModel> {
+  ): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -31,7 +31,7 @@ export class Offset extends APIResource {
 export interface OffsetListParams extends PageOffsetParams {}
 
 export namespace Offset {
-  export import OffsetListParams = API.OffsetListParams;
+  export type OffsetListParams = OffsetAPI.OffsetListParams;
 }
 
 export { MyModelsPageOffset };

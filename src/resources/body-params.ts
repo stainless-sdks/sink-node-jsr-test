@@ -3,17 +3,17 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as Responses from 'sink-npm/resources/responses/index';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
+import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
 import {
-  PagePageNumber,
   PageCursor,
   PageCursorNestedResponseProp,
   PageCursorURL,
-  PageOffset,
   PageHypermedia,
   PageHypermediaRaw,
+  PageOffset,
+  PagePageNumber,
 } from 'sink-npm/pagination';
 
 export class BodyParams extends APIResource {
@@ -24,7 +24,7 @@ export class BodyParams extends APIResource {
   nestedRequestModels(
     body: BodyParamNestedRequestModelsParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<Responses.ModelWithNestedModel> {
+  ): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
     return this.post('/body_params/with_nested_models', { body, ...options });
   }
 
@@ -282,32 +282,18 @@ export class BodyParams extends APIResource {
 }
 
 export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPagePageNumber = MyModelsPagePageNumber;
 
 export class MyModelsPageCursor extends PageCursor<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPageCursor = MyModelsPageCursor;
 
 export class MyModelsPageCursorNestedResponseProp extends PageCursorNestedResponseProp<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPageCursorNestedResponseProp = MyModelsPageCursorNestedResponseProp;
 
 export class MyModelsPageCursorURL extends PageCursorURL<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPageCursorURL = MyModelsPageCursorURL;
 
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPageOffset = MyModelsPageOffset;
 
 export class MyModelsPageHypermedia extends PageHypermedia<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPageHypermedia = MyModelsPageHypermedia;
 
 export class MyModelsPageHypermediaRaw extends PageHypermediaRaw<MyModel> {}
-// alias so we can export it in the namespace
-type _MyModelsPageHypermediaRaw = MyModelsPageHypermediaRaw;
 
 export type ModelWithParamInName = Record<string, string>;
 
@@ -569,30 +555,35 @@ export interface BodyParamWithModelPropertyParams {
 }
 
 export namespace BodyParams {
-  export import ModelWithParamInName = API.ModelWithParamInName;
-  export import MyModel = API.MyModel;
-  export import NestedRequestModelA = API.NestedRequestModelA;
-  export import NestedRequestModelB = API.NestedRequestModelB;
-  export import NestedRequestModelC = API.NestedRequestModelC;
-  export import StringMapModel = API.StringMapModel;
-  export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
-  export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
-  export import BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
-  export import BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
-  export import BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;
-  export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
-  export import BodyParamPropertyWithHeavilyNestedComplexUnionParams = API.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
-  export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
-  export import BodyParamStringMapModelRefParams = API.BodyParamStringMapModelRefParams;
-  export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
-  export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
-  export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
-  export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
-  export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
-  export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
-  export import BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
-  export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
-  export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
-  export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;
-  export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
+  export type ModelWithParamInName = BodyParamsAPI.ModelWithParamInName;
+  export type MyModel = BodyParamsAPI.MyModel;
+  export type NestedRequestModelA = BodyParamsAPI.NestedRequestModelA;
+  export type NestedRequestModelB = BodyParamsAPI.NestedRequestModelB;
+  export type NestedRequestModelC = BodyParamsAPI.NestedRequestModelC;
+  export type StringMapModel = BodyParamsAPI.StringMapModel;
+  export type BodyParamTopLevelAllOfResponse = BodyParamsAPI.BodyParamTopLevelAllOfResponse;
+  export type BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
+  export type BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
+  export type BodyParamParamInModelNameRefParams = BodyParamsAPI.BodyParamParamInModelNameRefParams;
+  export type BodyParamPropertyModelRefParams = BodyParamsAPI.BodyParamPropertyModelRefParams;
+  export type BodyParamPropertyWithComplexUnionParams = BodyParamsAPI.BodyParamPropertyWithComplexUnionParams;
+  export type BodyParamPropertyWithHeavilyNestedComplexUnionParams =
+    BodyParamsAPI.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
+  export type BodyParamReadOnlyPropertiesParams = BodyParamsAPI.BodyParamReadOnlyPropertiesParams;
+  export type BodyParamStringMapModelRefParams = BodyParamsAPI.BodyParamStringMapModelRefParams;
+  export type BodyParamTopLevelAllOfParams = BodyParamsAPI.BodyParamTopLevelAllOfParams;
+  export type BodyParamTopLevelAllOfNestedObjectParams =
+    BodyParamsAPI.BodyParamTopLevelAllOfNestedObjectParams;
+  export type BodyParamTopLevelAnyOfWithRefParams = BodyParamsAPI.BodyParamTopLevelAnyOfWithRefParams;
+  export type BodyParamTopLevelArrayParams = BodyParamsAPI.BodyParamTopLevelArrayParams;
+  export type BodyParamTopLevelArrayWithChildrenParams =
+    BodyParamsAPI.BodyParamTopLevelArrayWithChildrenParams;
+  export type BodyParamTopLevelOneOfOneEntryParams = BodyParamsAPI.BodyParamTopLevelOneOfOneEntryParams;
+  export type BodyParamTopLevelSharedTypeParams = BodyParamsAPI.BodyParamTopLevelSharedTypeParams;
+  export type BodyParamUnionOverlappingPropParams = BodyParamsAPI.BodyParamUnionOverlappingPropParams;
+  export type BodyParamWithDefaultBodyParamOptionalParams =
+    BodyParamsAPI.BodyParamWithDefaultBodyParamOptionalParams;
+  export type BodyParamWithDefaultBodyParamRequiredParams =
+    BodyParamsAPI.BodyParamWithDefaultBodyParamRequiredParams;
+  export type BodyParamWithModelPropertyParams = BodyParamsAPI.BodyParamWithModelPropertyParams;
 }

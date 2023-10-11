@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as WidgetsAPI from 'sink-npm/resources/widgets';
 
 export class Widgets extends APIResource {
   /**
@@ -25,5 +25,5 @@ export interface Widget {
 }
 
 export namespace Widgets {
-  export import Widget = API.Widget;
+  export type Widget = WidgetsAPI.Widget;
 }

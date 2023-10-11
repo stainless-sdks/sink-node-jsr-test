@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as PaymentsAPI from 'sink-npm/resources/company/payments';
 
 export class Payments extends APIResource {
   /**
@@ -18,5 +18,5 @@ export interface CompanyPayment {
 }
 
 export namespace Payments {
-  export import CompanyPayment = API.CompanyPayment;
+  export type CompanyPayment = PaymentsAPI.CompanyPayment;
 }

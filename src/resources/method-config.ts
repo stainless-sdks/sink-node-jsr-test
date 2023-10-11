@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as MethodConfigAPI from 'sink-npm/resources/method-config';
 
 export class MethodConfig extends APIResource {
   /**
@@ -105,11 +105,12 @@ export interface MethodConfigSkippedTestsPythonResponse {
 }
 
 export namespace MethodConfig {
-  export import MethodConfigSkippedTestsAllResponse = API.MethodConfigSkippedTestsAllResponse;
-  export import MethodConfigSkippedTestsGoResponse = API.MethodConfigSkippedTestsGoResponse;
-  export import MethodConfigSkippedTestsJavaResponse = API.MethodConfigSkippedTestsJavaResponse;
-  export import MethodConfigSkippedTestsKotlinResponse = API.MethodConfigSkippedTestsKotlinResponse;
-  export import MethodConfigSkippedTestsNodeResponse = API.MethodConfigSkippedTestsNodeResponse;
-  export import MethodConfigSkippedTestsNodeAndPythonResponse = API.MethodConfigSkippedTestsNodeAndPythonResponse;
-  export import MethodConfigSkippedTestsPythonResponse = API.MethodConfigSkippedTestsPythonResponse;
+  export type MethodConfigSkippedTestsAllResponse = MethodConfigAPI.MethodConfigSkippedTestsAllResponse;
+  export type MethodConfigSkippedTestsGoResponse = MethodConfigAPI.MethodConfigSkippedTestsGoResponse;
+  export type MethodConfigSkippedTestsJavaResponse = MethodConfigAPI.MethodConfigSkippedTestsJavaResponse;
+  export type MethodConfigSkippedTestsKotlinResponse = MethodConfigAPI.MethodConfigSkippedTestsKotlinResponse;
+  export type MethodConfigSkippedTestsNodeResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeResponse;
+  export type MethodConfigSkippedTestsNodeAndPythonResponse =
+    MethodConfigAPI.MethodConfigSkippedTestsNodeAndPythonResponse;
+  export type MethodConfigSkippedTestsPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsPythonResponse;
 }

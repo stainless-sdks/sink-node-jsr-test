@@ -1,19 +1,20 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import { PaginatedModelFirstRef } from './paginated-model-first-ref';
-import { PaginatedModelSecondRef } from './paginated-model-second-ref';
-import * as API from './index';
+import * as PaginatedModelFirstRefAPI from 'sink-npm/resources/resource-refs/paginated-model-first-ref';
+import * as PaginatedModelSecondRefAPI from 'sink-npm/resources/resource-refs/paginated-model-second-ref';
 
 export class ResourceRefs extends APIResource {
-  paginatedModelFirstRef: PaginatedModelFirstRef = new PaginatedModelFirstRef(this.client);
-  paginatedModelSecondRef: PaginatedModelSecondRef = new PaginatedModelSecondRef(this.client);
+  paginatedModelFirstRef: PaginatedModelFirstRefAPI.PaginatedModelFirstRef =
+    new PaginatedModelFirstRefAPI.PaginatedModelFirstRef(this.client);
+  paginatedModelSecondRef: PaginatedModelSecondRefAPI.PaginatedModelSecondRef =
+    new PaginatedModelSecondRefAPI.PaginatedModelSecondRef(this.client);
 }
 
 export namespace ResourceRefs {
-  export import PaginatedModelFirstRef = API.PaginatedModelFirstRef;
-  export import PaginatedModelFirstRefListParams = API.PaginatedModelFirstRefListParams;
-
-  export import PaginatedModelSecondRef = API.PaginatedModelSecondRef;
-  export import PaginatedModelSecondRefListParams = API.PaginatedModelSecondRefListParams;
+  export import PaginatedModelFirstRef = PaginatedModelFirstRefAPI.PaginatedModelFirstRef;
+  export type PaginatedModelFirstRefListParams = PaginatedModelFirstRefAPI.PaginatedModelFirstRefListParams;
+  export import PaginatedModelSecondRef = PaginatedModelSecondRefAPI.PaginatedModelSecondRef;
+  export type PaginatedModelSecondRefListParams =
+    PaginatedModelSecondRefAPI.PaginatedModelSecondRefListParams;
 }

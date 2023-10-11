@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as EnvelopesAPI from 'sink-npm/resources/envelopes';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class Envelopes extends APIResource {
   /**
@@ -91,7 +91,7 @@ export interface EnvelopeInlineResponseResponse {
 export type EnvelopeWrappedArrayResponse = Array<Shared.ObjectWithChildRef>;
 
 export namespace Envelopes {
-  export import Address = API.Address;
-  export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
-  export import EnvelopeWrappedArrayResponse = API.EnvelopeWrappedArrayResponse;
+  export type Address = EnvelopesAPI.Address;
+  export type EnvelopeInlineResponseResponse = EnvelopesAPI.EnvelopeInlineResponseResponse;
+  export type EnvelopeWrappedArrayResponse = EnvelopesAPI.EnvelopeWrappedArrayResponse;
 }

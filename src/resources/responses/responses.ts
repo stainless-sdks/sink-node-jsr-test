@@ -2,14 +2,14 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as BodyParams from 'sink-npm/resources/body-params';
+import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 import * as Shared from 'sink-npm/resources/shared';
-import * as Payments from 'sink-npm/resources/company/payments';
-import { UnionTypes } from './union-types';
-import * as API from './index';
+import * as PaymentsAPI from 'sink-npm/resources/company/payments';
+import * as UnionTypesAPI from 'sink-npm/resources/responses/union-types';
 
 export class Responses extends APIResource {
-  unionTypes: UnionTypes = new UnionTypes(this.client);
+  unionTypes: UnionTypesAPI.UnionTypes = new UnionTypesAPI.UnionTypes(this.client);
 
   /**
    * Endpoint with a top level additionalProperties response.
@@ -233,7 +233,7 @@ export type UnknownObject = unknown;
 
 export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
 
-export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParams.MyModel>;
+export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParamsAPI.MyModel>;
 
 export interface ResponseAllofCrossResourceResponse extends SimpleAllof, ResponsesAllofCrossObject {
   baz?: string;
@@ -280,7 +280,7 @@ export interface ResponseObjectAllPropertiesResponse {
 
   n: null;
 
-  object_array: Array<Payments.CompanyPayment>;
+  object_array: Array<PaymentsAPI.CompanyPayment>;
 
   primitive_array: Array<string>;
 
@@ -330,31 +330,33 @@ export namespace ResponseObjectWithHeavilyNestedUnionResponse {
 export type ResponseStringResponseResponse = string;
 
 export namespace Responses {
-  export import ModelFromNestedPath = API.ModelFromNestedPath;
-  export import ModelWithNestedModel = API.ModelWithNestedModel;
-  export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
-  export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
-  export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
-  export import SimpleAllof = API.SimpleAllof;
-  export import UnknownObject = API.UnknownObject;
-  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
-  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
-  export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
-  export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
-  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
-  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
-  export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
-  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import ResponseNestedArrayResponse = API.ResponseNestedArrayResponse;
-  export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
-  export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
-  export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
-  export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
-  export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
-
-  export import UnionTypes = API.UnionTypes;
-  export import UnionTypeMixedTypesResponse = API.UnionTypeMixedTypesResponse;
-  export import UnionTypeNumbersResponse = API.UnionTypeNumbersResponse;
-  export import UnionTypeObjectsResponse = API.UnionTypeObjectsResponse;
-  export import UnionTypeSuperMixedTypesResponse = API.UnionTypeSuperMixedTypesResponse;
+  export type ModelFromNestedPath = ResponsesAPI.ModelFromNestedPath;
+  export type ModelWithNestedModel = ResponsesAPI.ModelWithNestedModel;
+  export type ObjectWithAnyOfNullProperty = ResponsesAPI.ObjectWithAnyOfNullProperty;
+  export type ObjectWithOneOfNullProperty = ResponsesAPI.ObjectWithOneOfNullProperty;
+  export type ResponsesAllofCrossObject = ResponsesAPI.ResponsesAllofCrossObject;
+  export type SimpleAllof = ResponsesAPI.SimpleAllof;
+  export type UnknownObject = ResponsesAPI.UnknownObject;
+  export type ResponseAdditionalPropertiesResponse = ResponsesAPI.ResponseAdditionalPropertiesResponse;
+  export type ResponseAdditionalPropertiesNestedModelReferenceResponse =
+    ResponsesAPI.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export type ResponseAllofCrossResourceResponse = ResponsesAPI.ResponseAllofCrossResourceResponse;
+  export type ResponseAllofSimpleResponse = ResponsesAPI.ResponseAllofSimpleResponse;
+  export type ResponseArrayResponseResponse = ResponsesAPI.ResponseArrayResponseResponse;
+  export type ResponseBooleanResponseResponse = ResponsesAPI.ResponseBooleanResponseResponse;
+  export type ResponseIntegerResponseResponse = ResponsesAPI.ResponseIntegerResponseResponse;
+  export type ResponseMissingRequiredResponse = ResponsesAPI.ResponseMissingRequiredResponse;
+  export type ResponseNestedArrayResponse = ResponsesAPI.ResponseNestedArrayResponse;
+  export type ResponseObjectAllPropertiesResponse = ResponsesAPI.ResponseObjectAllPropertiesResponse;
+  export type ResponseObjectNoPropertiesResponse = ResponsesAPI.ResponseObjectNoPropertiesResponse;
+  export type ResponseObjectWithAdditionalPropertiesPropResponse =
+    ResponsesAPI.ResponseObjectWithAdditionalPropertiesPropResponse;
+  export type ResponseObjectWithHeavilyNestedUnionResponse =
+    ResponsesAPI.ResponseObjectWithHeavilyNestedUnionResponse;
+  export type ResponseStringResponseResponse = ResponsesAPI.ResponseStringResponseResponse;
+  export import UnionTypes = UnionTypesAPI.UnionTypes;
+  export type UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
+  export type UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
+  export type UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
+  export type UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
 }

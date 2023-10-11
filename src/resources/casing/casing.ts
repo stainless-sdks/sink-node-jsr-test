@@ -1,16 +1,15 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import { APIResource } from 'sink-npm/resource';
-import { EEOCResource } from './eeoc';
-import * as API from './index';
+import * as EEOCAPI from 'sink-npm/resources/casing/eeoc';
 
 export class Casing extends APIResource {
-  eeoc: EEOCResource = new EEOCResource(this.client);
+  eeoc: EEOCAPI.EEOCResource = new EEOCAPI.EEOCResource(this.client);
 }
 
 export namespace Casing {
-  export import EEOCResource = API.EEOCResource;
-  export import EEOC = API.EEOC;
-  export import EEOCsPageCursor = API.EEOCsPageCursor;
-  export import EEOCListParams = API.EEOCListParams;
+  export import EEOCResource = EEOCAPI.EEOCResource;
+  export type EEOC = EEOCAPI.EEOC;
+  export import EEOCsPageCursor = EEOCAPI.EEOCsPageCursor;
+  export type EEOCListParams = EEOCAPI.EEOCListParams;
 }

@@ -3,10 +3,10 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as BodyParams from 'sink-npm/resources/body-params';
+import * as HypermediaRawAPI from 'sink-npm/resources/pagination-tests/hypermedia-raw';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 import { MyModelsPageHypermediaRaw } from 'sink-npm/resources/body-params';
-import * as API from './index';
-import { PageHypermediaRawParams } from 'sink-npm/pagination';
+import { type PageHypermediaRawParams } from 'sink-npm/pagination';
 
 export class HypermediaRaw extends APIResource {
   /**
@@ -15,12 +15,12 @@ export class HypermediaRaw extends APIResource {
   list(
     query?: HypermediaRawListParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParams.MyModel>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParams.MyModel>;
+  ): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParamsAPI.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParamsAPI.MyModel>;
   list(
     query: HypermediaRawListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParams.MyModel> {
+  ): Core.PagePromise<MyModelsPageHypermediaRaw, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -31,7 +31,7 @@ export class HypermediaRaw extends APIResource {
 export interface HypermediaRawListParams extends PageHypermediaRawParams {}
 
 export namespace HypermediaRaw {
-  export import HypermediaRawListParams = API.HypermediaRawListParams;
+  export type HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
 }
 
 export { MyModelsPageHypermediaRaw };

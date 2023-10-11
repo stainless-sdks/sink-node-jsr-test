@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as DefaultPathParamsAPI from 'sink-npm/resources/default-path-params';
 
 export class DefaultPathParams extends APIResource {
   /**
@@ -37,6 +37,7 @@ export interface DefaultPathParamOnlyGlobalResponse {
 }
 
 export namespace DefaultPathParams {
-  export import DefaultPathParamGlobalWithStandardResponse = API.DefaultPathParamGlobalWithStandardResponse;
-  export import DefaultPathParamOnlyGlobalResponse = API.DefaultPathParamOnlyGlobalResponse;
+  export type DefaultPathParamGlobalWithStandardResponse =
+    DefaultPathParamsAPI.DefaultPathParamGlobalWithStandardResponse;
+  export type DefaultPathParamOnlyGlobalResponse = DefaultPathParamsAPI.DefaultPathParamOnlyGlobalResponse;
 }

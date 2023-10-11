@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as ArraysAPI from 'sink-npm/resources/invalid-schemas/arrays';
 
 export class Arrays extends APIResource {
   missingItems(options?: Core.RequestOptions): Core.APIPromise<ArrayMissingItemsResponse> {
@@ -15,5 +15,5 @@ export interface ArrayMissingItemsResponse {
 }
 
 export namespace Arrays {
-  export import ArrayMissingItemsResponse = API.ArrayMissingItemsResponse;
+  export type ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
 }

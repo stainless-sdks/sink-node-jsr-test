@@ -2,7 +2,7 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as API from './index';
+import * as KeepThisResourceAPI from 'sink-npm/resources/decorator-tests/keep-this-resource';
 
 export class KeepThisResource extends APIResource {
   /**
@@ -19,5 +19,6 @@ export interface KeepThisResourceKeepThisMethodResponse {
 }
 
 export namespace KeepThisResource {
-  export import KeepThisResourceKeepThisMethodResponse = API.KeepThisResourceKeepThisMethodResponse;
+  export type KeepThisResourceKeepThisMethodResponse =
+    KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
 }

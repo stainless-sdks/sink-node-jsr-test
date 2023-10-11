@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
+import * as UnionTypesAPI from 'sink-npm/resources/responses/union-types';
 import * as Shared from 'sink-npm/resources/shared';
-import * as API from './index';
 
 export class UnionTypes extends APIResource {
   /**
@@ -71,8 +71,8 @@ export namespace UnionTypeSuperMixedTypesResponse {
 }
 
 export namespace UnionTypes {
-  export import UnionTypeMixedTypesResponse = API.UnionTypeMixedTypesResponse;
-  export import UnionTypeNumbersResponse = API.UnionTypeNumbersResponse;
-  export import UnionTypeObjectsResponse = API.UnionTypeObjectsResponse;
-  export import UnionTypeSuperMixedTypesResponse = API.UnionTypeSuperMixedTypesResponse;
+  export type UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
+  export type UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
+  export type UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
+  export type UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
 }

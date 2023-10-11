@@ -2,8 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as BodyParams from 'sink-npm/resources/body-params';
-import * as API from './index';
+import * as ObjectsAPI from 'sink-npm/resources/types/objects';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 
 export class Objects extends APIResource {
   /**
@@ -85,11 +85,11 @@ export namespace ObjectMultipleArrayPropertiesSameRefResponse {
 }
 
 export interface ObjectMultiplePropertiesSameModelResponse {
-  required_prop: BodyParams.MyModel;
+  required_prop: BodyParamsAPI.MyModel;
 
-  bar?: BodyParams.MyModel;
+  bar?: BodyParamsAPI.MyModel;
 
-  foo?: BodyParams.MyModel;
+  foo?: BodyParamsAPI.MyModel;
 }
 
 export interface ObjectMultiplePropertiesSameRefResponse {
@@ -125,9 +125,12 @@ export interface ObjectTwoDimensionalArrayPrimitivePropertyResponse {
 }
 
 export namespace Objects {
-  export import ObjectMixedKnownAndUnknownResponse = API.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultipleArrayPropertiesSameRefResponse = API.ObjectMultipleArrayPropertiesSameRefResponse;
-  export import ObjectMultiplePropertiesSameModelResponse = API.ObjectMultiplePropertiesSameModelResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = API.ObjectMultiplePropertiesSameRefResponse;
-  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = API.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
+  export type ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
+  export type ObjectMultipleArrayPropertiesSameRefResponse =
+    ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
+  export type ObjectMultiplePropertiesSameModelResponse =
+    ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
+  export type ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
+  export type ObjectTwoDimensionalArrayPrimitivePropertyResponse =
+    ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
 }

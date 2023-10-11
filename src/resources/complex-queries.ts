@@ -3,7 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as API from './index';
+import * as ComplexQueriesAPI from 'sink-npm/resources/complex-queries';
 
 export class ComplexQueries extends APIResource {
   arrayQuery(
@@ -52,8 +52,8 @@ export interface ComplexQueryObjectQueryParams {
 }
 
 export namespace ComplexQueries {
-  export import ComplexQueryArrayQueryResponse = API.ComplexQueryArrayQueryResponse;
-  export import ComplexQueryObjectQueryResponse = API.ComplexQueryObjectQueryResponse;
-  export import ComplexQueryArrayQueryParams = API.ComplexQueryArrayQueryParams;
-  export import ComplexQueryObjectQueryParams = API.ComplexQueryObjectQueryParams;
+  export type ComplexQueryArrayQueryResponse = ComplexQueriesAPI.ComplexQueryArrayQueryResponse;
+  export type ComplexQueryObjectQueryResponse = ComplexQueriesAPI.ComplexQueryObjectQueryResponse;
+  export type ComplexQueryArrayQueryParams = ComplexQueriesAPI.ComplexQueryArrayQueryParams;
+  export type ComplexQueryObjectQueryParams = ComplexQueriesAPI.ComplexQueryObjectQueryParams;
 }
