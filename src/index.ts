@@ -65,6 +65,8 @@ export interface ClientOptions {
 
   requiredArgNoEnv: string;
 
+  requiredArgNoEnvWithDefault?: string;
+
   clientPathParam?: string | null;
 
   camelCasePath?: string | null;
@@ -152,6 +154,7 @@ export class Sink extends Core.APIClient {
   someNumberArgRequiredNoDefault: number;
   someNumberArgRequiredNoDefaultNoEnv: number;
   requiredArgNoEnv: string;
+  requiredArgNoEnvWithDefault: string;
   clientPathParam: string | null;
   camelCasePath: string | null;
 
@@ -171,6 +174,7 @@ export class Sink extends Core.APIClient {
    * @param {number} [opts.someNumberArgRequiredNoDefault==process.env['SINK_SOME_NUMBER_ARG'] ?? undefined]
    * @param {number} opts.someNumberArgRequiredNoDefaultNoEnv
    * @param {string} opts.requiredArgNoEnv
+   * @param {string} [opts.requiredArgNoEnvWithDefault=hi!]
    * @param {string | null} [opts.clientPathParam]
    * @param {string | null} [opts.camelCasePath]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
@@ -195,6 +199,7 @@ export class Sink extends Core.APIClient {
     someNumberArgRequiredNoDefault = Core.maybeCoerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')),
     someNumberArgRequiredNoDefaultNoEnv,
     requiredArgNoEnv,
+    requiredArgNoEnvWithDefault = 'hi!',
     clientPathParam = null,
     camelCasePath = null,
     ...opts
@@ -232,6 +237,7 @@ export class Sink extends Core.APIClient {
       someNumberArgRequiredNoDefault,
       someNumberArgRequiredNoDefaultNoEnv,
       requiredArgNoEnv,
+      requiredArgNoEnvWithDefault,
       clientPathParam,
       camelCasePath,
       ...opts,
@@ -265,6 +271,7 @@ export class Sink extends Core.APIClient {
     this.someNumberArgRequiredNoDefault = someNumberArgRequiredNoDefault;
     this.someNumberArgRequiredNoDefaultNoEnv = someNumberArgRequiredNoDefaultNoEnv;
     this.requiredArgNoEnv = requiredArgNoEnv;
+    this.requiredArgNoEnvWithDefault = requiredArgNoEnvWithDefault;
     this.clientPathParam = clientPathParam;
     this.camelCasePath = camelCasePath;
   }
