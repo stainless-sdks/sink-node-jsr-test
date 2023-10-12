@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.7 (2023-10-12)
+
+Full Changelog: [v0.3.6...v0.3.7](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.6...v0.3.7)
+
+### Chores
+
+* add case insensitive get header function ([#246](https://github.com/stainless-sdks/sink-node-public/issues/246)) ([cd44ce6](https://github.com/stainless-sdks/sink-node-public/commit/cd44ce697b5ec1639f8adf97793c960c8bbe7fb3))
+
 ## 0.3.6 (2023-10-12)
 
 Full Changelog: [v0.3.5...v0.3.6](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.5...v0.3.6)
