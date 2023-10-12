@@ -23,9 +23,11 @@ describe('instantiate client', () => {
     const client = new Sink({
       baseURL: 'http://localhost:5000/',
       defaultHeaders: { 'X-My-Default-Header': '2' },
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
-      userToken: 'my user token',
     });
 
     test('they are used in the request', () => {
@@ -57,9 +59,11 @@ describe('instantiate client', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo' },
+        userToken: 'My User Token',
         username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
-        userToken: 'my user token',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo');
     });
@@ -68,9 +72,11 @@ describe('instantiate client', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo', hello: 'world' },
+        userToken: 'My User Token',
         username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
-        userToken: 'my user token',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo&hello=world');
     });
@@ -79,9 +85,11 @@ describe('instantiate client', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { hello: 'world' },
+        userToken: 'My User Token',
         username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
-        userToken: 'my user token',
       });
       expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
     });
@@ -90,9 +98,11 @@ describe('instantiate client', () => {
   test('custom fetch', async () => {
     const client = new Sink({
       baseURL: 'http://localhost:5000/',
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
-      userToken: 'my user token',
       fetch: (url) => {
         return Promise.resolve(
           new Response(JSON.stringify({ url, custom: true }), {
@@ -109,9 +119,11 @@ describe('instantiate client', () => {
   test('custom signal', async () => {
     const client = new Sink({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
-      userToken: 'my user token',
       fetch: (...args) => {
         return new Promise((resolve, reject) =>
           setTimeout(
@@ -138,9 +150,11 @@ describe('instantiate client', () => {
     test('trailing slash', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/custom/path/',
+        userToken: 'My User Token',
         username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
-        userToken: 'my user token',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
@@ -148,9 +162,11 @@ describe('instantiate client', () => {
     test('no trailing slash', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/custom/path',
+        userToken: 'My User Token',
         username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
-        userToken: 'my user token',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
@@ -159,66 +175,66 @@ describe('instantiate client', () => {
   test('maxRetries option is correctly set', () => {
     const client = new Sink({
       maxRetries: 1,
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
-      userToken: 'my user token',
     });
     expect(client.maxRetries).toEqual(1);
 
     // default
     const client2 = new Sink({
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
-      userToken: 'my user token',
     });
     expect(client2.maxRetries).toEqual(2);
   });
 
-  test('with minimal arguments', () => {
-    // set user token via env var
-    process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
-    const client = new Sink({ username: 'Robert', requiredArgNoEnv: '<example>' });
-    expect(client.userToken).toBe('env var user token');
+  test('with environment variable arguments', () => {
+    // set options via env var
+    process.env['SINK_CUSTOM_API_KEY_ENV'] = 'My User Token';
+    process.env['SINK_USER'] = 'Robert';
+    process.env['SINK_SOME_NUMBER_ARG'] = JSON.stringify(0);
+    const client = new Sink({ someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>' });
+    expect(client.userToken).toBe('My User Token');
     expect(client.username).toBe('Robert');
+    expect(client.someNumberArgRequiredNoDefault).toBe(0);
+    expect(client.someNumberArgRequiredNoDefaultNoEnv).toBe(0);
     expect(client.requiredArgNoEnv).toBe('<example>');
   });
 
-  test('with userToken argument', () => {
-    process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
-
+  test('with overriden environment variable arguments', () => {
+    // set options via env var
+    process.env['SINK_CUSTOM_API_KEY_ENV'] = 'another My User Token';
+    process.env['SINK_USER'] = 'another Robert';
+    process.env['SINK_SOME_NUMBER_ARG'] = JSON.stringify(0);
     const client = new Sink({
-      userToken: 'another user token',
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
     });
-    expect(client.userToken).toBe('another user token');
-  });
-
-  test('with options argument', () => {
-    process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
-
-    // userToken and custom options
-    const client = new Sink({
-      userToken: 'my user token',
-      username: 'Robert',
-      requiredArgNoEnv: '<example>',
-    });
-    expect(client.userToken).toBe('my user token');
-  });
-
-  test('with disabled authentication', () => {
-    process.env['SINK_CUSTOM_API_KEY_ENV'] = 'env var user token';
-    const client = new Sink({ userToken: null, username: 'Robert', requiredArgNoEnv: '<example>' });
-    expect(client.userToken).toBeNull();
+    expect(client.userToken).toBe('My User Token');
+    expect(client.username).toBe('Robert');
+    expect(client.someNumberArgRequiredNoDefault).toBe(0);
+    expect(client.someNumberArgRequiredNoDefaultNoEnv).toBe(0);
+    expect(client.requiredArgNoEnv).toBe('<example>');
   });
 });
 
 describe('idempotency', () => {
   test('key can be set per-request', async () => {
     const client = new Sink({
-      userToken: 'my user token',
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
     });
     await client.tools.skippedParams({}, { idempotencyKey: 'my-idempotency-key' });
@@ -226,7 +242,13 @@ describe('idempotency', () => {
 });
 
 describe('request building', () => {
-  const client = new Sink({ username: 'Robert', requiredArgNoEnv: '<example>', userToken: 'my user token' });
+  const client = new Sink({
+    userToken: 'My User Token',
+    username: 'Robert',
+    someNumberArgRequiredNoDefault: 0,
+    someNumberArgRequiredNoDefaultNoEnv: 0,
+    requiredArgNoEnv: '<example>',
+  });
 
   describe('Content-Length', () => {
     test('handles multi-byte characters', () => {
@@ -253,9 +275,11 @@ describe('retries', () => {
     };
 
     const client = new Sink({
+      userToken: 'My User Token',
       username: 'Robert',
+      someNumberArgRequiredNoDefault: 0,
+      someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
-      userToken: 'my user token',
       timeout: 2000,
       fetch: testFetch,
     });

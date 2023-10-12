@@ -17,9 +17,57 @@ type Environment = keyof typeof environments;
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]. Set it to null if you want to send unauthenticated requests.
+   * The API Key for the SINK API, sent as a bearer token
    */
   userToken?: string | null;
+
+  /**
+   * Defaults to process.env['SINK_USER'].
+   */
+  username?: string;
+
+  /**
+   * Defaults to process.env['SINK_CLIENT_ID'].
+   */
+  clientId?: string | null;
+
+  /**
+   * Defaults to process.env['SINK_CLIENT_SECRET'].
+   */
+  clientSecret?: string | null;
+
+  /**
+   * Defaults to process.env['SINK_SOME_BOOLEAN_ARG'].
+   */
+  someBooleanArg?: boolean | null;
+
+  /**
+   * Defaults to process.env['SINK_SOME_INTEGER_ARG'].
+   */
+  someIntegerArg?: number | null;
+
+  /**
+   * Defaults to process.env['SINK_SOME_NUMBER_ARG'].
+   */
+  someNumberArg?: number | null;
+
+  /**
+   * Defaults to process.env['SINK_SOME_NUMBER_ARG'].
+   */
+  someNumberArgRequired?: number;
+
+  /**
+   * Defaults to process.env['SINK_SOME_NUMBER_ARG'].
+   */
+  someNumberArgRequiredNoDefault?: number;
+
+  someNumberArgRequiredNoDefaultNoEnv: number;
+
+  requiredArgNoEnv: string;
+
+  clientPathParam?: string | null;
+
+  camelCasePath?: string | null;
 
   /**
    * Specifies the environment to use for the API.
@@ -89,39 +137,42 @@ export interface ClientOptions {
    * Only set this option to `true` if you understand the risks and have appropriate mitigations in place.
    */
   dangerouslyAllowBrowser?: boolean;
-
-  username?: string;
-
-  clientId?: string | null;
-
-  clientSecret?: string | null;
-
-  someBooleanArg?: boolean | null;
-
-  someIntegerArg?: number | null;
-
-  someNumberArg?: number | null;
-
-  requiredArgNoEnv: string;
 }
 
 /** API Client for interfacing with the Sink API. */
 export class Sink extends Core.APIClient {
   userToken: string | null;
   username: string;
-  clientId?: string | null;
-  clientSecret?: string | null;
-  someBooleanArg?: boolean | null;
-  someIntegerArg?: number | null;
-  someNumberArg?: number | null;
+  clientId: string | null;
+  clientSecret: string | null;
+  someBooleanArg: boolean | null;
+  someIntegerArg: number | null;
+  someNumberArg: number | null;
+  someNumberArgRequired: number;
+  someNumberArgRequiredNoDefault: number;
+  someNumberArgRequiredNoDefaultNoEnv: number;
   requiredArgNoEnv: string;
+  clientPathParam: string | null;
+  camelCasePath: string | null;
 
   private _options: ClientOptions;
 
   /**
    * API Client for interfacing with the Sink API.
    *
-   * @param {string | null} [opts.userToken=process.env['SINK_CUSTOM_API_KEY_ENV']] - The user token to send to the API.
+   * @param {string | null} [opts.userToken==process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
+   * @param {string} [opts.username==process.env['SINK_USER'] ?? undefined]
+   * @param {string | null} [opts.clientId==process.env['SINK_CLIENT_ID'] ?? null]
+   * @param {string | null} [opts.clientSecret==process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
+   * @param {boolean | null} [opts.someBooleanArg==process.env['SINK_SOME_BOOLEAN_ARG'] ?? true]
+   * @param {number | null} [opts.someIntegerArg==process.env['SINK_SOME_INTEGER_ARG'] ?? 123]
+   * @param {number | null} [opts.someNumberArg==process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
+   * @param {number} [opts.someNumberArgRequired==process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
+   * @param {number} [opts.someNumberArgRequiredNoDefault==process.env['SINK_SOME_NUMBER_ARG'] ?? undefined]
+   * @param {number} opts.someNumberArgRequiredNoDefaultNoEnv
+   * @param {string} opts.requiredArgNoEnv
+   * @param {string | null} [opts.clientPathParam]
+   * @param {string | null} [opts.camelCasePath]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
@@ -131,13 +182,6 @@ export class Sink extends Core.APIClient {
    * @param {Core.Headers} opts.defaultHeaders - Default headers to include with every request to the API.
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    * @param {boolean} [opts.dangerouslyAllowBrowser=false] - By default, client-side use of this library is not allowed, as it risks exposing your secret API credentials to attackers.
-   * @param {string} [opts.username]
-   * @param {string | null} [opts.clientId]
-   * @param {string | null} [opts.clientSecret=hellosecret]
-   * @param {boolean | null} [opts.someBooleanArg=true]
-   * @param {number | null} [opts.someIntegerArg=123]
-   * @param {number | null} [opts.someNumberArg=1.2]
-   * @param {string} opts.requiredArgNoEnv
    */
   constructor({
     userToken = Core.readEnv('SINK_CUSTOM_API_KEY_ENV') ?? null,
@@ -147,12 +191,27 @@ export class Sink extends Core.APIClient {
     someBooleanArg = Core.maybeCoerceBoolean(Core.readEnv('SINK_SOME_BOOLEAN_ARG')) ?? true,
     someIntegerArg = Core.maybeCoerceInteger(Core.readEnv('SINK_SOME_INTEGER_ARG')) ?? 123,
     someNumberArg = Core.maybeCoerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')) ?? 1.2,
+    someNumberArgRequired = Core.maybeCoerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')) ?? 1.2,
+    someNumberArgRequiredNoDefault = Core.maybeCoerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')),
+    someNumberArgRequiredNoDefaultNoEnv,
     requiredArgNoEnv,
+    clientPathParam = null,
+    camelCasePath = null,
     ...opts
   }: ClientOptions) {
     if (username === undefined) {
       throw new Errors.SinkError(
         "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
+      );
+    }
+    if (someNumberArgRequiredNoDefault === undefined) {
+      throw new Errors.SinkError(
+        "The SINK_SOME_NUMBER_ARG environment variable is missing or empty; either provide it, or instantiate the Sink client with an someNumberArgRequiredNoDefault option, like new Sink({ someNumberArgRequiredNoDefault: 'my someNumberArgRequiredNoDefault' }).",
+      );
+    }
+    if (someNumberArgRequiredNoDefaultNoEnv === undefined) {
+      throw new Errors.SinkError(
+        "Missing required client option someNumberArgRequiredNoDefaultNoEnv; you need to instantiate the Sink client with an someNumberArgRequiredNoDefaultNoEnv option, like new Sink({ someNumberArgRequiredNoDefaultNoEnv: 'my someNumberArgRequiredNoDefaultNoEnv' }).",
       );
     }
     if (requiredArgNoEnv === undefined) {
@@ -169,7 +228,12 @@ export class Sink extends Core.APIClient {
       someBooleanArg,
       someIntegerArg,
       someNumberArg,
+      someNumberArgRequired,
+      someNumberArgRequiredNoDefault,
+      someNumberArgRequiredNoDefaultNoEnv,
       requiredArgNoEnv,
+      clientPathParam,
+      camelCasePath,
       ...opts,
       environment: opts.environment ?? 'production',
     };
@@ -197,7 +261,12 @@ export class Sink extends Core.APIClient {
     this.someBooleanArg = someBooleanArg;
     this.someIntegerArg = someIntegerArg;
     this.someNumberArg = someNumberArg;
+    this.someNumberArgRequired = someNumberArgRequired;
+    this.someNumberArgRequiredNoDefault = someNumberArgRequiredNoDefault;
+    this.someNumberArgRequiredNoDefaultNoEnv = someNumberArgRequiredNoDefaultNoEnv;
     this.requiredArgNoEnv = requiredArgNoEnv;
+    this.clientPathParam = clientPathParam;
+    this.camelCasePath = camelCasePath;
   }
 
   testing: API.Testing = new API.Testing(this);

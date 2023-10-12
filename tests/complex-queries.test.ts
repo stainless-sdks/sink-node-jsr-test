@@ -10,6 +10,8 @@ const sink = new Sink({
   baseURL: `http://127.0.0.1:${port}`,
   username: 'Robert',
   requiredArgNoEnv: '<example>',
+  someNumberArgRequiredNoDefault: 0,
+  someNumberArgRequiredNoDefaultNoEnv: 0,
 });
 
 const app = http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
