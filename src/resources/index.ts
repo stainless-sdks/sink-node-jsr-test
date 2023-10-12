@@ -143,6 +143,7 @@ export {
   BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
   BodyParamNestedRequestModelsParams,
+  BodyParamObjectWithArrayOfObjectsParams,
   BodyParamParamInModelNameRefParams,
   BodyParamPropertyModelRefParams,
   BodyParamPropertyWithComplexUnionParams,

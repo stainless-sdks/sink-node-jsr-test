@@ -29,6 +29,21 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with an object `requestBody` that has an array property with `object`
+   * items.
+   */
+  objectWithArrayOfObjects(
+    body: BodyParamObjectWithArrayOfObjectsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this.post('/body_params/object_with_array_of_objects', {
+      body,
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` that has a schema that is defined as a model in
    * the config with "param" in the name.
    */
@@ -335,6 +350,19 @@ export interface BodyParamNestedRequestModelsParams {
   data?: NestedRequestModelA;
 }
 
+export interface BodyParamObjectWithArrayOfObjectsParams {
+  array_prop?: Array<BodyParamObjectWithArrayOfObjectsParams.ArrayProp>;
+}
+
+export namespace BodyParamObjectWithArrayOfObjectsParams {
+  /**
+   * This is an object with required enum values
+   */
+  export interface ArrayProp {
+    kind: 'VIRTUAL' | 'PHYSICAL';
+  }
+}
+
 export interface BodyParamParamInModelNameRefParams {
   model_ref: ModelWithParamInName;
 
@@ -564,6 +592,7 @@ export namespace BodyParams {
   export import BodyParamTopLevelAllOfResponse = BodyParamsAPI.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
+  export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;
   export import BodyParamParamInModelNameRefParams = BodyParamsAPI.BodyParamParamInModelNameRefParams;
   export import BodyParamPropertyModelRefParams = BodyParamsAPI.BodyParamPropertyModelRefParams;
   export import BodyParamPropertyWithComplexUnionParams = BodyParamsAPI.BodyParamPropertyWithComplexUnionParams;
