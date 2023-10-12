@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.3.5 (2023-10-12)
+
+Full Changelog: [v0.3.4...v0.3.5](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.4...v0.3.5)
+
+### Features
+
+* add nested request model test case ([#237](https://github.com/stainless-sdks/sink-node-public/issues/237)) ([889bc91](https://github.com/stainless-sdks/sink-node-public/commit/889bc91180fc6f2481c81960d14b0d66783ab254))
+* add tests for property array of objects in params ([#242](https://github.com/stainless-sdks/sink-node-public/issues/242)) ([2dc3558](https://github.com/stainless-sdks/sink-node-public/commit/2dc35581ca9d01a625781f3387e1e26cff722685))
+* **client:** add client argument test ([#243](https://github.com/stainless-sdks/sink-node-public/issues/243)) ([6772ea9](https://github.com/stainless-sdks/sink-node-public/commit/6772ea99876e6d3cd8e53271cd28cfa8f536f373))
+
+
+### Bug Fixes
+
+* **client:** eliminate circular imports, which cause runtime errors in webpack dev bundles ([#238](https://github.com/stainless-sdks/sink-node-public/issues/238)) ([765fb99](https://github.com/stainless-sdks/sink-node-public/commit/765fb993359abbccdea799321d4b1cf5687c4467))
+* fix namespace exports regression ([#239](https://github.com/stainless-sdks/sink-node-public/issues/239)) ([e7993fa](https://github.com/stainless-sdks/sink-node-public/commit/e7993fa7839fa8ad4f35951b880ba619cd61da2f))
+* prevent ReferenceError, update compatibility to ES2020 and Node 18+ ([#235](https://github.com/stainless-sdks/sink-node-public/issues/235)) ([d87788d](https://github.com/stainless-sdks/sink-node-public/commit/d87788dde89c624b938fd417ab3439fa6cd68d73))
+
+
+### Chores
+
+* **internal:** refactor status code printing in error ([#240](https://github.com/stainless-sdks/sink-node-public/issues/240)) ([fbb06b1](https://github.com/stainless-sdks/sink-node-public/commit/fbb06b18843895e1ca517615787f990f3431403c))
+
+
+### Refactors
+
+* **test:** refactor authentication tests ([#241](https://github.com/stainless-sdks/sink-node-public/issues/241)) ([f400b9c](https://github.com/stainless-sdks/sink-node-public/commit/f400b9c48a352c06684917b08b4e4220d46fc730))
+
 ## 0.3.4 (2023-10-05)
 
 Full Changelog: [v0.3.3...v0.3.4](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.3...v0.3.4)
