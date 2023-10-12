@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.6 (2023-10-12)
+
+Full Changelog: [v0.3.5...v0.3.6](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.5...v0.3.6)
+
 ## 0.3.5 (2023-10-12)
 
 Full Changelog: [v0.3.4...v0.3.5](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.4...v0.3.5)
