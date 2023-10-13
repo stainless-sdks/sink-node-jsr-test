@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.8 (2023-10-13)
+
+Full Changelog: [v0.3.7...v0.3.8](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.7...v0.3.8)
+
+### Chores
+
+* update comment ([#248](https://github.com/stainless-sdks/sink-node-public/issues/248)) ([3a77507](https://github.com/stainless-sdks/sink-node-public/commit/3a775075c8dac21aa9ea9d69a8b7dc49fc4d8063))
+
 ## 0.3.7 (2023-10-12)
 
 Full Changelog: [v0.3.6...v0.3.7](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.6...v0.3.7)
