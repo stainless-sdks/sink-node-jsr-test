@@ -74,6 +74,16 @@ export class MethodConfig extends APIResource {
   ): Core.APIPromise<MethodConfigSkippedTestsPythonResponse> {
     return this.get(`/method_config/skipped_tests/${id}`, options);
   }
+
+  /**
+   * Used to test skipping generated unit tests.
+   */
+  skippedTestsRuby(
+    id: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<MethodConfigSkippedTestsRubyResponse> {
+    return this.get(`/method_config/skipped_tests/${id}`, options);
+  }
 }
 
 export interface MethodConfigSkippedTestsAllResponse {
@@ -104,6 +114,10 @@ export interface MethodConfigSkippedTestsPythonResponse {
   foo: string;
 }
 
+export interface MethodConfigSkippedTestsRubyResponse {
+  foo: string;
+}
+
 export namespace MethodConfig {
   export import MethodConfigSkippedTestsAllResponse = MethodConfigAPI.MethodConfigSkippedTestsAllResponse;
   export import MethodConfigSkippedTestsGoResponse = MethodConfigAPI.MethodConfigSkippedTestsGoResponse;
@@ -112,4 +126,5 @@ export namespace MethodConfig {
   export import MethodConfigSkippedTestsNodeResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeResponse;
   export import MethodConfigSkippedTestsNodeAndPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeAndPythonResponse;
   export import MethodConfigSkippedTestsPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsPythonResponse;
+  export import MethodConfigSkippedTestsRubyResponse = MethodConfigAPI.MethodConfigSkippedTestsRubyResponse;
 }

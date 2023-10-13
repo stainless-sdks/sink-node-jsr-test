@@ -496,6 +496,7 @@ export namespace Sink {
   export import MethodConfigSkippedTestsNodeResponse = API.MethodConfigSkippedTestsNodeResponse;
   export import MethodConfigSkippedTestsNodeAndPythonResponse = API.MethodConfigSkippedTestsNodeAndPythonResponse;
   export import MethodConfigSkippedTestsPythonResponse = API.MethodConfigSkippedTestsPythonResponse;
+  export import MethodConfigSkippedTestsRubyResponse = API.MethodConfigSkippedTestsRubyResponse;
 
   export import Streaming = API.Streaming;
   export import StreamingBasicResponse = API.StreamingBasicResponse;

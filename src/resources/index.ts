@@ -98,6 +98,7 @@ export {
   MethodConfigSkippedTestsNodeResponse,
   MethodConfigSkippedTestsNodeAndPythonResponse,
   MethodConfigSkippedTestsPythonResponse,
+  MethodConfigSkippedTestsRubyResponse,
   MethodConfig,
 } from './method-config';
 export {

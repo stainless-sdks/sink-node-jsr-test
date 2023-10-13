@@ -82,6 +82,7 @@ Types:
 - <code><a href="./src/resources/method-config.ts">MethodConfigSkippedTestsNodeResponse</a></code>
 - <code><a href="./src/resources/method-config.ts">MethodConfigSkippedTestsNodeAndPythonResponse</a></code>
 - <code><a href="./src/resources/method-config.ts">MethodConfigSkippedTestsPythonResponse</a></code>
+- <code><a href="./src/resources/method-config.ts">MethodConfigSkippedTestsRubyResponse</a></code>
 
 Methods:
 
@@ -92,6 +93,7 @@ Methods:
 - <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./src/resources/method-config.ts">skippedTestsNode</a>(id) -> MethodConfigSkippedTestsNodeResponse</code>
 - <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./src/resources/method-config.ts">skippedTestsNodeAndPython</a>(id) -> MethodConfigSkippedTestsNodeAndPythonResponse</code>
 - <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./src/resources/method-config.ts">skippedTestsPython</a>(id) -> MethodConfigSkippedTestsPythonResponse</code>
+- <code title="get /method_config/skipped_tests/{id}">client.methodConfig.<a href="./src/resources/method-config.ts">skippedTestsRuby</a>(id) -> MethodConfigSkippedTestsRubyResponse</code>
 
 # Streaming
 
