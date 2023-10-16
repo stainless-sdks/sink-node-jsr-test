@@ -16,6 +16,13 @@ export class UnionTypes extends APIResource {
   /**
    * Endpoint with a top level union response of floats and integers.
    */
+  nullableUnion(options?: Core.RequestOptions): Core.APIPromise<UnionTypeNullableUnionResponse | null> {
+    return this.post('/responses/unions/nullable', options);
+  }
+
+  /**
+   * Endpoint with a top level union response of floats and integers.
+   */
   numbers(options?: Core.RequestOptions): Core.APIPromise<UnionTypeNumbersResponse> {
     return this.post('/responses/unions/numbers', options);
   }
@@ -41,6 +48,14 @@ export type UnionTypeMixedTypesResponse =
   | boolean;
 
 export namespace UnionTypeMixedTypesResponse {
+  export interface BasicObject {
+    item?: string;
+  }
+}
+
+export type UnionTypeNullableUnionResponse = Shared.SimpleObject | UnionTypeNullableUnionResponse.BasicObject;
+
+export namespace UnionTypeNullableUnionResponse {
   export interface BasicObject {
     item?: string;
   }
@@ -72,6 +87,7 @@ export namespace UnionTypeSuperMixedTypesResponse {
 
 export namespace UnionTypes {
   export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
+  export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
   export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
   export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
   export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;

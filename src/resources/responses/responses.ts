@@ -353,6 +353,7 @@ export namespace Responses {
   export import ResponseStringResponseResponse = ResponsesAPI.ResponseStringResponseResponse;
   export import UnionTypes = UnionTypesAPI.UnionTypes;
   export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
+  export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
   export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
   export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
   export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;

@@ -540,6 +540,7 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeMixedTypesResponse</a></code>
+- <code><a href="./src/resources/responses/union-types.ts">UnionTypeNullableUnionResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeNumbersResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeObjectsResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeSuperMixedTypesResponse</a></code>
@@ -547,6 +548,7 @@ Types:
 Methods:
 
 - <code title="post /responses/unions/mixed_types">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">mixedTypes</a>() -> UnionTypeMixedTypesResponse</code>
+- <code title="post /responses/unions/nullable">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">nullableUnion</a>() -> UnionTypeNullableUnionResponse | null</code>
 - <code title="post /responses/unions/numbers">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">numbers</a>() -> UnionTypeNumbersResponse</code>
 - <code title="post /responses/unions/objects">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">objects</a>() -> UnionTypeObjectsResponse</code>
 - <code title="post /responses/unions/super_mixed_types">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">superMixedTypes</a>() -> UnionTypeSuperMixedTypesResponse</code>

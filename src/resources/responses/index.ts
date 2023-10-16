@@ -26,6 +26,7 @@ export {
 } from './responses';
 export {
   UnionTypeMixedTypesResponse,
+  UnionTypeNullableUnionResponse,
   UnionTypeNumbersResponse,
   UnionTypeObjectsResponse,
   UnionTypeSuperMixedTypesResponse,
