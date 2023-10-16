@@ -168,6 +168,7 @@ export {
   MyModelsPageCursorURL,
   MyModelsPageOffset,
   MyModelsPageHypermedia,
+  MyModelsGenericPageWithExtraParamsAndFields,
   MyModelsPageHypermediaRaw,
   BodyParams,
 } from './body-params';

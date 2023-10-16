@@ -7,6 +7,7 @@ import * as BodyParamsAPI from 'sink-npm/resources/body-params';
 import * as Shared from 'sink-npm/resources/shared';
 import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
 import {
+  GenericPageWithExtraParamsAndFields,
   PageCursor,
   PageCursorNestedResponseProp,
   PageCursorURL,
@@ -307,6 +308,8 @@ export class MyModelsPageCursorURL extends PageCursorURL<MyModel> {}
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
 
 export class MyModelsPageHypermedia extends PageHypermedia<MyModel> {}
+
+export class MyModelsGenericPageWithExtraParamsAndFields extends GenericPageWithExtraParamsAndFields<MyModel> {}
 
 export class MyModelsPageHypermediaRaw extends PageHypermediaRaw<MyModel> {}
 

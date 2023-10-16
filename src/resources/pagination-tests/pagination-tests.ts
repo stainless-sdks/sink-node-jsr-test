@@ -4,6 +4,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as ConcreteAPI from 'sink-npm/resources/pagination-tests/concrete';
 import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
 import * as CursorURLAPI from 'sink-npm/resources/pagination-tests/cursor-url';
+import * as ExtraParamsAndFieldsAPI from 'sink-npm/resources/pagination-tests/extra-params-and-fields';
 import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
 import * as HypermediaAPI from 'sink-npm/resources/pagination-tests/hypermedia';
 import * as HypermediaRawAPI from 'sink-npm/resources/pagination-tests/hypermedia-raw';
@@ -18,6 +19,8 @@ export class PaginationTests extends APIResource {
   offset: OffsetAPI.Offset = new OffsetAPI.Offset(this.client);
   fakePages: FakePagesAPI.FakePages = new FakePagesAPI.FakePages(this.client);
   hypermedia: HypermediaAPI.Hypermedia = new HypermediaAPI.Hypermedia(this.client);
+  extraParamsAndFields: ExtraParamsAndFieldsAPI.ExtraParamsAndFields =
+    new ExtraParamsAndFieldsAPI.ExtraParamsAndFields(this.client);
   hypermediaRaw: HypermediaRawAPI.HypermediaRaw = new HypermediaRawAPI.HypermediaRaw(this.client);
 }
 
@@ -25,6 +28,7 @@ export namespace PaginationTests {
   export import Concrete = ConcreteAPI.Concrete;
   export import MyConcretePageItem = ConcreteAPI.MyConcretePageItem;
   export import ConcreteListParams = ConcreteAPI.ConcreteListParams;
+  export import ConcreteListExtraParamsAndFieldsParams = ConcreteAPI.ConcreteListExtraParamsAndFieldsParams;
   export import PageNumber = PageNumberAPI.PageNumber;
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
   export import Cursor = CursorAPI.Cursor;
@@ -38,6 +42,8 @@ export namespace PaginationTests {
   export import FakePageListParams = FakePagesAPI.FakePageListParams;
   export import Hypermedia = HypermediaAPI.Hypermedia;
   export import HypermediaListParams = HypermediaAPI.HypermediaListParams;
+  export import ExtraParamsAndFields = ExtraParamsAndFieldsAPI.ExtraParamsAndFields;
+  export import ExtraParamsAndFieldListParams = ExtraParamsAndFieldsAPI.ExtraParamsAndFieldListParams;
   export import HypermediaRaw = HypermediaRawAPI.HypermediaRaw;
   export import HypermediaRawListParams = HypermediaRawAPI.HypermediaRawListParams;
 }

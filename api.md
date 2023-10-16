@@ -119,7 +119,8 @@ Types:
 
 Methods:
 
-- <code title="get /paginated/concrete_cursor">client.paginationTests.concrete.<a href="./src/resources/pagination-tests/concrete.ts">list</a>({ ...params }) -> MyConcretePage</code>
+- <code title="get /paginated/concrete/cursor">client.paginationTests.concrete.<a href="./src/resources/pagination-tests/concrete.ts">list</a>({ ...params }) -> MyConcretePage</code>
+- <code title="post /paginated/concrete/more_params">client.paginationTests.concrete.<a href="./src/resources/pagination-tests/concrete.ts">listExtraParamsAndFields</a>({ ...params }) -> ConcretePageWithExtraParamsAndFields</code>
 
 ## PageNumber
 
@@ -157,6 +158,12 @@ Methods:
 Methods:
 
 - <code title="get /paginated/hypermedia">client.paginationTests.hypermedia.<a href="./src/resources/pagination-tests/hypermedia.ts">list</a>({ ...params }) -> MyModelsPageHypermedia</code>
+
+## ExtraParamsAndFields
+
+Methods:
+
+- <code title="post /paginated/more_params">client.paginationTests.extraParamsAndFields.<a href="./src/resources/pagination-tests/extra-params-and-fields.ts">list</a>({ ...params }) -> MyModelsGenericPageWithExtraParamsAndFields</code>
 
 ## HypermediaRaw
 

@@ -615,3 +615,121 @@ export class FakePage<Item> extends AbstractPage<Item> {
     return null;
   }
 }
+
+export interface GenericPageWithExtraParamsAndFieldsResponse<Item> {
+  /**
+   * The cursor for the next page
+   */
+  cursor: string | null;
+
+  data: Array<Item>;
+}
+
+export interface GenericPageWithExtraParamsAndFieldsParams {
+  my_cursor: string;
+
+  limit?: number;
+}
+
+export class GenericPageWithExtraParamsAndFields<Item>
+  extends AbstractPage<Item>
+  implements GenericPageWithExtraParamsAndFieldsResponse<Item>
+{
+  data: Array<Item>;
+
+  /**
+   * The cursor for the next page
+   */
+  cursor: string | null;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: GenericPageWithExtraParamsAndFieldsResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data;
+    this.cursor = body.cursor;
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data;
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<GenericPageWithExtraParamsAndFieldsParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    if (!this.cursor) return null;
+
+    return { params: { my_cursor: this.cursor } };
+  }
+}
+
+export interface ConcretePageWithExtraParamsAndFieldsResponse {
+  /**
+   * The cursor for the next page
+   */
+  cursor: string | null;
+
+  my_models?: Array<ConcreteAPI.MyConcretePageItem>;
+}
+
+export interface ConcretePageWithExtraParamsAndFieldsParams {
+  my_cursor: string;
+
+  limit?: number;
+}
+
+export class ConcretePageWithExtraParamsAndFields
+  extends AbstractPage<ConcreteAPI.MyConcretePageItem>
+  implements ConcretePageWithExtraParamsAndFieldsResponse
+{
+  my_models: Array<ConcreteAPI.MyConcretePageItem>;
+
+  /**
+   * The cursor for the next page
+   */
+  cursor: string | null;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: ConcretePageWithExtraParamsAndFieldsResponse,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.my_models = body.my_models || [];
+    this.cursor = body.cursor;
+  }
+
+  getPaginatedItems(): ConcreteAPI.MyConcretePageItem[] {
+    return this.my_models;
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<ConcretePageWithExtraParamsAndFieldsParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    if (!this.cursor) return null;
+
+    return { params: { my_cursor: this.cursor } };
+  }
+}

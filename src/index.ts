@@ -469,6 +469,14 @@ export namespace Sink {
   export import FakePageParams = Pagination.FakePageParams;
   export import FakePageResponse = Pagination.FakePageResponse;
 
+  export import GenericPageWithExtraParamsAndFields = Pagination.GenericPageWithExtraParamsAndFields;
+  export import GenericPageWithExtraParamsAndFieldsParams = Pagination.GenericPageWithExtraParamsAndFieldsParams;
+  export import GenericPageWithExtraParamsAndFieldsResponse = Pagination.GenericPageWithExtraParamsAndFieldsResponse;
+
+  export import ConcretePageWithExtraParamsAndFields = Pagination.ConcretePageWithExtraParamsAndFields;
+  export import ConcretePageWithExtraParamsAndFieldsParams = Pagination.ConcretePageWithExtraParamsAndFieldsParams;
+  export import ConcretePageWithExtraParamsAndFieldsResponse = Pagination.ConcretePageWithExtraParamsAndFieldsResponse;
+
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;
   export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
