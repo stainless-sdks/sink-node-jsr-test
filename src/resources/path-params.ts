@@ -17,6 +17,26 @@ export class PathParams extends APIResource {
   }
 
   /**
+   * Endpoint with a singular path parameter that is a date type.
+   */
+  dateParam(
+    dateParam: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
+    return this.post(`/path_params/dates/${dateParam}`, options);
+  }
+
+  /**
+   * Endpoint with a singular path parameter that is a date-time type.
+   */
+  datetimeParam(
+    datetimeParam: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
+    return this.post(`/path_params/date_times/${datetimeParam}`, options);
+  }
+
+  /**
    * Endpoint with a singular path parameter that is of an integer type.
    */
   integerParam(
