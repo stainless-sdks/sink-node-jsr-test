@@ -1,5 +1,6 @@
 import { APIClient, DefaultQuery } from 'sink-npm/core';
 import { Response } from 'node-fetch';
+import { AsymmetricMatcher } from 'expect';
 
 class Test extends APIClient {
   protected override defaultQuery(): DefaultQuery | undefined {
@@ -33,6 +34,68 @@ afterEach(() => {
 });
 
 describe('Test retries', () => {
+  class BetweenMatcher extends AsymmetricMatcher<[unknown, unknown]> {
+    low: number;
+    high: number;
+
+    constructor(low: number, high: number) {
+      super([low, high]);
+      this.low = low;
+      this.high = high;
+    }
+
+    asymmetricMatch(value: any) {
+      return this.low <= value && value <= this.high;
+    }
+
+    toString() {
+      return 'BetweenMatcher';
+    }
+
+    override toAsymmetricMatcher() {
+      return `${this.toString()}<${this.sample.join(', ')}>`;
+    }
+  }
+
+  test('retry timing 0', async () => {
+    toTest['retryRequest']({ method: 'get', path: '' }, 3, { 'retry-after': 'gobbledygook' });
+
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(600 * 0.75, 600));
+
+    jest.advanceTimersByTime(100000);
+    await Promise.resolve();
+
+    expect(toTestSpy).toHaveBeenCalledTimes(1);
+    expect(toTestSpy).toHaveBeenCalledWith(expect.anything(), 2);
+  });
+
+  test('retry timing 1', async () => {
+    toTest['retryRequest']({ method: 'get', path: '' }, 2, { 'retry-after': 'gobbledygook' });
+
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(1200 * 0.75, 1200));
+
+    jest.advanceTimersByTime(100000);
+    await Promise.resolve();
+
+    expect(toTestSpy).toHaveBeenCalledTimes(1);
+    expect(toTestSpy).toHaveBeenCalledWith(expect.anything(), 1);
+  });
+
+  test('retry timing 2', async () => {
+    toTest['retryRequest']({ method: 'get', path: '' }, 1, { 'retry-after': 'gobbledygook' });
+
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(2400 * 0.75, 2400));
+
+    jest.advanceTimersByTime(100000);
+    await Promise.resolve();
+
+    expect(toTestSpy).toHaveBeenCalledTimes(1);
+    expect(toTestSpy).toHaveBeenCalledWith(expect.anything(), 0);
+  });
+
   test('integer retry header is used', async () => {
     toTest['retryRequest']({ method: 'get', path: '' }, 2, { 'retry-after': '10' });
 
@@ -65,7 +128,7 @@ describe('Test retries', () => {
     toTest['retryRequest']({ method: 'get', path: '' }, 2, { 'retry-after': 'gobbledygook' });
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), expect.closeTo(750, 0));
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(1200 * 0.75, 1200));
 
     jest.advanceTimersByTime(100000);
     await Promise.resolve();
@@ -80,7 +143,7 @@ describe('Test retries', () => {
     });
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), expect.closeTo(750, 0));
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(1200 * 0.75, 1200));
 
     jest.advanceTimersByTime(100000);
     await Promise.resolve();
@@ -95,7 +158,7 @@ describe('Test retries', () => {
     });
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), expect.closeTo(750, 0));
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(1200 * 0.75, 1200));
 
     jest.advanceTimersByTime(100000);
     await Promise.resolve();
@@ -108,7 +171,7 @@ describe('Test retries', () => {
     toTest['retryRequest']({ method: 'get', path: '' }, 2, { 'retry-after': '70' });
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), expect.closeTo(750, 0));
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), new BetweenMatcher(1200 * 0.75, 1200));
 
     jest.advanceTimersByTime(100000);
     await Promise.resolve();

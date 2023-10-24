@@ -174,14 +174,14 @@ describe('instantiate client', () => {
 
   test('maxRetries option is correctly set', () => {
     const client = new Sink({
-      maxRetries: 1,
+      maxRetries: 2,
       userToken: 'My User Token',
       username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
     });
-    expect(client.maxRetries).toEqual(1);
+    expect(client.maxRetries).toEqual(2);
 
     // default
     const client2 = new Sink({
@@ -191,7 +191,7 @@ describe('instantiate client', () => {
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
     });
-    expect(client2.maxRetries).toEqual(2);
+    expect(client2.maxRetries).toEqual(1);
   });
 
   test('with environment variable arguments', () => {
