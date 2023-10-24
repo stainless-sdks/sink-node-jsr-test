@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.4.1 (2023-10-24)
+
+Full Changelog: [v0.3.8...v0.4.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.8...v0.4.1)
+
+### Features
+
+* add case for nullable unions ([#254](https://github.com/stainless-sdks/sink-node-public/issues/254)) ([00be3a5](https://github.com/stainless-sdks/sink-node-public/commit/00be3a565e419f0349714083e2cf4728cc6a0e35))
+* add tests for date path params ([#257](https://github.com/stainless-sdks/sink-node-public/issues/257)) ([98aa10b](https://github.com/stainless-sdks/sink-node-public/commit/98aa10b4a75f56309d6fb6798527565e8c334a6f))
+* added Ruby ([#250](https://github.com/stainless-sdks/sink-node-public/issues/250)) ([d8824ee](https://github.com/stainless-sdks/sink-node-public/commit/d8824ee2a519c522ce52fbbd3c62584ce3176ed1))
+* handle 204 No Content gracefully ([#260](https://github.com/stainless-sdks/sink-node-public/issues/260)) ([eb69496](https://github.com/stainless-sdks/sink-node-public/commit/eb694960d08d60cbc1f6b5299ce2c08a0224fbde))
+* partially add extra_params_and_fields case ([#252](https://github.com/stainless-sdks/sink-node-public/issues/252)) ([5edfc9f](https://github.com/stainless-sdks/sink-node-public/commit/5edfc9ff915542b81e5b1c52c3f5ec6540b04fb8))
+
+
+### Bug Fixes
+
+* import web-streams-polyfill without overriding globals ([#258](https://github.com/stainless-sdks/sink-node-public/issues/258)) ([0f00764](https://github.com/stainless-sdks/sink-node-public/commit/0f00764f1894dc691ecf3cb6e1e916d0dc7e75b7))
+* improve status code in error messages ([#255](https://github.com/stainless-sdks/sink-node-public/issues/255)) ([9cb2a66](https://github.com/stainless-sdks/sink-node-public/commit/9cb2a66342e9cc7e2c71fd97578e60689244680d))
+
+
+### Chores
+
+* **internal:** add debug logs for stream responses ([#253](https://github.com/stainless-sdks/sink-node-public/issues/253)) ([8121f53](https://github.com/stainless-sdks/sink-node-public/commit/8121f53a86b4cd44ba4f2bece1b158e29f3ca1ef))
+
+
+### Documentation
+
+* organisation -&gt; organization (UK to US English) ([#256](https://github.com/stainless-sdks/sink-node-public/issues/256)) ([7d2d7b2](https://github.com/stainless-sdks/sink-node-public/commit/7d2d7b2c163d5eade34fc606039811d703af66dc))
+
 ## 0.3.8 (2023-10-13)
 
 Full Changelog: [v0.3.7...v0.3.8](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.7...v0.3.8)
