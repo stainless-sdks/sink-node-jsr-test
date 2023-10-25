@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.5.0 (2023-10-25)
+
+Full Changelog: [v0.4.1...v0.5.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.4.1...v0.5.0)
+
+### Features
+
+* more unions tests ([#262](https://github.com/stainless-sdks/sink-node-public/issues/262)) ([1921701](https://github.com/stainless-sdks/sink-node-public/commit/192170179dce6de3646311d5fcb1dbc1f1a5af89))
+
+
+### Bug Fixes
+
+* typo in build script ([#264](https://github.com/stainless-sdks/sink-node-public/issues/264)) ([fe602df](https://github.com/stainless-sdks/sink-node-public/commit/fe602dfd0c29f59c5dc66db3423eb9fc543dbdfa))
+
 ## 0.4.1 (2023-10-24)
 
 Full Changelog: [v0.3.8...v0.4.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.3.8...v0.4.1)
