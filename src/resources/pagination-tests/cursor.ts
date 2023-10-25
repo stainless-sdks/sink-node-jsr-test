@@ -4,8 +4,11 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
-import { MyModelsPageCursor, MyModelsPageCursorNestedResponseProp } from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import {
+  MyModelsPageCursor,
+  MyModelsPageCursorNestedResponseProp,
+} from 'sink-npm/resources/body-params/body-params';
 import { type PageCursorNestedResponsePropParams, type PageCursorParams } from 'sink-npm/pagination';
 
 export class Cursor extends APIResource {

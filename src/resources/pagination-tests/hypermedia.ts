@@ -4,8 +4,8 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as HypermediaAPI from 'sink-npm/resources/pagination-tests/hypermedia';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
-import { MyModelsPageHypermedia } from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import { MyModelsPageHypermedia } from 'sink-npm/resources/body-params/body-params';
 import { type PageHypermediaParams } from 'sink-npm/pagination';
 
 export class Hypermedia extends APIResource {

@@ -4,8 +4,8 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
-import { MyModelsPageOffset } from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import { MyModelsPageOffset } from 'sink-npm/resources/body-params/body-params';
 import { type PageOffsetParams } from 'sink-npm/pagination';
 
 export class Offset extends APIResource {

@@ -3,8 +3,9 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import * as Shared from 'sink-npm/resources/shared';
+import * as UnionsAPI from 'sink-npm/resources/body-params/unions';
 import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
 import {
   GenericPageWithExtraParamsAndFields,
@@ -18,6 +19,8 @@ import {
 } from 'sink-npm/pagination';
 
 export class BodyParams extends APIResource {
+  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this.client);
+
   /**
    * Should return a ModelWithNestedModel object with a `properties` field that we
    * can rename in the Stainless config to a prettier name.
@@ -613,4 +616,7 @@ export namespace BodyParams {
   export import BodyParamWithDefaultBodyParamOptionalParams = BodyParamsAPI.BodyParamWithDefaultBodyParamOptionalParams;
   export import BodyParamWithDefaultBodyParamRequiredParams = BodyParamsAPI.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = BodyParamsAPI.BodyParamWithModelPropertyParams;
+  export import Unions = UnionsAPI.Unions;
+  export import ModelString = UnionsAPI.ModelString;
+  export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
 }

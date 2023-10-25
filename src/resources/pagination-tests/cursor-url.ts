@@ -4,8 +4,8 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as CursorURLAPI from 'sink-npm/resources/pagination-tests/cursor-url';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
-import { MyModelsPageCursorURL } from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import { MyModelsPageCursorURL } from 'sink-npm/resources/body-params/body-params';
 import { type PageCursorURLParams } from 'sink-npm/pagination';
 
 export class CursorURL extends APIResource {

@@ -3,8 +3,8 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as ExtraParamsAndFieldsAPI from 'sink-npm/resources/pagination-tests/extra-params-and-fields';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
-import { MyModelsGenericPageWithExtraParamsAndFields } from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import { MyModelsGenericPageWithExtraParamsAndFields } from 'sink-npm/resources/body-params/body-params';
 import { type GenericPageWithExtraParamsAndFieldsParams } from 'sink-npm/pagination';
 
 export class ExtraParamsAndFields extends APIResource {

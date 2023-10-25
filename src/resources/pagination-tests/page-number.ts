@@ -4,8 +4,8 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params';
-import { MyModelsPagePageNumber } from 'sink-npm/resources/body-params';
+import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import { MyModelsPagePageNumber } from 'sink-npm/resources/body-params/body-params';
 import { type PagePageNumberParams } from 'sink-npm/pagination';
 
 export class PageNumber extends APIResource {

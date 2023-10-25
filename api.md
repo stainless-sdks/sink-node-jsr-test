@@ -603,36 +603,46 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/body-params.ts">ModelWithParamInName</a></code>
-- <code><a href="./src/resources/body-params.ts">MyModel</a></code>
-- <code><a href="./src/resources/body-params.ts">NestedRequestModelA</a></code>
-- <code><a href="./src/resources/body-params.ts">NestedRequestModelB</a></code>
-- <code><a href="./src/resources/body-params.ts">NestedRequestModelC</a></code>
-- <code><a href="./src/resources/body-params.ts">StringMapModel</a></code>
-- <code><a href="./src/resources/body-params.ts">BodyParamTopLevelAllOfResponse</a></code>
-- <code><a href="./src/resources/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">ModelWithParamInName</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">MyModel</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">NestedRequestModelA</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">NestedRequestModelB</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">NestedRequestModelC</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">StringMapModel</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">BodyParamTopLevelAllOfResponse</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
 
 Methods:
 
-- <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params.ts">nestedRequestModels</a>({ ...params }) -> ModelWithNestedModel</code>
-- <code title="post /body_params/object_with_array_of_objects">client.bodyParams.<a href="./src/resources/body-params.ts">objectWithArrayOfObjects</a>({ ...params }) -> void</code>
-- <code title="post /body_params/param_in_model_name_ref">client.bodyParams.<a href="./src/resources/body-params.ts">paramInModelNameRef</a>({ ...params }) -> void</code>
-- <code title="post /body_params/property_model_ref">client.bodyParams.<a href="./src/resources/body-params.ts">propertyModelRef</a>({ ...params }) -> void</code>
-- <code title="post /body_params/property_with_complex_union">client.bodyParams.<a href="./src/resources/body-params.ts">propertyWithComplexUnion</a>({ ...params }) -> void</code>
-- <code title="post /body_params/property_with_heavily_nested_complex_union">client.bodyParams.<a href="./src/resources/body-params.ts">propertyWithHeavilyNestedComplexUnion</a>({ ...params }) -> void</code>
-- <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./src/resources/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
-- <code title="post /body_params/string_map_model_ref">client.bodyParams.<a href="./src/resources/body-params.ts">stringMapModelRef</a>({ ...params }) -> void</code>
-- <code title="post /body_params/top_level_allOf">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOf</a>({ ...params }) -> BodyParamTopLevelAllOfResponse</code>
-- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>
-- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> BasicSharedModelObject</code>
-- <code title="post /body_params/top_level_array">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>
-- <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
-- <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
-- <code title="post /body_params/top_level_shared_type">client.bodyParams.<a href="./src/resources/body-params.ts">topLevelSharedType</a>({ ...params }) -> void</code>
-- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./src/resources/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
-- <code title="post /body_params/with_default_body_param_optional">client.bodyParams.<a href="./src/resources/body-params.ts">withDefaultBodyParamOptional</a>({ ...params }) -> void</code>
-- <code title="post /body_params/with_default_body_param_required">client.bodyParams.<a href="./src/resources/body-params.ts">withDefaultBodyParamRequired</a>({ ...params }) -> void</code>
-- <code title="post /body_params/with_model_property">client.bodyParams.<a href="./src/resources/body-params.ts">withModelProperty</a>({ ...params }) -> void</code>
+- <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nestedRequestModels</a>({ ...params }) -> ModelWithNestedModel</code>
+- <code title="post /body_params/object_with_array_of_objects">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithArrayOfObjects</a>({ ...params }) -> void</code>
+- <code title="post /body_params/param_in_model_name_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">paramInModelNameRef</a>({ ...params }) -> void</code>
+- <code title="post /body_params/property_model_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">propertyModelRef</a>({ ...params }) -> void</code>
+- <code title="post /body_params/property_with_complex_union">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">propertyWithComplexUnion</a>({ ...params }) -> void</code>
+- <code title="post /body_params/property_with_heavily_nested_complex_union">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">propertyWithHeavilyNestedComplexUnion</a>({ ...params }) -> void</code>
+- <code title="post /body_params/read_only_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">readOnlyProperties</a>({ ...params }) -> void</code>
+- <code title="post /body_params/string_map_model_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">stringMapModelRef</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_allOf">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelAllOf</a>({ ...params }) -> BodyParamTopLevelAllOfResponse</code>
+- <code title="post /body_params/top_level_allOf_nested_object">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelAllOfNestedObject</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> BasicSharedModelObject</code>
+- <code title="post /body_params/top_level_array">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>
+- <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
+- <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_shared_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelSharedType</a>({ ...params }) -> void</code>
+- <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
+- <code title="post /body_params/with_default_body_param_optional">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withDefaultBodyParamOptional</a>({ ...params }) -> void</code>
+- <code title="post /body_params/with_default_body_param_required">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withDefaultBodyParamRequired</a>({ ...params }) -> void</code>
+- <code title="post /body_params/with_model_property">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withModelProperty</a>({ ...params }) -> void</code>
+
+## Unions
+
+Types:
+
+- <code><a href="./src/resources/body-params/unions.ts">ModelString</a></code>
+
+Methods:
+
+- <code title="post /body_params/unions/param_union_enum_new_type">client.bodyParams.unions.<a href="./src/resources/body-params/unions.ts">paramUnionEnumNewType</a>({ ...params }) -> void</code>
 
 # HeaderParams
 

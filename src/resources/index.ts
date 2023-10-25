@@ -171,7 +171,7 @@ export {
   MyModelsGenericPageWithExtraParamsAndFields,
   MyModelsPageHypermediaRaw,
   BodyParams,
-} from './body-params';
+} from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
 export { OnlyNodeModel, ConfigToolOnlyInNodeParams, ConfigTools } from './config-tools';
 export {
