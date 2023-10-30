@@ -61,6 +61,18 @@ Methods:
 
 - <code title="get /casing/eeoc">client.casing.eeoc.<a href="./src/resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
 
+# DefaultReqOptions
+
+Methods:
+
+- <code title="get /default_req_options">client.defaultReqOptions.<a href="./src/resources/default-req-options/default-req-options.ts">exampleMethod</a>() -> BasicSharedModelObject</code>
+
+## Child
+
+Methods:
+
+- <code title="get /default_req_options">client.defaultReqOptions.child.<a href="./src/resources/default-req-options/child.ts">exampleMethod</a>() -> BasicSharedModelObject</code>
+
 # Tools
 
 Types:

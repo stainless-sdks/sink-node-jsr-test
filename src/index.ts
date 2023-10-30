@@ -279,6 +279,7 @@ export class Sink extends Core.APIClient {
   testing: API.Testing = new API.Testing(this);
   complexQueries: API.ComplexQueries = new API.ComplexQueries(this);
   casing: API.Casing = new API.Casing(this);
+  defaultReqOptions: API.DefaultReqOptions = new API.DefaultReqOptions(this);
   tools: API.Tools = new API.Tools(this);
   methodConfig: API.MethodConfig = new API.MethodConfig(this);
   streaming: API.Streaming = new API.Streaming(this);
@@ -491,6 +492,8 @@ export namespace Sink {
   export import ComplexQueryObjectQueryParams = API.ComplexQueryObjectQueryParams;
 
   export import Casing = API.Casing;
+
+  export import DefaultReqOptions = API.DefaultReqOptions;
 
   export import Tools = API.Tools;
   export import ObjectSkippedProps = API.ObjectSkippedProps;

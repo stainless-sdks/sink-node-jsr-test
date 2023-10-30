@@ -66,6 +66,7 @@ export {
   DefaultPathParamOnlyGlobalResponse,
   DefaultPathParams,
 } from './default-path-params';
+export { DefaultReqOptions } from './default-req-options/default-req-options';
 export {
   DocstringLeadingDoubleQuoteResponse,
   DocstringTrailingDoubleQuoteResponse,
