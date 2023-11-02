@@ -438,6 +438,18 @@ Methods:
 - <code title="get /names/response_property_clashes_model_import">client.names.<a href="./src/resources/names/names.ts">responsePropertyClashesModelImport</a>() -> NameResponsePropertyClashesModelImportResponse</code>
 - <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./src/resources/names/names.ts">responseShadowsPydantic</a>() -> NameResponseShadowsPydanticResponse</code>
 
+## Unions
+
+Types:
+
+- <code><a href="./src/resources/names/unions.ts">DiscriminatedUnion</a></code>
+- <code><a href="./src/resources/names/unions.ts">VariantsSinglePropObjects</a></code>
+
+Methods:
+
+- <code title="get /names/unions/discriminated_union">client.names.unions.<a href="./src/resources/names/unions.ts">discriminated</a>() -> DiscriminatedUnion</code>
+- <code title="get /names/unions/variants_single_prop_objects">client.names.unions.<a href="./src/resources/names/unions.ts">variantsSinglePropObjects</a>() -> VariantsSinglePropObjects</code>
+
 ## ReservedNames
 
 ### Import

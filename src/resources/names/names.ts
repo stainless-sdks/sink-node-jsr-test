@@ -5,10 +5,12 @@ import { APIResource } from 'sink-npm/resource';
 import * as NamesAPI from 'sink-npm/resources/names/names';
 import * as Shared from 'sink-npm/resources/shared';
 import * as ParamsAPI from 'sink-npm/resources/names/params';
+import * as UnionsAPI from 'sink-npm/resources/names/unions';
 import * as CanCauseClashesAPI from 'sink-npm/resources/names/can-cause-clashes/can-cause-clashes';
 import * as ReservedNamesAPI from 'sink-npm/resources/names/reserved-names/reserved-names';
 
 export class Names extends APIResource {
+  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this.client);
   reservedNames: ReservedNamesAPI.ReservedNames = new ReservedNamesAPI.ReservedNames(this.client);
   params: ParamsAPI.Params = new ParamsAPI.Params(this.client);
   canCauseClashes: CanCauseClashesAPI.CanCauseClashes = new CanCauseClashesAPI.CanCauseClashes(this.client);
@@ -168,6 +170,9 @@ export namespace Names {
   export import NameResponsePropertyClashesModelImportResponse = NamesAPI.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
+  export import Unions = UnionsAPI.Unions;
+  export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
+  export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
   export import ReservedNames = ReservedNamesAPI.ReservedNames;
   export import Params = ParamsAPI.Params;
   export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
