@@ -714,14 +714,10 @@ export namespace Sink {
   export import BranchRecursion = API.BranchRecursion;
   export import BranchRecursionChildA = API.BranchRecursionChildA;
   export import BranchRecursionChildB = API.BranchRecursionChildB;
-  export import MutualRecursionA = API.MutualRecursionA;
-  export import MutualRecursionB = API.MutualRecursionB;
   export import SelfRecursion = API.SelfRecursion;
   export import RecursionCreateEnvelopeResponse = API.RecursionCreateEnvelopeResponse;
   export import RecursionCreateBranchParams = API.RecursionCreateBranchParams;
   export import RecursionCreateEnvelopeParams = API.RecursionCreateEnvelopeParams;
-  export import RecursionCreateMutualAParams = API.RecursionCreateMutualAParams;
-  export import RecursionCreateMutualBParams = API.RecursionCreateMutualBParams;
   export import RecursionCreateSelfParams = API.RecursionCreateSelfParams;
 
   export import SharedQueryParams = API.SharedQueryParams;
@@ -737,8 +733,6 @@ export namespace Sink {
   export import Currency = API.Currency;
   export import ObjectWithChildRef = API.ObjectWithChildRef;
   export import SharedCursorNestedResponsePropMeta = API.SharedCursorNestedResponsePropMeta;
-  export import SharedMutualRecursionA = API.SharedMutualRecursionA;
-  export import SharedMutualRecursionB = API.SharedMutualRecursionB;
   export import SharedSelfRecursion = API.SharedSelfRecursion;
   export import ShippingAddress = API.ShippingAddress;
   export import SimpleObject = API.SimpleObject;

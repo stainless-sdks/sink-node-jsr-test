@@ -47,14 +47,6 @@ export namespace SharedCursorNestedResponsePropMeta {
   }
 }
 
-export interface SharedMutualRecursionA {
-  b?: SharedMutualRecursionB;
-}
-
-export interface SharedMutualRecursionB {
-  a?: SharedMutualRecursionA;
-}
-
 export interface SharedSelfRecursion {
   name: string;
 

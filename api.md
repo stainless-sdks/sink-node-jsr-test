@@ -20,8 +20,6 @@ Types:
 - <code><a href="./src/resources/shared.ts">Currency</a></code>
 - <code><a href="./src/resources/shared.ts">ObjectWithChildRef</a></code>
 - <code><a href="./src/resources/shared.ts">SharedCursorNestedResponsePropMeta</a></code>
-- <code><a href="./src/resources/shared.ts">SharedMutualRecursionA</a></code>
-- <code><a href="./src/resources/shared.ts">SharedMutualRecursionB</a></code>
 - <code><a href="./src/resources/shared.ts">SharedSelfRecursion</a></code>
 - <code><a href="./src/resources/shared.ts">ShippingAddress</a></code>
 - <code><a href="./src/resources/shared.ts">SimpleObject</a></code>
@@ -797,8 +795,6 @@ Types:
 - <code><a href="./src/resources/recursion/recursion.ts">BranchRecursion</a></code>
 - <code><a href="./src/resources/recursion/recursion.ts">BranchRecursionChildA</a></code>
 - <code><a href="./src/resources/recursion/recursion.ts">BranchRecursionChildB</a></code>
-- <code><a href="./src/resources/recursion/recursion.ts">MutualRecursionA</a></code>
-- <code><a href="./src/resources/recursion/recursion.ts">MutualRecursionB</a></code>
 - <code><a href="./src/resources/recursion/recursion.ts">SelfRecursion</a></code>
 - <code><a href="./src/resources/recursion/recursion.ts">RecursionCreateEnvelopeResponse</a></code>
 
@@ -806,16 +802,12 @@ Methods:
 
 - <code title="post /recursion/branch">client.recursion.<a href="./src/resources/recursion/recursion.ts">createBranch</a>({ ...params }) -> BranchRecursion</code>
 - <code title="post /recursion/envelope">client.recursion.<a href="./src/resources/recursion/recursion.ts">createEnvelope</a>({ ...params }) -> RecursionCreateEnvelopeResponse</code>
-- <code title="post /recursion/mutual-a">client.recursion.<a href="./src/resources/recursion/recursion.ts">createMutualA</a>({ ...params }) -> MutualRecursionA</code>
-- <code title="post /recursion/mutual-b">client.recursion.<a href="./src/resources/recursion/recursion.ts">createMutualB</a>({ ...params }) -> MutualRecursionB</code>
 - <code title="post /recursion/self">client.recursion.<a href="./src/resources/recursion/recursion.ts">createSelf</a>({ ...params }) -> SelfRecursion</code>
 
 ## SharedResponses
 
 Methods:
 
-- <code title="post /recursion/shared/responses/mutual-a">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualA</a>() -> SharedMutualRecursionA</code>
-- <code title="post /recursion/shared/responses/mutual-b">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createMutualB</a>() -> SharedMutualRecursionB</code>
 - <code title="post /recursion/shared/responses/self">client.recursion.sharedResponses.<a href="./src/resources/recursion/shared-responses.ts">createSelf</a>() -> SharedSelfRecursion</code>
 
 # SharedQueryParams
