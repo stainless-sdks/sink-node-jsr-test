@@ -289,6 +289,7 @@ export class Sink extends Core.APIClient {
   resourceRefs: API.ResourceRefs = new API.ResourceRefs(this);
   cards: API.Cards = new API.Cards(this);
   files: API.Files = new API.Files(this);
+  binaries: API.Binaries = new API.Binaries(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
   company: API.CompanyResource = new API.CompanyResource(this);
@@ -555,6 +556,8 @@ export namespace Sink {
   export import FileCreateMultipartParams = API.FileCreateMultipartParams;
   export import FileEverythingMultipartParams = API.FileEverythingMultipartParams;
   export import FileWithOptionalParamParams = API.FileWithOptionalParamParams;
+
+  export import Binaries = API.Binaries;
 
   export import Resources = API.Resources;
 

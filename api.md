@@ -272,6 +272,12 @@ Methods:
 - <code title="post /files/multipart_everything">client.files.<a href="./src/resources/files.ts">everythingMultipart</a>({ ...params }) -> FileEverythingMultipartResponse</code>
 - <code title="post /files/with_optional_param">client.files.<a href="./src/resources/files.ts">withOptionalParam</a>({ ...params }) -> FileWithOptionalParamResponse</code>
 
+# Binaries
+
+Methods:
+
+- <code title="get /binaries/return_binary">client.binaries.<a href="./src/resources/binaries.ts">returnBinary</a>() -> Response</code>
+
 # Resources
 
 Methods:

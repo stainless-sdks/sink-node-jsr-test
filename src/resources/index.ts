@@ -33,6 +33,7 @@ export {
   NamePropertiesCommonConflictsParams,
   Names,
 } from './names/names';
+export { Binaries } from './binaries';
 export {
   Card,
   CardAlias,

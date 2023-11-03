@@ -7,6 +7,8 @@ const sink = new Sink({
   baseURL: 'http://127.0.0.1:4010',
   username: 'Robert',
   requiredArgNoEnv: '<example>',
+  someNumberArgRequiredNoDefault: 0,
+  someNumberArgRequiredNoDefaultNoEnv: 0,
 });
 
 export async function main() {
