@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.6.0 (2023-11-05)
+
+Full Changelog: [v0.5.0...v0.6.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.5.0...v0.6.0)
+
+### Features
+
+* add support for default headers per-resource ([#267](https://github.com/stainless-sdks/sink-node-public/issues/267)) ([9c2c1c0](https://github.com/stainless-sdks/sink-node-public/commit/9c2c1c05b7054467aeabfe6037d65bb29a7f3fa6))
+* add union type name tests ([#270](https://github.com/stainless-sdks/sink-node-public/issues/270)) ([5fc2969](https://github.com/stainless-sdks/sink-node-public/commit/5fc296919f50a4a71f28e1d92c6af82afa174cc2))
+* **client:** allow binary returns ([#271](https://github.com/stainless-sdks/sink-node-public/issues/271)) ([72786a9](https://github.com/stainless-sdks/sink-node-public/commit/72786a99eed6bad8ad81a7eee875ec6ace4dd1ed))
+* **github:** include a devcontainer setup ([#269](https://github.com/stainless-sdks/sink-node-public/issues/269)) ([1e3c8e2](https://github.com/stainless-sdks/sink-node-public/commit/1e3c8e2bac84b1f1cde911ff109a32901f68cae8))
+* temporarily skip mutual recursion cases ([#272](https://github.com/stainless-sdks/sink-node-public/issues/272)) ([881f194](https://github.com/stainless-sdks/sink-node-public/commit/881f194a1d63999bf31e7063be5c8b09e5715839))
+
+
+### Chores
+
+* **internal:** update gitignore ([#265](https://github.com/stainless-sdks/sink-node-public/issues/265)) ([5ca782d](https://github.com/stainless-sdks/sink-node-public/commit/5ca782d76dce1cc5e69e739f0ff6dd2865cc98d7))
+* small cleanups ([#268](https://github.com/stainless-sdks/sink-node-public/issues/268)) ([52bbdc8](https://github.com/stainless-sdks/sink-node-public/commit/52bbdc8425d12ca91c661371e8b8f5ba861d3e5f))
+
+
+### Documentation
+
+* document customizing fetch ([#273](https://github.com/stainless-sdks/sink-node-public/issues/273)) ([0ffaab1](https://github.com/stainless-sdks/sink-node-public/commit/0ffaab132bdb314b5e56b225a6621f2244e249e5))
+* **readme:** remove redundant whitespace ([#274](https://github.com/stainless-sdks/sink-node-public/issues/274)) ([00b963f](https://github.com/stainless-sdks/sink-node-public/commit/00b963fe7c2cb93d43608556f19e193232017fca))
+
 ## 0.5.0 (2023-10-25)
 
 Full Changelog: [v0.4.1...v0.5.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.4.1...v0.5.0)
