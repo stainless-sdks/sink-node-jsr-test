@@ -39,6 +39,24 @@ async function main() {
 main();
 ```
 
+## Streaming Responses
+
+We provide support for streaming responses using Server Sent Events (SSE).
+
+```ts
+import Sink from 'sink-npm';
+
+const sink = new Sink();
+
+const stream = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: true });
+for await (const streamingBasicResponse of stream) {
+  console.log(streamingBasicResponse.completion);
+}
+```
+
+If you need to cancel a stream, you can `break` from the loop
+or call `stream.controller.abort()`.
+
 ### Request & Response types
 
 This library includes TypeScript definitions for all request params and response fields. You may import and use them like so:
@@ -158,7 +176,7 @@ const sink = new Sink({
 });
 
 // Or, configure per-request:
-await sink.cards.list({ page_size: 10 }, {
+await sink.cards.provisionFoo('my card token', { digital_wallet: 'GOOGLE_PAY' }, {
   maxRetries: 5,
 });
 ```
