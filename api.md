@@ -416,12 +416,14 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/types/arrays.ts">ArrayObjectItems</a></code>
 - <code><a href="./src/resources/types/arrays.ts">ArrayFloatItemsResponse</a></code>
 - <code><a href="./src/resources/types/arrays.ts">ArrayObjectItemsResponse</a></code>
 
 Methods:
 
 - <code title="get /types/array/float_items">client.types.arrays.<a href="./src/resources/types/arrays.ts">floatItems</a>() -> ArrayFloatItemsResponse</code>
+- <code title="post /types/array/model_nested_in_params">client.types.arrays.<a href="./src/resources/types/arrays.ts">nestedInParams</a>({ ...params }) -> void</code>
 - <code title="get /types/array/object_items">client.types.arrays.<a href="./src/resources/types/arrays.ts">objectItems</a>() -> ArrayObjectItemsResponse</code>
 
 # Names
