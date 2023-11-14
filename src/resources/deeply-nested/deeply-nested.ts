@@ -4,7 +4,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as LevelOneAPI from 'sink-npm/resources/deeply-nested/level-one/level-one';
 
 export class DeeplyNested extends APIResource {
-  levelOne: LevelOneAPI.LevelOne = new LevelOneAPI.LevelOne(this.client);
+  levelOne: LevelOneAPI.LevelOne = new LevelOneAPI.LevelOne(this._client);
 }
 
 export namespace DeeplyNested {

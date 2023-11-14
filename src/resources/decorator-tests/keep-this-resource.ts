@@ -10,7 +10,7 @@ export class KeepThisResource extends APIResource {
    * ancestors.
    */
   keepThisMethod(options?: Core.RequestOptions): Core.APIPromise<KeepThisResourceKeepThisMethodResponse> {
-    return this.get('/decorator_tests/nested/keep/this/method', options);
+    return this._client.get('/decorator_tests/nested/keep/this/method', options);
   }
 }
 

@@ -10,7 +10,7 @@ export class LevelThree extends APIResource {
    * Get card configuration such as spend limit and state.
    */
   methodLevel3(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<CardsAPI.Card> {
-    return this.get(`/cards/${cardToken}`, options);
+    return this._client.get(`/cards/${cardToken}`, options);
   }
 }
 

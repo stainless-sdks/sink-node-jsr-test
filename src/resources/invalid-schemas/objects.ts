@@ -6,7 +6,7 @@ import * as ObjectsAPI from 'sink-npm/resources/invalid-schemas/objects';
 
 export class Objects extends APIResource {
   missingItems(options?: Core.RequestOptions): Core.APIPromise<ObjectMissingItemsResponse> {
-    return this.get('/invalid_schemas/objects/property_missing_def', options);
+    return this._client.get('/invalid_schemas/objects/property_missing_def', options);
   }
 }
 

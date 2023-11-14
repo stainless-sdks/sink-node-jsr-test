@@ -11,20 +11,20 @@ import * as ReadOnlyParamsAPI from 'sink-npm/resources/types/read-only-params';
 import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
 
 export class Types extends APIResource {
-  readOnlyParams: ReadOnlyParamsAPI.ReadOnlyParams = new ReadOnlyParamsAPI.ReadOnlyParams(this.client);
+  readOnlyParams: ReadOnlyParamsAPI.ReadOnlyParams = new ReadOnlyParamsAPI.ReadOnlyParams(this._client);
   writeOnlyResponses: WriteOnlyResponsesAPI.WriteOnlyResponses = new WriteOnlyResponsesAPI.WriteOnlyResponses(
-    this.client,
+    this._client,
   );
-  maps: MapsAPI.Maps = new MapsAPI.Maps(this.client);
-  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this.client);
-  arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this.client);
+  maps: MapsAPI.Maps = new MapsAPI.Maps(this._client);
+  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this._client);
+  arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this._client);
 
   /**
    * Endpoint that has date types should generate params/responses with rich date
    * types.
    */
   dates(body: TypeDatesParams, options?: Core.RequestOptions): Core.APIPromise<TypeDatesResponse> {
-    return this.post('/types/dates', { body, ...options });
+    return this._client.post('/types/dates', { body, ...options });
   }
 
   /**
@@ -34,7 +34,7 @@ export class Types extends APIResource {
     body: TypeDatetimesParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<TypeDatetimesResponse> {
-    return this.post('/types/datetimes', { body, ...options });
+    return this._client.post('/types/datetimes', { body, ...options });
   }
 
   /**
@@ -45,7 +45,7 @@ export class Types extends APIResource {
     body: TypeEnumTestsArrayUniqueValuesParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/types/enum_tests_array_unique_values', {
+    return this._client.post('/types/enum_tests_array_unique_values', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -60,7 +60,7 @@ export class Types extends APIResource {
     body: TypeEnumTestsArrayUniqueValues2ValuesParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/types/enum_tests_array_unique_values_2_values', {
+    return this._client.post('/types/enum_tests_array_unique_values_2_values', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -75,7 +75,7 @@ export class Types extends APIResource {
     body: TypeEnumTestsArrayUniqueValuesNumbersParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/types/enum_tests_array_unique_values_numbers', {
+    return this._client.post('/types/enum_tests_array_unique_values_numbers', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -86,7 +86,7 @@ export class Types extends APIResource {
    * Endpoint that has a `$ref`d enum type in the request body and the response body.
    */
   enums(body: TypeEnumsParams, options?: Core.RequestOptions): Core.APIPromise<TypeEnumsResponse> {
-    return this.post('/types/enums', { body, ...options });
+    return this._client.post('/types/enums', { body, ...options });
   }
 }
 

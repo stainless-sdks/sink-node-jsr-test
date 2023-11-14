@@ -7,13 +7,13 @@ import * as CardsAPI from 'sink-npm/resources/cards';
 import * as LevelThreeAPI from 'sink-npm/resources/deeply-nested/level-one/level-two/level-three';
 
 export class LevelTwo extends APIResource {
-  levelThree: LevelThreeAPI.LevelThree = new LevelThreeAPI.LevelThree(this.client);
+  levelThree: LevelThreeAPI.LevelThree = new LevelThreeAPI.LevelThree(this._client);
 
   /**
    * Get card configuration such as spend limit and state.
    */
   methodLevel2(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<CardsAPI.Card> {
-    return this.get(`/cards/${cardToken}`, options);
+    return this._client.get(`/cards/${cardToken}`, options);
   }
 }
 

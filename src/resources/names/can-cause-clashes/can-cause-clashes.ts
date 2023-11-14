@@ -4,7 +4,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as EmploymentDataAPI from 'sink-npm/resources/names/can-cause-clashes/employment-data';
 
 export class CanCauseClashes extends APIResource {
-  employmentData: EmploymentDataAPI.EmploymentData = new EmploymentDataAPI.EmploymentData(this.client);
+  employmentData: EmploymentDataAPI.EmploymentData = new EmploymentDataAPI.EmploymentData(this._client);
 }
 
 export namespace CanCauseClashes {

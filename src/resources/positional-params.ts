@@ -9,7 +9,7 @@ export class PositionalParams extends APIResource {
    * Endpoint with no positional params and a body param.
    */
   basicBody(body: PositionalParamBasicBodyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/positional_params/basic_body', {
+    return this._client.post('/positional_params/basic_body', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -20,7 +20,7 @@ export class PositionalParams extends APIResource {
    * Endpoint with no positional params and a query object.
    */
   basicQuery(query: PositionalParamBasicQueryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.get('/positional_params/basic_query', {
+    return this._client.get('/positional_params/basic_query', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -31,7 +31,7 @@ export class PositionalParams extends APIResource {
    * Endpoint with no positional params and a body object.
    */
   body(body: PositionalParamBodyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/positional_params/body', {
+    return this._client.post('/positional_params/body', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -45,7 +45,7 @@ export class PositionalParams extends APIResource {
     body: PositionalParamBodyExtraParamParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/positional_params/body_extra_param', {
+    return this._client.post('/positional_params/body_extra_param', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -69,7 +69,7 @@ export class PositionalParams extends APIResource {
       'X-Custom-Header': xCustomHeader,
       ...body
     } = params;
-    return this.post(`/positional_params/query/${id}/kitchen_sink/${key}`, {
+    return this._client.post(`/positional_params/query/${id}/kitchen_sink/${key}`, {
       query: { imACamel, option1, option2, really_cool_snake },
       body,
       ...options,
@@ -86,7 +86,7 @@ export class PositionalParams extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { first, last, ...body } = params;
-    return this.post(`/positional_params/${first}/${second}/${last}`, {
+    return this._client.post(`/positional_params/${first}/${second}/${last}`, {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -97,7 +97,7 @@ export class PositionalParams extends APIResource {
    * Endpoint with a positional query parameter.
    */
   query(query: PositionalParamQueryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.get('/positional_params/query', {
+    return this._client.get('/positional_params/query', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -113,7 +113,7 @@ export class PositionalParams extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { bar } = params;
-    return this.post(`/positional_params/query/${id}`, {
+    return this._client.post(`/positional_params/query/${id}`, {
       query: { bar },
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -127,7 +127,7 @@ export class PositionalParams extends APIResource {
     query: PositionalParamQueryMultipleParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.get('/positional_params/query_multiple', {
+    return this._client.get('/positional_params/query_multiple', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -138,7 +138,7 @@ export class PositionalParams extends APIResource {
    * Endpoint with a single positional path parameter.
    */
   single(single: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.get(`/positional_params/${single}`, {
+    return this._client.get(`/positional_params/${single}`, {
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -152,7 +152,7 @@ export class PositionalParams extends APIResource {
     body: PositionalParamUnionBodyAndPathParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post(`/positional_params/body/union/${id}`, {
+    return this._client.post(`/positional_params/body/union/${id}`, {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },

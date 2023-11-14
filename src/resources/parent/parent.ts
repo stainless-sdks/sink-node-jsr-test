@@ -4,7 +4,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as ChildAPI from 'sink-npm/resources/parent/child';
 
 export class Parent extends APIResource {
-  child: ChildAPI.Child = new ChildAPI.Child(this.client);
+  child: ChildAPI.Child = new ChildAPI.Child(this._client);
 }
 
 export namespace Parent {

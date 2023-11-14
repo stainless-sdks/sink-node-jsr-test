@@ -7,16 +7,16 @@ import * as KeepThisResourceAPI from 'sink-npm/resources/decorator-tests/keep-th
 import * as LanguagesAPI from 'sink-npm/resources/decorator-tests/languages';
 
 export class DecoratorTests extends APIResource {
-  languages: LanguagesAPI.Languages = new LanguagesAPI.Languages(this.client);
+  languages: LanguagesAPI.Languages = new LanguagesAPI.Languages(this._client);
   keepThisResource: KeepThisResourceAPI.KeepThisResource = new KeepThisResourceAPI.KeepThisResource(
-    this.client,
+    this._client,
   );
 
   /**
    * Top-level method that should not be skipped.
    */
   keepMe(options?: Core.RequestOptions): Core.APIPromise<DecoratorTestKeepMeResponse> {
-    return this.get('/decorator_tests/keep/me', options);
+    return this._client.get('/decorator_tests/keep/me', options);
   }
 }
 

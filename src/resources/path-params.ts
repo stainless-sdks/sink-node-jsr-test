@@ -13,7 +13,7 @@ export class PathParams extends APIResource {
     dashedParam: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.post(`/path_params/${dashedParam}`, options);
+    return this._client.post(`/path_params/${dashedParam}`, options);
   }
 
   /**
@@ -23,7 +23,7 @@ export class PathParams extends APIResource {
     dateParam: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.post(`/path_params/dates/${dateParam}`, options);
+    return this._client.post(`/path_params/dates/${dateParam}`, options);
   }
 
   /**
@@ -33,7 +33,7 @@ export class PathParams extends APIResource {
     datetimeParam: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.post(`/path_params/date_times/${datetimeParam}`, options);
+    return this._client.post(`/path_params/date_times/${datetimeParam}`, options);
   }
 
   /**
@@ -43,7 +43,7 @@ export class PathParams extends APIResource {
     integerParam: number,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.post(`/path_params/${integerParam}`, options);
+    return this._client.post(`/path_params/${integerParam}`, options);
   }
 
   /**
@@ -55,7 +55,7 @@ export class PathParams extends APIResource {
     last: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<PathParamMultipleResponse> {
-    return this.post(`/path_params/${first}/${second}/${last}`, options);
+    return this._client.post(`/path_params/${first}/${second}/${last}`, options);
   }
 
   /**
@@ -67,14 +67,14 @@ export class PathParams extends APIResource {
     stringParam: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.post(`/path_params/mixed/${integerParam}/${stringParam}`, options);
+    return this._client.post(`/path_params/mixed/${integerParam}/${stringParam}`, options);
   }
 
   /**
    * Endpoint with a singular path parameter.
    */
   singular(singular: string, options?: Core.RequestOptions): Core.APIPromise<PathParamSingularResponse> {
-    return this.post(`/path_params/${singular}`, options);
+    return this._client.post(`/path_params/${singular}`, options);
   }
 }
 

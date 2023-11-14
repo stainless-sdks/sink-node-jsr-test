@@ -10,6 +10,6 @@ export class Languages extends APIResource {
    * response models.
    */
   skippedForPython(options?: Core.RequestOptions): Core.APIPromise<Shared.SimpleObject> {
-    return this.get('/responses/shared_simple_object', options);
+    return this._client.get('/responses/shared_simple_object', options);
   }
 }

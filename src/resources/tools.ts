@@ -9,7 +9,7 @@ export class Tools extends APIResource {
     body: ToolSkippedParamsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ObjectSkippedProps> {
-    return this.post('/tools/skipped_params', { body, ...options });
+    return this._client.post('/tools/skipped_params', { body, ...options });
   }
 }
 

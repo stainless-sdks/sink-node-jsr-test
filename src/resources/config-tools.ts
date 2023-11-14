@@ -15,7 +15,7 @@ export class ConfigTools extends APIResource {
     body: ConfigToolOnlyInNodeParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<CardsAPI.Card> {
-    return this.post('/cards', { body, ...options });
+    return this._client.post('/cards', { body, ...options });
   }
 }
 

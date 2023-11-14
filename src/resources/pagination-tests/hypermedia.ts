@@ -24,7 +24,7 @@ export class Hypermedia extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this.getAPIList('/paginated/hypermedia', MyModelsPageHypermedia, { query, ...options });
+    return this._client.getAPIList('/paginated/hypermedia', MyModelsPageHypermedia, { query, ...options });
   }
 }
 

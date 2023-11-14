@@ -8,6 +8,6 @@ export class Child extends APIResource {
   retrieve(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ModelReferencedInParentAndChildAPI.ModelReferencedInParentAndChild> {
-    return this.get('/model_referenced_in_parent_and_child/child', options);
+    return this._client.get('/model_referenced_in_parent_and_child/child', options);
   }
 }

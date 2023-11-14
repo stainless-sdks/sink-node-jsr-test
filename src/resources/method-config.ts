@@ -12,7 +12,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsAllResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -22,7 +22,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsGoResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -32,7 +32,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsJavaResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -42,7 +42,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsKotlinResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -52,7 +52,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsNodeResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -62,7 +62,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsNodeAndPythonResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -72,7 +72,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsPythonResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
@@ -82,7 +82,7 @@ export class MethodConfig extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<MethodConfigSkippedTestsRubyResponse> {
-    return this.get(`/method_config/skipped_tests/${id}`, options);
+    return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 }
 

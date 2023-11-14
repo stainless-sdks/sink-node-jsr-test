@@ -6,7 +6,7 @@ import * as TestingAPI from 'sink-npm/resources/testing';
 
 export class Testing extends APIResource {
   root(options?: Core.RequestOptions): Core.APIPromise<RootResponse> {
-    return this.get('/', options);
+    return this._client.get('/', options);
   }
 }
 

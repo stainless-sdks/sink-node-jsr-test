@@ -5,8 +5,8 @@ import * as ImportAPI from 'sink-npm/resources/names/reserved-names/import';
 import * as MethodsAPI from 'sink-npm/resources/names/reserved-names/methods';
 
 export class ReservedNames extends APIResource {
-  import: ImportAPI.ImportResource = new ImportAPI.ImportResource(this.client);
-  methods: MethodsAPI.Methods = new MethodsAPI.Methods(this.client);
+  import: ImportAPI.ImportResource = new ImportAPI.ImportResource(this._client);
+  methods: MethodsAPI.Methods = new MethodsAPI.Methods(this._client);
 }
 
 export namespace ReservedNames {

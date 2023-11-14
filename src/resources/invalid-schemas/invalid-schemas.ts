@@ -5,8 +5,8 @@ import * as ArraysAPI from 'sink-npm/resources/invalid-schemas/arrays';
 import * as ObjectsAPI from 'sink-npm/resources/invalid-schemas/objects';
 
 export class InvalidSchemas extends APIResource {
-  arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this.client);
-  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this.client);
+  arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this._client);
+  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this._client);
 }
 
 export namespace InvalidSchemas {

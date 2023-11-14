@@ -11,7 +11,7 @@ export class Maps extends APIResource {
    * `additionalProperties` with a nullable items type.
    */
   nullableItems(options?: Core.RequestOptions): Core.APIPromise<MapNullableItemsResponse> {
-    return this.get('/types/map/nullable_items', options);
+    return this._client.get('/types/map/nullable_items', options);
   }
 }
 

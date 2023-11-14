@@ -18,7 +18,7 @@ export class ComplexQueries extends APIResource {
     if (isRequestOptions(query)) {
       return this.arrayQuery({}, query);
     }
-    return this.get('/array_query', { query, ...options });
+    return this._client.get('/array_query', { query, ...options });
   }
 
   objectQuery(
@@ -33,7 +33,7 @@ export class ComplexQueries extends APIResource {
     if (isRequestOptions(query)) {
       return this.objectQuery({}, query);
     }
-    return this.get('/object_query', { query, ...options });
+    return this._client.get('/object_query', { query, ...options });
   }
 }
 

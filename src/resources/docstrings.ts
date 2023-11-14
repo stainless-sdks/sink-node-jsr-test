@@ -23,7 +23,7 @@ export class Docstrings extends APIResource {
    * Other text
    */
   descriptionContainsJsDoc(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.get('/docstrings/description_contains_comments', options);
+    return this._client.get('/docstrings/description_contains_comments', options);
   }
 
   /**
@@ -34,15 +34,15 @@ export class Docstrings extends APIResource {
    * Other text
    */
   descriptionContainsJsDocEnd(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.get('/docstrings/description_contains_comment_enders', options);
+    return this._client.get('/docstrings/description_contains_comment_enders', options);
   }
 
   leadingDoubleQuote(options?: Core.RequestOptions): Core.APIPromise<DocstringLeadingDoubleQuoteResponse> {
-    return this.get('/docstrings/property_leading_double_quote', options);
+    return this._client.get('/docstrings/property_leading_double_quote', options);
   }
 
   trailingDoubleQuote(options?: Core.RequestOptions): Core.APIPromise<DocstringTrailingDoubleQuoteResponse> {
-    return this.get('/docstrings/property_trailing_double_quote', options);
+    return this._client.get('/docstrings/property_trailing_double_quote', options);
   }
 }
 

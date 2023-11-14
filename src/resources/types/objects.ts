@@ -11,7 +11,7 @@ export class Objects extends APIResource {
    * properties with the same value types.
    */
   mixedKnownAndUnknown(options?: Core.RequestOptions): Core.APIPromise<ObjectMixedKnownAndUnknownResponse> {
-    return this.get('/types/object/mixed_known_and_unknown', options);
+    return this._client.get('/types/object/mixed_known_and_unknown', options);
   }
 
   /**
@@ -22,7 +22,7 @@ export class Objects extends APIResource {
   multipleArrayPropertiesSameRef(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ObjectMultipleArrayPropertiesSameRefResponse> {
-    return this.get('/types/object/multiple_array_properties_same_ref', options);
+    return this._client.get('/types/object/multiple_array_properties_same_ref', options);
   }
 
   /**
@@ -32,7 +32,7 @@ export class Objects extends APIResource {
   multiplePropertiesSameModel(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ObjectMultiplePropertiesSameModelResponse> {
-    return this.get('/types/object/multiple_properties_same_model', options);
+    return this._client.get('/types/object/multiple_properties_same_model', options);
   }
 
   /**
@@ -43,7 +43,7 @@ export class Objects extends APIResource {
   multiplePropertiesSameRef(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ObjectMultiplePropertiesSameRefResponse> {
-    return this.get('/types/object/multiple_properties_same_ref', options);
+    return this._client.get('/types/object/multiple_properties_same_ref', options);
   }
 
   /**
@@ -53,7 +53,7 @@ export class Objects extends APIResource {
   twoDimensionalArrayPrimitiveProperty(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ObjectTwoDimensionalArrayPrimitivePropertyResponse> {
-    return this.get('/types/object/2d_array_primitive_properties', options);
+    return this._client.get('/types/object/2d_array_primitive_properties', options);
   }
 }
 

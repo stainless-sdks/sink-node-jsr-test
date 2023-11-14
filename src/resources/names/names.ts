@@ -10,24 +10,24 @@ import * as CanCauseClashesAPI from 'sink-npm/resources/names/can-cause-clashes/
 import * as ReservedNamesAPI from 'sink-npm/resources/names/reserved-names/reserved-names';
 
 export class Names extends APIResource {
-  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this.client);
-  reservedNames: ReservedNamesAPI.ReservedNames = new ReservedNamesAPI.ReservedNames(this.client);
-  params: ParamsAPI.Params = new ParamsAPI.Params(this.client);
-  canCauseClashes: CanCauseClashesAPI.CanCauseClashes = new CanCauseClashesAPI.CanCauseClashes(this.client);
+  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
+  reservedNames: ReservedNamesAPI.ReservedNames = new ReservedNamesAPI.ReservedNames(this._client);
+  params: ParamsAPI.Params = new ParamsAPI.Params(this._client);
+  canCauseClashes: CanCauseClashesAPI.CanCauseClashes = new CanCauseClashesAPI.CanCauseClashes(this._client);
 
   /**
    * Endpoint with request & response properties that could cause clashes due to
    * imports.
    */
   childPropImportClash(options?: Core.RequestOptions): Core.APIPromise<NameChildPropImportClashResponse> {
-    return this.post('/names/child_prop_import_clash', options);
+    return this._client.post('/names/child_prop_import_clash', options);
   }
 
   /**
    * Endpoint with the name `get` in the config.
    */
-  get_(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.get('/names/method_name_get', options);
+  get(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+    return this._client.get('/names/method_name_get', options);
   }
 
   /**
@@ -38,7 +38,7 @@ export class Names extends APIResource {
     body: NamePropertiesCommonConflictsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<NamePropertiesCommonConflictsResponse> {
-    return this.post('/names/properties_common_conflicts', { body, ...options });
+    return this._client.post('/names/properties_common_conflicts', { body, ...options });
   }
 
   /**
@@ -48,7 +48,7 @@ export class Names extends APIResource {
   responsePropertyClashesModelImport(
     options?: Core.RequestOptions,
   ): Core.APIPromise<NameResponsePropertyClashesModelImportResponse> {
-    return this.get('/names/response_property_clashes_model_import', options);
+    return this._client.get('/names/response_property_clashes_model_import', options);
   }
 
   /**
@@ -57,7 +57,7 @@ export class Names extends APIResource {
   responseShadowsPydantic(
     options?: Core.RequestOptions,
   ): Core.APIPromise<NameResponseShadowsPydanticResponse> {
-    return this.get('/names/response_property_shadows_pydantic', options);
+    return this._client.get('/names/response_property_shadows_pydantic', options);
   }
 }
 

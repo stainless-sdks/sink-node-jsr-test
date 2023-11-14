@@ -6,9 +6,9 @@ import * as PaginatedModelSecondRefAPI from 'sink-npm/resources/resource-refs/pa
 
 export class ResourceRefs extends APIResource {
   paginatedModelFirstRef: PaginatedModelFirstRefAPI.PaginatedModelFirstRef =
-    new PaginatedModelFirstRefAPI.PaginatedModelFirstRef(this.client);
+    new PaginatedModelFirstRefAPI.PaginatedModelFirstRef(this._client);
   paginatedModelSecondRef: PaginatedModelSecondRefAPI.PaginatedModelSecondRef =
-    new PaginatedModelSecondRefAPI.PaginatedModelSecondRef(this.client);
+    new PaginatedModelSecondRefAPI.PaginatedModelSecondRef(this._client);
 }
 
 export namespace ResourceRefs {

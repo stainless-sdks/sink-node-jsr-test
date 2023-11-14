@@ -16,7 +16,7 @@ export class ExtraParamsAndFields extends APIResource {
     options?: Core.RequestOptions,
   ): Core.PagePromise<MyModelsGenericPageWithExtraParamsAndFields, BodyParamsAPI.MyModel> {
     const { my_cursor, limit, ...body } = params;
-    return this.getAPIList('/paginated/more_params', MyModelsGenericPageWithExtraParamsAndFields, {
+    return this._client.getAPIList('/paginated/more_params', MyModelsGenericPageWithExtraParamsAndFields, {
       query: { my_cursor, limit },
       body,
       method: 'post',

@@ -6,6 +6,6 @@ import * as Shared from 'sink-npm/resources/shared';
 
 export class SharedResponses extends APIResource {
   createSelf(options?: Core.RequestOptions): Core.APIPromise<Shared.SharedSelfRecursion> {
-    return this.post('/recursion/shared/responses/self', options);
+    return this._client.post('/recursion/shared/responses/self', options);
   }
 }

@@ -27,7 +27,7 @@ export class Cursor extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this.getAPIList('/paginated/cursor', MyModelsPageCursor, { query, ...options });
+    return this._client.getAPIList('/paginated/cursor', MyModelsPageCursor, { query, ...options });
   }
 
   /**
@@ -47,10 +47,11 @@ export class Cursor extends APIResource {
     if (isRequestOptions(query)) {
       return this.listNestedResponseProp({}, query);
     }
-    return this.getAPIList('/paginated/cursor_nested_response_prop', MyModelsPageCursorNestedResponseProp, {
-      query,
-      ...options,
-    });
+    return this._client.getAPIList(
+      '/paginated/cursor_nested_response_prop',
+      MyModelsPageCursorNestedResponseProp,
+      { query, ...options },
+    );
   }
 }
 

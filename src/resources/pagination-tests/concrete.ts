@@ -18,7 +18,7 @@ export class Concrete extends APIResource {
     query: ConcreteListParams,
     options?: Core.RequestOptions,
   ): Core.PagePromise<MyConcretePage, MyConcretePageItem> {
-    return this.getAPIList('/paginated/concrete/cursor', MyConcretePage, { query, ...options });
+    return this._client.getAPIList('/paginated/concrete/cursor', MyConcretePage, { query, ...options });
   }
 
   /**
@@ -30,7 +30,7 @@ export class Concrete extends APIResource {
     options?: Core.RequestOptions,
   ): Core.PagePromise<ConcretePageWithExtraParamsAndFields, MyConcretePageItem> {
     const { my_cursor, limit, ...body } = params;
-    return this.getAPIList('/paginated/concrete/more_params', ConcretePageWithExtraParamsAndFields, {
+    return this._client.getAPIList('/paginated/concrete/more_params', ConcretePageWithExtraParamsAndFields, {
       query: { my_cursor, limit },
       body,
       method: 'post',

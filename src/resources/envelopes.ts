@@ -10,7 +10,7 @@ export class Envelopes extends APIResource {
    * Endpoint with a response wrapped within a `data` property.
    */
   explicit(options?: Core.RequestOptions): Core.APIPromise<Address> {
-    return (this.get('/envelopes/data', options) as Core.APIPromise<{ data: Address }>)._thenUnwrap(
+    return (this._client.get('/envelopes/data', options) as Core.APIPromise<{ data: Address }>)._thenUnwrap(
       (obj) => obj.data,
     );
   }
@@ -19,7 +19,7 @@ export class Envelopes extends APIResource {
    * Endpoint with a response wrapped within a `items` property.
    */
   implicit(options?: Core.RequestOptions): Core.APIPromise<Address> {
-    return (this.get('/envelopes/items', options) as Core.APIPromise<{ items: Address }>)._thenUnwrap(
+    return (this._client.get('/envelopes/items', options) as Core.APIPromise<{ items: Address }>)._thenUnwrap(
       (obj) => obj.items,
     );
   }
@@ -30,7 +30,7 @@ export class Envelopes extends APIResource {
    */
   inlineResponse(options?: Core.RequestOptions): Core.APIPromise<EnvelopeInlineResponseResponse> {
     return (
-      this.get('/envelopes/items/inline_response', options) as Core.APIPromise<{
+      this._client.get('/envelopes/items/inline_response', options) as Core.APIPromise<{
         items: EnvelopeInlineResponseResponse;
       }>
     )._thenUnwrap((obj) => obj.items);
@@ -42,7 +42,7 @@ export class Envelopes extends APIResource {
    */
   wrappedArray(options?: Core.RequestOptions): Core.APIPromise<EnvelopeWrappedArrayResponse> {
     return (
-      this.get('/envelopes/items/wrapped_array', options) as Core.APIPromise<{
+      this._client.get('/envelopes/items/wrapped_array', options) as Core.APIPromise<{
         items: EnvelopeWrappedArrayResponse;
       }>
     )._thenUnwrap((obj) => obj.items);

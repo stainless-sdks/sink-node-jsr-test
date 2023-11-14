@@ -14,7 +14,7 @@ export class DefaultPathParams extends APIResource {
     id: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<DefaultPathParamGlobalWithStandardResponse> {
-    return this.post(`/default_path_params/path_params/${camelCasedPath}/${id}`, options);
+    return this._client.post(`/default_path_params/path_params/${camelCasedPath}/${id}`, options);
   }
 
   /**
@@ -24,7 +24,7 @@ export class DefaultPathParams extends APIResource {
     clientPathParam: string,
     options?: Core.RequestOptions,
   ): Core.APIPromise<DefaultPathParamOnlyGlobalResponse> {
-    return this.post(`/default_path_params/path_params/${clientPathParam}`, options);
+    return this._client.post(`/default_path_params/path_params/${clientPathParam}`, options);
   }
 }
 

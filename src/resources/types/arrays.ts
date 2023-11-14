@@ -10,7 +10,7 @@ export class Arrays extends APIResource {
    * Endpoint with a response schema that is an array of number types.
    */
   floatItems(options?: Core.RequestOptions): Core.APIPromise<ArrayFloatItemsResponse> {
-    return this.get('/types/array/float_items', options);
+    return this._client.get('/types/array/float_items', options);
   }
 
   /**
@@ -26,7 +26,7 @@ export class Arrays extends APIResource {
     if (isRequestOptions(body)) {
       return this.nestedInParams({}, body);
     }
-    return this.post('/types/array/model_nested_in_params', {
+    return this._client.post('/types/array/model_nested_in_params', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -37,7 +37,7 @@ export class Arrays extends APIResource {
    * Endpoint with a response schema that is an array of in-line object types.
    */
   objectItems(options?: Core.RequestOptions): Core.APIPromise<ArrayObjectItemsResponse> {
-    return this.get('/types/array/object_items', options);
+    return this._client.get('/types/array/object_items', options);
   }
 }
 

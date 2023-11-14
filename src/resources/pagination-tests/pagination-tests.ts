@@ -12,16 +12,16 @@ import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
 import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
 
 export class PaginationTests extends APIResource {
-  concrete: ConcreteAPI.Concrete = new ConcreteAPI.Concrete(this.client);
-  pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this.client);
-  cursor: CursorAPI.Cursor = new CursorAPI.Cursor(this.client);
-  cursorURL: CursorURLAPI.CursorURL = new CursorURLAPI.CursorURL(this.client);
-  offset: OffsetAPI.Offset = new OffsetAPI.Offset(this.client);
-  fakePages: FakePagesAPI.FakePages = new FakePagesAPI.FakePages(this.client);
-  hypermedia: HypermediaAPI.Hypermedia = new HypermediaAPI.Hypermedia(this.client);
+  concrete: ConcreteAPI.Concrete = new ConcreteAPI.Concrete(this._client);
+  pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this._client);
+  cursor: CursorAPI.Cursor = new CursorAPI.Cursor(this._client);
+  cursorURL: CursorURLAPI.CursorURL = new CursorURLAPI.CursorURL(this._client);
+  offset: OffsetAPI.Offset = new OffsetAPI.Offset(this._client);
+  fakePages: FakePagesAPI.FakePages = new FakePagesAPI.FakePages(this._client);
+  hypermedia: HypermediaAPI.Hypermedia = new HypermediaAPI.Hypermedia(this._client);
   extraParamsAndFields: ExtraParamsAndFieldsAPI.ExtraParamsAndFields =
-    new ExtraParamsAndFieldsAPI.ExtraParamsAndFields(this.client);
-  hypermediaRaw: HypermediaRawAPI.HypermediaRaw = new HypermediaRawAPI.HypermediaRaw(this.client);
+    new ExtraParamsAndFieldsAPI.ExtraParamsAndFields(this._client);
+  hypermediaRaw: HypermediaRawAPI.HypermediaRaw = new HypermediaRawAPI.HypermediaRaw(this._client);
 }
 
 export namespace PaginationTests {

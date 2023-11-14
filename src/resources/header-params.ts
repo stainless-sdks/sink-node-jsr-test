@@ -17,7 +17,7 @@ export class HeaderParams extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { 'X-Custom-Endpoint-Header': xCustomEndpointHeader, ...body } = params;
-    return this.post('/header_params/client_argument', {
+    return this._client.post('/header_params/client_argument', {
       body,
       ...options,
       headers: { Accept: '', 'X-Custom-Endpoint-Header': xCustomEndpointHeader || '', ...options?.headers },

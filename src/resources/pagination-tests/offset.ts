@@ -24,7 +24,7 @@ export class Offset extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this.getAPIList('/paginated/offset', MyModelsPageOffset, { query, ...options });
+    return this._client.getAPIList('/paginated/offset', MyModelsPageOffset, { query, ...options });
   }
 }
 

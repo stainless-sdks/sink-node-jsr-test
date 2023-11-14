@@ -10,7 +10,7 @@ export class ImportResource extends APIResource {
    * languages.
    */
   import(options?: Core.RequestOptions): Core.APIPromise<Import> {
-    return this.get('/names/reserved_names/import', options);
+    return this._client.get('/names/reserved_names/import', options);
   }
 }
 

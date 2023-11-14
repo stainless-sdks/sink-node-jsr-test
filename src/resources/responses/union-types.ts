@@ -10,35 +10,35 @@ export class UnionTypes extends APIResource {
    * Endpoint with a top level union response of different types.
    */
   mixedTypes(options?: Core.RequestOptions): Core.APIPromise<UnionTypeMixedTypesResponse> {
-    return this.post('/responses/unions/mixed_types', options);
+    return this._client.post('/responses/unions/mixed_types', options);
   }
 
   /**
    * Endpoint with a top level union response of floats and integers.
    */
   nullableUnion(options?: Core.RequestOptions): Core.APIPromise<UnionTypeNullableUnionResponse | null> {
-    return this.post('/responses/unions/nullable', options);
+    return this._client.post('/responses/unions/nullable', options);
   }
 
   /**
    * Endpoint with a top level union response of floats and integers.
    */
   numbers(options?: Core.RequestOptions): Core.APIPromise<UnionTypeNumbersResponse> {
-    return this.post('/responses/unions/numbers', options);
+    return this._client.post('/responses/unions/numbers', options);
   }
 
   /**
    * Endpoint with a top level union response of just object variants.
    */
   objects(options?: Core.RequestOptions): Core.APIPromise<UnionTypeObjectsResponse> {
-    return this.post('/responses/unions/objects', options);
+    return this._client.post('/responses/unions/objects', options);
   }
 
   /**
    * Endpoint with a top level union response of different types.
    */
   superMixedTypes(options?: Core.RequestOptions): Core.APIPromise<UnionTypeSuperMixedTypesResponse> {
-    return this.post('/responses/unions/super_mixed_types', options);
+    return this._client.post('/responses/unions/super_mixed_types', options);
   }
 }
 

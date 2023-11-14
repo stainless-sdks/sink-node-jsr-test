@@ -8,7 +8,7 @@ import * as Shared from 'sink-npm/resources/shared';
 import * as DuplicatesAPI from 'sink-npm/resources/mixed-params/duplicates';
 
 export class MixedParams extends APIResource {
-  duplicates: DuplicatesAPI.Duplicates = new DuplicatesAPI.Duplicates(this.client);
+  duplicates: DuplicatesAPI.Duplicates = new DuplicatesAPI.Duplicates(this._client);
 
   /**
    * Endpoint with a `requestBody` that defines both query and body params
@@ -26,7 +26,7 @@ export class MixedParams extends APIResource {
       return this.queryAndBody({}, params);
     }
     const { query_param, ...body } = params;
-    return this.post('/mixed_params/query_and_body', { query: { query_param }, body, ...options });
+    return this._client.post('/mixed_params/query_and_body', { query: { query_param }, body, ...options });
   }
 
   /**
@@ -50,7 +50,7 @@ export class MixedParams extends APIResource {
       return this.queryBodyAndPath(pathParam, {}, params);
     }
     const { query_param, ...body } = params;
-    return this.post(`/mixed_params/query_body_and_path/${pathParam}`, {
+    return this._client.post(`/mixed_params/query_body_and_path/${pathParam}`, {
       query: { query_param },
       body,
       ...options,

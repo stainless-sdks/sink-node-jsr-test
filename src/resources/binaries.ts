@@ -9,6 +9,6 @@ export class Binaries extends APIResource {
    * Return a binary response.
    */
   returnBinary(options?: Core.RequestOptions): Core.APIPromise<Response> {
-    return this.get('/binaries/return_binary', { ...options, __binaryResponse: true });
+    return this._client.get('/binaries/return_binary', { ...options, __binaryResponse: true });
   }
 }

@@ -13,7 +13,7 @@ export class Unions extends APIResource {
     body: UnionParamUnionEnumNewTypeParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/unions/param_union_enum_new_type', {
+    return this._client.post('/body_params/unions/param_union_enum_new_type', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },

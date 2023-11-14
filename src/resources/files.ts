@@ -13,7 +13,7 @@ export class Files extends APIResource {
     body: FileCreateMultipartParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileCreateMultipartResponse> {
-    return this.post('/files/multipart', multipartFormRequestOptions({ body, ...options }));
+    return this._client.post('/files/multipart', multipartFormRequestOptions({ body, ...options }));
   }
 
   /**
@@ -23,7 +23,10 @@ export class Files extends APIResource {
     body: FileEverythingMultipartParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileEverythingMultipartResponse> {
-    return this.post('/files/multipart_everything', multipartFormRequestOptions({ body, ...options }));
+    return this._client.post(
+      '/files/multipart_everything',
+      multipartFormRequestOptions({ body, ...options }),
+    );
   }
 
   /**
@@ -33,7 +36,7 @@ export class Files extends APIResource {
     body: FileWithOptionalParamParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileWithOptionalParamResponse> {
-    return this.post('/files/with_optional_param', multipartFormRequestOptions({ body, ...options }));
+    return this._client.post('/files/with_optional_param', multipartFormRequestOptions({ body, ...options }));
   }
 }
 

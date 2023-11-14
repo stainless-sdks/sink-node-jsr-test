@@ -6,10 +6,10 @@ import * as ModelReferencedInParentAndChildAPI from 'sink-npm/resources/model-re
 import * as ChildAPI from 'sink-npm/resources/model-referenced-in-parent-and-child/child';
 
 export class ModelReferencedInParentAndChildResource extends APIResource {
-  child: ChildAPI.Child = new ChildAPI.Child(this.client);
+  child: ChildAPI.Child = new ChildAPI.Child(this._client);
 
   retrieve(options?: Core.RequestOptions): Core.APIPromise<ModelReferencedInParentAndChild> {
-    return this.get('/model_referenced_in_parent_and_child', options);
+    return this._client.get('/model_referenced_in_parent_and_child', options);
   }
 }
 

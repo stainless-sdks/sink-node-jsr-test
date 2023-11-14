@@ -13,14 +13,14 @@ export class Cards extends APIResource {
    * `product_id` only apply to physical cards.
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this.post('/cards', { body, ...options });
+    return this._client.post('/cards', { body, ...options });
   }
 
   /**
    * Get card configuration such as spend limit and state.
    */
   retrieve(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this.get(`/cards/${cardToken}`, options);
+    return this._client.get(`/cards/${cardToken}`, options);
   }
 
   /**
@@ -31,7 +31,7 @@ export class Cards extends APIResource {
    * undone._
    */
   update(cardToken: string, body: CardUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this.patch(`/cards/${cardToken}`, { body, ...options });
+    return this._client.patch(`/cards/${cardToken}`, { body, ...options });
   }
 
   /**
@@ -46,7 +46,7 @@ export class Cards extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this.getAPIList('/cards', CardsCardPage, { query, ...options });
+    return this._client.getAPIList('/cards', CardsCardPage, { query, ...options });
   }
 
   createAliased = this.create;
@@ -63,7 +63,7 @@ export class Cards extends APIResource {
    * @deprecated do deprecate me not in go
    */
   deprecatedAllButGoDiffMessage(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/deprecations/method_all_but_go_diff_message', {
+    return this._client.post('/deprecations/method_all_but_go_diff_message', {
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -76,7 +76,7 @@ export class Cards extends APIResource {
    * @deprecated do deprecate me in node
    */
   deprecatedAllDiffMessage(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/deprecations/method_all_but_go_diff_message', {
+    return this._client.post('/deprecations/method_all_but_go_diff_message', {
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -104,7 +104,10 @@ export class Cards extends APIResource {
    * It will be removed in v0.99.0
    */
   deprecatedMethod(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/deprecations/method', { ...options, headers: { Accept: '', ...options?.headers } });
+    return this._client.post('/deprecations/method', {
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
   }
 
   /**
@@ -112,7 +115,7 @@ export class Cards extends APIResource {
    * stainless config for go only.
    */
   deprecatedOnlyGo(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/deprecations/method_only_go', {
+    return this._client.post('/deprecations/method_only_go', {
       ...options,
       headers: { Accept: '', ...options?.headers },
     });
@@ -134,7 +137,7 @@ export class Cards extends APIResource {
       return this.listNonGet({}, params);
     }
     const { account_token, begin, end, page, page_size } = params;
-    return this.getAPIList('/cards/list', CardsCardPage, {
+    return this._client.getAPIList('/cards/list', CardsCardPage, {
       query: { account_token, begin, end, page, page_size },
       method: 'post',
       ...options,
@@ -145,7 +148,7 @@ export class Cards extends APIResource {
    * Get card configuration such as spend limit and state.
    */
   listNotPaginated(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this.get(`/cards/${cardToken}`, options);
+    return this._client.get(`/cards/${cardToken}`, options);
   }
 
   /**
@@ -161,7 +164,7 @@ export class Cards extends APIResource {
     body: CardProvisionFooParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<CardProvisionFooResponse> {
-    return this.post(`/cards/${cardToken}/provision`, { body, ...options });
+    return this._client.post(`/cards/${cardToken}/provision`, { body, ...options });
   }
 
   /**
@@ -170,7 +173,7 @@ export class Cards extends APIResource {
    * Only applies to cards of type `PHYSICAL` [beta].
    */
   reissue(cardToken: string, body: CardReissueParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this.post(`/cards/${cardToken}/reissue`, { body, ...options });
+    return this._client.post(`/cards/${cardToken}/reissue`, { body, ...options });
   }
 }
 

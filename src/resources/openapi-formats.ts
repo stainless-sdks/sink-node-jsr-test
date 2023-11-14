@@ -13,7 +13,7 @@ export class OpenapiFormats extends APIResource {
     body: OpenapiFormatArrayTypeOneEntryParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<OpenapiFormatArrayTypeOneEntryResponse> {
-    return this.post('/openapi_formats/array_type_one_entry', { body, ...options });
+    return this._client.post('/openapi_formats/array_type_one_entry', { body, ...options });
   }
 
   /**
@@ -36,7 +36,7 @@ export class OpenapiFormats extends APIResource {
     if (isRequestOptions(body)) {
       return this.arrayTypeOneEntryWithNull({}, body);
     }
-    return this.post('/openapi_formats/array_type_one_entry_with_null', { body, ...options });
+    return this._client.post('/openapi_formats/array_type_one_entry_with_null', { body, ...options });
   }
 }
 

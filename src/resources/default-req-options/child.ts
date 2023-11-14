@@ -9,7 +9,7 @@ export class Child extends APIResource {
    * Testing resource level default request options.
    */
   exampleMethod(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.get('/default_req_options', {
+    return this._client.get('/default_req_options', {
       ...options,
       headers: {
         'X-Header-From-Child': 'foo',

@@ -15,7 +15,7 @@ export class FakePages extends APIResource {
     query: FakePageListParams,
     options?: Core.RequestOptions,
   ): Core.PagePromise<SimpleObjectsFakePage, Shared.SimpleObject> {
-    return this.getAPIList('/paginated/fake_page', SimpleObjectsFakePage, { query, ...options });
+    return this._client.getAPIList('/paginated/fake_page', SimpleObjectsFakePage, { query, ...options });
   }
 }
 

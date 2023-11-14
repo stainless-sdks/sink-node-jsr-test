@@ -439,7 +439,7 @@ Types:
 Methods:
 
 - <code title="post /names/child_prop_import_clash">client.names.<a href="./src/resources/names/names.ts">childPropImportClash</a>() -> NameChildPropImportClashResponse</code>
-- <code title="get /names/method_name_get">client.names.<a href="./src/resources/names/names.ts">get\_</a>() -> BasicSharedModelObject</code>
+- <code title="get /names/method_name_get">client.names.<a href="./src/resources/names/names.ts">get</a>() -> BasicSharedModelObject</code>
 - <code title="post /names/properties_common_conflicts">client.names.<a href="./src/resources/names/names.ts">propertiesCommonConflicts</a>({ ...params }) -> NamePropertiesCommonConflictsResponse</code>
 - <code title="get /names/response_property_clashes_model_import">client.names.<a href="./src/resources/names/names.ts">responsePropertyClashesModelImport</a>() -> NameResponsePropertyClashesModelImportResponse</code>
 - <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./src/resources/names/names.ts">responseShadowsPydantic</a>() -> NameResponseShadowsPydanticResponse</code>

@@ -31,8 +31,8 @@ describe('resource names', () => {
     );
   });
 
-  test('get_', async () => {
-    const responsePromise = sink.names.get_();
+  test('get', async () => {
+    const responsePromise = sink.names.get();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -42,9 +42,9 @@ describe('resource names', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('get_: request options instead of params are passed correctly', async () => {
+  test('get: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.names.get_({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
+    await expect(sink.names.get({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('propertiesCommonConflicts: only required params', async () => {

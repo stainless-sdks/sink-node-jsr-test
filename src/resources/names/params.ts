@@ -9,7 +9,7 @@ export class Params extends APIResource {
    * Endpoint with a `requestBody` that has a property named `options`
    */
   optionsParam(body: ParamOptionsParamParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/names/body_params/options', {
+    return this._client.post('/names/body_params/options', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -20,7 +20,7 @@ export class Params extends APIResource {
    * Endpoint with a `requestBody` that has a property named `timeout`
    */
   timeoutParam(body: ParamTimeoutParamParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/names/body_params/timeout', {
+    return this._client.post('/names/body_params/timeout', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },

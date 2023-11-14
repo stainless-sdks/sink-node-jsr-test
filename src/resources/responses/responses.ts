@@ -9,13 +9,13 @@ import * as PaymentsAPI from 'sink-npm/resources/company/payments';
 import * as UnionTypesAPI from 'sink-npm/resources/responses/union-types';
 
 export class Responses extends APIResource {
-  unionTypes: UnionTypesAPI.UnionTypes = new UnionTypesAPI.UnionTypes(this.client);
+  unionTypes: UnionTypesAPI.UnionTypes = new UnionTypesAPI.UnionTypes(this._client);
 
   /**
    * Endpoint with a top level additionalProperties response.
    */
   additionalProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseAdditionalPropertiesResponse> {
-    return this.post('/responses/additional_properties', options);
+    return this._client.post('/responses/additional_properties', options);
   }
 
   /**
@@ -25,7 +25,7 @@ export class Responses extends APIResource {
   additionalPropertiesNestedModelReference(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ResponseAdditionalPropertiesNestedModelReferenceResponse> {
-    return this.post('/responses/additional_properties_nested_model_reference', options);
+    return this._client.post('/responses/additional_properties_nested_model_reference', options);
   }
 
   /**
@@ -33,77 +33,80 @@ export class Responses extends APIResource {
    * another resource and one from this resource, as well as a nested allOf.
    */
   allofCrossResource(options?: Core.RequestOptions): Core.APIPromise<ResponseAllofCrossResourceResponse> {
-    return this.get('/responses/allof/cross', options);
+    return this._client.get('/responses/allof/cross', options);
   }
 
   /**
    * Method with a response object defined using allOf and inline schema definitions.
    */
   allofSimple(options?: Core.RequestOptions): Core.APIPromise<ResponseAllofSimpleResponse> {
-    return this.get('/responses/allof/simple', options);
+    return this._client.get('/responses/allof/simple', options);
   }
 
   /**
    * Method with a response object that uses anyOf to indicate nullability.
    */
   anyofNull(options?: Core.RequestOptions): Core.APIPromise<ObjectWithAnyOfNullProperty> {
-    return this.get('/responses/anyof_null', options);
+    return this._client.get('/responses/anyof_null', options);
   }
 
   /**
    * Endpoint that returns a top-level array.
    */
   arrayResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseArrayResponseResponse> {
-    return this.get('/responses/array', options);
+    return this._client.get('/responses/array', options);
   }
 
   /**
    * Endpoint with a top level boolean response.
    */
   booleanResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseBooleanResponseResponse> {
-    return this.post('/responses/boolean', options);
+    return this._client.post('/responses/boolean', options);
   }
 
   /**
    * Endpoint with an empty response.
    */
   emptyResponse(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/responses/empty', { ...options, headers: { Accept: '', ...options?.headers } });
+    return this._client.post('/responses/empty', {
+      ...options,
+      headers: { Accept: '', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with a top level integer response.
    */
   integerResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseIntegerResponseResponse> {
-    return this.post('/responses/integer', options);
+    return this._client.post('/responses/integer', options);
   }
 
   /**
    * Endpoint with a response schema that doesn't set the `required` property.
    */
   missingRequired(options?: Core.RequestOptions): Core.APIPromise<ResponseMissingRequiredResponse> {
-    return this.get('/responses/missing_required', options);
+    return this._client.get('/responses/missing_required', options);
   }
 
   /**
    * Endpoint that returns a nested array.
    */
   nestedArray(options?: Core.RequestOptions): Core.APIPromise<ResponseNestedArrayResponse> {
-    return this.get('/responses/nested_array', options);
+    return this._client.get('/responses/nested_array', options);
   }
 
   /**
    * Method with a response object with a different property for each supported type.
    */
   objectAllProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseObjectAllPropertiesResponse> {
-    return this.get('/responses/object/everything', options);
+    return this._client.get('/responses/object/everything', options);
   }
 
   /**
    * Endpoint with an empty response.
    */
   objectNoProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseObjectNoPropertiesResponse> {
-    return this.post('/responses/object_no_properties', options);
+    return this._client.post('/responses/object_no_properties', options);
   }
 
   /**
@@ -113,7 +116,7 @@ export class Responses extends APIResource {
   objectWithAdditionalPropertiesProp(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ResponseObjectWithAdditionalPropertiesPropResponse> {
-    return this.post('/responses/object_with_additional_properties_prop', options);
+    return this._client.post('/responses/object_with_additional_properties_prop', options);
   }
 
   /**
@@ -123,14 +126,14 @@ export class Responses extends APIResource {
   objectWithHeavilyNestedUnion(
     options?: Core.RequestOptions,
   ): Core.APIPromise<ResponseObjectWithHeavilyNestedUnionResponse> {
-    return this.post('/responses/object_with_heavily_nested_union', options);
+    return this._client.post('/responses/object_with_heavily_nested_union', options);
   }
 
   /**
    * Method with a response object that uses oneOf to indicate nullability.
    */
   oneofNull(options?: Core.RequestOptions): Core.APIPromise<ObjectWithOneOfNullProperty> {
-    return this.get('/responses/oneof_null', options);
+    return this._client.get('/responses/oneof_null', options);
   }
 
   /**
@@ -138,14 +141,14 @@ export class Responses extends APIResource {
    * response models.
    */
   sharedSimpleObject(options?: Core.RequestOptions): Core.APIPromise<Shared.SimpleObject> {
-    return this.get('/responses/shared_simple_object', options);
+    return this._client.get('/responses/shared_simple_object', options);
   }
 
   /**
    * Endpoint with a top level string response.
    */
   stringResponse(options?: Core.RequestOptions): Core.APIPromise<string> {
-    return this.post('/responses/string', {
+    return this._client.post('/responses/string', {
       ...options,
       headers: { Accept: 'application/json', ...options?.headers },
     });
@@ -159,7 +162,7 @@ export class Responses extends APIResource {
    * https://linear.app/stainless/issue/STA-563/no-type-should-be-generated-for-endpoints-returning-type-object-schema.
    */
   unknownObject(options?: Core.RequestOptions): Core.APIPromise<unknown> {
-    return this.post('/responses/unknown_object', options);
+    return this._client.post('/responses/unknown_object', options);
   }
 
   /**
@@ -167,7 +170,7 @@ export class Responses extends APIResource {
    * can rename in the Stainless config to a prettier name.
    */
   withModelInNestedPath(options?: Core.RequestOptions): Core.APIPromise<ModelWithNestedModel> {
-    return this.get('/responses/with_model_in_nested_path', options);
+    return this._client.get('/responses/with_model_in_nested_path', options);
   }
 }
 

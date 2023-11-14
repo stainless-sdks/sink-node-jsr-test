@@ -18,7 +18,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.allOf({}, query);
     }
-    return this.get('/query_params/allOf', {
+    return this._client.get('/query_params/allOf', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -37,7 +37,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.anyOf({}, query);
     }
-    return this.get('/query_params/anyOf', {
+    return this._client.get('/query_params/anyOf', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -59,7 +59,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.anyOfStringOrArray({}, query);
     }
-    return this.get('/query_params/anyOfStringOrArray', {
+    return this._client.get('/query_params/anyOfStringOrArray', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -78,7 +78,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.array({}, query);
     }
-    return this.get('/query_params/array', {
+    return this._client.get('/query_params/array', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -97,7 +97,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.enum({}, query);
     }
-    return this.get('/query_params/enum', {
+    return this._client.get('/query_params/enum', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -116,7 +116,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.object({}, query);
     }
-    return this.get('/query_params/object', {
+    return this._client.get('/query_params/object', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -135,7 +135,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.oneOf({}, query);
     }
-    return this.get('/query_params/oneOf', {
+    return this._client.get('/query_params/oneOf', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -154,7 +154,7 @@ export class QueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.primitives({}, query);
     }
-    return this.get('/query_params/primitives', {
+    return this._client.get('/query_params/primitives', {
       query,
       ...options,
       headers: { Accept: '', ...options?.headers },

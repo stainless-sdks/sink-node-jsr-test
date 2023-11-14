@@ -19,7 +19,7 @@ export class EEOCResource extends APIResource {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this.getAPIList('/casing/eeoc', EEOCsPageCursor, { query, ...options });
+    return this._client.getAPIList('/casing/eeoc', EEOCsPageCursor, { query, ...options });
   }
 }
 

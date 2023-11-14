@@ -20,7 +20,7 @@ export class Methods extends APIResource {
       return this.export(_class, {}, params);
     }
     const { let: _let, ...body } = params;
-    return this.post(`/names/reserved_names/methods/export/${_class}`, {
+    return this._client.post(`/names/reserved_names/methods/export/${_class}`, {
       query: { let: _let },
       body,
       ...options,

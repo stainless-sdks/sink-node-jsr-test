@@ -16,7 +16,7 @@ export class Duplicates extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { body_id, ...body } = params;
-    return this.post(`/mixed_params/duplicates/body_and_path/${pathId}`, {
+    return this._client.post(`/mixed_params/duplicates/body_and_path/${pathId}`, {
       body: { id: body_id, ...body },
       ...options,
     });
@@ -31,7 +31,7 @@ export class Duplicates extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { query_id, body_id, ...body } = params;
-    return this.post('/mixed_params/duplicates/query_and_body', {
+    return this._client.post('/mixed_params/duplicates/query_and_body', {
       query: { id: query_id },
       body: { id: body_id, ...body },
       ...options,
@@ -48,7 +48,7 @@ export class Duplicates extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { query_id } = params;
-    return this.post(`/mixed_params/duplicates/query_and_path/${pathId}`, {
+    return this._client.post(`/mixed_params/duplicates/query_and_path/${pathId}`, {
       query: { id: query_id },
       ...options,
     });

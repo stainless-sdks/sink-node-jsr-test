@@ -13,7 +13,7 @@ export class ReadOnlyParams extends APIResource {
     body: ReadOnlyParamSimpleParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ReadOnlyParamSimpleResponse> {
-    return this.post('/types/read_only_params/simple', { body, ...options });
+    return this._client.post('/types/read_only_params/simple', { body, ...options });
   }
 }
 

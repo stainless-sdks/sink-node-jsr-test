@@ -23,7 +23,7 @@ export class Streaming extends APIResource {
     body: StreamingBasicParams,
     options?: Core.RequestOptions,
   ): APIPromise<StreamingBasicResponse> | APIPromise<Stream<StreamingBasicResponse>> {
-    return this.post('/streaming/basic', { body, ...options, stream: body.stream ?? false }) as
+    return this._client.post('/streaming/basic', { body, ...options, stream: body.stream ?? false }) as
       | APIPromise<StreamingBasicResponse>
       | APIPromise<Stream<StreamingBasicResponse>>;
   }
@@ -44,9 +44,11 @@ export class Streaming extends APIResource {
     body: StreamingNestedParamsParams,
     options?: Core.RequestOptions,
   ): APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>> {
-    return this.post('/streaming/nested_params', { body, ...options, stream: body.stream ?? false }) as
-      | APIPromise<StreamingNestedParamsResponse>
-      | APIPromise<Stream<StreamingNestedParamsResponse>>;
+    return this._client.post('/streaming/nested_params', {
+      body,
+      ...options,
+      stream: body.stream ?? false,
+    }) as APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>>;
   }
 
   queryParamDiscriminator(
@@ -67,7 +69,7 @@ export class Streaming extends APIResource {
   ):
     | APIPromise<StreamingQueryParamDiscriminatorResponse>
     | APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>> {
-    return this.get('/streaming/query_param_discriminator', {
+    return this._client.get('/streaming/query_param_discriminator', {
       query,
       ...options,
       stream: query.should_stream ?? false,

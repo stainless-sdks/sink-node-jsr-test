@@ -19,7 +19,7 @@ import {
 } from 'sink-npm/pagination';
 
 export class BodyParams extends APIResource {
-  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this.client);
+  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
 
   /**
    * Should return a ModelWithNestedModel object with a `properties` field that we
@@ -29,7 +29,7 @@ export class BodyParams extends APIResource {
     body: BodyParamNestedRequestModelsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
-    return this.post('/body_params/with_nested_models', { body, ...options });
+    return this._client.post('/body_params/with_nested_models', { body, ...options });
   }
 
   /**
@@ -40,7 +40,7 @@ export class BodyParams extends APIResource {
     body: BodyParamObjectWithArrayOfObjectsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/object_with_array_of_objects', {
+    return this._client.post('/body_params/object_with_array_of_objects', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -55,7 +55,7 @@ export class BodyParams extends APIResource {
     body: BodyParamParamInModelNameRefParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/param_in_model_name_ref', {
+    return this._client.post('/body_params/param_in_model_name_ref', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -70,7 +70,7 @@ export class BodyParams extends APIResource {
     body: BodyParamPropertyModelRefParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/property_model_ref', {
+    return this._client.post('/body_params/property_model_ref', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -85,7 +85,7 @@ export class BodyParams extends APIResource {
     body: BodyParamPropertyWithComplexUnionParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/property_with_complex_union', {
+    return this._client.post('/body_params/property_with_complex_union', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -100,7 +100,7 @@ export class BodyParams extends APIResource {
     body: BodyParamPropertyWithHeavilyNestedComplexUnionParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/property_with_heavily_nested_complex_union', {
+    return this._client.post('/body_params/property_with_heavily_nested_complex_union', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -115,7 +115,7 @@ export class BodyParams extends APIResource {
     body: BodyParamReadOnlyPropertiesParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/read_only_properties', {
+    return this._client.post('/body_params/read_only_properties', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -130,7 +130,7 @@ export class BodyParams extends APIResource {
     body: BodyParamStringMapModelRefParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/string_map_model_ref', {
+    return this._client.post('/body_params/string_map_model_ref', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -144,7 +144,7 @@ export class BodyParams extends APIResource {
     body: BodyParamTopLevelAllOfParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BodyParamTopLevelAllOfResponse> {
-    return this.post('/body_params/top_level_allOf', { body, ...options });
+    return this._client.post('/body_params/top_level_allOf', { body, ...options });
   }
 
   /**
@@ -155,7 +155,7 @@ export class BodyParams extends APIResource {
     body: BodyParamTopLevelAllOfNestedObjectParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/top_level_allOf_nested_object', {
+    return this._client.post('/body_params/top_level_allOf_nested_object', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -169,14 +169,14 @@ export class BodyParams extends APIResource {
     body: BodyParamTopLevelAnyOfWithRefParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this.post('/body_params/top_level_anyOf_with_ref', { body, ...options });
+    return this._client.post('/body_params/top_level_anyOf_with_ref', { body, ...options });
   }
 
   /**
    * Endpoint with a `requestBody` that is an `array` type.
    */
   topLevelArray(body: BodyParamTopLevelArrayParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this.post('/body_params/top_level_array', {
+    return this._client.post('/body_params/top_level_array', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -190,7 +190,7 @@ export class BodyParams extends APIResource {
     body: BodyParamTopLevelArrayWithChildrenParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/top_level_array_with_children', {
+    return this._client.post('/body_params/top_level_array_with_children', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -205,7 +205,7 @@ export class BodyParams extends APIResource {
     body: BodyParamTopLevelOneOfOneEntryParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/top_level_oneOf_one_entry', {
+    return this._client.post('/body_params/top_level_oneOf_one_entry', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -228,7 +228,7 @@ export class BodyParams extends APIResource {
     if (isRequestOptions(body)) {
       return this.topLevelSharedType({}, body);
     }
-    return this.post('/body_params/top_level_shared_type', {
+    return this._client.post('/body_params/top_level_shared_type', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -251,7 +251,7 @@ export class BodyParams extends APIResource {
     if (isRequestOptions(body)) {
       return this.unionOverlappingProp({}, body);
     }
-    return this.post('/body_params/top_level_anyOf_overlapping_property', { body, ...options });
+    return this._client.post('/body_params/top_level_anyOf_overlapping_property', { body, ...options });
   }
 
   /**
@@ -262,7 +262,7 @@ export class BodyParams extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { my_version_body_param = 'v1.4', ...body } = params;
-    return this.post('/body_params/with_default_body_param_optional', {
+    return this._client.post('/body_params/with_default_body_param_optional', {
       body: { my_version_body_param, ...body },
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -277,7 +277,7 @@ export class BodyParams extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     const { my_version_body_param = 'v1.4', ...body } = params;
-    return this.post('/body_params/with_default_body_param_required', {
+    return this._client.post('/body_params/with_default_body_param_required', {
       body: { my_version_body_param, ...body },
       ...options,
       headers: { Accept: '', ...options?.headers },
@@ -292,7 +292,7 @@ export class BodyParams extends APIResource {
     body: BodyParamWithModelPropertyParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
-    return this.post('/body_params/with_model_property', {
+    return this._client.post('/body_params/with_model_property', {
       body,
       ...options,
       headers: { Accept: '', ...options?.headers },

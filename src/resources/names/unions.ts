@@ -6,11 +6,11 @@ import * as UnionsAPI from 'sink-npm/resources/names/unions';
 
 export class Unions extends APIResource {
   discriminated(options?: Core.RequestOptions): Core.APIPromise<DiscriminatedUnion> {
-    return this.get('/names/unions/discriminated_union', options);
+    return this._client.get('/names/unions/discriminated_union', options);
   }
 
   variantsSinglePropObjects(options?: Core.RequestOptions): Core.APIPromise<VariantsSinglePropObjects> {
-    return this.get('/names/unions/variants_single_prop_objects', options);
+    return this._client.get('/names/unions/variants_single_prop_objects', options);
   }
 }
 

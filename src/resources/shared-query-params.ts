@@ -15,7 +15,7 @@ export class SharedQueryParams extends APIResource {
     if (isRequestOptions(query)) {
       return this.retrieve({}, query);
     }
-    return this.get('/shared-query-params', {
+    return this._client.get('/shared-query-params', {
       query,
       ...options,
       headers: { Accept: 'application/json', ...options?.headers },
@@ -32,7 +32,7 @@ export class SharedQueryParams extends APIResource {
       return this.del({}, params);
     }
     const { get1, shared1, shared2 } = params;
-    return this.delete('/shared-query-params', {
+    return this._client.delete('/shared-query-params', {
       query: { get1, shared1, shared2 },
       ...options,
       headers: { Accept: 'application/json', ...options?.headers },

@@ -6,24 +6,24 @@ import * as RecursionAPI from 'sink-npm/resources/recursion/recursion';
 import * as SharedResponsesAPI from 'sink-npm/resources/recursion/shared-responses';
 
 export class Recursion extends APIResource {
-  sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this.client);
+  sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this._client);
 
   createBranch(
     body: RecursionCreateBranchParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<BranchRecursion> {
-    return this.post('/recursion/branch', { body, ...options });
+    return this._client.post('/recursion/branch', { body, ...options });
   }
 
   createEnvelope(
     body: RecursionCreateEnvelopeParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<RecursionCreateEnvelopeResponse> {
-    return this.post('/recursion/envelope', { body, ...options });
+    return this._client.post('/recursion/envelope', { body, ...options });
   }
 
   createSelf(body: RecursionCreateSelfParams, options?: Core.RequestOptions): Core.APIPromise<SelfRecursion> {
-    return this.post('/recursion/self', { body, ...options });
+    return this._client.post('/recursion/self', { body, ...options });
   }
 }
 
