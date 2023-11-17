@@ -30,5 +30,6 @@ export {
   UnionTypeNumbersResponse,
   UnionTypeObjectsResponse,
   UnionTypeSuperMixedTypesResponse,
+  UnionTypeUnknownVariantResponse,
   UnionTypes,
 } from './union-types';

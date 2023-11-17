@@ -40,6 +40,13 @@ export class UnionTypes extends APIResource {
   superMixedTypes(options?: Core.RequestOptions): Core.APIPromise<UnionTypeSuperMixedTypesResponse> {
     return this._client.post('/responses/unions/super_mixed_types', options);
   }
+
+  /**
+   * Endpoint with a top level union response with a variant that is `type: unknown`
+   */
+  unknownVariant(options?: Core.RequestOptions): Core.APIPromise<UnionTypeUnknownVariantResponse> {
+    return this._client.post('/responses/unions/unknown_variant', options);
+  }
 }
 
 export type UnionTypeMixedTypesResponse =
@@ -85,10 +92,13 @@ export namespace UnionTypeSuperMixedTypesResponse {
   }
 }
 
+export type UnionTypeUnknownVariantResponse = Shared.SimpleObject | unknown;
+
 export namespace UnionTypes {
   export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
   export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
   export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
   export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
   export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
+  export import UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
 }

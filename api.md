@@ -593,6 +593,7 @@ Types:
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeNumbersResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeObjectsResponse</a></code>
 - <code><a href="./src/resources/responses/union-types.ts">UnionTypeSuperMixedTypesResponse</a></code>
+- <code><a href="./src/resources/responses/union-types.ts">UnionTypeUnknownVariantResponse</a></code>
 
 Methods:
 
@@ -601,6 +602,7 @@ Methods:
 - <code title="post /responses/unions/numbers">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">numbers</a>() -> UnionTypeNumbersResponse</code>
 - <code title="post /responses/unions/objects">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">objects</a>() -> UnionTypeObjectsResponse</code>
 - <code title="post /responses/unions/super_mixed_types">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">superMixedTypes</a>() -> UnionTypeSuperMixedTypesResponse</code>
+- <code title="post /responses/unions/unknown_variant">client.responses.unionTypes.<a href="./src/resources/responses/union-types.ts">unknownVariant</a>() -> UnionTypeUnknownVariantResponse</code>
 
 # PathParams
 
