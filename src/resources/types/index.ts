@@ -7,6 +7,14 @@ export {
   ArrayNestedInParamsParams,
   Arrays,
 } from './arrays';
+export {
+  EnumBasicResponse,
+  EnumArrayUniqueValuesParams,
+  EnumArrayUniqueValues2ValuesParams,
+  EnumArrayUniqueValuesNumbersParams,
+  EnumBasicParams,
+  Enums,
+} from './enums';
 export { MapNullableItemsResponse, Maps } from './maps';
 export {
   ObjectMixedKnownAndUnknownResponse,
@@ -20,13 +28,8 @@ export { ReadOnlyParamSimpleResponse, ReadOnlyParamSimpleParams, ReadOnlyParams 
 export {
   TypeDatesResponse,
   TypeDatetimesResponse,
-  TypeEnumsResponse,
   TypeDatesParams,
   TypeDatetimesParams,
-  TypeEnumTestsArrayUniqueValuesParams,
-  TypeEnumTestsArrayUniqueValues2ValuesParams,
-  TypeEnumTestsArrayUniqueValuesNumbersParams,
-  TypeEnumsParams,
   Types,
 } from './types';
 export { WriteOnlyResponseSimpleResponse, WriteOnlyResponses } from './write-only-responses';

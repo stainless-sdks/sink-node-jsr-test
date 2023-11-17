@@ -235,13 +235,8 @@ export { Tests } from './tests';
 export {
   TypeDatesResponse,
   TypeDatetimesResponse,
-  TypeEnumsResponse,
   TypeDatesParams,
   TypeDatetimesParams,
-  TypeEnumTestsArrayUniqueValuesParams,
-  TypeEnumTestsArrayUniqueValues2ValuesParams,
-  TypeEnumTestsArrayUniqueValuesNumbersParams,
-  TypeEnumsParams,
   Types,
 } from './types/types';
 export {

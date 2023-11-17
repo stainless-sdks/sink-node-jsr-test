@@ -584,13 +584,8 @@ export namespace Sink {
   export import Types = API.Types;
   export import TypeDatesResponse = API.TypeDatesResponse;
   export import TypeDatetimesResponse = API.TypeDatetimesResponse;
-  export import TypeEnumsResponse = API.TypeEnumsResponse;
   export import TypeDatesParams = API.TypeDatesParams;
   export import TypeDatetimesParams = API.TypeDatetimesParams;
-  export import TypeEnumTestsArrayUniqueValuesParams = API.TypeEnumTestsArrayUniqueValuesParams;
-  export import TypeEnumTestsArrayUniqueValues2ValuesParams = API.TypeEnumTestsArrayUniqueValues2ValuesParams;
-  export import TypeEnumTestsArrayUniqueValuesNumbersParams = API.TypeEnumTestsArrayUniqueValuesNumbersParams;
-  export import TypeEnumsParams = API.TypeEnumsParams;
 
   export import Names = API.Names;
   export import Balance = API.Balance;

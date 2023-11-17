@@ -353,16 +353,11 @@ Types:
 
 - <code><a href="./src/resources/types/types.ts">TypeDatesResponse</a></code>
 - <code><a href="./src/resources/types/types.ts">TypeDatetimesResponse</a></code>
-- <code><a href="./src/resources/types/types.ts">TypeEnumsResponse</a></code>
 
 Methods:
 
 - <code title="post /types/dates">client.types.<a href="./src/resources/types/types.ts">dates</a>({ ...params }) -> TypeDatesResponse</code>
 - <code title="post /types/datetimes">client.types.<a href="./src/resources/types/types.ts">datetimes</a>({ ...params }) -> TypeDatetimesResponse</code>
-- <code title="post /types/enum_tests_array_unique_values">client.types.<a href="./src/resources/types/types.ts">enumTestsArrayUniqueValues</a>([ ...body ]) -> void</code>
-- <code title="post /types/enum_tests_array_unique_values_2_values">client.types.<a href="./src/resources/types/types.ts">enumTestsArrayUniqueValues2Values</a>([ ...body ]) -> void</code>
-- <code title="post /types/enum_tests_array_unique_values_numbers">client.types.<a href="./src/resources/types/types.ts">enumTestsArrayUniqueValuesNumbers</a>([ ...body ]) -> void</code>
-- <code title="post /types/enums">client.types.<a href="./src/resources/types/types.ts">enums</a>({ ...params }) -> TypeEnumsResponse</code>
 
 ## ReadOnlyParams
 
@@ -393,6 +388,19 @@ Types:
 Methods:
 
 - <code title="get /types/map/nullable_items">client.types.maps.<a href="./src/resources/types/maps.ts">nullableItems</a>() -> MapNullableItemsResponse</code>
+
+## Enums
+
+Types:
+
+- <code><a href="./src/resources/types/enums.ts">EnumBasicResponse</a></code>
+
+Methods:
+
+- <code title="post /types/enum_tests_array_unique_values">client.types.enums.<a href="./src/resources/types/enums.ts">arrayUniqueValues</a>([ ...body ]) -> void</code>
+- <code title="post /types/enum_tests_array_unique_values_2_values">client.types.enums.<a href="./src/resources/types/enums.ts">arrayUniqueValues2Values</a>([ ...body ]) -> void</code>
+- <code title="post /types/enum_tests_array_unique_values_numbers">client.types.enums.<a href="./src/resources/types/enums.ts">arrayUniqueValuesNumbers</a>([ ...body ]) -> void</code>
+- <code title="post /types/enums">client.types.enums.<a href="./src/resources/types/enums.ts">basic</a>({ ...params }) -> EnumBasicResponse</code>
 
 ## Objects
 
