@@ -617,6 +617,6 @@ export namespace BodyParams {
   export import BodyParamWithDefaultBodyParamRequiredParams = BodyParamsAPI.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = BodyParamsAPI.BodyParamWithModelPropertyParams;
   export import Unions = UnionsAPI.Unions;
-  export import ModelString = UnionsAPI.ModelString;
+  export import ModelNewTypeString = UnionsAPI.ModelNewTypeString;
   export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
 }

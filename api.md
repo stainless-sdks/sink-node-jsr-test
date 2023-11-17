@@ -359,6 +359,17 @@ Methods:
 - <code title="post /types/dates">client.types.<a href="./src/resources/types/types.ts">dates</a>({ ...params }) -> TypeDatesResponse</code>
 - <code title="post /types/datetimes">client.types.<a href="./src/resources/types/types.ts">datetimes</a>({ ...params }) -> TypeDatetimesResponse</code>
 
+## Primitives
+
+Types:
+
+- <code><a href="./src/resources/types/primitives.ts">ModelString</a></code>
+- <code><a href="./src/resources/types/primitives.ts">PrimitiveStringsResponse</a></code>
+
+Methods:
+
+- <code title="post /types/primitives/strings">client.types.primitives.<a href="./src/resources/types/primitives.ts">strings</a>({ ...params }) -> PrimitiveStringsResponse</code>
+
 ## ReadOnlyParams
 
 Types:
@@ -676,7 +687,7 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/body-params/unions.ts">ModelString</a></code>
+- <code><a href="./src/resources/body-params/unions.ts">ModelNewTypeString</a></code>
 
 Methods:
 

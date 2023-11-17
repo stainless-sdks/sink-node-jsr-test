@@ -7,10 +7,12 @@ import * as ArraysAPI from 'sink-npm/resources/types/arrays';
 import * as EnumsAPI from 'sink-npm/resources/types/enums';
 import * as MapsAPI from 'sink-npm/resources/types/maps';
 import * as ObjectsAPI from 'sink-npm/resources/types/objects';
+import * as PrimitivesAPI from 'sink-npm/resources/types/primitives';
 import * as ReadOnlyParamsAPI from 'sink-npm/resources/types/read-only-params';
 import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
 
 export class Types extends APIResource {
+  primitives: PrimitivesAPI.Primitives = new PrimitivesAPI.Primitives(this._client);
   readOnlyParams: ReadOnlyParamsAPI.ReadOnlyParams = new ReadOnlyParamsAPI.ReadOnlyParams(this._client);
   writeOnlyResponses: WriteOnlyResponsesAPI.WriteOnlyResponses = new WriteOnlyResponsesAPI.WriteOnlyResponses(
     this._client,
@@ -95,6 +97,10 @@ export namespace Types {
   export import TypeDatetimesResponse = TypesAPI.TypeDatetimesResponse;
   export import TypeDatesParams = TypesAPI.TypeDatesParams;
   export import TypeDatetimesParams = TypesAPI.TypeDatetimesParams;
+  export import Primitives = PrimitivesAPI.Primitives;
+  export import ModelString = PrimitivesAPI.ModelString;
+  export import PrimitiveStringsResponse = PrimitivesAPI.PrimitiveStringsResponse;
+  export import PrimitiveStringsParams = PrimitivesAPI.PrimitiveStringsParams;
   export import ReadOnlyParams = ReadOnlyParamsAPI.ReadOnlyParams;
   export import ReadOnlyParamSimpleResponse = ReadOnlyParamsAPI.ReadOnlyParamSimpleResponse;
   export import ReadOnlyParamSimpleParams = ReadOnlyParamsAPI.ReadOnlyParamSimpleParams;

@@ -16,6 +16,7 @@ export {
   Enums,
 } from './enums';
 export { MapNullableItemsResponse, Maps } from './maps';
+export { ModelString, PrimitiveStringsResponse, PrimitiveStringsParams, Primitives } from './primitives';
 export {
   ObjectMixedKnownAndUnknownResponse,
   ObjectMultipleArrayPropertiesSameRefResponse,

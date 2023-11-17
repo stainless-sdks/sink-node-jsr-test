@@ -21,13 +21,13 @@ export class Unions extends APIResource {
   }
 }
 
-export type ModelString = string;
+export type ModelNewTypeString = string;
 
 export interface UnionParamUnionEnumNewTypeParams {
-  model?: ModelString | 'gpt-4' | 'gpt-3';
+  model?: ModelNewTypeString | 'gpt-4' | 'gpt-3';
 }
 
 export namespace Unions {
-  export import ModelString = UnionsAPI.ModelString;
+  export import ModelNewTypeString = UnionsAPI.ModelNewTypeString;
   export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
 }

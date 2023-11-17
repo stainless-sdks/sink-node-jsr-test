@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
-export { ModelString, UnionParamUnionEnumNewTypeParams, Unions } from './unions';
+export { ModelNewTypeString, UnionParamUnionEnumNewTypeParams, Unions } from './unions';
 export {
   ModelWithParamInName,
   MyModel,
