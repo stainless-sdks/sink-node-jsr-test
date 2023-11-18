@@ -47,6 +47,9 @@ describe('resource recursion', () => {
   });
 
   test('createSelf: required and optional params', async () => {
-    const response = await sink.recursion.createSelf({ name: 'Robert', child: { name: 'Foo' } });
+    const response = await sink.recursion.createSelf({
+      name: 'Robert',
+      child: { name: 'Foo', child: { name: 'Robert' } },
+    });
   });
 });
