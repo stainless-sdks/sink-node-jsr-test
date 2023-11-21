@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.7.0 (2023-11-21)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* add string type test ([#284](https://github.com/stainless-sdks/sink-node-public/issues/284)) ([f4ea242](https://github.com/stainless-sdks/sink-node-public/commit/f4ea24244995bf7d8b8dc9f25f1248f8f2353990))
+* add tests for union with unknown variant ([#285](https://github.com/stainless-sdks/sink-node-public/issues/285)) ([7a4b39f](https://github.com/stainless-sdks/sink-node-public/commit/7a4b39fa56a3fb412185b89c5b7c02fc5b45bf3c))
+* allow installing package directly from github ([#287](https://github.com/stainless-sdks/sink-node-public/issues/287)) ([295f24f](https://github.com/stainless-sdks/sink-node-public/commit/295f24f2459b4bc45301a24394b3414b1fb82358))
+
+
+### Chores
+
+* **ci:** update release-please config ([#275](https://github.com/stainless-sdks/sink-node-public/issues/275)) ([a842467](https://github.com/stainless-sdks/sink-node-public/commit/a842467b6c11ada360db7d0b0b5f6080124631f4))
+* **docs:** fix github links ([#277](https://github.com/stainless-sdks/sink-node-public/issues/277)) ([988e1fe](https://github.com/stainless-sdks/sink-node-public/commit/988e1fec7fd50da893de224b04a332cff6f0f590))
+* **internal:** don't call prepare in dist ([#288](https://github.com/stainless-sdks/sink-node-public/issues/288)) ([80b5444](https://github.com/stainless-sdks/sink-node-public/commit/80b544457bc844cbd44c1b8d5abad98c4b0310ac))
+* **internal:** update APIResource structure ([#281](https://github.com/stainless-sdks/sink-node-public/issues/281)) ([dfa3bb8](https://github.com/stainless-sdks/sink-node-public/commit/dfa3bb89d412046f12980eba5f872ff279258222))
+* **internal:** update jest config ([#280](https://github.com/stainless-sdks/sink-node-public/issues/280)) ([8bdd934](https://github.com/stainless-sdks/sink-node-public/commit/8bdd934f675abf4560b5c5656eba76e51f5a02c2))
+* **internal:** update stats file ([#282](https://github.com/stainless-sdks/sink-node-public/issues/282)) ([a10fa97](https://github.com/stainless-sdks/sink-node-public/commit/a10fa97e1afd8854eebb053df6359ec67b209144))
+* **internal:** update tsconfig ([#278](https://github.com/stainless-sdks/sink-node-public/issues/278)) ([215ffb7](https://github.com/stainless-sdks/sink-node-public/commit/215ffb7462065b5777328595b3a7817fb4195b4a))
+* **types:** add more array types tests ([#279](https://github.com/stainless-sdks/sink-node-public/issues/279)) ([9358713](https://github.com/stainless-sdks/sink-node-public/commit/9358713d7dbc301909e5337ddc2a2d715f32bcf9))
+* update enum tests ([#283](https://github.com/stainless-sdks/sink-node-public/issues/283)) ([e5940b6](https://github.com/stainless-sdks/sink-node-public/commit/e5940b67b4ede049c41e66ae95932fa13171572f))
+* update recursive types ([#286](https://github.com/stainless-sdks/sink-node-public/issues/286)) ([686ae33](https://github.com/stainless-sdks/sink-node-public/commit/686ae336b43dc3f2a7a0f05ff039681fa4b90fa2))
+
 ## 0.6.0 (2023-11-05)
 
 Full Changelog: [v0.5.0...v0.6.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.5.0...v0.6.0)
