@@ -24,7 +24,7 @@ import Sink from 'sink-npm';
 const sink = new Sink({
   userToken: 'My User Token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
   environment: 'sandbox', // defaults to 'production'
-  username: 'Robert',
+  username: 'Sam',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',
@@ -67,7 +67,7 @@ import Sink from 'sink-npm';
 const sink = new Sink({
   userToken: 'My User Token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
   environment: 'sandbox', // defaults to 'production'
-  username: 'Robert',
+  username: 'Sam',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',
@@ -169,7 +169,7 @@ You can use the `maxRetries` option to configure or disable this:
 // Configure the default for all requests:
 const sink = new Sink({
   maxRetries: 0, // default is 2
-  username: 'Robert',
+  username: 'Sam',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',
@@ -190,7 +190,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 // Configure the default for all requests:
 const sink = new Sink({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
-  username: 'Robert',
+  username: 'Sam',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',
@@ -334,7 +334,7 @@ import HttpsProxyAgent from 'https-proxy-agent';
 // Configure the default for all requests:
 const sink = new Sink({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
-  username: 'Robert',
+  username: 'Sam',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',

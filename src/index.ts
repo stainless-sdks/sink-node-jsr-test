@@ -166,7 +166,7 @@ export class Sink extends Core.APIClient {
    * @param {string | null} [opts.userToken==process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
    * @param {string} [opts.username==process.env['SINK_USER'] ?? undefined]
    * @param {string | null} [opts.clientId==process.env['SINK_CLIENT_ID'] ?? null]
-   * @param {string | null} [opts.clientSecret==process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
+   * @param {string | null} [opts.clientSecret==process.env['SINK_CLIENT_SECRET'] ?? my-cool-secret]
    * @param {boolean | null} [opts.someBooleanArg==process.env['SINK_SOME_BOOLEAN_ARG'] ?? true]
    * @param {number | null} [opts.someIntegerArg==process.env['SINK_SOME_INTEGER_ARG'] ?? 123]
    * @param {number | null} [opts.someNumberArg==process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
@@ -191,7 +191,7 @@ export class Sink extends Core.APIClient {
     userToken = Core.readEnv('SINK_CUSTOM_API_KEY_ENV') ?? null,
     username = Core.readEnv('SINK_USER'),
     clientId = Core.readEnv('SINK_CLIENT_ID') ?? null,
-    clientSecret = Core.readEnv('SINK_CLIENT_SECRET') ?? 'hellosecret',
+    clientSecret = Core.readEnv('SINK_CLIENT_SECRET') ?? 'my-cool-secret',
     someBooleanArg = Core.maybeCoerceBoolean(Core.readEnv('SINK_SOME_BOOLEAN_ARG')) ?? true,
     someIntegerArg = Core.maybeCoerceInteger(Core.readEnv('SINK_SOME_INTEGER_ARG')) ?? 123,
     someNumberArg = Core.maybeCoerceFloat(Core.readEnv('SINK_SOME_NUMBER_ARG')) ?? 1.2,
@@ -206,7 +206,7 @@ export class Sink extends Core.APIClient {
   }: ClientOptions) {
     if (username === undefined) {
       throw new Errors.SinkError(
-        "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
+        "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Sam' }).",
       );
     }
     if (someNumberArgRequiredNoDefault === undefined) {

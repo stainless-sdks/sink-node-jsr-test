@@ -4,7 +4,7 @@ import Sink from 'sink-npm';
 
 const sink = new Sink({
   userToken: 'My User Token',
-  username: 'Robert',
+  username: 'Sam',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',
