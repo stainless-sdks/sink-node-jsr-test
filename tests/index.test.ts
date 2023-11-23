@@ -24,7 +24,7 @@ describe('instantiate client', () => {
       baseURL: 'http://localhost:5000/',
       defaultHeaders: { 'X-My-Default-Header': '2' },
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
@@ -60,7 +60,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo' },
         userToken: 'My User Token',
-        username: 'Sam',
+        username: 'Robert',
         someNumberArgRequiredNoDefault: 0,
         someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
@@ -73,7 +73,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo', hello: 'world' },
         userToken: 'My User Token',
-        username: 'Sam',
+        username: 'Robert',
         someNumberArgRequiredNoDefault: 0,
         someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
@@ -86,7 +86,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { hello: 'world' },
         userToken: 'My User Token',
-        username: 'Sam',
+        username: 'Robert',
         someNumberArgRequiredNoDefault: 0,
         someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
@@ -99,7 +99,7 @@ describe('instantiate client', () => {
     const client = new Sink({
       baseURL: 'http://localhost:5000/',
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
@@ -120,7 +120,7 @@ describe('instantiate client', () => {
     const client = new Sink({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
@@ -151,7 +151,7 @@ describe('instantiate client', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/custom/path/',
         userToken: 'My User Token',
-        username: 'Sam',
+        username: 'Robert',
         someNumberArgRequiredNoDefault: 0,
         someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
@@ -163,7 +163,7 @@ describe('instantiate client', () => {
       const client = new Sink({
         baseURL: 'http://localhost:5000/custom/path',
         userToken: 'My User Token',
-        username: 'Sam',
+        username: 'Robert',
         someNumberArgRequiredNoDefault: 0,
         someNumberArgRequiredNoDefaultNoEnv: 0,
         requiredArgNoEnv: '<example>',
@@ -176,7 +176,7 @@ describe('instantiate client', () => {
     const client = new Sink({
       maxRetries: 2,
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
@@ -186,7 +186,7 @@ describe('instantiate client', () => {
     // default
     const client2 = new Sink({
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
@@ -197,11 +197,11 @@ describe('instantiate client', () => {
   test('with environment variable arguments', () => {
     // set options via env var
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'My User Token';
-    process.env['SINK_USER'] = 'Sam';
+    process.env['SINK_USER'] = 'Robert';
     process.env['SINK_SOME_NUMBER_ARG'] = JSON.stringify(0);
     const client = new Sink({ someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>' });
     expect(client.userToken).toBe('My User Token');
-    expect(client.username).toBe('Sam');
+    expect(client.username).toBe('Robert');
     expect(client.someNumberArgRequiredNoDefault).toBe(0);
     expect(client.someNumberArgRequiredNoDefaultNoEnv).toBe(0);
     expect(client.requiredArgNoEnv).toBe('<example>');
@@ -210,17 +210,17 @@ describe('instantiate client', () => {
   test('with overriden environment variable arguments', () => {
     // set options via env var
     process.env['SINK_CUSTOM_API_KEY_ENV'] = 'another My User Token';
-    process.env['SINK_USER'] = 'another Sam';
+    process.env['SINK_USER'] = 'another Robert';
     process.env['SINK_SOME_NUMBER_ARG'] = JSON.stringify(0);
     const client = new Sink({
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
     });
     expect(client.userToken).toBe('My User Token');
-    expect(client.username).toBe('Sam');
+    expect(client.username).toBe('Robert');
     expect(client.someNumberArgRequiredNoDefault).toBe(0);
     expect(client.someNumberArgRequiredNoDefaultNoEnv).toBe(0);
     expect(client.requiredArgNoEnv).toBe('<example>');
@@ -232,7 +232,7 @@ describe('idempotency', () => {
     const client = new Sink({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
@@ -244,7 +244,7 @@ describe('idempotency', () => {
 describe('request building', () => {
   const client = new Sink({
     userToken: 'My User Token',
-    username: 'Sam',
+    username: 'Robert',
     someNumberArgRequiredNoDefault: 0,
     someNumberArgRequiredNoDefaultNoEnv: 0,
     requiredArgNoEnv: '<example>',
@@ -276,7 +276,7 @@ describe('retries', () => {
 
     const client = new Sink({
       userToken: 'My User Token',
-      username: 'Sam',
+      username: 'Robert',
       someNumberArgRequiredNoDefault: 0,
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',

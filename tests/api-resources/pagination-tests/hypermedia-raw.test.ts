@@ -5,7 +5,7 @@ import { Response } from 'node-fetch';
 
 const sink = new Sink({
   userToken: 'My User Token',
-  username: 'Sam',
+  username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
   someNumberArgRequiredNoDefaultNoEnv: 0,
   requiredArgNoEnv: '<example>',

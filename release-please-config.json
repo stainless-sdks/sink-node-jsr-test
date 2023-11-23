@@ -58,6 +58,7 @@
     }
   ],
   "reviewers": [
+    "marcel-stainless",
     "dgellow"
   ],
   "release-type": "node",
