@@ -22,7 +22,7 @@ The full API of this library can be found in [api.md](https://www.github.com/sta
 import Sink from 'sink-npm';
 
 const sink = new Sink({
-  userToken: 'My User Token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
+  userToken: process.env['SINK_CUSTOM_API_KEY_ENV'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -65,7 +65,7 @@ This library includes TypeScript definitions for all request params and response
 import Sink from 'sink-npm';
 
 const sink = new Sink({
-  userToken: 'My User Token', // defaults to process.env["SINK_CUSTOM_API_KEY_ENV"]
+  userToken: process.env['SINK_CUSTOM_API_KEY_ENV'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
