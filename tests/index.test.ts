@@ -170,6 +170,63 @@ describe('instantiate client', () => {
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
+
+    afterEach(() => {
+      process.env['SINK_BASE_URL'] = undefined;
+    });
+
+    test('explicit option', () => {
+      const client = new Sink({
+        baseURL: 'https://example.com',
+        userToken: 'My User Token',
+        username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
+        requiredArgNoEnv: '<example>',
+      });
+      expect(client.baseURL).toEqual('https://example.com');
+    });
+
+    test('env variable', () => {
+      process.env['SINK_BASE_URL'] = 'https://example.com/from_env';
+      const client = new Sink({
+        userToken: 'My User Token',
+        username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
+        requiredArgNoEnv: '<example>',
+      });
+      expect(client.baseURL).toEqual('https://example.com/from_env');
+    });
+
+    test('env variable with environment', () => {
+      process.env['SINK_BASE_URL'] = 'https://example.com/from_env';
+
+      expect(
+        () =>
+          new Sink({
+            userToken: 'My User Token',
+            username: 'Robert',
+            someNumberArgRequiredNoDefault: 0,
+            someNumberArgRequiredNoDefaultNoEnv: 0,
+            requiredArgNoEnv: '<example>',
+            environment: 'production',
+          }),
+      ).toThrowErrorMatchingInlineSnapshot(
+        `"Ambiguous URL; The \`baseURL\` option (or SINK_BASE_URL env var) and the \`environment\` option are given. If you want to use the environment you must pass baseURL: null"`,
+      );
+
+      const client = new Sink({
+        userToken: 'My User Token',
+        username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
+        requiredArgNoEnv: '<example>',
+        baseURL: null,
+        environment: 'production',
+      });
+      expect(client.baseURL).toEqual('https://demo.stainlessapi.com/');
+    });
   });
 
   test('maxRetries option is correctly set', () => {

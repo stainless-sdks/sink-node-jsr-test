@@ -82,8 +82,10 @@ export interface ClientOptions {
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
+   *
+   * Defaults to process.env['SINK_BASE_URL'].
    */
-  baseURL?: string;
+  baseURL?: string | null | undefined;
 
   /**
    * The maximum amount of time (in milliseconds) that the client should wait for a response
@@ -163,22 +165,22 @@ export class Sink extends Core.APIClient {
   /**
    * API Client for interfacing with the Sink API.
    *
-   * @param {string | null} [opts.userToken==process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
-   * @param {string} [opts.username==process.env['SINK_USER'] ?? undefined]
-   * @param {string | null} [opts.clientId==process.env['SINK_CLIENT_ID'] ?? null]
-   * @param {string | null} [opts.clientSecret==process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
-   * @param {boolean | null} [opts.someBooleanArg==process.env['SINK_SOME_BOOLEAN_ARG'] ?? true]
-   * @param {number | null} [opts.someIntegerArg==process.env['SINK_SOME_INTEGER_ARG'] ?? 123]
-   * @param {number | null} [opts.someNumberArg==process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
-   * @param {number} [opts.someNumberArgRequired==process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
-   * @param {number} [opts.someNumberArgRequiredNoDefault==process.env['SINK_SOME_NUMBER_ARG'] ?? undefined]
+   * @param {string | null} [opts.userToken=process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
+   * @param {string} [opts.username=process.env['SINK_USER'] ?? undefined]
+   * @param {string | null} [opts.clientId=process.env['SINK_CLIENT_ID'] ?? null]
+   * @param {string | null} [opts.clientSecret=process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
+   * @param {boolean | null} [opts.someBooleanArg=process.env['SINK_SOME_BOOLEAN_ARG'] ?? true]
+   * @param {number | null} [opts.someIntegerArg=process.env['SINK_SOME_INTEGER_ARG'] ?? 123]
+   * @param {number | null} [opts.someNumberArg=process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
+   * @param {number} [opts.someNumberArgRequired=process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
+   * @param {number} [opts.someNumberArgRequiredNoDefault=process.env['SINK_SOME_NUMBER_ARG'] ?? undefined]
    * @param {number} opts.someNumberArgRequiredNoDefaultNoEnv
    * @param {string} opts.requiredArgNoEnv
    * @param {string} [opts.requiredArgNoEnvWithDefault=hi!]
    * @param {string | null} [opts.clientPathParam]
    * @param {string | null} [opts.camelCasePath]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['SINK_BASE_URL'] ?? https://demo.stainlessapi.com/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -188,6 +190,7 @@ export class Sink extends Core.APIClient {
    * @param {boolean} [opts.dangerouslyAllowBrowser=false] - By default, client-side use of this library is not allowed, as it risks exposing your secret API credentials to attackers.
    */
   constructor({
+    baseURL = Core.readEnv('SINK_BASE_URL'),
     userToken = Core.readEnv('SINK_CUSTOM_API_KEY_ENV') ?? null,
     username = Core.readEnv('SINK_USER'),
     clientId = Core.readEnv('SINK_CLIENT_ID') ?? null,
@@ -241,12 +244,19 @@ export class Sink extends Core.APIClient {
       clientPathParam,
       camelCasePath,
       ...opts,
+      baseURL,
       environment: opts.environment ?? 'production',
     };
 
     if (!options.dangerouslyAllowBrowser && Core.isRunningInBrowser()) {
       throw new Errors.SinkError(
         'This is disabled by default, as it risks exposing your secret API credentials to attackers.\nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })',
+      );
+    }
+
+    if (baseURL && opts.environment) {
+      throw new Errors.SinkError(
+        'Ambiguous URL; The `baseURL` option (or SINK_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
       );
     }
 
