@@ -37,14 +37,10 @@ export {
   CardProvisionFooResponse,
   CardCreateParams,
   CardUpdateParams,
-  CardListParams,
   CardCreateAliasedParams,
   CardCreateAliasedDeprecatedParams,
-  CardListNonGetParams,
   CardProvisionFooParams,
   CardReissueParams,
-  CardsPageCursor,
-  CardsCardPage,
   Cards,
 } from './cards';
 export { Casing } from './casing/casing';
@@ -160,14 +156,6 @@ export {
   BodyParamWithDefaultBodyParamOptionalParams,
   BodyParamWithDefaultBodyParamRequiredParams,
   BodyParamWithModelPropertyParams,
-  MyModelsPagePageNumber,
-  MyModelsPageCursor,
-  MyModelsPageCursorNestedResponseProp,
-  MyModelsPageCursorURL,
-  MyModelsPageOffset,
-  MyModelsPageHypermedia,
-  MyModelsGenericPageWithExtraParamsAndFields,
-  MyModelsPageHypermediaRaw,
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';

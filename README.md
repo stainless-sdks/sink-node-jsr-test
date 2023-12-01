@@ -197,7 +197,7 @@ const sink = new Sink({
 });
 
 // Override per-request:
-await sink.cards.list({ page_size: 10 }, {
+await sink.cards.create({ type: 'DIGITAL' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -205,37 +205,6 @@ await sink.cards.list({ page_size: 10 }, {
 On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
-
-## Auto-pagination
-
-List methods in the Sink API are paginated.
-You can use `for await … of` syntax to iterate through items across all pages:
-
-```ts
-async function fetchAllPaginationTestsOffsets(params) {
-  const allPaginationTestsOffsets = [];
-  // Automatically fetches more pages as needed.
-  for await (const myModel of sink.paginationTests.offset.list()) {
-    allPaginationTestsOffsets.push(myModel);
-  }
-  return allPaginationTestsOffsets;
-}
-```
-
-Alternatively, you can make request a single page at a time:
-
-```ts
-let page = await sink.paginationTests.offset.list();
-for (const myModel of page.data) {
-  console.log(myModel);
-}
-
-// Convenience methods are provided for manually paginating:
-while (page.hasNextPage()) {
-  page = page.getNextPage();
-  // ...
-}
-```
 
 ## Default Headers
 
@@ -341,7 +310,7 @@ const sink = new Sink({
 });
 
 // Override per-request:
-await sink.cards.list({
+await sink.cards.create({ type: 'DIGITAL' }, {
   baseURL: 'http://localhost:8080/test-api',
   httpAgent: new http.Agent({ keepAlive: false }),
 })

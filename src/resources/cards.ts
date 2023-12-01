@@ -2,10 +2,8 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
 import * as CardsAPI from 'sink-npm/resources/cards';
 import * as Shared from 'sink-npm/resources/shared';
-import { CardPage, type CardPageParams, PageCursor } from 'sink-npm/pagination';
 
 export class Cards extends APIResource {
   /**
@@ -32,21 +30,6 @@ export class Cards extends APIResource {
    */
   update(cardToken: string, body: CardUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
     return this._client.patch(`/cards/${cardToken}`, { body, ...options });
-  }
-
-  /**
-   * List cards.
-   */
-  list(query?: CardListParams, options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
-  list(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
-  list(
-    query: CardListParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsCardPage, Card> {
-    if (isRequestOptions(query)) {
-      return this.list({}, query);
-    }
-    return this._client.getAPIList('/cards', CardsCardPage, { query, ...options });
   }
 
   createAliased = this.create;
@@ -122,29 +105,6 @@ export class Cards extends APIResource {
   }
 
   /**
-   * List cards.
-   */
-  listNonGet(
-    params?: CardListNonGetParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsCardPage, Card>;
-  listNonGet(options?: Core.RequestOptions): Core.PagePromise<CardsCardPage, Card>;
-  listNonGet(
-    params: CardListNonGetParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<CardsCardPage, Card> {
-    if (isRequestOptions(params)) {
-      return this.listNonGet({}, params);
-    }
-    const { account_token, begin, end, page, page_size } = params;
-    return this._client.getAPIList('/cards/list', CardsCardPage, {
-      query: { account_token, begin, end, page, page_size },
-      method: 'post',
-      ...options,
-    });
-  }
-
-  /**
    * Get card configuration such as spend limit and state.
    */
   listNotPaginated(cardToken: string, options?: Core.RequestOptions): Core.APIPromise<Card> {
@@ -176,13 +136,6 @@ export class Cards extends APIResource {
     return this._client.post(`/cards/${cardToken}/reissue`, { body, ...options });
   }
 }
-
-/**
- * Test description for card pages.
- */
-export class CardsCardPage extends CardPage<Card> {}
-
-export class CardsPageCursor extends PageCursor<Card> {}
 
 export interface Card {
   /**
@@ -543,28 +496,6 @@ export interface CardUpdateParams {
   state?: 'CLOSED' | 'OPEN' | 'PAUSED';
 }
 
-export interface CardListParams extends CardPageParams {
-  /**
-   * Only required for multi-account users. Returns cards associated with this
-   * account. Only applicable if using account holder enrollment. See
-   * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
-   * more information.
-   */
-  account_token?: string;
-
-  /**
-   * Date string in 8601 format. Only entries created after the specified date will
-   * be included. UTC time zone.
-   */
-  begin?: string;
-
-  /**
-   * Date string in 8601 format. Only entries created before the specified date will
-   * be included. UTC time zone.
-   */
-  end?: string;
-}
-
 export interface CardCreateAliasedParams {
   /**
    * Card types:
@@ -805,28 +736,6 @@ export interface CardCreateAliasedDeprecatedParams {
   state?: 'OPEN' | 'PAUSED';
 }
 
-export interface CardListNonGetParams extends CardPageParams {
-  /**
-   * Only required for multi-account users. Returns cards associated with this
-   * account. Only applicable if using account holder enrollment. See
-   * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
-   * more information.
-   */
-  account_token?: string;
-
-  /**
-   * Date string in 8601 format. Only entries created after the specified date will
-   * be included. UTC time zone.
-   */
-  begin?: string;
-
-  /**
-   * Date string in 8601 format. Only entries created before the specified date will
-   * be included. UTC time zone.
-   */
-  end?: string;
-}
-
 export interface CardProvisionFooParams {
   /**
    * Only required for multi-account users. Token identifying the account the card
@@ -893,13 +802,10 @@ export namespace Cards {
   export import CardAlias = CardsAPI.CardAlias;
   export import FundingAccount = CardsAPI.FundingAccount;
   export import CardProvisionFooResponse = CardsAPI.CardProvisionFooResponse;
-  export import CardsCardPage = CardsAPI.CardsCardPage;
   export import CardCreateParams = CardsAPI.CardCreateParams;
   export import CardUpdateParams = CardsAPI.CardUpdateParams;
-  export import CardListParams = CardsAPI.CardListParams;
   export import CardCreateAliasedParams = CardsAPI.CardCreateAliasedParams;
   export import CardCreateAliasedDeprecatedParams = CardsAPI.CardCreateAliasedDeprecatedParams;
-  export import CardListNonGetParams = CardsAPI.CardListNonGetParams;
   export import CardProvisionFooParams = CardsAPI.CardProvisionFooParams;
   export import CardReissueParams = CardsAPI.CardReissueParams;
 }

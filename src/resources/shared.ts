@@ -1,7 +1,5 @@
 // File generated from our OpenAPI spec by Stainless.
 
-import { FakePage } from 'sink-npm/pagination';
-
 export interface BasicSharedModelObject {
   bar: string;
 
@@ -130,5 +128,3 @@ export interface SimpleObject {
 }
 
 export type SimpleObjectAlias = SimpleObject;
-
-export class SimpleObjectsFakePage extends FakePage<SimpleObject> {}

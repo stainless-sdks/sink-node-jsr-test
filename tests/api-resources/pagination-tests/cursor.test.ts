@@ -37,32 +37,4 @@ describe('resource cursor', () => {
       sink.paginationTests.cursor.list({ cursor: 'string', limit: 0 }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
-
-  test('listNestedResponseProp', async () => {
-    const responsePromise = sink.paginationTests.cursor.listNestedResponseProp();
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('listNestedResponseProp: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      sink.paginationTests.cursor.listNestedResponseProp({ path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
-  });
-
-  test('listNestedResponseProp: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      sink.paginationTests.cursor.listNestedResponseProp(
-        { cursor: 'string', limit: 0 },
-        { path: '/_stainless_unknown_path' },
-      ),
-    ).rejects.toThrow(Sink.NotFoundError);
-  });
 });

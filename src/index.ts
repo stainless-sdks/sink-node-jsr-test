@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless.
 
 import * as Core from './core';
-import * as Pagination from './pagination';
 import * as Errors from './error';
 import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
@@ -441,54 +440,6 @@ export namespace Sink {
 
   export import RequestOptions = Core.RequestOptions;
 
-  export import CardPage = Pagination.CardPage;
-  export import CardPageParams = Pagination.CardPageParams;
-  export import CardPageResponse = Pagination.CardPageResponse;
-
-  export import MyConcretePage = Pagination.MyConcretePage;
-  export import MyConcretePageParams = Pagination.MyConcretePageParams;
-  export import MyConcretePageResponse = Pagination.MyConcretePageResponse;
-
-  export import PagePageNumber = Pagination.PagePageNumber;
-  export import PagePageNumberParams = Pagination.PagePageNumberParams;
-  export import PagePageNumberResponse = Pagination.PagePageNumberResponse;
-
-  export import PageCursor = Pagination.PageCursor;
-  export import PageCursorParams = Pagination.PageCursorParams;
-  export import PageCursorResponse = Pagination.PageCursorResponse;
-
-  export import PageCursorNestedResponseProp = Pagination.PageCursorNestedResponseProp;
-  export import PageCursorNestedResponsePropParams = Pagination.PageCursorNestedResponsePropParams;
-  export import PageCursorNestedResponsePropResponse = Pagination.PageCursorNestedResponsePropResponse;
-
-  export import PageCursorURL = Pagination.PageCursorURL;
-  export import PageCursorURLParams = Pagination.PageCursorURLParams;
-  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
-
-  export import PageOffset = Pagination.PageOffset;
-  export import PageOffsetParams = Pagination.PageOffsetParams;
-  export import PageOffsetResponse = Pagination.PageOffsetResponse;
-
-  export import PageHypermedia = Pagination.PageHypermedia;
-  export import PageHypermediaParams = Pagination.PageHypermediaParams;
-  export import PageHypermediaResponse = Pagination.PageHypermediaResponse;
-
-  export import PageHypermediaRaw = Pagination.PageHypermediaRaw;
-  export import PageHypermediaRawParams = Pagination.PageHypermediaRawParams;
-  export import PageHypermediaRawResponse = Pagination.PageHypermediaRawResponse;
-
-  export import FakePage = Pagination.FakePage;
-  export import FakePageParams = Pagination.FakePageParams;
-  export import FakePageResponse = Pagination.FakePageResponse;
-
-  export import GenericPageWithExtraParamsAndFields = Pagination.GenericPageWithExtraParamsAndFields;
-  export import GenericPageWithExtraParamsAndFieldsParams = Pagination.GenericPageWithExtraParamsAndFieldsParams;
-  export import GenericPageWithExtraParamsAndFieldsResponse = Pagination.GenericPageWithExtraParamsAndFieldsResponse;
-
-  export import ConcretePageWithExtraParamsAndFields = Pagination.ConcretePageWithExtraParamsAndFields;
-  export import ConcretePageWithExtraParamsAndFieldsParams = Pagination.ConcretePageWithExtraParamsAndFieldsParams;
-  export import ConcretePageWithExtraParamsAndFieldsResponse = Pagination.ConcretePageWithExtraParamsAndFieldsResponse;
-
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;
   export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
@@ -549,13 +500,10 @@ export namespace Sink {
   export import CardAlias = API.CardAlias;
   export import FundingAccount = API.FundingAccount;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
-  export import CardsCardPage = API.CardsCardPage;
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
-  export import CardListParams = API.CardListParams;
   export import CardCreateAliasedParams = API.CardCreateAliasedParams;
   export import CardCreateAliasedDeprecatedParams = API.CardCreateAliasedDeprecatedParams;
-  export import CardListNonGetParams = API.CardListNonGetParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;
   export import CardReissueParams = API.CardReissueParams;
 

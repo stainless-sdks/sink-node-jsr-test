@@ -57,7 +57,7 @@ Types:
 
 Methods:
 
-- <code title="get /casing/eeoc">client.casing.eeoc.<a href="./src/resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
+- <code title="get /casing/eeoc">client.casing.eeoc.<a href="./src/resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOC</code>
 
 # DefaultReqOptions
 
@@ -121,65 +121,11 @@ Methods:
 
 # PaginationTests
 
-## Concrete
-
-Types:
-
-- <code><a href="./src/resources/pagination-tests/concrete.ts">MyConcretePageItem</a></code>
-
-Methods:
-
-- <code title="get /paginated/concrete/cursor">client.paginationTests.concrete.<a href="./src/resources/pagination-tests/concrete.ts">list</a>({ ...params }) -> MyConcretePage</code>
-- <code title="post /paginated/concrete/more_params">client.paginationTests.concrete.<a href="./src/resources/pagination-tests/concrete.ts">listExtraParamsAndFields</a>({ ...params }) -> ConcretePageWithExtraParamsAndFields</code>
-
-## PageNumber
-
-Methods:
-
-- <code title="get /paginated/page_number">client.paginationTests.pageNumber.<a href="./src/resources/pagination-tests/page-number.ts">list</a>({ ...params }) -> MyModelsPagePageNumber</code>
-
 ## Cursor
 
 Methods:
 
-- <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModelsPageCursor</code>
-- <code title="get /paginated/cursor_nested_response_prop">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">listNestedResponseProp</a>({ ...params }) -> MyModelsPageCursorNestedResponseProp</code>
-
-## CursorURL
-
-Methods:
-
-- <code title="get /paginated/cursor_url">client.paginationTests.cursorURL.<a href="./src/resources/pagination-tests/cursor-url.ts">list</a>({ ...params }) -> MyModelsPageCursorURL</code>
-
-## Offset
-
-Methods:
-
-- <code title="get /paginated/offset">client.paginationTests.offset.<a href="./src/resources/pagination-tests/offset.ts">list</a>({ ...params }) -> MyModelsPageOffset</code>
-
-## FakePages
-
-Methods:
-
-- <code title="get /paginated/fake_page">client.paginationTests.fakePages.<a href="./src/resources/pagination-tests/fake-pages.ts">list</a>({ ...params }) -> SimpleObjectsFakePage</code>
-
-## Hypermedia
-
-Methods:
-
-- <code title="get /paginated/hypermedia">client.paginationTests.hypermedia.<a href="./src/resources/pagination-tests/hypermedia.ts">list</a>({ ...params }) -> MyModelsPageHypermedia</code>
-
-## ExtraParamsAndFields
-
-Methods:
-
-- <code title="post /paginated/more_params">client.paginationTests.extraParamsAndFields.<a href="./src/resources/pagination-tests/extra-params-and-fields.ts">list</a>({ ...params }) -> MyModelsGenericPageWithExtraParamsAndFields</code>
-
-## HypermediaRaw
-
-Methods:
-
-- <code title="get /paginated/hypermedia_raw">client.paginationTests.hypermediaRaw.<a href="./src/resources/pagination-tests/hypermedia-raw.ts">list</a>({ ...params }) -> MyModelsPageHypermediaRaw</code>
+- <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModel</code>
 
 # Docstrings
 
@@ -221,15 +167,7 @@ Methods:
 
 ## PaginatedModelFirstRef
 
-Methods:
-
-- <code title="get /resource_refs/paginated_model_separate_resource">client.resourceRefs.paginatedModelFirstRef.<a href="./src/resources/resource-refs/paginated-model-first-ref.ts">list</a>({ ...params }) -> CardsPageCursor</code>
-
 ## PaginatedModelSecondRef
-
-Methods:
-
-- <code title="get /resource_refs/paginated_model_separate_resource">client.resourceRefs.paginatedModelSecondRef.<a href="./src/resources/resource-refs/paginated-model-second-ref.ts">list</a>({ ...params }) -> CardsPageCursor</code>
 
 # Cards
 
@@ -245,12 +183,10 @@ Methods:
 - <code title="post /cards">client.cards.<a href="./src/resources/cards.ts">create</a>({ ...params }) -> Card</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
 - <code title="patch /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
-- <code title="get /cards">client.cards.<a href="./src/resources/cards.ts">list</a>({ ...params }) -> CardsCardPage</code>
 - <code title="post /deprecations/method_all_but_go_diff_message">client.cards.<a href="./src/resources/cards.ts">deprecatedAllButGoDiffMessage</a>() -> void</code>
 - <code title="post /deprecations/method_all_but_go_diff_message">client.cards.<a href="./src/resources/cards.ts">deprecatedAllDiffMessage</a>() -> void</code>
 - <code title="post /deprecations/method">client.cards.<a href="./src/resources/cards.ts">deprecatedMethod</a>() -> void</code>
 - <code title="post /deprecations/method_only_go">client.cards.<a href="./src/resources/cards.ts">deprecatedOnlyGo</a>() -> void</code>
-- <code title="post /cards/list">client.cards.<a href="./src/resources/cards.ts">listNonGet</a>({ ...params }) -> CardsCardPage</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./src/resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./src/resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>

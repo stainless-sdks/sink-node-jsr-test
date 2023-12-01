@@ -29,13 +29,5 @@ export {
   BodyParamWithDefaultBodyParamOptionalParams,
   BodyParamWithDefaultBodyParamRequiredParams,
   BodyParamWithModelPropertyParams,
-  MyModelsPagePageNumber,
-  MyModelsPageCursor,
-  MyModelsPageCursorNestedResponseProp,
-  MyModelsPageCursorURL,
-  MyModelsPageOffset,
-  MyModelsPageHypermedia,
-  MyModelsGenericPageWithExtraParamsAndFields,
-  MyModelsPageHypermediaRaw,
   BodyParams,
 } from './body-params';
