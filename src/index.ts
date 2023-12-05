@@ -685,6 +685,7 @@ export namespace Sink {
   export import BasicSharedModelObject = API.BasicSharedModelObject;
   export import Currency = API.Currency;
   export import ObjectWithChildRef = API.ObjectWithChildRef;
+  export import PageCursorSharedRefPagination = API.PageCursorSharedRefPagination;
   export import SharedCursorNestedResponsePropMeta = API.SharedCursorNestedResponsePropMeta;
   export import SharedSelfRecursion = API.SharedSelfRecursion;
   export import ShippingAddress = API.ShippingAddress;

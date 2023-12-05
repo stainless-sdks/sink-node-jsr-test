@@ -32,6 +32,12 @@ export interface ObjectWithChildRef {
   foo?: string;
 }
 
+export interface PageCursorSharedRefPagination {
+  cursor: string;
+
+  prop_with_another_ref?: BasicSharedModelObject;
+}
+
 export interface SharedCursorNestedResponsePropMeta {
   pagination: SharedCursorNestedResponsePropMeta.Pagination;
 }

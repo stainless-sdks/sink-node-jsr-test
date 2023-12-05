@@ -19,6 +19,7 @@ Types:
 - <code><a href="./src/resources/shared.ts">BasicSharedModelObject</a></code>
 - <code><a href="./src/resources/shared.ts">Currency</a></code>
 - <code><a href="./src/resources/shared.ts">ObjectWithChildRef</a></code>
+- <code><a href="./src/resources/shared.ts">PageCursorSharedRefPagination</a></code>
 - <code><a href="./src/resources/shared.ts">SharedCursorNestedResponsePropMeta</a></code>
 - <code><a href="./src/resources/shared.ts">SharedSelfRecursion</a></code>
 - <code><a href="./src/resources/shared.ts">ShippingAddress</a></code>
