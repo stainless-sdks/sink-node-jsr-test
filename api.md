@@ -574,6 +574,12 @@ Methods:
 - <code title="get /positional_params/{single}">client.positionalParams.<a href="./src/resources/positional-params.ts">single</a>(single) -> void</code>
 - <code title="post /positional_params/body/union/{id}">client.positionalParams.<a href="./src/resources/positional-params.ts">unionBodyAndPath</a>(id, { ...params }) -> void</code>
 
+# EmptyBody
+
+Methods:
+
+- <code title="post /mixed_params/with_empty_body/{path_param}">client.emptyBody.<a href="./src/resources/empty-body.ts">typedParams</a>(pathParam, { ...params }) -> BasicSharedModelObject</code>
+
 # QueryParams
 
 Methods:

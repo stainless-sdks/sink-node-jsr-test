@@ -312,6 +312,7 @@ export class Sink extends Core.APIClient {
   responses: API.Responses = new API.Responses(this);
   pathParams: API.PathParams = new API.PathParams(this);
   positionalParams: API.PositionalParams = new API.PositionalParams(this);
+  emptyBody: API.EmptyBody = new API.EmptyBody(this);
   queryParams: API.QueryParams = new API.QueryParams(this);
   bodyParams: API.BodyParams = new API.BodyParams(this);
   headerParams: API.HeaderParams = new API.HeaderParams(this);
@@ -598,6 +599,9 @@ export namespace Sink {
   export import PositionalParamQueryAndPathParams = API.PositionalParamQueryAndPathParams;
   export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
   export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
+
+  export import EmptyBody = API.EmptyBody;
+  export import EmptyBodyTypedParamsParams = API.EmptyBodyTypedParamsParams;
 
   export import QueryParams = API.QueryParams;
   export import QueryParamAllOfParams = API.QueryParamAllOfParams;
