@@ -416,6 +416,10 @@ Methods:
 
 ## ReservedNames
 
+Methods:
+
+- <code title="post /names/reserved_names/common_reserved_params">client.names.reservedNames.<a href="./src/resources/names/reserved-names/reserved-names.ts">commonReservedParams</a>({ ...params }) -> void</code>
+
 ### Import
 
 Types:

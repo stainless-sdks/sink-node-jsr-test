@@ -2,4 +2,4 @@
 
 export { Export, Return, MethodExportParams, Methods } from './methods';
 export { Import, ImportResource } from './import';
-export { ReservedNames } from './reserved-names';
+export { ReservedNameCommonReservedParamsParams, ReservedNames } from './reserved-names';

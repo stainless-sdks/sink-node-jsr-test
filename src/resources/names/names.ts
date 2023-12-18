@@ -174,6 +174,7 @@ export namespace Names {
   export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
   export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
   export import ReservedNames = ReservedNamesAPI.ReservedNames;
+  export import ReservedNameCommonReservedParamsParams = ReservedNamesAPI.ReservedNameCommonReservedParamsParams;
   export import Params = ParamsAPI.Params;
   export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
   export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
