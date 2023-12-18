@@ -212,6 +212,8 @@ Methods:
 Methods:
 
 - <code title="get /binaries/return_binary">client.binaries.<a href="./src/resources/binaries.ts">returnBinary</a>() -> Response</code>
+- <code title="post /binaries/with_path_and_body_param/{id}">client.binaries.<a href="./src/resources/binaries.ts">withPathAndBodyParam</a>(id, { ...params }) -> Response</code>
+- <code title="get /binaries/with_path_param/{id}">client.binaries.<a href="./src/resources/binaries.ts">withPathParam</a>(id) -> Response</code>
 
 # Resources
 

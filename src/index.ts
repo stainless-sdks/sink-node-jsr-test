@@ -517,6 +517,7 @@ export namespace Sink {
   export import FileWithOptionalParamParams = API.FileWithOptionalParamParams;
 
   export import Binaries = API.Binaries;
+  export import BinaryWithPathAndBodyParamParams = API.BinaryWithPathAndBodyParamParams;
 
   export import Resources = API.Resources;
 

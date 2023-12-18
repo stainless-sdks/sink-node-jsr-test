@@ -18,4 +18,11 @@ describe('resource binaries', () => {
       Sink.NotFoundError,
     );
   });
+
+  test('withPathParam: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.binaries.withPathParam('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
 });
