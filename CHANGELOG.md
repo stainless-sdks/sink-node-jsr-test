@@ -1,5 +1,44 @@
 # Changelog
 
+## 0.8.0 (2023-12-18)
+
+Full Changelog: [v0.7.0...v0.8.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.7.0...v0.8.0)
+
+### Features
+
+* add test case for reserved params names ([#309](https://github.com/stainless-sdks/sink-node-public/issues/309)) ([fc8a8e7](https://github.com/stainless-sdks/sink-node-public/commit/fc8a8e797742320ef2bbd3bc5b2d55b24983d604))
+* add test for binary endpoint with a path param ([#308](https://github.com/stainless-sdks/sink-node-public/issues/308)) ([6241d88](https://github.com/stainless-sdks/sink-node-public/commit/6241d88ed884e528722c0c1874db9b608f66be4a))
+* **client:** support reading the base url from an env variable ([#297](https://github.com/stainless-sdks/sink-node-public/issues/297)) ([a3dd32c](https://github.com/stainless-sdks/sink-node-public/commit/a3dd32c8ef096ed223080e0832e8ff27e2076547))
+* generated ([#291](https://github.com/stainless-sdks/sink-node-public/issues/291)) ([e32a04c](https://github.com/stainless-sdks/sink-node-public/commit/e32a04c19e366cf5947f6075d767a63ab1b03a1e))
+
+
+### Bug Fixes
+
+* better typing for parameters when request body is defined as empty ([#304](https://github.com/stainless-sdks/sink-node-public/issues/304)) ([98c6e79](https://github.com/stainless-sdks/sink-node-public/commit/98c6e791865e3e10613b9e9d94d8c9aec76f8075))
+
+
+### Chores
+
+* add share model for testing pagination ([#300](https://github.com/stainless-sdks/sink-node-public/issues/300)) ([1f74347](https://github.com/stainless-sdks/sink-node-public/commit/1f7434760a94e6c0726c100b4715268aca56aed5))
+* **deps:** update dependency ts-jest to v29.1.1 ([#307](https://github.com/stainless-sdks/sink-node-public/issues/307)) ([6c814ae](https://github.com/stainless-sdks/sink-node-public/commit/6c814ae4736f2f465ee1514870b71d2db76e99bf))
+* **dev:** sam testing stuff ([#289](https://github.com/stainless-sdks/sink-node-public/issues/289)) ([0813fac](https://github.com/stainless-sdks/sink-node-public/commit/0813fac2a77b5be81e4c01872b05e78e16033534))
+* **internal:** remove file import and conditionally run prepare ([#293](https://github.com/stainless-sdks/sink-node-public/issues/293)) ([46c1c6e](https://github.com/stainless-sdks/sink-node-public/commit/46c1c6e7081dd34f4803ee358c02375d68a92ad8))
+* regenerate based on monorepo spec ([#292](https://github.com/stainless-sdks/sink-node-public/issues/292)) ([50a0b9a](https://github.com/stainless-sdks/sink-node-public/commit/50a0b9ac55092307f863cb77e872738223ef2298))
+* remove pagination tests for now ([#298](https://github.com/stainless-sdks/sink-node-public/issues/298)) ([cf23bf7](https://github.com/stainless-sdks/sink-node-public/commit/cf23bf7edad73fce4a103220950ddd85f9f32e3e))
+* update dependencies ([#306](https://github.com/stainless-sdks/sink-node-public/issues/306)) ([4eddaa3](https://github.com/stainless-sdks/sink-node-public/commit/4eddaa37602179ad86b9cd174054a40df7bcd6cf))
+* update prettier ([#305](https://github.com/stainless-sdks/sink-node-public/issues/305)) ([ccca93c](https://github.com/stainless-sdks/sink-node-public/commit/ccca93c4726c3230dc41b7907bfc7d61af864156))
+* uses Stainless GitHub App for codeflow ([#303](https://github.com/stainless-sdks/sink-node-public/issues/303)) ([931d588](https://github.com/stainless-sdks/sink-node-public/commit/931d588c26d6064b2904819b943b79e2f811bb50))
+
+
+### Documentation
+
+* **readme:** update example snippets ([#296](https://github.com/stainless-sdks/sink-node-public/issues/296)) ([41eff69](https://github.com/stainless-sdks/sink-node-public/commit/41eff694e822168b1337d4b25a3608c82405157e))
+
+
+### Build System
+
+* specify `packageManager: yarn` ([#302](https://github.com/stainless-sdks/sink-node-public/issues/302)) ([7966481](https://github.com/stainless-sdks/sink-node-public/commit/7966481f3906e02cb99c1a2db9af1967c2bbc29b))
+
 ## 0.7.0 (2023-11-21)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.6.0...v0.7.0)
