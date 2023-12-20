@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.8.1 (2023-12-20)
+
+Full Changelog: [v0.8.0...v0.8.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.8.0...v0.8.1)
+
+### Bug Fixes
+
+* better typing for parameters when `x-stainless-empty-object: true` ([#315](https://github.com/stainless-sdks/sink-node-public/issues/315)) ([9263273](https://github.com/stainless-sdks/sink-node-public/commit/926327316938e3392a0a0a54cfefbd0c28c91dcc))
+
+
+### Chores
+
+* **deps:** update jest ([#310](https://github.com/stainless-sdks/sink-node-public/issues/310)) ([81ca5b3](https://github.com/stainless-sdks/sink-node-public/commit/81ca5b34a78b367825e3c7cc3bac156bc794df29))
+* **internal:** minor updates to pagination ([#313](https://github.com/stainless-sdks/sink-node-public/issues/313)) ([380f1a6](https://github.com/stainless-sdks/sink-node-public/commit/380f1a68c235fd68ee73de8b30bf4073a7e6b75e))
+
+
+### Documentation
+
+* reformat README.md ([#314](https://github.com/stainless-sdks/sink-node-public/issues/314)) ([1d42321](https://github.com/stainless-sdks/sink-node-public/commit/1d423211c75ab6124c9985c23278d9eb91c3efa1))
+
+
+### Refactors
+
+* write jest config in typescript ([#312](https://github.com/stainless-sdks/sink-node-public/issues/312)) ([c3f3ad6](https://github.com/stainless-sdks/sink-node-public/commit/c3f3ad6a11645d26cef0cde08f07b42575145ca2))
+
 ## 0.8.0 (2023-12-18)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.7.0...v0.8.0)
