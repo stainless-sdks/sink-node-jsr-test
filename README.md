@@ -18,6 +18,7 @@ yarn add sink-npm
 
 The full API of this library can be found in [api.md](https://www.github.com/stainless-sdks/sink-node-public/blob/main/api.md).
 
+<!-- prettier-ignore -->
 ```js
 import Sink from 'sink-npm';
 
@@ -61,6 +62,7 @@ or call `stream.controller.abort()`.
 
 This library includes TypeScript definitions for all request params and response fields. You may import and use them like so:
 
+<!-- prettier-ignore -->
 ```ts
 import Sink from 'sink-npm';
 
@@ -125,6 +127,7 @@ When the library is unable to connect to the API,
 or if the API returns a non-success status code (i.e., 4xx or 5xx response),
 a subclass of `APIError` will be thrown:
 
+<!-- prettier-ignore -->
 ```ts
 async function main() {
   const card = await sink.cards.create({ type: 'an_incorrect_type' }).catch((err) => {
@@ -236,6 +239,7 @@ The "raw" `Response` returned by `fetch()` can be accessed through the `.asRespo
 
 You can also use the `.withResponse()` method to get the raw `Response` along with the parsed data.
 
+<!-- prettier-ignore -->
 ```ts
 const sink = new Sink();
 
@@ -258,12 +262,11 @@ If you would prefer to use a global, web-standards-compliant `fetch` function ev
 (for example, if you are running Node with `--experimental-fetch` or using NextJS which polyfills with `undici`),
 add the following import before your first import `from "Sink"`:
 
-<!-- prettier-ignore -->
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import "sink-npm/shims/web";
-import Sink from "sink-npm";
+import 'sink-npm/shims/web';
+import Sink from 'sink-npm';
 ```
 
 To do the inverse, add `import "sink-npm/shims/node"` (which does import polyfills).
