@@ -58,7 +58,7 @@ Types:
 
 Methods:
 
-- <code title="get /casing/eeoc">client.casing.eeoc.<a href="./src/resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOC</code>
+- <code title="get /casing/eeoc">client.casing.eeoc.<a href="./src/resources/casing/eeoc.ts">list</a>({ ...params }) -> EEOCsPageCursor</code>
 
 # DefaultReqOptions
 
@@ -122,11 +122,49 @@ Methods:
 
 # PaginationTests
 
+## PageNumber
+
+Methods:
+
+- <code title="get /paginated/page_number">client.paginationTests.pageNumber.<a href="./src/resources/pagination-tests/page-number.ts">list</a>({ ...params }) -> MyModelsPagePageNumber</code>
+
+## Refs
+
+Methods:
+
+- <code title="get /paginated/nested_object_ref">client.paginationTests.refs.<a href="./src/resources/pagination-tests/refs.ts">nestedObjectRef</a>({ ...params }) -> MyModelsPageCursorNestedObjectRef</code>
+- <code title="get /paginated/with_shared_model_ref">client.paginationTests.refs.<a href="./src/resources/pagination-tests/refs.ts">withSharedModelRef</a>({ ...params }) -> MyModelsPageCursorSharedRef</code>
+
+## ResponseHeaders
+
+Methods:
+
+- <code title="get /paginated/response_headers/basic_cursor">client.paginationTests.responseHeaders.<a href="./src/resources/pagination-tests/response-headers.ts">basicCursor</a>({ ...params }) -> MyModelsPageCursorFromHeaders</code>
+
+## TopLevelArrays
+
+Methods:
+
+- <code title="get /paginated/top_level_arrays/basic_cursor">client.paginationTests.topLevelArrays.<a href="./src/resources/pagination-tests/top-level-arrays.ts">basicCursor</a>({ ...params }) -> MyModelsPageCursorTopLevelArray</code>
+
 ## Cursor
 
 Methods:
 
-- <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModel</code>
+- <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModelsPageCursor</code>
+
+## Offset
+
+Methods:
+
+- <code title="get /paginated/offset">client.paginationTests.offset.<a href="./src/resources/pagination-tests/offset.ts">list</a>({ ...params }) -> MyModelsPageOffset</code>
+- <code title="get /paginated/offset/with_total_count">client.paginationTests.offset.<a href="./src/resources/pagination-tests/offset.ts">withTotalCount</a>({ ...params }) -> MyModelsPageOffsetTotalCount</code>
+
+## FakePages
+
+Methods:
+
+- <code title="get /paginated/fake_page">client.paginationTests.fakePages.<a href="./src/resources/pagination-tests/fake-pages.ts">list</a>({ ...params }) -> SimpleObjectsFakePage</code>
 
 # Docstrings
 

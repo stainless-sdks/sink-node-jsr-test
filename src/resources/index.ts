@@ -157,6 +157,14 @@ export {
   BodyParamWithDefaultBodyParamOptionalParams,
   BodyParamWithDefaultBodyParamRequiredParams,
   BodyParamWithModelPropertyParams,
+  MyModelsPagePageNumber,
+  MyModelsPageCursorNestedObjectRef,
+  MyModelsPageCursorSharedRef,
+  MyModelsPageCursorFromHeaders,
+  MyModelsPageCursorTopLevelArray,
+  MyModelsPageCursor,
+  MyModelsPageOffset,
+  MyModelsPageOffsetTotalCount,
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';

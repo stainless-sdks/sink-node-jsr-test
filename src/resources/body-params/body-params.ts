@@ -7,6 +7,16 @@ import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import * as Shared from 'sink-npm/resources/shared';
 import * as UnionsAPI from 'sink-npm/resources/body-params/unions';
 import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
+import {
+  PageCursor,
+  PageCursorFromHeaders,
+  PageCursorNestedObjectRef,
+  PageCursorSharedRef,
+  PageCursorTopLevelArray,
+  PageOffset,
+  PageOffsetTotalCount,
+  PagePageNumber,
+} from 'sink-npm/pagination';
 
 export class BodyParams extends APIResource {
   unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
@@ -289,6 +299,22 @@ export class BodyParams extends APIResource {
     });
   }
 }
+
+export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
+
+export class MyModelsPageCursorNestedObjectRef extends PageCursorNestedObjectRef<MyModel> {}
+
+export class MyModelsPageCursorSharedRef extends PageCursorSharedRef<MyModel> {}
+
+export class MyModelsPageCursorFromHeaders extends PageCursorFromHeaders<MyModel> {}
+
+export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyModel> {}
+
+export class MyModelsPageCursor extends PageCursor<MyModel> {}
+
+export class MyModelsPageOffset extends PageOffset<MyModel> {}
+
+export class MyModelsPageOffsetTotalCount extends PageOffsetTotalCount<MyModel> {}
 
 export type ModelWithParamInName = Record<string, string>;
 
