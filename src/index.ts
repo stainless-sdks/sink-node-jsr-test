@@ -602,6 +602,7 @@ export namespace Sink {
   export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 
   export import EmptyBody = API.EmptyBody;
+  export import EmptyBodyStainlessEmptyObjectParams = API.EmptyBodyStainlessEmptyObjectParams;
   export import EmptyBodyTypedParamsParams = API.EmptyBodyTypedParamsParams;
 
   export import QueryParams = API.QueryParams;

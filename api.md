@@ -622,6 +622,7 @@ Methods:
 
 Methods:
 
+- <code title="post /mixed_params/with_empty_body/{path_param}/x_stainless_empty_object">client.emptyBody.<a href="./src/resources/empty-body.ts">stainlessEmptyObject</a>(pathParam, { ...params }) -> BasicSharedModelObject</code>
 - <code title="post /mixed_params/with_empty_body/{path_param}">client.emptyBody.<a href="./src/resources/empty-body.ts">typedParams</a>(pathParam, { ...params }) -> BasicSharedModelObject</code>
 
 # QueryParams

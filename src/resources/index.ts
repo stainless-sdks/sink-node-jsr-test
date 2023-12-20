@@ -65,7 +65,7 @@ export {
   DocstringTrailingDoubleQuoteResponse,
   Docstrings,
 } from './docstrings';
-export { EmptyBodyTypedParamsParams, EmptyBody } from './empty-body';
+export { EmptyBodyStainlessEmptyObjectParams, EmptyBodyTypedParamsParams, EmptyBody } from './empty-body';
 export {
   FileCreateMultipartResponse,
   FileEverythingMultipartResponse,
