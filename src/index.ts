@@ -372,10 +372,10 @@ export class Sink extends Core.APIClient {
   }
 
   protected override validateHeaders(headers: Core.Headers, customHeaders: Core.Headers) {
-    if (this.userToken && headers['Authorization']) {
+    if (this.userToken && headers['authorization']) {
       return;
     }
-    if (customHeaders['Authorization'] === null) {
+    if (customHeaders['authorization'] === null) {
       return;
     }
 
