@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.9.0 (2024-01-04)
+
+Full Changelog: [v0.8.1...v0.9.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.8.1...v0.9.0)
+
+### Features
+
+* add test case for models using $ref syntax ([#318](https://github.com/stainless-sdks/sink-node-public/issues/318)) ([af44441](https://github.com/stainless-sdks/sink-node-public/commit/af4444197c54a06f863e27ba3a20864d564a554d))
+
+
+### Bug Fixes
+
+* **headers:** always send lowercase headers and strip undefined (BREAKING in rare cases) ([#319](https://github.com/stainless-sdks/sink-node-public/issues/319)) ([e4e1765](https://github.com/stainless-sdks/sink-node-public/commit/e4e17650f06e637e872c645c507c90a9f0837881))
+
+
+### Chores
+
+* **internal:** bump license ([#316](https://github.com/stainless-sdks/sink-node-public/issues/316)) ([92411c5](https://github.com/stainless-sdks/sink-node-public/commit/92411c5f2adfd3c8eb2c07134f26f19a4d638dea))
+
 ## 0.8.1 (2023-12-20)
 
 Full Changelog: [v0.8.0...v0.8.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.8.0...v0.8.1)
