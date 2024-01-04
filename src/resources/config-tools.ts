@@ -7,6 +7,16 @@ import * as CardsAPI from 'sink-npm/resources/cards';
 import * as Shared from 'sink-npm/resources/shared';
 
 export class ConfigTools extends APIResource {
+  modelRefFromNestedResponseBody(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ConfigToolModelRefFromNestedResponseBodyResponse> {
+    return this._client.get('/config_tools/model_refs/from_nested_response', options);
+  }
+
+  modelRefFromSchemas(options?: Core.RequestOptions): Core.APIPromise<ConfigToolModelRefFromSchemasResponse> {
+    return this._client.get('/config_tools/model_refs/from_schemas', options);
+  }
+
   /**
    * Create a new virtual or physical card. Parameters `pin`, `shippingAddress`, and
    * `product_id` only apply to physical cards.
@@ -19,7 +29,29 @@ export class ConfigTools extends APIResource {
   }
 }
 
+export interface ModelFromNestedResponseBodyRef {
+  this_should_be_in_a_model?: string;
+}
+
+export interface ModelFromSchemasRef {
+  name: string;
+}
+
 export interface OnlyNodeModel {
+  name: string;
+}
+
+export interface ConfigToolModelRefFromNestedResponseBodyResponse {
+  foo: ConfigToolModelRefFromNestedResponseBodyResponse.Foo;
+}
+
+export namespace ConfigToolModelRefFromNestedResponseBodyResponse {
+  export interface Foo {
+    bar: ConfigToolsAPI.ModelFromNestedResponseBodyRef;
+  }
+}
+
+export interface ConfigToolModelRefFromSchemasResponse {
   name: string;
 }
 
@@ -144,6 +176,10 @@ export interface ConfigToolOnlyInNodeParams {
 }
 
 export namespace ConfigTools {
+  export import ModelFromNestedResponseBodyRef = ConfigToolsAPI.ModelFromNestedResponseBodyRef;
+  export import ModelFromSchemasRef = ConfigToolsAPI.ModelFromSchemasRef;
   export import OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
+  export import ConfigToolModelRefFromNestedResponseBodyResponse = ConfigToolsAPI.ConfigToolModelRefFromNestedResponseBodyResponse;
+  export import ConfigToolModelRefFromSchemasResponse = ConfigToolsAPI.ConfigToolModelRefFromSchemasResponse;
   export import ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
 }

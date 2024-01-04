@@ -126,6 +126,15 @@ export {
   Responses,
 } from './responses/responses';
 export {
+  ModelFromNestedResponseBodyRef,
+  ModelFromSchemasRef,
+  OnlyNodeModel,
+  ConfigToolModelRefFromNestedResponseBodyResponse,
+  ConfigToolModelRefFromSchemasResponse,
+  ConfigToolOnlyInNodeParams,
+  ConfigTools,
+} from './config-tools';
+export {
   ModelReferencedInParentAndChild,
   ModelReferencedInParentAndChildResource,
 } from './model-referenced-in-parent-and-child/model-referenced-in-parent-and-child';
@@ -168,7 +177,6 @@ export {
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
-export { OnlyNodeModel, ConfigToolOnlyInNodeParams, ConfigTools } from './config-tools';
 export {
   OpenapiFormatArrayTypeOneEntryResponse,
   OpenapiFormatArrayTypeOneEntryWithNullResponse,
