@@ -4,9 +4,11 @@ export {
   Balance,
   NameChildPropImportClashResponse,
   NamePropertiesCommonConflictsResponse,
+  NamePropertiesIllegalJavascriptIdentifiersResponse,
   NameResponsePropertyClashesModelImportResponse,
   NameResponseShadowsPydanticResponse,
   NamePropertiesCommonConflictsParams,
+  NamePropertiesIllegalJavascriptIdentifiersParams,
   Names,
 } from './names';
 export { CanCauseClashes } from './can-cause-clashes/index';

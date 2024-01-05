@@ -42,6 +42,17 @@ export class Names extends APIResource {
   }
 
   /**
+   * Endpoint with request & response properties with names that aren't legal
+   * javascript identifiers.
+   */
+  propertiesIllegalJavascriptIdentifiers(
+    body: NamePropertiesIllegalJavascriptIdentifiersParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NamePropertiesIllegalJavascriptIdentifiersResponse> {
+    return this._client.post('/names/properties_illegal_javascript_identifiers', { body, ...options });
+  }
+
+  /**
    * Endpoint with a response model property that can cause clashes with a model
    * import.
    */
@@ -114,6 +125,16 @@ export interface NamePropertiesCommonConflictsResponse {
   int_2: number;
 }
 
+export type NamePropertiesIllegalJavascriptIdentifiersResponse =
+  | NamePropertiesIllegalJavascriptIdentifiersResponse._2llegalJavascriptIdentifiers
+  | number;
+
+export namespace NamePropertiesIllegalJavascriptIdentifiersResponse {
+  export interface _2llegalJavascriptIdentifiers {
+    irrelevant?: number;
+  }
+}
+
 export interface NameResponsePropertyClashesModelImportResponse {
   balance: Balance;
 
@@ -163,13 +184,27 @@ export interface NamePropertiesCommonConflictsParams {
   int_2: number;
 }
 
+export type NamePropertiesIllegalJavascriptIdentifiersParams =
+  | NamePropertiesIllegalJavascriptIdentifiersParams._2llegalJavascriptIdentifiers
+  | NamePropertiesIllegalJavascriptIdentifiersParams._3llegalJavascriptIdentifiers;
+
+export namespace NamePropertiesIllegalJavascriptIdentifiersParams {
+  export interface _2llegalJavascriptIdentifiers {
+    irrelevant?: number;
+  }
+
+  export type _3llegalJavascriptIdentifiers = number;
+}
+
 export namespace Names {
   export import Balance = NamesAPI.Balance;
   export import NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
   export import NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
+  export import NamePropertiesIllegalJavascriptIdentifiersResponse = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersResponse;
   export import NameResponsePropertyClashesModelImportResponse = NamesAPI.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
+  export import NamePropertiesIllegalJavascriptIdentifiersParams = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersParams;
   export import Unions = UnionsAPI.Unions;
   export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
   export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;

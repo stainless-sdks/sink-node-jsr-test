@@ -24,9 +24,11 @@ export {
   Balance,
   NameChildPropImportClashResponse,
   NamePropertiesCommonConflictsResponse,
+  NamePropertiesIllegalJavascriptIdentifiersResponse,
   NameResponsePropertyClashesModelImportResponse,
   NameResponseShadowsPydanticResponse,
   NamePropertiesCommonConflictsParams,
+  NamePropertiesIllegalJavascriptIdentifiersParams,
   Names,
 } from './names/names';
 export { BinaryWithPathAndBodyParamParams, Binaries } from './binaries';

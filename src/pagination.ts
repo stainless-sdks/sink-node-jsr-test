@@ -330,8 +330,8 @@ export class PagePageNumber<Item> extends AbstractPage<Item> implements PagePage
     super(client, response, body, options);
 
     this.data = body.data || [];
-    this.page = body.page || 0.0;
-    this.last_page = body.last_page || 0.0;
+    this.page = body.page || 0;
+    this.last_page = body.last_page || 0;
   }
 
   getPaginatedItems(): Item[] {
