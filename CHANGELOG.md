@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.1 (2024-01-05)
+
+Full Changelog: [v0.9.0...v0.9.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.9.0...v0.9.1)
+
+### Bug Fixes
+
+* escape interface names, fix pagination types ([#322](https://github.com/stainless-sdks/sink-node-public/issues/322)) ([0a228e9](https://github.com/stainless-sdks/sink-node-public/commit/0a228e99bcea8564b0a863a285b67bf23d1a4848))
+
+
+### Chores
+
+* **internal:** improve type signatures ([#320](https://github.com/stainless-sdks/sink-node-public/issues/320)) ([220ae0d](https://github.com/stainless-sdks/sink-node-public/commit/220ae0da055b3a945641971a724fefc43e763c10))
+
 ## 0.9.0 (2024-01-04)
 
 Full Changelog: [v0.8.1...v0.9.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.8.1...v0.9.0)
