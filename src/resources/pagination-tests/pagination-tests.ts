@@ -3,6 +3,7 @@
 import { APIResource } from 'sink-npm/resource';
 import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
 import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
+import * as ItemsTypesAPI from 'sink-npm/resources/pagination-tests/items-types';
 import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
 import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
 import * as RefsAPI from 'sink-npm/resources/pagination-tests/refs';
@@ -10,6 +11,7 @@ import * as ResponseHeadersAPI from 'sink-npm/resources/pagination-tests/respons
 import * as TopLevelArraysAPI from 'sink-npm/resources/pagination-tests/top-level-arrays';
 
 export class PaginationTests extends APIResource {
+  itemsTypes: ItemsTypesAPI.ItemsTypes = new ItemsTypesAPI.ItemsTypes(this._client);
   pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this._client);
   refs: RefsAPI.Refs = new RefsAPI.Refs(this._client);
   responseHeaders: ResponseHeadersAPI.ResponseHeaders = new ResponseHeadersAPI.ResponseHeaders(this._client);
@@ -20,6 +22,10 @@ export class PaginationTests extends APIResource {
 }
 
 export namespace PaginationTests {
+  export import ItemsTypes = ItemsTypesAPI.ItemsTypes;
+  export import ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
+  export import ItemsTypeListUnknownResponsesPagePageNumber = ItemsTypesAPI.ItemsTypeListUnknownResponsesPagePageNumber;
+  export import ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
   export import PageNumber = PageNumberAPI.PageNumber;
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
   export import Refs = RefsAPI.Refs;

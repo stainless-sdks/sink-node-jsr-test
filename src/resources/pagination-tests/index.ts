@@ -2,6 +2,12 @@
 
 export { CursorListParams, Cursor } from './cursor';
 export { FakePageListParams, FakePages } from './fake-pages';
+export {
+  ItemsTypeListUnknownResponse,
+  ItemsTypeListUnknownParams,
+  ItemsTypeListUnknownResponsesPagePageNumber,
+  ItemsTypes,
+} from './items-types';
 export { OffsetListParams, OffsetWithTotalCountParams, Offset } from './offset';
 export { PageNumberListParams, PageNumber } from './page-number';
 export { PaginationTests } from './pagination-tests';

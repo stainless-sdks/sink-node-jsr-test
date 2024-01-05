@@ -122,6 +122,16 @@ Methods:
 
 # PaginationTests
 
+## ItemsTypes
+
+Types:
+
+- <code><a href="./src/resources/pagination-tests/items-types.ts">ItemsTypeListUnknownResponse</a></code>
+
+Methods:
+
+- <code title="get /paginated/items_types/unknown">client.paginationTests.itemsTypes.<a href="./src/resources/pagination-tests/items-types.ts">listUnknown</a>({ ...params }) -> ItemsTypeListUnknownResponsesPagePageNumber</code>
+
 ## PageNumber
 
 Methods:
