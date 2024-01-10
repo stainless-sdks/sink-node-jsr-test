@@ -199,6 +199,30 @@ describe('instantiate client', () => {
       expect(client.baseURL).toEqual('https://example.com/from_env');
     });
 
+    test('empty env variable', () => {
+      process.env['SINK_BASE_URL'] = ''; // empty
+      const client = new Sink({
+        userToken: 'My User Token',
+        username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
+        requiredArgNoEnv: '<example>',
+      });
+      expect(client.baseURL).toEqual('https://demo.stainlessapi.com/');
+    });
+
+    test('blank env variable', () => {
+      process.env['SINK_BASE_URL'] = '  '; // blank
+      const client = new Sink({
+        userToken: 'My User Token',
+        username: 'Robert',
+        someNumberArgRequiredNoDefault: 0,
+        someNumberArgRequiredNoDefaultNoEnv: 0,
+        requiredArgNoEnv: '<example>',
+      });
+      expect(client.baseURL).toEqual('https://demo.stainlessapi.com/');
+    });
+
     test('env variable with environment', () => {
       process.env['SINK_BASE_URL'] = 'https://example.com/from_env';
 
