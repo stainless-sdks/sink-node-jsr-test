@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.10.0 (2024-01-10)
+
+Full Changelog: [v0.9.1...v0.10.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.9.1...v0.10.0)
+
+### Features
+
+* **types:** add test for unknown paginated items ([#323](https://github.com/stainless-sdks/sink-node-public/issues/323)) ([ab867f6](https://github.com/stainless-sdks/sink-node-public/commit/ab867f6c98fae37d46e8083b5063434bf5e1cfdd))
+
+
+### Bug Fixes
+
+* use default base url if BASE_URL env var is blank ([#326](https://github.com/stainless-sdks/sink-node-public/issues/326)) ([ce1c03f](https://github.com/stainless-sdks/sink-node-public/commit/ce1c03f8d38a00074186b79c360c15c6c4a20955))
+
+
+### Chores
+
+* add .keep files for examples and custom code directories ([#325](https://github.com/stainless-sdks/sink-node-public/issues/325)) ([4441763](https://github.com/stainless-sdks/sink-node-public/commit/44417637997667eca53ca0b5567a3da0947149f6))
+
 ## 0.9.1 (2024-01-05)
 
 Full Changelog: [v0.9.0...v0.9.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.9.0...v0.9.1)
