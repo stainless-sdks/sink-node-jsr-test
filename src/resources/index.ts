@@ -179,6 +179,7 @@ export {
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
+export { OnlyCustomMethods } from './only-custom-methods';
 export {
   OpenapiFormatArrayTypeOneEntryResponse,
   OpenapiFormatArrayTypeOneEntryWithNullResponse,

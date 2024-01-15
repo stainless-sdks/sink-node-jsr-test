@@ -327,6 +327,7 @@ export class Sink extends Core.APIClient {
   sharedQueryParams: API.SharedQueryParams = new API.SharedQueryParams(this);
   modelReferencedInParentAndChild: API.ModelReferencedInParentAndChildResource =
     new API.ModelReferencedInParentAndChildResource(this);
+  onlyCustomMethods: API.OnlyCustomMethods = new API.OnlyCustomMethods(this);
 
   /**
    * API status check
@@ -693,6 +694,8 @@ export namespace Sink {
 
   export import ModelReferencedInParentAndChildResource = API.ModelReferencedInParentAndChildResource;
   export import ModelReferencedInParentAndChild = API.ModelReferencedInParentAndChild;
+
+  export import OnlyCustomMethods = API.OnlyCustomMethods;
 
   export import BasicSharedModelObject = API.BasicSharedModelObject;
   export import Currency = API.Currency;

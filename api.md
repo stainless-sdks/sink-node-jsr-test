@@ -866,3 +866,9 @@ Methods:
 Methods:
 
 - <code title="get /model_referenced_in_parent_and_child/child">client.modelReferencedInParentAndChild.child.<a href="./src/resources/model-referenced-in-parent-and-child/child.ts">retrieve</a>() -> ModelReferencedInParentAndChild</code>
+
+# OnlyCustomMethods
+
+Methods:
+
+- <code>client.onlyCustomMethods.<a href="./src/resources/only-custom-methods.ts">getAuthURL</a>({ redirectUri, clientId }) -> string</code>
