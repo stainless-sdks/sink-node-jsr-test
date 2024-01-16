@@ -37,6 +37,16 @@ export class PathParams extends APIResource {
   }
 
   /**
+   * Endpoint with a singular path parameter that is an enum type.
+   */
+  enumParam(
+    enumParam: 'A' | 'B' | 'C',
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
+    return this._client.post(`/path_params/enums/${enumParam}`, options);
+  }
+
+  /**
    * Endpoint with a singular path parameter that is of an integer type.
    */
   integerParam(

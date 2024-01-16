@@ -617,6 +617,7 @@ Methods:
 - <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./src/resources/path-params.ts">dashedParam</a>(dashedParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/dates/{date_param}">client.pathParams.<a href="./src/resources/path-params.ts">dateParam</a>(dateParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/date_times/{datetime_param}">client.pathParams.<a href="./src/resources/path-params.ts">datetimeParam</a>(datetimeParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/enums/{enum_param}">client.pathParams.<a href="./src/resources/path-params.ts">enumParam</a>(enumParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{integer_param}">client.pathParams.<a href="./src/resources/path-params.ts">integerParam</a>(integerParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./src/resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./src/resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> BasicSharedModelObject</code>
