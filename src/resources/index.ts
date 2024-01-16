@@ -46,6 +46,15 @@ export {
   Cards,
 } from './cards';
 export { Casing } from './casing/casing';
+export {
+  ClientParamWithPathParamResponse,
+  ClientParamWithPathParamAndStandardResponse,
+  ClientParamWithQueryParamResponse,
+  ClientParamWithPathParamParams,
+  ClientParamWithPathParamAndStandardParams,
+  ClientParamWithQueryParamParams,
+  ClientParams,
+} from './client-params';
 export { Company, CompanyResource } from './company/company';
 export {
   ComplexQueryArrayQueryResponse,
@@ -56,11 +65,6 @@ export {
 } from './complex-queries';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
 export { DeeplyNested } from './deeply-nested/deeply-nested';
-export {
-  DefaultPathParamGlobalWithStandardResponse,
-  DefaultPathParamOnlyGlobalResponse,
-  DefaultPathParams,
-} from './default-path-params';
 export { DefaultReqOptions } from './default-req-options/default-req-options';
 export {
   DocstringLeadingDoubleQuoteResponse,
@@ -179,6 +183,7 @@ export {
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
+export { OnlyCustomMethods } from './only-custom-methods';
 export {
   OpenapiFormatArrayTypeOneEntryResponse,
   OpenapiFormatArrayTypeOneEntryWithNullResponse,

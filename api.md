@@ -522,17 +522,19 @@ Methods:
 
 - <code title="get /widgets/{widgetId}/filter/{filterType}">client.widgets.<a href="./src/resources/widgets.ts">retrieveWithFilter</a>(widgetId, filterType) -> Widget</code>
 
-# DefaultPathParams
+# ClientParams
 
 Types:
 
-- <code><a href="./src/resources/default-path-params.ts">DefaultPathParamGlobalWithStandardResponse</a></code>
-- <code><a href="./src/resources/default-path-params.ts">DefaultPathParamOnlyGlobalResponse</a></code>
+- <code><a href="./src/resources/client-params.ts">ClientParamWithPathParamResponse</a></code>
+- <code><a href="./src/resources/client-params.ts">ClientParamWithPathParamAndStandardResponse</a></code>
+- <code><a href="./src/resources/client-params.ts">ClientParamWithQueryParamResponse</a></code>
 
 Methods:
 
-- <code title="post /default_path_params/path_params/{camelCasedPath}/{id}">client.defaultPathParams.<a href="./src/resources/default-path-params.ts">globalWithStandard</a>(camelCasedPath, id) -> DefaultPathParamGlobalWithStandardResponse</code>
-- <code title="post /default_path_params/path_params/{client_path_param}">client.defaultPathParams.<a href="./src/resources/default-path-params.ts">onlyGlobal</a>(clientPathParam) -> DefaultPathParamOnlyGlobalResponse</code>
+- <code title="post /client_params/path_params/{client_path_param}/{client_path_or_query_param}">client.clientParams.<a href="./src/resources/client-params.ts">withPathParam</a>({ ...params }) -> ClientParamWithPathParamResponse</code>
+- <code title="post /client_params/path_params/{camelCasedPath}/{id}">client.clientParams.<a href="./src/resources/client-params.ts">withPathParamAndStandard</a>(id, { ...params }) -> ClientParamWithPathParamAndStandardResponse</code>
+- <code title="post /client_params/query_params">client.clientParams.<a href="./src/resources/client-params.ts">withQueryParam</a>({ ...params }) -> ClientParamWithQueryParamResponse</code>
 
 # Responses
 
@@ -615,6 +617,7 @@ Methods:
 - <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./src/resources/path-params.ts">dashedParam</a>(dashedParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/dates/{date_param}">client.pathParams.<a href="./src/resources/path-params.ts">dateParam</a>(dateParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/date_times/{datetime_param}">client.pathParams.<a href="./src/resources/path-params.ts">datetimeParam</a>(datetimeParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/enums/{enum_param}">client.pathParams.<a href="./src/resources/path-params.ts">enumParam</a>(enumParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{integer_param}">client.pathParams.<a href="./src/resources/path-params.ts">integerParam</a>(integerParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./src/resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./src/resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> BasicSharedModelObject</code>
@@ -866,3 +869,9 @@ Methods:
 Methods:
 
 - <code title="get /model_referenced_in_parent_and_child/child">client.modelReferencedInParentAndChild.child.<a href="./src/resources/model-referenced-in-parent-and-child/child.ts">retrieve</a>() -> ModelReferencedInParentAndChild</code>
+
+# OnlyCustomMethods
+
+Methods:
+
+- <code>client.onlyCustomMethods.<a href="./src/resources/only-custom-methods.ts">getAuthURL</a>({ redirectUri, clientId }) -> string</code>

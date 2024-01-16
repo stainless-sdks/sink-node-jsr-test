@@ -67,6 +67,24 @@ describe('resource pathParams', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('enumParam', async () => {
+    const responsePromise = sink.pathParams.enumParam('A');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('enumParam: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(sink.pathParams.enumParam('A', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('integerParam', async () => {
     const responsePromise = sink.pathParams.integerParam(0);
     const rawResponse = await responsePromise.asResponse();

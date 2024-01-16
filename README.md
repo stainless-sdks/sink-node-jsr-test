@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
-The API documentation can be found [here](https://stainlessapi.com).
+The REST API documentation can be found [on stainlessapi.com](https://stainlessapi.com). The full API of this library can be found in [api.md](https://www.github.com/stainless-sdks/sink-node-public/blob/main/api.md).
 
 ## Installation
 
@@ -280,8 +280,8 @@ import { fetch } from 'undici'; // as one example
 import Sink from 'sink-npm';
 
 const client = new Sink({
-  fetch: (url: RequestInfo, init?: RequestInfo): Response => {
-    console.log('About to make request', url, init);
+  fetch: async (url: RequestInfo, init?: RequestInfo): Promise<Response> => {
+    console.log('About to make a request', url, init);
     const response = await fetch(url, init);
     console.log('Got response', response);
     return response;
