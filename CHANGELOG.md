@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.11.0-beta.1 (2024-01-16)
+
+Full Changelog: [v0.10.0...v0.11.0-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.10.0...v0.11.0-beta.1)
+
+### Features
+
+* add and test `send_as_query_param` and `send_as_path_param` ([#332](https://github.com/stainless-sdks/sink-node-public/issues/332)) ([0a7053f](https://github.com/stainless-sdks/sink-node-public/commit/0a7053fb2cc20755c0b0f381c5bd67c14acd34f5))
+* add path param enum test ([#333](https://github.com/stainless-sdks/sink-node-public/issues/333)) ([9ab5755](https://github.com/stainless-sdks/sink-node-public/commit/9ab5755e39945bccfc56eb969af52902796e4a97))
+* add test for resource with only custom methods ([#331](https://github.com/stainless-sdks/sink-node-public/issues/331)) ([b54329d](https://github.com/stainless-sdks/sink-node-public/commit/b54329d66799833b308e71b5e1ac84efed1f0202))
+
+
+### Chores
+
+* **internal:** narrow type into stringifyQuery ([#327](https://github.com/stainless-sdks/sink-node-public/issues/327)) ([9932f78](https://github.com/stainless-sdks/sink-node-public/commit/9932f7831420e776b9b67d5103b02c4b1fd0b998))
+
+
+### Documentation
+
+* fix missing async in readme code sample ([#330](https://github.com/stainless-sdks/sink-node-public/issues/330)) ([8e27114](https://github.com/stainless-sdks/sink-node-public/commit/8e2711496176f439fa5bd2cc4219c6ee9908e72a))
+* **readme:** improve api reference ([#329](https://github.com/stainless-sdks/sink-node-public/issues/329)) ([41d9c6b](https://github.com/stainless-sdks/sink-node-public/commit/41d9c6b90f19aef863cdb9462ae5f64277023c65))
+
 ## 0.10.0 (2024-01-10)
 
 Full Changelog: [v0.9.1...v0.10.0](https://github.com/stainless-sdks/sink-node-public/compare/v0.9.1...v0.10.0)
