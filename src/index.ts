@@ -70,6 +70,10 @@ export interface ClientOptions {
 
   camelCasePath?: string | null;
 
+  clientQueryParam?: string | null;
+
+  clientPathOrQueryParam?: string | null;
+
   /**
    * Specifies the environment to use for the API.
    *
@@ -158,6 +162,8 @@ export class Sink extends Core.APIClient {
   requiredArgNoEnvWithDefault: string;
   clientPathParam: string | null;
   camelCasePath: string | null;
+  clientQueryParam: string | null;
+  clientPathOrQueryParam: string | null;
 
   private _options: ClientOptions;
 
@@ -178,6 +184,8 @@ export class Sink extends Core.APIClient {
    * @param {string} [opts.requiredArgNoEnvWithDefault=hi!]
    * @param {string | null} [opts.clientPathParam]
    * @param {string | null} [opts.camelCasePath]
+   * @param {string | null} [opts.clientQueryParam]
+   * @param {string | null} [opts.clientPathOrQueryParam]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL=process.env['SINK_BASE_URL'] ?? https://demo.stainlessapi.com/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
@@ -204,6 +212,8 @@ export class Sink extends Core.APIClient {
     requiredArgNoEnvWithDefault = 'hi!',
     clientPathParam = null,
     camelCasePath = null,
+    clientQueryParam = null,
+    clientPathOrQueryParam = null,
     ...opts
   }: ClientOptions) {
     if (username === undefined) {
@@ -242,6 +252,8 @@ export class Sink extends Core.APIClient {
       requiredArgNoEnvWithDefault,
       clientPathParam,
       camelCasePath,
+      clientQueryParam,
+      clientPathOrQueryParam,
       ...opts,
       baseURL,
       environment: opts.environment ?? 'production',
@@ -283,6 +295,8 @@ export class Sink extends Core.APIClient {
     this.requiredArgNoEnvWithDefault = requiredArgNoEnvWithDefault;
     this.clientPathParam = clientPathParam;
     this.camelCasePath = camelCasePath;
+    this.clientQueryParam = clientQueryParam;
+    this.clientPathOrQueryParam = clientPathOrQueryParam;
   }
 
   testing: API.Testing = new API.Testing(this);
@@ -308,7 +322,7 @@ export class Sink extends Core.APIClient {
   types: API.Types = new API.Types(this);
   names: API.Names = new API.Names(this);
   widgets: API.Widgets = new API.Widgets(this);
-  defaultPathParams: API.DefaultPathParams = new API.DefaultPathParams(this);
+  clientParams: API.ClientParams = new API.ClientParams(this);
   responses: API.Responses = new API.Responses(this);
   pathParams: API.PathParams = new API.PathParams(this);
   positionalParams: API.PositionalParams = new API.PositionalParams(this);
@@ -565,9 +579,13 @@ export namespace Sink {
   export import Widgets = API.Widgets;
   export import Widget = API.Widget;
 
-  export import DefaultPathParams = API.DefaultPathParams;
-  export import DefaultPathParamGlobalWithStandardResponse = API.DefaultPathParamGlobalWithStandardResponse;
-  export import DefaultPathParamOnlyGlobalResponse = API.DefaultPathParamOnlyGlobalResponse;
+  export import ClientParams = API.ClientParams;
+  export import ClientParamWithPathParamResponse = API.ClientParamWithPathParamResponse;
+  export import ClientParamWithPathParamAndStandardResponse = API.ClientParamWithPathParamAndStandardResponse;
+  export import ClientParamWithQueryParamResponse = API.ClientParamWithQueryParamResponse;
+  export import ClientParamWithPathParamParams = API.ClientParamWithPathParamParams;
+  export import ClientParamWithPathParamAndStandardParams = API.ClientParamWithPathParamAndStandardParams;
+  export import ClientParamWithQueryParamParams = API.ClientParamWithQueryParamParams;
 
   export import Responses = API.Responses;
   export import ModelFromNestedPath = API.ModelFromNestedPath;
