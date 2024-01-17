@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.1-beta.1 (2024-01-17)
+
+Full Changelog: [v0.11.0-beta.1...v0.11.1-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.11.0-beta.1...v0.11.1-beta.1)
+
+### Bug Fixes
+
+* use `Accept: */*` as a default Header for void endpoints ([#334](https://github.com/stainless-sdks/sink-node-public/issues/334)) ([3ee58af](https://github.com/stainless-sdks/sink-node-public/commit/3ee58af2d2d2b416b7564a5429617f1991c629de))
+
 ## 0.11.0-beta.1 (2024-01-16)
 
 Full Changelog: [v0.10.0...v0.11.0-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.10.0...v0.11.0-beta.1)
