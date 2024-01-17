@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.11.2-beta.1 (2024-01-17)
+
+Full Changelog: [v0.11.1-beta.1...v0.11.2-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.11.1-beta.1...v0.11.2-beta.1)
+
+### Bug Fixes
+
+* **types:** accept undefined for optional client options ([#338](https://github.com/stainless-sdks/sink-node-public/issues/338)) ([9d60a2a](https://github.com/stainless-sdks/sink-node-public/commit/9d60a2aed1451277223e0645ba7cfd55a783365f))
+
+
+### Chores
+
+* **internal:** debug logging for retries; speculative retry-after-ms support ([#336](https://github.com/stainless-sdks/sink-node-public/issues/336)) ([9e87865](https://github.com/stainless-sdks/sink-node-public/commit/9e8786596e3be92414065575124c256639344d1c))
+
 ## 0.11.1-beta.1 (2024-01-17)
 
 Full Changelog: [v0.11.0-beta.1...v0.11.1-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.11.0-beta.1...v0.11.1-beta.1)
