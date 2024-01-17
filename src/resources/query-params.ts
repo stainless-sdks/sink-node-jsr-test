@@ -21,7 +21,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/allOf', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -40,7 +40,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/anyOf', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -62,7 +62,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/anyOfStringOrArray', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -81,7 +81,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/array', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -100,7 +100,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/enum', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -119,7 +119,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/object', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -138,7 +138,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/oneOf', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -157,7 +157,7 @@ export class QueryParams extends APIResource {
     return this._client.get('/query_params/primitives', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

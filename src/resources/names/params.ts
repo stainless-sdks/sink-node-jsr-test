@@ -12,7 +12,7 @@ export class Params extends APIResource {
     return this._client.post('/names/body_params/options', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -23,7 +23,7 @@ export class Params extends APIResource {
     return this._client.post('/names/body_params/timeout', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

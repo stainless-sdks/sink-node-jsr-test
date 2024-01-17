@@ -16,7 +16,7 @@ export class Unions extends APIResource {
     return this._client.post('/body_params/unions/param_union_enum_new_type', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

@@ -10,7 +10,7 @@ export class Tests extends APIResource {
   runCodegen(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.get('/tests/run_codegen', {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

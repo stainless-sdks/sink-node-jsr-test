@@ -43,7 +43,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/object_with_array_of_objects', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -58,7 +58,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/param_in_model_name_ref', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -73,7 +73,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/property_model_ref', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -88,7 +88,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/property_with_complex_union', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -103,7 +103,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/property_with_heavily_nested_complex_union', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -118,7 +118,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/read_only_properties', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -133,7 +133,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/string_map_model_ref', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -158,7 +158,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/top_level_allOf_nested_object', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -179,7 +179,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/top_level_array', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -193,7 +193,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/top_level_array_with_children', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -208,7 +208,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/top_level_oneOf_one_entry', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -231,7 +231,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/top_level_shared_type', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -265,7 +265,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/with_default_body_param_optional', {
       body: { my_version_body_param, ...body },
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -280,7 +280,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/with_default_body_param_required', {
       body: { my_version_body_param, ...body },
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -295,7 +295,7 @@ export class BodyParams extends APIResource {
     return this._client.post('/body_params/with_model_property', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

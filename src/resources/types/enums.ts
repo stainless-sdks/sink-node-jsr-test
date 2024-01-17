@@ -14,7 +14,7 @@ export class Enums extends APIResource {
     return this._client.post('/types/enum_tests_array_unique_values', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -29,7 +29,7 @@ export class Enums extends APIResource {
     return this._client.post('/types/enum_tests_array_unique_values_2_values', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -44,7 +44,7 @@ export class Enums extends APIResource {
     return this._client.post('/types/enum_tests_array_unique_values_numbers', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 

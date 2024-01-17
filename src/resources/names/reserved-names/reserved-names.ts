@@ -21,7 +21,7 @@ export class ReservedNames extends APIResource {
     return this._client.post('/names/reserved_names/common_reserved_params', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

@@ -29,7 +29,7 @@ export class Arrays extends APIResource {
     return this._client.post('/types/array/model_nested_in_params', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 

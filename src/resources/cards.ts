@@ -48,7 +48,7 @@ export class Cards extends APIResource {
   deprecatedAllButGoDiffMessage(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post('/deprecations/method_all_but_go_diff_message', {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -61,7 +61,7 @@ export class Cards extends APIResource {
   deprecatedAllDiffMessage(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post('/deprecations/method_all_but_go_diff_message', {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -89,7 +89,7 @@ export class Cards extends APIResource {
   deprecatedMethod(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post('/deprecations/method', {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -100,7 +100,7 @@ export class Cards extends APIResource {
   deprecatedOnlyGo(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post('/deprecations/method_only_go', {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 

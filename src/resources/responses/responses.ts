@@ -70,7 +70,7 @@ export class Responses extends APIResource {
   emptyResponse(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post('/responses/empty', {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 

@@ -12,7 +12,7 @@ export class PositionalParams extends APIResource {
     return this._client.post('/positional_params/basic_body', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -23,7 +23,7 @@ export class PositionalParams extends APIResource {
     return this._client.get('/positional_params/basic_query', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -34,7 +34,7 @@ export class PositionalParams extends APIResource {
     return this._client.post('/positional_params/body', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -48,7 +48,7 @@ export class PositionalParams extends APIResource {
     return this._client.post('/positional_params/body_extra_param', {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -73,7 +73,7 @@ export class PositionalParams extends APIResource {
       query: { imACamel, option1, option2, really_cool_snake },
       body,
       ...options,
-      headers: { Accept: '', 'X-Custom-Header': xCustomHeader || '', ...options?.headers },
+      headers: { Accept: '*/*', 'X-Custom-Header': xCustomHeader || '', ...options?.headers },
     });
   }
 
@@ -89,7 +89,7 @@ export class PositionalParams extends APIResource {
     return this._client.post(`/positional_params/${first}/${second}/${last}`, {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -100,7 +100,7 @@ export class PositionalParams extends APIResource {
     return this._client.get('/positional_params/query', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -116,7 +116,7 @@ export class PositionalParams extends APIResource {
     return this._client.post(`/positional_params/query/${id}`, {
       query: { bar },
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -130,7 +130,7 @@ export class PositionalParams extends APIResource {
     return this._client.get('/positional_params/query_multiple', {
       query,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -140,7 +140,7 @@ export class PositionalParams extends APIResource {
   single(single: string, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.get(`/positional_params/${single}`, {
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 
@@ -155,7 +155,7 @@ export class PositionalParams extends APIResource {
     return this._client.post(`/positional_params/body/union/${id}`, {
       body,
       ...options,
-      headers: { Accept: '', ...options?.headers },
+      headers: { Accept: '*/*', ...options?.headers },
     });
   }
 }

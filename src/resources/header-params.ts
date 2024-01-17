@@ -20,7 +20,11 @@ export class HeaderParams extends APIResource {
     return this._client.post('/header_params/client_argument', {
       body,
       ...options,
-      headers: { Accept: '', 'X-Custom-Endpoint-Header': xCustomEndpointHeader || '', ...options?.headers },
+      headers: {
+        Accept: '*/*',
+        'X-Custom-Endpoint-Header': xCustomEndpointHeader || '',
+        ...options?.headers,
+      },
     });
   }
 }
