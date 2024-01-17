@@ -18,61 +18,61 @@ export interface ClientOptions {
   /**
    * The API Key for the SINK API, sent as a bearer token
    */
-  userToken?: string | null;
+  userToken?: string | null | undefined;
 
   /**
    * Defaults to process.env['SINK_USER'].
    */
-  username?: string;
+  username?: string | undefined;
 
   /**
    * Defaults to process.env['SINK_CLIENT_ID'].
    */
-  clientId?: string | null;
+  clientId?: string | null | undefined;
 
   /**
    * Defaults to process.env['SINK_CLIENT_SECRET'].
    */
-  clientSecret?: string | null;
+  clientSecret?: string | null | undefined;
 
   /**
    * Defaults to process.env['SINK_SOME_BOOLEAN_ARG'].
    */
-  someBooleanArg?: boolean | null;
+  someBooleanArg?: boolean | null | undefined;
 
   /**
    * Defaults to process.env['SINK_SOME_INTEGER_ARG'].
    */
-  someIntegerArg?: number | null;
+  someIntegerArg?: number | null | undefined;
 
   /**
    * Defaults to process.env['SINK_SOME_NUMBER_ARG'].
    */
-  someNumberArg?: number | null;
+  someNumberArg?: number | null | undefined;
 
   /**
    * Defaults to process.env['SINK_SOME_NUMBER_ARG'].
    */
-  someNumberArgRequired?: number;
+  someNumberArgRequired?: number | undefined;
 
   /**
    * Defaults to process.env['SINK_SOME_NUMBER_ARG'].
    */
-  someNumberArgRequiredNoDefault?: number;
+  someNumberArgRequiredNoDefault?: number | undefined;
 
   someNumberArgRequiredNoDefaultNoEnv: number;
 
   requiredArgNoEnv: string;
 
-  requiredArgNoEnvWithDefault?: string;
+  requiredArgNoEnvWithDefault?: string | undefined;
 
-  clientPathParam?: string | null;
+  clientPathParam?: string | null | undefined;
 
-  camelCasePath?: string | null;
+  camelCasePath?: string | null | undefined;
 
-  clientQueryParam?: string | null;
+  clientQueryParam?: string | null | undefined;
 
-  clientPathOrQueryParam?: string | null;
+  clientPathOrQueryParam?: string | null | undefined;
 
   /**
    * Specifies the environment to use for the API.
@@ -170,22 +170,22 @@ export class Sink extends Core.APIClient {
   /**
    * API Client for interfacing with the Sink API.
    *
-   * @param {string | null} [opts.userToken=process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
-   * @param {string} [opts.username=process.env['SINK_USER'] ?? undefined]
-   * @param {string | null} [opts.clientId=process.env['SINK_CLIENT_ID'] ?? null]
-   * @param {string | null} [opts.clientSecret=process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
-   * @param {boolean | null} [opts.someBooleanArg=process.env['SINK_SOME_BOOLEAN_ARG'] ?? true]
-   * @param {number | null} [opts.someIntegerArg=process.env['SINK_SOME_INTEGER_ARG'] ?? 123]
-   * @param {number | null} [opts.someNumberArg=process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
-   * @param {number} [opts.someNumberArgRequired=process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
-   * @param {number} [opts.someNumberArgRequiredNoDefault=process.env['SINK_SOME_NUMBER_ARG'] ?? undefined]
+   * @param {string | null | undefined} [opts.userToken=process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
+   * @param {string | undefined} [opts.username=process.env['SINK_USER'] ?? undefined]
+   * @param {string | null | undefined} [opts.clientId=process.env['SINK_CLIENT_ID'] ?? null]
+   * @param {string | null | undefined} [opts.clientSecret=process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
+   * @param {boolean | null | undefined} [opts.someBooleanArg=process.env['SINK_SOME_BOOLEAN_ARG'] ?? true]
+   * @param {number | null | undefined} [opts.someIntegerArg=process.env['SINK_SOME_INTEGER_ARG'] ?? 123]
+   * @param {number | null | undefined} [opts.someNumberArg=process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
+   * @param {number | undefined} [opts.someNumberArgRequired=process.env['SINK_SOME_NUMBER_ARG'] ?? 1.2]
+   * @param {number | undefined} [opts.someNumberArgRequiredNoDefault=process.env['SINK_SOME_NUMBER_ARG'] ?? undefined]
    * @param {number} opts.someNumberArgRequiredNoDefaultNoEnv
    * @param {string} opts.requiredArgNoEnv
-   * @param {string} [opts.requiredArgNoEnvWithDefault=hi!]
-   * @param {string | null} [opts.clientPathParam]
-   * @param {string | null} [opts.camelCasePath]
-   * @param {string | null} [opts.clientQueryParam]
-   * @param {string | null} [opts.clientPathOrQueryParam]
+   * @param {string | undefined} [opts.requiredArgNoEnvWithDefault=hi!]
+   * @param {string | null | undefined} [opts.clientPathParam]
+   * @param {string | null | undefined} [opts.camelCasePath]
+   * @param {string | null | undefined} [opts.clientQueryParam]
+   * @param {string | null | undefined} [opts.clientPathOrQueryParam]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL=process.env['SINK_BASE_URL'] ?? https://demo.stainlessapi.com/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
