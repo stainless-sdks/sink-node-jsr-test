@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.3-beta.1 (2024-01-18)
+
+Full Changelog: [v0.11.2-beta.1...v0.11.3-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.11.2-beta.1...v0.11.3-beta.1)
+
+### Bug Fixes
+
+* add test for case when every param in a body is read-only ([#339](https://github.com/stainless-sdks/sink-node-public/issues/339)) ([3ac3216](https://github.com/stainless-sdks/sink-node-public/commit/3ac3216db4dd11f9d96fb93f278e11e0b2104ba4))
+
 ## 0.11.2-beta.1 (2024-01-17)
 
 Full Changelog: [v0.11.1-beta.1...v0.11.2-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.11.1-beta.1...v0.11.2-beta.1)
