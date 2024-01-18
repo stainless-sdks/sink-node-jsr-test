@@ -48,6 +48,20 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` that only has `readOnly` properties
+   */
+  onlyReadOnlyProperties(
+    body?: BodyParamOnlyReadOnlyPropertiesParams | null | undefined,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.patch('/body_params/only_read_only_properties', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` that has a schema that is defined as a model in
    * the config with "param" in the name.
    */
@@ -369,6 +383,8 @@ export namespace BodyParamObjectWithArrayOfObjectsParams {
   }
 }
 
+export interface BodyParamOnlyReadOnlyPropertiesParams {}
+
 export interface BodyParamParamInModelNameRefParams {
   model_ref: ModelWithParamInName;
 
@@ -599,6 +615,7 @@ export namespace BodyParams {
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
   export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;
+  export import BodyParamOnlyReadOnlyPropertiesParams = BodyParamsAPI.BodyParamOnlyReadOnlyPropertiesParams;
   export import BodyParamParamInModelNameRefParams = BodyParamsAPI.BodyParamParamInModelNameRefParams;
   export import BodyParamPropertyModelRefParams = BodyParamsAPI.BodyParamPropertyModelRefParams;
   export import BodyParamPropertyWithComplexUnionParams = BodyParamsAPI.BodyParamPropertyWithComplexUnionParams;

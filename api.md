@@ -676,6 +676,7 @@ Methods:
 
 - <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nestedRequestModels</a>({ ...params }) -> ModelWithNestedModel</code>
 - <code title="post /body_params/object_with_array_of_objects">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithArrayOfObjects</a>({ ...params }) -> void</code>
+- <code title="patch /body_params/only_read_only_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">onlyReadOnlyProperties</a>() -> void</code>
 - <code title="post /body_params/param_in_model_name_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">paramInModelNameRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/property_model_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">propertyModelRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/property_with_complex_union">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">propertyWithComplexUnion</a>({ ...params }) -> void</code>
