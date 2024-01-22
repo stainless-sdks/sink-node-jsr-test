@@ -122,5 +122,8 @@
       "default": "./dist/*.mjs"
     }
   },
-  "bin": "./bin/cli"
+  "bin": "./bin/cli",
+  "optionalDependencies": {
+    "fast-json-patch": "^3.1.1"
+  }
 }
