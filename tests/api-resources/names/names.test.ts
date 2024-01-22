@@ -49,6 +49,9 @@ describe('resource names', () => {
 
   test('propertiesCommonConflicts: only required params', async () => {
     const responsePromise = sink.names.propertiesCommonConflicts({
+      _1_digit_leading_underscore: 'string',
+      _leading_underscore: 'string',
+      _leading_underscore_MixedCase: 'string',
       bool: true,
       bool_2: true,
       date: '2019-12-27',
@@ -69,6 +72,9 @@ describe('resource names', () => {
 
   test('propertiesCommonConflicts: required and optional params', async () => {
     const response = await sink.names.propertiesCommonConflicts({
+      _1_digit_leading_underscore: 'string',
+      _leading_underscore: 'string',
+      _leading_underscore_MixedCase: 'string',
       bool: true,
       bool_2: true,
       date: '2019-12-27',

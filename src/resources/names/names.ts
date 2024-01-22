@@ -89,6 +89,24 @@ export namespace NameChildPropImportClashResponse {
 }
 
 export interface NamePropertiesCommonConflictsResponse {
+  /**
+   * In certain languages the leading underscore in combination with this property
+   * name may cause issues
+   */
+  _1_digit_leading_underscore: string;
+
+  /**
+   * In certain languages the leading underscore in this property name may cause
+   * issues
+   */
+  _leading_underscore: string;
+
+  /**
+   * In certain languages the leading underscore in this property name may cause
+   * issues alongside a case change
+   */
+  _leading_underscore_MixedCase: string;
+
   bool: boolean;
 
   /**
@@ -148,6 +166,24 @@ export interface NameResponseShadowsPydanticResponse {
 }
 
 export interface NamePropertiesCommonConflictsParams {
+  /**
+   * In certain languages the leading underscore in combination with this property
+   * name may cause issues
+   */
+  _1_digit_leading_underscore: string;
+
+  /**
+   * In certain languages the leading underscore in this property name may cause
+   * issues
+   */
+  _leading_underscore: string;
+
+  /**
+   * In certain languages the leading underscore in this property name may cause
+   * issues alongside a case change
+   */
+  _leading_underscore_MixedCase: string;
+
   bool: boolean;
 
   /**
