@@ -4,7 +4,7 @@ import { SinkError } from './error';
 import { safeJSON, createResponseHeaders } from 'sink-npm/core';
 import { APIError } from 'sink-npm/error';
 
-export type Bytes = string | ArrayBuffer | Uint8Array | Buffer | null | undefined;
+type Bytes = string | ArrayBuffer | Uint8Array | Buffer | null | undefined;
 
 export type ServerSentEvent = {
   event: string | null;
