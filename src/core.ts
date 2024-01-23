@@ -44,6 +44,11 @@ async function defaultParseResponse<T>(props: APIResponseProps): Promise<T> {
 
     // Note: there is an invariant here that isn't represented in the type system
     // that if you set `stream: true` the response type must also be `Stream<T>`
+
+    if (props.options.__streamClass) {
+      return props.options.__streamClass.fromSSEResponse(response, props.controller) as any;
+    }
+
     return Stream.fromSSEResponse(response, props.controller) as any;
   }
 
@@ -748,6 +753,7 @@ export type RequestOptions<Req = unknown | Record<string, unknown> | Readable> =
   numberOpt?: number | undefined;
 
   __binaryResponse?: boolean | undefined;
+  __streamClass?: typeof Stream;
 };
 
 // This is required so that we can determine if a given object matches the RequestOptions
@@ -773,6 +779,7 @@ const requestOptionsKeys: KeysEnum<RequestOptions> = {
   numberOpt: true,
 
   __binaryResponse: true,
+  __streamClass: true,
 };
 
 export const isRequestOptions = (obj: unknown): obj is RequestOptions => {
