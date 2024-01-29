@@ -65,6 +65,8 @@ export interface EnumBasicResponse {
   my_problematic_enum: '123_FOO' | '30%' | '*' | '';
 
   number_enum: 200 | 201 | 404 | 403;
+
+  uses_const: 'my_const_enum_value';
 }
 
 export type EnumArrayUniqueValuesParams = Array<'USD' | 'GBP' | 'PAB' | 'AED'>;
@@ -80,6 +82,8 @@ export interface EnumBasicParams {
   input_currency?: Shared.Currency | null;
 
   problematic_enum?: '123_FOO' | '30%' | '*' | '';
+
+  uses_const?: 'my_const_enum_value';
 }
 
 export namespace Enums {
