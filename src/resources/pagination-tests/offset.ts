@@ -6,6 +6,7 @@ import { isRequestOptions } from 'sink-npm/core';
 import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
 import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import { MyModelsPageOffset, MyModelsPageOffsetTotalCount } from 'sink-npm/resources/body-params/body-params';
+import { type PageOffsetParams, type PageOffsetTotalCountParams } from 'sink-npm/pagination';
 
 export class Offset extends APIResource {
   /**
@@ -50,17 +51,9 @@ export class Offset extends APIResource {
   }
 }
 
-export interface OffsetListParams {
-  limit?: number;
+export interface OffsetListParams extends PageOffsetParams {}
 
-  offset?: number;
-}
-
-export interface OffsetWithTotalCountParams {
-  limit?: number;
-
-  offset?: number;
-}
+export interface OffsetWithTotalCountParams extends PageOffsetTotalCountParams {}
 
 export namespace Offset {
   export import OffsetListParams = OffsetAPI.OffsetListParams;

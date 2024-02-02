@@ -6,6 +6,7 @@ import { isRequestOptions } from 'sink-npm/core';
 import * as TopLevelArraysAPI from 'sink-npm/resources/pagination-tests/top-level-arrays';
 import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import { MyModelsPageCursorTopLevelArray } from 'sink-npm/resources/body-params/body-params';
+import { type PageCursorTopLevelArrayParams } from 'sink-npm/pagination';
 
 export class TopLevelArrays extends APIResource {
   /**
@@ -33,9 +34,7 @@ export class TopLevelArrays extends APIResource {
   }
 }
 
-export interface TopLevelArrayBasicCursorParams {
-  cursor?: string | null;
-
+export interface TopLevelArrayBasicCursorParams extends PageCursorTopLevelArrayParams {
   limit?: number;
 }
 

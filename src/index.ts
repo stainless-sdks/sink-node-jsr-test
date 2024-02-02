@@ -5,6 +5,7 @@ import * as Errors from './error';
 import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
 import * as qs from 'qs';
+import * as Pagination from 'sink-npm/pagination';
 import * as API from 'sink-npm/resources/index';
 import * as TopLevelAPI from 'sink-npm/resources/top-level';
 
@@ -455,6 +456,50 @@ export namespace Sink {
   export import fileFromPath = Uploads.fileFromPath;
 
   export import RequestOptions = Core.RequestOptions;
+
+  export import PageCursor = Pagination.PageCursor;
+  export import PageCursorParams = Pagination.PageCursorParams;
+  export import PageCursorResponse = Pagination.PageCursorResponse;
+
+  export import PageCursorFromHeaders = Pagination.PageCursorFromHeaders;
+  export import PageCursorFromHeadersParams = Pagination.PageCursorFromHeadersParams;
+  export import PageCursorFromHeadersResponse = Pagination.PageCursorFromHeadersResponse;
+
+  export import PageCursorTopLevelArray = Pagination.PageCursorTopLevelArray;
+  export import PageCursorTopLevelArrayParams = Pagination.PageCursorTopLevelArrayParams;
+  export import PageCursorTopLevelArrayResponse = Pagination.PageCursorTopLevelArrayResponse;
+
+  export import PageCursorSharedRef = Pagination.PageCursorSharedRef;
+  export import PageCursorSharedRefParams = Pagination.PageCursorSharedRefParams;
+  export import PageCursorSharedRefResponse = Pagination.PageCursorSharedRefResponse;
+
+  export import PageCursorNestedObjectRef = Pagination.PageCursorNestedObjectRef;
+  export import PageCursorNestedObjectRefParams = Pagination.PageCursorNestedObjectRefParams;
+  export import PageCursorNestedObjectRefResponse = Pagination.PageCursorNestedObjectRefResponse;
+
+  export import PagePageNumber = Pagination.PagePageNumber;
+  export import PagePageNumberParams = Pagination.PagePageNumberParams;
+  export import PagePageNumberResponse = Pagination.PagePageNumberResponse;
+
+  export import PageOffsetTotalCount = Pagination.PageOffsetTotalCount;
+  export import PageOffsetTotalCountParams = Pagination.PageOffsetTotalCountParams;
+  export import PageOffsetTotalCountResponse = Pagination.PageOffsetTotalCountResponse;
+
+  export import PageOffset = Pagination.PageOffset;
+  export import PageOffsetParams = Pagination.PageOffsetParams;
+  export import PageOffsetResponse = Pagination.PageOffsetResponse;
+
+  export import PageCursorURL = Pagination.PageCursorURL;
+  export import PageCursorURLParams = Pagination.PageCursorURLParams;
+  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
+
+  export import PageCursorID = Pagination.PageCursorID;
+  export import PageCursorIDParams = Pagination.PageCursorIDParams;
+  export import PageCursorIDResponse = Pagination.PageCursorIDResponse;
+
+  export import FakePage = Pagination.FakePage;
+  export import FakePageParams = Pagination.FakePageParams;
+  export import FakePageResponse = Pagination.FakePageResponse;
 
   export import APIStatus = API.APIStatus;
   export import APIStatusAlias = API.APIStatusAlias;

@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found [on stainlessapi.com](https://stainlessapi.com). The full API of this library can be found in [api.md](https://www.github.com/stainless-sdks/sink-node-public/blob/main/api.md).
+The REST API documentation can be found [on stainlessapi.com](https://stainlessapi.com). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 
@@ -16,7 +16,7 @@ yarn add sink-npm
 
 ## Usage
 
-The full API of this library can be found in [api.md](https://www.github.com/stainless-sdks/sink-node-public/blob/main/api.md).
+The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
@@ -208,6 +208,37 @@ await sink.cards.create({ type: 'DIGITAL' }, {
 On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
+
+## Auto-pagination
+
+List methods in the Sink API are paginated.
+You can use `for await … of` syntax to iterate through items across all pages:
+
+```ts
+async function fetchAllPaginationTestsCursors(params) {
+  const allPaginationTestsCursors = [];
+  // Automatically fetches more pages as needed.
+  for await (const myModel of sink.paginationTests.cursor.list()) {
+    allPaginationTestsCursors.push(myModel);
+  }
+  return allPaginationTestsCursors;
+}
+```
+
+Alternatively, you can make request a single page at a time:
+
+```ts
+let page = await sink.paginationTests.cursor.list();
+for (const myModel of page.data) {
+  console.log(myModel);
+}
+
+// Convenience methods are provided for manually paginating:
+while (page.hasNextPage()) {
+  page = page.getNextPage();
+  // ...
+}
+```
 
 ## Default Headers
 

@@ -6,6 +6,7 @@ import { isRequestOptions } from 'sink-npm/core';
 import * as ResponseHeadersAPI from 'sink-npm/resources/pagination-tests/response-headers';
 import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import { MyModelsPageCursorFromHeaders } from 'sink-npm/resources/body-params/body-params';
+import { type PageCursorFromHeadersParams } from 'sink-npm/pagination';
 
 export class ResponseHeaders extends APIResource {
   /**
@@ -33,9 +34,7 @@ export class ResponseHeaders extends APIResource {
   }
 }
 
-export interface ResponseHeaderBasicCursorParams {
-  cursor?: string | null;
-
+export interface ResponseHeaderBasicCursorParams extends PageCursorFromHeadersParams {
   limit?: number;
 }
 

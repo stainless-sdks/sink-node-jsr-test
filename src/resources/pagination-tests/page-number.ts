@@ -6,6 +6,7 @@ import { isRequestOptions } from 'sink-npm/core';
 import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
 import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import { MyModelsPagePageNumber } from 'sink-npm/resources/body-params/body-params';
+import { type PagePageNumberParams } from 'sink-npm/pagination';
 
 export class PageNumber extends APIResource {
   /**
@@ -27,11 +28,7 @@ export class PageNumber extends APIResource {
   }
 }
 
-export interface PageNumberListParams {
-  page?: number;
-
-  page_size?: number;
-}
+export interface PageNumberListParams extends PagePageNumberParams {}
 
 export namespace PageNumber {
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;

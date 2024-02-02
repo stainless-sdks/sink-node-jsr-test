@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as EEOCAPI from 'sink-npm/resources/casing/eeoc';
-import { PageCursor } from 'sink-npm/pagination';
+import { PageCursor, type PageCursorParams } from 'sink-npm/pagination';
 
 export class EEOCResource extends APIResource {
   /**
@@ -29,9 +29,7 @@ export interface EEOC {
   foo?: string;
 }
 
-export interface EEOCListParams {
-  cursor?: string;
-
+export interface EEOCListParams extends PageCursorParams {
   limit?: number;
 }
 

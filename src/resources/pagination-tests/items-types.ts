@@ -4,7 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
 import * as ItemsTypesAPI from 'sink-npm/resources/pagination-tests/items-types';
-import { PagePageNumber } from 'sink-npm/pagination';
+import { PagePageNumber, type PagePageNumberParams } from 'sink-npm/pagination';
 
 export class ItemsTypes extends APIResource {
   /**
@@ -36,11 +36,7 @@ export class ItemsTypeListUnknownResponsesPagePageNumber extends PagePageNumber<
 
 export type ItemsTypeListUnknownResponse = unknown;
 
-export interface ItemsTypeListUnknownParams {
-  page?: number;
-
-  page_size?: number;
-}
+export interface ItemsTypeListUnknownParams extends PagePageNumberParams {}
 
 export namespace ItemsTypes {
   export import ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;

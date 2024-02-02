@@ -6,6 +6,7 @@ import { isRequestOptions } from 'sink-npm/core';
 import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
 import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
 import { MyModelsPageCursor } from 'sink-npm/resources/body-params/body-params';
+import { type PageCursorParams } from 'sink-npm/pagination';
 
 export class Cursor extends APIResource {
   /**
@@ -27,9 +28,7 @@ export class Cursor extends APIResource {
   }
 }
 
-export interface CursorListParams {
-  cursor?: string | null;
-
+export interface CursorListParams extends PageCursorParams {
   limit?: number;
 }
 

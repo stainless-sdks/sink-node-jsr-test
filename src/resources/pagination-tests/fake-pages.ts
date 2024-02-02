@@ -5,6 +5,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
 import * as Shared from 'sink-npm/resources/shared';
 import { SimpleObjectsFakePage } from 'sink-npm/resources/shared';
+import { type FakePageParams } from 'sink-npm/pagination';
 
 export class FakePages extends APIResource {
   /**
@@ -18,9 +19,7 @@ export class FakePages extends APIResource {
   }
 }
 
-export interface FakePageListParams {
-  my_fake_page_param: string;
-}
+export interface FakePageListParams extends FakePageParams {}
 
 export namespace FakePages {
   export import FakePageListParams = FakePagesAPI.FakePageListParams;

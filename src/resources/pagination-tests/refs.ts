@@ -9,6 +9,7 @@ import {
   MyModelsPageCursorNestedObjectRef,
   MyModelsPageCursorSharedRef,
 } from 'sink-npm/resources/body-params/body-params';
+import { type PageCursorNestedObjectRefParams, type PageCursorSharedRefParams } from 'sink-npm/pagination';
 
 export class Refs extends APIResource {
   /**
@@ -58,23 +59,11 @@ export class Refs extends APIResource {
   }
 }
 
-export interface RefNestedObjectRefParams {
-  cursor?: string | null;
-
+export interface RefNestedObjectRefParams extends PageCursorNestedObjectRefParams {
   limit?: number;
-
-  object_param?: RefNestedObjectRefParams.ObjectParam;
 }
 
-export namespace RefNestedObjectRefParams {
-  export interface ObjectParam {
-    foo?: string;
-  }
-}
-
-export interface RefWithSharedModelRefParams {
-  cursor?: string | null;
-
+export interface RefWithSharedModelRefParams extends PageCursorSharedRefParams {
   limit?: number;
 }
 
