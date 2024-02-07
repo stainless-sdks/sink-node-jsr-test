@@ -2,7 +2,7 @@
   "name": "sink-npm",
   "version": "0.11.3-beta.1",
   "description": "The official TypeScript library for the Sink API",
-  "author": "Sink <dev@stainlessapi.com>",
+  "author": "Sink <dev@stainlessapi.comm>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
