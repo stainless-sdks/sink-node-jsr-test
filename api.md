@@ -122,6 +122,13 @@ Methods:
 
 # PaginationTests
 
+## SchemaTypes
+
+Methods:
+
+- <code title="get /paginated/schema_types/allofs">client.paginationTests.schemaTypes.<a href="./src/resources/pagination-tests/schema-types.ts">allofs</a>({ ...params }) -> MyModelsPageCursor</code>
+- <code title="get /paginated/schema_types/unions">client.paginationTests.schemaTypes.<a href="./src/resources/pagination-tests/schema-types.ts">unions</a>({ ...params }) -> MyModelsPageCursor</code>
+
 ## ItemsTypes
 
 Types:

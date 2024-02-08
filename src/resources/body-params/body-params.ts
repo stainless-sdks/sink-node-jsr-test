@@ -314,6 +314,8 @@ export class BodyParams extends APIResource {
   }
 }
 
+export class MyModelsPageCursor extends PageCursor<MyModel> {}
+
 export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
 
 export class MyModelsPageCursorNestedObjectRef extends PageCursorNestedObjectRef<MyModel> {}
@@ -323,8 +325,6 @@ export class MyModelsPageCursorSharedRef extends PageCursorSharedRef<MyModel> {}
 export class MyModelsPageCursorFromHeaders extends PageCursorFromHeaders<MyModel> {}
 
 export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyModel> {}
-
-export class MyModelsPageCursor extends PageCursor<MyModel> {}
 
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
 

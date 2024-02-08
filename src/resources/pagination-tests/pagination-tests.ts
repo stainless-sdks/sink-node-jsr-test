@@ -8,9 +8,11 @@ import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
 import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
 import * as RefsAPI from 'sink-npm/resources/pagination-tests/refs';
 import * as ResponseHeadersAPI from 'sink-npm/resources/pagination-tests/response-headers';
+import * as SchemaTypesAPI from 'sink-npm/resources/pagination-tests/schema-types';
 import * as TopLevelArraysAPI from 'sink-npm/resources/pagination-tests/top-level-arrays';
 
 export class PaginationTests extends APIResource {
+  schemaTypes: SchemaTypesAPI.SchemaTypes = new SchemaTypesAPI.SchemaTypes(this._client);
   itemsTypes: ItemsTypesAPI.ItemsTypes = new ItemsTypesAPI.ItemsTypes(this._client);
   pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this._client);
   refs: RefsAPI.Refs = new RefsAPI.Refs(this._client);
@@ -22,6 +24,9 @@ export class PaginationTests extends APIResource {
 }
 
 export namespace PaginationTests {
+  export import SchemaTypes = SchemaTypesAPI.SchemaTypes;
+  export import SchemaTypeAllofsParams = SchemaTypesAPI.SchemaTypeAllofsParams;
+  export import SchemaTypeUnionsParams = SchemaTypesAPI.SchemaTypeUnionsParams;
   export import ItemsTypes = ItemsTypesAPI.ItemsTypes;
   export import ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
   export import ItemsTypeListUnknownResponsesPagePageNumber = ItemsTypesAPI.ItemsTypeListUnknownResponsesPagePageNumber;
