@@ -32,9 +32,9 @@ const sink = new Sink({
 });
 
 async function main() {
-  const card = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' });
+  const customAssignTo = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' });
 
-  console.log(card.token);
+  console.log(customAssignTo.token);
 }
 
 main();
@@ -77,7 +77,7 @@ const sink = new Sink({
 
 async function main() {
   const params: Sink.CardCreateParams = { type: 'SINGLE_USE', not: 'TEST' };
-  const card: Sink.Card = await sink.cards.create(params);
+  const customAssignTo: Sink.Card = await sink.cards.create(params);
 }
 
 main();
@@ -256,7 +256,7 @@ import Sink from 'sink-npm';
 
 const sink = new Sink();
 
-const card = await sink.cards.create(
+const customAssignTo = await sink.cards.create(
   { type: 'SINGLE_USE', not: 'TEST' },
   { headers: { 'My-Api-Version': 'My-Custom-Value' } },
 );
@@ -278,11 +278,11 @@ const response = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).as
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: card, response: raw } = await sink.cards
+const { data: customAssignTo, response: raw } = await sink.cards
   .create({ type: 'SINGLE_USE', not: 'TEST' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(card.token);
+console.log(customAssignTo.token);
 ```
 
 ## Customizing the fetch client
