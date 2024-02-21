@@ -14,10 +14,10 @@ export class EmptyBody extends APIResource {
     params: EmptyBodyStainlessEmptyObjectParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    const { query_param, second_query_param, ...body } = params;
+    const { body, query_param, second_query_param } = params;
     return this._client.post(`/mixed_params/with_empty_body/${pathParam}/x_stainless_empty_object`, {
       query: { query_param, second_query_param },
-      body,
+      body: body,
       ...options,
     });
   }
@@ -30,16 +30,21 @@ export class EmptyBody extends APIResource {
     params: EmptyBodyTypedParamsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    const { query_param, second_query_param, ...body } = params;
+    const { body, query_param, second_query_param } = params;
     return this._client.post(`/mixed_params/with_empty_body/${pathParam}`, {
       query: { query_param, second_query_param },
-      body,
+      body: body,
       ...options,
     });
   }
 }
 
 export interface EmptyBodyStainlessEmptyObjectParams {
+  /**
+   * Body param:
+   */
+  body: EmptyBodyStainlessEmptyObjectParams.Body;
+
   /**
    * Query param: Query param description
    */
@@ -56,6 +61,11 @@ export namespace EmptyBodyStainlessEmptyObjectParams {
 }
 
 export interface EmptyBodyTypedParamsParams {
+  /**
+   * Body param:
+   */
+  body: unknown;
+
   /**
    * Query param: Query param description
    */

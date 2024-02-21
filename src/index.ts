@@ -708,6 +708,7 @@ export namespace Sink {
   export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
   export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
   export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
+  export import BodyParamTopLevelArrayWithOtherParamsParams = API.BodyParamTopLevelArrayWithOtherParamsParams;
   export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;

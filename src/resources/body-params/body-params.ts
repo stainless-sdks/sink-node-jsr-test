@@ -212,6 +212,22 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` that is an `array` type.
+   */
+  topLevelArrayWithOtherParams(
+    params: BodyParamTopLevelArrayWithOtherParamsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    const { id, items } = params;
+    return this._client.post('/body_params/top_level_array_with_other_params', {
+      query: { id },
+      body: items,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` making use of oneOf but only contains one entry in
    * the union.
    */
@@ -556,6 +572,18 @@ export namespace BodyParamTopLevelArrayWithChildrenParams {
   }
 }
 
+export interface BodyParamTopLevelArrayWithOtherParamsParams {
+  /**
+   * Query param:
+   */
+  id: string;
+
+  /**
+   * Body param:
+   */
+  items: Array<Shared.BasicSharedModelObject>;
+}
+
 export interface BodyParamTopLevelOneOfOneEntryParams {
   kind: 'VIRTUAL' | 'PHYSICAL';
 }
@@ -627,6 +655,7 @@ export namespace BodyParams {
   export import BodyParamTopLevelAnyOfWithRefParams = BodyParamsAPI.BodyParamTopLevelAnyOfWithRefParams;
   export import BodyParamTopLevelArrayParams = BodyParamsAPI.BodyParamTopLevelArrayParams;
   export import BodyParamTopLevelArrayWithChildrenParams = BodyParamsAPI.BodyParamTopLevelArrayWithChildrenParams;
+  export import BodyParamTopLevelArrayWithOtherParamsParams = BodyParamsAPI.BodyParamTopLevelArrayWithOtherParamsParams;
   export import BodyParamTopLevelOneOfOneEntryParams = BodyParamsAPI.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamTopLevelSharedTypeParams = BodyParamsAPI.BodyParamTopLevelSharedTypeParams;
   export import BodyParamUnionOverlappingPropParams = BodyParamsAPI.BodyParamUnionOverlappingPropParams;

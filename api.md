@@ -695,6 +695,7 @@ Methods:
 - <code title="post /body_params/top_level_anyOf_with_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelAnyOfWithRef</a>({ ...params }) -> BasicSharedModelObject</code>
 - <code title="post /body_params/top_level_array">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelArray</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_array_with_children">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelArrayWithChildren</a>([ ...items ]) -> void</code>
+- <code title="post /body_params/top_level_array_with_other_params">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelArrayWithOtherParams</a>([ ...items ]) -> void</code>
 - <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_shared_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelSharedType</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>

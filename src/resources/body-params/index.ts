@@ -24,6 +24,7 @@ export {
   BodyParamTopLevelAnyOfWithRefParams,
   BodyParamTopLevelArrayParams,
   BodyParamTopLevelArrayWithChildrenParams,
+  BodyParamTopLevelArrayWithOtherParamsParams,
   BodyParamTopLevelOneOfOneEntryParams,
   BodyParamTopLevelSharedTypeParams,
   BodyParamUnionOverlappingPropParams,

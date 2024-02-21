@@ -244,6 +244,35 @@ describe('resource bodyParams', () => {
     ]);
   });
 
+  test('topLevelArrayWithOtherParams: only required params', async () => {
+    const responsePromise = sink.bodyParams.topLevelArrayWithOtherParams({
+      id: 'string',
+      items: [
+        { foo: 'string', bar: 'string' },
+        { foo: 'string', bar: 'string' },
+        { foo: 'string', bar: 'string' },
+      ],
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('topLevelArrayWithOtherParams: required and optional params', async () => {
+    const response = await sink.bodyParams.topLevelArrayWithOtherParams({
+      id: 'string',
+      items: [
+        { foo: 'string', bar: 'string' },
+        { foo: 'string', bar: 'string' },
+        { foo: 'string', bar: 'string' },
+      ],
+    });
+  });
+
   test('topLevelOneOfOneEntry: only required params', async () => {
     const responsePromise = sink.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
