@@ -182,6 +182,7 @@ export {
   MyModelsPageCursorTopLevelArray,
   MyModelsPageOffset,
   MyModelsPageOffsetTotalCount,
+  MyModelsPageCursorNestedItems,
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';

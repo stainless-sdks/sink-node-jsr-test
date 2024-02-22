@@ -39,5 +39,6 @@ export {
   MyModelsPageCursorTopLevelArray,
   MyModelsPageOffset,
   MyModelsPageOffsetTotalCount,
+  MyModelsPageCursorNestedItems,
   BodyParams,
 } from './body-params';

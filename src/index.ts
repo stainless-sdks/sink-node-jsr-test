@@ -477,6 +477,10 @@ export namespace Sink {
   export import PageCursorNestedObjectRefParams = Pagination.PageCursorNestedObjectRefParams;
   export import PageCursorNestedObjectRefResponse = Pagination.PageCursorNestedObjectRefResponse;
 
+  export import PageCursorNestedItems = Pagination.PageCursorNestedItems;
+  export import PageCursorNestedItemsParams = Pagination.PageCursorNestedItemsParams;
+  export import PageCursorNestedItemsResponse = Pagination.PageCursorNestedItemsResponse;
+
   export import PagePageNumber = Pagination.PagePageNumber;
   export import PagePageNumberParams = Pagination.PagePageNumberParams;
   export import PagePageNumberResponse = Pagination.PagePageNumberResponse;

@@ -4,6 +4,7 @@ import { APIResource } from 'sink-npm/resource';
 import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
 import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
 import * as ItemsTypesAPI from 'sink-npm/resources/pagination-tests/items-types';
+import * as NestedItemsAPI from 'sink-npm/resources/pagination-tests/nested-items';
 import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
 import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
 import * as RefsAPI from 'sink-npm/resources/pagination-tests/refs';
@@ -21,6 +22,7 @@ export class PaginationTests extends APIResource {
   cursor: CursorAPI.Cursor = new CursorAPI.Cursor(this._client);
   offset: OffsetAPI.Offset = new OffsetAPI.Offset(this._client);
   fakePages: FakePagesAPI.FakePages = new FakePagesAPI.FakePages(this._client);
+  nestedItems: NestedItemsAPI.NestedItems = new NestedItemsAPI.NestedItems(this._client);
 }
 
 export namespace PaginationTests {
@@ -47,4 +49,6 @@ export namespace PaginationTests {
   export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
   export import FakePages = FakePagesAPI.FakePages;
   export import FakePageListParams = FakePagesAPI.FakePageListParams;
+  export import NestedItems = NestedItemsAPI.NestedItems;
+  export import NestedItemListParams = NestedItemsAPI.NestedItemListParams;
 }

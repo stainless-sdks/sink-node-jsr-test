@@ -183,6 +183,12 @@ Methods:
 
 - <code title="get /paginated/fake_page">client.paginationTests.fakePages.<a href="./src/resources/pagination-tests/fake-pages.ts">list</a>({ ...params }) -> SimpleObjectsFakePage</code>
 
+## NestedItems
+
+Methods:
+
+- <code title="get /paginated/nested_items">client.paginationTests.nestedItems.<a href="./src/resources/pagination-tests/nested-items.ts">list</a>({ ...params }) -> MyModelsPageCursorNestedItems</code>
+
 # Docstrings
 
 Types:

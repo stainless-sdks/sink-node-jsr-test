@@ -8,6 +8,7 @@ export {
   ItemsTypeListUnknownResponsesPagePageNumber,
   ItemsTypes,
 } from './items-types';
+export { NestedItemListParams, NestedItems } from './nested-items';
 export { OffsetListParams, OffsetWithTotalCountParams, Offset } from './offset';
 export { PageNumberListParams, PageNumber } from './page-number';
 export { PaginationTests } from './pagination-tests';

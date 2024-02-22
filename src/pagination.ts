@@ -300,6 +300,79 @@ export class PageCursorNestedObjectRef<Item>
   }
 }
 
+export interface PageCursorNestedItemsResponse<Item> {
+  data: PageCursorNestedItemsResponse.Data<Item>;
+
+  cursor: string | null;
+
+  object_prop: PageCursorNestedItemsResponse.ObjectProp;
+}
+
+export namespace PageCursorNestedItemsResponse {
+  export interface Data<Item> {
+    items?: Array<Item>;
+  }
+
+  export interface ObjectProp {
+    foo?: string;
+  }
+}
+
+export interface PageCursorNestedItemsParams {
+  cursor?: string;
+}
+
+export class PageCursorNestedItems<Item>
+  extends AbstractPage<Item>
+  implements PageCursorNestedItemsResponse<Item>
+{
+  data: PageCursorNestedItemsResponse.Data<Item>;
+
+  cursor: string | null;
+
+  object_prop: PageCursorNestedItemsResponse.ObjectProp;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: PageCursorNestedItemsResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data || {};
+    this.cursor = body.cursor || '';
+    this.object_prop = body.object_prop || {};
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data?.items ?? [];
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<PageCursorNestedItemsParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    const cursor = this.cursor;
+    if (!cursor) {
+      return null;
+    }
+
+    return {
+      params: {
+        cursor: cursor,
+      },
+    };
+  }
+}
+
 export interface PagePageNumberResponse<Item> {
   data: Array<Item>;
 

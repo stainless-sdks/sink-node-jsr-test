@@ -10,6 +10,7 @@ import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
 import {
   PageCursor,
   PageCursorFromHeaders,
+  PageCursorNestedItems,
   PageCursorNestedObjectRef,
   PageCursorSharedRef,
   PageCursorTopLevelArray,
@@ -345,6 +346,8 @@ export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyM
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
 
 export class MyModelsPageOffsetTotalCount extends PageOffsetTotalCount<MyModel> {}
+
+export class MyModelsPageCursorNestedItems extends PageCursorNestedItems<MyModel> {}
 
 export type ModelWithParamInName = Record<string, string>;
 
