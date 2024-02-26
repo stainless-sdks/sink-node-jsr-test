@@ -20,6 +20,7 @@ export class Docstrings extends APIResource {
    *
    * \a\g\*\(\&\@\x2z\u11z1\U1111z111\N{HYPHEN#}
    *
+   * \
    * Other text
    */
   descriptionContainsJsDoc(options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
