@@ -208,7 +208,7 @@ export abstract class APIClient {
       Accept: 'application/json',
       'Content-Type': 'application/json',
       'User-Agent': this.getUserAgent(),
-      ...getPlatformHeaders(),
+
       ...this.authHeaders(opts),
     };
   }
