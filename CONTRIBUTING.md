@@ -43,6 +43,8 @@ To install via git:
 
 ```bash
 npm install --save git+ssh://git@github.com:stainless-sdks/sink-node-public.git
+# or
+yarn add git+ssh://git@github.com:stainless-sdks/sink-node-public.git
 ```
 
 Alternatively, to link a local copy of the repo:

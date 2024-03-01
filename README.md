@@ -9,6 +9,7 @@ The REST API documentation can be found [on stainlessapi.com](https://stainlessa
 ## Installation
 
 ```sh
+# install from NPM
 npm install --save sink-npm
 # or
 yarn add sink-npm
