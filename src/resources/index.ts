@@ -254,6 +254,7 @@ export {
   TypeDatetimesParams,
   Types,
 } from './types/types';
+export { UndocumentedResourceReissueParams, UndocumentedResource } from './undocumented-resource';
 export {
   Version1_30NameCreateResponse,
   Version1_30NameCreateParams,

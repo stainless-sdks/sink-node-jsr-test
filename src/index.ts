@@ -305,6 +305,7 @@ export class Sink extends Core.APIClient {
   casing: API.Casing = new API.Casing(this);
   defaultReqOptions: API.DefaultReqOptions = new API.DefaultReqOptions(this);
   tools: API.Tools = new API.Tools(this);
+  undocumentedResource: API.UndocumentedResource = new API.UndocumentedResource(this);
   methodConfig: API.MethodConfig = new API.MethodConfig(this);
   streaming: API.Streaming = new API.Streaming(this);
   paginationTests: API.PaginationTests = new API.PaginationTests(this);
@@ -525,6 +526,9 @@ export namespace Sink {
   export import Tools = API.Tools;
   export import ObjectSkippedProps = API.ObjectSkippedProps;
   export import ToolSkippedParamsParams = API.ToolSkippedParamsParams;
+
+  export import UndocumentedResource = API.UndocumentedResource;
+  export import UndocumentedResourceReissueParams = API.UndocumentedResourceReissueParams;
 
   export import MethodConfig = API.MethodConfig;
   export import MethodConfigSkippedTestsAllResponse = API.MethodConfigSkippedTestsAllResponse;
