@@ -3,8 +3,23 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as MethodConfigAPI from 'sink-npm/resources/method-config';
+import * as CardsAPI from 'sink-npm/resources/cards';
+import * as Shared from 'sink-npm/resources/shared';
 
 export class MethodConfig extends APIResource {
+  /**
+   * Initiate print and shipment of a duplicate card.
+   *
+   * Only applies to cards of type `PHYSICAL` [beta].
+   */
+  shouldNotShowUpInAPIDocs(
+    cardToken: string,
+    body: MethodConfigShouldNotShowUpInAPIDocsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CardsAPI.Card> {
+    return this._client.post(`/cards/${cardToken}/reissue`, { body, ...options });
+  }
+
   /**
    * Used to test skipping generated unit tests.
    */
@@ -118,6 +133,33 @@ export interface MethodConfigSkippedTestsRubyResponse {
   foo: string;
 }
 
+export interface MethodConfigShouldNotShowUpInAPIDocsParams {
+  /**
+   * Specifies the configuration (e.g. physical card art) that the card should be
+   * manufactured with, and only applies to cards of type `PHYSICAL` [beta]. This
+   * must be configured with Lithic before use.
+   */
+  product_id?: string;
+
+  /**
+   * Shipping method for the card. Use of options besides `STANDARD` require
+   * additional permissions.
+   *
+   * - `STANDARD` - USPS regular mail or similar international option, with no
+   *   tracking
+   * - `STANDARD_WITH_TRACKING` - USPS regular mail or similar international option,
+   *   with tracking
+   * - `EXPEDITED` - FedEx Standard Overnight or similar international option, with
+   *   tracking
+   */
+  shipping_method?: 'STANDARD' | 'STANDARD_WITH_TRACKING' | 'EXPEDITED';
+
+  /**
+   * If omitted, the previous shipping address will be used.
+   */
+  shippingAddress?: Shared.ShippingAddress;
+}
+
 export namespace MethodConfig {
   export import MethodConfigSkippedTestsAllResponse = MethodConfigAPI.MethodConfigSkippedTestsAllResponse;
   export import MethodConfigSkippedTestsGoResponse = MethodConfigAPI.MethodConfigSkippedTestsGoResponse;
@@ -127,4 +169,5 @@ export namespace MethodConfig {
   export import MethodConfigSkippedTestsNodeAndPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeAndPythonResponse;
   export import MethodConfigSkippedTestsPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsPythonResponse;
   export import MethodConfigSkippedTestsRubyResponse = MethodConfigAPI.MethodConfigSkippedTestsRubyResponse;
+  export import MethodConfigShouldNotShowUpInAPIDocsParams = MethodConfigAPI.MethodConfigShouldNotShowUpInAPIDocsParams;
 }

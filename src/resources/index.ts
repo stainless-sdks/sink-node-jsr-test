@@ -100,6 +100,7 @@ export {
   MethodConfigSkippedTestsNodeAndPythonResponse,
   MethodConfigSkippedTestsPythonResponse,
   MethodConfigSkippedTestsRubyResponse,
+  MethodConfigShouldNotShowUpInAPIDocsParams,
   MethodConfig,
 } from './method-config';
 export {
