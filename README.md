@@ -333,7 +333,7 @@ If you would like to disable or customize this behavior, for example to use the 
 <!-- prettier-ignore -->
 ```ts
 import http from 'http';
-import HttpsProxyAgent from 'https-proxy-agent';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
 const sink = new Sink({
@@ -345,10 +345,12 @@ const sink = new Sink({
 });
 
 // Override per-request:
-await sink.cards.create({ type: 'DIGITAL' }, {
-  baseURL: 'http://localhost:8080/test-api',
-  httpAgent: new http.Agent({ keepAlive: false }),
-})
+await sink.cards.create(
+  { type: 'DIGITAL' },
+  {
+    httpAgent: new http.Agent({ keepAlive: false }),
+  },
+);
 ```
 
 ## Semantic Versioning
