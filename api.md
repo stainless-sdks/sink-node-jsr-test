@@ -42,11 +42,13 @@ Types:
 
 - <code><a href="./src/resources/complex-queries.ts">ComplexQueryArrayQueryResponse</a></code>
 - <code><a href="./src/resources/complex-queries.ts">ComplexQueryObjectQueryResponse</a></code>
+- <code><a href="./src/resources/complex-queries.ts">ComplexQueryUnionQueryResponse</a></code>
 
 Methods:
 
 - <code title="get /array_query">client.complexQueries.<a href="./src/resources/complex-queries.ts">arrayQuery</a>({ ...params }) -> ComplexQueryArrayQueryResponse</code>
 - <code title="get /object_query">client.complexQueries.<a href="./src/resources/complex-queries.ts">objectQuery</a>({ ...params }) -> ComplexQueryObjectQueryResponse</code>
+- <code title="get /union_query">client.complexQueries.<a href="./src/resources/complex-queries.ts">unionQuery</a>({ ...params }) -> ComplexQueryUnionQueryResponse</code>
 
 # Casing
 

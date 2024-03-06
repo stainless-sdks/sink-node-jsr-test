@@ -516,8 +516,10 @@ export namespace Sink {
   export import ComplexQueries = API.ComplexQueries;
   export import ComplexQueryArrayQueryResponse = API.ComplexQueryArrayQueryResponse;
   export import ComplexQueryObjectQueryResponse = API.ComplexQueryObjectQueryResponse;
+  export import ComplexQueryUnionQueryResponse = API.ComplexQueryUnionQueryResponse;
   export import ComplexQueryArrayQueryParams = API.ComplexQueryArrayQueryParams;
   export import ComplexQueryObjectQueryParams = API.ComplexQueryObjectQueryParams;
+  export import ComplexQueryUnionQueryParams = API.ComplexQueryUnionQueryParams;
 
   export import Casing = API.Casing;
 

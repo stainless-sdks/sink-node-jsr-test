@@ -59,8 +59,10 @@ export { Company, CompanyResource } from './company/company';
 export {
   ComplexQueryArrayQueryResponse,
   ComplexQueryObjectQueryResponse,
+  ComplexQueryUnionQueryResponse,
   ComplexQueryArrayQueryParams,
   ComplexQueryObjectQueryParams,
+  ComplexQueryUnionQueryParams,
   ComplexQueries,
 } from './complex-queries';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
