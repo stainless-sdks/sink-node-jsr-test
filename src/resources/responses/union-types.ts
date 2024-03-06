@@ -68,7 +68,7 @@ export namespace UnionTypeNullableUnionResponse {
   }
 }
 
-export type UnionTypeNumbersResponse = number | number;
+export type UnionTypeNumbersResponse = number;
 
 export type UnionTypeObjectsResponse = Shared.SimpleObject | UnionTypeObjectsResponse.BasicObject;
 
