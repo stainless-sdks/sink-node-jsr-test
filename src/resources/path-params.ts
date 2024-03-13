@@ -7,6 +7,16 @@ import * as Shared from 'sink-npm/resources/shared';
 
 export class PathParams extends APIResource {
   /**
+   * Endpoint with a path param followed by a verb.
+   */
+  colonSuffix(
+    withVerb: number,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<PathParamColonSuffixResponse> {
+    return this._client.post(`/path_params/${withVerb}:initiate`, options);
+  }
+
+  /**
    * Endpoint with a singular path parameter that uses a `dash` separator.
    */
   dashedParam(
@@ -88,6 +98,10 @@ export class PathParams extends APIResource {
   }
 }
 
+export interface PathParamColonSuffixResponse {
+  foo: string;
+}
+
 export interface PathParamMultipleResponse {
   foo: string;
 }
@@ -97,6 +111,7 @@ export interface PathParamSingularResponse {
 }
 
 export namespace PathParams {
+  export import PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
   export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
   export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
 }

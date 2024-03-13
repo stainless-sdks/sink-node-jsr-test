@@ -199,7 +199,12 @@ export {
 } from './openapi-formats';
 export { PaginationTests } from './pagination-tests/pagination-tests';
 export { Parent } from './parent/parent';
-export { PathParamMultipleResponse, PathParamSingularResponse, PathParams } from './path-params';
+export {
+  PathParamColonSuffixResponse,
+  PathParamMultipleResponse,
+  PathParamSingularResponse,
+  PathParams,
+} from './path-params';
 export {
   PositionalParamBasicBodyParams,
   PositionalParamBasicQueryParams,

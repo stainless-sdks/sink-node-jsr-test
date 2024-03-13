@@ -624,11 +624,13 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/path-params.ts">PathParamColonSuffixResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamMultipleResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamSingularResponse</a></code>
 
 Methods:
 
+- <code title="post /path_params/{with_verb}:initiate">client.pathParams.<a href="./src/resources/path-params.ts">colonSuffix</a>(withVerb) -> PathParamColonSuffixResponse</code>
 - <code title="post /path_params/{dashed-param}">client.pathParams.<a href="./src/resources/path-params.ts">dashedParam</a>(dashedParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/dates/{date_param}">client.pathParams.<a href="./src/resources/path-params.ts">dateParam</a>(dateParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/date_times/{datetime_param}">client.pathParams.<a href="./src/resources/path-params.ts">datetimeParam</a>(datetimeParam) -> BasicSharedModelObject</code>

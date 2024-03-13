@@ -667,6 +667,7 @@ export namespace Sink {
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
 
   export import PathParams = API.PathParams;
+  export import PathParamColonSuffixResponse = API.PathParamColonSuffixResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
 
