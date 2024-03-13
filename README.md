@@ -1,4 +1,4 @@
-# Sink Custom Node Title API Library
+# Sink Custom Node Title 1 API Library
 
 [![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm)
 
