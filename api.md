@@ -491,6 +491,46 @@ Methods:
 
 - <code title="post /names/reserved_names/common_reserved_params">client.names.reservedNames.<a href="./src/resources/names/reserved-names/reserved-names.ts">commonReservedParams</a>({ ...params }) -> void</code>
 
+### Public
+
+Types:
+
+- <code><a href="./src/resources/names/reserved-names/public/public.ts">Public</a></code>
+
+Methods:
+
+- <code title="get /names/reserved_names/public">client.names.reservedNames.public.<a href="./src/resources/names/reserved-names/public/public.ts">public</a>() -> Public</code>
+
+#### Private
+
+Types:
+
+- <code><a href="./src/resources/names/reserved-names/public/private.ts">Private</a></code>
+
+Methods:
+
+- <code title="get /names/reserved_names/public/private">client.names.reservedNames.public.private.<a href="./src/resources/names/reserved-names/public/private.ts">private</a>() -> Private</code>
+
+#### Interface
+
+Types:
+
+- <code><a href="./src/resources/names/reserved-names/public/interface.ts">Interface</a></code>
+
+Methods:
+
+- <code title="get /names/reserved_names/public/interface">client.names.reservedNames.public.interface.<a href="./src/resources/names/reserved-names/public/interface.ts">interface</a>() -> Interface</code>
+
+#### Class
+
+Types:
+
+- <code><a href="./src/resources/names/reserved-names/public/class.ts">Class</a></code>
+
+Methods:
+
+- <code title="get /names/reserved_names/public/class">client.names.reservedNames.public.class.<a href="./src/resources/names/reserved-names/public/class.ts">class</a>() -> Class</code>
+
 ### Import
 
 Types:

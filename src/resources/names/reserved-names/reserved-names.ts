@@ -5,8 +5,10 @@ import { APIResource } from 'sink-npm/resource';
 import * as ReservedNamesAPI from 'sink-npm/resources/names/reserved-names/reserved-names';
 import * as ImportAPI from 'sink-npm/resources/names/reserved-names/import';
 import * as MethodsAPI from 'sink-npm/resources/names/reserved-names/methods';
+import * as PublicAPI from 'sink-npm/resources/names/reserved-names/public/public';
 
 export class ReservedNames extends APIResource {
+  public: PublicAPI.PublicResource = new PublicAPI.PublicResource(this._client);
   import: ImportAPI.ImportResource = new ImportAPI.ImportResource(this._client);
   methods: MethodsAPI.Methods = new MethodsAPI.Methods(this._client);
 
@@ -32,6 +34,8 @@ export interface ReservedNameCommonReservedParamsParams {
 
 export namespace ReservedNames {
   export import ReservedNameCommonReservedParamsParams = ReservedNamesAPI.ReservedNameCommonReservedParamsParams;
+  export import PublicResource = PublicAPI.PublicResource;
+  export import Public = PublicAPI.Public;
   export import ImportResource = ImportAPI.ImportResource;
   export import Import = ImportAPI.Import;
   export import Methods = MethodsAPI.Methods;
