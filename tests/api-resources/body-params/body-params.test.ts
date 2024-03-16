@@ -35,6 +35,21 @@ describe('resource bodyParams', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
+  test('objectWithUnionProperties: only required params', async () => {
+    const responsePromise = sink.bodyParams.objectWithUnionProperties({ bar: { bar: 0 }, foo: 0 });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('objectWithUnionProperties: required and optional params', async () => {
+    const response = await sink.bodyParams.objectWithUnionProperties({ bar: { bar: 0 }, foo: 0 });
+  });
+
   test('onlyReadOnlyProperties', async () => {
     const responsePromise = sink.bodyParams.onlyReadOnlyProperties();
     const rawResponse = await responsePromise.asResponse();

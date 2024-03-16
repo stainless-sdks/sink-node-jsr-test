@@ -59,9 +59,6 @@
       "hidden": true
     }
   ],
-  "reviewers": [
-    "dgellow"
-  ],
   "release-type": "node",
   "extra-files": [
     "src/version.ts",

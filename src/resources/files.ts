@@ -63,11 +63,11 @@ export interface FileEverythingMultipartParams {
 
   e: 'a' | 'b' | 'c';
 
+  f: number;
+
   file: Uploadable;
 
   i: number;
-
-  n: number;
 
   purpose: string;
 

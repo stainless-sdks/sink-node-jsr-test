@@ -483,6 +483,7 @@ Types:
 Methods:
 
 - <code title="get /names/unions/discriminated_union">client.names.unions.<a href="./src/resources/names/unions.ts">discriminated</a>() -> DiscriminatedUnion</code>
+- <code title="get /names/unions/variants_object_with_union_properties">client.names.unions.<a href="./src/resources/names/unions.ts">variantsObjectWithUnionProperties</a>() -> ObjectWithUnionProperties</code>
 - <code title="get /names/unions/variants_single_prop_objects">client.names.unions.<a href="./src/resources/names/unions.ts">variantsSinglePropObjects</a>() -> VariantsSinglePropObjects</code>
 
 ## ReservedNames
@@ -599,6 +600,7 @@ Types:
 - <code><a href="./src/resources/responses/responses.ts">ModelWithNestedModel</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ObjectWithAnyOfNullProperty</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ObjectWithOneOfNullProperty</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ObjectWithUnionProperties</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponsesAllofCrossObject</a></code>
 - <code><a href="./src/resources/responses/responses.ts">SimpleAllof</a></code>
 - <code><a href="./src/resources/responses/responses.ts">UnknownObject</a></code>
@@ -606,6 +608,7 @@ Types:
 - <code><a href="./src/resources/responses/responses.ts">ResponseAdditionalPropertiesNestedModelReferenceResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseAllofCrossResourceResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseAllofSimpleResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseArrayObjectWithUnionPropertiesResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseArrayResponseResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseBooleanResponseResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseIntegerResponseResponse</a></code>
@@ -624,12 +627,13 @@ Methods:
 - <code title="get /responses/allof/cross">client.responses.<a href="./src/resources/responses/responses.ts">allofCrossResource</a>() -> ResponseAllofCrossResourceResponse</code>
 - <code title="get /responses/allof/simple">client.responses.<a href="./src/resources/responses/responses.ts">allofSimple</a>() -> ResponseAllofSimpleResponse</code>
 - <code title="get /responses/anyof_null">client.responses.<a href="./src/resources/responses/responses.ts">anyofNull</a>() -> ObjectWithAnyOfNullProperty</code>
+- <code title="get /responses/array/object_with_union_properties">client.responses.<a href="./src/resources/responses/responses.ts">arrayObjectWithUnionProperties</a>() -> ResponseArrayObjectWithUnionPropertiesResponse</code>
 - <code title="get /responses/array">client.responses.<a href="./src/resources/responses/responses.ts">arrayResponse</a>() -> ResponseArrayResponseResponse</code>
 - <code title="post /responses/boolean">client.responses.<a href="./src/resources/responses/responses.ts">booleanResponse</a>() -> ResponseBooleanResponseResponse</code>
 - <code title="post /responses/empty">client.responses.<a href="./src/resources/responses/responses.ts">emptyResponse</a>() -> void</code>
 - <code title="post /responses/integer">client.responses.<a href="./src/resources/responses/responses.ts">integerResponse</a>() -> ResponseIntegerResponseResponse</code>
 - <code title="get /responses/missing_required">client.responses.<a href="./src/resources/responses/responses.ts">missingRequired</a>() -> ResponseMissingRequiredResponse</code>
-- <code title="get /responses/nested_array">client.responses.<a href="./src/resources/responses/responses.ts">nestedArray</a>() -> ResponseNestedArrayResponse</code>
+- <code title="get /responses/array/nested">client.responses.<a href="./src/resources/responses/responses.ts">nestedArray</a>() -> ResponseNestedArrayResponse</code>
 - <code title="get /responses/object/everything">client.responses.<a href="./src/resources/responses/responses.ts">objectAllProperties</a>() -> ResponseObjectAllPropertiesResponse</code>
 - <code title="post /responses/object_no_properties">client.responses.<a href="./src/resources/responses/responses.ts">objectNoProperties</a>() -> ResponseObjectNoPropertiesResponse</code>
 - <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./src/resources/responses/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
@@ -733,6 +737,7 @@ Methods:
 
 - <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nestedRequestModels</a>({ ...params }) -> ModelWithNestedModel</code>
 - <code title="post /body_params/object_with_array_of_objects">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithArrayOfObjects</a>({ ...params }) -> void</code>
+- <code title="post /body_params/object_with_union_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithUnionProperties</a>({ ...params }) -> void</code>
 - <code title="patch /body_params/only_read_only_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">onlyReadOnlyProperties</a>() -> void</code>
 - <code title="post /body_params/param_in_model_name_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">paramInModelNameRef</a>({ ...params }) -> void</code>
 - <code title="post /body_params/property_model_ref">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">propertyModelRef</a>({ ...params }) -> void</code>

@@ -49,6 +49,20 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with an object `requestBody` that has properties with union types.
+   */
+  objectWithUnionProperties(
+    body: BodyParamObjectWithUnionPropertiesParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.post('/body_params/object_with_union_properties', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with a `requestBody` that only has `readOnly` properties
    */
   onlyReadOnlyProperties(
@@ -402,6 +416,20 @@ export namespace BodyParamObjectWithArrayOfObjectsParams {
   }
 }
 
+export interface BodyParamObjectWithUnionPropertiesParams {
+  bar: Shared.SimpleObject | BodyParamObjectWithUnionPropertiesParams.ObjectWithModelProperty;
+
+  foo: number | string | boolean | unknown;
+}
+
+export namespace BodyParamObjectWithUnionPropertiesParams {
+  export interface ObjectWithModelProperty {
+    foo?: string;
+
+    my_model?: BodyParamsAPI.MyModel;
+  }
+}
+
 export interface BodyParamOnlyReadOnlyPropertiesParams {}
 
 export interface BodyParamParamInModelNameRefParams {
@@ -646,6 +674,7 @@ export namespace BodyParams {
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
   export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;
+  export import BodyParamObjectWithUnionPropertiesParams = BodyParamsAPI.BodyParamObjectWithUnionPropertiesParams;
   export import BodyParamOnlyReadOnlyPropertiesParams = BodyParamsAPI.BodyParamOnlyReadOnlyPropertiesParams;
   export import BodyParamParamInModelNameRefParams = BodyParamsAPI.BodyParamParamInModelNameRefParams;
   export import BodyParamPropertyModelRefParams = BodyParamsAPI.BodyParamPropertyModelRefParams;

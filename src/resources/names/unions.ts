@@ -3,10 +3,17 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as UnionsAPI from 'sink-npm/resources/names/unions';
+import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
 
 export class Unions extends APIResource {
   discriminated(options?: Core.RequestOptions): Core.APIPromise<DiscriminatedUnion> {
     return this._client.get('/names/unions/discriminated_union', options);
+  }
+
+  variantsObjectWithUnionProperties(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ResponsesAPI.ObjectWithUnionProperties> {
+    return this._client.get('/names/unions/variants_object_with_union_properties', options);
   }
 
   variantsSinglePropObjects(options?: Core.RequestOptions): Core.APIPromise<VariantsSinglePropObjects> {

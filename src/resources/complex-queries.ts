@@ -69,7 +69,7 @@ export interface ComplexQueryObjectQueryParams {
 }
 
 export interface ComplexQueryUnionQueryParams {
-  include?: string | Array<string>;
+  include?: string | number | Array<string>;
 }
 
 export namespace ComplexQueries {

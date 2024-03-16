@@ -648,6 +648,7 @@ export namespace Sink {
   export import ModelWithNestedModel = API.ModelWithNestedModel;
   export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export import ObjectWithUnionProperties = API.ObjectWithUnionProperties;
   export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
   export import SimpleAllof = API.SimpleAllof;
   export import UnknownObject = API.UnknownObject;
@@ -655,6 +656,7 @@ export namespace Sink {
   export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
   export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
+  export import ResponseArrayObjectWithUnionPropertiesResponse = API.ResponseArrayObjectWithUnionPropertiesResponse;
   export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
   export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
   export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
@@ -708,6 +710,7 @@ export namespace Sink {
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
   export import BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
   export import BodyParamObjectWithArrayOfObjectsParams = API.BodyParamObjectWithArrayOfObjectsParams;
+  export import BodyParamObjectWithUnionPropertiesParams = API.BodyParamObjectWithUnionPropertiesParams;
   export import BodyParamOnlyReadOnlyPropertiesParams = API.BodyParamOnlyReadOnlyPropertiesParams;
   export import BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
   export import BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;

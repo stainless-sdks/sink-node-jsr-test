@@ -12,6 +12,7 @@ export {
   BodyParamUnionOverlappingPropResponse,
   BodyParamNestedRequestModelsParams,
   BodyParamObjectWithArrayOfObjectsParams,
+  BodyParamObjectWithUnionPropertiesParams,
   BodyParamOnlyReadOnlyPropertiesParams,
   BodyParamParamInModelNameRefParams,
   BodyParamPropertyModelRefParams,

@@ -38,9 +38,9 @@ describe('resource files', () => {
     const responsePromise = sink.files.everythingMultipart({
       b: true,
       e: 'a',
+      f: 0,
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       i: 0,
-      n: 0,
       purpose: 'string',
       s: 'string',
     });
@@ -57,9 +57,9 @@ describe('resource files', () => {
     const response = await sink.files.everythingMultipart({
       b: true,
       e: 'a',
+      f: 0,
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       i: 0,
-      n: 0,
       purpose: 'string',
       s: 'string',
     });

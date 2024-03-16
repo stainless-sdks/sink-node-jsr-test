@@ -51,6 +51,15 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Endpoint that returns an array of objects with union properties.
+   */
+  arrayObjectWithUnionProperties(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ResponseArrayObjectWithUnionPropertiesResponse> {
+    return this._client.get('/responses/array/object_with_union_properties', options);
+  }
+
+  /**
    * Endpoint that returns a top-level array.
    */
   arrayResponse(options?: Core.RequestOptions): Core.APIPromise<ResponseArrayResponseResponse> {
@@ -92,7 +101,7 @@ export class Responses extends APIResource {
    * Endpoint that returns a nested array.
    */
   nestedArray(options?: Core.RequestOptions): Core.APIPromise<ResponseNestedArrayResponse> {
-    return this._client.get('/responses/nested_array', options);
+    return this._client.get('/responses/array/nested', options);
   }
 
   /**
@@ -220,6 +229,20 @@ export namespace ObjectWithOneOfNullProperty {
   }
 }
 
+export interface ObjectWithUnionProperties {
+  bar: Shared.SimpleObject | ObjectWithUnionProperties.ObjectWithModelProperty;
+
+  foo: number | string | boolean | unknown;
+}
+
+export namespace ObjectWithUnionProperties {
+  export interface ObjectWithModelProperty {
+    foo?: string;
+
+    my_model?: BodyParamsAPI.MyModel;
+  }
+}
+
 export interface ResponsesAllofCrossObject {
   bar?: number;
 
@@ -247,6 +270,8 @@ export interface ResponseAllofSimpleResponse {
 
   foo?: string;
 }
+
+export type ResponseArrayObjectWithUnionPropertiesResponse = Array<ObjectWithUnionProperties>;
 
 export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;
 
@@ -278,6 +303,8 @@ export interface ResponseObjectAllPropertiesResponse {
   b: boolean;
 
   e: 'active' | 'inactive' | 'pending';
+
+  f: number;
 
   i: number;
 
@@ -337,6 +364,7 @@ export namespace Responses {
   export import ModelWithNestedModel = ResponsesAPI.ModelWithNestedModel;
   export import ObjectWithAnyOfNullProperty = ResponsesAPI.ObjectWithAnyOfNullProperty;
   export import ObjectWithOneOfNullProperty = ResponsesAPI.ObjectWithOneOfNullProperty;
+  export import ObjectWithUnionProperties = ResponsesAPI.ObjectWithUnionProperties;
   export import ResponsesAllofCrossObject = ResponsesAPI.ResponsesAllofCrossObject;
   export import SimpleAllof = ResponsesAPI.SimpleAllof;
   export import UnknownObject = ResponsesAPI.UnknownObject;
@@ -344,6 +372,7 @@ export namespace Responses {
   export import ResponseAdditionalPropertiesNestedModelReferenceResponse = ResponsesAPI.ResponseAdditionalPropertiesNestedModelReferenceResponse;
   export import ResponseAllofCrossResourceResponse = ResponsesAPI.ResponseAllofCrossResourceResponse;
   export import ResponseAllofSimpleResponse = ResponsesAPI.ResponseAllofSimpleResponse;
+  export import ResponseArrayObjectWithUnionPropertiesResponse = ResponsesAPI.ResponseArrayObjectWithUnionPropertiesResponse;
   export import ResponseArrayResponseResponse = ResponsesAPI.ResponseArrayResponseResponse;
   export import ResponseBooleanResponseResponse = ResponsesAPI.ResponseBooleanResponseResponse;
   export import ResponseIntegerResponseResponse = ResponsesAPI.ResponseIntegerResponseResponse;
