@@ -1,4 +1,4 @@
-// File generated from our OpenAPI spec by Stainless.
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import Sink, { toFile } from 'sink-npm';
 import { Response } from 'node-fetch';

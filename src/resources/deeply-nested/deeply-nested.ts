@@ -1,4 +1,4 @@
-// File generated from our OpenAPI spec by Stainless.
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from 'sink-npm/resource';
 import * as LevelOneAPI from 'sink-npm/resources/deeply-nested/level-one/level-one';
