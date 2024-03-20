@@ -141,7 +141,6 @@ export {
   ModelFromSchemasRef,
   OnlyNodeModel,
   ConfigToolModelRefFromNestedResponseBodyResponse,
-  ConfigToolModelRefFromSchemasResponse,
   ConfigToolOnlyInNodeParams,
   ConfigTools,
 } from './config-tools';

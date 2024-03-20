@@ -13,7 +13,7 @@ export class ConfigTools extends APIResource {
     return this._client.get('/config_tools/model_refs/from_nested_response', options);
   }
 
-  modelRefFromSchemas(options?: Core.RequestOptions): Core.APIPromise<ConfigToolModelRefFromSchemasResponse> {
+  modelRefFromSchemas(options?: Core.RequestOptions): Core.APIPromise<ModelFromSchemasRef> {
     return this._client.get('/config_tools/model_refs/from_schemas', options);
   }
 
@@ -49,10 +49,6 @@ export namespace ConfigToolModelRefFromNestedResponseBodyResponse {
   export interface Foo {
     bar: ConfigToolsAPI.ModelFromNestedResponseBodyRef;
   }
-}
-
-export interface ConfigToolModelRefFromSchemasResponse {
-  name: string;
 }
 
 export interface ConfigToolOnlyInNodeParams {
@@ -180,6 +176,5 @@ export namespace ConfigTools {
   export import ModelFromSchemasRef = ConfigToolsAPI.ModelFromSchemasRef;
   export import OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
   export import ConfigToolModelRefFromNestedResponseBodyResponse = ConfigToolsAPI.ConfigToolModelRefFromNestedResponseBodyResponse;
-  export import ConfigToolModelRefFromSchemasResponse = ConfigToolsAPI.ConfigToolModelRefFromSchemasResponse;
   export import ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
 }

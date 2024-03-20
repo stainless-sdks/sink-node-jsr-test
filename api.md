@@ -292,12 +292,11 @@ Types:
 - <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRef</a></code>
 - <code><a href="./src/resources/config-tools.ts">OnlyNodeModel</a></code>
 - <code><a href="./src/resources/config-tools.ts">ConfigToolModelRefFromNestedResponseBodyResponse</a></code>
-- <code><a href="./src/resources/config-tools.ts">ConfigToolModelRefFromSchemasResponse</a></code>
 
 Methods:
 
 - <code title="get /config_tools/model_refs/from_nested_response">client.configTools.<a href="./src/resources/config-tools.ts">modelRefFromNestedResponseBody</a>() -> ConfigToolModelRefFromNestedResponseBodyResponse</code>
-- <code title="get /config_tools/model_refs/from_schemas">client.configTools.<a href="./src/resources/config-tools.ts">modelRefFromSchemas</a>() -> ConfigToolModelRefFromSchemasResponse</code>
+- <code title="get /config_tools/model_refs/from_schemas">client.configTools.<a href="./src/resources/config-tools.ts">modelRefFromSchemas</a>() -> ModelFromSchemasRef</code>
 - <code title="post /cards">client.configTools.<a href="./src/resources/config-tools.ts">onlyInNode</a>({ ...params }) -> Card</code>
 
 # Company
