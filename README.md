@@ -6,6 +6,8 @@ This library provides convenient access to the Sink REST API from server-side Ty
 
 The REST API documentation can be found [on stainlessapi.com](https://stainlessapi.com). The full API of this library can be found in [api.md](api.md).
 
+It is generated with [Stainless](https://www.stainlessapi.com/).
+
 ## Installation
 
 ```sh
