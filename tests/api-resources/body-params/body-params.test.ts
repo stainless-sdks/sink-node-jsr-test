@@ -372,10 +372,7 @@ describe('resource bodyParams', () => {
   });
 
   test('withDefaultBodyParamRequired: only required params', async () => {
-    const responsePromise = sink.bodyParams.withDefaultBodyParamRequired({
-      my_version_body_param: 'string',
-      normal_param: true,
-    });
+    const responsePromise = sink.bodyParams.withDefaultBodyParamRequired({ normal_param: true });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
