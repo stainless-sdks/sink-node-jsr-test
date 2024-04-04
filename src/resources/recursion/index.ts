@@ -2,12 +2,8 @@
 
 export {
   ArrayRecursion,
-  BranchRecursion,
-  BranchRecursionChildA,
-  BranchRecursionChildB,
   SelfRecursion,
   RecursionCreateEnvelopeResponse,
-  RecursionCreateBranchParams,
   RecursionCreateEnvelopeParams,
   RecursionCreateSelfParams,
   Recursion,

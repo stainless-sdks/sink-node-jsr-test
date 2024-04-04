@@ -756,12 +756,8 @@ export namespace Sink {
 
   export import Recursion = API.Recursion;
   export import ArrayRecursion = API.ArrayRecursion;
-  export import BranchRecursion = API.BranchRecursion;
-  export import BranchRecursionChildA = API.BranchRecursionChildA;
-  export import BranchRecursionChildB = API.BranchRecursionChildB;
   export import SelfRecursion = API.SelfRecursion;
   export import RecursionCreateEnvelopeResponse = API.RecursionCreateEnvelopeResponse;
-  export import RecursionCreateBranchParams = API.RecursionCreateBranchParams;
   export import RecursionCreateEnvelopeParams = API.RecursionCreateEnvelopeParams;
   export import RecursionCreateSelfParams = API.RecursionCreateSelfParams;
 

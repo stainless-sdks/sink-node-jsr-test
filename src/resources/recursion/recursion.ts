@@ -8,13 +8,6 @@ import * as SharedResponsesAPI from 'sink-npm/resources/recursion/shared-respons
 export class Recursion extends APIResource {
   sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this._client);
 
-  createBranch(
-    body: RecursionCreateBranchParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BranchRecursion> {
-    return this._client.post('/recursion/branch', { body, ...options });
-  }
-
   createEnvelope(
     body: RecursionCreateEnvelopeParams,
     options?: Core.RequestOptions,
@@ -29,18 +22,6 @@ export class Recursion extends APIResource {
 
 export type ArrayRecursion = Array<number | ArrayRecursion>;
 
-export interface BranchRecursion {
-  child?: BranchRecursionChildA | BranchRecursionChildB;
-}
-
-export interface BranchRecursionChildA {
-  a: BranchRecursion;
-}
-
-export interface BranchRecursionChildB {
-  b: BranchRecursion;
-}
-
 export interface SelfRecursion {
   name: string;
 
@@ -49,10 +30,6 @@ export interface SelfRecursion {
 
 export interface RecursionCreateEnvelopeResponse {
   data: SelfRecursion;
-}
-
-export interface RecursionCreateBranchParams {
-  child?: BranchRecursionChildA | BranchRecursionChildB;
 }
 
 export interface RecursionCreateEnvelopeParams {
@@ -67,12 +44,8 @@ export interface RecursionCreateSelfParams {
 
 export namespace Recursion {
   export import ArrayRecursion = RecursionAPI.ArrayRecursion;
-  export import BranchRecursion = RecursionAPI.BranchRecursion;
-  export import BranchRecursionChildA = RecursionAPI.BranchRecursionChildA;
-  export import BranchRecursionChildB = RecursionAPI.BranchRecursionChildB;
   export import SelfRecursion = RecursionAPI.SelfRecursion;
   export import RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
-  export import RecursionCreateBranchParams = RecursionAPI.RecursionCreateBranchParams;
   export import RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
   export import RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
   export import SharedResponses = SharedResponsesAPI.SharedResponses;

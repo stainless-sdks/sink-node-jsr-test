@@ -887,15 +887,11 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/recursion/recursion.ts">ArrayRecursion</a></code>
-- <code><a href="./src/resources/recursion/recursion.ts">BranchRecursion</a></code>
-- <code><a href="./src/resources/recursion/recursion.ts">BranchRecursionChildA</a></code>
-- <code><a href="./src/resources/recursion/recursion.ts">BranchRecursionChildB</a></code>
 - <code><a href="./src/resources/recursion/recursion.ts">SelfRecursion</a></code>
 - <code><a href="./src/resources/recursion/recursion.ts">RecursionCreateEnvelopeResponse</a></code>
 
 Methods:
 
-- <code title="post /recursion/branch">client.recursion.<a href="./src/resources/recursion/recursion.ts">createBranch</a>({ ...params }) -> BranchRecursion</code>
 - <code title="post /recursion/envelope">client.recursion.<a href="./src/resources/recursion/recursion.ts">createEnvelope</a>({ ...params }) -> RecursionCreateEnvelopeResponse</code>
 - <code title="post /recursion/self">client.recursion.<a href="./src/resources/recursion/recursion.ts">createSelf</a>({ ...params }) -> SelfRecursion</code>
 

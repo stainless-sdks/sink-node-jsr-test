@@ -13,17 +13,6 @@ const sink = new Sink({
 });
 
 describe('resource recursion', () => {
-  test('createBranch', async () => {
-    const responsePromise = sink.recursion.createBranch({});
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
   test('createEnvelope', async () => {
     const responsePromise = sink.recursion.createEnvelope({});
     const rawResponse = await responsePromise.asResponse();
