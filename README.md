@@ -134,8 +134,6 @@ async function main() {
     if (err instanceof Sink.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
-      console.log(err.error?.message); // Invalid parameter(s): type
-      console.log(err.error?.debugging_request_id); // 94d5e915-xxxx-4cee-a4f5-2xd6ebd279ac
       console.log(err.headers); // {server: 'nginx', ...}
     } else {
       throw err;
