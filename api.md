@@ -567,6 +567,16 @@ Types:
 
 - <code><a href="./src/resources/names/can-cause-clashes/employment-data.ts">EmploymentData</a></code>
 
+## OpenapiSpecials
+
+Types:
+
+- <code><a href="./src/resources/names/openapi-specials.ts">OpenapiSpecialUsedUsedAsPropertyNameResponse</a></code>
+
+Methods:
+
+- <code title="get /names/openapi_specials/used_used_as_property_name">client.names.openapiSpecials.<a href="./src/resources/names/openapi-specials.ts">usedUsedAsPropertyName</a>() -> OpenapiSpecialUsedUsedAsPropertyNameResponse</code>
+
 # Widgets
 
 Types:

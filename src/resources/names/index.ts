@@ -13,5 +13,6 @@ export {
 } from './names';
 export { CanCauseClashes } from './can-cause-clashes/index';
 export { DiscriminatedUnion, VariantsSinglePropObjects, Unions } from './unions';
+export { OpenapiSpecialUsedUsedAsPropertyNameResponse, OpenapiSpecials } from './openapi-specials';
 export { ParamOptionsParamParams, ParamTimeoutParamParams, Params } from './params';
 export { ReservedNameCommonReservedParamsParams, ReservedNames } from './reserved-names/index';

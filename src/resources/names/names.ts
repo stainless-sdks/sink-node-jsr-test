@@ -4,6 +4,7 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as NamesAPI from 'sink-npm/resources/names/names';
 import * as Shared from 'sink-npm/resources/shared';
+import * as OpenapiSpecialsAPI from 'sink-npm/resources/names/openapi-specials';
 import * as ParamsAPI from 'sink-npm/resources/names/params';
 import * as UnionsAPI from 'sink-npm/resources/names/unions';
 import * as CanCauseClashesAPI from 'sink-npm/resources/names/can-cause-clashes/can-cause-clashes';
@@ -14,6 +15,7 @@ export class Names extends APIResource {
   reservedNames: ReservedNamesAPI.ReservedNames = new ReservedNamesAPI.ReservedNames(this._client);
   params: ParamsAPI.Params = new ParamsAPI.Params(this._client);
   canCauseClashes: CanCauseClashesAPI.CanCauseClashes = new CanCauseClashesAPI.CanCauseClashes(this._client);
+  openapiSpecials: OpenapiSpecialsAPI.OpenapiSpecials = new OpenapiSpecialsAPI.OpenapiSpecials(this._client);
 
   /**
    * Endpoint with request & response properties that could cause clashes due to
@@ -250,4 +252,6 @@ export namespace Names {
   export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
   export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
   export import CanCauseClashes = CanCauseClashesAPI.CanCauseClashes;
+  export import OpenapiSpecials = OpenapiSpecialsAPI.OpenapiSpecials;
+  export import OpenapiSpecialUsedUsedAsPropertyNameResponse = OpenapiSpecialsAPI.OpenapiSpecialUsedUsedAsPropertyNameResponse;
 }
