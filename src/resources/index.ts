@@ -189,11 +189,11 @@ export {
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
 export { OnlyCustomMethods } from './only-custom-methods';
 export {
-  OpenapiFormatArrayTypeOneEntryResponse,
-  OpenapiFormatArrayTypeOneEntryWithNullResponse,
-  OpenapiFormatArrayTypeOneEntryParams,
-  OpenapiFormatArrayTypeOneEntryWithNullParams,
-  OpenapiFormats,
+  OpenAPIFormatArrayTypeOneEntryResponse,
+  OpenAPIFormatArrayTypeOneEntryWithNullResponse,
+  OpenAPIFormatArrayTypeOneEntryParams,
+  OpenAPIFormatArrayTypeOneEntryWithNullParams,
+  OpenAPIFormats,
 } from './openapi-formats';
 export { PaginationTests } from './pagination-tests/pagination-tests';
 export { Parent } from './parent/parent';

@@ -3,16 +3,16 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import { isRequestOptions } from 'sink-npm/core';
-import * as OpenapiFormatsAPI from 'sink-npm/resources/openapi-formats';
+import * as OpenAPIFormatsAPI from 'sink-npm/resources/openapi-formats';
 
-export class OpenapiFormats extends APIResource {
+export class OpenAPIFormats extends APIResource {
   /**
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */
   arrayTypeOneEntry(
-    body: OpenapiFormatArrayTypeOneEntryParams,
+    body: OpenAPIFormatArrayTypeOneEntryParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<OpenapiFormatArrayTypeOneEntryResponse> {
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryResponse> {
     return this._client.post('/openapi_formats/array_type_one_entry', { body, ...options });
   }
 
@@ -23,16 +23,16 @@ export class OpenapiFormats extends APIResource {
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */
   arrayTypeOneEntryWithNull(
-    body?: OpenapiFormatArrayTypeOneEntryWithNullParams,
+    body?: OpenAPIFormatArrayTypeOneEntryWithNullParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<OpenapiFormatArrayTypeOneEntryWithNullResponse | null>;
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null>;
   arrayTypeOneEntryWithNull(
     options?: Core.RequestOptions,
-  ): Core.APIPromise<OpenapiFormatArrayTypeOneEntryWithNullResponse | null>;
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null>;
   arrayTypeOneEntryWithNull(
-    body: OpenapiFormatArrayTypeOneEntryWithNullParams | Core.RequestOptions = {},
+    body: OpenAPIFormatArrayTypeOneEntryWithNullParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<OpenapiFormatArrayTypeOneEntryWithNullResponse | null> {
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null> {
     if (isRequestOptions(body)) {
       return this.arrayTypeOneEntryWithNull({}, body);
     }
@@ -40,25 +40,25 @@ export class OpenapiFormats extends APIResource {
   }
 }
 
-export interface OpenapiFormatArrayTypeOneEntryResponse {
+export interface OpenAPIFormatArrayTypeOneEntryResponse {
   foo?: string;
 }
 
-export interface OpenapiFormatArrayTypeOneEntryWithNullResponse {
+export interface OpenAPIFormatArrayTypeOneEntryWithNullResponse {
   foo?: string;
 }
 
-export interface OpenapiFormatArrayTypeOneEntryParams {
+export interface OpenAPIFormatArrayTypeOneEntryParams {
   enable_debug_logging: boolean;
 }
 
-export interface OpenapiFormatArrayTypeOneEntryWithNullParams {
+export interface OpenAPIFormatArrayTypeOneEntryWithNullParams {
   enable_debug_logging?: boolean;
 }
 
-export namespace OpenapiFormats {
-  export import OpenapiFormatArrayTypeOneEntryResponse = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryResponse;
-  export import OpenapiFormatArrayTypeOneEntryWithNullResponse = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullResponse;
-  export import OpenapiFormatArrayTypeOneEntryParams = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryParams;
-  export import OpenapiFormatArrayTypeOneEntryWithNullParams = OpenapiFormatsAPI.OpenapiFormatArrayTypeOneEntryWithNullParams;
+export namespace OpenAPIFormats {
+  export import OpenAPIFormatArrayTypeOneEntryResponse = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryResponse;
+  export import OpenAPIFormatArrayTypeOneEntryWithNullResponse = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryWithNullResponse;
+  export import OpenAPIFormatArrayTypeOneEntryParams = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryParams;
+  export import OpenAPIFormatArrayTypeOneEntryWithNullParams = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryWithNullParams;
 }

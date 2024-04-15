@@ -12,9 +12,9 @@ const sink = new Sink({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource openapiFormats', () => {
+describe('resource openAPIFormats', () => {
   test('arrayTypeOneEntry: only required params', async () => {
-    const responsePromise = sink.openapiFormats.arrayTypeOneEntry({ enable_debug_logging: true });
+    const responsePromise = sink.openAPIFormats.arrayTypeOneEntry({ enable_debug_logging: true });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,11 +25,11 @@ describe('resource openapiFormats', () => {
   });
 
   test('arrayTypeOneEntry: required and optional params', async () => {
-    const response = await sink.openapiFormats.arrayTypeOneEntry({ enable_debug_logging: true });
+    const response = await sink.openAPIFormats.arrayTypeOneEntry({ enable_debug_logging: true });
   });
 
   test('arrayTypeOneEntryWithNull', async () => {
-    const responsePromise = sink.openapiFormats.arrayTypeOneEntryWithNull();
+    const responsePromise = sink.openAPIFormats.arrayTypeOneEntryWithNull();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -42,14 +42,14 @@ describe('resource openapiFormats', () => {
   test('arrayTypeOneEntryWithNull: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.openapiFormats.arrayTypeOneEntryWithNull({ path: '/_stainless_unknown_path' }),
+      sink.openAPIFormats.arrayTypeOneEntryWithNull({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('arrayTypeOneEntryWithNull: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.openapiFormats.arrayTypeOneEntryWithNull(
+      sink.openAPIFormats.arrayTypeOneEntryWithNull(
         { enable_debug_logging: true },
         { path: '/_stainless_unknown_path' },
       ),

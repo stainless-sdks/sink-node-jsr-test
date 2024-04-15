@@ -315,17 +315,17 @@ Methods:
 
 - <code title="get /company/payments/{payment_id}">client.company.payments.<a href="./src/resources/company/payments.ts">retrieve</a>(paymentId) -> CompanyPayment</code>
 
-# OpenapiFormats
+# OpenAPIFormats
 
 Types:
 
-- <code><a href="./src/resources/openapi-formats.ts">OpenapiFormatArrayTypeOneEntryResponse</a></code>
-- <code><a href="./src/resources/openapi-formats.ts">OpenapiFormatArrayTypeOneEntryWithNullResponse</a></code>
+- <code><a href="./src/resources/openapi-formats.ts">OpenAPIFormatArrayTypeOneEntryResponse</a></code>
+- <code><a href="./src/resources/openapi-formats.ts">OpenAPIFormatArrayTypeOneEntryWithNullResponse</a></code>
 
 Methods:
 
-- <code title="post /openapi_formats/array_type_one_entry">client.openapiFormats.<a href="./src/resources/openapi-formats.ts">arrayTypeOneEntry</a>({ ...params }) -> OpenapiFormatArrayTypeOneEntryResponse</code>
-- <code title="post /openapi_formats/array_type_one_entry_with_null">client.openapiFormats.<a href="./src/resources/openapi-formats.ts">arrayTypeOneEntryWithNull</a>({ ...params }) -> OpenapiFormatArrayTypeOneEntryWithNullResponse | null</code>
+- <code title="post /openapi_formats/array_type_one_entry">client.openAPIFormats.<a href="./src/resources/openapi-formats.ts">arrayTypeOneEntry</a>({ ...params }) -> OpenAPIFormatArrayTypeOneEntryResponse</code>
+- <code title="post /openapi_formats/array_type_one_entry_with_null">client.openAPIFormats.<a href="./src/resources/openapi-formats.ts">arrayTypeOneEntryWithNull</a>({ ...params }) -> OpenAPIFormatArrayTypeOneEntryWithNullResponse | null</code>
 
 # Parent
 
@@ -567,15 +567,15 @@ Types:
 
 - <code><a href="./src/resources/names/can-cause-clashes/employment-data.ts">EmploymentData</a></code>
 
-## OpenapiSpecials
+## OpenAPISpecials
 
 Types:
 
-- <code><a href="./src/resources/names/openapi-specials.ts">OpenapiSpecialUsedUsedAsPropertyNameResponse</a></code>
+- <code><a href="./src/resources/names/openapi-specials.ts">OpenAPISpecialUsedUsedAsPropertyNameResponse</a></code>
 
 Methods:
 
-- <code title="get /names/openapi_specials/used_used_as_property_name">client.names.openapiSpecials.<a href="./src/resources/names/openapi-specials.ts">usedUsedAsPropertyName</a>() -> OpenapiSpecialUsedUsedAsPropertyNameResponse</code>
+- <code title="get /names/openapi_specials/used_used_as_property_name">client.names.openAPISpecials.<a href="./src/resources/names/openapi-specials.ts">usedUsedAsPropertyName</a>() -> OpenAPISpecialUsedUsedAsPropertyNameResponse</code>
 
 # Widgets
 

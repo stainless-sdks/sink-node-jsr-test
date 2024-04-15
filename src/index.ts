@@ -318,7 +318,7 @@ export class Sink extends Core.APIClient {
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
   company: API.CompanyResource = new API.CompanyResource(this);
-  openapiFormats: API.OpenapiFormats = new API.OpenapiFormats(this);
+  openAPIFormats: API.OpenAPIFormats = new API.OpenAPIFormats(this);
   parent: API.Parent = new API.Parent(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
   types: API.Types = new API.Types(this);
@@ -602,11 +602,11 @@ export namespace Sink {
   export import CompanyResource = API.CompanyResource;
   export import Company = API.Company;
 
-  export import OpenapiFormats = API.OpenapiFormats;
-  export import OpenapiFormatArrayTypeOneEntryResponse = API.OpenapiFormatArrayTypeOneEntryResponse;
-  export import OpenapiFormatArrayTypeOneEntryWithNullResponse = API.OpenapiFormatArrayTypeOneEntryWithNullResponse;
-  export import OpenapiFormatArrayTypeOneEntryParams = API.OpenapiFormatArrayTypeOneEntryParams;
-  export import OpenapiFormatArrayTypeOneEntryWithNullParams = API.OpenapiFormatArrayTypeOneEntryWithNullParams;
+  export import OpenAPIFormats = API.OpenAPIFormats;
+  export import OpenAPIFormatArrayTypeOneEntryResponse = API.OpenAPIFormatArrayTypeOneEntryResponse;
+  export import OpenAPIFormatArrayTypeOneEntryWithNullResponse = API.OpenAPIFormatArrayTypeOneEntryWithNullResponse;
+  export import OpenAPIFormatArrayTypeOneEntryParams = API.OpenAPIFormatArrayTypeOneEntryParams;
+  export import OpenAPIFormatArrayTypeOneEntryWithNullParams = API.OpenAPIFormatArrayTypeOneEntryWithNullParams;
 
   export import Parent = API.Parent;
 

@@ -2,20 +2,20 @@
 
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
-import * as OpenapiSpecialsAPI from 'sink-npm/resources/names/openapi-specials';
+import * as OpenAPISpecialsAPI from 'sink-npm/resources/names/openapi-specials';
 
-export class OpenapiSpecials extends APIResource {
+export class OpenAPISpecials extends APIResource {
   usedUsedAsPropertyName(
     options?: Core.RequestOptions,
-  ): Core.APIPromise<OpenapiSpecialUsedUsedAsPropertyNameResponse> {
+  ): Core.APIPromise<OpenAPISpecialUsedUsedAsPropertyNameResponse> {
     return this._client.get('/names/openapi_specials/used_used_as_property_name', options);
   }
 }
 
-export interface OpenapiSpecialUsedUsedAsPropertyNameResponse {
+export interface OpenAPISpecialUsedUsedAsPropertyNameResponse {
   $ref: string;
 }
 
-export namespace OpenapiSpecials {
-  export import OpenapiSpecialUsedUsedAsPropertyNameResponse = OpenapiSpecialsAPI.OpenapiSpecialUsedUsedAsPropertyNameResponse;
+export namespace OpenAPISpecials {
+  export import OpenAPISpecialUsedUsedAsPropertyNameResponse = OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
 }
