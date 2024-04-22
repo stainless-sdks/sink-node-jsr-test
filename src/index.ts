@@ -428,6 +428,9 @@ export class Sink extends Core.APIClient {
   static InternalServerError = Errors.InternalServerError;
   static PermissionDeniedError = Errors.PermissionDeniedError;
   static UnprocessableEntityError = Errors.UnprocessableEntityError;
+
+  static toFile = Uploads.toFile;
+  static fileFromPath = Uploads.fileFromPath;
 }
 
 export const { CONSTANT_WITH_NEWLINES } = Sink;
@@ -452,10 +455,6 @@ export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
 export namespace Sink {
-  // Helper functions
-  export import toFile = Uploads.toFile;
-  export import fileFromPath = Uploads.fileFromPath;
-
   export import RequestOptions = Core.RequestOptions;
 
   export import PageCursor = Pagination.PageCursor;
