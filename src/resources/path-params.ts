@@ -79,26 +79,6 @@ export class PathParams extends APIResource {
   }
 
   /**
-   * Endpoint with nullable path parameters.
-   *
-   * In a spec file nullable path params are ambiguous and likely to be a mistake.
-   * They are transformed to non-nullable as part of the spec normalization and a
-   * diagnostic is emitted.
-   */
-  nullableParams(
-    nullableParam1: string,
-    nullableParam2: string,
-    nullableParam3: 'foo',
-    body: PathParamNullableParamsParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<Shared.BasicSharedModelObject> {
-    return this._client.post(`/path_params/nullable/${nullableParam1}/${nullableParam2}/${nullableParam3}`, {
-      body,
-      ...options,
-    });
-  }
-
-  /**
    * Endpoint with multiple path parameters that are of different types, e.g. one
    * integer type and the other string type.
    */
@@ -130,13 +110,8 @@ export interface PathParamSingularResponse {
   foo: string;
 }
 
-export interface PathParamNullableParamsParams {
-  foo?: string;
-}
-
 export namespace PathParams {
   export import PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
   export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
   export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
-  export import PathParamNullableParamsParams = PathParamsAPI.PathParamNullableParamsParams;
 }

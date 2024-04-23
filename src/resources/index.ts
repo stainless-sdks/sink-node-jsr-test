@@ -102,7 +102,6 @@ export {
   MethodConfig,
 } from './method-config';
 export {
-  MixedParamBodyWithTopLevelOneOfAndPathParams,
   MixedParamQueryAndBodyParams,
   MixedParamQueryBodyAndPathParams,
   MixedParams,
@@ -202,7 +201,6 @@ export {
   PathParamColonSuffixResponse,
   PathParamMultipleResponse,
   PathParamSingularResponse,
-  PathParamNullableParamsParams,
   PathParams,
 } from './path-params';
 export {
