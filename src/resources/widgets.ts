@@ -10,7 +10,7 @@ export class Widgets extends APIResource {
    */
   retrieveWithFilter(
     widgetId: number,
-    filterType: 'available' | 'archived' | 'out_of_stock' | null,
+    filterType: 'available' | 'archived' | 'out_of_stock',
     options?: Core.RequestOptions,
   ): Core.APIPromise<Widget> {
     return this._client.get(`/widgets/${widgetId}/filter/${filterType}`, options);
