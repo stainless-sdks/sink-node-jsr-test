@@ -139,6 +139,17 @@ describe('resource pathParams', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('nullableParams', async () => {
+    const responsePromise = sink.pathParams.nullableParams('string', 'string', 'foo', {});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
   test('paramsMixedTypes', async () => {
     const responsePromise = sink.pathParams.paramsMixedTypes(0, 'string');
     const rawResponse = await responsePromise.asResponse();

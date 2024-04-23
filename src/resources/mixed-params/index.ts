@@ -6,4 +6,9 @@ export {
   DuplicateQueryAndPathParams,
   Duplicates,
 } from './duplicates';
-export { MixedParamQueryAndBodyParams, MixedParamQueryBodyAndPathParams, MixedParams } from './mixed-params';
+export {
+  MixedParamBodyWithTopLevelOneOfAndPathParams,
+  MixedParamQueryAndBodyParams,
+  MixedParamQueryBodyAndPathParams,
+  MixedParams,
+} from './mixed-params';
