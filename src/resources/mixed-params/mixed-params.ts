@@ -11,24 +11,6 @@ export class MixedParams extends APIResource {
   duplicates: DuplicatesAPI.Duplicates = new DuplicatesAPI.Duplicates(this._client);
 
   /**
-   * Endpoint with a `requestBody` making use of oneOf, and a path param.
-   *
-   * See
-   * https://linear.app/stainless/issue/STA-4902/orb-java-unresolved-reference-customerid-externalcustomerid
-   */
-  bodyWithTopLevelOneOfAndPath(
-    pathParam: string,
-    body: MixedParamBodyWithTopLevelOneOfAndPathParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post(`/mixed_params/body_with_top_level_one_of_and_path/${pathParam}`, {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
-  }
-
-  /**
    * Endpoint with a `requestBody` that defines both query and body params
    */
   queryAndBody(
@@ -76,22 +58,6 @@ export class MixedParams extends APIResource {
   }
 }
 
-export type MixedParamBodyWithTopLevelOneOfAndPathParams =
-  | MixedParamBodyWithTopLevelOneOfAndPathParams.ObjectWithRequiredEnum
-  | MixedParamBodyWithTopLevelOneOfAndPathParams.BasicSharedModelObject;
-
-export namespace MixedParamBodyWithTopLevelOneOfAndPathParams {
-  export interface ObjectWithRequiredEnum {
-    kind: 'VIRTUAL' | 'PHYSICAL';
-  }
-
-  export interface BasicSharedModelObject {
-    bar: string;
-
-    foo: string;
-  }
-}
-
 export interface MixedParamQueryAndBodyParams {
   /**
    * Query param: Query param description
@@ -117,7 +83,6 @@ export interface MixedParamQueryBodyAndPathParams {
 }
 
 export namespace MixedParams {
-  export import MixedParamBodyWithTopLevelOneOfAndPathParams = MixedParamsAPI.MixedParamBodyWithTopLevelOneOfAndPathParams;
   export import MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
   export import MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
   export import Duplicates = DuplicatesAPI.Duplicates;

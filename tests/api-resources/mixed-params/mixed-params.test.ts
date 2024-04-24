@@ -13,21 +13,6 @@ const sink = new Sink({
 });
 
 describe('resource mixedParams', () => {
-  test('bodyWithTopLevelOneOfAndPath: only required params', async () => {
-    const responsePromise = sink.mixedParams.bodyWithTopLevelOneOfAndPath('string', { kind: 'VIRTUAL' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('bodyWithTopLevelOneOfAndPath: required and optional params', async () => {
-    const response = await sink.mixedParams.bodyWithTopLevelOneOfAndPath('string', { kind: 'VIRTUAL' });
-  });
-
   test('queryAndBody', async () => {
     const responsePromise = sink.mixedParams.queryAndBody();
     const rawResponse = await responsePromise.asResponse();
