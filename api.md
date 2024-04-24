@@ -690,6 +690,7 @@ Methods:
 - <code title="post /path_params/enums/{enum_param}">client.pathParams.<a href="./src/resources/path-params.ts">enumParam</a>(enumParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{integer_param}">client.pathParams.<a href="./src/resources/path-params.ts">integerParam</a>(integerParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./src/resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
+- <code title="post /path_params/nullable/{nullable_param_1}/{nullable_param_2}/{nullable_param_3}">client.pathParams.<a href="./src/resources/path-params.ts">nullableParams</a>(nullableParam1, nullableParam2, nullableParam3, { ...params }) -> BasicSharedModelObject</code>
 - <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./src/resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./src/resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 
@@ -787,6 +788,7 @@ Methods:
 
 Methods:
 
+- <code title="post /mixed_params/body_with_top_level_one_of_and_path/{path_param}">client.mixedParams.<a href="./src/resources/mixed-params/mixed-params.ts">bodyWithTopLevelOneOfAndPath</a>(pathParam, { ...params }) -> void</code>
 - <code title="post /mixed_params/query_and_body">client.mixedParams.<a href="./src/resources/mixed-params/mixed-params.ts">queryAndBody</a>({ ...params }) -> BasicSharedModelObject</code>
 - <code title="post /mixed_params/query_body_and_path/{path_param}">client.mixedParams.<a href="./src/resources/mixed-params/mixed-params.ts">queryBodyAndPath</a>(pathParam, { ...params }) -> BasicSharedModelObject</code>
 
