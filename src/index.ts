@@ -670,6 +670,7 @@ export namespace Sink {
   export import PathParamColonSuffixResponse = API.PathParamColonSuffixResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
+  export import PathParamNullableParamsParams = API.PathParamNullableParamsParams;
 
   export import PositionalParams = API.PositionalParams;
   export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
@@ -733,6 +734,7 @@ export namespace Sink {
   export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
 
   export import MixedParams = API.MixedParams;
+  export import MixedParamBodyWithTopLevelOneOfAndPathParams = API.MixedParamBodyWithTopLevelOneOfAndPathParams;
   export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
   export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
 
