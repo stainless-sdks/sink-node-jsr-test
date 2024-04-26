@@ -3,6 +3,7 @@
 import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as TypesAPI from 'sink-npm/resources/types/types';
+import * as AllofsAPI from 'sink-npm/resources/types/allofs';
 import * as ArraysAPI from 'sink-npm/resources/types/arrays';
 import * as EnumsAPI from 'sink-npm/resources/types/enums';
 import * as MapsAPI from 'sink-npm/resources/types/maps';
@@ -19,6 +20,7 @@ export class Types extends APIResource {
   );
   maps: MapsAPI.Maps = new MapsAPI.Maps(this._client);
   enums: EnumsAPI.Enums = new EnumsAPI.Enums(this._client);
+  allofs: AllofsAPI.Allofs = new AllofsAPI.Allofs(this._client);
   objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this._client);
   arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this._client);
 
@@ -114,6 +116,9 @@ export namespace Types {
   export import EnumArrayUniqueValues2ValuesParams = EnumsAPI.EnumArrayUniqueValues2ValuesParams;
   export import EnumArrayUniqueValuesNumbersParams = EnumsAPI.EnumArrayUniqueValuesNumbersParams;
   export import EnumBasicParams = EnumsAPI.EnumBasicParams;
+  export import Allofs = AllofsAPI.Allofs;
+  export import AllofBaseParent = AllofsAPI.AllofBaseParent;
+  export import AllofMultipleInlineEntries = AllofsAPI.AllofMultipleInlineEntries;
   export import Objects = ObjectsAPI.Objects;
   export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
   export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;

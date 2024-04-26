@@ -420,6 +420,13 @@ Methods:
 - <code title="post /types/enum_tests_array_unique_values_numbers">client.types.enums.<a href="./src/resources/types/enums.ts">arrayUniqueValuesNumbers</a>([ ...body ]) -> void</code>
 - <code title="post /types/enums">client.types.enums.<a href="./src/resources/types/enums.ts">basic</a>({ ...params }) -> EnumBasicResponse</code>
 
+## Allofs
+
+Types:
+
+- <code><a href="./src/resources/types/allofs.ts">AllofBaseParent</a></code>
+- <code><a href="./src/resources/types/allofs.ts">AllofMultipleInlineEntries</a></code>
+
 ## Objects
 
 Types:
