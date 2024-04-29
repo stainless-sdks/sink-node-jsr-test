@@ -240,6 +240,7 @@ Types:
 - <code><a href="./src/resources/cards.ts">Card</a></code>
 - <code><a href="./src/resources/cards.ts">CardAlias</a></code>
 - <code><a href="./src/resources/cards.ts">FundingAccount</a></code>
+- <code><a href="./src/resources/cards.ts">CardListResponse</a></code>
 - <code><a href="./src/resources/cards.ts">CardProvisionFooResponse</a></code>
 
 Methods:
@@ -247,6 +248,7 @@ Methods:
 - <code title="post /cards">client.cards.<a href="./src/resources/cards.ts">create</a>({ ...params }) -> Card</code>
 - <code title="get /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">retrieve</a>(cardToken) -> Card</code>
 - <code title="patch /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">update</a>(cardToken, { ...params }) -> Card</code>
+- <code title="get /cards">client.cards.<a href="./src/resources/cards.ts">list</a>({ ...params }) -> CardListResponse</code>
 - <code title="post /deprecations/method_all_but_go_diff_message">client.cards.<a href="./src/resources/cards.ts">deprecatedAllButGoDiffMessage</a>() -> void</code>
 - <code title="post /deprecations/method_all_but_go_diff_message">client.cards.<a href="./src/resources/cards.ts">deprecatedAllDiffMessage</a>() -> void</code>
 - <code title="post /deprecations/method">client.cards.<a href="./src/resources/cards.ts">deprecatedMethod</a>() -> void</code>

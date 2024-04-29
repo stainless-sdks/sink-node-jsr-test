@@ -32,6 +32,13 @@ export class Cards extends APIResource {
     return this._client.patch(`/cards/${cardToken}`, { body, ...options });
   }
 
+  /**
+   * List cards.
+   */
+  list(query: CardListParams, options?: Core.RequestOptions): Core.APIPromise<CardListResponse> {
+    return this._client.get('/cards', { query, ...options });
+  }
+
   createAliased = this.create;
 
   /**
@@ -306,6 +313,25 @@ export interface FundingAccount {
   nickname?: string;
 }
 
+export interface CardListResponse {
+  data: Array<Card>;
+
+  /**
+   * Page number.
+   */
+  page: number;
+
+  /**
+   * Total number of entries.
+   */
+  total_entries: number;
+
+  /**
+   * Total number of pages.
+   */
+  total_pages: number;
+}
+
 export interface CardProvisionFooResponse {
   provisioning_payload: string;
 }
@@ -494,6 +520,38 @@ export interface CardUpdateParams {
    *   time.
    */
   state?: 'CLOSED' | 'OPEN' | 'PAUSED';
+}
+
+export interface CardListParams {
+  /**
+   * Date string in 8601 format. Only entries created after the specified date will
+   * be included. UTC time zone.
+   */
+  begin: string;
+
+  /**
+   * Date string in 8601 format. Only entries created before the specified date will
+   * be included. UTC time zone.
+   */
+  end: string;
+
+  /**
+   * Only required for multi-account users. Returns cards associated with this
+   * account. Only applicable if using account holder enrollment. See
+   * [Managing Your Program](https://docs.lithic.com/docs/managing-your-program) for
+   * more information.
+   */
+  account_token?: string;
+
+  /**
+   * Page (for pagination).
+   */
+  page?: number;
+
+  /**
+   * Page size (for pagination).
+   */
+  page_size?: number;
 }
 
 export interface CardCreateAliasedParams {
@@ -801,9 +859,11 @@ export namespace Cards {
   export import Card = CardsAPI.Card;
   export import CardAlias = CardsAPI.CardAlias;
   export import FundingAccount = CardsAPI.FundingAccount;
+  export import CardListResponse = CardsAPI.CardListResponse;
   export import CardProvisionFooResponse = CardsAPI.CardProvisionFooResponse;
   export import CardCreateParams = CardsAPI.CardCreateParams;
   export import CardUpdateParams = CardsAPI.CardUpdateParams;
+  export import CardListParams = CardsAPI.CardListParams;
   export import CardCreateAliasedParams = CardsAPI.CardCreateAliasedParams;
   export import CardCreateAliasedDeprecatedParams = CardsAPI.CardCreateAliasedDeprecatedParams;
   export import CardProvisionFooParams = CardsAPI.CardProvisionFooParams;

@@ -570,9 +570,11 @@ export namespace Sink {
   export import Card = API.Card;
   export import CardAlias = API.CardAlias;
   export import FundingAccount = API.FundingAccount;
+  export import CardListResponse = API.CardListResponse;
   export import CardProvisionFooResponse = API.CardProvisionFooResponse;
   export import CardCreateParams = API.CardCreateParams;
   export import CardUpdateParams = API.CardUpdateParams;
+  export import CardListParams = API.CardListParams;
   export import CardCreateAliasedParams = API.CardCreateAliasedParams;
   export import CardCreateAliasedDeprecatedParams = API.CardCreateAliasedDeprecatedParams;
   export import CardProvisionFooParams = API.CardProvisionFooParams;

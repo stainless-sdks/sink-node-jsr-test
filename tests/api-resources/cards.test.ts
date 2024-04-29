@@ -85,6 +85,27 @@ describe('resource cards', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
+  test('list: only required params', async () => {
+    const responsePromise = sink.cards.list({ begin: '2022-02-01T05:00:00Z', end: '2022-02-01T05:00:00Z' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('list: required and optional params', async () => {
+    const response = await sink.cards.list({
+      begin: '2022-02-01T05:00:00Z',
+      end: '2022-02-01T05:00:00Z',
+      account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      page: 0,
+      page_size: 1,
+    });
+  });
+
   test('createAliased: only required params', async () => {
     const responsePromise = sink.cards.createAliased({ type: 'SINGLE_USE' });
     const rawResponse = await responsePromise.asResponse();
