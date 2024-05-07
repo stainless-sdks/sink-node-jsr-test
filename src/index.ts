@@ -706,10 +706,13 @@ export namespace Sink {
   export import NestedRequestModelA = API.NestedRequestModelA;
   export import NestedRequestModelB = API.NestedRequestModelB;
   export import NestedRequestModelC = API.NestedRequestModelC;
+  export import NullTypeModel = API.NullTypeModel;
   export import StringMapModel = API.StringMapModel;
+  export import UnknownObjectModel = API.UnknownObjectModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
   export import BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
+  export import BodyParamNullTypeParams = API.BodyParamNullTypeParams;
   export import BodyParamObjectWithArrayOfObjectsParams = API.BodyParamObjectWithArrayOfObjectsParams;
   export import BodyParamObjectWithUnionPropertiesParams = API.BodyParamObjectWithUnionPropertiesParams;
   export import BodyParamOnlyReadOnlyPropertiesParams = API.BodyParamOnlyReadOnlyPropertiesParams;
@@ -728,6 +731,7 @@ export namespace Sink {
   export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
   export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
+  export import BodyParamUnknownObjectParams = API.BodyParamUnknownObjectParams;
   export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
   export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;

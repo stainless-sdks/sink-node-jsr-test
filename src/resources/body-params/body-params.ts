@@ -34,6 +34,18 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` that has an `type: null` schema that is defined as
+   * a model in the config.
+   */
+  nullType(body: BodyParamNullTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/null_type', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with an object `requestBody` that has an array property with `object`
    * items.
    */
@@ -300,6 +312,18 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` that has an untyped object schema that is defined
+   * as a model in the config.
+   */
+  unknownObject(body: BodyParamUnknownObjectParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/unknown_object', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Endpoint with an optional request property that has a default value set.
    */
   withDefaultBodyParamOptional(
@@ -387,7 +411,11 @@ export namespace NestedRequestModelC {
   }
 }
 
+export type NullTypeModel = null;
+
 export type StringMapModel = Record<string, string>;
+
+export type UnknownObjectModel = unknown;
 
 export interface BodyParamTopLevelAllOfResponse {
   is_foo: boolean;
@@ -401,6 +429,12 @@ export interface BodyParamUnionOverlappingPropResponse {
 
 export interface BodyParamNestedRequestModelsParams {
   data?: NestedRequestModelA;
+}
+
+export interface BodyParamNullTypeParams {
+  name: string;
+
+  null_type_prop: NullTypeModel;
 }
 
 export interface BodyParamObjectWithArrayOfObjectsParams {
@@ -645,6 +679,12 @@ export namespace BodyParamUnionOverlappingPropParams {
   }
 }
 
+export interface BodyParamUnknownObjectParams {
+  name: string;
+
+  unknown_object_prop: UnknownObjectModel;
+}
+
 export interface BodyParamWithDefaultBodyParamOptionalParams {
   my_version_body_param?: string;
 
@@ -669,10 +709,13 @@ export namespace BodyParams {
   export import NestedRequestModelA = BodyParamsAPI.NestedRequestModelA;
   export import NestedRequestModelB = BodyParamsAPI.NestedRequestModelB;
   export import NestedRequestModelC = BodyParamsAPI.NestedRequestModelC;
+  export import NullTypeModel = BodyParamsAPI.NullTypeModel;
   export import StringMapModel = BodyParamsAPI.StringMapModel;
+  export import UnknownObjectModel = BodyParamsAPI.UnknownObjectModel;
   export import BodyParamTopLevelAllOfResponse = BodyParamsAPI.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
+  export import BodyParamNullTypeParams = BodyParamsAPI.BodyParamNullTypeParams;
   export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;
   export import BodyParamObjectWithUnionPropertiesParams = BodyParamsAPI.BodyParamObjectWithUnionPropertiesParams;
   export import BodyParamOnlyReadOnlyPropertiesParams = BodyParamsAPI.BodyParamOnlyReadOnlyPropertiesParams;
@@ -691,6 +734,7 @@ export namespace BodyParams {
   export import BodyParamTopLevelOneOfOneEntryParams = BodyParamsAPI.BodyParamTopLevelOneOfOneEntryParams;
   export import BodyParamTopLevelSharedTypeParams = BodyParamsAPI.BodyParamTopLevelSharedTypeParams;
   export import BodyParamUnionOverlappingPropParams = BodyParamsAPI.BodyParamUnionOverlappingPropParams;
+  export import BodyParamUnknownObjectParams = BodyParamsAPI.BodyParamUnknownObjectParams;
   export import BodyParamWithDefaultBodyParamOptionalParams = BodyParamsAPI.BodyParamWithDefaultBodyParamOptionalParams;
   export import BodyParamWithDefaultBodyParamRequiredParams = BodyParamsAPI.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = BodyParamsAPI.BodyParamWithModelPropertyParams;

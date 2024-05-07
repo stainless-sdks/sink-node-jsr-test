@@ -24,6 +24,21 @@ describe('resource bodyParams', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
+  test('nullType: only required params', async () => {
+    const responsePromise = sink.bodyParams.nullType({ name: 'string', null_type_prop: null });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('nullType: required and optional params', async () => {
+    const response = await sink.bodyParams.nullType({ name: 'string', null_type_prop: null });
+  });
+
   test('objectWithArrayOfObjects', async () => {
     const responsePromise = sink.bodyParams.objectWithArrayOfObjects({});
     const rawResponse = await responsePromise.asResponse();
@@ -358,6 +373,21 @@ describe('resource bodyParams', () => {
     await expect(
       sink.bodyParams.unionOverlappingProp({ foo: 'string' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('unknownObject: only required params', async () => {
+    const responsePromise = sink.bodyParams.unknownObject({ name: 'string', unknown_object_prop: {} });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('unknownObject: required and optional params', async () => {
+    const response = await sink.bodyParams.unknownObject({ name: 'string', unknown_object_prop: {} });
   });
 
   test('withDefaultBodyParamOptional', async () => {

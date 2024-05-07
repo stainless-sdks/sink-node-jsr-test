@@ -748,13 +748,16 @@ Types:
 - <code><a href="./src/resources/body-params/body-params.ts">NestedRequestModelA</a></code>
 - <code><a href="./src/resources/body-params/body-params.ts">NestedRequestModelB</a></code>
 - <code><a href="./src/resources/body-params/body-params.ts">NestedRequestModelC</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">NullTypeModel</a></code>
 - <code><a href="./src/resources/body-params/body-params.ts">StringMapModel</a></code>
+- <code><a href="./src/resources/body-params/body-params.ts">UnknownObjectModel</a></code>
 - <code><a href="./src/resources/body-params/body-params.ts">BodyParamTopLevelAllOfResponse</a></code>
 - <code><a href="./src/resources/body-params/body-params.ts">BodyParamUnionOverlappingPropResponse</a></code>
 
 Methods:
 
 - <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nestedRequestModels</a>({ ...params }) -> ModelWithNestedModel</code>
+- <code title="post /body_params/null_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nullType</a>({ ...params }) -> void</code>
 - <code title="post /body_params/object_with_array_of_objects">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithArrayOfObjects</a>({ ...params }) -> void</code>
 - <code title="post /body_params/object_with_union_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithUnionProperties</a>({ ...params }) -> void</code>
 - <code title="patch /body_params/only_read_only_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">onlyReadOnlyProperties</a>() -> void</code>
@@ -773,6 +776,7 @@ Methods:
 - <code title="post /body_params/top_level_oneOf_one_entry">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelOneOfOneEntry</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_shared_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">topLevelSharedType</a>({ ...params }) -> void</code>
 - <code title="post /body_params/top_level_anyOf_overlapping_property">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">unionOverlappingProp</a>({ ...params }) -> BodyParamUnionOverlappingPropResponse</code>
+- <code title="post /body_params/unknown_object">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">unknownObject</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_default_body_param_optional">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withDefaultBodyParamOptional</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_default_body_param_required">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withDefaultBodyParamRequired</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_model_property">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withModelProperty</a>({ ...params }) -> void</code>
