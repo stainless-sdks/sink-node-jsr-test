@@ -55,7 +55,16 @@ export class Objects extends APIResource {
   ): Core.APIPromise<ObjectTwoDimensionalArrayPrimitivePropertyResponse> {
     return this._client.get('/types/object/2d_array_primitive_properties', options);
   }
+
+  /**
+   * Endpoint with a response schema object that does not define any properties
+   */
+  unknownObject(options?: Core.RequestOptions): Core.APIPromise<unknown> {
+    return this._client.get('/types/object/unknown_object', options);
+  }
 }
+
+export type UnknownObjectType = unknown;
 
 export interface ObjectMixedKnownAndUnknownResponse {
   foo?: number;
@@ -125,6 +134,7 @@ export interface ObjectTwoDimensionalArrayPrimitivePropertyResponse {
 }
 
 export namespace Objects {
+  export import UnknownObjectType = ObjectsAPI.UnknownObjectType;
   export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
   export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;

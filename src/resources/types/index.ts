@@ -18,14 +18,6 @@ export {
 } from './enums';
 export { MapNullableItemsResponse, Maps } from './maps';
 export { ModelString, PrimitiveStringsResponse, PrimitiveStringsParams, Primitives } from './primitives';
-export {
-  ObjectMixedKnownAndUnknownResponse,
-  ObjectMultipleArrayPropertiesSameRefResponse,
-  ObjectMultiplePropertiesSameModelResponse,
-  ObjectMultiplePropertiesSameRefResponse,
-  ObjectTwoDimensionalArrayPrimitivePropertyResponse,
-  Objects,
-} from './objects';
 export { ReadOnlyParamSimpleResponse, ReadOnlyParamSimpleParams, ReadOnlyParams } from './read-only-params';
 export {
   TypeDatesResponse,
@@ -34,4 +26,13 @@ export {
   TypeDatetimesParams,
   Types,
 } from './types';
+export {
+  UnknownObjectType,
+  ObjectMixedKnownAndUnknownResponse,
+  ObjectMultipleArrayPropertiesSameRefResponse,
+  ObjectMultiplePropertiesSameModelResponse,
+  ObjectMultiplePropertiesSameRefResponse,
+  ObjectTwoDimensionalArrayPrimitivePropertyResponse,
+  Objects,
+} from './objects';
 export { WriteOnlyResponseSimpleResponse, WriteOnlyResponses } from './write-only-responses';

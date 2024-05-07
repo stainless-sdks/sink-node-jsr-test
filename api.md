@@ -433,6 +433,7 @@ Types:
 
 Types:
 
+- <code><a href="./src/resources/types/objects.ts">UnknownObjectType</a></code>
 - <code><a href="./src/resources/types/objects.ts">ObjectMixedKnownAndUnknownResponse</a></code>
 - <code><a href="./src/resources/types/objects.ts">ObjectMultipleArrayPropertiesSameRefResponse</a></code>
 - <code><a href="./src/resources/types/objects.ts">ObjectMultiplePropertiesSameModelResponse</a></code>
@@ -446,6 +447,7 @@ Methods:
 - <code title="get /types/object/multiple_properties_same_model">client.types.objects.<a href="./src/resources/types/objects.ts">multiplePropertiesSameModel</a>() -> ObjectMultiplePropertiesSameModelResponse</code>
 - <code title="get /types/object/multiple_properties_same_ref">client.types.objects.<a href="./src/resources/types/objects.ts">multiplePropertiesSameRef</a>() -> ObjectMultiplePropertiesSameRefResponse</code>
 - <code title="get /types/object/2d_array_primitive_properties">client.types.objects.<a href="./src/resources/types/objects.ts">twoDimensionalArrayPrimitiveProperty</a>() -> ObjectTwoDimensionalArrayPrimitivePropertyResponse</code>
+- <code title="get /types/object/unknown_object">client.types.objects.<a href="./src/resources/types/objects.ts">unknownObject</a>() -> unknown</code>
 
 ## Arrays
 

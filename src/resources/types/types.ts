@@ -120,6 +120,7 @@ export namespace Types {
   export import AllofBaseParent = AllofsAPI.AllofBaseParent;
   export import AllofMultipleInlineEntries = AllofsAPI.AllofMultipleInlineEntries;
   export import Objects = ObjectsAPI.Objects;
+  export import UnknownObjectType = ObjectsAPI.UnknownObjectType;
   export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
   export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
   export import ObjectMultiplePropertiesSameModelResponse = ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
