@@ -429,6 +429,20 @@ Types:
 - <code><a href="./src/resources/types/allofs.ts">AllofBaseParent</a></code>
 - <code><a href="./src/resources/types/allofs.ts">AllofMultipleInlineEntries</a></code>
 
+## Unions
+
+Types:
+
+- <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedVariantA</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedVariantB</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedByPropertyNameResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedWithBasicMappingResponse</a></code>
+
+Methods:
+
+- <code title="get /types/unions/discriminated_by_property_name">client.types.unions.<a href="./src/resources/types/unions.ts">discriminatedByPropertyName</a>() -> UnionDiscriminatedByPropertyNameResponse</code>
+- <code title="get /types/unions/discriminated_with_basic_mapping">client.types.unions.<a href="./src/resources/types/unions.ts">discriminatedWithBasicMapping</a>() -> UnionDiscriminatedWithBasicMappingResponse</code>
+
 ## Objects
 
 Types:

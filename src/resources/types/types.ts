@@ -10,6 +10,7 @@ import * as MapsAPI from 'sink-npm/resources/types/maps';
 import * as ObjectsAPI from 'sink-npm/resources/types/objects';
 import * as PrimitivesAPI from 'sink-npm/resources/types/primitives';
 import * as ReadOnlyParamsAPI from 'sink-npm/resources/types/read-only-params';
+import * as UnionsAPI from 'sink-npm/resources/types/unions';
 import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
 
 export class Types extends APIResource {
@@ -21,6 +22,7 @@ export class Types extends APIResource {
   maps: MapsAPI.Maps = new MapsAPI.Maps(this._client);
   enums: EnumsAPI.Enums = new EnumsAPI.Enums(this._client);
   allofs: AllofsAPI.Allofs = new AllofsAPI.Allofs(this._client);
+  unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
   objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this._client);
   arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this._client);
 
@@ -119,6 +121,11 @@ export namespace Types {
   export import Allofs = AllofsAPI.Allofs;
   export import AllofBaseParent = AllofsAPI.AllofBaseParent;
   export import AllofMultipleInlineEntries = AllofsAPI.AllofMultipleInlineEntries;
+  export import Unions = UnionsAPI.Unions;
+  export import UnionDiscriminatedVariantA = UnionsAPI.UnionDiscriminatedVariantA;
+  export import UnionDiscriminatedVariantB = UnionsAPI.UnionDiscriminatedVariantB;
+  export import UnionDiscriminatedByPropertyNameResponse = UnionsAPI.UnionDiscriminatedByPropertyNameResponse;
+  export import UnionDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionDiscriminatedWithBasicMappingResponse;
   export import Objects = ObjectsAPI.Objects;
   export import UnknownObjectType = ObjectsAPI.UnknownObjectType;
   export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;

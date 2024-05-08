@@ -27,6 +27,13 @@ export {
   Types,
 } from './types';
 export {
+  UnionDiscriminatedVariantA,
+  UnionDiscriminatedVariantB,
+  UnionDiscriminatedByPropertyNameResponse,
+  UnionDiscriminatedWithBasicMappingResponse,
+  Unions,
+} from './unions';
+export {
   UnknownObjectType,
   ObjectMixedKnownAndUnknownResponse,
   ObjectMultipleArrayPropertiesSameRefResponse,
