@@ -4,6 +4,9 @@ import { APIResource } from 'sink-npm/resource';
 import * as CompanyAPI from 'sink-npm/resources/company/company';
 import * as PaymentsAPI from 'sink-npm/resources/company/payments';
 
+/**
+ * Stainless API company
+ */
 export class CompanyResource extends APIResource {
   payments: PaymentsAPI.Payments = new PaymentsAPI.Payments(this._client);
 }

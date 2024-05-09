@@ -4,6 +4,10 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as WidgetsAPI from 'sink-npm/resources/widgets';
 
+/**
+ * Widget is love
+ * Widget is life
+ */
 export class Widgets extends APIResource {
   /**
    * Endpoint that tests using an integer and enum in the pathParams

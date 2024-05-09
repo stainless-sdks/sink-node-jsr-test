@@ -317,12 +317,19 @@ export class Sink extends Core.APIClient {
   binaries: API.Binaries = new API.Binaries(this);
   resources: API.Resources = new API.Resources(this);
   configTools: API.ConfigTools = new API.ConfigTools(this);
+  /**
+   * Stainless API company
+   */
   company: API.CompanyResource = new API.CompanyResource(this);
   openAPIFormats: API.OpenAPIFormats = new API.OpenAPIFormats(this);
   parent: API.Parent = new API.Parent(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
   types: API.Types = new API.Types(this);
   names: API.Names = new API.Names(this);
+  /**
+   * Widget is love
+   * Widget is life
+   */
   widgets: API.Widgets = new API.Widgets(this);
   clientParams: API.ClientParams = new API.ClientParams(this);
   responses: API.Responses = new API.Responses(this);
