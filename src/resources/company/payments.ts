@@ -4,6 +4,9 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as PaymentsAPI from 'sink-npm/resources/company/payments';
 
+/**
+ * For paying Stainless $$$
+ */
 export class Payments extends APIResource {
   /**
    * Get a payment that the company made.

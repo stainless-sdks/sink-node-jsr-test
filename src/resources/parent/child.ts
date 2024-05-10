@@ -4,6 +4,10 @@ import * as Core from 'sink-npm/core';
 import { APIResource } from 'sink-npm/resource';
 import * as ChildAPI from 'sink-npm/resources/parent/child';
 
+/**
+ * Some children can be very large
+ * For example, the children of Godzilla
+ */
 export class Child extends APIResource {
   /**
    * Method with inlined response model.
