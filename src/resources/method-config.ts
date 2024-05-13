@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as MethodConfigAPI from 'sink-npm/resources/method-config';
-import * as CardsAPI from 'sink-npm/resources/cards';
-import * as Shared from 'sink-npm/resources/shared';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import * as MethodConfigAPI from './method-config';
+import * as CardsAPI from './cards';
+import * as Shared from './shared';
 
 export class MethodConfig extends APIResource {
   /**

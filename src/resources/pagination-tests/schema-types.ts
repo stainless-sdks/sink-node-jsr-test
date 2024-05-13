@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as SchemaTypesAPI from 'sink-npm/resources/pagination-tests/schema-types';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
-import { MyModelsPageCursor } from 'sink-npm/resources/body-params/body-params';
-import { type PageCursorParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as SchemaTypesAPI from './schema-types';
+import * as BodyParamsAPI from '../body-params/body-params';
+import { MyModelsPageCursor } from '../body-params/body-params';
+import { type PageCursorParams } from '../../pagination';
 
 export class SchemaTypes extends APIResource {
   /**

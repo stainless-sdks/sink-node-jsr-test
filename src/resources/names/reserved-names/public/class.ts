@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as ClassAPI from 'sink-npm/resources/names/reserved-names/public/class';
+import * as Core from '../../../../core';
+import { APIResource } from '../../../../resource';
+import * as ClassAPI from './class';
 
 export class ClassResource extends APIResource {
   class(options?: Core.RequestOptions): Core.APIPromise<Class> {

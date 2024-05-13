@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as FilesAPI from 'sink-npm/resources/files';
-import { type Uploadable, multipartFormRequestOptions } from 'sink-npm/core';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import * as FilesAPI from './files';
+import { type Uploadable, multipartFormRequestOptions } from '../core';
 
 export class Files extends APIResource {
   /**

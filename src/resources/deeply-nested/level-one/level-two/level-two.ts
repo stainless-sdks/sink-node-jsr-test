@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as LevelTwoAPI from 'sink-npm/resources/deeply-nested/level-one/level-two/level-two';
-import * as CardsAPI from 'sink-npm/resources/cards';
-import * as LevelThreeAPI from 'sink-npm/resources/deeply-nested/level-one/level-two/level-three';
+import * as Core from '../../../../core';
+import { APIResource } from '../../../../resource';
+import * as LevelTwoAPI from './level-two';
+import * as CardsAPI from '../../../cards';
+import * as LevelThreeAPI from './level-three';
 
 export class LevelTwo extends APIResource {
   levelThree: LevelThreeAPI.LevelThree = new LevelThreeAPI.LevelThree(this._client);

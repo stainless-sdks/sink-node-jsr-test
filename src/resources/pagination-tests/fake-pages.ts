@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
-import * as Shared from 'sink-npm/resources/shared';
-import { SimpleObjectsFakePage } from 'sink-npm/resources/shared';
-import { type FakePageParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as FakePagesAPI from './fake-pages';
+import * as Shared from '../shared';
+import { SimpleObjectsFakePage } from '../shared';
+import { type FakePageParams } from '../../pagination';
 
 export class FakePages extends APIResource {
   /**

@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from 'sink-npm/resource';
-import * as AllofsAPI from 'sink-npm/resources/types/allofs';
+import { APIResource } from '../../resource';
+import * as AllofsAPI from './allofs';
 
 export class Allofs extends APIResource {}
 

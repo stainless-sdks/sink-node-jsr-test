@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as SharedQueryParamsAPI from 'sink-npm/resources/shared-query-params';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import * as SharedQueryParamsAPI from './shared-query-params';
 
 export class SharedQueryParams extends APIResource {
   retrieve(query?: SharedQueryParamRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<string>;

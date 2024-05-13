@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { FakePage } from 'sink-npm/pagination';
+import { FakePage } from '../pagination';
 
 export interface BasicSharedModelObject {
   bar: string;

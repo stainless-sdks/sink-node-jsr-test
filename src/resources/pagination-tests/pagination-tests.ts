@@ -1,16 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from 'sink-npm/resource';
-import * as CursorAPI from 'sink-npm/resources/pagination-tests/cursor';
-import * as FakePagesAPI from 'sink-npm/resources/pagination-tests/fake-pages';
-import * as ItemsTypesAPI from 'sink-npm/resources/pagination-tests/items-types';
-import * as NestedItemsAPI from 'sink-npm/resources/pagination-tests/nested-items';
-import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
-import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
-import * as RefsAPI from 'sink-npm/resources/pagination-tests/refs';
-import * as ResponseHeadersAPI from 'sink-npm/resources/pagination-tests/response-headers';
-import * as SchemaTypesAPI from 'sink-npm/resources/pagination-tests/schema-types';
-import * as TopLevelArraysAPI from 'sink-npm/resources/pagination-tests/top-level-arrays';
+import { APIResource } from '../../resource';
+import * as CursorAPI from './cursor';
+import * as FakePagesAPI from './fake-pages';
+import * as ItemsTypesAPI from './items-types';
+import * as NestedItemsAPI from './nested-items';
+import * as OffsetAPI from './offset';
+import * as PageNumberAPI from './page-number';
+import * as RefsAPI from './refs';
+import * as ResponseHeadersAPI from './response-headers';
+import * as SchemaTypesAPI from './schema-types';
+import * as TopLevelArraysAPI from './top-level-arrays';
 
 export class PaginationTests extends APIResource {
   schemaTypes: SchemaTypesAPI.SchemaTypes = new SchemaTypesAPI.SchemaTypes(this._client);

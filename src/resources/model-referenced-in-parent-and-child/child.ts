@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as ModelReferencedInParentAndChildAPI from 'sink-npm/resources/model-referenced-in-parent-and-child/model-referenced-in-parent-and-child';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as ModelReferencedInParentAndChildAPI from './model-referenced-in-parent-and-child';
 
 export class Child extends APIResource {
   retrieve(

@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as OffsetAPI from 'sink-npm/resources/pagination-tests/offset';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
-import { MyModelsPageOffset, MyModelsPageOffsetTotalCount } from 'sink-npm/resources/body-params/body-params';
-import { type PageOffsetParams, type PageOffsetTotalCountParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as OffsetAPI from './offset';
+import * as BodyParamsAPI from '../body-params/body-params';
+import { MyModelsPageOffset, MyModelsPageOffsetTotalCount } from '../body-params/body-params';
+import { type PageOffsetParams, type PageOffsetTotalCountParams } from '../../pagination';
 
 export class Offset extends APIResource {
   /**

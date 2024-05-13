@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as ComplexQueriesAPI from 'sink-npm/resources/complex-queries';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import * as ComplexQueriesAPI from './complex-queries';
 
 export class ComplexQueries extends APIResource {
   arrayQuery(

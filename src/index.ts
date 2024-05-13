@@ -5,9 +5,9 @@ import * as Errors from './error';
 import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
 import * as qs from 'qs';
-import * as Pagination from 'sink-npm/pagination';
-import * as API from 'sink-npm/resources/index';
-import * as TopLevelAPI from 'sink-npm/resources/top-level';
+import * as Pagination from './pagination';
+import * as API from './resources/index';
+import * as TopLevelAPI from './resources/top-level';
 
 const environments = {
   production: 'https://demo.stainlessapi.com/',

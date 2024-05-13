@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as InterfaceAPI from 'sink-npm/resources/names/reserved-names/public/interface';
+import * as Core from '../../../../core';
+import { APIResource } from '../../../../resource';
+import * as InterfaceAPI from './interface';
 
 export class InterfaceResource extends APIResource {
   interface(options?: Core.RequestOptions): Core.APIPromise<Interface> {

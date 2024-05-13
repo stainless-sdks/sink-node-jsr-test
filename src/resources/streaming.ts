@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIPromise } from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as StreamingAPI from 'sink-npm/resources/streaming';
-import { Stream } from 'sink-npm/streaming';
+import * as Core from '../core';
+import { APIPromise } from '../core';
+import { APIResource } from '../resource';
+import * as StreamingAPI from './streaming';
+import { Stream } from '../streaming';
 
 export class Streaming extends APIResource {
   basic(

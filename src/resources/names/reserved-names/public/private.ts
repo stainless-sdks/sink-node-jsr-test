@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as PrivateAPI from 'sink-npm/resources/names/reserved-names/public/private';
+import * as Core from '../../../../core';
+import { APIResource } from '../../../../resource';
+import * as PrivateAPI from './private';
 
 export class PrivateResource extends APIResource {
   private(options?: Core.RequestOptions): Core.APIPromise<Private> {

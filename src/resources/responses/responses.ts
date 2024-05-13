@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
-import * as Shared from 'sink-npm/resources/shared';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
-import * as PaymentsAPI from 'sink-npm/resources/company/payments';
-import * as UnionTypesAPI from 'sink-npm/resources/responses/union-types';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as ResponsesAPI from './responses';
+import * as Shared from '../shared';
+import * as BodyParamsAPI from '../body-params/body-params';
+import * as PaymentsAPI from '../company/payments';
+import * as UnionTypesAPI from './union-types';
 
 export class Responses extends APIResource {
   unionTypes: UnionTypesAPI.UnionTypes = new UnionTypesAPI.UnionTypes(this._client);

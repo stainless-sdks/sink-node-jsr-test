@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as WriteOnlyResponsesAPI from './write-only-responses';
 
 export class WriteOnlyResponses extends APIResource {
   /**

@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from 'sink-npm/resource';
-import * as CompanyAPI from 'sink-npm/resources/company/company';
-import * as PaymentsAPI from 'sink-npm/resources/company/payments';
+import { APIResource } from '../../resource';
+import * as CompanyAPI from './company';
+import * as PaymentsAPI from './payments';
 
 /**
  * Stainless API company

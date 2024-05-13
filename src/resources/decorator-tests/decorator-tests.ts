@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as DecoratorTestsAPI from 'sink-npm/resources/decorator-tests/decorator-tests';
-import * as KeepThisResourceAPI from 'sink-npm/resources/decorator-tests/keep-this-resource';
-import * as LanguagesAPI from 'sink-npm/resources/decorator-tests/languages';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as DecoratorTestsAPI from './decorator-tests';
+import * as KeepThisResourceAPI from './keep-this-resource';
+import * as LanguagesAPI from './languages';
 
 export class DecoratorTests extends APIResource {
   languages: LanguagesAPI.Languages = new LanguagesAPI.Languages(this._client);

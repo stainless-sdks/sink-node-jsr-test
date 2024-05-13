@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as ReservedNamesAPI from 'sink-npm/resources/names/reserved-names/reserved-names';
-import * as ImportAPI from 'sink-npm/resources/names/reserved-names/import';
-import * as MethodsAPI from 'sink-npm/resources/names/reserved-names/methods';
-import * as PublicAPI from 'sink-npm/resources/names/reserved-names/public/public';
+import * as Core from '../../../core';
+import { APIResource } from '../../../resource';
+import * as ReservedNamesAPI from './reserved-names';
+import * as ImportAPI from './import';
+import * as MethodsAPI from './methods';
+import * as PublicAPI from './public/public';
 
 export class ReservedNames extends APIResource {
   public: PublicAPI.PublicResource = new PublicAPI.PublicResource(this._client);

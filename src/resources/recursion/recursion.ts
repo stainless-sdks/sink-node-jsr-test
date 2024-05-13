@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as RecursionAPI from 'sink-npm/resources/recursion/recursion';
-import * as SharedResponsesAPI from 'sink-npm/resources/recursion/shared-responses';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as RecursionAPI from './recursion';
+import * as SharedResponsesAPI from './shared-responses';
 
 export class Recursion extends APIResource {
   sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this._client);

@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as TopLevelArraysAPI from 'sink-npm/resources/pagination-tests/top-level-arrays';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
-import { MyModelsPageCursorTopLevelArray } from 'sink-npm/resources/body-params/body-params';
-import { type PageCursorTopLevelArrayParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as TopLevelArraysAPI from './top-level-arrays';
+import * as BodyParamsAPI from '../body-params/body-params';
+import { MyModelsPageCursorTopLevelArray } from '../body-params/body-params';
+import { type PageCursorTopLevelArrayParams } from '../../pagination';
 
 export class TopLevelArrays extends APIResource {
   /**

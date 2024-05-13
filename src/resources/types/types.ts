@@ -1,17 +1,17 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as TypesAPI from 'sink-npm/resources/types/types';
-import * as AllofsAPI from 'sink-npm/resources/types/allofs';
-import * as ArraysAPI from 'sink-npm/resources/types/arrays';
-import * as EnumsAPI from 'sink-npm/resources/types/enums';
-import * as MapsAPI from 'sink-npm/resources/types/maps';
-import * as ObjectsAPI from 'sink-npm/resources/types/objects';
-import * as PrimitivesAPI from 'sink-npm/resources/types/primitives';
-import * as ReadOnlyParamsAPI from 'sink-npm/resources/types/read-only-params';
-import * as UnionsAPI from 'sink-npm/resources/types/unions';
-import * as WriteOnlyResponsesAPI from 'sink-npm/resources/types/write-only-responses';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as TypesAPI from './types';
+import * as AllofsAPI from './allofs';
+import * as ArraysAPI from './arrays';
+import * as EnumsAPI from './enums';
+import * as MapsAPI from './maps';
+import * as ObjectsAPI from './objects';
+import * as PrimitivesAPI from './primitives';
+import * as ReadOnlyParamsAPI from './read-only-params';
+import * as UnionsAPI from './unions';
+import * as WriteOnlyResponsesAPI from './write-only-responses';
 
 export class Types extends APIResource {
   primitives: PrimitivesAPI.Primitives = new PrimitivesAPI.Primitives(this._client);

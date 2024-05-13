@@ -1,14 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as NamesAPI from 'sink-npm/resources/names/names';
-import * as Shared from 'sink-npm/resources/shared';
-import * as OpenAPISpecialsAPI from 'sink-npm/resources/names/openapi-specials';
-import * as ParamsAPI from 'sink-npm/resources/names/params';
-import * as UnionsAPI from 'sink-npm/resources/names/unions';
-import * as CanCauseClashesAPI from 'sink-npm/resources/names/can-cause-clashes/can-cause-clashes';
-import * as ReservedNamesAPI from 'sink-npm/resources/names/reserved-names/reserved-names';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as NamesAPI from './names';
+import * as Shared from '../shared';
+import * as OpenAPISpecialsAPI from './openapi-specials';
+import * as ParamsAPI from './params';
+import * as UnionsAPI from './unions';
+import * as CanCauseClashesAPI from './can-cause-clashes/can-cause-clashes';
+import * as ReservedNamesAPI from './reserved-names/reserved-names';
 
 export class Names extends APIResource {
   unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);

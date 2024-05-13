@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as UnionsAPI from 'sink-npm/resources/names/unions';
-import * as ResponsesAPI from 'sink-npm/resources/responses/responses';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as UnionsAPI from './unions';
+import * as ResponsesAPI from '../responses/responses';
 
 export class Unions extends APIResource {
   discriminated(options?: Core.RequestOptions): Core.APIPromise<DiscriminatedUnion> {

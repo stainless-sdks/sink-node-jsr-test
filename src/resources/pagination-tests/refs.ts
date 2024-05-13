@@ -1,15 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as RefsAPI from 'sink-npm/resources/pagination-tests/refs';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
-import {
-  MyModelsPageCursorNestedObjectRef,
-  MyModelsPageCursorSharedRef,
-} from 'sink-npm/resources/body-params/body-params';
-import { type PageCursorNestedObjectRefParams, type PageCursorSharedRefParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as RefsAPI from './refs';
+import * as BodyParamsAPI from '../body-params/body-params';
+import { MyModelsPageCursorNestedObjectRef, MyModelsPageCursorSharedRef } from '../body-params/body-params';
+import { type PageCursorNestedObjectRefParams, type PageCursorSharedRefParams } from '../../pagination';
 
 export class Refs extends APIResource {
   /**

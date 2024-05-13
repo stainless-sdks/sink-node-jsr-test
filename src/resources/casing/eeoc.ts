@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as EEOCAPI from 'sink-npm/resources/casing/eeoc';
-import { PageCursor, type PageCursorParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as EEOCAPI from './eeoc';
+import { PageCursor, type PageCursorParams } from '../../pagination';
 
 export class EEOCResource extends APIResource {
   /**

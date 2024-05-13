@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as PathParamsAPI from 'sink-npm/resources/path-params';
-import * as Shared from 'sink-npm/resources/shared';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import * as PathParamsAPI from './path-params';
+import * as Shared from './shared';
 
 export class PathParams extends APIResource {
   /**

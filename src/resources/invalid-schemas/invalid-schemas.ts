@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from 'sink-npm/resource';
-import * as ArraysAPI from 'sink-npm/resources/invalid-schemas/arrays';
-import * as ObjectsAPI from 'sink-npm/resources/invalid-schemas/objects';
+import { APIResource } from '../../resource';
+import * as ArraysAPI from './arrays';
+import * as ObjectsAPI from './objects';
 
 export class InvalidSchemas extends APIResource {
   arrays: ArraysAPI.Arrays = new ArraysAPI.Arrays(this._client);

@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as ObjectsAPI from 'sink-npm/resources/types/objects';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as ObjectsAPI from './objects';
+import * as BodyParamsAPI from '../body-params/body-params';
 
 export class Objects extends APIResource {
   /**

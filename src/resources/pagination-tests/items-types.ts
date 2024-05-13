@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as ItemsTypesAPI from 'sink-npm/resources/pagination-tests/items-types';
-import { PagePageNumber, type PagePageNumberParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as ItemsTypesAPI from './items-types';
+import { PagePageNumber, type PagePageNumberParams } from '../../pagination';
 
 export class ItemsTypes extends APIResource {
   /**

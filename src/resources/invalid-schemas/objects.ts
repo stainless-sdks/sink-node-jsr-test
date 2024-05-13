@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as ObjectsAPI from 'sink-npm/resources/invalid-schemas/objects';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import * as ObjectsAPI from './objects';
 
 export class Objects extends APIResource {
   missingItems(options?: Core.RequestOptions): Core.APIPromise<ObjectMissingItemsResponse> {

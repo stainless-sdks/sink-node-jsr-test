@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as MixedParamsAPI from 'sink-npm/resources/mixed-params/mixed-params';
-import * as Shared from 'sink-npm/resources/shared';
-import * as DuplicatesAPI from 'sink-npm/resources/mixed-params/duplicates';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as MixedParamsAPI from './mixed-params';
+import * as Shared from '../shared';
+import * as DuplicatesAPI from './duplicates';
 
 export class MixedParams extends APIResource {
   duplicates: DuplicatesAPI.Duplicates = new DuplicatesAPI.Duplicates(this._client);

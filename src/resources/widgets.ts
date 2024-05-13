@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as WidgetsAPI from 'sink-npm/resources/widgets';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import * as WidgetsAPI from './widgets';
 
 /**
  * Widget is love

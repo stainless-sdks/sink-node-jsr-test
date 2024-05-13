@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import * as DocstringsAPI from 'sink-npm/resources/docstrings';
-import * as Shared from 'sink-npm/resources/shared';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import * as DocstringsAPI from './docstrings';
+import * as Shared from './shared';
 
 export class Docstrings extends APIResource {
   /**

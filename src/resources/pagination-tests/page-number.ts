@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'sink-npm/core';
-import { APIResource } from 'sink-npm/resource';
-import { isRequestOptions } from 'sink-npm/core';
-import * as PageNumberAPI from 'sink-npm/resources/pagination-tests/page-number';
-import * as BodyParamsAPI from 'sink-npm/resources/body-params/body-params';
-import { MyModelsPagePageNumber } from 'sink-npm/resources/body-params/body-params';
-import { type PagePageNumberParams } from 'sink-npm/pagination';
+import * as Core from '../../core';
+import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import * as PageNumberAPI from './page-number';
+import * as BodyParamsAPI from '../body-params/body-params';
+import { MyModelsPagePageNumber } from '../body-params/body-params';
+import { type PagePageNumberParams } from '../../pagination';
 
 export class PageNumber extends APIResource {
   /**

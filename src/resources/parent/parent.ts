@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from 'sink-npm/resource';
-import * as ChildAPI from 'sink-npm/resources/parent/child';
+import { APIResource } from '../../resource';
+import * as ChildAPI from './child';
 
 export class Parent extends APIResource {
   child: ChildAPI.Child = new ChildAPI.Child(this._client);
