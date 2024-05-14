@@ -797,6 +797,12 @@ Methods:
 - <code title="post /body_params/with_default_body_param_required">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withDefaultBodyParamRequired</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_model_property">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">withModelProperty</a>({ ...params }) -> void</code>
 
+## Objects
+
+Methods:
+
+- <code title="post /body_params/objects/mixed_known_and_unknown">client.bodyParams.objects.<a href="./src/resources/body-params/objects.ts">mixedKnownAndUnknown</a>({ ...params }) -> void</code>
+
 ## Unions
 
 Types:

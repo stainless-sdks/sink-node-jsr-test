@@ -47,3 +47,4 @@ export {
   MyModelsPageCursorNestedItems,
   BodyParams,
 } from './body-params';
+export { ObjectMixedKnownAndUnknownParams, Objects } from './objects';

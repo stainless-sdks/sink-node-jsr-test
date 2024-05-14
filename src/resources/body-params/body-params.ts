@@ -5,6 +5,7 @@ import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as BodyParamsAPI from './body-params';
 import * as Shared from '../shared';
+import * as ObjectsAPI from './objects';
 import * as UnionsAPI from './unions';
 import * as ResponsesAPI from '../responses/responses';
 import {
@@ -20,6 +21,7 @@ import {
 } from '../../pagination';
 
 export class BodyParams extends APIResource {
+  objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this._client);
   unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
 
   /**
@@ -738,6 +740,8 @@ export namespace BodyParams {
   export import BodyParamWithDefaultBodyParamOptionalParams = BodyParamsAPI.BodyParamWithDefaultBodyParamOptionalParams;
   export import BodyParamWithDefaultBodyParamRequiredParams = BodyParamsAPI.BodyParamWithDefaultBodyParamRequiredParams;
   export import BodyParamWithModelPropertyParams = BodyParamsAPI.BodyParamWithModelPropertyParams;
+  export import Objects = ObjectsAPI.Objects;
+  export import ObjectMixedKnownAndUnknownParams = ObjectsAPI.ObjectMixedKnownAndUnknownParams;
   export import Unions = UnionsAPI.Unions;
   export import ModelNewTypeString = UnionsAPI.ModelNewTypeString;
   export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
