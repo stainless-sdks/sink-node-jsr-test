@@ -28,7 +28,7 @@ describe('resource cards', () => {
     const response = await sink.cards.create({
       type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      card_program_token: '00000000-0000-0000-1000-000000000000',
+      card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       exp_month: '06',
       exp_year: '2027',
       funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
@@ -121,7 +121,7 @@ describe('resource cards', () => {
     const response = await sink.cards.createAliased({
       type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      card_program_token: '00000000-0000-0000-1000-000000000000',
+      card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       exp_month: '06',
       exp_year: '2027',
       funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
@@ -164,7 +164,7 @@ describe('resource cards', () => {
     const response = await sink.cards.createAliasedDeprecated({
       type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      card_program_token: '00000000-0000-0000-1000-000000000000',
+      card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       exp_month: '06',
       exp_year: '2027',
       funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
