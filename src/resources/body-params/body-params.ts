@@ -18,6 +18,7 @@ import {
   PageOffset,
   PageOffsetTotalCount,
   PagePageNumber,
+  PagePageNumberWithoutCurrentPageResponse,
 } from '../../pagination';
 
 export class BodyParams extends APIResource {
@@ -374,6 +375,8 @@ export class BodyParams extends APIResource {
 export class MyModelsPageCursor extends PageCursor<MyModel> {}
 
 export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
+
+export class MyModelsPagePageNumberWithoutCurrentPageResponse extends PagePageNumberWithoutCurrentPageResponse<MyModel> {}
 
 export class MyModelsPageCursorNestedObjectRef extends PageCursorNestedObjectRef<MyModel> {}
 

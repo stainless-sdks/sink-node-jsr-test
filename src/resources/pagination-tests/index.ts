@@ -10,7 +10,11 @@ export {
 } from './items-types';
 export { NestedItemListParams, NestedItems } from './nested-items';
 export { OffsetListParams, OffsetWithTotalCountParams, Offset } from './offset';
-export { PageNumberListParams, PageNumber } from './page-number';
+export {
+  PageNumberListParams,
+  PageNumberListWithoutCurrentPageResponseParams,
+  PageNumber,
+} from './page-number';
 export { PaginationTests } from './pagination-tests';
 export { RefNestedObjectRefParams, RefWithSharedModelRefParams, Refs } from './refs';
 export { ResponseHeaderBasicCursorParams, ResponseHeaders } from './response-headers';

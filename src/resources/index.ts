@@ -184,6 +184,7 @@ export {
   BodyParamWithModelPropertyParams,
   MyModelsPageCursor,
   MyModelsPagePageNumber,
+  MyModelsPagePageNumberWithoutCurrentPageResponse,
   MyModelsPageCursorNestedObjectRef,
   MyModelsPageCursorSharedRef,
   MyModelsPageCursorFromHeaders,

@@ -35,6 +35,7 @@ export namespace PaginationTests {
   export import ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
   export import PageNumber = PageNumberAPI.PageNumber;
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
+  export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
   export import Refs = RefsAPI.Refs;
   export import RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
   export import RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;

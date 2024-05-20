@@ -432,6 +432,57 @@ export class PagePageNumber<Item> extends AbstractPage<Item> implements PagePage
   }
 }
 
+export interface PagePageNumberWithoutCurrentPageResponseResponse<Item> {
+  data: Array<Item>;
+}
+
+export interface PagePageNumberWithoutCurrentPageResponseParams {
+  page?: number;
+
+  page_size?: number;
+
+  prop_to_not_mess_with_infer_for_other_pages?: boolean;
+}
+
+export class PagePageNumberWithoutCurrentPageResponse<Item>
+  extends AbstractPage<Item>
+  implements PagePageNumberWithoutCurrentPageResponseResponse<Item>
+{
+  data: Array<Item>;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: PagePageNumberWithoutCurrentPageResponseResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data || [];
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data ?? [];
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<PagePageNumberWithoutCurrentPageResponseParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    const query = this.options.query as PagePageNumberWithoutCurrentPageResponseParams;
+    const currentPage = query?.page ?? 1;
+
+    return { params: { page: currentPage + 1 } };
+  }
+}
+
 export interface PageOffsetTotalCountResponse<Item> {
   data: Array<Item>;
 

@@ -492,6 +492,10 @@ export namespace Sink {
   export import PagePageNumberParams = Pagination.PagePageNumberParams;
   export import PagePageNumberResponse = Pagination.PagePageNumberResponse;
 
+  export import PagePageNumberWithoutCurrentPageResponse = Pagination.PagePageNumberWithoutCurrentPageResponse;
+  export import PagePageNumberWithoutCurrentPageResponseParams = Pagination.PagePageNumberWithoutCurrentPageResponseParams;
+  export import PagePageNumberWithoutCurrentPageResponseResponse = Pagination.PagePageNumberWithoutCurrentPageResponseResponse;
+
   export import PageOffsetTotalCount = Pagination.PageOffsetTotalCount;
   export import PageOffsetTotalCountParams = Pagination.PageOffsetTotalCountParams;
   export import PageOffsetTotalCountResponse = Pagination.PageOffsetTotalCountResponse;
