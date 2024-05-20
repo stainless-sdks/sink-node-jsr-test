@@ -22,7 +22,10 @@ export class Version1_30Names extends APIResource {
       query: { version_1_16 },
       body,
       ...options,
-      headers: { version_1_14: version_1_14 || '', ...options?.headers },
+      headers: {
+        ...(version_1_14 != null ? { version_1_14: version_1_14 } : undefined),
+        ...options?.headers,
+      },
     });
   }
 }

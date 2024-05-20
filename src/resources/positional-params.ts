@@ -73,7 +73,11 @@ export class PositionalParams extends APIResource {
       query: { imACamel, option1, option2, really_cool_snake },
       body,
       ...options,
-      headers: { Accept: '*/*', 'X-Custom-Header': xCustomHeader || '', ...options?.headers },
+      headers: {
+        Accept: '*/*',
+        ...(xCustomHeader != null ? { 'X-Custom-Header': xCustomHeader } : undefined),
+        ...options?.headers,
+      },
     });
   }
 

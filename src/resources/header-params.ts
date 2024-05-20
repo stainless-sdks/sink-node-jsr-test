@@ -22,7 +22,9 @@ export class HeaderParams extends APIResource {
       ...options,
       headers: {
         Accept: '*/*',
-        'X-Custom-Endpoint-Header': xCustomEndpointHeader || '',
+        ...(xCustomEndpointHeader != null ?
+          { 'X-Custom-Endpoint-Header': xCustomEndpointHeader }
+        : undefined),
         ...options?.headers,
       },
     });
