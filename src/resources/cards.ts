@@ -11,7 +11,7 @@ export class Cards extends APIResource {
    * `product_id` only apply to physical cards.
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this._client.post('/cards', { body, ...options });
+    return this._client.post('/cards', { body, timeout: 2000, ...options });
   }
 
   /**
