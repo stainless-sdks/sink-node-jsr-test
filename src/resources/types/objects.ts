@@ -68,7 +68,7 @@ export type UnknownObjectType = unknown;
 
 export interface ObjectMixedKnownAndUnknownResponse {
   foo?: number;
-  [k: string]: number;
+  [k: string]: number | undefined;
 }
 
 export interface ObjectMultipleArrayPropertiesSameRefResponse {

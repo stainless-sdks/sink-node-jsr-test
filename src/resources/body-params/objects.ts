@@ -28,7 +28,7 @@ export interface ObjectMixedKnownAndUnknownParams {
 export namespace ObjectMixedKnownAndUnknownParams {
   export interface MixedProp {
     my_known_prop?: number;
-    [k: string]: string | number;
+    [k: string]: string | number | undefined;
   }
 }
 
