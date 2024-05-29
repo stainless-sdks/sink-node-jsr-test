@@ -1,6 +1,6 @@
 # Sink Custom Node Title 1 API Library
 
-[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm)
+[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sink-npm)
 
 This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
@@ -32,7 +32,7 @@ const sink = new Sink({
 });
 
 async function main() {
-  const customAssignTo = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' });
+  const customAssignTo = await sink.cards.create({ type: 'SINGLE_USE', exp_month: '08', not: 'TEST' });
 
   console.log(customAssignTo.token);
 }
