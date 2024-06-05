@@ -25,8 +25,7 @@ export type Currency =
   | 'AUD'
   | 'AWG'
   | 'AZN'
-  | 'BAM'
-  | null;
+  | 'BAM';
 
 export interface ObjectWithChildRef {
   bar?: SimpleObject;

@@ -60,7 +60,7 @@ export interface EnumBasicResponse {
   /**
    * This is my description for the Currency enum
    */
-  currency: Shared.Currency | null;
+  currency: Shared.Currency;
 
   my_problematic_enum: '123_FOO' | '30%' | '*' | '';
 
@@ -79,7 +79,7 @@ export interface EnumBasicParams {
   /**
    * This is my description for the Currency enum
    */
-  input_currency?: Shared.Currency | null;
+  input_currency?: Shared.Currency;
 
   problematic_enum?: '123_FOO' | '30%' | '*' | '';
 
