@@ -20,10 +20,40 @@ import {
   PagePageNumber,
   PagePageNumberWithoutCurrentPageResponse,
 } from '../../pagination';
+import { type BlobLike } from '../../uploads';
 
 export class BodyParams extends APIResource {
   objects: ObjectsAPI.Objects = new ObjectsAPI.Objects(this._client);
   unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
+
+  /**
+   * Endpoint with a `requestBody` that has an `type: string` schema and content
+   * `application/octet-stream` that is defined as a model in the config.
+   */
+  binaryStringType(
+    body: BodyParamBinaryStringTypeParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.post('/body_params/binary_string_type', {
+      body,
+      ...options,
+      headers: { 'Content-Type': 'application/octet-stream', Accept: '*/*', ...options?.headers },
+      __binaryRequest: true,
+    });
+  }
+
+  /**
+   * Endpoint with a `requestBody` that has an `type: string, format: binary` schema
+   * and content `application/octet-stream` that is defined as a model in the config.
+   */
+  binaryType(body: BodyParamBinaryTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/binary_type', {
+      body,
+      ...options,
+      headers: { 'Content-Type': 'application/octet-stream', Accept: '*/*', ...options?.headers },
+      __binaryRequest: true,
+    });
+  }
 
   /**
    * Should return a ModelWithNestedModel object with a `properties` field that we
@@ -432,6 +462,10 @@ export interface BodyParamUnionOverlappingPropResponse {
   foo: string;
 }
 
+export type BodyParamBinaryStringTypeParams = string;
+
+export type BodyParamBinaryTypeParams = string | ArrayBufferView | ArrayBuffer | BlobLike;
+
 export interface BodyParamNestedRequestModelsParams {
   data?: NestedRequestModelA;
 }
@@ -719,6 +753,8 @@ export namespace BodyParams {
   export import UnknownObjectModel = BodyParamsAPI.UnknownObjectModel;
   export import BodyParamTopLevelAllOfResponse = BodyParamsAPI.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamBinaryStringTypeParams = BodyParamsAPI.BodyParamBinaryStringTypeParams;
+  export import BodyParamBinaryTypeParams = BodyParamsAPI.BodyParamBinaryTypeParams;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
   export import BodyParamNullTypeParams = BodyParamsAPI.BodyParamNullTypeParams;
   export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;

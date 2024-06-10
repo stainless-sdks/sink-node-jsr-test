@@ -158,6 +158,8 @@ export {
   UnknownObjectModel,
   BodyParamTopLevelAllOfResponse,
   BodyParamUnionOverlappingPropResponse,
+  BodyParamBinaryStringTypeParams,
+  BodyParamBinaryTypeParams,
   BodyParamNestedRequestModelsParams,
   BodyParamNullTypeParams,
   BodyParamObjectWithArrayOfObjectsParams,

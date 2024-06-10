@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sink from 'sink-npm';
+import Sink, { toFile } from 'sink-npm';
 import { Response } from 'node-fetch';
 
 const sink = new Sink({
@@ -13,6 +13,40 @@ const sink = new Sink({
 });
 
 describe('resource bodyParams', () => {
+  test('binaryStringType: only required params', async () => {
+    const responsePromise = sink.bodyParams.binaryStringType('string');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('binaryStringType: required and optional params', async () => {
+    const response = await sink.bodyParams.binaryStringType('string');
+  });
+
+  test('binaryType: only required params', async () => {
+    const responsePromise = sink.bodyParams.binaryType(
+      await toFile(Buffer.from('# my file contents'), 'README.md'),
+    );
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('binaryType: required and optional params', async () => {
+    const response = await sink.bodyParams.binaryType(
+      await toFile(Buffer.from('# my file contents'), 'README.md'),
+    );
+  });
+
   test('nestedRequestModels', async () => {
     const responsePromise = sink.bodyParams.nestedRequestModels({});
     const rawResponse = await responsePromise.asResponse();

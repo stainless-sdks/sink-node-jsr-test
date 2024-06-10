@@ -722,6 +722,8 @@ export namespace Sink {
   export import UnknownObjectModel = API.UnknownObjectModel;
   export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
   export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export import BodyParamBinaryStringTypeParams = API.BodyParamBinaryStringTypeParams;
+  export import BodyParamBinaryTypeParams = API.BodyParamBinaryTypeParams;
   export import BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
   export import BodyParamNullTypeParams = API.BodyParamNullTypeParams;
   export import BodyParamObjectWithArrayOfObjectsParams = API.BodyParamObjectWithArrayOfObjectsParams;
