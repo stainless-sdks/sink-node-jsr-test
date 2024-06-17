@@ -22,6 +22,16 @@ export interface ClientOptions {
   userToken?: string | null | undefined;
 
   /**
+   * The API Key for the SINK API, sent as an api key header
+   */
+  apiKeyHeader?: string | null | undefined;
+
+  /**
+   * The API Key for the SINK API, sent as an api key query
+   */
+  apiKeyQuery?: string | null | undefined;
+
+  /**
    * Defaults to process.env['SINK_USER'].
    */
   username?: string | undefined;
@@ -150,6 +160,8 @@ export interface ClientOptions {
 /** API Client for interfacing with the Sink API. */
 export class Sink extends Core.APIClient {
   userToken: string | null;
+  apiKeyHeader: string | null;
+  apiKeyQuery: string | null;
   username: string;
   clientId: string | null;
   clientSecret: string | null;
@@ -172,6 +184,8 @@ export class Sink extends Core.APIClient {
    * API Client for interfacing with the Sink API.
    *
    * @param {string | null | undefined} [opts.userToken=process.env['SINK_CUSTOM_API_KEY_ENV'] ?? null]
+   * @param {string | null | undefined} [opts.apiKeyHeader=process.env['SINK_CUSTOM_API_KEY_HEADER_ENV'] ?? null]
+   * @param {string | null | undefined} [opts.apiKeyQuery=process.env['SINK_CUSTOM_API_KEY_QUERY_ENV'] ?? null]
    * @param {string | undefined} [opts.username=process.env['SINK_USER'] ?? undefined]
    * @param {string | null | undefined} [opts.clientId=process.env['SINK_CLIENT_ID'] ?? null]
    * @param {string | null | undefined} [opts.clientSecret=process.env['SINK_CLIENT_SECRET'] ?? hellosecret]
@@ -200,6 +214,8 @@ export class Sink extends Core.APIClient {
   constructor({
     baseURL = Core.readEnv('SINK_BASE_URL'),
     userToken = Core.readEnv('SINK_CUSTOM_API_KEY_ENV') ?? null,
+    apiKeyHeader = Core.readEnv('SINK_CUSTOM_API_KEY_HEADER_ENV') ?? null,
+    apiKeyQuery = Core.readEnv('SINK_CUSTOM_API_KEY_QUERY_ENV') ?? null,
     username = Core.readEnv('SINK_USER'),
     clientId = Core.readEnv('SINK_CLIENT_ID') ?? null,
     clientSecret = Core.readEnv('SINK_CLIENT_SECRET') ?? 'hellosecret',
@@ -240,6 +256,8 @@ export class Sink extends Core.APIClient {
 
     const options: ClientOptions = {
       userToken,
+      apiKeyHeader,
+      apiKeyQuery,
       username,
       clientId,
       clientSecret,
@@ -283,6 +301,8 @@ export class Sink extends Core.APIClient {
     this.idempotencyHeader = 'Idempotency-Key';
 
     this.userToken = userToken;
+    this.apiKeyHeader = apiKeyHeader;
+    this.apiKeyQuery = apiKeyQuery;
     this.username = username;
     this.clientId = clientId;
     this.clientSecret = clientSecret;
@@ -380,7 +400,10 @@ export class Sink extends Core.APIClient {
   }
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
-    return this._options.defaultQuery;
+    return {
+      'stl-api-key': this.apiKeyQuery ?? undefined,
+      ...this._options.defaultQuery,
+    };
   }
 
   protected override defaultHeaders(opts: Core.FinalRequestOptions): Core.Headers {
@@ -395,24 +418,32 @@ export class Sink extends Core.APIClient {
     };
   }
 
-  protected override validateHeaders(headers: Core.Headers, customHeaders: Core.Headers) {
-    if (this.userToken && headers['authorization']) {
-      return;
-    }
-    if (customHeaders['authorization'] === null) {
-      return;
+  protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
+    const bearerAuth = this.bearerAuth(opts);
+    const apiKeyAuth = this.apiKeyAuth(opts);
+
+    if (bearerAuth != null && !Core.isEmptyObj(bearerAuth)) {
+      return bearerAuth;
     }
 
-    throw new Error(
-      'Could not resolve authentication method. Expected the userToken to be set. Or for the "Authorization" headers to be explicitly omitted',
-    );
+    if (apiKeyAuth != null && !Core.isEmptyObj(apiKeyAuth)) {
+      return apiKeyAuth;
+    }
+    return {};
   }
 
-  protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
+  protected bearerAuth(opts: Core.FinalRequestOptions): Core.Headers {
     if (this.userToken == null) {
       return {};
     }
     return { Authorization: `Bearer ${this.userToken}` };
+  }
+
+  protected apiKeyAuth(opts: Core.FinalRequestOptions): Core.Headers {
+    if (this.apiKeyHeader == null) {
+      return {};
+    }
+    return { 'X-STL-APIKEY': this.apiKeyHeader };
   }
 
   protected override stringifyQuery(query: Record<string, unknown>): string {
