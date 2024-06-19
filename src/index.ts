@@ -587,6 +587,7 @@ export namespace Sink {
   export import Streaming = API.Streaming;
   export import StreamingBasicResponse = API.StreamingBasicResponse;
   export import StreamingNestedParamsResponse = API.StreamingNestedParamsResponse;
+  export import StreamingNoDiscriminatorResponse = API.StreamingNoDiscriminatorResponse;
   export import StreamingQueryParamDiscriminatorResponse = API.StreamingQueryParamDiscriminatorResponse;
   export import StreamingBasicParams = API.StreamingBasicParams;
   export import StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
@@ -594,6 +595,7 @@ export namespace Sink {
   export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
   export import StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
   export import StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
+  export import StreamingNoDiscriminatorParams = API.StreamingNoDiscriminatorParams;
   export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
   export import StreamingQueryParamDiscriminatorParamsNonStreaming = API.StreamingQueryParamDiscriminatorParamsNonStreaming;
   export import StreamingQueryParamDiscriminatorParamsStreaming = API.StreamingQueryParamDiscriminatorParamsStreaming;

@@ -114,12 +114,14 @@ Types:
 
 - <code><a href="./src/resources/streaming.ts">StreamingBasicResponse</a></code>
 - <code><a href="./src/resources/streaming.ts">StreamingNestedParamsResponse</a></code>
+- <code><a href="./src/resources/streaming.ts">StreamingNoDiscriminatorResponse</a></code>
 - <code><a href="./src/resources/streaming.ts">StreamingQueryParamDiscriminatorResponse</a></code>
 
 Methods:
 
 - <code title="post /streaming/basic">client.streaming.<a href="./src/resources/streaming.ts">basic</a>({ ...params }) -> StreamingBasicResponse</code>
 - <code title="post /streaming/nested_params">client.streaming.<a href="./src/resources/streaming.ts">nestedParams</a>({ ...params }) -> StreamingNestedParamsResponse</code>
+- <code title="post /streaming/no_discriminator">client.streaming.<a href="./src/resources/streaming.ts">noDiscriminator</a>({ ...params }) -> StreamingNoDiscriminatorResponse</code>
 - <code title="get /streaming/query_param_discriminator">client.streaming.<a href="./src/resources/streaming.ts">queryParamDiscriminator</a>({ ...params }) -> StreamingQueryParamDiscriminatorResponse</code>
 
 # PaginationTests

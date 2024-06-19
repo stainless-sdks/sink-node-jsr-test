@@ -51,6 +51,21 @@ describe('resource streaming', () => {
     });
   });
 
+  test('noDiscriminator: only required params', async () => {
+    const responsePromise = sink.streaming.noDiscriminator({ model: 'string', prompt: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('noDiscriminator: required and optional params', async () => {
+    const response = await sink.streaming.noDiscriminator({ model: 'string', prompt: 'string' });
+  });
+
   test('queryParamDiscriminator: only required params', async () => {
     const responsePromise = sink.streaming.queryParamDiscriminator({ prompt: 'string' });
     const rawResponse = await responsePromise.asResponse();

@@ -251,6 +251,7 @@ export {
 export {
   StreamingBasicResponse,
   StreamingNestedParamsResponse,
+  StreamingNoDiscriminatorResponse,
   StreamingQueryParamDiscriminatorResponse,
   StreamingBasicParams,
   StreamingBasicParamsNonStreaming,
@@ -258,6 +259,7 @@ export {
   StreamingNestedParamsParams,
   StreamingNestedParamsParamsNonStreaming,
   StreamingNestedParamsParamsStreaming,
+  StreamingNoDiscriminatorParams,
   StreamingQueryParamDiscriminatorParams,
   StreamingQueryParamDiscriminatorParamsNonStreaming,
   StreamingQueryParamDiscriminatorParamsStreaming,
