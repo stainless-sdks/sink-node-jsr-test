@@ -595,6 +595,12 @@ Types:
 
 - <code><a href="./src/resources/names/can-cause-clashes/employment-data.ts">EmploymentData</a></code>
 
+### Response
+
+Methods:
+
+- <code title="get /binaries/return_binary">client.names.canCauseClashes.response.<a href="./src/resources/names/can-cause-clashes/response.ts">binaryReturn</a>() -> Response</code>
+
 ## OpenAPISpecials
 
 Types:
