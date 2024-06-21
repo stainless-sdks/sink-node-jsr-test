@@ -81,7 +81,7 @@ export {
   FileWithOptionalParamParams,
   Files,
 } from './files';
-export { HeaderParamClientArgumentParams, HeaderParams } from './header-params';
+export { HeaderParamAllTypesParams, HeaderParamClientArgumentParams, HeaderParams } from './header-params';
 export { InvalidSchemas } from './invalid-schemas/invalid-schemas';
 export {
   MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse,

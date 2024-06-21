@@ -783,6 +783,7 @@ export namespace Sink {
   export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
   export import HeaderParams = API.HeaderParams;
+  export import HeaderParamAllTypesParams = API.HeaderParamAllTypesParams;
   export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
 
   export import MixedParams = API.MixedParams;

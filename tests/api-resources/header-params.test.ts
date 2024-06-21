@@ -13,6 +13,36 @@ const sink = new Sink({
 });
 
 describe('resource headerParams', () => {
+  test('allTypes: only required params', async () => {
+    const responsePromise = sink.headerParams.allTypes({
+      'X-Required-Boolean': true,
+      'X-Required-Integer': 0,
+      'X-Required-Number': 0,
+      'X-Required-String': 'string',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('allTypes: required and optional params', async () => {
+    const response = await sink.headerParams.allTypes({
+      'X-Required-Boolean': true,
+      'X-Required-Integer': 0,
+      'X-Required-Number': 0,
+      'X-Required-String': 'string',
+      body_argument: 'string',
+      'X-Optional-Boolean': true,
+      'X-Optional-Integer': 0,
+      'X-Optional-Number': 0,
+      'X-Optional-String': 'string',
+    });
+  });
+
   test('clientArgument', async () => {
     const responsePromise = sink.headerParams.clientArgument({});
     const rawResponse = await responsePromise.asResponse();
