@@ -57,6 +57,17 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `requestBody` with various enums properties
+   */
+  enumProperties(body: BodyParamEnumPropertiesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/enum_properties', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
+  }
+
+  /**
    * Should return a ModelWithNestedModel object with a `properties` field that we
    * can rename in the Stainless config to a prettier name.
    */
@@ -469,6 +480,16 @@ export type BodyParamBinaryStringTypeParams = string;
 
 export type BodyParamBinaryTypeParams = string | ArrayBufferView | ArrayBuffer | BlobLike;
 
+export interface BodyParamEnumPropertiesParams {
+  code?: 1 | 2;
+
+  cost?: 0.1 | 0.2;
+
+  enabled?: true;
+
+  kind?: 'failed' | 'success';
+}
+
 export interface BodyParamNestedRequestModelsParams {
   data?: NestedRequestModelA;
 }
@@ -758,6 +779,7 @@ export namespace BodyParams {
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
   export import BodyParamBinaryStringTypeParams = BodyParamsAPI.BodyParamBinaryStringTypeParams;
   export import BodyParamBinaryTypeParams = BodyParamsAPI.BodyParamBinaryTypeParams;
+  export import BodyParamEnumPropertiesParams = BodyParamsAPI.BodyParamEnumPropertiesParams;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
   export import BodyParamNullTypeParams = BodyParamsAPI.BodyParamNullTypeParams;
   export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;

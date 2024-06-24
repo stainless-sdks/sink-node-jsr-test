@@ -160,6 +160,7 @@ export {
   BodyParamUnionOverlappingPropResponse,
   BodyParamBinaryStringTypeParams,
   BodyParamBinaryTypeParams,
+  BodyParamEnumPropertiesParams,
   BodyParamNestedRequestModelsParams,
   BodyParamNullTypeParams,
   BodyParamObjectWithArrayOfObjectsParams,

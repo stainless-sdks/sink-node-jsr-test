@@ -784,6 +784,7 @@ Methods:
 
 - <code title="post /body_params/binary_string_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">binaryStringType</a>({ ...params }) -> void</code>
 - <code title="post /body_params/binary_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">binaryType</a>({ ...params }) -> void</code>
+- <code title="post /body_params/enum_properties">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">enumProperties</a>({ ...params }) -> void</code>
 - <code title="post /body_params/with_nested_models">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nestedRequestModels</a>({ ...params }) -> ModelWithNestedModel</code>
 - <code title="post /body_params/null_type">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">nullType</a>({ ...params }) -> void</code>
 - <code title="post /body_params/object_with_array_of_objects">client.bodyParams.<a href="./src/resources/body-params/body-params.ts">objectWithArrayOfObjects</a>({ ...params }) -> void</code>

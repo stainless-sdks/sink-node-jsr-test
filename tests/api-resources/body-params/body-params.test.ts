@@ -47,6 +47,17 @@ describe('resource bodyParams', () => {
     );
   });
 
+  test('enumProperties', async () => {
+    const responsePromise = sink.bodyParams.enumProperties({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
   test('nestedRequestModels', async () => {
     const responsePromise = sink.bodyParams.nestedRequestModels({});
     const rawResponse = await responsePromise.asResponse();
