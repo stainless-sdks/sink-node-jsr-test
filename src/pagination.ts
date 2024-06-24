@@ -612,6 +612,60 @@ export class PageOffset<Item> extends AbstractPage<Item> implements PageOffsetRe
   }
 }
 
+export interface PageOffsetNoStartFieldResponse<Item> {
+  data: Array<Item>;
+}
+
+export interface PageOffsetNoStartFieldParams {
+  limit?: number;
+
+  offset?: number;
+}
+
+export class PageOffsetNoStartField<Item>
+  extends AbstractPage<Item>
+  implements PageOffsetNoStartFieldResponse<Item>
+{
+  data: Array<Item>;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: PageOffsetNoStartFieldResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data || [];
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data ?? [];
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<PageOffsetNoStartFieldParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    const offset = (this.options.query as PageOffsetNoStartFieldParams).offset ?? 0;
+    if (!offset) {
+      return null;
+    }
+
+    const length = this.getPaginatedItems().length;
+    const currentCount = offset + length;
+
+    return { params: { offset: currentCount } };
+  }
+}
+
 export interface PageCursorURLResponse<Item> {
   data: Array<Item>;
 

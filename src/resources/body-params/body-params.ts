@@ -16,6 +16,7 @@ import {
   PageCursorSharedRef,
   PageCursorTopLevelArray,
   PageOffset,
+  PageOffsetNoStartField,
   PageOffsetTotalCount,
   PagePageNumber,
   PagePageNumberWithoutCurrentPageResponse,
@@ -417,6 +418,8 @@ export class MyModelsPageCursorFromHeaders extends PageCursorFromHeaders<MyModel
 export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyModel> {}
 
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
+
+export class MyModelsPageOffsetNoStartField extends PageOffsetNoStartField<MyModel> {}
 
 export class MyModelsPageOffsetTotalCount extends PageOffsetTotalCount<MyModel> {}
 

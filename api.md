@@ -180,6 +180,7 @@ Methods:
 Methods:
 
 - <code title="get /paginated/offset">client.paginationTests.offset.<a href="./src/resources/pagination-tests/offset.ts">list</a>({ ...params }) -> MyModelsPageOffset</code>
+- <code title="get /paginated/offset/no_start_field">client.paginationTests.offset.<a href="./src/resources/pagination-tests/offset.ts">listNoStartField</a>({ ...params }) -> MyModelsPageOffsetNoStartField</code>
 - <code title="get /paginated/offset/with_total_count">client.paginationTests.offset.<a href="./src/resources/pagination-tests/offset.ts">withTotalCount</a>({ ...params }) -> MyModelsPageOffsetTotalCount</code>
 
 ## FakePages

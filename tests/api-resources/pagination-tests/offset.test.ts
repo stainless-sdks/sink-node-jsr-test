@@ -38,6 +38,34 @@ describe('resource offset', () => {
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
+  test('listNoStartField', async () => {
+    const responsePromise = sink.paginationTests.offset.listNoStartField();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('listNoStartField: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.paginationTests.offset.listNoStartField({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
+  test('listNoStartField: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      sink.paginationTests.offset.listNoStartField(
+        { limit: 0, offset: 0 },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
+  });
+
   test('withTotalCount', async () => {
     const responsePromise = sink.paginationTests.offset.withTotalCount();
     const rawResponse = await responsePromise.asResponse();

@@ -535,6 +535,10 @@ export namespace Sink {
   export import PageOffsetParams = Pagination.PageOffsetParams;
   export import PageOffsetResponse = Pagination.PageOffsetResponse;
 
+  export import PageOffsetNoStartField = Pagination.PageOffsetNoStartField;
+  export import PageOffsetNoStartFieldParams = Pagination.PageOffsetNoStartFieldParams;
+  export import PageOffsetNoStartFieldResponse = Pagination.PageOffsetNoStartFieldResponse;
+
   export import PageCursorURL = Pagination.PageCursorURL;
   export import PageCursorURLParams = Pagination.PageCursorURLParams;
   export import PageCursorURLResponse = Pagination.PageCursorURLResponse;

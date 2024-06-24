@@ -5,8 +5,16 @@ import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as OffsetAPI from './offset';
 import * as BodyParamsAPI from '../body-params/body-params';
-import { MyModelsPageOffset, MyModelsPageOffsetTotalCount } from '../body-params/body-params';
-import { type PageOffsetParams, type PageOffsetTotalCountParams } from '../../pagination';
+import {
+  MyModelsPageOffset,
+  MyModelsPageOffsetNoStartField,
+  MyModelsPageOffsetTotalCount,
+} from '../body-params/body-params';
+import {
+  type PageOffsetNoStartFieldParams,
+  type PageOffsetParams,
+  type PageOffsetTotalCountParams,
+} from '../../pagination';
 
 export class Offset extends APIResource {
   /**
@@ -25,6 +33,29 @@ export class Offset extends APIResource {
       return this.list({}, query);
     }
     return this._client.getAPIList('/paginated/offset', MyModelsPageOffset, { query, ...options });
+  }
+
+  /**
+   * Test case for offset pagination with no start response field
+   */
+  listNoStartField(
+    query?: OffsetListNoStartFieldParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel>;
+  listNoStartField(
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel>;
+  listNoStartField(
+    query: OffsetListNoStartFieldParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel> {
+    if (isRequestOptions(query)) {
+      return this.listNoStartField({}, query);
+    }
+    return this._client.getAPIList('/paginated/offset/no_start_field', MyModelsPageOffsetNoStartField, {
+      query,
+      ...options,
+    });
   }
 
   /**
@@ -53,11 +84,14 @@ export class Offset extends APIResource {
 
 export interface OffsetListParams extends PageOffsetParams {}
 
+export interface OffsetListNoStartFieldParams extends PageOffsetNoStartFieldParams {}
+
 export interface OffsetWithTotalCountParams extends PageOffsetTotalCountParams {}
 
 export namespace Offset {
   export import OffsetListParams = OffsetAPI.OffsetListParams;
+  export import OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
   export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
 }
 
-export { MyModelsPageOffset, MyModelsPageOffsetTotalCount };
+export { MyModelsPageOffset, MyModelsPageOffsetNoStartField, MyModelsPageOffsetTotalCount };

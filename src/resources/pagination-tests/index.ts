@@ -9,7 +9,7 @@ export {
   ItemsTypes,
 } from './items-types';
 export { NestedItemListParams, NestedItems } from './nested-items';
-export { OffsetListParams, OffsetWithTotalCountParams, Offset } from './offset';
+export { OffsetListParams, OffsetListNoStartFieldParams, OffsetWithTotalCountParams, Offset } from './offset';
 export {
   PageNumberListParams,
   PageNumberListWithoutCurrentPageResponseParams,

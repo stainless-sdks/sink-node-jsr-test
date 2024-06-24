@@ -47,6 +47,7 @@ export namespace PaginationTests {
   export import CursorListParams = CursorAPI.CursorListParams;
   export import Offset = OffsetAPI.Offset;
   export import OffsetListParams = OffsetAPI.OffsetListParams;
+  export import OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
   export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
   export import FakePages = FakePagesAPI.FakePages;
   export import FakePageListParams = FakePagesAPI.FakePageListParams;
