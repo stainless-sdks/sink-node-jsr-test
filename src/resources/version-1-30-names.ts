@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../core';
 import { APIResource } from '../resource';
+import * as Core from '../core';
 import * as Version1_30NamesAPI from './version-1-30-names';
 
 export class Version1_30Names extends APIResource {

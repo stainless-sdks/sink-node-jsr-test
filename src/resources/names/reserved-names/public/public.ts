@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../../../../core';
 import { APIResource } from '../../../../resource';
+import * as Core from '../../../../core';
 import * as PublicAPI from './public';
 import * as ClassAPI from './class';
 import * as InterfaceAPI from './interface';

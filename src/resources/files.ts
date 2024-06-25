@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../core';
 import { APIResource } from '../resource';
+import * as Core from '../core';
 import * as FilesAPI from './files';
-import { type Uploadable, multipartFormRequestOptions } from '../core';
 
 export class Files extends APIResource {
   /**
@@ -13,7 +12,7 @@ export class Files extends APIResource {
     body: FileCreateMultipartParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileCreateMultipartResponse> {
-    return this._client.post('/files/multipart', multipartFormRequestOptions({ body, ...options }));
+    return this._client.post('/files/multipart', Core.multipartFormRequestOptions({ body, ...options }));
   }
 
   /**
@@ -25,7 +24,7 @@ export class Files extends APIResource {
   ): Core.APIPromise<FileEverythingMultipartResponse> {
     return this._client.post(
       '/files/multipart_everything',
-      multipartFormRequestOptions({ body, ...options }),
+      Core.multipartFormRequestOptions({ body, ...options }),
     );
   }
 
@@ -36,7 +35,10 @@ export class Files extends APIResource {
     body: FileWithOptionalParamParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<FileWithOptionalParamResponse> {
-    return this._client.post('/files/with_optional_param', multipartFormRequestOptions({ body, ...options }));
+    return this._client.post(
+      '/files/with_optional_param',
+      Core.multipartFormRequestOptions({ body, ...options }),
+    );
   }
 }
 
@@ -53,7 +55,7 @@ export interface FileWithOptionalParamResponse {
 }
 
 export interface FileCreateMultipartParams {
-  file: Uploadable;
+  file: Core.Uploadable;
 
   purpose: string;
 }
@@ -65,7 +67,7 @@ export interface FileEverythingMultipartParams {
 
   f: number;
 
-  file: Uploadable;
+  file: Core.Uploadable;
 
   i: number;
 
@@ -79,7 +81,7 @@ export interface FileWithOptionalParamParams {
    * The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask
    * is not provided, image must have transparency, which will be used as the mask.
    */
-  image: Uploadable;
+  image: Core.Uploadable;
 
   /**
    * A text description of the desired image(s). The maximum length is 1000
@@ -92,7 +94,7 @@ export interface FileWithOptionalParamParams {
    * indicate where `image` should be edited. Must be a valid PNG file, less than
    * 4MB, and have the same dimensions as `image`.
    */
-  mask?: Uploadable;
+  mask?: Core.Uploadable;
 }
 
 export namespace Files {
