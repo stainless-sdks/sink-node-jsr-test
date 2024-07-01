@@ -44,6 +44,7 @@ export {
   Cards,
 } from './cards';
 export { Casing } from './casing/casing';
+export { Client, ClientCreateParams, Clients } from './clients';
 export {
   ClientParamWithPathParamResponse,
   ClientParamWithPathParamAndStandardResponse,

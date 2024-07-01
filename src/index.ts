@@ -348,6 +348,7 @@ export class Sink extends Core.APIClient {
   parent: API.Parent = new API.Parent(this);
   envelopes: API.Envelopes = new API.Envelopes(this);
   types: API.Types = new API.Types(this);
+  clients: API.Clients = new API.Clients(this);
   names: API.Names = new API.Names(this);
   /**
    * Widget is love
@@ -672,6 +673,10 @@ export namespace Sink {
   export import TypeDatetimesResponse = API.TypeDatetimesResponse;
   export import TypeDatesParams = API.TypeDatesParams;
   export import TypeDatetimesParams = API.TypeDatetimesParams;
+
+  export import Clients = API.Clients;
+  export import Client = API.Client;
+  export import ClientCreateParams = API.ClientCreateParams;
 
   export import Names = API.Names;
   export import Balance = API.Balance;

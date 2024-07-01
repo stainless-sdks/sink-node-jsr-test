@@ -481,6 +481,16 @@ Methods:
 - <code title="post /types/array/model_nested_in_params">client.types.arrays.<a href="./src/resources/types/arrays.ts">nestedInParams</a>({ ...params }) -> void</code>
 - <code title="get /types/array/object_items">client.types.arrays.<a href="./src/resources/types/arrays.ts">objectItems</a>() -> ArrayObjectItemsResponse</code>
 
+# Clients
+
+Types:
+
+- <code><a href="./src/resources/clients.ts">Client</a></code>
+
+Methods:
+
+- <code title="post /clients">client.clients.<a href="./src/resources/clients.ts">create</a>({ ...params }) -> Client</code>
+
 # Names
 
 Types:
