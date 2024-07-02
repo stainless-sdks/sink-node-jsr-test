@@ -65,6 +65,21 @@ describe('resource files', () => {
     });
   });
 
+  test('noFileMultipart: only required params', async () => {
+    const responsePromise = sink.files.noFileMultipart({ purpose: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('noFileMultipart: required and optional params', async () => {
+    const response = await sink.files.noFileMultipart({ purpose: 'string' });
+  });
+
   test('withOptionalParam: only required params', async () => {
     const responsePromise = sink.files.withOptionalParam({
       image: await toFile(Buffer.from('# my file contents'), 'README.md'),

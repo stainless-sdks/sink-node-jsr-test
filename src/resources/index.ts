@@ -76,9 +76,11 @@ export { EmptyBodyStainlessEmptyObjectParams, EmptyBodyTypedParamsParams, EmptyB
 export {
   FileCreateMultipartResponse,
   FileEverythingMultipartResponse,
+  FileNoFileMultipartResponse,
   FileWithOptionalParamResponse,
   FileCreateMultipartParams,
   FileEverythingMultipartParams,
+  FileNoFileMultipartParams,
   FileWithOptionalParamParams,
   Files,
 } from './files';

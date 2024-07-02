@@ -29,6 +29,19 @@ export class Files extends APIResource {
   }
 
   /**
+   * Endpoint for multipart requests without a file parameter.
+   */
+  noFileMultipart(
+    body: FileNoFileMultipartParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileNoFileMultipartResponse> {
+    return this._client.post(
+      '/files/no_file_multipart',
+      Core.multipartFormRequestOptions({ body, ...options }),
+    );
+  }
+
+  /**
    * Multipart request with a required and an optional file request param.
    */
   withOptionalParam(
@@ -47,6 +60,10 @@ export interface FileCreateMultipartResponse {
 }
 
 export interface FileEverythingMultipartResponse {
+  url: string;
+}
+
+export interface FileNoFileMultipartResponse {
   url: string;
 }
 
@@ -76,6 +93,10 @@ export interface FileEverythingMultipartParams {
   s: string;
 }
 
+export interface FileNoFileMultipartParams {
+  purpose: string;
+}
+
 export interface FileWithOptionalParamParams {
   /**
    * The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask
@@ -100,8 +121,10 @@ export interface FileWithOptionalParamParams {
 export namespace Files {
   export import FileCreateMultipartResponse = FilesAPI.FileCreateMultipartResponse;
   export import FileEverythingMultipartResponse = FilesAPI.FileEverythingMultipartResponse;
+  export import FileNoFileMultipartResponse = FilesAPI.FileNoFileMultipartResponse;
   export import FileWithOptionalParamResponse = FilesAPI.FileWithOptionalParamResponse;
   export import FileCreateMultipartParams = FilesAPI.FileCreateMultipartParams;
   export import FileEverythingMultipartParams = FilesAPI.FileEverythingMultipartParams;
+  export import FileNoFileMultipartParams = FilesAPI.FileNoFileMultipartParams;
   export import FileWithOptionalParamParams = FilesAPI.FileWithOptionalParamParams;
 }

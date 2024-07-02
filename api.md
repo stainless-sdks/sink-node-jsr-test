@@ -268,12 +268,14 @@ Types:
 
 - <code><a href="./src/resources/files.ts">FileCreateMultipartResponse</a></code>
 - <code><a href="./src/resources/files.ts">FileEverythingMultipartResponse</a></code>
+- <code><a href="./src/resources/files.ts">FileNoFileMultipartResponse</a></code>
 - <code><a href="./src/resources/files.ts">FileWithOptionalParamResponse</a></code>
 
 Methods:
 
 - <code title="post /files/multipart">client.files.<a href="./src/resources/files.ts">createMultipart</a>({ ...params }) -> FileCreateMultipartResponse</code>
 - <code title="post /files/multipart_everything">client.files.<a href="./src/resources/files.ts">everythingMultipart</a>({ ...params }) -> FileEverythingMultipartResponse</code>
+- <code title="post /files/no_file_multipart">client.files.<a href="./src/resources/files.ts">noFileMultipart</a>({ ...params }) -> FileNoFileMultipartResponse</code>
 - <code title="post /files/with_optional_param">client.files.<a href="./src/resources/files.ts">withOptionalParam</a>({ ...params }) -> FileWithOptionalParamResponse</code>
 
 # Binaries

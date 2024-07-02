@@ -635,9 +635,11 @@ export namespace Sink {
   export import Files = API.Files;
   export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
   export import FileEverythingMultipartResponse = API.FileEverythingMultipartResponse;
+  export import FileNoFileMultipartResponse = API.FileNoFileMultipartResponse;
   export import FileWithOptionalParamResponse = API.FileWithOptionalParamResponse;
   export import FileCreateMultipartParams = API.FileCreateMultipartParams;
   export import FileEverythingMultipartParams = API.FileEverythingMultipartParams;
+  export import FileNoFileMultipartParams = API.FileNoFileMultipartParams;
   export import FileWithOptionalParamParams = API.FileWithOptionalParamParams;
 
   export import Binaries = API.Binaries;
