@@ -634,6 +634,21 @@ Methods:
 
 - <code title="get /widgets/{widgetId}/filter/{filterType}">client.widgets.<a href="./src/resources/widgets.ts">retrieveWithFilter</a>(widgetId, filterType) -> Widget</code>
 
+# Webhooks
+
+Types:
+
+- <code><a href="./src/resources/webhooks.ts">CardCreatedWebhookEvent</a></code>
+- <code><a href="./src/resources/webhooks.ts">CardReadyWebhookEvent</a></code>
+- <code><a href="./src/resources/webhooks.ts">CardErroredWebhookEvent</a></code>
+- <code><a href="./src/resources/webhooks.ts">CardUpdatedWebhookEvent</a></code>
+- <code><a href="./src/resources/webhooks.ts">CardDeletedWebhookEvent</a></code>
+- <code><a href="./src/resources/webhooks.ts">UnwrapWebhookEvent</a></code>
+
+Methods:
+
+- <code>client.webhooks.<a href="./src/resources/webhooks.ts">unwrap</a>(body) -> void</code>
+
 # ClientParams
 
 Types:

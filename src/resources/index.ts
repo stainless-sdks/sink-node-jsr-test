@@ -43,6 +43,15 @@ export {
   CardReissueParams,
   Cards,
 } from './cards';
+export {
+  CardCreatedWebhookEvent,
+  CardReadyWebhookEvent,
+  CardErroredWebhookEvent,
+  CardUpdatedWebhookEvent,
+  CardDeletedWebhookEvent,
+  UnwrapWebhookEvent,
+  Webhooks,
+} from './webhooks';
 export { Casing } from './casing/casing';
 export { Client, ClientCreateParams, Clients } from './clients';
 export {

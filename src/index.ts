@@ -355,6 +355,7 @@ export class Sink extends Core.APIClient {
    * Widget is life
    */
   widgets: API.Widgets = new API.Widgets(this);
+  webhooks: API.Webhooks = new API.Webhooks(this);
   clientParams: API.ClientParams = new API.ClientParams(this);
   responses: API.Responses = new API.Responses(this);
   pathParams: API.PathParams = new API.PathParams(this);
@@ -692,6 +693,14 @@ export namespace Sink {
 
   export import Widgets = API.Widgets;
   export import Widget = API.Widget;
+
+  export import Webhooks = API.Webhooks;
+  export import CardCreatedWebhookEvent = API.CardCreatedWebhookEvent;
+  export import CardReadyWebhookEvent = API.CardReadyWebhookEvent;
+  export import CardErroredWebhookEvent = API.CardErroredWebhookEvent;
+  export import CardUpdatedWebhookEvent = API.CardUpdatedWebhookEvent;
+  export import CardDeletedWebhookEvent = API.CardDeletedWebhookEvent;
+  export import UnwrapWebhookEvent = API.UnwrapWebhookEvent;
 
   export import ClientParams = API.ClientParams;
   export import ClientParamWithPathParamResponse = API.ClientParamWithPathParamResponse;
