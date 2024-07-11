@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource bodyParams', () => {
   test('binaryStringType: only required params', async () => {
-    const responsePromise = sink.bodyParams.binaryStringType('string');
+    const responsePromise = sink.bodyParams.binaryStringType('binary_string_body');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,7 +25,7 @@ describe('resource bodyParams', () => {
   });
 
   test('binaryStringType: required and optional params', async () => {
-    const response = await sink.bodyParams.binaryStringType('string');
+    const response = await sink.bodyParams.binaryStringType('binary_string_body');
   });
 
   test('binaryType: only required params', async () => {
@@ -70,7 +70,7 @@ describe('resource bodyParams', () => {
   });
 
   test('nullType: only required params', async () => {
-    const responsePromise = sink.bodyParams.nullType({ name: 'string', null_type_prop: null });
+    const responsePromise = sink.bodyParams.nullType({ name: 'name', null_type_prop: null });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -81,7 +81,7 @@ describe('resource bodyParams', () => {
   });
 
   test('nullType: required and optional params', async () => {
-    const response = await sink.bodyParams.nullType({ name: 'string', null_type_prop: null });
+    const response = await sink.bodyParams.nullType({ name: 'name', null_type_prop: null });
   });
 
   test('objectWithArrayOfObjects', async () => {
@@ -131,7 +131,7 @@ describe('resource bodyParams', () => {
   test('paramInModelNameRef: only required params', async () => {
     const responsePromise = sink.bodyParams.paramInModelNameRef({
       model_ref: { foo: 'string' },
-      name: 'string',
+      name: 'name',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -145,12 +145,12 @@ describe('resource bodyParams', () => {
   test('paramInModelNameRef: required and optional params', async () => {
     const response = await sink.bodyParams.paramInModelNameRef({
       model_ref: { foo: 'string' },
-      name: 'string',
+      name: 'name',
     });
   });
 
   test('propertyModelRef: only required params', async () => {
-    const responsePromise = sink.bodyParams.propertyModelRef({ model_ref: {}, name: 'string' });
+    const responsePromise = sink.bodyParams.propertyModelRef({ model_ref: {}, name: 'name' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -161,11 +161,11 @@ describe('resource bodyParams', () => {
   });
 
   test('propertyModelRef: required and optional params', async () => {
-    const response = await sink.bodyParams.propertyModelRef({ model_ref: { bar: true }, name: 'string' });
+    const response = await sink.bodyParams.propertyModelRef({ model_ref: { bar: true }, name: 'name' });
   });
 
   test('propertyWithComplexUnion: only required params', async () => {
-    const responsePromise = sink.bodyParams.propertyWithComplexUnion({ name: 'string', unions: {} });
+    const responsePromise = sink.bodyParams.propertyWithComplexUnion({ name: 'name', unions: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -177,7 +177,7 @@ describe('resource bodyParams', () => {
 
   test('propertyWithComplexUnion: required and optional params', async () => {
     const response = await sink.bodyParams.propertyWithComplexUnion({
-      name: 'string',
+      name: 'name',
       unions: { in_both: true },
     });
   });
@@ -205,10 +205,7 @@ describe('resource bodyParams', () => {
   });
 
   test('stringMapModelRef: only required params', async () => {
-    const responsePromise = sink.bodyParams.stringMapModelRef({
-      model_ref: { foo: 'string' },
-      name: 'string',
-    });
+    const responsePromise = sink.bodyParams.stringMapModelRef({ model_ref: { foo: 'string' }, name: 'name' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -219,10 +216,7 @@ describe('resource bodyParams', () => {
   });
 
   test('stringMapModelRef: required and optional params', async () => {
-    const response = await sink.bodyParams.stringMapModelRef({
-      model_ref: { foo: 'string' },
-      name: 'string',
-    });
+    const response = await sink.bodyParams.stringMapModelRef({ model_ref: { foo: 'string' }, name: 'name' });
   });
 
   test('topLevelAllOf: only required params', async () => {
@@ -275,9 +269,9 @@ describe('resource bodyParams', () => {
 
   test('topLevelArray: only required params', async () => {
     const responsePromise = sink.bodyParams.topLevelArray([
-      { foo: 'string', bar: 'string' },
-      { foo: 'string', bar: 'string' },
-      { foo: 'string', bar: 'string' },
+      { foo: 'foo', bar: 'bar' },
+      { foo: 'foo', bar: 'bar' },
+      { foo: 'foo', bar: 'bar' },
     ]);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -290,17 +284,17 @@ describe('resource bodyParams', () => {
 
   test('topLevelArray: required and optional params', async () => {
     const response = await sink.bodyParams.topLevelArray([
-      { foo: 'string', bar: 'string' },
-      { foo: 'string', bar: 'string' },
-      { foo: 'string', bar: 'string' },
+      { foo: 'foo', bar: 'bar' },
+      { foo: 'foo', bar: 'bar' },
+      { foo: 'foo', bar: 'bar' },
     ]);
   });
 
   test('topLevelArrayWithChildren: only required params', async () => {
     const responsePromise = sink.bodyParams.topLevelArrayWithChildren([
-      { id: 'string' },
-      { id: 'string' },
-      { id: 'string' },
+      { id: 'id' },
+      { id: 'id' },
+      { id: 'id' },
     ]);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -313,19 +307,19 @@ describe('resource bodyParams', () => {
 
   test('topLevelArrayWithChildren: required and optional params', async () => {
     const response = await sink.bodyParams.topLevelArrayWithChildren([
-      { id: 'string' },
-      { id: 'string' },
-      { id: 'string' },
+      { id: 'id' },
+      { id: 'id' },
+      { id: 'id' },
     ]);
   });
 
   test('topLevelArrayWithOtherParams: only required params', async () => {
     const responsePromise = sink.bodyParams.topLevelArrayWithOtherParams({
-      id: 'string',
+      id: 'id',
       items: [
-        { foo: 'string', bar: 'string' },
-        { foo: 'string', bar: 'string' },
-        { foo: 'string', bar: 'string' },
+        { foo: 'foo', bar: 'bar' },
+        { foo: 'foo', bar: 'bar' },
+        { foo: 'foo', bar: 'bar' },
       ],
     });
     const rawResponse = await responsePromise.asResponse();
@@ -339,11 +333,11 @@ describe('resource bodyParams', () => {
 
   test('topLevelArrayWithOtherParams: required and optional params', async () => {
     const response = await sink.bodyParams.topLevelArrayWithOtherParams({
-      id: 'string',
+      id: 'id',
       items: [
-        { foo: 'string', bar: 'string' },
-        { foo: 'string', bar: 'string' },
-        { foo: 'string', bar: 'string' },
+        { foo: 'foo', bar: 'bar' },
+        { foo: 'foo', bar: 'bar' },
+        { foo: 'foo', bar: 'bar' },
       ],
     });
   });
@@ -385,7 +379,7 @@ describe('resource bodyParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.bodyParams.topLevelSharedType(
-        { bar: { bar: 0 }, foo: 'string' },
+        { bar: { bar: 0 }, foo: 'foo' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);
@@ -403,7 +397,7 @@ describe('resource bodyParams', () => {
   });
 
   test('unionOverlappingProp: required and optional params', async () => {
-    const response = await sink.bodyParams.unionOverlappingProp({ foo: 'string' });
+    const response = await sink.bodyParams.unionOverlappingProp({ foo: 'foo' });
   });
 
   test('unionOverlappingProp: request options instead of params are passed correctly', async () => {
@@ -416,12 +410,12 @@ describe('resource bodyParams', () => {
   test('unionOverlappingProp: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.bodyParams.unionOverlappingProp({ foo: 'string' }, { path: '/_stainless_unknown_path' }),
+      sink.bodyParams.unionOverlappingProp({ foo: 'foo' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unknownObject: only required params', async () => {
-    const responsePromise = sink.bodyParams.unknownObject({ name: 'string', unknown_object_prop: {} });
+    const responsePromise = sink.bodyParams.unknownObject({ name: 'name', unknown_object_prop: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -432,7 +426,7 @@ describe('resource bodyParams', () => {
   });
 
   test('unknownObject: required and optional params', async () => {
-    const response = await sink.bodyParams.unknownObject({ name: 'string', unknown_object_prop: {} });
+    const response = await sink.bodyParams.unknownObject({ name: 'name', unknown_object_prop: {} });
   });
 
   test('withDefaultBodyParamOptional', async () => {
@@ -459,7 +453,7 @@ describe('resource bodyParams', () => {
 
   test('withDefaultBodyParamRequired: required and optional params', async () => {
     const response = await sink.bodyParams.withDefaultBodyParamRequired({
-      my_version_body_param: 'string',
+      my_version_body_param: 'my_version_body_param',
       normal_param: true,
     });
   });

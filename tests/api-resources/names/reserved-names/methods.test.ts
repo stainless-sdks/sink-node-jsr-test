@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource methods', () => {
   test('export', async () => {
-    const responsePromise = sink.names.reservedNames.methods.export('string');
+    const responsePromise = sink.names.reservedNames.methods.export('class');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -27,7 +27,7 @@ describe('resource methods', () => {
   test('export: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.names.reservedNames.methods.export('string', { path: '/_stainless_unknown_path' }),
+      sink.names.reservedNames.methods.export('class', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
@@ -35,8 +35,8 @@ describe('resource methods', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.names.reservedNames.methods.export(
-        'string',
-        { let: 'string', const: 'string' },
+        'class',
+        { let: 'let', const: 'const' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

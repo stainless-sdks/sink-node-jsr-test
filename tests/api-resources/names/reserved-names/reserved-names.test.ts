@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource reservedNames', () => {
   test('commonReservedParams: only required params', async () => {
-    const responsePromise = sink.names.reservedNames.commonReservedParams({ from: 'string' });
+    const responsePromise = sink.names.reservedNames.commonReservedParams({ from: 'from' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,6 +25,6 @@ describe('resource reservedNames', () => {
   });
 
   test('commonReservedParams: required and optional params', async () => {
-    const response = await sink.names.reservedNames.commonReservedParams({ from: 'string' });
+    const response = await sink.names.reservedNames.commonReservedParams({ from: 'from' });
   });
 });

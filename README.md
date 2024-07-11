@@ -49,7 +49,7 @@ import Sink from 'sink-npm';
 
 const sink = new Sink();
 
-const stream = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: true });
+const stream = await sink.streaming.basic({ model: 'model', prompt: 'prompt', stream: true });
 for await (const streamingBasicResponse of stream) {
   console.log(streamingBasicResponse.completion);
 }
@@ -102,22 +102,22 @@ import Sink, { toFile } from 'sink-npm';
 const sink = new Sink();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'string' });
+await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'purpose' });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'string' });
+await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'purpose' });
 
 // You can also pass a `fetch` `Response`:
-await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'string' });
+await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'purpose' });
 
 // Finally, if none of the above are convenient, you can use our `toFile` helper:
 await sink.files.createMultipart({
   file: await toFile(Buffer.from('my bytes'), 'bar.txt'),
-  purpose: 'string',
+  purpose: 'purpose',
 });
 await sink.files.createMultipart({
   file: await toFile(new Uint8Array([0, 1, 2]), 'bar.txt'),
-  purpose: 'string',
+  purpose: 'purpose',
 });
 ```
 

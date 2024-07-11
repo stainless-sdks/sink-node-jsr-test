@@ -69,8 +69,8 @@ describe('resource configTools', () => {
       exp_year: '2027',
       funding_token: '514aa2b7-898f-4ce7-bc05-c2fe993713e8',
       memo: 'New Card',
-      not: 'string',
-      pin: 'string',
+      not: 'not',
+      pin: 'pin',
       product_id: '1',
       shipping_method: 'STANDARD',
       shippingAddress: {

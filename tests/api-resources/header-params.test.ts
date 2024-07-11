@@ -18,7 +18,7 @@ describe('resource headerParams', () => {
       'X-Required-Boolean': true,
       'X-Required-Integer': 0,
       'X-Required-Number': 0,
-      'X-Required-String': 'string',
+      'X-Required-String': 'X-Required-String',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -34,12 +34,12 @@ describe('resource headerParams', () => {
       'X-Required-Boolean': true,
       'X-Required-Integer': 0,
       'X-Required-Number': 0,
-      'X-Required-String': 'string',
-      body_argument: 'string',
+      'X-Required-String': 'X-Required-String',
+      body_argument: 'body_argument',
       'X-Optional-Boolean': true,
       'X-Optional-Integer': 0,
       'X-Optional-Number': 0,
-      'X-Optional-String': 'string',
+      'X-Optional-String': 'X-Optional-String',
     });
   });
 

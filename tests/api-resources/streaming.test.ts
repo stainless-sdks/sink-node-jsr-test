@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource streaming', () => {
   test('basic: only required params', async () => {
-    const responsePromise = sink.streaming.basic({ model: 'string', prompt: 'string' });
+    const responsePromise = sink.streaming.basic({ model: 'model', prompt: 'prompt' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,11 +25,11 @@ describe('resource streaming', () => {
   });
 
   test('basic: required and optional params', async () => {
-    const response = await sink.streaming.basic({ model: 'string', prompt: 'string', stream: false });
+    const response = await sink.streaming.basic({ model: 'model', prompt: 'prompt', stream: false });
   });
 
   test('nestedParams: only required params', async () => {
-    const responsePromise = sink.streaming.nestedParams({ model: 'string', prompt: 'string' });
+    const responsePromise = sink.streaming.nestedParams({ model: 'model', prompt: 'prompt' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -41,10 +41,10 @@ describe('resource streaming', () => {
 
   test('nestedParams: required and optional params', async () => {
     const response = await sink.streaming.nestedParams({
-      model: 'string',
-      prompt: 'string',
+      model: 'model',
+      prompt: 'prompt',
       parent_object: {
-        child_prop: { from_object: 'string' },
+        child_prop: { from_object: 'from_object' },
         array_prop: [{ from_array_items: true }, { from_array_items: true }, { from_array_items: true }],
       },
       stream: false,
@@ -52,7 +52,7 @@ describe('resource streaming', () => {
   });
 
   test('noDiscriminator: only required params', async () => {
-    const responsePromise = sink.streaming.noDiscriminator({ model: 'string', prompt: 'string' });
+    const responsePromise = sink.streaming.noDiscriminator({ model: 'model', prompt: 'prompt' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -63,11 +63,11 @@ describe('resource streaming', () => {
   });
 
   test('noDiscriminator: required and optional params', async () => {
-    const response = await sink.streaming.noDiscriminator({ model: 'string', prompt: 'string' });
+    const response = await sink.streaming.noDiscriminator({ model: 'model', prompt: 'prompt' });
   });
 
   test('queryParamDiscriminator: only required params', async () => {
-    const responsePromise = sink.streaming.queryParamDiscriminator({ prompt: 'string' });
+    const responsePromise = sink.streaming.queryParamDiscriminator({ prompt: 'prompt' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -78,6 +78,6 @@ describe('resource streaming', () => {
   });
 
   test('queryParamDiscriminator: required and optional params', async () => {
-    const response = await sink.streaming.queryParamDiscriminator({ prompt: 'string', should_stream: false });
+    const response = await sink.streaming.queryParamDiscriminator({ prompt: 'prompt', should_stream: false });
   });
 });

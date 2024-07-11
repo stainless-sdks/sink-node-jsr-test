@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource emptyBody', () => {
   test('stainlessEmptyObject: only required params', async () => {
-    const responsePromise = sink.emptyBody.stainlessEmptyObject('string', { body: {} });
+    const responsePromise = sink.emptyBody.stainlessEmptyObject('path_param', { body: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,15 +25,15 @@ describe('resource emptyBody', () => {
   });
 
   test('stainlessEmptyObject: required and optional params', async () => {
-    const response = await sink.emptyBody.stainlessEmptyObject('string', {
+    const response = await sink.emptyBody.stainlessEmptyObject('path_param', {
       body: {},
-      query_param: 'string',
-      second_query_param: 'string',
+      query_param: 'query_param',
+      second_query_param: 'second_query_param',
     });
   });
 
   test('typedParams: only required params', async () => {
-    const responsePromise = sink.emptyBody.typedParams('string', { body: {} });
+    const responsePromise = sink.emptyBody.typedParams('path_param', { body: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,10 +44,10 @@ describe('resource emptyBody', () => {
   });
 
   test('typedParams: required and optional params', async () => {
-    const response = await sink.emptyBody.typedParams('string', {
+    const response = await sink.emptyBody.typedParams('path_param', {
       body: {},
-      query_param: 'string',
-      second_query_param: 'string',
+      query_param: 'query_param',
+      second_query_param: 'second_query_param',
     });
   });
 });

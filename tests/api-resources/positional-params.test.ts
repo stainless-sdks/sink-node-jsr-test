@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource positionalParams', () => {
   test('basicBody: only required params', async () => {
-    const responsePromise = sink.positionalParams.basicBody({ key1: 'string' });
+    const responsePromise = sink.positionalParams.basicBody({ key1: 'key1' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,11 +25,11 @@ describe('resource positionalParams', () => {
   });
 
   test('basicBody: required and optional params', async () => {
-    const response = await sink.positionalParams.basicBody({ key1: 'string', options: 'string' });
+    const response = await sink.positionalParams.basicBody({ key1: 'key1', options: 'options' });
   });
 
   test('basicQuery: only required params', async () => {
-    const responsePromise = sink.positionalParams.basicQuery({ key1: 'string' });
+    const responsePromise = sink.positionalParams.basicQuery({ key1: 'key1' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -40,7 +40,7 @@ describe('resource positionalParams', () => {
   });
 
   test('basicQuery: required and optional params', async () => {
-    const response = await sink.positionalParams.basicQuery({ key1: 'string' });
+    const response = await sink.positionalParams.basicQuery({ key1: 'key1' });
   });
 
   test('body', async () => {
@@ -55,7 +55,7 @@ describe('resource positionalParams', () => {
   });
 
   test('bodyExtraParam: only required params', async () => {
-    const responsePromise = sink.positionalParams.bodyExtraParam({ extra_key: 'string' });
+    const responsePromise = sink.positionalParams.bodyExtraParam({ extra_key: 'extra_key' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -66,15 +66,15 @@ describe('resource positionalParams', () => {
   });
 
   test('bodyExtraParam: required and optional params', async () => {
-    const response = await sink.positionalParams.bodyExtraParam({ extra_key: 'string', foo: 'string' });
+    const response = await sink.positionalParams.bodyExtraParam({ extra_key: 'extra_key', foo: 'foo' });
   });
 
   test('kitchenSink: only required params', async () => {
-    const responsePromise = sink.positionalParams.kitchenSink('string', {
-      key: 'string',
-      imACamel: 'string',
+    const responsePromise = sink.positionalParams.kitchenSink('id', {
+      key: 'key',
+      imACamel: 'imACamel',
       option1: true,
-      camel_case: 'string',
+      camel_case: 'camel_case',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -86,24 +86,24 @@ describe('resource positionalParams', () => {
   });
 
   test('kitchenSink: required and optional params', async () => {
-    const response = await sink.positionalParams.kitchenSink('string', {
-      key: 'string',
-      imACamel: 'string',
+    const response = await sink.positionalParams.kitchenSink('id', {
+      key: 'key',
+      imACamel: 'imACamel',
       option1: true,
-      camel_case: 'string',
-      option2: 'string',
-      really_cool_snake: 'string',
+      camel_case: 'camel_case',
+      option2: 'option2',
+      really_cool_snake: 'really_cool_snake',
       bar: 0,
-      options: 'string',
-      'X-Custom-Header': 'string',
+      options: 'options',
+      'X-Custom-Header': 'X-Custom-Header',
     });
   });
 
   test('multiplePathParams: only required params', async () => {
-    const responsePromise = sink.positionalParams.multiplePathParams('string', {
-      first: 'string',
-      last: 'string',
-      name: 'string',
+    const responsePromise = sink.positionalParams.multiplePathParams('second', {
+      first: 'first',
+      last: 'last',
+      name: 'name',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -115,16 +115,16 @@ describe('resource positionalParams', () => {
   });
 
   test('multiplePathParams: required and optional params', async () => {
-    const response = await sink.positionalParams.multiplePathParams('string', {
-      first: 'string',
-      last: 'string',
-      name: 'string',
-      options: 'string',
+    const response = await sink.positionalParams.multiplePathParams('second', {
+      first: 'first',
+      last: 'last',
+      name: 'name',
+      options: 'options',
     });
   });
 
   test('query: only required params', async () => {
-    const responsePromise = sink.positionalParams.query({ foo: 'string' });
+    const responsePromise = sink.positionalParams.query({ foo: 'foo' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -135,11 +135,11 @@ describe('resource positionalParams', () => {
   });
 
   test('query: required and optional params', async () => {
-    const response = await sink.positionalParams.query({ foo: 'string' });
+    const response = await sink.positionalParams.query({ foo: 'foo' });
   });
 
   test('queryAndPath: only required params', async () => {
-    const responsePromise = sink.positionalParams.queryAndPath('string', { bar: 0 });
+    const responsePromise = sink.positionalParams.queryAndPath('id', { bar: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -150,11 +150,11 @@ describe('resource positionalParams', () => {
   });
 
   test('queryAndPath: required and optional params', async () => {
-    const response = await sink.positionalParams.queryAndPath('string', { bar: 0 });
+    const response = await sink.positionalParams.queryAndPath('id', { bar: 0 });
   });
 
   test('queryMultiple: only required params', async () => {
-    const responsePromise = sink.positionalParams.queryMultiple({ bar: 'string', foo: 'string' });
+    const responsePromise = sink.positionalParams.queryMultiple({ bar: 'bar', foo: 'foo' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -165,11 +165,11 @@ describe('resource positionalParams', () => {
   });
 
   test('queryMultiple: required and optional params', async () => {
-    const response = await sink.positionalParams.queryMultiple({ bar: 'string', foo: 'string' });
+    const response = await sink.positionalParams.queryMultiple({ bar: 'bar', foo: 'foo' });
   });
 
   test('single', async () => {
-    const responsePromise = sink.positionalParams.single('string');
+    const responsePromise = sink.positionalParams.single('single');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -182,12 +182,12 @@ describe('resource positionalParams', () => {
   test('single: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.positionalParams.single('string', { path: '/_stainless_unknown_path' }),
+      sink.positionalParams.single('single', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unionBodyAndPath: only required params', async () => {
-    const responsePromise = sink.positionalParams.unionBodyAndPath('string', { kind: 'VIRTUAL' });
+    const responsePromise = sink.positionalParams.unionBodyAndPath('id', { kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -198,6 +198,6 @@ describe('resource positionalParams', () => {
   });
 
   test('unionBodyAndPath: required and optional params', async () => {
-    const response = await sink.positionalParams.unionBodyAndPath('string', { kind: 'VIRTUAL' });
+    const response = await sink.positionalParams.unionBodyAndPath('id', { kind: 'VIRTUAL' });
   });
 });

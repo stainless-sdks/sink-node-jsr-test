@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource fakePages', () => {
   test('list: only required params', async () => {
-    const responsePromise = sink.paginationTests.fakePages.list({ my_fake_page_param: 'string' });
+    const responsePromise = sink.paginationTests.fakePages.list({ my_fake_page_param: 'my_fake_page_param' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,6 +25,6 @@ describe('resource fakePages', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await sink.paginationTests.fakePages.list({ my_fake_page_param: 'string' });
+    const response = await sink.paginationTests.fakePages.list({ my_fake_page_param: 'my_fake_page_param' });
   });
 });

@@ -34,10 +34,7 @@ describe('resource queryParams', () => {
   test('allOf: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.queryParams.allOf(
-        { foo_and_bar: { foo: 'string', bar: 0 } },
-        { path: '/_stainless_unknown_path' },
-      ),
+      sink.queryParams.allOf({ foo_and_bar: { foo: 'foo', bar: 0 } }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
@@ -176,7 +173,7 @@ describe('resource queryParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.queryParams.object(
-        { object_param: { foo: 'string' }, object_ref_param: { item: 'string' } },
+        { object_param: { foo: 'foo' }, object_ref_param: { item: 'item' } },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);
@@ -229,7 +226,7 @@ describe('resource queryParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.queryParams.primitives(
-        { boolean_param: true, integer_param: 0, number_param: 0, string_param: 'string' },
+        { boolean_param: true, integer_param: 0, number_param: 0, string_param: 'string_param' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

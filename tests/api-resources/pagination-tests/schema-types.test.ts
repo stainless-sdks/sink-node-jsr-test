@@ -35,7 +35,7 @@ describe('resource schemaTypes', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.paginationTests.schemaTypes.allofs(
-        { cursor: 'string', limit: 0 },
+        { cursor: 'cursor', limit: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);
@@ -63,7 +63,7 @@ describe('resource schemaTypes', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.paginationTests.schemaTypes.unions(
-        { cursor: 'string', limit: 0 },
+        { cursor: 'cursor', limit: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

@@ -15,8 +15,8 @@ const sink = new Sink({
 describe('resource clientParams', () => {
   test('withPathParam: only required params', async () => {
     const responsePromise = sink.clientParams.withPathParam({
-      client_path_param: 'string',
-      client_path_or_query_param: 'string',
+      client_path_param: 'client_path_param',
+      client_path_or_query_param: 'client_path_or_query_param',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -29,14 +29,14 @@ describe('resource clientParams', () => {
 
   test('withPathParam: required and optional params', async () => {
     const response = await sink.clientParams.withPathParam({
-      client_path_param: 'string',
-      client_path_or_query_param: 'string',
+      client_path_param: 'client_path_param',
+      client_path_or_query_param: 'client_path_or_query_param',
     });
   });
 
   test('withPathParamAndStandard: only required params', async () => {
-    const responsePromise = sink.clientParams.withPathParamAndStandard('string', {
-      camelCasedPath: 'string',
+    const responsePromise = sink.clientParams.withPathParamAndStandard('id', {
+      camelCasedPath: 'camelCasedPath',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -48,13 +48,15 @@ describe('resource clientParams', () => {
   });
 
   test('withPathParamAndStandard: required and optional params', async () => {
-    const response = await sink.clientParams.withPathParamAndStandard('string', { camelCasedPath: 'string' });
+    const response = await sink.clientParams.withPathParamAndStandard('id', {
+      camelCasedPath: 'camelCasedPath',
+    });
   });
 
   test('withQueryParam: only required params', async () => {
     const responsePromise = sink.clientParams.withQueryParam({
-      client_path_or_query_param: 'string',
-      client_query_param: 'string',
+      client_path_or_query_param: 'client_path_or_query_param',
+      client_query_param: 'client_query_param',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -67,8 +69,8 @@ describe('resource clientParams', () => {
 
   test('withQueryParam: required and optional params', async () => {
     const response = await sink.clientParams.withQueryParam({
-      client_path_or_query_param: 'string',
-      client_query_param: 'string',
+      client_path_or_query_param: 'client_path_or_query_param',
+      client_query_param: 'client_query_param',
     });
   });
 });

@@ -35,7 +35,7 @@ describe('resource refs', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.paginationTests.refs.nestedObjectRef(
-        { cursor: 'string', limit: 0, object_param: { foo: 'string' } },
+        { cursor: 'cursor', limit: 0, object_param: { foo: 'foo' } },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);
@@ -63,7 +63,7 @@ describe('resource refs', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.paginationTests.refs.withSharedModelRef(
-        { cursor: 'string', limit: 0 },
+        { cursor: 'cursor', limit: 0 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

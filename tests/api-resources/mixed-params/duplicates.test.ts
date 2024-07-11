@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource duplicates', () => {
   test('bodyAndPath: only required params', async () => {
-    const responsePromise = sink.mixedParams.duplicates.bodyAndPath('string', { body_id: 'string' });
+    const responsePromise = sink.mixedParams.duplicates.bodyAndPath('id', { body_id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,14 +25,11 @@ describe('resource duplicates', () => {
   });
 
   test('bodyAndPath: required and optional params', async () => {
-    const response = await sink.mixedParams.duplicates.bodyAndPath('string', { body_id: 'string' });
+    const response = await sink.mixedParams.duplicates.bodyAndPath('id', { body_id: 'id' });
   });
 
   test('queryAndBody: only required params', async () => {
-    const responsePromise = sink.mixedParams.duplicates.queryAndBody({
-      query_id: 'string',
-      body_id: 'string',
-    });
+    const responsePromise = sink.mixedParams.duplicates.queryAndBody({ query_id: 'id', body_id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -43,14 +40,11 @@ describe('resource duplicates', () => {
   });
 
   test('queryAndBody: required and optional params', async () => {
-    const response = await sink.mixedParams.duplicates.queryAndBody({
-      query_id: 'string',
-      body_id: 'string',
-    });
+    const response = await sink.mixedParams.duplicates.queryAndBody({ query_id: 'id', body_id: 'id' });
   });
 
   test('queryAndPath: only required params', async () => {
-    const responsePromise = sink.mixedParams.duplicates.queryAndPath('string', { query_id: 'string' });
+    const responsePromise = sink.mixedParams.duplicates.queryAndPath('id', { query_id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -61,6 +55,6 @@ describe('resource duplicates', () => {
   });
 
   test('queryAndPath: required and optional params', async () => {
-    const response = await sink.mixedParams.duplicates.queryAndPath('string', { query_id: 'string' });
+    const response = await sink.mixedParams.duplicates.queryAndPath('id', { query_id: 'id' });
   });
 });

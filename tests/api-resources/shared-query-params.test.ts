@@ -35,7 +35,7 @@ describe('resource sharedQueryParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.sharedQueryParams.retrieve(
-        { get1: 'string', shared1: 'string', shared2: 'string' },
+        { get1: 'get1', shared1: 'shared1', shared2: 'shared2' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);
@@ -63,7 +63,7 @@ describe('resource sharedQueryParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.sharedQueryParams.del(
-        { get1: 'string', shared1: 'string', shared2: 'string' },
+        { get1: 'get1', shared1: 'shared1', shared2: 'shared2' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

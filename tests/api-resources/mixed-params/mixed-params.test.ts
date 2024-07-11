@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource mixedParams', () => {
   test('bodyWithTopLevelOneOfAndPath: only required params', async () => {
-    const responsePromise = sink.mixedParams.bodyWithTopLevelOneOfAndPath('string', { kind: 'VIRTUAL' });
+    const responsePromise = sink.mixedParams.bodyWithTopLevelOneOfAndPath('path_param', { kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,7 +25,7 @@ describe('resource mixedParams', () => {
   });
 
   test('bodyWithTopLevelOneOfAndPath: required and optional params', async () => {
-    const response = await sink.mixedParams.bodyWithTopLevelOneOfAndPath('string', { kind: 'VIRTUAL' });
+    const response = await sink.mixedParams.bodyWithTopLevelOneOfAndPath('path_param', { kind: 'VIRTUAL' });
   });
 
   test('queryAndBody', async () => {
@@ -50,14 +50,14 @@ describe('resource mixedParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.mixedParams.queryAndBody(
-        { query_param: 'string', body_param: 'string' },
+        { query_param: 'query_param', body_param: 'body_param' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('queryBodyAndPath', async () => {
-    const responsePromise = sink.mixedParams.queryBodyAndPath('string');
+    const responsePromise = sink.mixedParams.queryBodyAndPath('path_param');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,7 +70,7 @@ describe('resource mixedParams', () => {
   test('queryBodyAndPath: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.mixedParams.queryBodyAndPath('string', { path: '/_stainless_unknown_path' }),
+      sink.mixedParams.queryBodyAndPath('path_param', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
@@ -78,8 +78,8 @@ describe('resource mixedParams', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       sink.mixedParams.queryBodyAndPath(
-        'string',
-        { query_param: 'string', body_param: 'string' },
+        'path_param',
+        { query_param: 'query_param', body_param: 'body_param' },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Sink.NotFoundError);

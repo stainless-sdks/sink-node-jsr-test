@@ -29,7 +29,7 @@ describe('resource methodConfig', () => {
 
   // Because of this error
   test.skip('skippedTestsAll', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsAll('string');
+    const responsePromise = sink.methodConfig.skippedTestsAll('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -43,12 +43,12 @@ describe('resource methodConfig', () => {
   test.skip('skippedTestsAll: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsAll('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsAll('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsGo', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsGo('string');
+    const responsePromise = sink.methodConfig.skippedTestsGo('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -61,12 +61,12 @@ describe('resource methodConfig', () => {
   test('skippedTestsGo: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsGo('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsGo('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsJava', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsJava('string');
+    const responsePromise = sink.methodConfig.skippedTestsJava('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -79,12 +79,12 @@ describe('resource methodConfig', () => {
   test('skippedTestsJava: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsJava('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsJava('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsKotlin', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsKotlin('string');
+    const responsePromise = sink.methodConfig.skippedTestsKotlin('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -97,13 +97,13 @@ describe('resource methodConfig', () => {
   test('skippedTestsKotlin: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsKotlin('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsKotlin('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   // Because of this error
   test.skip('skippedTestsNode', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsNode('string');
+    const responsePromise = sink.methodConfig.skippedTestsNode('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -117,13 +117,13 @@ describe('resource methodConfig', () => {
   test.skip('skippedTestsNode: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsNode('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsNode('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   // Because of this error
   test.skip('skippedTestsNodeAndPython', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsNodeAndPython('string');
+    const responsePromise = sink.methodConfig.skippedTestsNodeAndPython('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -137,12 +137,12 @@ describe('resource methodConfig', () => {
   test.skip('skippedTestsNodeAndPython: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsNodeAndPython('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsNodeAndPython('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsPython', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsPython('string');
+    const responsePromise = sink.methodConfig.skippedTestsPython('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -155,12 +155,12 @@ describe('resource methodConfig', () => {
   test('skippedTestsPython: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsPython('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsPython('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsRuby', async () => {
-    const responsePromise = sink.methodConfig.skippedTestsRuby('string');
+    const responsePromise = sink.methodConfig.skippedTestsRuby('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -173,7 +173,7 @@ describe('resource methodConfig', () => {
   test('skippedTestsRuby: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.methodConfig.skippedTestsRuby('string', { path: '/_stainless_unknown_path' }),
+      sink.methodConfig.skippedTestsRuby('id', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 });

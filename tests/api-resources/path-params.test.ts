@@ -32,7 +32,7 @@ describe('resource pathParams', () => {
   });
 
   test('dashedParam', async () => {
-    const responsePromise = sink.pathParams.dashedParam('string');
+    const responsePromise = sink.pathParams.dashedParam('dashed-param');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,9 +44,9 @@ describe('resource pathParams', () => {
 
   test('dashedParam: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.pathParams.dashedParam('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(
+      sink.pathParams.dashedParam('dashed-param', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('dateParam', async () => {
@@ -122,7 +122,7 @@ describe('resource pathParams', () => {
   });
 
   test('multiple', async () => {
-    const responsePromise = sink.pathParams.multiple('string', 'string', 'string');
+    const responsePromise = sink.pathParams.multiple('first', 'second', 'last');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -135,12 +135,12 @@ describe('resource pathParams', () => {
   test('multiple: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.multiple('string', 'string', 'string', { path: '/_stainless_unknown_path' }),
+      sink.pathParams.multiple('first', 'second', 'last', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('nullableParams', async () => {
-    const responsePromise = sink.pathParams.nullableParams('string', 'string', 'foo', {});
+    const responsePromise = sink.pathParams.nullableParams('nullable_param_1', 'nullable_param_2', 'foo', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -151,7 +151,7 @@ describe('resource pathParams', () => {
   });
 
   test('paramsMixedTypes', async () => {
-    const responsePromise = sink.pathParams.paramsMixedTypes(0, 'string');
+    const responsePromise = sink.pathParams.paramsMixedTypes(0, 'string_param');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -164,12 +164,12 @@ describe('resource pathParams', () => {
   test('paramsMixedTypes: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.paramsMixedTypes(0, 'string', { path: '/_stainless_unknown_path' }),
+      sink.pathParams.paramsMixedTypes(0, 'string_param', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('singular', async () => {
-    const responsePromise = sink.pathParams.singular('string');
+    const responsePromise = sink.pathParams.singular('singular');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -181,7 +181,7 @@ describe('resource pathParams', () => {
 
   test('singular: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.pathParams.singular('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(sink.pathParams.singular('singular', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

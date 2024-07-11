@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource version1_30Names', () => {
   test('create', async () => {
-    const responsePromise = sink.version1_30Names.create('string', {});
+    const responsePromise = sink.version1_30Names.create('version_1_15', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
