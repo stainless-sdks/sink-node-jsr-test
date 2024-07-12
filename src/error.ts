@@ -9,7 +9,7 @@ export class APIError extends SinkError {
   readonly headers: Headers | undefined;
   readonly error: Object | undefined;
 
-  readonly request_id: string | null | undefined;
+  readonly requestId: string | null | undefined;
 
   constructor(
     status: number | undefined,
@@ -20,7 +20,7 @@ export class APIError extends SinkError {
     super(`${APIError.makeMessage(status, error, message)}`);
     this.status = status;
     this.headers = headers;
-    this.request_id = headers?.['x-request-id'];
+    this.requestId = headers?.['x-request-id'];
     this.error = error;
   }
 
