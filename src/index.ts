@@ -651,6 +651,9 @@ export namespace Sink {
   export import ConfigTools = API.ConfigTools;
   export import ModelFromNestedResponseBodyRef = API.ModelFromNestedResponseBodyRef;
   export import ModelFromSchemasRef = API.ModelFromSchemasRef;
+  export import ModelFromSchemasRefOpenAPIUri = API.ModelFromSchemasRefOpenAPIUri;
+  export import ModelFromSchemasRefOpenAPIUriJmespath = API.ModelFromSchemasRefOpenAPIUriJmespath;
+  export import ModelFromSchemasRefOpenAPIUriJsonpath = API.ModelFromSchemasRefOpenAPIUriJsonpath;
   export import OnlyNodeModel = API.OnlyNodeModel;
   export import ConfigToolModelRefFromNestedResponseBodyResponse = API.ConfigToolModelRefFromNestedResponseBodyResponse;
   export import ConfigToolOnlyInNodeParams = API.ConfigToolOnlyInNodeParams;

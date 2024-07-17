@@ -150,6 +150,9 @@ export {
 export {
   ModelFromNestedResponseBodyRef,
   ModelFromSchemasRef,
+  ModelFromSchemasRefOpenAPIUri,
+  ModelFromSchemasRefOpenAPIUriJmespath,
+  ModelFromSchemasRefOpenAPIUriJsonpath,
   OnlyNodeModel,
   ConfigToolModelRefFromNestedResponseBodyResponse,
   ConfigToolOnlyInNodeParams,

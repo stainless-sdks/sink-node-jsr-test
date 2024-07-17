@@ -298,6 +298,9 @@ Types:
 
 - <code><a href="./src/resources/config-tools.ts">ModelFromNestedResponseBodyRef</a></code>
 - <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRef</a></code>
+- <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRefOpenAPIUri</a></code>
+- <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRefOpenAPIUriJmespath</a></code>
+- <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRefOpenAPIUriJsonpath</a></code>
 - <code><a href="./src/resources/config-tools.ts">OnlyNodeModel</a></code>
 - <code><a href="./src/resources/config-tools.ts">ConfigToolModelRefFromNestedResponseBodyResponse</a></code>
 
