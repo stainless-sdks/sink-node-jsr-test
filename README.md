@@ -22,7 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Sink from 'sink-npm';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: process.env['SINK_CUSTOM_API_KEY_ENV'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
@@ -47,7 +47,7 @@ We provide support for streaming responses using Server Sent Events (SSE).
 ```ts
 import Sink from 'sink-npm';
 
-const sink = new Sink();
+const client = new Sink();
 
 const stream = await sink.streaming.basic({ model: 'model', prompt: 'prompt', stream: true });
 for await (const streamingBasicResponse of stream) {
@@ -66,7 +66,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Sink from 'sink-npm';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: process.env['SINK_CUSTOM_API_KEY_ENV'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
@@ -99,7 +99,7 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import Sink, { toFile } from 'sink-npm';
 
-const sink = new Sink();
+const client = new Sink();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
 await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'purpose' });
@@ -168,7 +168,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const sink = new Sink({
+const client = new Sink({
   maxRetries: 0, // default is 2
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -189,7 +189,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const sink = new Sink({
+const client = new Sink({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -252,7 +252,7 @@ If you need to, you can override these headers by setting default headers on a p
 ```ts
 import Sink from 'sink-npm';
 
-const sink = new Sink();
+const client = new Sink();
 
 const customAssignTo = await sink.cards.create(
   { type: 'SINGLE_USE', not: 'TEST' },
@@ -270,7 +270,7 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 
 <!-- prettier-ignore -->
 ```ts
-const sink = new Sink();
+const client = new Sink();
 
 const response = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -379,7 +379,7 @@ import http from 'http';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
-const sink = new Sink({
+const client = new Sink({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
