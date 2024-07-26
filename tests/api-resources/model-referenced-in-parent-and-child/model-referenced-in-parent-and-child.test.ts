@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource modelReferencedInParentAndChild', () => {
   test('retrieve', async () => {
-    const responsePromise = sink.modelReferencedInParentAndChild.retrieve();
+    const responsePromise = client.modelReferencedInParentAndChild.retrieve();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -27,7 +27,7 @@ describe('resource modelReferencedInParentAndChild', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.modelReferencedInParentAndChild.retrieve({ path: '/_stainless_unknown_path' }),
+      client.modelReferencedInParentAndChild.retrieve({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 });

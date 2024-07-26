@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource emptyBody', () => {
   test('stainlessEmptyObject: only required params', async () => {
-    const responsePromise = sink.emptyBody.stainlessEmptyObject('path_param', { body: {} });
+    const responsePromise = client.emptyBody.stainlessEmptyObject('path_param', { body: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,7 +25,7 @@ describe('resource emptyBody', () => {
   });
 
   test('stainlessEmptyObject: required and optional params', async () => {
-    const response = await sink.emptyBody.stainlessEmptyObject('path_param', {
+    const response = await client.emptyBody.stainlessEmptyObject('path_param', {
       body: {},
       query_param: 'query_param',
       second_query_param: 'second_query_param',
@@ -33,7 +33,7 @@ describe('resource emptyBody', () => {
   });
 
   test('typedParams: only required params', async () => {
-    const responsePromise = sink.emptyBody.typedParams('path_param', { body: {} });
+    const responsePromise = client.emptyBody.typedParams('path_param', { body: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,7 +44,7 @@ describe('resource emptyBody', () => {
   });
 
   test('typedParams: required and optional params', async () => {
-    const response = await sink.emptyBody.typedParams('path_param', {
+    const response = await client.emptyBody.typedParams('path_param', {
       body: {},
       query_param: 'query_param',
       second_query_param: 'second_query_param',

@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource schemaTypes', () => {
   test('allofs', async () => {
-    const responsePromise = sink.paginationTests.schemaTypes.allofs();
+    const responsePromise = client.paginationTests.schemaTypes.allofs();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -27,14 +27,14 @@ describe('resource schemaTypes', () => {
   test('allofs: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.schemaTypes.allofs({ path: '/_stainless_unknown_path' }),
+      client.paginationTests.schemaTypes.allofs({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('allofs: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.schemaTypes.allofs(
+      client.paginationTests.schemaTypes.allofs(
         { cursor: 'cursor', limit: 0 },
         { path: '/_stainless_unknown_path' },
       ),
@@ -42,7 +42,7 @@ describe('resource schemaTypes', () => {
   });
 
   test('unions', async () => {
-    const responsePromise = sink.paginationTests.schemaTypes.unions();
+    const responsePromise = client.paginationTests.schemaTypes.unions();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -55,14 +55,14 @@ describe('resource schemaTypes', () => {
   test('unions: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.schemaTypes.unions({ path: '/_stainless_unknown_path' }),
+      client.paginationTests.schemaTypes.unions({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unions: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.schemaTypes.unions(
+      client.paginationTests.schemaTypes.unions(
         { cursor: 'cursor', limit: 0 },
         { path: '/_stainless_unknown_path' },
       ),

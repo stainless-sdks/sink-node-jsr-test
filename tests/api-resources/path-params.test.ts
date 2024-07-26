@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource pathParams', () => {
   test('colonSuffix', async () => {
-    const responsePromise = sink.pathParams.colonSuffix(0);
+    const responsePromise = client.pathParams.colonSuffix(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +26,13 @@ describe('resource pathParams', () => {
 
   test('colonSuffix: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.pathParams.colonSuffix(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.pathParams.colonSuffix(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('dashedParam', async () => {
-    const responsePromise = sink.pathParams.dashedParam('dashed-param');
+    const responsePromise = client.pathParams.dashedParam('dashed-param');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,12 +45,12 @@ describe('resource pathParams', () => {
   test('dashedParam: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.dashedParam('dashed-param', { path: '/_stainless_unknown_path' }),
+      client.pathParams.dashedParam('dashed-param', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('dateParam', async () => {
-    const responsePromise = sink.pathParams.dateParam('2023-09-01');
+    const responsePromise = client.pathParams.dateParam('2023-09-01');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -63,12 +63,12 @@ describe('resource pathParams', () => {
   test('dateParam: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.dateParam('2023-09-01', { path: '/_stainless_unknown_path' }),
+      client.pathParams.dateParam('2023-09-01', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('datetimeParam', async () => {
-    const responsePromise = sink.pathParams.datetimeParam('2021-06-28T22:53:15Z');
+    const responsePromise = client.pathParams.datetimeParam('2021-06-28T22:53:15Z');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -81,12 +81,12 @@ describe('resource pathParams', () => {
   test('datetimeParam: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.datetimeParam('2021-06-28T22:53:15Z', { path: '/_stainless_unknown_path' }),
+      client.pathParams.datetimeParam('2021-06-28T22:53:15Z', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('enumParam', async () => {
-    const responsePromise = sink.pathParams.enumParam('A');
+    const responsePromise = client.pathParams.enumParam('A');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -98,13 +98,13 @@ describe('resource pathParams', () => {
 
   test('enumParam: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.pathParams.enumParam('A', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.pathParams.enumParam('A', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('integerParam', async () => {
-    const responsePromise = sink.pathParams.integerParam(0);
+    const responsePromise = client.pathParams.integerParam(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -116,13 +116,13 @@ describe('resource pathParams', () => {
 
   test('integerParam: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.pathParams.integerParam(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.pathParams.integerParam(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('multiple', async () => {
-    const responsePromise = sink.pathParams.multiple('first', 'second', 'last');
+    const responsePromise = client.pathParams.multiple('first', 'second', 'last');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -135,12 +135,17 @@ describe('resource pathParams', () => {
   test('multiple: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.multiple('first', 'second', 'last', { path: '/_stainless_unknown_path' }),
+      client.pathParams.multiple('first', 'second', 'last', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('nullableParams', async () => {
-    const responsePromise = sink.pathParams.nullableParams('nullable_param_1', 'nullable_param_2', 'foo', {});
+    const responsePromise = client.pathParams.nullableParams(
+      'nullable_param_1',
+      'nullable_param_2',
+      'foo',
+      {},
+    );
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -151,7 +156,7 @@ describe('resource pathParams', () => {
   });
 
   test('paramsMixedTypes', async () => {
-    const responsePromise = sink.pathParams.paramsMixedTypes(0, 'string_param');
+    const responsePromise = client.pathParams.paramsMixedTypes(0, 'string_param');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -164,12 +169,12 @@ describe('resource pathParams', () => {
   test('paramsMixedTypes: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.pathParams.paramsMixedTypes(0, 'string_param', { path: '/_stainless_unknown_path' }),
+      client.pathParams.paramsMixedTypes(0, 'string_param', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('singular', async () => {
-    const responsePromise = sink.pathParams.singular('singular');
+    const responsePromise = client.pathParams.singular('singular');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -181,8 +186,8 @@ describe('resource pathParams', () => {
 
   test('singular: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.pathParams.singular('singular', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(
+      client.pathParams.singular('singular', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 });

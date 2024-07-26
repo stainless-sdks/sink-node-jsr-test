@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource itemsTypes', () => {
   test('listUnknown', async () => {
-    const responsePromise = sink.paginationTests.itemsTypes.listUnknown();
+    const responsePromise = client.paginationTests.itemsTypes.listUnknown();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -27,14 +27,14 @@ describe('resource itemsTypes', () => {
   test('listUnknown: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.itemsTypes.listUnknown({ path: '/_stainless_unknown_path' }),
+      client.paginationTests.itemsTypes.listUnknown({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('listUnknown: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.itemsTypes.listUnknown(
+      client.paginationTests.itemsTypes.listUnknown(
         { page: 0, page_size: 0 },
         { path: '/_stainless_unknown_path' },
       ),

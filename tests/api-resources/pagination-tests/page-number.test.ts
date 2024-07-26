@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource pageNumber', () => {
   test('list', async () => {
-    const responsePromise = sink.paginationTests.pageNumber.list();
+    const responsePromise = client.paginationTests.pageNumber.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,20 +26,20 @@ describe('resource pageNumber', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.paginationTests.pageNumber.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(
+      client.paginationTests.pageNumber.list({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.pageNumber.list({ page: 0, page_size: 0 }, { path: '/_stainless_unknown_path' }),
+      client.paginationTests.pageNumber.list({ page: 0, page_size: 0 }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('listWithoutCurrentPageResponse', async () => {
-    const responsePromise = sink.paginationTests.pageNumber.listWithoutCurrentPageResponse();
+    const responsePromise = client.paginationTests.pageNumber.listWithoutCurrentPageResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -52,14 +52,14 @@ describe('resource pageNumber', () => {
   test('listWithoutCurrentPageResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.pageNumber.listWithoutCurrentPageResponse({ path: '/_stainless_unknown_path' }),
+      client.paginationTests.pageNumber.listWithoutCurrentPageResponse({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('listWithoutCurrentPageResponse: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.pageNumber.listWithoutCurrentPageResponse(
+      client.paginationTests.pageNumber.listWithoutCurrentPageResponse(
         { page: 0, page_size: 0, prop_to_not_mess_with_infer_for_other_pages: true },
         { path: '/_stainless_unknown_path' },
       ),

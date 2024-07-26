@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource refs', () => {
   test('nestedObjectRef', async () => {
-    const responsePromise = sink.paginationTests.refs.nestedObjectRef();
+    const responsePromise = client.paginationTests.refs.nestedObjectRef();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -27,14 +27,14 @@ describe('resource refs', () => {
   test('nestedObjectRef: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.refs.nestedObjectRef({ path: '/_stainless_unknown_path' }),
+      client.paginationTests.refs.nestedObjectRef({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('nestedObjectRef: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.refs.nestedObjectRef(
+      client.paginationTests.refs.nestedObjectRef(
         { cursor: 'cursor', limit: 0, object_param: { foo: 'foo' } },
         { path: '/_stainless_unknown_path' },
       ),
@@ -42,7 +42,7 @@ describe('resource refs', () => {
   });
 
   test('withSharedModelRef', async () => {
-    const responsePromise = sink.paginationTests.refs.withSharedModelRef();
+    const responsePromise = client.paginationTests.refs.withSharedModelRef();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -55,14 +55,14 @@ describe('resource refs', () => {
   test('withSharedModelRef: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.refs.withSharedModelRef({ path: '/_stainless_unknown_path' }),
+      client.paginationTests.refs.withSharedModelRef({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('withSharedModelRef: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.refs.withSharedModelRef(
+      client.paginationTests.refs.withSharedModelRef(
         { cursor: 'cursor', limit: 0 },
         { path: '/_stainless_unknown_path' },
       ),

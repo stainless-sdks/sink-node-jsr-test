@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource complexQueries', () => {
   test('arrayQuery', async () => {
-    const responsePromise = sink.complexQueries.arrayQuery();
+    const responsePromise = client.complexQueries.arrayQuery();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,7 +26,7 @@ describe('resource complexQueries', () => {
 
   test('arrayQuery: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.complexQueries.arrayQuery({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.complexQueries.arrayQuery({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -34,7 +34,7 @@ describe('resource complexQueries', () => {
   test('arrayQuery: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.complexQueries.arrayQuery(
+      client.complexQueries.arrayQuery(
         { include: ['users', 'users.comments', 'users.posts'] },
         { path: '/_stainless_unknown_path' },
       ),
@@ -42,7 +42,7 @@ describe('resource complexQueries', () => {
   });
 
   test('objectQuery', async () => {
-    const responsePromise = sink.complexQueries.objectQuery();
+    const responsePromise = client.complexQueries.objectQuery();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -54,7 +54,7 @@ describe('resource complexQueries', () => {
 
   test('objectQuery: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.complexQueries.objectQuery({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.complexQueries.objectQuery({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -62,12 +62,12 @@ describe('resource complexQueries', () => {
   test('objectQuery: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.complexQueries.objectQuery({ include: { foo: 'string' } }, { path: '/_stainless_unknown_path' }),
+      client.complexQueries.objectQuery({ include: { foo: 'string' } }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unionQuery', async () => {
-    const responsePromise = sink.complexQueries.unionQuery();
+    const responsePromise = client.complexQueries.unionQuery();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -79,7 +79,7 @@ describe('resource complexQueries', () => {
 
   test('unionQuery: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.complexQueries.unionQuery({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.complexQueries.unionQuery({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -87,7 +87,7 @@ describe('resource complexQueries', () => {
   test('unionQuery: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.complexQueries.unionQuery({ include: 'string' }, { path: '/_stainless_unknown_path' }),
+      client.complexQueries.unionQuery({ include: 'string' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 });
