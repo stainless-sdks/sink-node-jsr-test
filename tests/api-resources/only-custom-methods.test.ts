@@ -2,7 +2,7 @@
 
 import Sink from 'sink-npm';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -13,7 +13,7 @@ const sink = new Sink({
 
 describe('resource onlyCustomMethods', () => {
   test('getAuthURL', () => {
-    const url = sink.getAuthURL({
+    const url = client.getAuthURL({
       clientId: '<client_id>',
       redirectUri: 'http://localhost:8000/auth/success',
     });

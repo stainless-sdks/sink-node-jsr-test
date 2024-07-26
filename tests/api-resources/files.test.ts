@@ -3,7 +3,7 @@
 import Sink, { toFile } from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource files', () => {
   test('createMultipart: only required params', async () => {
-    const responsePromise = sink.files.createMultipart({
+    const responsePromise = client.files.createMultipart({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       purpose: 'purpose',
     });
@@ -28,14 +28,14 @@ describe('resource files', () => {
   });
 
   test('createMultipart: required and optional params', async () => {
-    const response = await sink.files.createMultipart({
+    const response = await client.files.createMultipart({
       file: await toFile(Buffer.from('# my file contents'), 'README.md'),
       purpose: 'purpose',
     });
   });
 
   test('everythingMultipart: only required params', async () => {
-    const responsePromise = sink.files.everythingMultipart({
+    const responsePromise = client.files.everythingMultipart({
       b: true,
       e: 'a',
       f: 0,
@@ -54,7 +54,7 @@ describe('resource files', () => {
   });
 
   test('everythingMultipart: required and optional params', async () => {
-    const response = await sink.files.everythingMultipart({
+    const response = await client.files.everythingMultipart({
       b: true,
       e: 'a',
       f: 0,
@@ -66,7 +66,7 @@ describe('resource files', () => {
   });
 
   test('noFileMultipart: only required params', async () => {
-    const responsePromise = sink.files.noFileMultipart({ purpose: 'purpose' });
+    const responsePromise = client.files.noFileMultipart({ purpose: 'purpose' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -77,11 +77,11 @@ describe('resource files', () => {
   });
 
   test('noFileMultipart: required and optional params', async () => {
-    const response = await sink.files.noFileMultipart({ purpose: 'purpose' });
+    const response = await client.files.noFileMultipart({ purpose: 'purpose' });
   });
 
   test('withOptionalParam: only required params', async () => {
-    const responsePromise = sink.files.withOptionalParam({
+    const responsePromise = client.files.withOptionalParam({
       image: await toFile(Buffer.from('# my file contents'), 'README.md'),
       prompt: 'A cute baby sea otter wearing a beret',
     });
@@ -95,7 +95,7 @@ describe('resource files', () => {
   });
 
   test('withOptionalParam: required and optional params', async () => {
-    const response = await sink.files.withOptionalParam({
+    const response = await client.files.withOptionalParam({
       image: await toFile(Buffer.from('# my file contents'), 'README.md'),
       prompt: 'A cute baby sea otter wearing a beret',
       mask: await toFile(Buffer.from('# my file contents'), 'README.md'),

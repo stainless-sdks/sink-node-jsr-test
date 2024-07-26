@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource unions', () => {
   test('paramUnionEnumNewType', async () => {
-    const responsePromise = sink.bodyParams.unions.paramUnionEnumNewType({});
+    const responsePromise = client.bodyParams.unions.paramUnionEnumNewType({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

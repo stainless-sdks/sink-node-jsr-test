@@ -2,7 +2,7 @@
 
 import Sink from 'sink-npm';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'something1234',
   baseURL: 'http://127.0.0.1:4010',
   username: 'Robert',
@@ -12,25 +12,22 @@ const sink = new Sink({
 });
 
 export async function main() {
-  const response = await sink.responses.additionalProperties().asResponse();
+  const { data, response } = await client.responses.additionalProperties().withResponse();
   console.log(response);
-  console.log(`response headers: `, response.raw.headers.raw());
-
-  const obj = await response.parse();
-  console.log(`obj: `, obj);
+  console.log(`response headers: `, response.headers.raw());
+  console.log(`data: `, data);
 }
 
 export async function envelopes() {
-  const response = await sink.envelopes.explicit().asResponse();
+  const { data, response } = await client.envelopes.explicit().withResponse();
   console.log(response);
-  console.log(`response headers: `, response.raw.headers.raw());
+  console.log(`response headers: `, response.headers.raw());
 
-  const obj = await response.parse();
-  console.log(`obj: `, obj);
-  console.log(obj.data.city);
+  console.log(`obj: `, data);
+  console.log(data.city);
   console.log('\n\n\n');
 
-  const normal = await sink.envelopes.explicit();
+  const normal = await client.envelopes.explicit();
   console.log(`normal: `, normal);
   console.log(normal.city);
 }

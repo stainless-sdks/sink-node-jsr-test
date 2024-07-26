@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource names', () => {
   test('childPropImportClash', async () => {
-    const responsePromise = sink.names.childPropImportClash();
+    const responsePromise = client.names.childPropImportClash();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +26,13 @@ describe('resource names', () => {
 
   test('childPropImportClash: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.names.childPropImportClash({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.names.childPropImportClash({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('get', async () => {
-    const responsePromise = sink.names.get();
+    const responsePromise = client.names.get();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,11 +44,11 @@ describe('resource names', () => {
 
   test('get: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.names.get({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
+    await expect(client.names.get({ path: '/_stainless_unknown_path' })).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('propertiesCommonConflicts: only required params', async () => {
-    const responsePromise = sink.names.propertiesCommonConflicts({
+    const responsePromise = client.names.propertiesCommonConflicts({
       _1_digit_leading_underscore: '_1_digit_leading_underscore',
       _leading_underscore: '_leading_underscore',
       _leading_underscore_MixedCase: '_leading_underscore_MixedCase',
@@ -71,7 +71,7 @@ describe('resource names', () => {
   });
 
   test('propertiesCommonConflicts: required and optional params', async () => {
-    const response = await sink.names.propertiesCommonConflicts({
+    const response = await client.names.propertiesCommonConflicts({
       _1_digit_leading_underscore: '_1_digit_leading_underscore',
       _leading_underscore: '_leading_underscore',
       _leading_underscore_MixedCase: '_leading_underscore_MixedCase',
@@ -87,7 +87,7 @@ describe('resource names', () => {
   });
 
   test('propertiesIllegalJavascriptIdentifiers', async () => {
-    const responsePromise = sink.names.propertiesIllegalJavascriptIdentifiers({});
+    const responsePromise = client.names.propertiesIllegalJavascriptIdentifiers({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -98,7 +98,7 @@ describe('resource names', () => {
   });
 
   test('responsePropertyClashesModelImport', async () => {
-    const responsePromise = sink.names.responsePropertyClashesModelImport();
+    const responsePromise = client.names.responsePropertyClashesModelImport();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -111,12 +111,12 @@ describe('resource names', () => {
   test('responsePropertyClashesModelImport: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.names.responsePropertyClashesModelImport({ path: '/_stainless_unknown_path' }),
+      client.names.responsePropertyClashesModelImport({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('responseShadowsPydantic', async () => {
-    const responsePromise = sink.names.responseShadowsPydantic();
+    const responsePromise = client.names.responseShadowsPydantic();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -128,7 +128,7 @@ describe('resource names', () => {
 
   test('responseShadowsPydantic: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.names.responseShadowsPydantic({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.names.responseShadowsPydantic({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

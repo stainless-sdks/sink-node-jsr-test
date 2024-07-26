@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource arrays', () => {
   test('floatItems', async () => {
-    const responsePromise = sink.types.arrays.floatItems();
+    const responsePromise = client.types.arrays.floatItems();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +26,13 @@ describe('resource arrays', () => {
 
   test('floatItems: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.types.arrays.floatItems({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.types.arrays.floatItems({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('nestedInParams', async () => {
-    const responsePromise = sink.types.arrays.nestedInParams();
+    const responsePromise = client.types.arrays.nestedInParams();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,7 +44,7 @@ describe('resource arrays', () => {
 
   test('nestedInParams: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.types.arrays.nestedInParams({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.types.arrays.nestedInParams({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -52,12 +52,12 @@ describe('resource arrays', () => {
   test('nestedInParams: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.types.arrays.nestedInParams({ array_param: {} }, { path: '/_stainless_unknown_path' }),
+      client.types.arrays.nestedInParams({ array_param: {} }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('objectItems', async () => {
-    const responsePromise = sink.types.arrays.objectItems();
+    const responsePromise = client.types.arrays.objectItems();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -69,7 +69,7 @@ describe('resource arrays', () => {
 
   test('objectItems: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.types.arrays.objectItems({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.types.arrays.objectItems({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

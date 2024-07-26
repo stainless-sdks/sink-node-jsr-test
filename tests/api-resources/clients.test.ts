@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource clients', () => {
   test('create: only required params', async () => {
-    const responsePromise = sink.clients.create({
+    const responsePromise = client.clients.create({
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       name: 'name',
     });
@@ -28,7 +28,7 @@ describe('resource clients', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await sink.clients.create({
+    const response = await client.clients.create({
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       name: 'name',
     });

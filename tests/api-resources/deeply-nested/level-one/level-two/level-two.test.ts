@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource levelTwo', () => {
   test('methodLevel2', async () => {
-    const responsePromise = sink.deeplyNested.levelOne.levelTwo.methodLevel2(
+    const responsePromise = client.deeplyNested.levelOne.levelTwo.methodLevel2(
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     );
     const rawResponse = await responsePromise.asResponse();
@@ -29,7 +29,7 @@ describe('resource levelTwo', () => {
   test('methodLevel2: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.deeplyNested.levelOne.levelTwo.methodLevel2('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+      client.deeplyNested.levelOne.levelTwo.methodLevel2('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
         path: '/_stainless_unknown_path',
       }),
     ).rejects.toThrow(Sink.NotFoundError);

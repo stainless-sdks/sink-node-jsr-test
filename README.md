@@ -32,7 +32,7 @@ const client = new Sink({
 });
 
 async function main() {
-  const customAssignTo = await sink.cards.create({ type: 'SINGLE_USE', exp_month: '08', not: 'TEST' });
+  const customAssignTo = await client.cards.create({ type: 'SINGLE_USE', exp_month: '08', not: 'TEST' });
 
   console.log(customAssignTo.token);
 }
@@ -49,7 +49,7 @@ import Sink from 'sink-npm';
 
 const client = new Sink();
 
-const stream = await sink.streaming.basic({ model: 'model', prompt: 'prompt', stream: true });
+const stream = await client.streaming.basic({ model: 'model', prompt: 'prompt', stream: true });
 for await (const streamingBasicResponse of stream) {
   console.log(streamingBasicResponse.completion);
 }
@@ -77,7 +77,7 @@ const client = new Sink({
 
 async function main() {
   const params: Sink.CardCreateParams = { type: 'SINGLE_USE', not: 'TEST' };
-  const customAssignTo: Sink.Card = await sink.cards.create(params);
+  const customAssignTo: Sink.Card = await client.cards.create(params);
 }
 
 main();
@@ -102,20 +102,20 @@ import Sink, { toFile } from 'sink-npm';
 const client = new Sink();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'purpose' });
+await client.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'purpose' });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'purpose' });
+await client.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'purpose' });
 
 // You can also pass a `fetch` `Response`:
-await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'purpose' });
+await client.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'purpose' });
 
 // Finally, if none of the above are convenient, you can use our `toFile` helper:
-await sink.files.createMultipart({
+await client.files.createMultipart({
   file: await toFile(Buffer.from('my bytes'), 'bar.txt'),
   purpose: 'purpose',
 });
-await sink.files.createMultipart({
+await client.files.createMultipart({
   file: await toFile(new Uint8Array([0, 1, 2]), 'bar.txt'),
   purpose: 'purpose',
 });
@@ -130,7 +130,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const card = await sink.cards.create({ type: 'an_incorrect_type' }).catch(async (err) => {
+  const card = await client.cards.create({ type: 'an_incorrect_type' }).catch(async (err) => {
     if (err instanceof Sink.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -177,7 +177,7 @@ const client = new Sink({
 });
 
 // Or, configure per-request:
-await sink.cards.provisionFoo('my card token', { digital_wallet: 'GOOGLE_PAY' }, {
+await client.cards.provisionFoo('my card token', { digital_wallet: 'GOOGLE_PAY' }, {
   maxRetries: 5,
 });
 ```
@@ -198,7 +198,7 @@ const client = new Sink({
 });
 
 // Override per-request:
-await sink.cards.create({ type: 'DIGITAL' }, {
+await client.cards.create({ type: 'DIGITAL' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -216,7 +216,7 @@ You can use `for await … of` syntax to iterate through items across all pages:
 async function fetchAllPaginationTestsCursors(params) {
   const allPaginationTestsCursors = [];
   // Automatically fetches more pages as needed.
-  for await (const myModel of sink.paginationTests.cursor.list()) {
+  for await (const myModel of client.paginationTests.cursor.list()) {
     allPaginationTestsCursors.push(myModel);
   }
   return allPaginationTestsCursors;
@@ -226,7 +226,7 @@ async function fetchAllPaginationTestsCursors(params) {
 Alternatively, you can make request a single page at a time:
 
 ```ts
-let page = await sink.paginationTests.cursor.list();
+let page = await client.paginationTests.cursor.list();
 for (const myModel of page.data) {
   console.log(myModel);
 }
@@ -254,7 +254,7 @@ import Sink from 'sink-npm';
 
 const client = new Sink();
 
-const customAssignTo = await sink.cards.create(
+const customAssignTo = await client.cards.create(
   { type: 'SINGLE_USE', not: 'TEST' },
   { headers: { 'My-Api-Version': 'My-Custom-Value' } },
 );
@@ -272,11 +272,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Sink();
 
-const response = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).asResponse();
+const response = await client.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: customAssignTo, response: raw } = await sink.cards
+const { data: customAssignTo, response: raw } = await client.cards
   .create({ type: 'SINGLE_USE', not: 'TEST' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
@@ -388,7 +388,7 @@ const client = new Sink({
 });
 
 // Override per-request:
-await sink.cards.create(
+await client.cards.create(
   { type: 'DIGITAL' },
   {
     httpAgent: new http.Agent({ keepAlive: false }),
