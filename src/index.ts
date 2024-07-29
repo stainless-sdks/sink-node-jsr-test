@@ -375,7 +375,6 @@ export class Sink extends Core.APIClient {
   sharedQueryParams: API.SharedQueryParams = new API.SharedQueryParams(this);
   modelReferencedInParentAndChild: API.ModelReferencedInParentAndChildResource =
     new API.ModelReferencedInParentAndChildResource(this);
-  onlyCustomMethods: API.OnlyCustomMethods = new API.OnlyCustomMethods(this);
 
   /**
    * API status check
@@ -391,17 +390,6 @@ export class Sink extends Core.APIClient {
    */
   createNoResponse(options?: Core.RequestOptions): Core.APIPromise<void> {
     return this.post('/no_response', { ...options, headers: { Accept: '*/*', ...options?.headers } });
-  }
-
-  /**
-   * A top level custom method on the sink customer.
-   */
-  getAuthURL({ redirectUri, clientId }: { redirectUri: string; clientId: string }): string {
-    const url = new URL('/auth', 'http://localhost:8000');
-
-    url.search = `client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
-
-    return url.toString();
   }
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -851,8 +839,6 @@ export namespace Sink {
 
   export import ModelReferencedInParentAndChildResource = API.ModelReferencedInParentAndChildResource;
   export import ModelReferencedInParentAndChild = API.ModelReferencedInParentAndChild;
-
-  export import OnlyCustomMethods = API.OnlyCustomMethods;
 
   export import BasicSharedModelObject = API.BasicSharedModelObject;
   export import Currency = API.Currency;
