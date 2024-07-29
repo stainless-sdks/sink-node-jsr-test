@@ -73,19 +73,6 @@ export class Cards extends APIResource {
   }
 
   /**
-   * A top level custom method on the sink customer.
-   *
-   * @deprecated This method will be removed in the next release. Please use `client.get_auth_url()` instead.
-   */
-  deprecatedGetAuthURL({ redirectUri, clientId }: { redirectUri: string; clientId: string }): string {
-    const url = new URL('/auth', 'http://localhost:8000');
-
-    url.search = `client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
-
-    return url.toString();
-  }
-
-  /**
    * Endpoint that represents a method that has been marked as deprecated in the
    * stainless config.
    *
