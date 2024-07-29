@@ -445,6 +445,7 @@ export class Sink extends Core.APIClient {
 
   static Sink = this;
   static CONSTANT_WITH_NEWLINES = '\n\nHuman:';
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static SinkError = Errors.SinkError;
   static APIError = Errors.APIError;
