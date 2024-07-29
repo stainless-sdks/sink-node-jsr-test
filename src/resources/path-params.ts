@@ -86,9 +86,9 @@ export class PathParams extends APIResource {
    * diagnostic is emitted.
    */
   nullableParams(
-    nullableParam1: string | null,
-    nullableParam2: string | null,
-    nullableParam3: 'foo' | null,
+    nullableParam1: string,
+    nullableParam2: string,
+    nullableParam3: 'foo',
     body: PathParamNullableParamsParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Shared.BasicSharedModelObject> {

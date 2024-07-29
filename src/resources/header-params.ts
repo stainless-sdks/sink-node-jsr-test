@@ -14,6 +14,7 @@ export class HeaderParams extends APIResource {
       'X-Required-Integer': xRequiredInteger,
       'X-Required-Number': xRequiredNumber,
       'X-Required-String': xRequiredString,
+      'X-Nullable-Integer': xNullableInteger,
       'X-Optional-Boolean': xOptionalBoolean,
       'X-Optional-Integer': xOptionalInteger,
       'X-Optional-Number': xOptionalNumber,
@@ -29,6 +30,9 @@ export class HeaderParams extends APIResource {
         'X-Required-Integer': xRequiredInteger.toString(),
         'X-Required-Number': xRequiredNumber.toString(),
         'X-Required-String': xRequiredString,
+        ...(xNullableInteger?.toString() != null ?
+          { 'X-Nullable-Integer': xNullableInteger?.toString() }
+        : undefined),
         ...(xOptionalBoolean?.toString() != null ?
           { 'X-Optional-Boolean': xOptionalBoolean?.toString() }
         : undefined),
@@ -68,6 +72,19 @@ export class HeaderParams extends APIResource {
       },
     });
   }
+
+  /**
+   * Endpoint with a `type: null` header param, which we should turn into a string
+   * type.
+   */
+  nullableType(params: HeaderParamNullableTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    const { 'X-Null': xNull, ...body } = params;
+    return this._client.post('/header_params/nullable_type', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...(xNull != null ? { 'X-Null': xNull } : undefined), ...options?.headers },
+    });
+  }
 }
 
 export interface HeaderParamAllTypesParams {
@@ -95,6 +112,11 @@ export interface HeaderParamAllTypesParams {
    * Body param:
    */
   body_argument?: string;
+
+  /**
+   * Header param:
+   */
+  'X-Nullable-Integer'?: number;
 
   /**
    * Header param:
@@ -129,7 +151,20 @@ export interface HeaderParamClientArgumentParams {
   'X-Custom-Endpoint-Header'?: string;
 }
 
+export interface HeaderParamNullableTypeParams {
+  /**
+   * Body param:
+   */
+  body_argument?: string;
+
+  /**
+   * Header param:
+   */
+  'X-Null'?: string;
+}
+
 export namespace HeaderParams {
   export import HeaderParamAllTypesParams = HeaderParamsAPI.HeaderParamAllTypesParams;
   export import HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
+  export import HeaderParamNullableTypeParams = HeaderParamsAPI.HeaderParamNullableTypeParams;
 }

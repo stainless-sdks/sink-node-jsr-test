@@ -36,6 +36,7 @@ describe('resource headerParams', () => {
       'X-Required-Number': 0,
       'X-Required-String': 'X-Required-String',
       body_argument: 'body_argument',
+      'X-Nullable-Integer': 0,
       'X-Optional-Boolean': true,
       'X-Optional-Integer': 0,
       'X-Optional-Number': 0,
@@ -45,6 +46,18 @@ describe('resource headerParams', () => {
 
   test('clientArgument', async () => {
     const responsePromise = client.headerParams.clientArgument({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // prism doesn't like us changing the header to a string
+  test.skip('nullableType', async () => {
+    const responsePromise = client.headerParams.nullableType({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
