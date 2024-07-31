@@ -11,7 +11,11 @@ export class Cards extends APIResource {
    * `product_id` only apply to physical cards.
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this._client.post('/cards', { body, timeout: 2000, ...options });
+    return this._client.post('/cards', {
+      body,
+      timeout: (this._client as any)._options.timeout ?? 2000,
+      ...options,
+    });
   }
 
   /**
@@ -70,19 +74,6 @@ export class Cards extends APIResource {
       ...options,
       headers: { Accept: '*/*', ...options?.headers },
     });
-  }
-
-  /**
-   * A top level custom method on the sink customer.
-   *
-   * @deprecated This method will be removed in the next release. Please use `client.get_auth_url()` instead.
-   */
-  deprecatedGetAuthURL({ redirectUri, clientId }: { redirectUri: string; clientId: string }): string {
-    const url = new URL('/auth', 'http://localhost:8000');
-
-    url.search = `client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
-
-    return url.toString();
   }
 
   /**

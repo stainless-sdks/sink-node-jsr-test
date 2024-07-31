@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource unions', () => {
   test('discriminated', async () => {
-    const responsePromise = sink.names.unions.discriminated();
+    const responsePromise = client.names.unions.discriminated();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +26,13 @@ describe('resource unions', () => {
 
   test('discriminated: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.names.unions.discriminated({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.names.unions.discriminated({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('variantsObjectWithUnionProperties', async () => {
-    const responsePromise = sink.names.unions.variantsObjectWithUnionProperties();
+    const responsePromise = client.names.unions.variantsObjectWithUnionProperties();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,12 +45,12 @@ describe('resource unions', () => {
   test('variantsObjectWithUnionProperties: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.names.unions.variantsObjectWithUnionProperties({ path: '/_stainless_unknown_path' }),
+      client.names.unions.variantsObjectWithUnionProperties({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('variantsSinglePropObjects', async () => {
-    const responsePromise = sink.names.unions.variantsSinglePropObjects();
+    const responsePromise = client.names.unions.variantsSinglePropObjects();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -63,7 +63,7 @@ describe('resource unions', () => {
   test('variantsSinglePropObjects: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.names.unions.variantsSinglePropObjects({ path: '/_stainless_unknown_path' }),
+      client.names.unions.variantsSinglePropObjects({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 });

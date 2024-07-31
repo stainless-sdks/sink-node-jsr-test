@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource cursor', () => {
   test('list', async () => {
-    const responsePromise = sink.paginationTests.cursor.list();
+    const responsePromise = client.paginationTests.cursor.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,7 +26,7 @@ describe('resource cursor', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.paginationTests.cursor.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.paginationTests.cursor.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -34,7 +34,10 @@ describe('resource cursor', () => {
   test('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.paginationTests.cursor.list({ cursor: 'cursor', limit: 0 }, { path: '/_stainless_unknown_path' }),
+      client.paginationTests.cursor.list(
+        { cursor: 'cursor', limit: 0 },
+        { path: '/_stainless_unknown_path' },
+      ),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 });

@@ -37,6 +37,18 @@ export interface ModelFromSchemasRef {
   name: string;
 }
 
+export interface ModelFromSchemasRefOpenAPIUri {
+  name: string;
+}
+
+export interface ModelFromSchemasRefOpenAPIUriJmespath {
+  name: string;
+}
+
+export interface ModelFromSchemasRefOpenAPIUriJsonpath {
+  name: string;
+}
+
 export interface OnlyNodeModel {
   name: string;
 }
@@ -174,6 +186,9 @@ export interface ConfigToolOnlyInNodeParams {
 export namespace ConfigTools {
   export import ModelFromNestedResponseBodyRef = ConfigToolsAPI.ModelFromNestedResponseBodyRef;
   export import ModelFromSchemasRef = ConfigToolsAPI.ModelFromSchemasRef;
+  export import ModelFromSchemasRefOpenAPIUri = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUri;
+  export import ModelFromSchemasRefOpenAPIUriJmespath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJmespath;
+  export import ModelFromSchemasRefOpenAPIUriJsonpath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJsonpath;
   export import OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
   export import ConfigToolModelRefFromNestedResponseBodyResponse = ConfigToolsAPI.ConfigToolModelRefFromNestedResponseBodyResponse;
   export import ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;

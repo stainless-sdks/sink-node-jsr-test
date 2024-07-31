@@ -10,7 +10,6 @@ Methods:
 
 - <code title="get /status">client.<a href="./src/index.ts">apiStatus</a>() -> APIStatus</code>
 - <code title="post /no_response">client.<a href="./src/index.ts">createNoResponse</a>() -> void</code>
-- <code>client.<a href="./src/index.ts">getAuthURL</a>({ redirectUri, clientId }) -> string</code>
 
 # Shared
 
@@ -260,7 +259,6 @@ Methods:
 - <code title="get /cards/{card_token}">client.cards.<a href="./src/resources/cards.ts">listNotPaginated</a>(cardToken) -> Card</code>
 - <code title="post /cards/{card_token}/provision">client.cards.<a href="./src/resources/cards.ts">provisionFoo</a>(cardToken, { ...params }) -> CardProvisionFooResponse</code>
 - <code title="post /cards/{card_token}/reissue">client.cards.<a href="./src/resources/cards.ts">reissue</a>(cardToken, { ...params }) -> Card</code>
-- <code>client.cards.<a href="./src/resources/cards.ts">deprecatedGetAuthURL</a>({ redirectUri, clientId }) -> string</code>
 
 # Files
 
@@ -298,6 +296,9 @@ Types:
 
 - <code><a href="./src/resources/config-tools.ts">ModelFromNestedResponseBodyRef</a></code>
 - <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRef</a></code>
+- <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRefOpenAPIUri</a></code>
+- <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRefOpenAPIUriJmespath</a></code>
+- <code><a href="./src/resources/config-tools.ts">ModelFromSchemasRefOpenAPIUriJsonpath</a></code>
 - <code><a href="./src/resources/config-tools.ts">OnlyNodeModel</a></code>
 - <code><a href="./src/resources/config-tools.ts">ConfigToolModelRefFromNestedResponseBodyResponse</a></code>
 
@@ -859,6 +860,7 @@ Methods:
 
 - <code title="post /header_params/all_types">client.headerParams.<a href="./src/resources/header-params.ts">allTypes</a>({ ...params }) -> void</code>
 - <code title="post /header_params/client_argument">client.headerParams.<a href="./src/resources/header-params.ts">clientArgument</a>({ ...params }) -> void</code>
+- <code title="post /header_params/nullable_type">client.headerParams.<a href="./src/resources/header-params.ts">nullableType</a>({ ...params }) -> void</code>
 
 # MixedParams
 
@@ -1016,9 +1018,3 @@ Methods:
 Methods:
 
 - <code title="get /model_referenced_in_parent_and_child/child">client.modelReferencedInParentAndChild.child.<a href="./src/resources/model-referenced-in-parent-and-child/child.ts">retrieve</a>() -> ModelReferencedInParentAndChild</code>
-
-# OnlyCustomMethods
-
-Methods:
-
-- <code>client.onlyCustomMethods.<a href="./src/resources/only-custom-methods.ts">getAuthURL</a>({ redirectUri, clientId }) -> string</code>

@@ -93,7 +93,12 @@ export {
   FileWithOptionalParamParams,
   Files,
 } from './files';
-export { HeaderParamAllTypesParams, HeaderParamClientArgumentParams, HeaderParams } from './header-params';
+export {
+  HeaderParamAllTypesParams,
+  HeaderParamClientArgumentParams,
+  HeaderParamNullableTypeParams,
+  HeaderParams,
+} from './header-params';
 export { InvalidSchemas } from './invalid-schemas/invalid-schemas';
 export {
   MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse,
@@ -150,6 +155,9 @@ export {
 export {
   ModelFromNestedResponseBodyRef,
   ModelFromSchemasRef,
+  ModelFromSchemasRefOpenAPIUri,
+  ModelFromSchemasRefOpenAPIUriJmespath,
+  ModelFromSchemasRefOpenAPIUriJsonpath,
   OnlyNodeModel,
   ConfigToolModelRefFromNestedResponseBodyResponse,
   ConfigToolOnlyInNodeParams,
@@ -211,7 +219,6 @@ export {
   BodyParams,
 } from './body-params/body-params';
 export { ObjectSkippedProps, ToolSkippedParamsParams, Tools } from './tools';
-export { OnlyCustomMethods } from './only-custom-methods';
 export {
   OpenAPIFormatArrayTypeOneEntryResponse,
   OpenAPIFormatArrayTypeOneEntryWithNullResponse,

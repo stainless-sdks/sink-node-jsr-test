@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource cards', () => {
   test('create: only required params', async () => {
-    const responsePromise = sink.cards.create({ type: 'SINGLE_USE' });
+    const responsePromise = client.cards.create({ type: 'SINGLE_USE' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,7 +25,7 @@ describe('resource cards', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await sink.cards.create({
+    const response = await client.cards.create({
       type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -57,7 +57,7 @@ describe('resource cards', () => {
   });
 
   test('retrieve', async () => {
-    const responsePromise = sink.cards.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const responsePromise = client.cards.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,12 +70,12 @@ describe('resource cards', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.cards.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
+      client.cards.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('update', async () => {
-    const responsePromise = sink.cards.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
+    const responsePromise = client.cards.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -86,7 +86,7 @@ describe('resource cards', () => {
   });
 
   test('list: only required params', async () => {
-    const responsePromise = sink.cards.list({ begin: '2022-02-01T05:00:00Z', end: '2022-02-01T05:00:00Z' });
+    const responsePromise = client.cards.list({ begin: '2022-02-01T05:00:00Z', end: '2022-02-01T05:00:00Z' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -97,7 +97,7 @@ describe('resource cards', () => {
   });
 
   test('list: required and optional params', async () => {
-    const response = await sink.cards.list({
+    const response = await client.cards.list({
       begin: '2022-02-01T05:00:00Z',
       end: '2022-02-01T05:00:00Z',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -107,7 +107,7 @@ describe('resource cards', () => {
   });
 
   test('createAliased: only required params', async () => {
-    const responsePromise = sink.cards.createAliased({ type: 'SINGLE_USE' });
+    const responsePromise = client.cards.createAliased({ type: 'SINGLE_USE' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -118,7 +118,7 @@ describe('resource cards', () => {
   });
 
   test('createAliased: required and optional params', async () => {
-    const response = await sink.cards.createAliased({
+    const response = await client.cards.createAliased({
       type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -150,7 +150,7 @@ describe('resource cards', () => {
   });
 
   test('createAliasedDeprecated: only required params', async () => {
-    const responsePromise = sink.cards.createAliasedDeprecated({ type: 'SINGLE_USE' });
+    const responsePromise = client.cards.createAliasedDeprecated({ type: 'SINGLE_USE' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -161,7 +161,7 @@ describe('resource cards', () => {
   });
 
   test('createAliasedDeprecated: required and optional params', async () => {
-    const response = await sink.cards.createAliasedDeprecated({
+    const response = await client.cards.createAliasedDeprecated({
       type: 'SINGLE_USE',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -193,7 +193,7 @@ describe('resource cards', () => {
   });
 
   test('deprecatedAllButGoDiffMessage', async () => {
-    const responsePromise = sink.cards.deprecatedAllButGoDiffMessage();
+    const responsePromise = client.cards.deprecatedAllButGoDiffMessage();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -206,12 +206,12 @@ describe('resource cards', () => {
   test('deprecatedAllButGoDiffMessage: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.cards.deprecatedAllButGoDiffMessage({ path: '/_stainless_unknown_path' }),
+      client.cards.deprecatedAllButGoDiffMessage({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('deprecatedAllDiffMessage', async () => {
-    const responsePromise = sink.cards.deprecatedAllDiffMessage();
+    const responsePromise = client.cards.deprecatedAllDiffMessage();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -223,23 +223,13 @@ describe('resource cards', () => {
 
   test('deprecatedAllDiffMessage: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.cards.deprecatedAllDiffMessage({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.cards.deprecatedAllDiffMessage({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
-  test('getAuthURL', () => {
-    const url = sink.getAuthURL({
-      clientId: '<client_id>',
-      redirectUri: 'http://localhost:8000/auth/success',
-    });
-    expect(url).toEqual(
-      'http://localhost:8000/auth?client_id=%3Cclient_id%3E&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fauth%2Fsuccess',
-    );
-  });
-
   test('deprecatedMethod', async () => {
-    const responsePromise = sink.cards.deprecatedMethod();
+    const responsePromise = client.cards.deprecatedMethod();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -251,13 +241,13 @@ describe('resource cards', () => {
 
   test('deprecatedMethod: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.cards.deprecatedMethod({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.cards.deprecatedMethod({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('deprecatedOnlyGo', async () => {
-    const responsePromise = sink.cards.deprecatedOnlyGo();
+    const responsePromise = client.cards.deprecatedOnlyGo();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -269,13 +259,13 @@ describe('resource cards', () => {
 
   test('deprecatedOnlyGo: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.cards.deprecatedOnlyGo({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.cards.deprecatedOnlyGo({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('listNotPaginated', async () => {
-    const responsePromise = sink.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
+    const responsePromise = client.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -288,14 +278,14 @@ describe('resource cards', () => {
   test('listNotPaginated: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
+      client.cards.listNotPaginated('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
         path: '/_stainless_unknown_path',
       }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('provisionFoo', async () => {
-    const responsePromise = sink.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
+    const responsePromise = client.cards.provisionFoo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -306,7 +296,7 @@ describe('resource cards', () => {
   });
 
   test('reissue', async () => {
-    const responsePromise = sink.cards.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
+    const responsePromise = client.cards.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

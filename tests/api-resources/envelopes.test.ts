@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource envelopes', () => {
   test('explicit', async () => {
-    const responsePromise = sink.envelopes.explicit();
+    const responsePromise = client.envelopes.explicit();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +26,13 @@ describe('resource envelopes', () => {
 
   test('explicit: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.envelopes.explicit({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.envelopes.explicit({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('implicit', async () => {
-    const responsePromise = sink.envelopes.implicit();
+    const responsePromise = client.envelopes.implicit();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,13 +44,13 @@ describe('resource envelopes', () => {
 
   test('implicit: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.envelopes.implicit({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.envelopes.implicit({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('inlineResponse', async () => {
-    const responsePromise = sink.envelopes.inlineResponse();
+    const responsePromise = client.envelopes.inlineResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -62,13 +62,13 @@ describe('resource envelopes', () => {
 
   test('inlineResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.envelopes.inlineResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.envelopes.inlineResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('wrappedArray', async () => {
-    const responsePromise = sink.envelopes.wrappedArray();
+    const responsePromise = client.envelopes.wrappedArray();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -80,7 +80,7 @@ describe('resource envelopes', () => {
 
   test('wrappedArray: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.envelopes.wrappedArray({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.envelopes.wrappedArray({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found [on stainlessapi.com](https://stainlessapi.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [stainlessapi.com](https://stainlessapi.com). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
@@ -22,7 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Sink from 'sink-npm';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: process.env['SINK_CUSTOM_API_KEY_ENV'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
@@ -32,7 +32,7 @@ const sink = new Sink({
 });
 
 async function main() {
-  const customAssignTo = await sink.cards.create({ type: 'SINGLE_USE', exp_month: '08', not: 'TEST' });
+  const customAssignTo = await client.cards.create({ type: 'SINGLE_USE', exp_month: '08', not: 'TEST' });
 
   console.log(customAssignTo.token);
 }
@@ -47,9 +47,9 @@ We provide support for streaming responses using Server Sent Events (SSE).
 ```ts
 import Sink from 'sink-npm';
 
-const sink = new Sink();
+const client = new Sink();
 
-const stream = await sink.streaming.basic({ model: 'model', prompt: 'prompt', stream: true });
+const stream = await client.streaming.basic({ model: 'model', prompt: 'prompt', stream: true });
 for await (const streamingBasicResponse of stream) {
   console.log(streamingBasicResponse.completion);
 }
@@ -66,7 +66,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Sink from 'sink-npm';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: process.env['SINK_CUSTOM_API_KEY_ENV'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
   username: 'Robert',
@@ -77,7 +77,7 @@ const sink = new Sink({
 
 async function main() {
   const params: Sink.CardCreateParams = { type: 'SINGLE_USE', not: 'TEST' };
-  const customAssignTo: Sink.Card = await sink.cards.create(params);
+  const customAssignTo: Sink.Card = await client.cards.create(params);
 }
 
 main();
@@ -99,23 +99,23 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import Sink, { toFile } from 'sink-npm';
 
-const sink = new Sink();
+const client = new Sink();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
-await sink.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'purpose' });
+await client.files.createMultipart({ file: fs.createReadStream('foo/bar.txt'), purpose: 'purpose' });
 
 // Or if you have the web `File` API you can pass a `File` instance:
-await sink.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'purpose' });
+await client.files.createMultipart({ file: new File(['my bytes'], 'bar.txt'), purpose: 'purpose' });
 
 // You can also pass a `fetch` `Response`:
-await sink.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'purpose' });
+await client.files.createMultipart({ file: await fetch('https://somesite/bar.txt'), purpose: 'purpose' });
 
 // Finally, if none of the above are convenient, you can use our `toFile` helper:
-await sink.files.createMultipart({
+await client.files.createMultipart({
   file: await toFile(Buffer.from('my bytes'), 'bar.txt'),
   purpose: 'purpose',
 });
-await sink.files.createMultipart({
+await client.files.createMultipart({
   file: await toFile(new Uint8Array([0, 1, 2]), 'bar.txt'),
   purpose: 'purpose',
 });
@@ -130,7 +130,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const card = await sink.cards.create({ type: 'an_incorrect_type' }).catch(async (err) => {
+  const card = await client.cards.create({ type: 'an_incorrect_type' }).catch(async (err) => {
     if (err instanceof Sink.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -168,7 +168,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const sink = new Sink({
+const client = new Sink({
   maxRetries: 0, // default is 2
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -177,7 +177,7 @@ const sink = new Sink({
 });
 
 // Or, configure per-request:
-await sink.cards.provisionFoo('my card token', { digital_wallet: 'GOOGLE_PAY' }, {
+await client.cards.provisionFoo('my card token', { digital_wallet: 'GOOGLE_PAY' }, {
   maxRetries: 5,
 });
 ```
@@ -189,7 +189,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const sink = new Sink({
+const client = new Sink({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -198,7 +198,7 @@ const sink = new Sink({
 });
 
 // Override per-request:
-await sink.cards.create({ type: 'DIGITAL' }, {
+await client.cards.create({ type: 'DIGITAL' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -216,7 +216,7 @@ You can use `for await … of` syntax to iterate through items across all pages:
 async function fetchAllPaginationTestsCursors(params) {
   const allPaginationTestsCursors = [];
   // Automatically fetches more pages as needed.
-  for await (const myModel of sink.paginationTests.cursor.list()) {
+  for await (const myModel of client.paginationTests.cursor.list()) {
     allPaginationTestsCursors.push(myModel);
   }
   return allPaginationTestsCursors;
@@ -226,7 +226,7 @@ async function fetchAllPaginationTestsCursors(params) {
 Alternatively, you can make request a single page at a time:
 
 ```ts
-let page = await sink.paginationTests.cursor.list();
+let page = await client.paginationTests.cursor.list();
 for (const myModel of page.data) {
   console.log(myModel);
 }
@@ -252,9 +252,9 @@ If you need to, you can override these headers by setting default headers on a p
 ```ts
 import Sink from 'sink-npm';
 
-const sink = new Sink();
+const client = new Sink();
 
-const customAssignTo = await sink.cards.create(
+const customAssignTo = await client.cards.create(
   { type: 'SINGLE_USE', not: 'TEST' },
   { headers: { 'My-Api-Version': 'My-Custom-Value' } },
 );
@@ -270,13 +270,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 
 <!-- prettier-ignore -->
 ```ts
-const sink = new Sink();
+const client = new Sink();
 
-const response = await sink.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).asResponse();
+const response = await client.cards.create({ type: 'SINGLE_USE', not: 'TEST' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: customAssignTo, response: raw } = await sink.cards
+const { data: customAssignTo, response: raw } = await client.cards
   .create({ type: 'SINGLE_USE', not: 'TEST' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
@@ -379,7 +379,7 @@ import http from 'http';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
-const sink = new Sink({
+const client = new Sink({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -388,7 +388,7 @@ const sink = new Sink({
 });
 
 // Override per-request:
-await sink.cards.create(
+await client.cards.create(
   { type: 'DIGITAL' },
   {
     httpAgent: new http.Agent({ keepAlive: false }),
@@ -421,6 +421,18 @@ The following runtimes are supported:
 - Vercel Edge Runtime.
 - Jest 28 or greater with the `"node"` environment (`"jsdom"` is not supported at this time).
 - Nitro v2.6 or greater.
+- Web browsers: disabled by default to avoid exposing your secret API credentials. Enable browser support by explicitly setting `dangerouslyAllowBrowser` to true'.
+<details>
+  <summary>More explanation</summary>
+  ### Why is this dangerous?
+  Enabling the `dangerouslyAllowBrowser` option can be dangerous because it exposes your secret API credentials in the client-side code. Web browsers are inherently less secure than server environments,
+  any user with access to the browser can potentially inspect, extract, and misuse these credentials. This could lead to unauthorized access using your credentials and potentially compromise sensitive data or functionality.
+  ### When might this not be dangerous?
+  In certain scenarios where enabling browser support might not pose significant risks:
+  - Internal Tools: If the application is used solely within a controlled internal environment where the users are trusted, the risk of credential exposure can be mitigated.
+  - Public APIs with Limited Scope: If your API has very limited scope and the exposed credentials do not grant access to sensitive data or critical operations, the potential impact of exposure is reduced.
+  - Development or debugging purpose: Enabling this feature temporarily might be acceptable, provided the credentials are short-lived, aren't also used in production environments, or are frequently rotated.
+</details>
 
 Note that React Native is not supported at this time.
 

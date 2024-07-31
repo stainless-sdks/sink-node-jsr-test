@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource responses', () => {
   test('additionalProperties', async () => {
-    const responsePromise = sink.responses.additionalProperties();
+    const responsePromise = client.responses.additionalProperties();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,13 +26,13 @@ describe('resource responses', () => {
 
   test('additionalProperties: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.additionalProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.additionalProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('additionalPropertiesNestedModelReference', async () => {
-    const responsePromise = sink.responses.additionalPropertiesNestedModelReference();
+    const responsePromise = client.responses.additionalPropertiesNestedModelReference();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,12 +45,12 @@ describe('resource responses', () => {
   test('additionalPropertiesNestedModelReference: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.responses.additionalPropertiesNestedModelReference({ path: '/_stainless_unknown_path' }),
+      client.responses.additionalPropertiesNestedModelReference({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('allofCrossResource', async () => {
-    const responsePromise = sink.responses.allofCrossResource();
+    const responsePromise = client.responses.allofCrossResource();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -62,13 +62,13 @@ describe('resource responses', () => {
 
   test('allofCrossResource: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.allofCrossResource({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.allofCrossResource({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('allofSimple', async () => {
-    const responsePromise = sink.responses.allofSimple();
+    const responsePromise = client.responses.allofSimple();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -80,13 +80,13 @@ describe('resource responses', () => {
 
   test('allofSimple: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.allofSimple({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.allofSimple({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('anyofNull', async () => {
-    const responsePromise = sink.responses.anyofNull();
+    const responsePromise = client.responses.anyofNull();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -98,13 +98,13 @@ describe('resource responses', () => {
 
   test('anyofNull: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.anyofNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.anyofNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('arrayObjectWithUnionProperties', async () => {
-    const responsePromise = sink.responses.arrayObjectWithUnionProperties();
+    const responsePromise = client.responses.arrayObjectWithUnionProperties();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -117,12 +117,12 @@ describe('resource responses', () => {
   test('arrayObjectWithUnionProperties: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.responses.arrayObjectWithUnionProperties({ path: '/_stainless_unknown_path' }),
+      client.responses.arrayObjectWithUnionProperties({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('arrayResponse', async () => {
-    const responsePromise = sink.responses.arrayResponse();
+    const responsePromise = client.responses.arrayResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -134,13 +134,13 @@ describe('resource responses', () => {
 
   test('arrayResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.arrayResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.arrayResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('booleanResponse', async () => {
-    const responsePromise = sink.responses.booleanResponse();
+    const responsePromise = client.responses.booleanResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -152,13 +152,13 @@ describe('resource responses', () => {
 
   test('booleanResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.booleanResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.booleanResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('emptyResponse', async () => {
-    const responsePromise = sink.responses.emptyResponse();
+    const responsePromise = client.responses.emptyResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -170,13 +170,13 @@ describe('resource responses', () => {
 
   test('emptyResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.emptyResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.emptyResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('integerResponse', async () => {
-    const responsePromise = sink.responses.integerResponse();
+    const responsePromise = client.responses.integerResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -188,13 +188,13 @@ describe('resource responses', () => {
 
   test('integerResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.integerResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.integerResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('missingRequired', async () => {
-    const responsePromise = sink.responses.missingRequired();
+    const responsePromise = client.responses.missingRequired();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -206,13 +206,13 @@ describe('resource responses', () => {
 
   test('missingRequired: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.missingRequired({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.missingRequired({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('nestedArray', async () => {
-    const responsePromise = sink.responses.nestedArray();
+    const responsePromise = client.responses.nestedArray();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -224,13 +224,13 @@ describe('resource responses', () => {
 
   test('nestedArray: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.nestedArray({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.nestedArray({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('objectAllProperties', async () => {
-    const responsePromise = sink.responses.objectAllProperties();
+    const responsePromise = client.responses.objectAllProperties();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -242,13 +242,13 @@ describe('resource responses', () => {
 
   test('objectAllProperties: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.objectAllProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.objectAllProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('objectNoProperties', async () => {
-    const responsePromise = sink.responses.objectNoProperties();
+    const responsePromise = client.responses.objectNoProperties();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -260,13 +260,13 @@ describe('resource responses', () => {
 
   test('objectNoProperties: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.objectNoProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.objectNoProperties({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('objectWithAdditionalPropertiesProp', async () => {
-    const responsePromise = sink.responses.objectWithAdditionalPropertiesProp();
+    const responsePromise = client.responses.objectWithAdditionalPropertiesProp();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -279,12 +279,12 @@ describe('resource responses', () => {
   test('objectWithAdditionalPropertiesProp: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.responses.objectWithAdditionalPropertiesProp({ path: '/_stainless_unknown_path' }),
+      client.responses.objectWithAdditionalPropertiesProp({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('objectWithHeavilyNestedUnion', async () => {
-    const responsePromise = sink.responses.objectWithHeavilyNestedUnion();
+    const responsePromise = client.responses.objectWithHeavilyNestedUnion();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -297,12 +297,12 @@ describe('resource responses', () => {
   test('objectWithHeavilyNestedUnion: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.responses.objectWithHeavilyNestedUnion({ path: '/_stainless_unknown_path' }),
+      client.responses.objectWithHeavilyNestedUnion({ path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('oneofNull', async () => {
-    const responsePromise = sink.responses.oneofNull();
+    const responsePromise = client.responses.oneofNull();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -314,13 +314,13 @@ describe('resource responses', () => {
 
   test('oneofNull: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.oneofNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.oneofNull({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('sharedSimpleObject', async () => {
-    const responsePromise = sink.responses.sharedSimpleObject();
+    const responsePromise = client.responses.sharedSimpleObject();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -332,13 +332,13 @@ describe('resource responses', () => {
 
   test('sharedSimpleObject: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.sharedSimpleObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.sharedSimpleObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('stringResponse', async () => {
-    const responsePromise = sink.responses.stringResponse();
+    const responsePromise = client.responses.stringResponse();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -350,13 +350,13 @@ describe('resource responses', () => {
 
   test('stringResponse: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.stringResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.stringResponse({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('unknownObject', async () => {
-    const responsePromise = sink.responses.unknownObject();
+    const responsePromise = client.responses.unknownObject();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -368,13 +368,13 @@ describe('resource responses', () => {
 
   test('unknownObject: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.unknownObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.responses.unknownObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
 
   test('withModelInNestedPath', async () => {
-    const responsePromise = sink.responses.withModelInNestedPath();
+    const responsePromise = client.responses.withModelInNestedPath();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -386,8 +386,8 @@ describe('resource responses', () => {
 
   test('withModelInNestedPath: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.responses.withModelInNestedPath({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(
+      client.responses.withModelInNestedPath({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 });

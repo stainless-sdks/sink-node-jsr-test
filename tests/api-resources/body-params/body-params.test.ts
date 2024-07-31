@@ -3,7 +3,7 @@
 import Sink, { toFile } from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource bodyParams', () => {
   test('binaryStringType: only required params', async () => {
-    const responsePromise = sink.bodyParams.binaryStringType('binary_string_body');
+    const responsePromise = client.bodyParams.binaryStringType('binary_string_body');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,11 +25,11 @@ describe('resource bodyParams', () => {
   });
 
   test('binaryStringType: required and optional params', async () => {
-    const response = await sink.bodyParams.binaryStringType('binary_string_body');
+    const response = await client.bodyParams.binaryStringType('binary_string_body');
   });
 
   test('binaryType: only required params', async () => {
-    const responsePromise = sink.bodyParams.binaryType(
+    const responsePromise = client.bodyParams.binaryType(
       await toFile(Buffer.from('# my file contents'), 'README.md'),
     );
     const rawResponse = await responsePromise.asResponse();
@@ -42,13 +42,13 @@ describe('resource bodyParams', () => {
   });
 
   test('binaryType: required and optional params', async () => {
-    const response = await sink.bodyParams.binaryType(
+    const response = await client.bodyParams.binaryType(
       await toFile(Buffer.from('# my file contents'), 'README.md'),
     );
   });
 
   test('enumProperties', async () => {
-    const responsePromise = sink.bodyParams.enumProperties({});
+    const responsePromise = client.bodyParams.enumProperties({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -59,7 +59,7 @@ describe('resource bodyParams', () => {
   });
 
   test('nestedRequestModels', async () => {
-    const responsePromise = sink.bodyParams.nestedRequestModels({});
+    const responsePromise = client.bodyParams.nestedRequestModels({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,7 +70,7 @@ describe('resource bodyParams', () => {
   });
 
   test('nullType: only required params', async () => {
-    const responsePromise = sink.bodyParams.nullType({ name: 'name', null_type_prop: null });
+    const responsePromise = client.bodyParams.nullType({ name: 'name', null_type_prop: null });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -81,11 +81,11 @@ describe('resource bodyParams', () => {
   });
 
   test('nullType: required and optional params', async () => {
-    const response = await sink.bodyParams.nullType({ name: 'name', null_type_prop: null });
+    const response = await client.bodyParams.nullType({ name: 'name', null_type_prop: null });
   });
 
   test('objectWithArrayOfObjects', async () => {
-    const responsePromise = sink.bodyParams.objectWithArrayOfObjects({});
+    const responsePromise = client.bodyParams.objectWithArrayOfObjects({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -96,7 +96,7 @@ describe('resource bodyParams', () => {
   });
 
   test('objectWithUnionProperties: only required params', async () => {
-    const responsePromise = sink.bodyParams.objectWithUnionProperties({ bar: { bar: 0 }, foo: 0 });
+    const responsePromise = client.bodyParams.objectWithUnionProperties({ bar: { bar: 0 }, foo: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -107,11 +107,11 @@ describe('resource bodyParams', () => {
   });
 
   test('objectWithUnionProperties: required and optional params', async () => {
-    const response = await sink.bodyParams.objectWithUnionProperties({ bar: { bar: 0 }, foo: 0 });
+    const response = await client.bodyParams.objectWithUnionProperties({ bar: { bar: 0 }, foo: 0 });
   });
 
   test('onlyReadOnlyProperties', async () => {
-    const responsePromise = sink.bodyParams.onlyReadOnlyProperties();
+    const responsePromise = client.bodyParams.onlyReadOnlyProperties();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -124,12 +124,12 @@ describe('resource bodyParams', () => {
   test('onlyReadOnlyProperties: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.bodyParams.onlyReadOnlyProperties({}, { path: '/_stainless_unknown_path' }),
+      client.bodyParams.onlyReadOnlyProperties({}, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('paramInModelNameRef: only required params', async () => {
-    const responsePromise = sink.bodyParams.paramInModelNameRef({
+    const responsePromise = client.bodyParams.paramInModelNameRef({
       model_ref: { foo: 'string' },
       name: 'name',
     });
@@ -143,14 +143,14 @@ describe('resource bodyParams', () => {
   });
 
   test('paramInModelNameRef: required and optional params', async () => {
-    const response = await sink.bodyParams.paramInModelNameRef({
+    const response = await client.bodyParams.paramInModelNameRef({
       model_ref: { foo: 'string' },
       name: 'name',
     });
   });
 
   test('propertyModelRef: only required params', async () => {
-    const responsePromise = sink.bodyParams.propertyModelRef({ model_ref: {}, name: 'name' });
+    const responsePromise = client.bodyParams.propertyModelRef({ model_ref: {}, name: 'name' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -161,11 +161,11 @@ describe('resource bodyParams', () => {
   });
 
   test('propertyModelRef: required and optional params', async () => {
-    const response = await sink.bodyParams.propertyModelRef({ model_ref: { bar: true }, name: 'name' });
+    const response = await client.bodyParams.propertyModelRef({ model_ref: { bar: true }, name: 'name' });
   });
 
   test('propertyWithComplexUnion: only required params', async () => {
-    const responsePromise = sink.bodyParams.propertyWithComplexUnion({ name: 'name', unions: {} });
+    const responsePromise = client.bodyParams.propertyWithComplexUnion({ name: 'name', unions: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -176,14 +176,14 @@ describe('resource bodyParams', () => {
   });
 
   test('propertyWithComplexUnion: required and optional params', async () => {
-    const response = await sink.bodyParams.propertyWithComplexUnion({
+    const response = await client.bodyParams.propertyWithComplexUnion({
       name: 'name',
       unions: { in_both: true },
     });
   });
 
   test('propertyWithHeavilyNestedComplexUnion', async () => {
-    const responsePromise = sink.bodyParams.propertyWithHeavilyNestedComplexUnion({});
+    const responsePromise = client.bodyParams.propertyWithHeavilyNestedComplexUnion({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -194,7 +194,7 @@ describe('resource bodyParams', () => {
   });
 
   test('readOnlyProperties', async () => {
-    const responsePromise = sink.bodyParams.readOnlyProperties({});
+    const responsePromise = client.bodyParams.readOnlyProperties({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -205,7 +205,10 @@ describe('resource bodyParams', () => {
   });
 
   test('stringMapModelRef: only required params', async () => {
-    const responsePromise = sink.bodyParams.stringMapModelRef({ model_ref: { foo: 'string' }, name: 'name' });
+    const responsePromise = client.bodyParams.stringMapModelRef({
+      model_ref: { foo: 'string' },
+      name: 'name',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -216,11 +219,14 @@ describe('resource bodyParams', () => {
   });
 
   test('stringMapModelRef: required and optional params', async () => {
-    const response = await sink.bodyParams.stringMapModelRef({ model_ref: { foo: 'string' }, name: 'name' });
+    const response = await client.bodyParams.stringMapModelRef({
+      model_ref: { foo: 'string' },
+      name: 'name',
+    });
   });
 
   test('topLevelAllOf: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
+    const responsePromise = client.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -231,11 +237,11 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelAllOf: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
+    const response = await client.bodyParams.topLevelAllOf({ is_foo: true, kind: 'VIRTUAL' });
   });
 
   test('topLevelAllOfNestedObject: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
+    const responsePromise = client.bodyParams.topLevelAllOfNestedObject({ kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -246,14 +252,14 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelAllOfNestedObject: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelAllOfNestedObject({
+    const response = await client.bodyParams.topLevelAllOfNestedObject({
       kind: 'VIRTUAL',
       nested_obj: { is_foo: true },
     });
   });
 
   test('topLevelAnyOfWithRef: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
+    const responsePromise = client.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -264,11 +270,11 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelAnyOfWithRef: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
+    const response = await client.bodyParams.topLevelAnyOfWithRef({ kind: 'VIRTUAL' });
   });
 
   test('topLevelArray: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelArray([
+    const responsePromise = client.bodyParams.topLevelArray([
       { foo: 'foo', bar: 'bar' },
       { foo: 'foo', bar: 'bar' },
       { foo: 'foo', bar: 'bar' },
@@ -283,7 +289,7 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArray: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelArray([
+    const response = await client.bodyParams.topLevelArray([
       { foo: 'foo', bar: 'bar' },
       { foo: 'foo', bar: 'bar' },
       { foo: 'foo', bar: 'bar' },
@@ -291,7 +297,7 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArrayWithChildren: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelArrayWithChildren([
+    const responsePromise = client.bodyParams.topLevelArrayWithChildren([
       { id: 'id' },
       { id: 'id' },
       { id: 'id' },
@@ -306,7 +312,7 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArrayWithChildren: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelArrayWithChildren([
+    const response = await client.bodyParams.topLevelArrayWithChildren([
       { id: 'id' },
       { id: 'id' },
       { id: 'id' },
@@ -314,7 +320,7 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArrayWithOtherParams: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelArrayWithOtherParams({
+    const responsePromise = client.bodyParams.topLevelArrayWithOtherParams({
       id: 'id',
       items: [
         { foo: 'foo', bar: 'bar' },
@@ -332,7 +338,7 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelArrayWithOtherParams: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelArrayWithOtherParams({
+    const response = await client.bodyParams.topLevelArrayWithOtherParams({
       id: 'id',
       items: [
         { foo: 'foo', bar: 'bar' },
@@ -343,7 +349,7 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelOneOfOneEntry: only required params', async () => {
-    const responsePromise = sink.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
+    const responsePromise = client.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -354,11 +360,11 @@ describe('resource bodyParams', () => {
   });
 
   test('topLevelOneOfOneEntry: required and optional params', async () => {
-    const response = await sink.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
+    const response = await client.bodyParams.topLevelOneOfOneEntry({ kind: 'VIRTUAL' });
   });
 
   test('topLevelSharedType', async () => {
-    const responsePromise = sink.bodyParams.topLevelSharedType();
+    const responsePromise = client.bodyParams.topLevelSharedType();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -370,7 +376,7 @@ describe('resource bodyParams', () => {
 
   test('topLevelSharedType: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.bodyParams.topLevelSharedType({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.bodyParams.topLevelSharedType({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });
@@ -378,7 +384,7 @@ describe('resource bodyParams', () => {
   test('topLevelSharedType: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.bodyParams.topLevelSharedType(
+      client.bodyParams.topLevelSharedType(
         { bar: { bar: 0 }, foo: 'foo' },
         { path: '/_stainless_unknown_path' },
       ),
@@ -386,7 +392,7 @@ describe('resource bodyParams', () => {
   });
 
   test('unionOverlappingProp: only required params', async () => {
-    const responsePromise = sink.bodyParams.unionOverlappingProp();
+    const responsePromise = client.bodyParams.unionOverlappingProp();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -397,25 +403,25 @@ describe('resource bodyParams', () => {
   });
 
   test('unionOverlappingProp: required and optional params', async () => {
-    const response = await sink.bodyParams.unionOverlappingProp({ foo: 'foo' });
+    const response = await client.bodyParams.unionOverlappingProp({ foo: 'foo' });
   });
 
   test('unionOverlappingProp: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.bodyParams.unionOverlappingProp({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(
+      client.bodyParams.unionOverlappingProp({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unionOverlappingProp: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      sink.bodyParams.unionOverlappingProp({ foo: 'foo' }, { path: '/_stainless_unknown_path' }),
+      client.bodyParams.unionOverlappingProp({ foo: 'foo' }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unknownObject: only required params', async () => {
-    const responsePromise = sink.bodyParams.unknownObject({ name: 'name', unknown_object_prop: {} });
+    const responsePromise = client.bodyParams.unknownObject({ name: 'name', unknown_object_prop: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -426,11 +432,11 @@ describe('resource bodyParams', () => {
   });
 
   test('unknownObject: required and optional params', async () => {
-    const response = await sink.bodyParams.unknownObject({ name: 'name', unknown_object_prop: {} });
+    const response = await client.bodyParams.unknownObject({ name: 'name', unknown_object_prop: {} });
   });
 
   test('withDefaultBodyParamOptional', async () => {
-    const responsePromise = sink.bodyParams.withDefaultBodyParamOptional({});
+    const responsePromise = client.bodyParams.withDefaultBodyParamOptional({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -441,7 +447,7 @@ describe('resource bodyParams', () => {
   });
 
   test('withDefaultBodyParamRequired: only required params', async () => {
-    const responsePromise = sink.bodyParams.withDefaultBodyParamRequired({ normal_param: true });
+    const responsePromise = client.bodyParams.withDefaultBodyParamRequired({ normal_param: true });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -452,14 +458,14 @@ describe('resource bodyParams', () => {
   });
 
   test('withDefaultBodyParamRequired: required and optional params', async () => {
-    const response = await sink.bodyParams.withDefaultBodyParamRequired({
+    const response = await client.bodyParams.withDefaultBodyParamRequired({
       my_version_body_param: 'my_version_body_param',
       normal_param: true,
     });
   });
 
   test('withModelProperty', async () => {
-    const responsePromise = sink.bodyParams.withModelProperty({});
+    const responsePromise = client.bodyParams.withModelProperty({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

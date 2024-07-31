@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource maps', () => {
   test('nullableItems', async () => {
-    const responsePromise = sink.types.maps.nullableItems();
+    const responsePromise = client.types.maps.nullableItems();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,7 +26,7 @@ describe('resource maps', () => {
 
   test('nullableItems: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(sink.types.maps.nullableItems({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.types.maps.nullableItems({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Sink.NotFoundError,
     );
   });

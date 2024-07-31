@@ -3,7 +3,7 @@
 import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const sink = new Sink({
+const client = new Sink({
   userToken: 'My User Token',
   username: 'Robert',
   someNumberArgRequiredNoDefault: 0,
@@ -14,7 +14,7 @@ const sink = new Sink({
 
 describe('resource undocumentedResource', () => {
   test('reissue', async () => {
-    const responsePromise = sink.undocumentedResource.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
+    const responsePromise = client.undocumentedResource.reissue('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.12.0-beta.2 (2024-07-31)
+
+Full Changelog: [v0.12.0-beta.1...v0.12.0-beta.2](https://github.com/stainless-sdks/sink-node-public/compare/v0.12.0-beta.1...v0.12.0-beta.2)
+
+### Features
+
+* add types ([#478](https://github.com/stainless-sdks/sink-node-public/issues/478)) ([d72e049](https://github.com/stainless-sdks/sink-node-public/commit/d72e0498ff6bfc46e4cbd724eddbc6676f02eeec))
+
+
+### Bug Fixes
+
+* **compat:** remove ReadableStream polyfill redundant since node v16 ([#482](https://github.com/stainless-sdks/sink-node-public/issues/482)) ([6459a90](https://github.com/stainless-sdks/sink-node-public/commit/6459a90c1236ed715ed33ee42c6c434dc171f5f9))
+* nullable params ([#474](https://github.com/stainless-sdks/sink-node-public/issues/474)) ([5b0a37f](https://github.com/stainless-sdks/sink-node-public/commit/5b0a37fade7328cf87ce4685f92d9408b8eb4f68))
+
+
+### Chores
+
+* add tests for nullable header params ([#484](https://github.com/stainless-sdks/sink-node-public/issues/484)) ([a6bf779](https://github.com/stainless-sdks/sink-node-public/commit/a6bf77969527110e6cf73de09ddddacafcfc3ba7))
+* bump spec ([#477](https://github.com/stainless-sdks/sink-node-public/issues/477)) ([2414aaa](https://github.com/stainless-sdks/sink-node-public/commit/2414aaa59a101d9f223bab704b20b02a0b4ecc9d))
+* **ci:** correctly tag pre-release npm packages ([#487](https://github.com/stainless-sdks/sink-node-public/issues/487)) ([41be8ea](https://github.com/stainless-sdks/sink-node-public/commit/41be8ea752a55958925679a2a444c0fd5f593290))
+* **ci:** limit release doctor target branches ([#480](https://github.com/stainless-sdks/sink-node-public/issues/480)) ([e0e7039](https://github.com/stainless-sdks/sink-node-public/commit/e0e703919f7cf5d27055d67ba03d8af8b1d6b3f0))
+* **docs:** fix incorrect client var names ([4ecac4e](https://github.com/stainless-sdks/sink-node-public/commit/4ecac4e571e19bdcef272e0a08c7f6297a1291d1))
+* **docs:** mention support of web browser runtimes ([#476](https://github.com/stainless-sdks/sink-node-public/issues/476)) ([f343714](https://github.com/stainless-sdks/sink-node-public/commit/f343714f1a14a06b4ecd41ebe0049dc0808a5a4a))
+* **docs:** minor update to formatting of API link in README ([#475](https://github.com/stainless-sdks/sink-node-public/issues/475)) ([722ca20](https://github.com/stainless-sdks/sink-node-public/commit/722ca200b005a1e2a919dfadf5274e3ff3448356))
+* **docs:** use client instead of package name in Node examples ([#479](https://github.com/stainless-sdks/sink-node-public/issues/479)) ([5bddac4](https://github.com/stainless-sdks/sink-node-public/commit/5bddac4a32e9a925355dcdebc7dfe0be1683683f))
+* **internal:** add constant for default timeout ([#486](https://github.com/stainless-sdks/sink-node-public/issues/486)) ([2e8aba6](https://github.com/stainless-sdks/sink-node-public/commit/2e8aba6baae093452f54250edf6a6eb92c15e534))
+* remove custom methods ([#485](https://github.com/stainless-sdks/sink-node-public/issues/485)) ([564bcf8](https://github.com/stainless-sdks/sink-node-public/commit/564bcf8258ed2628ae1422e148c61119773cb297))
+* **tests:** update prism version ([#481](https://github.com/stainless-sdks/sink-node-public/issues/481)) ([dc6eae0](https://github.com/stainless-sdks/sink-node-public/commit/dc6eae050bf60f429d650a21c5a499a9cef2faa8))
+
+
+### Refactors
+
+* **client:** rename `request_id` to `requestId` ([#472](https://github.com/stainless-sdks/sink-node-public/issues/472)) ([c06b9b4](https://github.com/stainless-sdks/sink-node-public/commit/c06b9b4ceb8794b7deb85709af8470a1d1c309ed))
+
 ## 0.12.0-beta.1 (2024-07-11)
 
 Full Changelog: [v0.11.3-beta.1...v0.12.0-beta.1](https://github.com/stainless-sdks/sink-node-public/compare/v0.11.3-beta.1...v0.12.0-beta.1)
