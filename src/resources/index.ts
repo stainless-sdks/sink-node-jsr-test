@@ -230,6 +230,7 @@ export { PaginationTests } from './pagination-tests/pagination-tests';
 export { Parent } from './parent/parent';
 export {
   PathParamColonSuffixResponse,
+  PathParamFileExtensionResponse,
   PathParamMultipleResponse,
   PathParamSingularResponse,
   PathParamNullableParamsParams,

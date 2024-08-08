@@ -103,6 +103,24 @@ describe('resource pathParams', () => {
     );
   });
 
+  test('fileExtension', async () => {
+    const responsePromise = client.pathParams.fileExtension(0);
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('fileExtension: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.pathParams.fileExtension(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
+  });
+
   test('integerParam', async () => {
     const responsePromise = client.pathParams.integerParam(0);
     const rawResponse = await responsePromise.asResponse();
