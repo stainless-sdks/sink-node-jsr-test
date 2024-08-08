@@ -62,6 +62,8 @@ export interface EnumBasicResponse {
    */
   currency: Shared.Currency;
 
+  enum_with_dupes: 'user' | 'assistant';
+
   my_problematic_enum: '123_FOO' | '30%' | '*' | '';
 
   number_enum: 200 | 201 | 404 | 403;

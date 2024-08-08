@@ -741,6 +741,7 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/path-params.ts">PathParamColonSuffixResponse</a></code>
+- <code><a href="./src/resources/path-params.ts">PathParamFileExtensionResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamMultipleResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamSingularResponse</a></code>
 
@@ -751,6 +752,7 @@ Methods:
 - <code title="post /path_params/dates/{date_param}">client.pathParams.<a href="./src/resources/path-params.ts">dateParam</a>(dateParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/date_times/{datetime_param}">client.pathParams.<a href="./src/resources/path-params.ts">datetimeParam</a>(datetimeParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/enums/{enum_param}">client.pathParams.<a href="./src/resources/path-params.ts">enumParam</a>(enumParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/{with_file_extension}.json">client.pathParams.<a href="./src/resources/path-params.ts">fileExtension</a>(withFileExtension) -> PathParamFileExtensionResponse</code>
 - <code title="post /path_params/{integer_param}">client.pathParams.<a href="./src/resources/path-params.ts">integerParam</a>(integerParam) -> BasicSharedModelObject</code>
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./src/resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/nullable/{nullable_param_1}/{nullable_param_2}/{nullable_param_3}">client.pathParams.<a href="./src/resources/path-params.ts">nullableParams</a>(nullableParam1, nullableParam2, nullableParam3, { ...params }) -> BasicSharedModelObject</code>

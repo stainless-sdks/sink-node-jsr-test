@@ -57,6 +57,16 @@ export class PathParams extends APIResource {
   }
 
   /**
+   * Endpoint with a path param followed by a file extension.
+   */
+  fileExtension(
+    withFileExtension: number,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<PathParamFileExtensionResponse> {
+    return this._client.post(`/path_params/${withFileExtension}.json`, options);
+  }
+
+  /**
    * Endpoint with a singular path parameter that is of an integer type.
    */
   integerParam(
@@ -122,6 +132,10 @@ export interface PathParamColonSuffixResponse {
   foo: string;
 }
 
+export interface PathParamFileExtensionResponse {
+  foo: string;
+}
+
 export interface PathParamMultipleResponse {
   foo: string;
 }
@@ -136,6 +150,7 @@ export interface PathParamNullableParamsParams {
 
 export namespace PathParams {
   export import PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
+  export import PathParamFileExtensionResponse = PathParamsAPI.PathParamFileExtensionResponse;
   export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
   export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
   export import PathParamNullableParamsParams = PathParamsAPI.PathParamNullableParamsParams;

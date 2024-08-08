@@ -729,6 +729,7 @@ export namespace Sink {
 
   export import PathParams = API.PathParams;
   export import PathParamColonSuffixResponse = API.PathParamColonSuffixResponse;
+  export import PathParamFileExtensionResponse = API.PathParamFileExtensionResponse;
   export import PathParamMultipleResponse = API.PathParamMultipleResponse;
   export import PathParamSingularResponse = API.PathParamSingularResponse;
   export import PathParamNullableParamsParams = API.PathParamNullableParamsParams;
