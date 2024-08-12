@@ -14,7 +14,7 @@ const client = new Sink({
 
 describe('resource cards', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.cards.create({ type: 'SINGLE_USE' });
+    const responsePromise = client.cards.create({ type: 'MERCHANT_LOCKED' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -26,7 +26,7 @@ describe('resource cards', () => {
 
   test('create: required and optional params', async () => {
     const response = await client.cards.create({
-      type: 'SINGLE_USE',
+      type: 'MERCHANT_LOCKED',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       exp_month: '06',
@@ -38,20 +38,20 @@ describe('resource cards', () => {
       product_id: '1',
       shipping_method: 'STANDARD',
       shippingAddress: {
+        address1: '5 Broad Street',
+        city: 'NEW YORK',
+        country: 'USA',
         first_name: 'Michael',
         last_name: 'Bluth',
-        line2_text: 'The Bluth Company',
-        address1: '5 Broad Street',
-        address2: 'Unit 25A',
-        city: 'NEW YORK',
-        state: 'NY',
         postal_code: '10001-1809',
-        country: 'USA',
+        state: 'NY',
+        address2: 'Unit 25A',
         email: 'johnny@appleseed.com',
+        line2_text: 'The Bluth Company',
         phone_number: '+12124007676',
       },
       spend_limit: 0,
-      spend_limit_duration: 'TRANSACTION',
+      spend_limit_duration: 'ANNUALLY',
       state: 'OPEN',
     });
   });
@@ -107,7 +107,7 @@ describe('resource cards', () => {
   });
 
   test('createAliased: only required params', async () => {
-    const responsePromise = client.cards.createAliased({ type: 'SINGLE_USE' });
+    const responsePromise = client.cards.createAliased({ type: 'MERCHANT_LOCKED' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -119,7 +119,7 @@ describe('resource cards', () => {
 
   test('createAliased: required and optional params', async () => {
     const response = await client.cards.createAliased({
-      type: 'SINGLE_USE',
+      type: 'MERCHANT_LOCKED',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       exp_month: '06',
@@ -131,26 +131,26 @@ describe('resource cards', () => {
       product_id: '1',
       shipping_method: 'STANDARD',
       shippingAddress: {
+        address1: '5 Broad Street',
+        city: 'NEW YORK',
+        country: 'USA',
         first_name: 'Michael',
         last_name: 'Bluth',
-        line2_text: 'The Bluth Company',
-        address1: '5 Broad Street',
-        address2: 'Unit 25A',
-        city: 'NEW YORK',
-        state: 'NY',
         postal_code: '10001-1809',
-        country: 'USA',
+        state: 'NY',
+        address2: 'Unit 25A',
         email: 'johnny@appleseed.com',
+        line2_text: 'The Bluth Company',
         phone_number: '+12124007676',
       },
       spend_limit: 0,
-      spend_limit_duration: 'TRANSACTION',
+      spend_limit_duration: 'ANNUALLY',
       state: 'OPEN',
     });
   });
 
   test('createAliasedDeprecated: only required params', async () => {
-    const responsePromise = client.cards.createAliasedDeprecated({ type: 'SINGLE_USE' });
+    const responsePromise = client.cards.createAliasedDeprecated({ type: 'MERCHANT_LOCKED' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -162,7 +162,7 @@ describe('resource cards', () => {
 
   test('createAliasedDeprecated: required and optional params', async () => {
     const response = await client.cards.createAliasedDeprecated({
-      type: 'SINGLE_USE',
+      type: 'MERCHANT_LOCKED',
       account_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       card_program_token: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       exp_month: '06',
@@ -174,20 +174,20 @@ describe('resource cards', () => {
       product_id: '1',
       shipping_method: 'STANDARD',
       shippingAddress: {
+        address1: '5 Broad Street',
+        city: 'NEW YORK',
+        country: 'USA',
         first_name: 'Michael',
         last_name: 'Bluth',
-        line2_text: 'The Bluth Company',
-        address1: '5 Broad Street',
-        address2: 'Unit 25A',
-        city: 'NEW YORK',
-        state: 'NY',
         postal_code: '10001-1809',
-        country: 'USA',
+        state: 'NY',
+        address2: 'Unit 25A',
         email: 'johnny@appleseed.com',
+        line2_text: 'The Bluth Company',
         phone_number: '+12124007676',
       },
       spend_limit: 0,
-      spend_limit_duration: 'TRANSACTION',
+      spend_limit_duration: 'ANNUALLY',
       state: 'OPEN',
     });
   });

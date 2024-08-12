@@ -44,8 +44,8 @@ describe('resource streaming', () => {
       model: 'model',
       prompt: 'prompt',
       parent_object: {
-        child_prop: { from_object: 'from_object' },
         array_prop: [{ from_array_items: true }, { from_array_items: true }, { from_array_items: true }],
+        child_prop: { from_object: 'from_object' },
       },
       stream: false,
     });
