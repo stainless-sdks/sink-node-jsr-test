@@ -34,7 +34,7 @@ describe('resource queryParams', () => {
   test('allOf: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.queryParams.allOf({ foo_and_bar: { foo: 'foo', bar: 0 } }, { path: '/_stainless_unknown_path' }),
+      client.queryParams.allOf({ foo_and_bar: { bar: 0, foo: 'foo' } }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Sink.NotFoundError);
   });
 

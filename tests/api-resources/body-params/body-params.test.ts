@@ -275,9 +275,9 @@ describe('resource bodyParams', () => {
 
   test('topLevelArray: only required params', async () => {
     const responsePromise = client.bodyParams.topLevelArray([
-      { foo: 'foo', bar: 'bar' },
-      { foo: 'foo', bar: 'bar' },
-      { foo: 'foo', bar: 'bar' },
+      { bar: 'bar', foo: 'foo' },
+      { bar: 'bar', foo: 'foo' },
+      { bar: 'bar', foo: 'foo' },
     ]);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -290,9 +290,9 @@ describe('resource bodyParams', () => {
 
   test('topLevelArray: required and optional params', async () => {
     const response = await client.bodyParams.topLevelArray([
-      { foo: 'foo', bar: 'bar' },
-      { foo: 'foo', bar: 'bar' },
-      { foo: 'foo', bar: 'bar' },
+      { bar: 'bar', foo: 'foo' },
+      { bar: 'bar', foo: 'foo' },
+      { bar: 'bar', foo: 'foo' },
     ]);
   });
 
@@ -323,9 +323,9 @@ describe('resource bodyParams', () => {
     const responsePromise = client.bodyParams.topLevelArrayWithOtherParams({
       id: 'id',
       items: [
-        { foo: 'foo', bar: 'bar' },
-        { foo: 'foo', bar: 'bar' },
-        { foo: 'foo', bar: 'bar' },
+        { bar: 'bar', foo: 'foo' },
+        { bar: 'bar', foo: 'foo' },
+        { bar: 'bar', foo: 'foo' },
       ],
     });
     const rawResponse = await responsePromise.asResponse();
@@ -341,9 +341,9 @@ describe('resource bodyParams', () => {
     const response = await client.bodyParams.topLevelArrayWithOtherParams({
       id: 'id',
       items: [
-        { foo: 'foo', bar: 'bar' },
-        { foo: 'foo', bar: 'bar' },
-        { foo: 'foo', bar: 'bar' },
+        { bar: 'bar', foo: 'foo' },
+        { bar: 'bar', foo: 'foo' },
+        { bar: 'bar', foo: 'foo' },
       ],
     });
   });
