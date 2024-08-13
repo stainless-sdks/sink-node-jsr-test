@@ -926,6 +926,16 @@ Methods:
 
 - <code title="get /decorator_tests/nested/keep/this/method">client.decoratorTests.keepThisResource.<a href="./src/resources/decorator-tests/keep-this-resource.ts">keepThisMethod</a>() -> KeepThisResourceKeepThisMethodResponse</code>
 
+## SkipThisResource
+
+Types:
+
+- <code><a href="./src/resources/decorator-tests/skip-this-resource.ts">SkipThisResourceINeverAppearResponse</a></code>
+
+Methods:
+
+- <code title="get /decorator_tests/nested/i/never/appear">client.decoratorTests.skipThisResource.<a href="./src/resources/decorator-tests/skip-this-resource.ts">iNeverAppear</a>() -> SkipThisResourceINeverAppearResponse</code>
+
 # Tests
 
 Methods:

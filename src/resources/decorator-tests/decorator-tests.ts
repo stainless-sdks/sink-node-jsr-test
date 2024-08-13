@@ -5,10 +5,14 @@ import * as Core from '../../core';
 import * as DecoratorTestsAPI from './decorator-tests';
 import * as KeepThisResourceAPI from './keep-this-resource';
 import * as LanguagesAPI from './languages';
+import * as SkipThisResourceAPI from './skip-this-resource';
 
 export class DecoratorTests extends APIResource {
   languages: LanguagesAPI.Languages = new LanguagesAPI.Languages(this._client);
   keepThisResource: KeepThisResourceAPI.KeepThisResource = new KeepThisResourceAPI.KeepThisResource(
+    this._client,
+  );
+  skipThisResource: SkipThisResourceAPI.SkipThisResource = new SkipThisResourceAPI.SkipThisResource(
     this._client,
   );
 
@@ -29,4 +33,6 @@ export namespace DecoratorTests {
   export import Languages = LanguagesAPI.Languages;
   export import KeepThisResource = KeepThisResourceAPI.KeepThisResource;
   export import KeepThisResourceKeepThisMethodResponse = KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
+  export import SkipThisResource = SkipThisResourceAPI.SkipThisResource;
+  export import SkipThisResourceINeverAppearResponse = SkipThisResourceAPI.SkipThisResourceINeverAppearResponse;
 }
