@@ -318,7 +318,7 @@ describe('idempotency', () => {
       someNumberArgRequiredNoDefaultNoEnv: 0,
       requiredArgNoEnv: '<example>',
     });
-    await client.tools.skippedParams({}, { idempotencyKey: 'my-idempotency-key' });
+    await client.createNoResponse({ idempotencyKey: 'my-idempotency-key' });
   });
 });
 
