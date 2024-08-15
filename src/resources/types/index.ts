@@ -29,8 +29,16 @@ export {
 export {
   UnionDiscriminatedVariantA,
   UnionDiscriminatedVariantB,
-  UnionDiscriminatedByPropertyNameResponse,
-  UnionDiscriminatedWithBasicMappingResponse,
+  UnionArrayParamDiscriminatedByPropertyNameResponse,
+  UnionArrayParamDiscriminatedWithBasicMappingResponse,
+  UnionParamDiscriminatedByPropertyNameResponse,
+  UnionParamDiscriminatedWithBasicMappingResponse,
+  UnionResponseDiscriminatedByPropertyNameResponse,
+  UnionResponseDiscriminatedWithBasicMappingResponse,
+  UnionArrayParamDiscriminatedByPropertyNameParams,
+  UnionArrayParamDiscriminatedWithBasicMappingParams,
+  UnionParamDiscriminatedByPropertyNameParams,
+  UnionParamDiscriminatedWithBasicMappingParams,
   Unions,
 } from './unions';
 export {

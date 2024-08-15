@@ -442,13 +442,21 @@ Types:
 
 - <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedVariantA</a></code>
 - <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedVariantB</a></code>
-- <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedByPropertyNameResponse</a></code>
-- <code><a href="./src/resources/types/unions.ts">UnionDiscriminatedWithBasicMappingResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionArrayParamDiscriminatedByPropertyNameResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionArrayParamDiscriminatedWithBasicMappingResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionParamDiscriminatedByPropertyNameResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionParamDiscriminatedWithBasicMappingResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionResponseDiscriminatedByPropertyNameResponse</a></code>
+- <code><a href="./src/resources/types/unions.ts">UnionResponseDiscriminatedWithBasicMappingResponse</a></code>
 
 Methods:
 
-- <code title="get /types/unions/discriminated_by_property_name">client.types.unions.<a href="./src/resources/types/unions.ts">discriminatedByPropertyName</a>() -> UnionDiscriminatedByPropertyNameResponse</code>
-- <code title="get /types/unions/discriminated_with_basic_mapping">client.types.unions.<a href="./src/resources/types/unions.ts">discriminatedWithBasicMapping</a>() -> UnionDiscriminatedWithBasicMappingResponse</code>
+- <code title="post /types/unions/array_param_discriminated_by_property_name">client.types.unions.<a href="./src/resources/types/unions.ts">arrayParamDiscriminatedByPropertyName</a>([ ...body ]) -> string</code>
+- <code title="post /types/unions/array_param_discriminated_with_basic_mapping">client.types.unions.<a href="./src/resources/types/unions.ts">arrayParamDiscriminatedWithBasicMapping</a>([ ...body ]) -> string</code>
+- <code title="post /types/unions/param_discriminated_by_property_name">client.types.unions.<a href="./src/resources/types/unions.ts">paramDiscriminatedByPropertyName</a>({ ...params }) -> string</code>
+- <code title="post /types/unions/param_discriminated_with_basic_mapping">client.types.unions.<a href="./src/resources/types/unions.ts">paramDiscriminatedWithBasicMapping</a>({ ...params }) -> string</code>
+- <code title="get /types/unions/response_discriminated_by_property_name">client.types.unions.<a href="./src/resources/types/unions.ts">responseDiscriminatedByPropertyName</a>() -> UnionResponseDiscriminatedByPropertyNameResponse</code>
+- <code title="get /types/unions/response_discriminated_with_basic_mapping">client.types.unions.<a href="./src/resources/types/unions.ts">responseDiscriminatedWithBasicMapping</a>() -> UnionResponseDiscriminatedWithBasicMappingResponse</code>
 
 ## Objects
 
