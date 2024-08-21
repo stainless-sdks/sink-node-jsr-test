@@ -402,6 +402,7 @@ export class Sink extends Core.APIClient {
   protected override defaultHeaders(opts: Core.FinalRequestOptions): Core.Headers {
     return {
       ...super.defaultHeaders(opts),
+      ...(this._options.dangerouslyAllowBrowser ? { 'my-header-only-set-if-browser': 'true' } : undefined),
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
       'X-Client-UserName': this.username,
