@@ -11,6 +11,8 @@ export class Testing extends APIResource {
 }
 
 export interface RootResponse {
+  checkEscaping: 'And now, a set of characters that are likely to cause issues if not properly escaped:\n- quotes: " \' ` - slashes: / // /// \\ \\\\ \\\\\\ - others: \\n \\r \\t \\b \\f \\v \\x63 \\uFE63 \\U0000FE63 \\N{HYPHEN} \\1 \\12 \\123 \\1234 a \\a \\g \\* \\( \\& \\@ \\x2z \\u11z1 \\U1111z111 \\N{HYPHEN#} ${test} #{test}\n';
+
   message: string;
 }
 
