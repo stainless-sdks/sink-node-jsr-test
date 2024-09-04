@@ -26,12 +26,11 @@
   "dependencies": {
     "@types/node": "^18.11.18",
     "@types/node-fetch": "^2.6.4",
-    "@types/qs": "^6.9.7",
+    "@types/qs": "^6.9.15",
     "abort-controller": "^3.0.0",
     "agentkeepalive": "^4.2.1",
     "form-data-encoder": "1.7.2",
     "formdata-node": "^4.3.2",
-    "jsonpath-plus": "7.2.0",
     "node-fetch": "^2.6.7",
     "qs": "^6.10.3"
   },
@@ -41,7 +40,6 @@
     "@types/jest": "^29.4.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
-    "deep-object-diff": "^1.1.9",
     "eslint": "^8.49.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-unused-imports": "^3.0.0",
@@ -123,9 +121,5 @@
       "require": "./dist/*.js",
       "default": "./dist/*.mjs"
     }
-  },
-  "bin": "./bin/cli",
-  "optionalDependencies": {
-    "fast-json-patch": "^3.1.1"
   }
 }
