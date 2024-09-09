@@ -1,7 +1,7 @@
 import { ReadableStream, type Response } from './_shims/index';
 import { SinkError } from './error';
 
-import { safeJSON, createResponseHeaders } from 'sink-npm/core';
+import { createResponseHeaders } from 'sink-npm/core';
 import { APIError } from 'sink-npm/error';
 
 type Bytes = string | ArrayBuffer | Uint8Array | Buffer | null | undefined;
@@ -44,11 +44,12 @@ export class Stream<Item> implements AsyncIterable<Item> {
           }
 
           if (sse.event === 'error') {
-            const errText = sse.data;
-            const errJSON = safeJSON(errText);
-            const errMessage = errJSON ? undefined : errText;
-
-            throw APIError.generate(undefined, errJSON, errMessage, createResponseHeaders(response.headers));
+            throw APIError.generate(
+              undefined,
+              `SSE Error: ${sse.data}`,
+              sse.data,
+              createResponseHeaders(response.headers),
+            );
           }
 
           if (sse.data.startsWith('[DONE]')) {
