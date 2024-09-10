@@ -124,7 +124,10 @@ async function postprocess() {
       if (importPath.startsWith('.')) {
         // add explicit file extensions to relative imports
         const { dir, name } = path.parse(importPath);
-        const ext = /\.mjs$/.test(file) ? '.mjs' : '.js';
+        const ext =
+          /\.ts$/.test(file) ? '.mjs'
+          : /\.mjs$/.test(file) ? '.mjs'
+          : '.js';
         return `${dir}/${name}${ext}`;
       }
       return importPath;
@@ -138,6 +141,11 @@ async function postprocess() {
         // replace with same number of characters to avoid breaking source maps
         (match) => ' '.repeat(match.length),
       );
+    }
+
+    if (file.endsWith('.mjs')) {
+      const typeFile = path.basename(file).replace(/\.mjs$/, '.d.ts');
+      transformed = `/* @ts-self-types="./${typeFile}" */` + transformed;
     }
 
     if (file.endsWith('.d.ts')) {

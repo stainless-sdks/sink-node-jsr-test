@@ -1,0 +1,11 @@
+{
+  "name": "@stainless-api/sink-npm",
+  "version": "0.11.3-beta.1",
+  "exports": "./index.mjs",
+  "publish": {
+    "exclude": ["!."]
+  },
+  "imports": {
+    "sink-npm/_shims/auto/runtime": "./_shims/web-runtime.mjs"
+  }
+}
