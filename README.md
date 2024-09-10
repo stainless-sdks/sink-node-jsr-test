@@ -1,6 +1,6 @@
 # Sink Custom Node Title 1 API Library
 
-[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sink-npm)
+[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sink-npm) [![JSR Version](https://jsr.io/badges/@stainless-api/sink-npm)](https://jsr.io/@stainless-api/sink-npm)
 
 This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
