@@ -15,6 +15,11 @@ export {
   PageNumberListWithoutCurrentPageResponseParams,
   PageNumber,
 } from './page-number';
+export {
+  PageNumberWithoutCurrentPageResponseListParams,
+  PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams,
+  PageNumberWithoutCurrentPageResponse,
+} from './page-number-without-current-page-response';
 export { PaginationTests } from './pagination-tests';
 export { RefNestedObjectRefParams, RefWithSharedModelRefParams, Refs } from './refs';
 export { ResponseHeaderBasicCursorParams, ResponseHeaders } from './response-headers';

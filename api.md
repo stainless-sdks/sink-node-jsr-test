@@ -147,7 +147,14 @@ Methods:
 Methods:
 
 - <code title="get /paginated/page_number">client.paginationTests.pageNumber.<a href="./src/resources/pagination-tests/page-number.ts">list</a>({ ...params }) -> MyModelsPagePageNumber</code>
-- <code title="get /paginated/page_number_without_current_page_response">client.paginationTests.pageNumber.<a href="./src/resources/pagination-tests/page-number.ts">listWithoutCurrentPageResponse</a>({ ...params }) -> MyModelsPagePageNumberWithoutCurrentPageResponse</code>
+- <code title="get /paginated/page_number">client.paginationTests.pageNumber.<a href="./src/resources/pagination-tests/page-number.ts">listWithoutCurrentPageResponse</a>({ ...params }) -> MyModelsPagePageNumber</code>
+
+## PageNumberWithoutCurrentPageResponse
+
+Methods:
+
+- <code title="get /paginated/page_number">client.paginationTests.pageNumberWithoutCurrentPageResponse.<a href="./src/resources/pagination-tests/page-number-without-current-page-response.ts">list</a>({ ...params }) -> MyModelsPagePageNumber</code>
+- <code title="get /paginated/page_number_without_current_page_response">client.paginationTests.pageNumberWithoutCurrentPageResponse.<a href="./src/resources/pagination-tests/page-number-without-current-page-response.ts">listWithoutCurrentPageResponse</a>({ ...params }) -> MyModelsPagePageNumberWithoutCurrentPageResponse</code>
 
 ## Refs
 

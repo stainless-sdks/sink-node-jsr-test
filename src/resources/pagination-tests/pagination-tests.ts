@@ -7,6 +7,7 @@ import * as ItemsTypesAPI from './items-types';
 import * as NestedItemsAPI from './nested-items';
 import * as OffsetAPI from './offset';
 import * as PageNumberAPI from './page-number';
+import * as PageNumberWithoutCurrentPageResponseAPI from './page-number-without-current-page-response';
 import * as RefsAPI from './refs';
 import * as ResponseHeadersAPI from './response-headers';
 import * as SchemaTypesAPI from './schema-types';
@@ -16,6 +17,8 @@ export class PaginationTests extends APIResource {
   schemaTypes: SchemaTypesAPI.SchemaTypes = new SchemaTypesAPI.SchemaTypes(this._client);
   itemsTypes: ItemsTypesAPI.ItemsTypes = new ItemsTypesAPI.ItemsTypes(this._client);
   pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this._client);
+  pageNumberWithoutCurrentPageResponse: PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse =
+    new PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse(this._client);
   refs: RefsAPI.Refs = new RefsAPI.Refs(this._client);
   responseHeaders: ResponseHeadersAPI.ResponseHeaders = new ResponseHeadersAPI.ResponseHeaders(this._client);
   topLevelArrays: TopLevelArraysAPI.TopLevelArrays = new TopLevelArraysAPI.TopLevelArrays(this._client);
@@ -36,6 +39,9 @@ export namespace PaginationTests {
   export import PageNumber = PageNumberAPI.PageNumber;
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
   export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
+  export import PageNumberWithoutCurrentPageResponse = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse;
+  export import PageNumberWithoutCurrentPageResponseListParams = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListParams;
+  export import PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams;
   export import Refs = RefsAPI.Refs;
   export import RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
   export import RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;
