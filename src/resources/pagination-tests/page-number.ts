@@ -5,14 +5,8 @@ import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as PageNumberAPI from './page-number';
 import * as BodyParamsAPI from '../body-params/body-params';
-import {
-  MyModelsPagePageNumber,
-  MyModelsPagePageNumberWithoutCurrentPageResponse,
-} from '../body-params/body-params';
-import {
-  type PagePageNumberParams,
-  type PagePageNumberWithoutCurrentPageResponseParams,
-} from '../../pagination';
+import { MyModelsPagePageNumber } from '../body-params/body-params';
+import { type PagePageNumberParams } from '../../pagination';
 
 export class PageNumber extends APIResource {
   /**
@@ -34,38 +28,33 @@ export class PageNumber extends APIResource {
   }
 
   /**
-   * Test case for page_number pagination without a `page` response property
+   * Test case for page_number pagination
    */
   listWithoutCurrentPageResponse(
     query?: PageNumberListWithoutCurrentPageResponseParams,
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumberWithoutCurrentPageResponse, BodyParamsAPI.MyModel>;
+  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>;
   listWithoutCurrentPageResponse(
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumberWithoutCurrentPageResponse, BodyParamsAPI.MyModel>;
+  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>;
   listWithoutCurrentPageResponse(
     query: PageNumberListWithoutCurrentPageResponseParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumberWithoutCurrentPageResponse, BodyParamsAPI.MyModel> {
+  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.listWithoutCurrentPageResponse({}, query);
     }
-    return this._client.getAPIList(
-      '/paginated/page_number_without_current_page_response',
-      MyModelsPagePageNumberWithoutCurrentPageResponse,
-      { query, ...options },
-    );
+    return this._client.getAPIList('/paginated/page_number', MyModelsPagePageNumber, { query, ...options });
   }
 }
 
 export interface PageNumberListParams extends PagePageNumberParams {}
 
-export interface PageNumberListWithoutCurrentPageResponseParams
-  extends PagePageNumberWithoutCurrentPageResponseParams {}
+export interface PageNumberListWithoutCurrentPageResponseParams extends PagePageNumberParams {}
 
 export namespace PageNumber {
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
   export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
 }
 
-export { MyModelsPagePageNumber, MyModelsPagePageNumberWithoutCurrentPageResponse };
+export { MyModelsPagePageNumber };
