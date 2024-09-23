@@ -123,7 +123,7 @@ export class BodyParams extends APIResource {
    * Endpoint with a `requestBody` that only has `readOnly` properties
    */
   onlyReadOnlyProperties(
-    body?: BodyParamOnlyReadOnlyPropertiesParams | null | undefined,
+    body: BodyParamOnlyReadOnlyPropertiesParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<void> {
     return this._client.patch('/body_params/only_read_only_properties', {

@@ -726,6 +726,7 @@ export namespace Sink {
   export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
   export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
   export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
+  export import ResponseOnlyReadOnlyPropertiesResponse = API.ResponseOnlyReadOnlyPropertiesResponse;
   export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
 
   export import PathParams = API.PathParams;
