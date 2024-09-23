@@ -149,6 +149,7 @@ export {
   ResponseObjectNoPropertiesResponse,
   ResponseObjectWithAdditionalPropertiesPropResponse,
   ResponseObjectWithHeavilyNestedUnionResponse,
+  ResponseOnlyReadOnlyPropertiesResponse,
   ResponseStringResponseResponse,
   Responses,
 } from './responses/responses';

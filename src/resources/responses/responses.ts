@@ -146,6 +146,15 @@ export class Responses extends APIResource {
   }
 
   /**
+   * Endpoint with a response that only has `readOnly` properties
+   */
+  onlyReadOnlyProperties(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ResponseOnlyReadOnlyPropertiesResponse> {
+    return this._client.get('/responses/only_read_only_properties', options);
+  }
+
+  /**
    * Endpoint that returns a $ref to SimpleObject. This is used to test shared
    * response models.
    */
@@ -357,6 +366,15 @@ export namespace ResponseObjectWithHeavilyNestedUnionResponse {
   }
 }
 
+export interface ResponseOnlyReadOnlyPropertiesResponse {
+  /**
+   * This is my description for the Currency enum
+   */
+  read_only_enum: Shared.Currency;
+
+  read_only_property: string;
+}
+
 export type ResponseStringResponseResponse = string;
 
 export namespace Responses {
@@ -382,6 +400,7 @@ export namespace Responses {
   export import ResponseObjectNoPropertiesResponse = ResponsesAPI.ResponseObjectNoPropertiesResponse;
   export import ResponseObjectWithAdditionalPropertiesPropResponse = ResponsesAPI.ResponseObjectWithAdditionalPropertiesPropResponse;
   export import ResponseObjectWithHeavilyNestedUnionResponse = ResponsesAPI.ResponseObjectWithHeavilyNestedUnionResponse;
+  export import ResponseOnlyReadOnlyPropertiesResponse = ResponsesAPI.ResponseOnlyReadOnlyPropertiesResponse;
   export import ResponseStringResponseResponse = ResponsesAPI.ResponseStringResponseResponse;
   export import UnionTypes = UnionTypesAPI.UnionTypes;
   export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;

@@ -705,6 +705,7 @@ Types:
 - <code><a href="./src/resources/responses/responses.ts">ResponseObjectNoPropertiesResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseObjectWithAdditionalPropertiesPropResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseObjectWithHeavilyNestedUnionResponse</a></code>
+- <code><a href="./src/resources/responses/responses.ts">ResponseOnlyReadOnlyPropertiesResponse</a></code>
 - <code><a href="./src/resources/responses/responses.ts">ResponseStringResponseResponse</a></code>
 
 Methods:
@@ -726,6 +727,7 @@ Methods:
 - <code title="post /responses/object_with_additional_properties_prop">client.responses.<a href="./src/resources/responses/responses.ts">objectWithAdditionalPropertiesProp</a>() -> ResponseObjectWithAdditionalPropertiesPropResponse</code>
 - <code title="post /responses/object_with_heavily_nested_union">client.responses.<a href="./src/resources/responses/responses.ts">objectWithHeavilyNestedUnion</a>() -> ResponseObjectWithHeavilyNestedUnionResponse</code>
 - <code title="get /responses/oneof_null">client.responses.<a href="./src/resources/responses/responses.ts">oneofNull</a>() -> ObjectWithOneOfNullProperty</code>
+- <code title="get /responses/only_read_only_properties">client.responses.<a href="./src/resources/responses/responses.ts">onlyReadOnlyProperties</a>() -> ResponseOnlyReadOnlyPropertiesResponse</code>
 - <code title="get /responses/shared_simple_object">client.responses.<a href="./src/resources/responses/responses.ts">sharedSimpleObject</a>() -> SimpleObject</code>
 - <code title="post /responses/string">client.responses.<a href="./src/resources/responses/responses.ts">stringResponse</a>() -> string</code>
 - <code title="post /responses/unknown_object">client.responses.<a href="./src/resources/responses/responses.ts">unknownObject</a>() -> unknown</code>
