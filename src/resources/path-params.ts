@@ -121,6 +121,16 @@ export class PathParams extends APIResource {
   }
 
   /**
+   * Endpoint with a path param followed by a query param in the path itself.
+   */
+  queryParam(
+    withQueryParam: number,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<PathParamQueryParamResponse> {
+    return this._client.post(`/path_params/${withQueryParam}?beta=true`, options);
+  }
+
+  /**
    * Endpoint with a singular path parameter.
    */
   singular(singular: string, options?: Core.RequestOptions): Core.APIPromise<PathParamSingularResponse> {
@@ -140,6 +150,10 @@ export interface PathParamMultipleResponse {
   foo: string;
 }
 
+export interface PathParamQueryParamResponse {
+  foo: string;
+}
+
 export interface PathParamSingularResponse {
   foo: string;
 }
@@ -152,6 +166,7 @@ export namespace PathParams {
   export import PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
   export import PathParamFileExtensionResponse = PathParamsAPI.PathParamFileExtensionResponse;
   export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
+  export import PathParamQueryParamResponse = PathParamsAPI.PathParamQueryParamResponse;
   export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
   export import PathParamNullableParamsParams = PathParamsAPI.PathParamNullableParamsParams;
 }

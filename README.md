@@ -32,7 +32,20 @@ const client = new Sink({
 });
 
 async function main() {
-  const customAssignTo = await client.cards.create({ type: 'SINGLE_USE', exp_month: '08', not: 'TEST' });
+  const customAssignTo = await client.cards.create({
+    type: 'SINGLE_USE',
+    exp_month: '08',
+    not: 'TEST',
+    shippingAddress: {
+      address1: '180 Varick St',
+      city: 'New York',
+      country: 'USA',
+      first_name: 'Jason',
+      last_name: 'Mimosa',
+      state: 'NY',
+      postal_code: 'H0H0H0',
+    },
+  });
 
   console.log(customAssignTo.token);
 }
