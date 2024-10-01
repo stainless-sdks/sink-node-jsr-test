@@ -760,6 +760,7 @@ Types:
 - <code><a href="./src/resources/path-params.ts">PathParamColonSuffixResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamFileExtensionResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamMultipleResponse</a></code>
+- <code><a href="./src/resources/path-params.ts">PathParamQueryParamResponse</a></code>
 - <code><a href="./src/resources/path-params.ts">PathParamSingularResponse</a></code>
 
 Methods:
@@ -774,6 +775,7 @@ Methods:
 - <code title="post /path_params/{first}/{second}/{last}">client.pathParams.<a href="./src/resources/path-params.ts">multiple</a>(first, second, last) -> PathParamMultipleResponse</code>
 - <code title="post /path_params/nullable/{nullable_param_1}/{nullable_param_2}/{nullable_param_3}">client.pathParams.<a href="./src/resources/path-params.ts">nullableParams</a>(nullableParam1, nullableParam2, nullableParam3, { ...params }) -> BasicSharedModelObject</code>
 - <code title="post /path_params/mixed/{integer_param}/{string_param}">client.pathParams.<a href="./src/resources/path-params.ts">paramsMixedTypes</a>(integerParam, stringParam) -> BasicSharedModelObject</code>
+- <code title="post /path_params/{with_query_param}?beta=true">client.pathParams.<a href="./src/resources/path-params.ts">queryParam</a>(withQueryParam) -> PathParamQueryParamResponse</code>
 - <code title="post /path_params/{singular}">client.pathParams.<a href="./src/resources/path-params.ts">singular</a>(singular) -> PathParamSingularResponse</code>
 
 # PositionalParams

@@ -233,6 +233,7 @@ export {
   PathParamColonSuffixResponse,
   PathParamFileExtensionResponse,
   PathParamMultipleResponse,
+  PathParamQueryParamResponse,
   PathParamSingularResponse,
   PathParamNullableParamsParams,
   PathParams,
