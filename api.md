@@ -66,6 +66,7 @@ Methods:
 Methods:
 
 - <code title="get /default_req_options">client.defaultReqOptions.<a href="./src/resources/default-req-options/default-req-options.ts">exampleMethod</a>() -> BasicSharedModelObject</code>
+- <code title="get /default_req_options/with_param_override">client.defaultReqOptions.<a href="./src/resources/default-req-options/default-req-options.ts">withParamOverride</a>({ ...params }) -> BasicSharedModelObject</code>
 
 ## Child
 
