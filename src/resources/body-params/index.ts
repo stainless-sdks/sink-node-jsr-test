@@ -46,6 +46,7 @@ export {
   MyModelsPageCursorSharedRef,
   MyModelsPageCursorFromHeaders,
   MyModelsPageCursorTopLevelArray,
+  MyModelsPageCursorWithReverse,
   MyModelsPageOffset,
   MyModelsPageOffsetNoStartField,
   MyModelsPageOffsetTotalCount,

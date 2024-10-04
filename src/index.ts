@@ -494,6 +494,10 @@ export namespace Sink {
   export import PageCursorParams = Pagination.PageCursorParams;
   export import PageCursorResponse = Pagination.PageCursorResponse;
 
+  export import PageCursorWithReverse = Pagination.PageCursorWithReverse;
+  export import PageCursorWithReverseParams = Pagination.PageCursorWithReverseParams;
+  export import PageCursorWithReverseResponse = Pagination.PageCursorWithReverseResponse;
+
   export import PageCursorFromHeaders = Pagination.PageCursorFromHeaders;
   export import PageCursorFromHeadersParams = Pagination.PageCursorFromHeadersParams;
   export import PageCursorFromHeadersResponse = Pagination.PageCursorFromHeadersResponse;

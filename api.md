@@ -180,6 +180,7 @@ Methods:
 Methods:
 
 - <code title="get /paginated/cursor">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">list</a>({ ...params }) -> MyModelsPageCursor</code>
+- <code title="get /paginated/cursor_with_reverse">client.paginationTests.cursor.<a href="./src/resources/pagination-tests/cursor.ts">listReverse</a>({ ...params }) -> MyModelsPageCursorWithReverse</code>
 
 ## Offset
 

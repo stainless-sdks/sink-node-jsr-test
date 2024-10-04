@@ -15,6 +15,7 @@ import {
   PageCursorNestedObjectRef,
   PageCursorSharedRef,
   PageCursorTopLevelArray,
+  PageCursorWithReverse,
   PageOffset,
   PageOffsetNoStartField,
   PageOffsetTotalCount,
@@ -427,6 +428,8 @@ export class MyModelsPageCursorSharedRef extends PageCursorSharedRef<MyModel> {}
 export class MyModelsPageCursorFromHeaders extends PageCursorFromHeaders<MyModel> {}
 
 export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyModel> {}
+
+export class MyModelsPageCursorWithReverse extends PageCursorWithReverse<MyModel> {}
 
 export class MyModelsPageOffset extends PageOffset<MyModel> {}
 
