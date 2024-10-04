@@ -568,6 +568,7 @@ export namespace Sink {
   export import Casing = API.Casing;
 
   export import DefaultReqOptions = API.DefaultReqOptions;
+  export import DefaultReqOptionWithParamOverrideParams = API.DefaultReqOptionWithParamOverrideParams;
 
   export import Tools = API.Tools;
   export import ObjectSkippedProps = API.ObjectSkippedProps;

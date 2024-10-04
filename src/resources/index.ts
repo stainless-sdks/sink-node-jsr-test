@@ -75,7 +75,10 @@ export {
 } from './complex-queries';
 export { DecoratorTestKeepMeResponse, DecoratorTests } from './decorator-tests/decorator-tests';
 export { DeeplyNested } from './deeply-nested/deeply-nested';
-export { DefaultReqOptions } from './default-req-options/default-req-options';
+export {
+  DefaultReqOptionWithParamOverrideParams,
+  DefaultReqOptions,
+} from './default-req-options/default-req-options';
 export {
   DocstringLeadingDoubleQuoteResponse,
   DocstringTrailingDoubleQuoteResponse,
