@@ -58,6 +58,90 @@ export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorRe
   }
 }
 
+export interface PageCursorWithReverseResponse<Item> {
+  data: Array<Item>;
+
+  first_id: string;
+
+  last_id: string;
+}
+
+export interface PageCursorWithReverseParams {
+  /**
+   * Number of items per page.
+   */
+  limit?: number;
+
+  before_id?: string;
+
+  after_id?: string;
+}
+
+export class PageCursorWithReverse<Item>
+  extends AbstractPage<Item>
+  implements PageCursorWithReverseResponse<Item>
+{
+  data: Array<Item>;
+
+  first_id: string;
+
+  last_id: string;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: PageCursorWithReverseResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data || [];
+    this.first_id = body.first_id || '';
+    this.last_id = body.last_id || '';
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data ?? [];
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<PageCursorWithReverseParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    if ((this.options.query as Record<string, unknown>)?.['before_id']) {
+      // in reverse
+      const firstId = this.first_id;
+      if (!firstId) {
+        return null;
+      }
+
+      return {
+        params: {
+          before_id: firstId,
+        },
+      };
+    }
+
+    const cursor = this.last_id;
+    if (!cursor) {
+      return null;
+    }
+
+    return {
+      params: {
+        after_id: cursor,
+      },
+    };
+  }
+}
+
 export interface PageCursorFromHeadersResponse<Item> {
   data: Array<Item>;
 }

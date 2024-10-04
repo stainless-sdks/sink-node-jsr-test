@@ -51,6 +51,7 @@ export namespace PaginationTests {
   export import TopLevelArrayBasicCursorParams = TopLevelArraysAPI.TopLevelArrayBasicCursorParams;
   export import Cursor = CursorAPI.Cursor;
   export import CursorListParams = CursorAPI.CursorListParams;
+  export import CursorListReverseParams = CursorAPI.CursorListReverseParams;
   export import Offset = OffsetAPI.Offset;
   export import OffsetListParams = OffsetAPI.OffsetListParams;
   export import OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
