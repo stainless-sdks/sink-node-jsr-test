@@ -27,7 +27,7 @@ export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorRe
     super(client, response, body, options);
 
     this.data = body.data || [];
-    this.cursor = body.cursor || '';
+    this.cursor = body.cursor || null;
   }
 
   getPaginatedItems(): Item[] {
@@ -352,7 +352,7 @@ export class PageCursorNestedObjectRef<Item>
     super(client, response, body, options);
 
     this.data = body.data || [];
-    this.nested_object_cursor = body.nested_object_cursor || '';
+    this.nested_object_cursor = body.nested_object_cursor || null;
     this.object_prop = body.object_prop || {};
   }
 
@@ -425,7 +425,7 @@ export class PageCursorNestedItems<Item>
     super(client, response, body, options);
 
     this.data = body.data || {};
-    this.cursor = body.cursor || '';
+    this.cursor = body.cursor || null;
     this.object_prop = body.object_prop || {};
   }
 
