@@ -882,6 +882,7 @@ Methods:
 Methods:
 
 - <code title="post /header_params/all_types">client.headerParams.<a href="./src/resources/header-params.ts">allTypes</a>({ ...params }) -> void</code>
+- <code title="post /header_params/arrays">client.headerParams.<a href="./src/resources/header-params.ts">arrays</a>({ ...params }) -> void</code>
 - <code title="post /header_params/client_argument">client.headerParams.<a href="./src/resources/header-params.ts">clientArgument</a>({ ...params }) -> void</code>
 - <code title="post /header_params/nullable_type">client.headerParams.<a href="./src/resources/header-params.ts">nullableType</a>({ ...params }) -> void</code>
 
