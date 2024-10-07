@@ -44,6 +44,32 @@ describe('resource headerParams', () => {
     });
   });
 
+  // prism doesn't support array headers
+  test.skip('arrays: only required params', async () => {
+    const responsePromise = client.headerParams.arrays({
+      'X-Required-Int-Array': [0, 0, 0],
+      'X-Required-String-Array': ['string', 'string', 'string'],
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // prism doesn't support array headers
+  test.skip('arrays: required and optional params', async () => {
+    const response = await client.headerParams.arrays({
+      'X-Required-Int-Array': [0, 0, 0],
+      'X-Required-String-Array': ['string', 'string', 'string'],
+      body_argument: 'body_argument',
+      'X-Optional-Int-Array': [0, 0, 0],
+      'X-Optional-String-Array': ['string', 'string', 'string'],
+    });
+  });
+
   test('clientArgument', async () => {
     const responsePromise = client.headerParams.clientArgument({});
     const rawResponse = await responsePromise.asResponse();

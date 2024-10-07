@@ -809,6 +809,7 @@ export namespace Sink {
 
   export import HeaderParams = API.HeaderParams;
   export import HeaderParamAllTypesParams = API.HeaderParamAllTypesParams;
+  export import HeaderParamArraysParams = API.HeaderParamArraysParams;
   export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
   export import HeaderParamNullableTypeParams = API.HeaderParamNullableTypeParams;
 

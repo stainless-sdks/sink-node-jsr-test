@@ -49,6 +49,36 @@ export class HeaderParams extends APIResource {
   }
 
   /**
+   * Endpoint with a `type: null` header param, which we should turn into a string
+   * type.
+   */
+  arrays(params: HeaderParamArraysParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    const {
+      'X-Required-Int-Array': xRequiredIntArray,
+      'X-Required-String-Array': xRequiredStringArray,
+      'X-Optional-Int-Array': xOptionalIntArray,
+      'X-Optional-String-Array': xOptionalStringArray,
+      ...body
+    } = params;
+    return this._client.post('/header_params/arrays', {
+      body,
+      ...options,
+      headers: {
+        Accept: '*/*',
+        'X-Required-Int-Array': xRequiredIntArray.toString(),
+        'X-Required-String-Array': xRequiredStringArray.toString(),
+        ...(xOptionalIntArray?.toString() != null ?
+          { 'X-Optional-Int-Array': xOptionalIntArray?.toString() }
+        : undefined),
+        ...(xOptionalStringArray?.toString() != null ?
+          { 'X-Optional-String-Array': xOptionalStringArray?.toString() }
+        : undefined),
+        ...options?.headers,
+      },
+    });
+  }
+
+  /**
    * The `X-Client-Secret` header shouldn't be included in params definitions as it
    * is already sent as a client argument.
    *
@@ -139,6 +169,33 @@ export interface HeaderParamAllTypesParams {
   'X-Optional-String'?: string;
 }
 
+export interface HeaderParamArraysParams {
+  /**
+   * Header param:
+   */
+  'X-Required-Int-Array': Array<number>;
+
+  /**
+   * Header param:
+   */
+  'X-Required-String-Array': Array<string>;
+
+  /**
+   * Body param:
+   */
+  body_argument?: string;
+
+  /**
+   * Header param:
+   */
+  'X-Optional-Int-Array'?: Array<number>;
+
+  /**
+   * Header param:
+   */
+  'X-Optional-String-Array'?: Array<string>;
+}
+
 export interface HeaderParamClientArgumentParams {
   /**
    * Body param:
@@ -165,6 +222,7 @@ export interface HeaderParamNullableTypeParams {
 
 export namespace HeaderParams {
   export import HeaderParamAllTypesParams = HeaderParamsAPI.HeaderParamAllTypesParams;
+  export import HeaderParamArraysParams = HeaderParamsAPI.HeaderParamArraysParams;
   export import HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
   export import HeaderParamNullableTypeParams = HeaderParamsAPI.HeaderParamNullableTypeParams;
 }

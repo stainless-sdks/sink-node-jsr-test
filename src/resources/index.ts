@@ -98,6 +98,7 @@ export {
 } from './files';
 export {
   HeaderParamAllTypesParams,
+  HeaderParamArraysParams,
   HeaderParamClientArgumentParams,
   HeaderParamNullableTypeParams,
   HeaderParams,
