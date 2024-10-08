@@ -58,6 +58,17 @@ export class BodyParams extends APIResource {
   }
 
   /**
+   * An edge case where there are nested sub-properties of the same name with
+   * possible clashes.
+   */
+  duplicateSubproperty(
+    body: BodyParamDuplicateSubpropertyParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
+    return this._client.post('/body_params/with_duplicate_subproperty', { body, ...options });
+  }
+
+  /**
    * Endpoint with a `requestBody` with various enums properties
    */
   enumProperties(body: BodyParamEnumPropertiesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
@@ -483,6 +494,52 @@ export type BodyParamBinaryStringTypeParams = string;
 
 export type BodyParamBinaryTypeParams = string | ArrayBufferView | ArrayBuffer | BlobLike;
 
+export interface BodyParamDuplicateSubpropertyParams {
+  baz?: BodyParamDuplicateSubpropertyParams.Baz;
+
+  foo?: BodyParamDuplicateSubpropertyParams.Foo;
+
+  foo_bar?: BodyParamDuplicateSubpropertyParams.FooBar;
+
+  mapping?: BodyParamDuplicateSubpropertyParams.Mapping;
+
+  mappings?: Array<BodyParamDuplicateSubpropertyParams.Mapping>;
+}
+
+export namespace BodyParamDuplicateSubpropertyParams {
+  export interface Baz {
+    bar?: Baz.Bar;
+  }
+
+  export namespace Baz {
+    export interface Bar {
+      hello?: string;
+    }
+  }
+
+  export interface Foo {
+    bar?: Foo.Bar;
+  }
+
+  export namespace Foo {
+    export interface Bar {
+      hello?: string;
+    }
+  }
+
+  export interface FooBar {
+    hello?: string;
+  }
+
+  export interface Mapping {
+    hello?: string;
+  }
+
+  export interface Mapping {
+    hello?: string;
+  }
+}
+
 export interface BodyParamEnumPropertiesParams {
   code?: 1 | 2;
 
@@ -782,6 +839,7 @@ export namespace BodyParams {
   export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
   export import BodyParamBinaryStringTypeParams = BodyParamsAPI.BodyParamBinaryStringTypeParams;
   export import BodyParamBinaryTypeParams = BodyParamsAPI.BodyParamBinaryTypeParams;
+  export import BodyParamDuplicateSubpropertyParams = BodyParamsAPI.BodyParamDuplicateSubpropertyParams;
   export import BodyParamEnumPropertiesParams = BodyParamsAPI.BodyParamEnumPropertiesParams;
   export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
   export import BodyParamNullTypeParams = BodyParamsAPI.BodyParamNullTypeParams;

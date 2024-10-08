@@ -47,6 +47,17 @@ describe('resource bodyParams', () => {
     );
   });
 
+  test('duplicateSubproperty', async () => {
+    const responsePromise = client.bodyParams.duplicateSubproperty({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
   test('enumProperties', async () => {
     const responsePromise = client.bodyParams.enumProperties({});
     const rawResponse = await responsePromise.asResponse();
