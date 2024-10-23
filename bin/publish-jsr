@@ -8,5 +8,4 @@ yarn build
 # Navigate to the dist directory
 cd dist
 
-# Publish with the appropriate tag
-deno publish --allow-slow-types
+npx jsr publish --allow-slow-types ${JSR_TOKEN:+"--token=$JSR_TOKEN"}

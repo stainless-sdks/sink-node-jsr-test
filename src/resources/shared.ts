@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import * as Core from '../core'
+import * as Shared from './shared';
 import { FakePage } from '../pagination';
 
 export interface BasicSharedModelObject {
@@ -11,21 +13,7 @@ export interface BasicSharedModelObject {
 /**
  * This is my description for the Currency enum
  */
-export type Currency =
-  | 'USD'
-  | 'GBP'
-  | 'PAB'
-  | 'AED'
-  | 'AFN'
-  | 'ALL'
-  | 'AMD'
-  | 'ANG'
-  | 'AOA'
-  | 'ARS'
-  | 'AUD'
-  | 'AWG'
-  | 'AZN'
-  | 'BAM';
+export type Currency = 'USD' | 'GBP' | 'PAB' | 'AED' | 'AFN' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM'
 
 export interface ObjectWithChildRef {
   bar?: SimpleObject;
@@ -134,6 +122,7 @@ export interface SimpleObject {
   bar: number;
 }
 
-export type SimpleObjectAlias = SimpleObject;
+export type SimpleObjectAlias = SimpleObject
 
-export class SimpleObjectsFakePage extends FakePage<SimpleObject> {}
+export class SimpleObjectsFakePage extends FakePage<SimpleObject> {
+}

@@ -1,7 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../../../resource';
+import { isRequestOptions } from '../../../../core';
+import { APIPromise } from '../../../../core';
 import * as Core from '../../../../core';
+import { LevelThree } from './level-three';
 import * as LevelTwoAPI from './level-two';
 import * as CardsAPI from '../../../cards';
 import * as LevelThreeAPI from './level-three';

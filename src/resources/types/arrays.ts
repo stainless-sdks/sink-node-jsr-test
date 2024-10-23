@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
+import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as ArraysAPI from './arrays';
 
@@ -17,20 +18,13 @@ export class Arrays extends APIResource {
    * Endpoint with a request schema that has a property that points to an array
    * model.
    */
-  nestedInParams(body?: ArrayNestedInParamsParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  nestedInParams(options?: Core.RequestOptions): Core.APIPromise<void>;
-  nestedInParams(
-    body: ArrayNestedInParamsParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  nestedInParams(body?: ArrayNestedInParamsParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  nestedInParams(options?: Core.RequestOptions): Core.APIPromise<void>
+  nestedInParams(body: ArrayNestedInParamsParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(body)) {
       return this.nestedInParams({}, body);
     }
-    return this._client.post('/types/array/model_nested_in_params', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/types/array/model_nested_in_params', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
@@ -41,7 +35,7 @@ export class Arrays extends APIResource {
   }
 }
 
-export type ArrayObjectItems = Array<ArrayObjectItems.ArrayObjectItemItem>;
+export type ArrayObjectItems = Array<ArrayObjectItems.ArrayObjectItemItem>
 
 export namespace ArrayObjectItems {
   export interface ArrayObjectItemItem {
@@ -49,9 +43,9 @@ export namespace ArrayObjectItems {
   }
 }
 
-export type ArrayFloatItemsResponse = Array<number>;
+export type ArrayFloatItemsResponse = Array<number>
 
-export type ArrayObjectItemsResponse = Array<ArrayObjectItemsResponse.ArrayObjectItemsResponseItem>;
+export type ArrayObjectItemsResponse = Array<ArrayObjectItemsResponse.ArrayObjectItemsResponseItem>
 
 export namespace ArrayObjectItemsResponse {
   export interface ArrayObjectItemsResponseItem {

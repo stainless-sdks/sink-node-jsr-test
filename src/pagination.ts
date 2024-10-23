@@ -1,6 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { AbstractPage, Response, APIClient, FinalRequestOptions, PageInfo } from './core';
+import { AbstractPage, Response, APIClient, FinalRequestOptions, coerceInteger, coerceFloat, coerceBoolean, ensurePresent, PageInfo } from './core';
+import { type Data, type ObjectParam, type ObjectProp } from './resources/stainless-page-resource';
+import * as Core from './core';
 import * as Shared from './resources/shared';
 
 export interface PageCursorResponse<Item> {
@@ -18,12 +20,7 @@ export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorRe
 
   cursor: string | null;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -45,15 +42,15 @@ export class PageCursor<Item> extends AbstractPage<Item> implements PageCursorRe
   }
 
   nextPageInfo(): PageInfo | null {
-    const cursor = this.cursor;
+    const cursor = this.cursor
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        cursor: cursor,
-      },
+        cursor: cursor
+      }
     };
   }
 }
@@ -77,22 +74,14 @@ export interface PageCursorWithReverseParams {
   after_id?: string;
 }
 
-export class PageCursorWithReverse<Item>
-  extends AbstractPage<Item>
-  implements PageCursorWithReverseResponse<Item>
-{
+export class PageCursorWithReverse<Item> extends AbstractPage<Item> implements PageCursorWithReverseResponse<Item> {
   data: Array<Item>;
 
   first_id: string;
 
   last_id: string;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorWithReverseResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorWithReverseResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -117,27 +106,27 @@ export class PageCursorWithReverse<Item>
   nextPageInfo(): PageInfo | null {
     if ((this.options.query as Record<string, unknown>)?.['before_id']) {
       // in reverse
-      const firstId = this.first_id;
+      const firstId = this.first_id
       if (!firstId) {
         return null;
       }
 
       return {
         params: {
-          before_id: firstId,
-        },
+          before_id: firstId
+        }
       };
     }
 
-    const cursor = this.last_id;
+    const cursor = this.last_id
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        after_id: cursor,
-      },
+        after_id: cursor
+      }
     };
   }
 }
@@ -150,20 +139,12 @@ export interface PageCursorFromHeadersParams {
   cursor?: string;
 }
 
-export class PageCursorFromHeaders<Item>
-  extends AbstractPage<Item>
-  implements PageCursorFromHeadersResponse<Item>
-{
+export class PageCursorFromHeaders<Item> extends AbstractPage<Item> implements PageCursorFromHeadersResponse<Item> {
   data: Array<Item>;
 
   my_cursor: string | null | null;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorFromHeadersResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorFromHeadersResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -185,15 +166,15 @@ export class PageCursorFromHeaders<Item>
   }
 
   nextPageInfo(): PageInfo | null {
-    const cursor = this.my_cursor;
+    const cursor = this.my_cursor
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        cursor: cursor,
-      },
+        cursor: cursor
+      }
     };
   }
 }
@@ -209,12 +190,7 @@ export class PageCursorTopLevelArray<Item> extends AbstractPage<Item> {
 
   my_cursor: string | null | null;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorTopLevelArrayResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorTopLevelArrayResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body || [];
@@ -236,15 +212,15 @@ export class PageCursorTopLevelArray<Item> extends AbstractPage<Item> {
   }
 
   nextPageInfo(): PageInfo | null {
-    const cursor = this.my_cursor;
+    const cursor = this.my_cursor
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        cursor: cursor,
-      },
+        cursor: cursor
+      }
     };
   }
 }
@@ -259,20 +235,12 @@ export interface PageCursorSharedRefParams {
   cursor?: string;
 }
 
-export class PageCursorSharedRef<Item>
-  extends AbstractPage<Item>
-  implements PageCursorSharedRefResponse<Item>
-{
+export class PageCursorSharedRef<Item> extends AbstractPage<Item> implements PageCursorSharedRefResponse<Item> {
   data: Array<Item>;
 
   pagination: Shared.PageCursorSharedRefPagination;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorSharedRefResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorSharedRefResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -294,15 +262,15 @@ export class PageCursorSharedRef<Item>
   }
 
   nextPageInfo(): PageInfo | null {
-    const cursor = this.pagination?.cursor;
+    const cursor = this.pagination?.cursor
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        cursor: cursor,
-      },
+        cursor: cursor
+      }
     };
   }
 }
@@ -333,22 +301,14 @@ export namespace PageCursorNestedObjectRefParams {
   }
 }
 
-export class PageCursorNestedObjectRef<Item>
-  extends AbstractPage<Item>
-  implements PageCursorNestedObjectRefResponse<Item>
-{
+export class PageCursorNestedObjectRef<Item> extends AbstractPage<Item> implements PageCursorNestedObjectRefResponse<Item> {
   data: Array<Item>;
 
   nested_object_cursor: string | null;
 
   object_prop: PageCursorNestedObjectRefResponse.ObjectProp;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorNestedObjectRefResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorNestedObjectRefResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -371,15 +331,15 @@ export class PageCursorNestedObjectRef<Item>
   }
 
   nextPageInfo(): PageInfo | null {
-    const cursor = this.nested_object_cursor;
+    const cursor = this.nested_object_cursor
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        cursor: cursor,
-      },
+        cursor: cursor
+      }
     };
   }
 }
@@ -406,22 +366,14 @@ export interface PageCursorNestedItemsParams {
   cursor?: string;
 }
 
-export class PageCursorNestedItems<Item>
-  extends AbstractPage<Item>
-  implements PageCursorNestedItemsResponse<Item>
-{
+export class PageCursorNestedItems<Item> extends AbstractPage<Item> implements PageCursorNestedItemsResponse<Item> {
   data: PageCursorNestedItemsResponse.Data<Item>;
 
   cursor: string | null;
 
   object_prop: PageCursorNestedItemsResponse.ObjectProp;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorNestedItemsResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorNestedItemsResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || {};
@@ -444,15 +396,15 @@ export class PageCursorNestedItems<Item>
   }
 
   nextPageInfo(): PageInfo | null {
-    const cursor = this.cursor;
+    const cursor = this.cursor
     if (!cursor) {
       return null;
     }
 
     return {
       params: {
-        cursor: cursor,
-      },
+        cursor: cursor
+      }
     };
   }
 }
@@ -478,12 +430,7 @@ export class PagePageNumber<Item> extends AbstractPage<Item> implements PagePage
 
   last_page: number;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PagePageNumberResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PagePageNumberResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -506,7 +453,7 @@ export class PagePageNumber<Item> extends AbstractPage<Item> implements PagePage
   }
 
   nextPageInfo(): PageInfo | null {
-    const currentPage = this.page;
+    const currentPage = this.page
 
     if (currentPage >= this.last_page) {
       return null;
@@ -528,18 +475,10 @@ export interface PagePageNumberWithoutCurrentPageResponseParams {
   prop_to_not_mess_with_infer_for_other_pages?: boolean;
 }
 
-export class PagePageNumberWithoutCurrentPageResponse<Item>
-  extends AbstractPage<Item>
-  implements PagePageNumberWithoutCurrentPageResponseResponse<Item>
-{
+export class PagePageNumberWithoutCurrentPageResponse<Item> extends AbstractPage<Item> implements PagePageNumberWithoutCurrentPageResponseResponse<Item> {
   data: Array<Item>;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PagePageNumberWithoutCurrentPageResponseResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PagePageNumberWithoutCurrentPageResponseResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -581,22 +520,14 @@ export interface PageOffsetTotalCountParams {
   offset?: number;
 }
 
-export class PageOffsetTotalCount<Item>
-  extends AbstractPage<Item>
-  implements PageOffsetTotalCountResponse<Item>
-{
+export class PageOffsetTotalCount<Item> extends AbstractPage<Item> implements PageOffsetTotalCountResponse<Item> {
   data: Array<Item>;
 
   total_count: number;
 
   offset: number;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageOffsetTotalCountResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageOffsetTotalCountResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -633,10 +564,10 @@ export class PageOffsetTotalCount<Item>
     }
 
     if (currentCount < totalCount) {
-      return { params: { offset: currentCount } };
+      return { params: { offset: currentCount } }
     }
 
-    return null;
+    return null
   }
 }
 
@@ -657,12 +588,7 @@ export class PageOffset<Item> extends AbstractPage<Item> implements PageOffsetRe
 
   offset: number;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageOffsetResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageOffsetResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -706,18 +632,10 @@ export interface PageOffsetNoStartFieldParams {
   offset?: number;
 }
 
-export class PageOffsetNoStartField<Item>
-  extends AbstractPage<Item>
-  implements PageOffsetNoStartFieldResponse<Item>
-{
+export class PageOffsetNoStartField<Item> extends AbstractPage<Item> implements PageOffsetNoStartFieldResponse<Item> {
   data: Array<Item>;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageOffsetNoStartFieldResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageOffsetNoStartFieldResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -767,12 +685,7 @@ export class PageCursorURL<Item> extends AbstractPage<Item> implements PageCurso
 
   next_page: string;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorURLResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorURLResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -794,7 +707,7 @@ export class PageCursorURL<Item> extends AbstractPage<Item> implements PageCurso
   }
 
   nextPageInfo(): PageInfo | null {
-    const url = this.next_page;
+    const url = this.next_page
     if (!url) return null;
 
     return { url: new URL(url) };
@@ -809,18 +722,10 @@ export interface PageCursorIDParams {
   next_id?: string;
 }
 
-export class PageCursorID<Item extends { id: string }>
-  extends AbstractPage<Item>
-  implements PageCursorIDResponse<Item>
-{
+export class PageCursorID<Item extends { id: string }> extends AbstractPage<Item> implements PageCursorIDResponse<Item> {
   data: Array<Item>;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: PageCursorIDResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: PageCursorIDResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.data = body.data || [];
@@ -846,9 +751,9 @@ export class PageCursorID<Item extends { id: string }>
       return null;
     }
 
-    const id = data[data.length - 1]?.id;
+    const id = data[data.length - 1]?.id
     if (!id) {
-      return null;
+      return null
     }
 
     return { params: { next_id: id } };
@@ -864,12 +769,7 @@ export interface FakePageParams {
 export class FakePage<Item> extends AbstractPage<Item> {
   items: Array<Item>;
 
-  constructor(
-    client: APIClient,
-    response: Response,
-    body: FakePageResponse<Item>,
-    options: FinalRequestOptions,
-  ) {
+  constructor(client: APIClient, response: Response, body: FakePageResponse<Item>, options: FinalRequestOptions) {
     super(client, response, body, options);
 
     this.items = body || [];

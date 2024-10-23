@@ -2,25 +2,20 @@
 
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
+import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as PageNumberAPI from './page-number';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPagePageNumber } from '../body-params/body-params';
-import { type PagePageNumberParams } from '../../pagination';
+import { PagePageNumber, type PagePageNumberParams } from '../../pagination';
 
 export class PageNumber extends APIResource {
   /**
    * Test case for page_number pagination
    */
-  list(
-    query?: PageNumberListParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>;
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>;
-  list(
-    query: PageNumberListParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel> {
+  list(query?: PageNumberListParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>
+  list(query: PageNumberListParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -30,17 +25,9 @@ export class PageNumber extends APIResource {
   /**
    * Test case for page_number pagination
    */
-  listWithoutCurrentPageResponse(
-    query?: PageNumberListWithoutCurrentPageResponseParams,
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>;
-  listWithoutCurrentPageResponse(
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>;
-  listWithoutCurrentPageResponse(
-    query: PageNumberListWithoutCurrentPageResponseParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel> {
+  listWithoutCurrentPageResponse(query?: PageNumberListWithoutCurrentPageResponseParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>
+  listWithoutCurrentPageResponse(options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel>
+  listWithoutCurrentPageResponse(query: PageNumberListWithoutCurrentPageResponseParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.PagePromise<MyModelsPagePageNumber, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.listWithoutCurrentPageResponse({}, query);
     }
@@ -48,13 +35,15 @@ export class PageNumber extends APIResource {
   }
 }
 
-export interface PageNumberListParams extends PagePageNumberParams {}
+export interface PageNumberListParams extends PagePageNumberParams {
+}
 
-export interface PageNumberListWithoutCurrentPageResponseParams extends PagePageNumberParams {}
+export interface PageNumberListWithoutCurrentPageResponseParams extends PagePageNumberParams {
+}
 
 export namespace PageNumber {
   export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
   export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
 }
 
-export { MyModelsPagePageNumber };
+export { MyModelsPagePageNumber }

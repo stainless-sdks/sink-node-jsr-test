@@ -2,6 +2,7 @@
 
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
+import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as EEOCAPI from './eeoc';
 import { PageCursor, type PageCursorParams } from '../../pagination';
@@ -10,12 +11,9 @@ export class EEOCResource extends APIResource {
   /**
    * Test case for paginated initialism model
    */
-  list(query?: EEOCListParams, options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC>;
-  list(options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC>;
-  list(
-    query: EEOCListParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.PagePromise<EEOCsPageCursor, EEOC> {
+  list(query?: EEOCListParams, options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC>
+  list(options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC>
+  list(query: EEOCListParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.PagePromise<EEOCsPageCursor, EEOC> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -23,7 +21,8 @@ export class EEOCResource extends APIResource {
   }
 }
 
-export class EEOCsPageCursor extends PageCursor<EEOC> {}
+export class EEOCsPageCursor extends PageCursor<EEOC> {
+}
 
 export interface EEOC {
   foo?: string;

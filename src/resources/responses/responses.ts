@@ -1,7 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
+import { APIPromise } from '../../core';
 import * as Core from '../../core';
+import { UnionTypes } from './union-types';
 import * as ResponsesAPI from './responses';
 import * as Shared from '../shared';
 import * as BodyParamsAPI from '../body-params/body-params';
@@ -22,9 +25,7 @@ export class Responses extends APIResource {
    * Endpoint with a top level additionalProperties response where the items type
    * points to an object defined as a model in the config.
    */
-  additionalPropertiesNestedModelReference(
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponseAdditionalPropertiesNestedModelReferenceResponse> {
+  additionalPropertiesNestedModelReference(options?: Core.RequestOptions): Core.APIPromise<ResponseAdditionalPropertiesNestedModelReferenceResponse> {
     return this._client.post('/responses/additional_properties_nested_model_reference', options);
   }
 
@@ -53,9 +54,7 @@ export class Responses extends APIResource {
   /**
    * Endpoint that returns an array of objects with union properties.
    */
-  arrayObjectWithUnionProperties(
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponseArrayObjectWithUnionPropertiesResponse> {
+  arrayObjectWithUnionProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseArrayObjectWithUnionPropertiesResponse> {
     return this._client.get('/responses/array/object_with_union_properties', options);
   }
 
@@ -77,10 +76,7 @@ export class Responses extends APIResource {
    * Endpoint with an empty response.
    */
   emptyResponse(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/responses/empty', {
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/responses/empty', { ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
@@ -122,9 +118,7 @@ export class Responses extends APIResource {
    * Endpoint with an object response that contains an `additionalProperties`
    * property with a nested schema.
    */
-  objectWithAdditionalPropertiesProp(
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponseObjectWithAdditionalPropertiesPropResponse> {
+  objectWithAdditionalPropertiesProp(options?: Core.RequestOptions): Core.APIPromise<ResponseObjectWithAdditionalPropertiesPropResponse> {
     return this._client.post('/responses/object_with_additional_properties_prop', options);
   }
 
@@ -132,9 +126,7 @@ export class Responses extends APIResource {
    * Endpoint with an object response that contains a union property with multiple
    * nested schemas.
    */
-  objectWithHeavilyNestedUnion(
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponseObjectWithHeavilyNestedUnionResponse> {
+  objectWithHeavilyNestedUnion(options?: Core.RequestOptions): Core.APIPromise<ResponseObjectWithHeavilyNestedUnionResponse> {
     return this._client.post('/responses/object_with_heavily_nested_union', options);
   }
 
@@ -148,9 +140,7 @@ export class Responses extends APIResource {
   /**
    * Endpoint with a response that only has `readOnly` properties
    */
-  onlyReadOnlyProperties(
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponseOnlyReadOnlyPropertiesResponse> {
+  onlyReadOnlyProperties(options?: Core.RequestOptions): Core.APIPromise<ResponseOnlyReadOnlyPropertiesResponse> {
     return this._client.get('/responses/only_read_only_properties', options);
   }
 
@@ -166,10 +156,7 @@ export class Responses extends APIResource {
    * Endpoint with a top level string response.
    */
   stringResponse(options?: Core.RequestOptions): Core.APIPromise<string> {
-    return this._client.post('/responses/string', {
-      ...options,
-      headers: { Accept: 'application/json', ...options?.headers },
-    });
+    return this._client.post('/responses/string', { ...options, headers: { Accept: 'application/json', ...options?.headers } });
   }
 
   /**
@@ -264,11 +251,11 @@ export interface SimpleAllof {
   kind: 'VIRTUAL' | 'PHYSICAL';
 }
 
-export type UnknownObject = unknown;
+export type UnknownObject = unknown
 
-export type ResponseAdditionalPropertiesResponse = Record<string, unknown>;
+export type ResponseAdditionalPropertiesResponse = Record<string, unknown>
 
-export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParamsAPI.MyModel>;
+export type ResponseAdditionalPropertiesNestedModelReferenceResponse = Record<string, BodyParamsAPI.MyModel>
 
 export interface ResponseAllofCrossResourceResponse extends SimpleAllof, ResponsesAllofCrossObject {
   baz?: string;
@@ -280,13 +267,13 @@ export interface ResponseAllofSimpleResponse {
   foo?: string;
 }
 
-export type ResponseArrayObjectWithUnionPropertiesResponse = Array<ObjectWithUnionProperties>;
+export type ResponseArrayObjectWithUnionPropertiesResponse = Array<ObjectWithUnionProperties>
 
-export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>;
+export type ResponseArrayResponseResponse = Array<Shared.SimpleObject>
 
-export type ResponseBooleanResponseResponse = boolean;
+export type ResponseBooleanResponseResponse = boolean
 
-export type ResponseIntegerResponseResponse = number;
+export type ResponseIntegerResponseResponse = number
 
 export interface ResponseMissingRequiredResponse {
   bar: boolean | null;
@@ -326,7 +313,8 @@ export interface ResponseObjectAllPropertiesResponse {
   s: string;
 }
 
-export interface ResponseObjectNoPropertiesResponse {}
+export interface ResponseObjectNoPropertiesResponse {
+}
 
 export interface ResponseObjectWithAdditionalPropertiesPropResponse {
   foo: Record<string, ResponseObjectWithAdditionalPropertiesPropResponse.Foo>;
@@ -339,9 +327,7 @@ export namespace ResponseObjectWithAdditionalPropertiesPropResponse {
 }
 
 export interface ResponseObjectWithHeavilyNestedUnionResponse {
-  union_prop:
-    | ResponseObjectWithHeavilyNestedUnionResponse.UnionPropVariant1
-    | ResponseObjectWithHeavilyNestedUnionResponse.UnionPropVariant2;
+  union_prop: ResponseObjectWithHeavilyNestedUnionResponse.UnionPropVariant1 | ResponseObjectWithHeavilyNestedUnionResponse.UnionPropVariant2;
 }
 
 export namespace ResponseObjectWithHeavilyNestedUnionResponse {
@@ -375,7 +361,7 @@ export interface ResponseOnlyReadOnlyPropertiesResponse {
   read_only_property: string;
 }
 
-export type ResponseStringResponseResponse = string;
+export type ResponseStringResponseResponse = string
 
 export namespace Responses {
   export import ModelFromNestedPath = ResponsesAPI.ModelFromNestedPath;

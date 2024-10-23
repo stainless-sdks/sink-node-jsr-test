@@ -1,6 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as MethodConfigAPI from './method-config';
 import * as CardsAPI from './cards';
@@ -12,91 +14,63 @@ export class MethodConfig extends APIResource {
    *
    * Only applies to cards of type `PHYSICAL` [beta].
    */
-  shouldNotShowUpInAPIDocs(
-    cardToken: string,
-    body: MethodConfigShouldNotShowUpInAPIDocsParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CardsAPI.Card> {
+  shouldNotShowUpInAPIDocs(cardToken: string, body: MethodConfigShouldNotShowUpInAPIDocsParams, options?: Core.RequestOptions): Core.APIPromise<CardsAPI.Card> {
     return this._client.post(`/cards/${cardToken}/reissue`, { body, ...options });
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsAll(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsAllResponse> {
+  skippedTestsAll(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsAllResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsGo(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsGoResponse> {
+  skippedTestsGo(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsGoResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsJava(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsJavaResponse> {
+  skippedTestsJava(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsJavaResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsKotlin(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsKotlinResponse> {
+  skippedTestsKotlin(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsKotlinResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsNode(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsNodeResponse> {
+  skippedTestsNode(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsNodeResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsNodeAndPython(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsNodeAndPythonResponse> {
+  skippedTestsNodeAndPython(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsNodeAndPythonResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsPython(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsPythonResponse> {
+  skippedTestsPython(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsPythonResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 
   /**
    * Used to test skipping generated unit tests.
    */
-  skippedTestsRuby(
-    id: string,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MethodConfigSkippedTestsRubyResponse> {
+  skippedTestsRuby(id: string, options?: Core.RequestOptions): Core.APIPromise<MethodConfigSkippedTestsRubyResponse> {
     return this._client.get(`/method_config/skipped_tests/${id}`, options);
   }
 }

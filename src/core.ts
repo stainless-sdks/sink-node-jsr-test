@@ -41,16 +41,16 @@ async function defaultParseResponse<T>(props: APIResponseProps): Promise<T> {
   const { response } = props;
   if (props.options.stream) {
     debug('response', response.status, response.url, response.headers, response.body);
-
+  
     // Note: there is an invariant here that isn't represented in the type system
     // that if you set `stream: true` the response type must also be `Stream<T>`
-
+  
     if (props.options.__streamClass) {
       return props.options.__streamClass.fromSSEResponse(response, props.controller) as any;
     }
-
+  
     return Stream.fromSSEResponse(response, props.controller) as any;
-  }
+  };
 
   // fetch refuses to read the body when the status code is 204.
   if (response.status === 204) {
@@ -368,11 +368,9 @@ export abstract class APIClient {
     // Don't set the retry count header if it was already set or removed through default headers or by the
     // caller. We check `defaultHeaders` and `headers`, which can contain nulls, instead of `reqHeaders` to
     // account for the removal case.
-    if (
-      getHeader(defaultHeaders, 'x-stainless-retry-count') === undefined &&
-      getHeader(headers, 'x-stainless-retry-count') === undefined
-    ) {
-      reqHeaders['x-stainless-retry-count'] = String(retryCount);
+    if (getHeader(defaultHeaders, 'x-stainless-retry-count') === undefined &&
+        getHeader(headers, 'x-stainless-retry-count') === undefined) {
+      reqHeaders['x-stainless-retry-count'] = String(retryCount)
     }
 
     this.validateHeaders(reqHeaders, headers);
@@ -783,14 +781,14 @@ export type RequestOptions<
   signal?: AbortSignal | undefined | null;
   idempotencyKey?: string;
 
-  stringOpt?: string | undefined;
-  booleanOpt?: boolean | undefined;
-  integerOpt?: number | undefined;
-  numberOpt?: number | undefined;
+stringOpt?: string | undefined;
+booleanOpt?: boolean | undefined;
+integerOpt?: number | undefined;
+numberOpt?: number | undefined;
 
   __binaryRequest?: boolean | undefined;
   __binaryResponse?: boolean | undefined;
-  __streamClass?: typeof Stream;
+__streamClass?: typeof Stream
 };
 
 // This is required so that we can determine if a given object matches the RequestOptions
@@ -810,14 +808,14 @@ const requestOptionsKeys: KeysEnum<RequestOptions> = {
   signal: true,
   idempotencyKey: true,
 
-  stringOpt: true,
-  booleanOpt: true,
-  integerOpt: true,
-  numberOpt: true,
+stringOpt: true,
+booleanOpt: true,
+integerOpt: true,
+numberOpt: true,
 
   __binaryRequest: true,
   __binaryResponse: true,
-  __streamClass: true,
+__streamClass: true
 };
 
 export const isRequestOptions = (obj: unknown): obj is RequestOptions => {
@@ -1031,7 +1029,8 @@ export const castToError = (err: any): Error => {
 };
 
 export const ensurePresent = <T>(value: T | null | undefined): T => {
-  if (value == null) throw new SinkError(`Expected a value to be given but received ${value} instead.`);
+  if (value == null)
+    throw new SinkError(`Expected a value to be given but received ${value} instead.`);
   return value;
 };
 
@@ -1170,7 +1169,7 @@ export const getRequiredHeader = (headers: HeadersLike | Headers, header: string
     throw new Error(`Could not find ${header} header`);
   }
   return foundHeader;
-};
+}
 
 export const getHeader = (headers: HeadersLike | Headers, header: string): string | undefined => {
   const lowerCasedHeader = header.toLowerCase();

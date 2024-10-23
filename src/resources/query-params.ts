@@ -2,6 +2,7 @@
 
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
+import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as QueryParamsAPI from './query-params';
 
@@ -9,156 +10,97 @@ export class QueryParams extends APIResource {
   /**
    * Endpoint with allOf query params
    */
-  allOf(query?: QueryParamAllOfParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  allOf(options?: Core.RequestOptions): Core.APIPromise<void>;
-  allOf(
-    query: QueryParamAllOfParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  allOf(query?: QueryParamAllOfParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  allOf(options?: Core.RequestOptions): Core.APIPromise<void>
+  allOf(query: QueryParamAllOfParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.allOf({}, query);
     }
-    return this._client.get('/query_params/allOf', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/allOf', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with anyOf query params
    */
-  anyOf(query?: QueryParamAnyOfParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  anyOf(options?: Core.RequestOptions): Core.APIPromise<void>;
-  anyOf(
-    query: QueryParamAnyOfParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  anyOf(query?: QueryParamAnyOfParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  anyOf(options?: Core.RequestOptions): Core.APIPromise<void>
+  anyOf(query: QueryParamAnyOfParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.anyOf({}, query);
     }
-    return this._client.get('/query_params/anyOf', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/anyOf', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with anyOf query param that's string or array of strings
    */
-  anyOfStringOrArray(
-    query?: QueryParamAnyOfStringOrArrayParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void>;
-  anyOfStringOrArray(options?: Core.RequestOptions): Core.APIPromise<void>;
-  anyOfStringOrArray(
-    query: QueryParamAnyOfStringOrArrayParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  anyOfStringOrArray(query?: QueryParamAnyOfStringOrArrayParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  anyOfStringOrArray(options?: Core.RequestOptions): Core.APIPromise<void>
+  anyOfStringOrArray(query: QueryParamAnyOfStringOrArrayParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.anyOfStringOrArray({}, query);
     }
-    return this._client.get('/query_params/anyOfStringOrArray', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/anyOfStringOrArray', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with array query params
    */
-  array(query?: QueryParamArrayParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  array(options?: Core.RequestOptions): Core.APIPromise<void>;
-  array(
-    query: QueryParamArrayParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  array(query?: QueryParamArrayParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  array(options?: Core.RequestOptions): Core.APIPromise<void>
+  array(query: QueryParamArrayParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.array({}, query);
     }
-    return this._client.get('/query_params/array', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/array', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with enum query params
    */
-  enum(query?: QueryParamEnumParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  enum(options?: Core.RequestOptions): Core.APIPromise<void>;
-  enum(
-    query: QueryParamEnumParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  enum(query?: QueryParamEnumParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  enum(options?: Core.RequestOptions): Core.APIPromise<void>
+  enum(query: QueryParamEnumParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.enum({}, query);
     }
-    return this._client.get('/query_params/enum', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/enum', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with object query params
    */
-  object(query?: QueryParamObjectParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  object(options?: Core.RequestOptions): Core.APIPromise<void>;
-  object(
-    query: QueryParamObjectParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  object(query?: QueryParamObjectParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  object(options?: Core.RequestOptions): Core.APIPromise<void>
+  object(query: QueryParamObjectParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.object({}, query);
     }
-    return this._client.get('/query_params/object', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/object', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with oneOf query params
    */
-  oneOf(query?: QueryParamOneOfParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  oneOf(options?: Core.RequestOptions): Core.APIPromise<void>;
-  oneOf(
-    query: QueryParamOneOfParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  oneOf(query?: QueryParamOneOfParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  oneOf(options?: Core.RequestOptions): Core.APIPromise<void>
+  oneOf(query: QueryParamOneOfParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.oneOf({}, query);
     }
-    return this._client.get('/query_params/oneOf', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/oneOf', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a set of primitive type query params
    */
-  primitives(query?: QueryParamPrimitivesParams, options?: Core.RequestOptions): Core.APIPromise<void>;
-  primitives(options?: Core.RequestOptions): Core.APIPromise<void>;
-  primitives(
-    query: QueryParamPrimitivesParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  primitives(query?: QueryParamPrimitivesParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  primitives(options?: Core.RequestOptions): Core.APIPromise<void>
+  primitives(query: QueryParamPrimitivesParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(query)) {
       return this.primitives({}, query);
     }
-    return this._client.get('/query_params/primitives', {
-      query,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.get('/query_params/primitives', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 }
 

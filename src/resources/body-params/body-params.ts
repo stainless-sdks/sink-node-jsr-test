@@ -2,26 +2,16 @@
 
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
+import { APIPromise } from '../../core';
 import * as Core from '../../core';
+import { Objects } from './objects';
+import { Unions } from './unions';
 import * as BodyParamsAPI from './body-params';
 import * as Shared from '../shared';
 import * as ObjectsAPI from './objects';
 import * as UnionsAPI from './unions';
 import * as ResponsesAPI from '../responses/responses';
-import {
-  PageCursor,
-  PageCursorFromHeaders,
-  PageCursorNestedItems,
-  PageCursorNestedObjectRef,
-  PageCursorSharedRef,
-  PageCursorTopLevelArray,
-  PageCursorWithReverse,
-  PageOffset,
-  PageOffsetNoStartField,
-  PageOffsetTotalCount,
-  PagePageNumber,
-  PagePageNumberWithoutCurrentPageResponse,
-} from '../../pagination';
+import { PageCursor, PageCursorFromHeaders, PageCursorNestedItems, PageCursorNestedObjectRef, PageCursorSharedRef, PageCursorTopLevelArray, PageCursorWithReverse, PageOffset, PageOffsetNoStartField, PageOffsetTotalCount, PagePageNumber, PagePageNumberWithoutCurrentPageResponse } from '../../pagination';
 import { type BlobLike } from '../../uploads';
 
 export class BodyParams extends APIResource {
@@ -32,16 +22,8 @@ export class BodyParams extends APIResource {
    * Endpoint with a `requestBody` that has an `type: string` schema and content
    * `application/octet-stream` that is defined as a model in the config.
    */
-  binaryStringType(
-    body: BodyParamBinaryStringTypeParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/binary_string_type', {
-      body,
-      ...options,
-      headers: { 'Content-Type': 'application/octet-stream', Accept: '*/*', ...options?.headers },
-      __binaryRequest: true,
-    });
+  binaryStringType(body: BodyParamBinaryStringTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/binary_string_type', { body, ...options, headers: { 'Content-Type': 'application/octet-stream', Accept: '*/*', ...options?.headers }, __binaryRequest: true });
   }
 
   /**
@@ -49,22 +31,14 @@ export class BodyParams extends APIResource {
    * and content `application/octet-stream` that is defined as a model in the config.
    */
   binaryType(body: BodyParamBinaryTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/body_params/binary_type', {
-      body,
-      ...options,
-      headers: { 'Content-Type': 'application/octet-stream', Accept: '*/*', ...options?.headers },
-      __binaryRequest: true,
-    });
+    return this._client.post('/body_params/binary_type', { body, ...options, headers: { 'Content-Type': 'application/octet-stream', Accept: '*/*', ...options?.headers }, __binaryRequest: true });
   }
 
   /**
    * An edge case where there are nested sub-properties of the same name with
    * possible clashes.
    */
-  duplicateSubproperty(
-    body: BodyParamDuplicateSubpropertyParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
+  duplicateSubproperty(body: BodyParamDuplicateSubpropertyParams, options?: Core.RequestOptions): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
     return this._client.post('/body_params/with_duplicate_subproperty', { body, ...options });
   }
 
@@ -72,21 +46,14 @@ export class BodyParams extends APIResource {
    * Endpoint with a `requestBody` with various enums properties
    */
   enumProperties(body: BodyParamEnumPropertiesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/body_params/enum_properties', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/body_params/enum_properties', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Should return a ModelWithNestedModel object with a `properties` field that we
    * can rename in the Stainless config to a prettier name.
    */
-  nestedRequestModels(
-    body: BodyParamNestedRequestModelsParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
+  nestedRequestModels(body: BodyParamNestedRequestModelsParams, options?: Core.RequestOptions): Core.APIPromise<ResponsesAPI.ModelWithNestedModel> {
     return this._client.post('/body_params/with_nested_models', { body, ...options });
   }
 
@@ -95,153 +62,83 @@ export class BodyParams extends APIResource {
    * a model in the config.
    */
   nullType(body: BodyParamNullTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/body_params/null_type', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/body_params/null_type', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with an object `requestBody` that has an array property with `object`
    * items.
    */
-  objectWithArrayOfObjects(
-    body: BodyParamObjectWithArrayOfObjectsParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/object_with_array_of_objects', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  objectWithArrayOfObjects(body: BodyParamObjectWithArrayOfObjectsParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/object_with_array_of_objects', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with an object `requestBody` that has properties with union types.
    */
-  objectWithUnionProperties(
-    body: BodyParamObjectWithUnionPropertiesParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/object_with_union_properties', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  objectWithUnionProperties(body: BodyParamObjectWithUnionPropertiesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/object_with_union_properties', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that only has `readOnly` properties
    */
-  onlyReadOnlyProperties(
-    body: BodyParamOnlyReadOnlyPropertiesParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.patch('/body_params/only_read_only_properties', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  onlyReadOnlyProperties(body: BodyParamOnlyReadOnlyPropertiesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.patch('/body_params/only_read_only_properties', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that has a schema that is defined as a model in
    * the config with "param" in the name.
    */
-  paramInModelNameRef(
-    body: BodyParamParamInModelNameRefParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/param_in_model_name_ref', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  paramInModelNameRef(body: BodyParamParamInModelNameRefParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/param_in_model_name_ref', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that has a property that is defined as a model in
    * the config.
    */
-  propertyModelRef(
-    body: BodyParamPropertyModelRefParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/property_model_ref', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  propertyModelRef(body: BodyParamPropertyModelRefParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/property_model_ref', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that has a property that is a union type of
    * complex types.
    */
-  propertyWithComplexUnion(
-    body: BodyParamPropertyWithComplexUnionParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/property_with_complex_union', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  propertyWithComplexUnion(body: BodyParamPropertyWithComplexUnionParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/property_with_complex_union', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that has a property that is a union type of
    * complex types with a lot of nesting.
    */
-  propertyWithHeavilyNestedComplexUnion(
-    body: BodyParamPropertyWithHeavilyNestedComplexUnionParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/property_with_heavily_nested_complex_union', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  propertyWithHeavilyNestedComplexUnion(body: BodyParamPropertyWithHeavilyNestedComplexUnionParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/property_with_heavily_nested_complex_union', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that sets `readOnly` to `true` on top level
    * properties
    */
-  readOnlyProperties(
-    body: BodyParamReadOnlyPropertiesParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/read_only_properties', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  readOnlyProperties(body: BodyParamReadOnlyPropertiesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/read_only_properties', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that has an `additionalProperties` string schema
    * that is defined as a model in the config.
    */
-  stringMapModelRef(
-    body: BodyParamStringMapModelRefParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/string_map_model_ref', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  stringMapModelRef(body: BodyParamStringMapModelRefParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/string_map_model_ref', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` making use of allOf.
    */
-  topLevelAllOf(
-    body: BodyParamTopLevelAllOfParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BodyParamTopLevelAllOfResponse> {
+  topLevelAllOf(body: BodyParamTopLevelAllOfParams, options?: Core.RequestOptions): Core.APIPromise<BodyParamTopLevelAllOfResponse> {
     return this._client.post('/body_params/top_level_allOf', { body, ...options });
   }
 
@@ -249,24 +146,14 @@ export class BodyParams extends APIResource {
    * Endpoint with a `requestBody` making use of allOf where one of the properties is
    * an object type.
    */
-  topLevelAllOfNestedObject(
-    body: BodyParamTopLevelAllOfNestedObjectParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/top_level_allOf_nested_object', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  topLevelAllOfNestedObject(body: BodyParamTopLevelAllOfNestedObjectParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/top_level_allOf_nested_object', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` pointing to a $ref'd schema that is an `anyOf`.
    */
-  topLevelAnyOfWithRef(
-    body: BodyParamTopLevelAnyOfWithRefParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<Shared.BasicSharedModelObject> {
+  topLevelAnyOfWithRef(body: BodyParamTopLevelAnyOfWithRefParams, options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
     return this._client.post('/body_params/top_level_anyOf_with_ref', { body, ...options });
   }
 
@@ -274,94 +161,52 @@ export class BodyParams extends APIResource {
    * Endpoint with a `requestBody` that is an `array` type.
    */
   topLevelArray(body: BodyParamTopLevelArrayParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/body_params/top_level_array', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/body_params/top_level_array', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that is an `array` type with non-model children.
    */
-  topLevelArrayWithChildren(
-    body: BodyParamTopLevelArrayWithChildrenParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/top_level_array_with_children', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  topLevelArrayWithChildren(body: BodyParamTopLevelArrayWithChildrenParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/top_level_array_with_children', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` that is an `array` type.
    */
-  topLevelArrayWithOtherParams(
-    params: BodyParamTopLevelArrayWithOtherParamsParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  topLevelArrayWithOtherParams(params: BodyParamTopLevelArrayWithOtherParamsParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     const { id, items } = params;
-    return this._client.post('/body_params/top_level_array_with_other_params', {
-      query: { id },
-      body: items,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/body_params/top_level_array_with_other_params', { query: { id }, body: items, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` making use of oneOf but only contains one entry in
    * the union.
    */
-  topLevelOneOfOneEntry(
-    body: BodyParamTopLevelOneOfOneEntryParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/top_level_oneOf_one_entry', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  topLevelOneOfOneEntry(body: BodyParamTopLevelOneOfOneEntryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/top_level_oneOf_one_entry', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * The request body being set to a $ref that is a shared type in the stainless
    * config correctly references it.
    */
-  topLevelSharedType(
-    body?: BodyParamTopLevelSharedTypeParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void>;
-  topLevelSharedType(options?: Core.RequestOptions): Core.APIPromise<void>;
-  topLevelSharedType(
-    body: BodyParamTopLevelSharedTypeParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  topLevelSharedType(body?: BodyParamTopLevelSharedTypeParams, options?: Core.RequestOptions): Core.APIPromise<void>
+  topLevelSharedType(options?: Core.RequestOptions): Core.APIPromise<void>
+  topLevelSharedType(body: BodyParamTopLevelSharedTypeParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<void> {
     if (isRequestOptions(body)) {
       return this.topLevelSharedType({}, body);
     }
-    return this._client.post('/body_params/top_level_shared_type', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/body_params/top_level_shared_type', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a `requestBody` making use of anyOf where the same property is
    * defined in both variants.
    */
-  unionOverlappingProp(
-    body?: BodyParamUnionOverlappingPropParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BodyParamUnionOverlappingPropResponse>;
-  unionOverlappingProp(options?: Core.RequestOptions): Core.APIPromise<BodyParamUnionOverlappingPropResponse>;
-  unionOverlappingProp(
-    body: BodyParamUnionOverlappingPropParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BodyParamUnionOverlappingPropResponse> {
+  unionOverlappingProp(body?: BodyParamUnionOverlappingPropParams, options?: Core.RequestOptions): Core.APIPromise<BodyParamUnionOverlappingPropResponse>
+  unionOverlappingProp(options?: Core.RequestOptions): Core.APIPromise<BodyParamUnionOverlappingPropResponse>
+  unionOverlappingProp(body: BodyParamUnionOverlappingPropParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<BodyParamUnionOverlappingPropResponse> {
     if (isRequestOptions(body)) {
       return this.unionOverlappingProp({}, body);
     }
@@ -373,84 +218,71 @@ export class BodyParams extends APIResource {
    * as a model in the config.
    */
   unknownObject(body: BodyParamUnknownObjectParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/body_params/unknown_object', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+    return this._client.post('/body_params/unknown_object', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with an optional request property that has a default value set.
    */
-  withDefaultBodyParamOptional(
-    params: BodyParamWithDefaultBodyParamOptionalParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    const { my_version_body_param = 'v1.4', ...body } = params;
-    return this._client.post('/body_params/with_default_body_param_optional', {
-      body: { my_version_body_param, ...body },
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  withDefaultBodyParamOptional(params: BodyParamWithDefaultBodyParamOptionalParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    const { my_version_body_param  = 'v1.4', ...body } = params;
+    return this._client.post('/body_params/with_default_body_param_optional', { body: { my_version_body_param, ...body }, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a required request property that has a default value set.
    */
-  withDefaultBodyParamRequired(
-    params: BodyParamWithDefaultBodyParamRequiredParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    const { my_version_body_param = 'v1.4', ...body } = params;
-    return this._client.post('/body_params/with_default_body_param_required', {
-      body: { my_version_body_param, ...body },
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  withDefaultBodyParamRequired(params: BodyParamWithDefaultBodyParamRequiredParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    const { my_version_body_param  = 'v1.4', ...body } = params;
+    return this._client.post('/body_params/with_default_body_param_required', { body: { my_version_body_param, ...body }, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 
   /**
    * Endpoint with a request body that contains a property that points to a model
    * reference.
    */
-  withModelProperty(
-    body: BodyParamWithModelPropertyParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/body_params/with_model_property', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  withModelProperty(body: BodyParamWithModelPropertyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/body_params/with_model_property', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 }
 
-export class MyModelsPageCursor extends PageCursor<MyModel> {}
+export class MyModelsPageCursor extends PageCursor<MyModel> {
+}
 
-export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {}
+export class MyModelsPagePageNumber extends PagePageNumber<MyModel> {
+}
 
-export class MyModelsPagePageNumberWithoutCurrentPageResponse extends PagePageNumberWithoutCurrentPageResponse<MyModel> {}
+export class MyModelsPagePageNumberWithoutCurrentPageResponse extends PagePageNumberWithoutCurrentPageResponse<MyModel> {
+}
 
-export class MyModelsPageCursorNestedObjectRef extends PageCursorNestedObjectRef<MyModel> {}
+export class MyModelsPageCursorNestedObjectRef extends PageCursorNestedObjectRef<MyModel> {
+}
 
-export class MyModelsPageCursorSharedRef extends PageCursorSharedRef<MyModel> {}
+export class MyModelsPageCursorSharedRef extends PageCursorSharedRef<MyModel> {
+}
 
-export class MyModelsPageCursorFromHeaders extends PageCursorFromHeaders<MyModel> {}
+export class MyModelsPageCursorFromHeaders extends PageCursorFromHeaders<MyModel> {
+}
 
-export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyModel> {}
+export class MyModelsPageCursorTopLevelArray extends PageCursorTopLevelArray<MyModel> {
+}
 
-export class MyModelsPageCursorWithReverse extends PageCursorWithReverse<MyModel> {}
+export class MyModelsPageCursorWithReverse extends PageCursorWithReverse<MyModel> {
+}
 
-export class MyModelsPageOffset extends PageOffset<MyModel> {}
+export class MyModelsPageOffset extends PageOffset<MyModel> {
+}
 
-export class MyModelsPageOffsetNoStartField extends PageOffsetNoStartField<MyModel> {}
+export class MyModelsPageOffsetNoStartField extends PageOffsetNoStartField<MyModel> {
+}
 
-export class MyModelsPageOffsetTotalCount extends PageOffsetTotalCount<MyModel> {}
+export class MyModelsPageOffsetTotalCount extends PageOffsetTotalCount<MyModel> {
+}
 
-export class MyModelsPageCursorNestedItems extends PageCursorNestedItems<MyModel> {}
+export class MyModelsPageCursorNestedItems extends PageCursorNestedItems<MyModel> {
+}
 
-export type ModelWithParamInName = Record<string, string>;
+export type ModelWithParamInName = Record<string, string>
 
 export interface MyModel {
   bar?: boolean;
@@ -474,11 +306,11 @@ export namespace NestedRequestModelC {
   }
 }
 
-export type NullTypeModel = null;
+export type NullTypeModel = null
 
-export type StringMapModel = Record<string, string>;
+export type StringMapModel = Record<string, string>
 
-export type UnknownObjectModel = unknown;
+export type UnknownObjectModel = unknown
 
 export interface BodyParamTopLevelAllOfResponse {
   is_foo: boolean;
@@ -490,9 +322,9 @@ export interface BodyParamUnionOverlappingPropResponse {
   foo: string;
 }
 
-export type BodyParamBinaryStringTypeParams = string;
+export type BodyParamBinaryStringTypeParams = string
 
-export type BodyParamBinaryTypeParams = string | ArrayBufferView | ArrayBuffer | BlobLike;
+export type BodyParamBinaryTypeParams = string | ArrayBufferView | ArrayBuffer | BlobLike
 
 export interface BodyParamDuplicateSubpropertyParams {
   baz?: BodyParamDuplicateSubpropertyParams.Baz;
@@ -587,7 +419,8 @@ export namespace BodyParamObjectWithUnionPropertiesParams {
   }
 }
 
-export interface BodyParamOnlyReadOnlyPropertiesParams {}
+export interface BodyParamOnlyReadOnlyPropertiesParams {
+}
 
 export interface BodyParamParamInModelNameRefParams {
   model_ref: ModelWithParamInName;
@@ -607,9 +440,7 @@ export interface BodyParamPropertyWithComplexUnionParams {
   /**
    * This is an object with required properties
    */
-  unions:
-    | BodyParamPropertyWithComplexUnionParams.ObjectWithReadOnlyProperty
-    | BodyParamPropertyWithComplexUnionParams.SimpleObjectWithRequiredProperty;
+  unions: BodyParamPropertyWithComplexUnionParams.ObjectWithReadOnlyProperty | BodyParamPropertyWithComplexUnionParams.SimpleObjectWithRequiredProperty;
 }
 
 export namespace BodyParamPropertyWithComplexUnionParams {
@@ -626,10 +457,7 @@ export namespace BodyParamPropertyWithComplexUnionParams {
 }
 
 export interface BodyParamPropertyWithHeavilyNestedComplexUnionParams {
-  filters?: Array<
-    | BodyParamPropertyWithHeavilyNestedComplexUnionParams.Variant1
-    | BodyParamPropertyWithHeavilyNestedComplexUnionParams.Variant2
-  >;
+  filters?: Array<BodyParamPropertyWithHeavilyNestedComplexUnionParams.Variant1 | BodyParamPropertyWithHeavilyNestedComplexUnionParams.Variant2>;
 }
 
 export namespace BodyParamPropertyWithHeavilyNestedComplexUnionParams {
@@ -736,9 +564,7 @@ export namespace BodyParamTopLevelAllOfNestedObjectParams {
   }
 }
 
-export type BodyParamTopLevelAnyOfWithRefParams =
-  | BodyParamTopLevelAnyOfWithRefParams.ObjectWithRequiredEnum
-  | BodyParamTopLevelAnyOfWithRefParams.SimpleObjectWithRequiredProperty;
+export type BodyParamTopLevelAnyOfWithRefParams = BodyParamTopLevelAnyOfWithRefParams.ObjectWithRequiredEnum | BodyParamTopLevelAnyOfWithRefParams.SimpleObjectWithRequiredProperty
 
 export namespace BodyParamTopLevelAnyOfWithRefParams {
   export interface ObjectWithRequiredEnum {
@@ -750,9 +576,9 @@ export namespace BodyParamTopLevelAnyOfWithRefParams {
   }
 }
 
-export type BodyParamTopLevelArrayParams = Array<Shared.BasicSharedModelObject>;
+export type BodyParamTopLevelArrayParams = Array<Shared.BasicSharedModelObject>
 
-export type BodyParamTopLevelArrayWithChildrenParams = Array<BodyParamTopLevelArrayWithChildrenParams.Item>;
+export type BodyParamTopLevelArrayWithChildrenParams = Array<BodyParamTopLevelArrayWithChildrenParams.Item>
 
 export namespace BodyParamTopLevelArrayWithChildrenParams {
   export interface Item {
@@ -782,9 +608,7 @@ export interface BodyParamTopLevelSharedTypeParams {
   foo?: string;
 }
 
-export type BodyParamUnionOverlappingPropParams =
-  | BodyParamUnionOverlappingPropParams.ObjectWithFooProperty1
-  | BodyParamUnionOverlappingPropParams.ObjectWithFooProperty2;
+export type BodyParamUnionOverlappingPropParams = BodyParamUnionOverlappingPropParams.ObjectWithFooProperty1 | BodyParamUnionOverlappingPropParams.ObjectWithFooProperty2
 
 export namespace BodyParamUnionOverlappingPropParams {
   export interface ObjectWithFooProperty1 {

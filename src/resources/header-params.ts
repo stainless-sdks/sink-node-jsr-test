@@ -1,6 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as HeaderParamsAPI from './header-params';
 
@@ -9,43 +11,8 @@ export class HeaderParams extends APIResource {
    * Endpoint with all supported header param types.
    */
   allTypes(params: HeaderParamAllTypesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    const {
-      'X-Required-Boolean': xRequiredBoolean,
-      'X-Required-Integer': xRequiredInteger,
-      'X-Required-Number': xRequiredNumber,
-      'X-Required-String': xRequiredString,
-      'X-Nullable-Integer': xNullableInteger,
-      'X-Optional-Boolean': xOptionalBoolean,
-      'X-Optional-Integer': xOptionalInteger,
-      'X-Optional-Number': xOptionalNumber,
-      'X-Optional-String': xOptionalString,
-      ...body
-    } = params;
-    return this._client.post('/header_params/all_types', {
-      body,
-      ...options,
-      headers: {
-        Accept: '*/*',
-        'X-Required-Boolean': xRequiredBoolean.toString(),
-        'X-Required-Integer': xRequiredInteger.toString(),
-        'X-Required-Number': xRequiredNumber.toString(),
-        'X-Required-String': xRequiredString,
-        ...(xNullableInteger?.toString() != null ?
-          { 'X-Nullable-Integer': xNullableInteger?.toString() }
-        : undefined),
-        ...(xOptionalBoolean?.toString() != null ?
-          { 'X-Optional-Boolean': xOptionalBoolean?.toString() }
-        : undefined),
-        ...(xOptionalInteger?.toString() != null ?
-          { 'X-Optional-Integer': xOptionalInteger?.toString() }
-        : undefined),
-        ...(xOptionalNumber?.toString() != null ?
-          { 'X-Optional-Number': xOptionalNumber?.toString() }
-        : undefined),
-        ...(xOptionalString != null ? { 'X-Optional-String': xOptionalString } : undefined),
-        ...options?.headers,
-      },
-    });
+    const { 'X-Required-Boolean': xRequiredBoolean, 'X-Required-Integer': xRequiredInteger, 'X-Required-Number': xRequiredNumber, 'X-Required-String': xRequiredString, 'X-Nullable-Integer': xNullableInteger, 'X-Optional-Boolean': xOptionalBoolean, 'X-Optional-Integer': xOptionalInteger, 'X-Optional-Number': xOptionalNumber, 'X-Optional-String': xOptionalString, ...body } = params;
+    return this._client.post('/header_params/all_types', { body, ...options, headers: { Accept: '*/*', 'X-Required-Boolean': xRequiredBoolean.toString(), 'X-Required-Integer': xRequiredInteger.toString(), 'X-Required-Number': xRequiredNumber.toString(), 'X-Required-String': xRequiredString, ...(xNullableInteger?.toString() != null ? { 'X-Nullable-Integer': xNullableInteger?.toString() } : undefined), ...(xOptionalBoolean?.toString() != null ? { 'X-Optional-Boolean': xOptionalBoolean?.toString() } : undefined), ...(xOptionalInteger?.toString() != null ? { 'X-Optional-Integer': xOptionalInteger?.toString() } : undefined), ...(xOptionalNumber?.toString() != null ? { 'X-Optional-Number': xOptionalNumber?.toString() } : undefined), ...(xOptionalString != null ? { 'X-Optional-String': xOptionalString } : undefined), ...options?.headers } });
   }
 
   /**
@@ -53,29 +20,8 @@ export class HeaderParams extends APIResource {
    * type.
    */
   arrays(params: HeaderParamArraysParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    const {
-      'X-Required-Int-Array': xRequiredIntArray,
-      'X-Required-String-Array': xRequiredStringArray,
-      'X-Optional-Int-Array': xOptionalIntArray,
-      'X-Optional-String-Array': xOptionalStringArray,
-      ...body
-    } = params;
-    return this._client.post('/header_params/arrays', {
-      body,
-      ...options,
-      headers: {
-        Accept: '*/*',
-        'X-Required-Int-Array': xRequiredIntArray.toString(),
-        'X-Required-String-Array': xRequiredStringArray.toString(),
-        ...(xOptionalIntArray?.toString() != null ?
-          { 'X-Optional-Int-Array': xOptionalIntArray?.toString() }
-        : undefined),
-        ...(xOptionalStringArray?.toString() != null ?
-          { 'X-Optional-String-Array': xOptionalStringArray?.toString() }
-        : undefined),
-        ...options?.headers,
-      },
-    });
+    const { 'X-Required-Int-Array': xRequiredIntArray, 'X-Required-String-Array': xRequiredStringArray, 'X-Optional-Int-Array': xOptionalIntArray, 'X-Optional-String-Array': xOptionalStringArray, ...body } = params;
+    return this._client.post('/header_params/arrays', { body, ...options, headers: { Accept: '*/*', 'X-Required-Int-Array': xRequiredIntArray.toString(), 'X-Required-String-Array': xRequiredStringArray.toString(), ...(xOptionalIntArray?.toString() != null ? { 'X-Optional-Int-Array': xOptionalIntArray?.toString() } : undefined), ...(xOptionalStringArray?.toString() != null ? { 'X-Optional-String-Array': xOptionalStringArray?.toString() } : undefined), ...options?.headers } });
   }
 
   /**
@@ -85,22 +31,9 @@ export class HeaderParams extends APIResource {
    * Whereas the `X-Custom-Endpoint-Header` should be included as it is only used
    * here.
    */
-  clientArgument(
-    params: HeaderParamClientArgumentParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
+  clientArgument(params: HeaderParamClientArgumentParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     const { 'X-Custom-Endpoint-Header': xCustomEndpointHeader, ...body } = params;
-    return this._client.post('/header_params/client_argument', {
-      body,
-      ...options,
-      headers: {
-        Accept: '*/*',
-        ...(xCustomEndpointHeader != null ?
-          { 'X-Custom-Endpoint-Header': xCustomEndpointHeader }
-        : undefined),
-        ...options?.headers,
-      },
-    });
+    return this._client.post('/header_params/client_argument', { body, ...options, headers: { Accept: '*/*', ...(xCustomEndpointHeader != null ? { 'X-Custom-Endpoint-Header': xCustomEndpointHeader } : undefined), ...options?.headers } });
   }
 
   /**
@@ -109,11 +42,7 @@ export class HeaderParams extends APIResource {
    */
   nullableType(params: HeaderParamNullableTypeParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     const { 'X-Null': xNull, ...body } = params;
-    return this._client.post('/header_params/nullable_type', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...(xNull != null ? { 'X-Null': xNull } : undefined), ...options?.headers },
-    });
+    return this._client.post('/header_params/nullable_type', { body, ...options, headers: { Accept: '*/*', ...(xNull != null ? { 'X-Null': xNull } : undefined), ...options?.headers } });
   }
 }
 

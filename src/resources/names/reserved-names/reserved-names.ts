@@ -1,7 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../../resource';
+import { isRequestOptions } from '../../../core';
+import { APIPromise } from '../../../core';
 import * as Core from '../../../core';
+import { PublicResource } from './public/public';
+import { ImportResource } from './import';
+import { Methods } from './methods';
 import * as ReservedNamesAPI from './reserved-names';
 import * as ImportAPI from './import';
 import * as MethodsAPI from './methods';
@@ -16,15 +21,8 @@ export class ReservedNames extends APIResource {
    * Endpoint with a `requestBody` that has a property name that can conflict with
    * language keywords.
    */
-  commonReservedParams(
-    body: ReservedNameCommonReservedParamsParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<void> {
-    return this._client.post('/names/reserved_names/common_reserved_params', {
-      body,
-      ...options,
-      headers: { Accept: '*/*', ...options?.headers },
-    });
+  commonReservedParams(body: ReservedNameCommonReservedParamsParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+    return this._client.post('/names/reserved_names/common_reserved_params', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
   }
 }
 

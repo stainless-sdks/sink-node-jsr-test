@@ -1,6 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as EnvelopesAPI from './envelopes';
 import * as Shared from './shared';
@@ -10,18 +12,14 @@ export class Envelopes extends APIResource {
    * Endpoint with a response wrapped within a `data` property.
    */
   explicit(options?: Core.RequestOptions): Core.APIPromise<Address> {
-    return (this._client.get('/envelopes/data', options) as Core.APIPromise<{ data: Address }>)._thenUnwrap(
-      (obj) => obj.data,
-    );
+    return (this._client.get('/envelopes/data', options) as Core.APIPromise<{ data: Address }>)._thenUnwrap((obj) => obj.data);
   }
 
   /**
    * Endpoint with a response wrapped within a `items` property.
    */
   implicit(options?: Core.RequestOptions): Core.APIPromise<Address> {
-    return (this._client.get('/envelopes/items', options) as Core.APIPromise<{ items: Address }>)._thenUnwrap(
-      (obj) => obj.items,
-    );
+    return (this._client.get('/envelopes/items', options) as Core.APIPromise<{ items: Address }>)._thenUnwrap((obj) => obj.items);
   }
 
   /**
@@ -29,11 +27,7 @@ export class Envelopes extends APIResource {
    * $ref.
    */
   inlineResponse(options?: Core.RequestOptions): Core.APIPromise<EnvelopeInlineResponseResponse> {
-    return (
-      this._client.get('/envelopes/items/inline_response', options) as Core.APIPromise<{
-        items: EnvelopeInlineResponseResponse;
-      }>
-    )._thenUnwrap((obj) => obj.items);
+    return (this._client.get('/envelopes/items/inline_response', options) as Core.APIPromise<{ items: EnvelopeInlineResponseResponse }>)._thenUnwrap((obj) => obj.items);
   }
 
   /**
@@ -41,11 +35,7 @@ export class Envelopes extends APIResource {
    * type.
    */
   wrappedArray(options?: Core.RequestOptions): Core.APIPromise<EnvelopeWrappedArrayResponse> {
-    return (
-      this._client.get('/envelopes/items/wrapped_array', options) as Core.APIPromise<{
-        items: EnvelopeWrappedArrayResponse;
-      }>
-    )._thenUnwrap((obj) => obj.items);
+    return (this._client.get('/envelopes/items/wrapped_array', options) as Core.APIPromise<{ items: EnvelopeWrappedArrayResponse }>)._thenUnwrap((obj) => obj.items);
   }
 }
 
@@ -88,7 +78,7 @@ export interface EnvelopeInlineResponseResponse {
   foo?: string;
 }
 
-export type EnvelopeWrappedArrayResponse = Array<Shared.ObjectWithChildRef>;
+export type EnvelopeWrappedArrayResponse = Array<Shared.ObjectWithChildRef>
 
 export namespace Envelopes {
   export import Address = EnvelopesAPI.Address;

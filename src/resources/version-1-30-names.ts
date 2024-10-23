@@ -1,6 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as Version1_30NamesAPI from './version-1-30-names';
 
@@ -12,21 +14,9 @@ export class Version1_30Names extends APIResource {
    * Whereas the `X-Custom-Endpoint-Header` should be included as it is only used
    * here.
    */
-  create(
-    version1_15: string,
-    params: Version1_30NameCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<Version1_30NameCreateResponse> {
+  create(version1_15: string, params: Version1_30NameCreateParams, options?: Core.RequestOptions): Core.APIPromise<Version1_30NameCreateResponse> {
     const { version_1_16, version_1_14, ...body } = params;
-    return this._client.post(`/version_1_30_names/query/${version1_15}`, {
-      query: { version_1_16 },
-      body,
-      ...options,
-      headers: {
-        ...(version_1_14 != null ? { version_1_14: version_1_14 } : undefined),
-        ...options?.headers,
-      },
-    });
+    return this._client.post(`/version_1_30_names/query/${version1_15}`, { query: { version_1_16 }, body, ...options, headers: { ...(version_1_14 != null ? { version_1_14: version_1_14 } : undefined), ...options?.headers } });
   }
 }
 

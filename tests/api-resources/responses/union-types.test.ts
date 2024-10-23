@@ -1,16 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sink from 'sink-npm';
+import Sink, { toFile } from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const client = new Sink({
-  userToken: 'My User Token',
-  username: 'Robert',
-  someNumberArgRequiredNoDefault: 0,
-  someNumberArgRequiredNoDefaultNoEnv: 0,
-  requiredArgNoEnv: '<example>',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Sink({ userToken: 'My User Token', username: 'Robert', someNumberArgRequiredNoDefault: 0, someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
 
 describe('resource unionTypes', () => {
   test('mixedTypes', async () => {
@@ -26,9 +19,9 @@ describe('resource unionTypes', () => {
 
   test('mixedTypes: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.responses.unionTypes.mixedTypes({ path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
+    await expect(client.responses.unionTypes.mixedTypes({ path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Sink.NotFoundError);
   });
 
   test('nullableUnion', async () => {
@@ -44,9 +37,9 @@ describe('resource unionTypes', () => {
 
   test('nullableUnion: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.responses.unionTypes.nullableUnion({ path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
+    await expect(client.responses.unionTypes.nullableUnion({ path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Sink.NotFoundError);
   });
 
   test('numbers', async () => {
@@ -62,9 +55,9 @@ describe('resource unionTypes', () => {
 
   test('numbers: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.responses.unionTypes.numbers({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(client.responses.unionTypes.numbers({ path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Sink.NotFoundError);
   });
 
   test('objects', async () => {
@@ -80,9 +73,9 @@ describe('resource unionTypes', () => {
 
   test('objects: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.responses.unionTypes.objects({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Sink.NotFoundError,
-    );
+    await expect(client.responses.unionTypes.objects({ path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Sink.NotFoundError);
   });
 
   test('superMixedTypes', async () => {
@@ -98,9 +91,9 @@ describe('resource unionTypes', () => {
 
   test('superMixedTypes: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.responses.unionTypes.superMixedTypes({ path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
+    await expect(client.responses.unionTypes.superMixedTypes({ path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Sink.NotFoundError);
   });
 
   test('unknownVariant', async () => {
@@ -116,8 +109,8 @@ describe('resource unionTypes', () => {
 
   test('unknownVariant: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.responses.unionTypes.unknownVariant({ path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Sink.NotFoundError);
+    await expect(client.responses.unionTypes.unknownVariant({ path: '/_stainless_unknown_path' }))
+      .rejects
+      .toThrow(Sink.NotFoundError);
   });
 });
