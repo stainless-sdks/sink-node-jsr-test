@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as ObjectsAPI from './objects';
 import * as BodyParamsAPI from '../body-params/body-params';
@@ -21,7 +19,9 @@ export class Objects extends APIResource {
    * reference the same $ref in array items that is _not_ a model in the config.
    * Three child types should be generated, one for each property.
    */
-  multipleArrayPropertiesSameRef(options?: Core.RequestOptions): Core.APIPromise<ObjectMultipleArrayPropertiesSameRefResponse> {
+  multipleArrayPropertiesSameRef(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ObjectMultipleArrayPropertiesSameRefResponse> {
     return this._client.get('/types/object/multiple_array_properties_same_ref', options);
   }
 
@@ -29,7 +29,9 @@ export class Objects extends APIResource {
    * Endpoint with a response schema object that contains multiple properties that
    * reference the same model.
    */
-  multiplePropertiesSameModel(options?: Core.RequestOptions): Core.APIPromise<ObjectMultiplePropertiesSameModelResponse> {
+  multiplePropertiesSameModel(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ObjectMultiplePropertiesSameModelResponse> {
     return this._client.get('/types/object/multiple_properties_same_model', options);
   }
 
@@ -38,7 +40,9 @@ export class Objects extends APIResource {
    * reference the same $ref that is _not_ a model in the config. Three child types
    * should be generated. One for each property.
    */
-  multiplePropertiesSameRef(options?: Core.RequestOptions): Core.APIPromise<ObjectMultiplePropertiesSameRefResponse> {
+  multiplePropertiesSameRef(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ObjectMultiplePropertiesSameRefResponse> {
     return this._client.get('/types/object/multiple_properties_same_ref', options);
   }
 
@@ -46,7 +50,9 @@ export class Objects extends APIResource {
    * Endpoint with a response schema object that contains properties that are
    * primitive 2d arrays
    */
-  twoDimensionalArrayPrimitiveProperty(options?: Core.RequestOptions): Core.APIPromise<ObjectTwoDimensionalArrayPrimitivePropertyResponse> {
+  twoDimensionalArrayPrimitiveProperty(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ObjectTwoDimensionalArrayPrimitivePropertyResponse> {
     return this._client.get('/types/object/2d_array_primitive_properties', options);
   }
 
@@ -58,11 +64,11 @@ export class Objects extends APIResource {
   }
 }
 
-export type UnknownObjectType = unknown
+export type UnknownObjectType = unknown;
 
 export interface ObjectMixedKnownAndUnknownResponse {
   foo?: number;
-[k: string]: number | undefined
+  [k: string]: number | undefined;
 }
 
 export interface ObjectMultipleArrayPropertiesSameRefResponse {

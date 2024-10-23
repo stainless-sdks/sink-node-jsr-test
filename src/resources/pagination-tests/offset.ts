@@ -2,20 +2,33 @@
 
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as OffsetAPI from './offset';
 import * as BodyParamsAPI from '../body-params/body-params';
-import { MyModelsPageOffset, MyModelsPageOffsetNoStartField, MyModelsPageOffsetTotalCount } from '../body-params/body-params';
-import { PageOffset, PageOffsetNoStartField, type PageOffsetNoStartFieldParams, type PageOffsetParams, PageOffsetTotalCount, type PageOffsetTotalCountParams } from '../../pagination';
+import {
+  MyModelsPageOffset,
+  MyModelsPageOffsetNoStartField,
+  MyModelsPageOffsetTotalCount,
+} from '../body-params/body-params';
+import {
+  type PageOffsetNoStartFieldParams,
+  type PageOffsetParams,
+  type PageOffsetTotalCountParams,
+} from '../../pagination';
 
 export class Offset extends APIResource {
   /**
    * Test case for offset pagination
    */
-  list(query?: OffsetListParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel>
-  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel>
-  list(query: OffsetListParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel> {
+  list(
+    query?: OffsetListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel>;
+  list(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel>;
+  list(
+    query: OffsetListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffset, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -25,36 +38,55 @@ export class Offset extends APIResource {
   /**
    * Test case for offset pagination with no start response field
    */
-  listNoStartField(query?: OffsetListNoStartFieldParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel>
-  listNoStartField(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel>
-  listNoStartField(query: OffsetListNoStartFieldParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel> {
+  listNoStartField(
+    query?: OffsetListNoStartFieldParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel>;
+  listNoStartField(
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel>;
+  listNoStartField(
+    query: OffsetListNoStartFieldParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetNoStartField, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.listNoStartField({}, query);
     }
-    return this._client.getAPIList('/paginated/offset/no_start_field', MyModelsPageOffsetNoStartField, { query, ...options });
+    return this._client.getAPIList('/paginated/offset/no_start_field', MyModelsPageOffsetNoStartField, {
+      query,
+      ...options,
+    });
   }
 
   /**
    * Test case for offset pagination with a total count response property
    */
-  withTotalCount(query?: OffsetWithTotalCountParams, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffsetTotalCount, BodyParamsAPI.MyModel>
-  withTotalCount(options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffsetTotalCount, BodyParamsAPI.MyModel>
-  withTotalCount(query: OffsetWithTotalCountParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.PagePromise<MyModelsPageOffsetTotalCount, BodyParamsAPI.MyModel> {
+  withTotalCount(
+    query?: OffsetWithTotalCountParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetTotalCount, BodyParamsAPI.MyModel>;
+  withTotalCount(
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetTotalCount, BodyParamsAPI.MyModel>;
+  withTotalCount(
+    query: OffsetWithTotalCountParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<MyModelsPageOffsetTotalCount, BodyParamsAPI.MyModel> {
     if (isRequestOptions(query)) {
       return this.withTotalCount({}, query);
     }
-    return this._client.getAPIList('/paginated/offset/with_total_count', MyModelsPageOffsetTotalCount, { query, ...options });
+    return this._client.getAPIList('/paginated/offset/with_total_count', MyModelsPageOffsetTotalCount, {
+      query,
+      ...options,
+    });
   }
 }
 
-export interface OffsetListParams extends PageOffsetParams {
-}
+export interface OffsetListParams extends PageOffsetParams {}
 
-export interface OffsetListNoStartFieldParams extends PageOffsetNoStartFieldParams {
-}
+export interface OffsetListNoStartFieldParams extends PageOffsetNoStartFieldParams {}
 
-export interface OffsetWithTotalCountParams extends PageOffsetTotalCountParams {
-}
+export interface OffsetWithTotalCountParams extends PageOffsetTotalCountParams {}
 
 export namespace Offset {
   export import OffsetListParams = OffsetAPI.OffsetListParams;
@@ -62,4 +94,4 @@ export namespace Offset {
   export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
 }
 
-export { MyModelsPageOffset, MyModelsPageOffsetNoStartField, MyModelsPageOffsetTotalCount }
+export { MyModelsPageOffset, MyModelsPageOffsetNoStartField, MyModelsPageOffsetTotalCount };

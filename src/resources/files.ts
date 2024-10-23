@@ -1,39 +1,57 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as FilesAPI from './files';
-import { type Uploadable, multipartFormRequestOptions } from '../core';
 
 export class Files extends APIResource {
   /**
    * Endpoint for testing file uploads
    */
-  createMultipart(body: FileCreateMultipartParams, options?: Core.RequestOptions): Core.APIPromise<FileCreateMultipartResponse> {
+  createMultipart(
+    body: FileCreateMultipartParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileCreateMultipartResponse> {
     return this._client.post('/files/multipart', Core.multipartFormRequestOptions({ body, ...options }));
   }
 
   /**
    * Endpoint for testing file uploads with all kinds of properties
    */
-  everythingMultipart(body: FileEverythingMultipartParams, options?: Core.RequestOptions): Core.APIPromise<FileEverythingMultipartResponse> {
-    return this._client.post('/files/multipart_everything', Core.multipartFormRequestOptions({ body, ...options }));
+  everythingMultipart(
+    body: FileEverythingMultipartParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileEverythingMultipartResponse> {
+    return this._client.post(
+      '/files/multipart_everything',
+      Core.multipartFormRequestOptions({ body, ...options }),
+    );
   }
 
   /**
    * Endpoint for multipart requests without a file parameter.
    */
-  noFileMultipart(body: FileNoFileMultipartParams, options?: Core.RequestOptions): Core.APIPromise<FileNoFileMultipartResponse> {
-    return this._client.post('/files/no_file_multipart', Core.multipartFormRequestOptions({ body, ...options }));
+  noFileMultipart(
+    body: FileNoFileMultipartParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileNoFileMultipartResponse> {
+    return this._client.post(
+      '/files/no_file_multipart',
+      Core.multipartFormRequestOptions({ body, ...options }),
+    );
   }
 
   /**
    * Multipart request with a required and an optional file request param.
    */
-  withOptionalParam(body: FileWithOptionalParamParams, options?: Core.RequestOptions): Core.APIPromise<FileWithOptionalParamResponse> {
-    return this._client.post('/files/with_optional_param', Core.multipartFormRequestOptions({ body, ...options }));
+  withOptionalParam(
+    body: FileWithOptionalParamParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<FileWithOptionalParamResponse> {
+    return this._client.post(
+      '/files/with_optional_param',
+      Core.multipartFormRequestOptions({ body, ...options }),
+    );
   }
 }
 

@@ -1,13 +1,23 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sink, { toFile } from 'sink-npm';
+import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const client = new Sink({ userToken: 'My User Token', username: 'Robert', someNumberArgRequiredNoDefault: 0, someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
+const client = new Sink({
+  userToken: 'My User Token',
+  username: 'Robert',
+  someNumberArgRequiredNoDefault: 0,
+  someNumberArgRequiredNoDefaultNoEnv: 0,
+  requiredArgNoEnv: '<example>',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource methodConfig', () => {
   test('shouldNotShowUpInAPIDocs', async () => {
-    const responsePromise = client.methodConfig.shouldNotShowUpInAPIDocs('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
+    const responsePromise = client.methodConfig.shouldNotShowUpInAPIDocs(
+      '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      {},
+    );
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -32,9 +42,9 @@ describe('resource methodConfig', () => {
   // Because of this error
   test.skip('skippedTestsAll: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsAll('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsAll('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsGo', async () => {
@@ -50,9 +60,9 @@ describe('resource methodConfig', () => {
 
   test('skippedTestsGo: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsGo('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsGo('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsJava', async () => {
@@ -68,9 +78,9 @@ describe('resource methodConfig', () => {
 
   test('skippedTestsJava: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsJava('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsJava('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsKotlin', async () => {
@@ -86,9 +96,9 @@ describe('resource methodConfig', () => {
 
   test('skippedTestsKotlin: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsKotlin('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsKotlin('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   // Because of this error
@@ -106,9 +116,9 @@ describe('resource methodConfig', () => {
   // Because of this error
   test.skip('skippedTestsNode: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsNode('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsNode('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   // Because of this error
@@ -126,9 +136,9 @@ describe('resource methodConfig', () => {
   // Because of this error
   test.skip('skippedTestsNodeAndPython: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsNodeAndPython('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsNodeAndPython('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsPython', async () => {
@@ -144,9 +154,9 @@ describe('resource methodConfig', () => {
 
   test('skippedTestsPython: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsPython('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsPython('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('skippedTestsRuby', async () => {
@@ -162,8 +172,8 @@ describe('resource methodConfig', () => {
 
   test('skippedTestsRuby: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.methodConfig.skippedTestsRuby('id', { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.methodConfig.skippedTestsRuby('id', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 });

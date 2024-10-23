@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
-import { APIPromise } from '../../../core';
 import * as Core from '../../../core';
 import * as MethodsAPI from './methods';
 
@@ -10,14 +9,22 @@ export class Methods extends APIResource {
   /**
    * Test reserved word in method name
    */
-  export(_class: string, params?: MethodExportParams, options?: Core.RequestOptions): Core.APIPromise<Export>
-  export(_class: string, options?: Core.RequestOptions): Core.APIPromise<Export>
-  export(_class: string, params: MethodExportParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<Export> {
+  export(_class: string, params?: MethodExportParams, options?: Core.RequestOptions): Core.APIPromise<Export>;
+  export(_class: string, options?: Core.RequestOptions): Core.APIPromise<Export>;
+  export(
+    _class: string,
+    params: MethodExportParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Export> {
     if (isRequestOptions(params)) {
       return this.export(_class, {}, params);
     }
-    const { 'let': _let, ...body } = params;
-    return this._client.post(`/names/reserved_names/methods/export/${_class}`, { query: { 'let': _let }, body, ...options });
+    const { let: _let, ...body } = params;
+    return this._client.post(`/names/reserved_names/methods/export/${_class}`, {
+      query: { let: _let },
+      body,
+      ...options,
+    });
   }
 }
 

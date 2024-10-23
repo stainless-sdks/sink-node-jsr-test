@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as ParamsAPI from './params';
 
@@ -11,14 +9,22 @@ export class Params extends APIResource {
    * Endpoint with a `requestBody` that has a property named `options`
    */
   optionsParam(body: ParamOptionsParamParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/names/body_params/options', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/names/body_params/options', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with a `requestBody` that has a property named `timeout`
    */
   timeoutParam(body: ParamTimeoutParamParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/names/body_params/timeout', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/names/body_params/timeout', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 }
 

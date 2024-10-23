@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as ClientParamsAPI from './client-params';
 
@@ -10,26 +8,48 @@ export class ClientParams extends APIResource {
   /**
    * The operation takes a path param that is able to be set at the client level.
    */
-  withPathParam(params: ClientParamWithPathParamParams, options?: Core.RequestOptions): Core.APIPromise<ClientParamWithPathParamResponse> {
-    const { client_path_param  = this._client.clientPathParam, client_path_or_query_param  = this._client.clientPathOrQueryParam } = params;
-    return this._client.post(`/client_params/path_params/${client_path_param}/${client_path_or_query_param}`, options);
+  withPathParam(
+    params: ClientParamWithPathParamParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ClientParamWithPathParamResponse> {
+    const {
+      client_path_param = this._client.clientPathParam,
+      client_path_or_query_param = this._client.clientPathOrQueryParam,
+    } = params;
+    return this._client.post(
+      `/client_params/path_params/${client_path_param}/${client_path_or_query_param}`,
+      options,
+    );
   }
 
   /**
    * The operation takes a path param that is able to be set at the client level
    * alongside a standard path param.
    */
-  withPathParamAndStandard(id: string, params: ClientParamWithPathParamAndStandardParams, options?: Core.RequestOptions): Core.APIPromise<ClientParamWithPathParamAndStandardResponse> {
-    const { camelCasedPath  = this._client.camelCasePath } = params;
+  withPathParamAndStandard(
+    id: string,
+    params: ClientParamWithPathParamAndStandardParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ClientParamWithPathParamAndStandardResponse> {
+    const { camelCasedPath = this._client.camelCasePath } = params;
     return this._client.post(`/client_params/path_params/${camelCasedPath}/${id}`, options);
   }
 
   /**
    * The operation takes a query param that is able to be set at the client level.
    */
-  withQueryParam(params: ClientParamWithQueryParamParams, options?: Core.RequestOptions): Core.APIPromise<ClientParamWithQueryParamResponse> {
-    const { client_path_or_query_param  = this._client.clientPathOrQueryParam, client_query_param  = this._client.clientQueryParam } = params;
-    return this._client.post('/client_params/query_params', { query: { client_path_or_query_param, client_query_param }, ...options });
+  withQueryParam(
+    params: ClientParamWithQueryParamParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ClientParamWithQueryParamResponse> {
+    const {
+      client_path_or_query_param = this._client.clientPathOrQueryParam,
+      client_query_param = this._client.clientQueryParam,
+    } = params;
+    return this._client.post('/client_params/query_params', {
+      query: { client_path_or_query_param, client_query_param },
+      ...options,
+    });
   }
 }
 

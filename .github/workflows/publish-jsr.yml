@@ -28,5 +28,3 @@ jobs:
       - name: Publish to JSR
         run: |
           bash ./bin/publish-jsr
-        env:
-          JSR_TOKEN: ${{ secrets.SINK_JSR_TOKEN || secrets.JSR_TOKEN }}

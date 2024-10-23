@@ -1,15 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
-import * as Core from '../core';
 import * as WebhooksAPI from './webhooks';
 import * as CardsAPI from './cards';
 
 export class Webhooks extends APIResource {
   unwrap(body: string): UnwrapWebhookEvent {
-    return JSON.parse(body) as UnwrapWebhookEvent
+    return JSON.parse(body) as UnwrapWebhookEvent;
   }
 }
 
@@ -63,7 +60,12 @@ export interface CardDeletedWebhookEvent {
   user_id?: string;
 }
 
-export type UnwrapWebhookEvent = CardCreatedWebhookEvent | CardReadyWebhookEvent | CardErroredWebhookEvent | CardUpdatedWebhookEvent | CardDeletedWebhookEvent
+export type UnwrapWebhookEvent =
+  | CardCreatedWebhookEvent
+  | CardReadyWebhookEvent
+  | CardErroredWebhookEvent
+  | CardUpdatedWebhookEvent
+  | CardDeletedWebhookEvent;
 
 export namespace Webhooks {
   export import CardCreatedWebhookEvent = WebhooksAPI.CardCreatedWebhookEvent;

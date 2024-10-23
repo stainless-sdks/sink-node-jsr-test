@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as BinariesAPI from './binaries';
 import { type Response } from '../_shims/index';
@@ -18,8 +16,16 @@ export class Binaries extends APIResource {
   /**
    * Return a binary response.
    */
-  withPathAndBodyParam(id: string, body: BinaryWithPathAndBodyParamParams, options?: Core.RequestOptions): Core.APIPromise<Response> {
-    return this._client.post(`/binaries/with_path_and_body_param/${id}`, { body, ...options, __binaryResponse: true });
+  withPathAndBodyParam(
+    id: string,
+    body: BinaryWithPathAndBodyParamParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Response> {
+    return this._client.post(`/binaries/with_path_and_body_param/${id}`, {
+      body,
+      ...options,
+      __binaryResponse: true,
+    });
   }
 
   /**

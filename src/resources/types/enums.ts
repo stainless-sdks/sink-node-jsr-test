@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as EnumsAPI from './enums';
 import * as Shared from '../shared';
@@ -13,23 +11,41 @@ export class Enums extends APIResource {
    * non-repeating values in the array.
    */
   arrayUniqueValues(body: EnumArrayUniqueValuesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/types/enum_tests_array_unique_values', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/types/enum_tests_array_unique_values', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint that has an array of enum that should generate a valid test with 2
    * non-repeating values in the array.
    */
-  arrayUniqueValues2Values(body: EnumArrayUniqueValues2ValuesParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/types/enum_tests_array_unique_values_2_values', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+  arrayUniqueValues2Values(
+    body: EnumArrayUniqueValues2ValuesParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.post('/types/enum_tests_array_unique_values_2_values', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint that has an array of enum that should generate a valid test with 2
    * non-repeating values in the array.
    */
-  arrayUniqueValuesNumbers(body: EnumArrayUniqueValuesNumbersParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/types/enum_tests_array_unique_values_numbers', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+  arrayUniqueValuesNumbers(
+    body: EnumArrayUniqueValuesNumbersParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.post('/types/enum_tests_array_unique_values_numbers', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
@@ -55,11 +71,11 @@ export interface EnumBasicResponse {
   uses_const: 'my_const_enum_value';
 }
 
-export type EnumArrayUniqueValuesParams = Array<'USD' | 'GBP' | 'PAB' | 'AED'>
+export type EnumArrayUniqueValuesParams = Array<'USD' | 'GBP' | 'PAB' | 'AED'>;
 
-export type EnumArrayUniqueValues2ValuesParams = Array<'USD' | 'GBP'>
+export type EnumArrayUniqueValues2ValuesParams = Array<'USD' | 'GBP'>;
 
-export type EnumArrayUniqueValuesNumbersParams = Array<5 | 6 | 7 | 8 | 9>
+export type EnumArrayUniqueValuesNumbersParams = Array<5 | 6 | 7 | 8 | 9>;
 
 export interface EnumBasicParams {
   /**

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as OpenAPIFormatsAPI from './openapi-formats';
 
@@ -10,7 +9,10 @@ export class OpenAPIFormats extends APIResource {
   /**
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */
-  arrayTypeOneEntry(body: OpenAPIFormatArrayTypeOneEntryParams, options?: Core.RequestOptions): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryResponse> {
+  arrayTypeOneEntry(
+    body: OpenAPIFormatArrayTypeOneEntryParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryResponse> {
     return this._client.post('/openapi_formats/array_type_one_entry', { body, ...options });
   }
 
@@ -20,9 +22,17 @@ export class OpenAPIFormats extends APIResource {
    *
    * See https://linear.app/stainless/issue/STA-569/support-for-type-[object-null]
    */
-  arrayTypeOneEntryWithNull(body?: OpenAPIFormatArrayTypeOneEntryWithNullParams, options?: Core.RequestOptions): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null>
-  arrayTypeOneEntryWithNull(options?: Core.RequestOptions): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null>
-  arrayTypeOneEntryWithNull(body: OpenAPIFormatArrayTypeOneEntryWithNullParams | Core.RequestOptions = {}, options?: Core.RequestOptions): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null> {
+  arrayTypeOneEntryWithNull(
+    body?: OpenAPIFormatArrayTypeOneEntryWithNullParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null>;
+  arrayTypeOneEntryWithNull(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null>;
+  arrayTypeOneEntryWithNull(
+    body: OpenAPIFormatArrayTypeOneEntryWithNullParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<OpenAPIFormatArrayTypeOneEntryWithNullResponse | null> {
     if (isRequestOptions(body)) {
       return this.arrayTypeOneEntryWithNull({}, body);
     }

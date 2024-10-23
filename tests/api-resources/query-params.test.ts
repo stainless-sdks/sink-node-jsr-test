@@ -1,9 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sink, { toFile } from 'sink-npm';
+import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const client = new Sink({ userToken: 'My User Token', username: 'Robert', someNumberArgRequiredNoDefault: 0, someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
+const client = new Sink({
+  userToken: 'My User Token',
+  username: 'Robert',
+  someNumberArgRequiredNoDefault: 0,
+  someNumberArgRequiredNoDefaultNoEnv: 0,
+  requiredArgNoEnv: '<example>',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource queryParams', () => {
   test('allOf', async () => {
@@ -19,16 +26,16 @@ describe('resource queryParams', () => {
 
   test('allOf: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.allOf({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.allOf({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('allOf: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.allOf({ foo_and_bar: { bar: 0, foo: 'foo' } }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.allOf({ foo_and_bar: { bar: 0, foo: 'foo' } }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('anyOf', async () => {
@@ -44,16 +51,16 @@ describe('resource queryParams', () => {
 
   test('anyOf: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.anyOf({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.anyOf({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('anyOf: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.anyOf({ string_or_integer: 'string' }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.anyOf({ string_or_integer: 'string' }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('anyOfStringOrArray', async () => {
@@ -69,16 +76,16 @@ describe('resource queryParams', () => {
 
   test('anyOfStringOrArray: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.anyOfStringOrArray({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.anyOfStringOrArray({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('anyOfStringOrArray: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.anyOfStringOrArray({ ids: 'string' }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.anyOfStringOrArray({ ids: 'string' }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('array', async () => {
@@ -94,16 +101,19 @@ describe('resource queryParams', () => {
 
   test('array: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.array({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.array({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('array: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.array({ integer_array_param: [0, 0, 0], string_array_param: ['string', 'string', 'string'] }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.array(
+        { integer_array_param: [0, 0, 0], string_array_param: ['string', 'string', 'string'] },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('enum', async () => {
@@ -119,16 +129,26 @@ describe('resource queryParams', () => {
 
   test('enum: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.enum({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.enum({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('enum: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.enum({ integer_enum_param: 100, nullable_integer_enum_param: 100, nullable_number_enum_param: 100, nullable_string_enum_param: 'foo', number_enum_param: 100, string_enum_param: 'foo' }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.enum(
+        {
+          integer_enum_param: 100,
+          nullable_integer_enum_param: 100,
+          nullable_number_enum_param: 100,
+          nullable_string_enum_param: 'foo',
+          number_enum_param: 100,
+          string_enum_param: 'foo',
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('object', async () => {
@@ -144,16 +164,19 @@ describe('resource queryParams', () => {
 
   test('object: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.object({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.object({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('object: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.object({ object_param: { foo: 'foo' }, object_ref_param: { item: 'item' } }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.object(
+        { object_param: { foo: 'foo' }, object_ref_param: { item: 'item' } },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('oneOf', async () => {
@@ -169,16 +192,16 @@ describe('resource queryParams', () => {
 
   test('oneOf: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.oneOf({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.oneOf({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('oneOf: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.oneOf({ string_or_integer: 'string' }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.oneOf({ string_or_integer: 'string' }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('primitives', async () => {
@@ -194,15 +217,18 @@ describe('resource queryParams', () => {
 
   test('primitives: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.primitives({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.queryParams.primitives({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 
   test('primitives: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.queryParams.primitives({ boolean_param: true, integer_param: 0, number_param: 0, string_param: 'string_param' }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.queryParams.primitives(
+        { boolean_param: true, integer_param: 0, number_param: 0, string_param: 'string_param' },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 });

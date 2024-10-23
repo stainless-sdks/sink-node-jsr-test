@@ -1,9 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sink, { toFile } from 'sink-npm';
+import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const client = new Sink({ userToken: 'My User Token', username: 'Robert', someNumberArgRequiredNoDefault: 0, someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
+const client = new Sink({
+  userToken: 'My User Token',
+  username: 'Robert',
+  someNumberArgRequiredNoDefault: 0,
+  someNumberArgRequiredNoDefaultNoEnv: 0,
+  requiredArgNoEnv: '<example>',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource defaultReqOptions', () => {
   test('exampleMethod', async () => {
@@ -19,9 +26,9 @@ describe('resource defaultReqOptions', () => {
 
   test('exampleMethod: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.defaultReqOptions.exampleMethod({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.defaultReqOptions.exampleMethod({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('withParamOverride', async () => {
@@ -37,15 +44,18 @@ describe('resource defaultReqOptions', () => {
 
   test('withParamOverride: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.defaultReqOptions.withParamOverride({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.defaultReqOptions.withParamOverride({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('withParamOverride: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.defaultReqOptions.withParamOverride({ 'X-My-Header': true }, { path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.defaultReqOptions.withParamOverride(
+        { 'X-My-Header': true },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 });

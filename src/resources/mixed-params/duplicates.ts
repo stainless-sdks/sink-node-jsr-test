@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as DuplicatesAPI from './duplicates';
 import * as Shared from '../shared';
@@ -12,27 +10,48 @@ export class Duplicates extends APIResource {
    * Endpoint with a `requestBody` that defines a param with the same name in path
    * and body params
    */
-  bodyAndPath(pathId: string, params: DuplicateBodyAndPathParams, options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+  bodyAndPath(
+    pathId: string,
+    params: DuplicateBodyAndPathParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { body_id, ...body } = params;
-    return this._client.post(`/mixed_params/duplicates/body_and_path/${pathId}`, { body: { id: body_id, ...body }, ...options });
+    return this._client.post(`/mixed_params/duplicates/body_and_path/${pathId}`, {
+      body: { id: body_id, ...body },
+      ...options,
+    });
   }
 
   /**
    * Endpoint with a `requestBody` that defines a param with the same name in query
    * and body params
    */
-  queryAndBody(params: DuplicateQueryAndBodyParams, options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+  queryAndBody(
+    params: DuplicateQueryAndBodyParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { query_id, body_id, ...body } = params;
-    return this._client.post('/mixed_params/duplicates/query_and_body', { query: { id: query_id }, body: { id: body_id, ...body }, ...options });
+    return this._client.post('/mixed_params/duplicates/query_and_body', {
+      query: { id: query_id },
+      body: { id: body_id, ...body },
+      ...options,
+    });
   }
 
   /**
    * Endpoint with a `requestBody` that defines a param with the same name in path
    * and query params
    */
-  queryAndPath(pathId: string, params: DuplicateQueryAndPathParams, options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+  queryAndPath(
+    pathId: string,
+    params: DuplicateQueryAndPathParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { query_id } = params;
-    return this._client.post(`/mixed_params/duplicates/query_and_path/${pathId}`, { query: { id: query_id }, ...options });
+    return this._client.post(`/mixed_params/duplicates/query_and_path/${pathId}`, {
+      query: { id: query_id },
+      ...options,
+    });
   }
 }
 

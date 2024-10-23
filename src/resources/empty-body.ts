@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as EmptyBodyAPI from './empty-body';
 import * as Shared from './shared';
@@ -11,17 +9,33 @@ export class EmptyBody extends APIResource {
   /**
    * Endpoint with x-stainless-empty-object should still have types for params
    */
-  stainlessEmptyObject(pathParam: string, params: EmptyBodyStainlessEmptyObjectParams, options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+  stainlessEmptyObject(
+    pathParam: string,
+    params: EmptyBodyStainlessEmptyObjectParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { body, query_param, second_query_param } = params;
-    return this._client.post(`/mixed_params/with_empty_body/${pathParam}/x_stainless_empty_object`, { query: { query_param, second_query_param }, body: body, ...options });
+    return this._client.post(`/mixed_params/with_empty_body/${pathParam}/x_stainless_empty_object`, {
+      query: { query_param, second_query_param },
+      body: body,
+      ...options,
+    });
   }
 
   /**
    * Endpoint with an empty `requestBody` should still have types for params
    */
-  typedParams(pathParam: string, params: EmptyBodyTypedParamsParams, options?: Core.RequestOptions): Core.APIPromise<Shared.BasicSharedModelObject> {
+  typedParams(
+    pathParam: string,
+    params: EmptyBodyTypedParamsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Shared.BasicSharedModelObject> {
     const { body, query_param, second_query_param } = params;
-    return this._client.post(`/mixed_params/with_empty_body/${pathParam}`, { query: { query_param, second_query_param }, body: body, ...options });
+    return this._client.post(`/mixed_params/with_empty_body/${pathParam}`, {
+      query: { query_param, second_query_param },
+      body: body,
+      ...options,
+    });
   }
 }
 
@@ -43,8 +57,7 @@ export interface EmptyBodyStainlessEmptyObjectParams {
 }
 
 export namespace EmptyBodyStainlessEmptyObjectParams {
-  export interface Body {
-  }
+  export interface Body {}
 }
 
 export interface EmptyBodyTypedParamsParams {

@@ -1,9 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Sink, { toFile } from 'sink-npm';
+import Sink from 'sink-npm';
 import { Response } from 'node-fetch';
 
-const client = new Sink({ userToken: 'My User Token', username: 'Robert', someNumberArgRequiredNoDefault: 0, someNumberArgRequiredNoDefaultNoEnv: 0, requiredArgNoEnv: '<example>', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
+const client = new Sink({
+  userToken: 'My User Token',
+  username: 'Robert',
+  someNumberArgRequiredNoDefault: 0,
+  someNumberArgRequiredNoDefaultNoEnv: 0,
+  requiredArgNoEnv: '<example>',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource objects', () => {
   test('mixedKnownAndUnknown', async () => {
@@ -19,9 +26,9 @@ describe('resource objects', () => {
 
   test('mixedKnownAndUnknown: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.types.objects.mixedKnownAndUnknown({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.types.objects.mixedKnownAndUnknown({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('multipleArrayPropertiesSameRef', async () => {
@@ -37,9 +44,9 @@ describe('resource objects', () => {
 
   test('multipleArrayPropertiesSameRef: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.types.objects.multipleArrayPropertiesSameRef({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.types.objects.multipleArrayPropertiesSameRef({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('multiplePropertiesSameModel', async () => {
@@ -55,9 +62,9 @@ describe('resource objects', () => {
 
   test('multiplePropertiesSameModel: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.types.objects.multiplePropertiesSameModel({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.types.objects.multiplePropertiesSameModel({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('multiplePropertiesSameRef', async () => {
@@ -73,9 +80,9 @@ describe('resource objects', () => {
 
   test('multiplePropertiesSameRef: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.types.objects.multiplePropertiesSameRef({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.types.objects.multiplePropertiesSameRef({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('twoDimensionalArrayPrimitiveProperty', async () => {
@@ -91,9 +98,9 @@ describe('resource objects', () => {
 
   test('twoDimensionalArrayPrimitiveProperty: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.types.objects.twoDimensionalArrayPrimitiveProperty({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(
+      client.types.objects.twoDimensionalArrayPrimitiveProperty({ path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Sink.NotFoundError);
   });
 
   test('unknownObject', async () => {
@@ -109,8 +116,8 @@ describe('resource objects', () => {
 
   test('unknownObject: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.types.objects.unknownObject({ path: '/_stainless_unknown_path' }))
-      .rejects
-      .toThrow(Sink.NotFoundError);
+    await expect(client.types.objects.unknownObject({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Sink.NotFoundError,
+    );
   });
 });

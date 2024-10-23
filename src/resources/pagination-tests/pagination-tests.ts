@@ -1,20 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
-import * as Core from '../../core';
-import { SchemaTypes } from './schema-types';
-import { ItemsTypes } from './items-types';
-import { PageNumber } from './page-number';
-import { PageNumberWithoutCurrentPageResponse } from './page-number-without-current-page-response';
-import { Refs } from './refs';
-import { ResponseHeaders } from './response-headers';
-import { TopLevelArrays } from './top-level-arrays';
-import { Cursor } from './cursor';
-import { Offset } from './offset';
-import { FakePages } from './fake-pages';
-import { NestedItems } from './nested-items';
 import * as CursorAPI from './cursor';
 import * as FakePagesAPI from './fake-pages';
 import * as ItemsTypesAPI from './items-types';
@@ -31,7 +17,8 @@ export class PaginationTests extends APIResource {
   schemaTypes: SchemaTypesAPI.SchemaTypes = new SchemaTypesAPI.SchemaTypes(this._client);
   itemsTypes: ItemsTypesAPI.ItemsTypes = new ItemsTypesAPI.ItemsTypes(this._client);
   pageNumber: PageNumberAPI.PageNumber = new PageNumberAPI.PageNumber(this._client);
-  pageNumberWithoutCurrentPageResponse: PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse = new PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse(this._client);
+  pageNumberWithoutCurrentPageResponse: PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse =
+    new PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse(this._client);
   refs: RefsAPI.Refs = new RefsAPI.Refs(this._client);
   responseHeaders: ResponseHeadersAPI.ResponseHeaders = new ResponseHeadersAPI.ResponseHeaders(this._client);
   topLevelArrays: TopLevelArraysAPI.TopLevelArrays = new TopLevelArraysAPI.TopLevelArrays(this._client);

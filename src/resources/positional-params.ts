@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as PositionalParamsAPI from './positional-params';
 
@@ -11,80 +9,158 @@ export class PositionalParams extends APIResource {
    * Endpoint with no positional params and a body param.
    */
   basicBody(body: PositionalParamBasicBodyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/positional_params/basic_body', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/positional_params/basic_body', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with no positional params and a query object.
    */
   basicQuery(query: PositionalParamBasicQueryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get('/positional_params/basic_query', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.get('/positional_params/basic_query', {
+      query,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with no positional params and a body object.
    */
   body(body: PositionalParamBodyParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/positional_params/body', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/positional_params/body', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with no positional params and a body object.
    */
-  bodyExtraParam(body: PositionalParamBodyExtraParamParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/positional_params/body_extra_param', { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+  bodyExtraParam(
+    body: PositionalParamBodyExtraParamParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.post('/positional_params/body_extra_param', {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with everything under the sun (to excercise positional params).
    */
-  kitchenSink(id: string, params: PositionalParamKitchenSinkParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    const { key, imACamel, option1, option2, really_cool_snake, 'X-Custom-Header': xCustomHeader, ...body } = params;
-    return this._client.post(`/positional_params/query/${id}/kitchen_sink/${key}`, { query: { imACamel, option1, option2, really_cool_snake }, body, ...options, headers: { Accept: '*/*', ...(xCustomHeader != null ? { 'X-Custom-Header': xCustomHeader } : undefined), ...options?.headers } });
+  kitchenSink(
+    id: string,
+    params: PositionalParamKitchenSinkParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    const {
+      key,
+      imACamel,
+      option1,
+      option2,
+      really_cool_snake,
+      'X-Custom-Header': xCustomHeader,
+      ...body
+    } = params;
+    return this._client.post(`/positional_params/query/${id}/kitchen_sink/${key}`, {
+      query: { imACamel, option1, option2, really_cool_snake },
+      body,
+      ...options,
+      headers: {
+        Accept: '*/*',
+        ...(xCustomHeader != null ? { 'X-Custom-Header': xCustomHeader } : undefined),
+        ...options?.headers,
+      },
+    });
   }
 
   /**
    * Endpoint with a positional path parameter in the middle.
    */
-  multiplePathParams(second: string, params: PositionalParamMultiplePathParamsParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+  multiplePathParams(
+    second: string,
+    params: PositionalParamMultiplePathParamsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
     const { first, last, ...body } = params;
-    return this._client.post(`/positional_params/${first}/${second}/${last}`, { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post(`/positional_params/${first}/${second}/${last}`, {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with a positional query parameter.
    */
   query(query: PositionalParamQueryParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get('/positional_params/query', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.get('/positional_params/query', {
+      query,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with a positional path parameter and a query parameter.
    */
-  queryAndPath(id: string, params: PositionalParamQueryAndPathParams, options?: Core.RequestOptions): Core.APIPromise<void> {
+  queryAndPath(
+    id: string,
+    params: PositionalParamQueryAndPathParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
     const { bar } = params;
-    return this._client.post(`/positional_params/query/${id}`, { query: { bar }, ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post(`/positional_params/query/${id}`, {
+      query: { bar },
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with a positional query parameter.
    */
-  queryMultiple(query: PositionalParamQueryMultipleParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get('/positional_params/query_multiple', { query, ...options, headers: { Accept: '*/*', ...options?.headers } });
+  queryMultiple(
+    query: PositionalParamQueryMultipleParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.get('/positional_params/query_multiple', {
+      query,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with a single positional path parameter.
    */
   single(single: string, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.get(`/positional_params/${single}`, { ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.get(`/positional_params/${single}`, {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
    * Endpoint with no positional params and a body object.
    */
-  unionBodyAndPath(id: string, body: PositionalParamUnionBodyAndPathParams, options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post(`/positional_params/body/union/${id}`, { body, ...options, headers: { Accept: '*/*', ...options?.headers } });
+  unionBodyAndPath(
+    id: string,
+    body: PositionalParamUnionBodyAndPathParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<void> {
+    return this._client.post(`/positional_params/body/union/${id}`, {
+      body,
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 }
 

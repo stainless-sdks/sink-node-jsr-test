@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as CardsAPI from './cards';
 import * as Shared from './shared';
@@ -13,7 +11,11 @@ export class Cards extends APIResource {
    * `product_id` only apply to physical cards.
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<Card> {
-    return this._client.post('/cards', { body, timeout: (this._client as any)._options.timeout ?? 2000, ...options });
+    return this._client.post('/cards', {
+      body,
+      timeout: (this._client as any)._options.timeout ?? 2000,
+      ...options,
+    });
   }
 
   /**
@@ -41,12 +43,12 @@ export class Cards extends APIResource {
     return this._client.get('/cards', { query, ...options });
   }
 
-  createAliased = this.create
+  createAliased = this.create;
 
   /**
    * @deprecated try with deprecation
    */
-  createAliasedDeprecated = this.create
+  createAliasedDeprecated = this.create;
 
   /**
    * Endpoint that represents a method that has been marked as deprecated in the
@@ -55,7 +57,10 @@ export class Cards extends APIResource {
    * @deprecated do deprecate me not in go
    */
   deprecatedAllButGoDiffMessage(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/deprecations/method_all_but_go_diff_message', { ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/deprecations/method_all_but_go_diff_message', {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
@@ -65,7 +70,10 @@ export class Cards extends APIResource {
    * @deprecated do deprecate me in node
    */
   deprecatedAllDiffMessage(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/deprecations/method_all_but_go_diff_message', { ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/deprecations/method_all_but_go_diff_message', {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
@@ -77,7 +85,10 @@ export class Cards extends APIResource {
    * It will be removed in v0.99.0
    */
   deprecatedMethod(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/deprecations/method', { ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/deprecations/method', {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
@@ -85,7 +96,10 @@ export class Cards extends APIResource {
    * stainless config for go only.
    */
   deprecatedOnlyGo(options?: Core.RequestOptions): Core.APIPromise<void> {
-    return this._client.post('/deprecations/method_only_go', { ...options, headers: { Accept: '*/*', ...options?.headers } });
+    return this._client.post('/deprecations/method_only_go', {
+      ...options,
+      headers: { Accept: '*/*', ...options?.headers },
+    });
   }
 
   /**
@@ -103,7 +117,11 @@ export class Cards extends APIResource {
    * [Contact Us](https://lithic.com/contact) or your Customer Success representative
    * for more information.
    */
-  provisionFoo(cardToken: string, body: CardProvisionFooParams, options?: Core.RequestOptions): Core.APIPromise<CardProvisionFooResponse> {
+  provisionFoo(
+    cardToken: string,
+    body: CardProvisionFooParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CardProvisionFooResponse> {
     return this._client.post(`/cards/${cardToken}/provision`, { body, ...options });
   }
 
@@ -234,7 +252,7 @@ export interface Card {
   pan?: string;
 }
 
-export type CardAlias = Card
+export type CardAlias = Card;
 
 export interface FundingAccount {
   /**

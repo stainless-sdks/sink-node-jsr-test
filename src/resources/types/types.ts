@@ -1,18 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
-import { Primitives } from './primitives';
-import { ReadOnlyParams } from './read-only-params';
-import { WriteOnlyResponses } from './write-only-responses';
-import { Maps } from './maps';
-import { Enums } from './enums';
-import { Allofs } from './allofs';
-import { Unions } from './unions';
-import { Objects } from './objects';
-import { Arrays } from './arrays';
 import * as TypesAPI from './types';
 import * as AllofsAPI from './allofs';
 import * as ArraysAPI from './arrays';
@@ -27,7 +16,9 @@ import * as WriteOnlyResponsesAPI from './write-only-responses';
 export class Types extends APIResource {
   primitives: PrimitivesAPI.Primitives = new PrimitivesAPI.Primitives(this._client);
   readOnlyParams: ReadOnlyParamsAPI.ReadOnlyParams = new ReadOnlyParamsAPI.ReadOnlyParams(this._client);
-  writeOnlyResponses: WriteOnlyResponsesAPI.WriteOnlyResponses = new WriteOnlyResponsesAPI.WriteOnlyResponses(this._client);
+  writeOnlyResponses: WriteOnlyResponsesAPI.WriteOnlyResponses = new WriteOnlyResponsesAPI.WriteOnlyResponses(
+    this._client,
+  );
   maps: MapsAPI.Maps = new MapsAPI.Maps(this._client);
   enums: EnumsAPI.Enums = new EnumsAPI.Enums(this._client);
   allofs: AllofsAPI.Allofs = new AllofsAPI.Allofs(this._client);
@@ -46,7 +37,10 @@ export class Types extends APIResource {
   /**
    * Endpoint that has date-time types.
    */
-  datetimes(body: TypeDatetimesParams, options?: Core.RequestOptions): Core.APIPromise<TypeDatetimesResponse> {
+  datetimes(
+    body: TypeDatetimesParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<TypeDatetimesResponse> {
     return this._client.post('/types/datetimes', { body, ...options });
   }
 }

@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as UnionTypesAPI from './union-types';
 import * as Shared from '../shared';
@@ -51,7 +49,10 @@ export class UnionTypes extends APIResource {
   }
 }
 
-export type UnionTypeMixedTypesResponse = Shared.SimpleObject | UnionTypeMixedTypesResponse.BasicObject | boolean
+export type UnionTypeMixedTypesResponse =
+  | Shared.SimpleObject
+  | UnionTypeMixedTypesResponse.BasicObject
+  | boolean;
 
 export namespace UnionTypeMixedTypesResponse {
   export interface BasicObject {
@@ -59,7 +60,7 @@ export namespace UnionTypeMixedTypesResponse {
   }
 }
 
-export type UnionTypeNullableUnionResponse = Shared.SimpleObject | UnionTypeNullableUnionResponse.BasicObject
+export type UnionTypeNullableUnionResponse = Shared.SimpleObject | UnionTypeNullableUnionResponse.BasicObject;
 
 export namespace UnionTypeNullableUnionResponse {
   export interface BasicObject {
@@ -67,9 +68,9 @@ export namespace UnionTypeNullableUnionResponse {
   }
 }
 
-export type UnionTypeNumbersResponse = number
+export type UnionTypeNumbersResponse = number;
 
-export type UnionTypeObjectsResponse = Shared.SimpleObject | UnionTypeObjectsResponse.BasicObject
+export type UnionTypeObjectsResponse = Shared.SimpleObject | UnionTypeObjectsResponse.BasicObject;
 
 export namespace UnionTypeObjectsResponse {
   export interface BasicObject {
@@ -77,7 +78,13 @@ export namespace UnionTypeObjectsResponse {
   }
 }
 
-export type UnionTypeSuperMixedTypesResponse = Shared.SimpleObject | UnionTypeSuperMixedTypesResponse.BasicObject | boolean | unknown | string | unknown
+export type UnionTypeSuperMixedTypesResponse =
+  | Shared.SimpleObject
+  | UnionTypeSuperMixedTypesResponse.BasicObject
+  | boolean
+  | unknown
+  | string
+  | unknown;
 
 export namespace UnionTypeSuperMixedTypesResponse {
   export interface BasicObject {
@@ -85,7 +92,7 @@ export namespace UnionTypeSuperMixedTypesResponse {
   }
 }
 
-export type UnionTypeUnknownVariantResponse = Shared.SimpleObject | unknown
+export type UnionTypeUnknownVariantResponse = Shared.SimpleObject | unknown;
 
 export namespace UnionTypes {
   export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;

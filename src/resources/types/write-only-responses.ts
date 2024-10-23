@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
 import * as WriteOnlyResponsesAPI from './write-only-responses';
 
@@ -15,8 +13,7 @@ export class WriteOnlyResponses extends APIResource {
   }
 }
 
-export interface WriteOnlyResponseSimpleResponse {
-}
+export interface WriteOnlyResponseSimpleResponse {}
 
 export namespace WriteOnlyResponses {
   export import WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;

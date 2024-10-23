@@ -2,8 +2,7 @@
 
 import * as Errors from './error';
 import * as Uploads from './uploads';
-import { isRequestOptions } from './core';
-import { type Agent, type RequestInit } from './_shims/index';
+import { type Agent } from './_shims/index';
 import * as qs from './internal/qs';
 import * as Core from './core';
 import * as Pagination from './pagination';
@@ -123,7 +122,7 @@ export interface ClientOptions {
    * Specify a custom `fetch` function implementation.
    *
    * If not provided, we use `node-fetch` on Node.js and otherwise expect that `fetch` is
-  * defined globally.
+   * defined globally.
    */
   fetch?: Core.Fetch | undefined;
 
@@ -159,7 +158,7 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Sink API. 
+ * API Client for interfacing with the Sink API.
  */
 export class Sink extends Core.APIClient {
   userToken: string | null;
@@ -238,22 +237,22 @@ export class Sink extends Core.APIClient {
   }: ClientOptions) {
     if (username === undefined) {
       throw new Errors.SinkError(
-        'The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: \'Robert\' }).'
+        "The SINK_USER environment variable is missing or empty; either provide it, or instantiate the Sink client with an username option, like new Sink({ username: 'Robert' }).",
       );
     }
     if (someNumberArgRequiredNoDefault === undefined) {
       throw new Errors.SinkError(
-        'The SINK_SOME_NUMBER_ARG environment variable is missing or empty; either provide it, or instantiate the Sink client with an someNumberArgRequiredNoDefault option, like new Sink({ someNumberArgRequiredNoDefault: \'my someNumberArgRequiredNoDefault\' }).'
+        "The SINK_SOME_NUMBER_ARG environment variable is missing or empty; either provide it, or instantiate the Sink client with an someNumberArgRequiredNoDefault option, like new Sink({ someNumberArgRequiredNoDefault: 'my someNumberArgRequiredNoDefault' }).",
       );
     }
     if (someNumberArgRequiredNoDefaultNoEnv === undefined) {
       throw new Errors.SinkError(
-        'Missing required client option someNumberArgRequiredNoDefaultNoEnv; you need to instantiate the Sink client with an someNumberArgRequiredNoDefaultNoEnv option, like new Sink({ someNumberArgRequiredNoDefaultNoEnv: \'my someNumberArgRequiredNoDefaultNoEnv\' }).'
+        "Missing required client option someNumberArgRequiredNoDefaultNoEnv; you need to instantiate the Sink client with an someNumberArgRequiredNoDefaultNoEnv option, like new Sink({ someNumberArgRequiredNoDefaultNoEnv: 'my someNumberArgRequiredNoDefaultNoEnv' }).",
       );
     }
     if (requiredArgNoEnv === undefined) {
       throw new Errors.SinkError(
-        'Missing required client option requiredArgNoEnv; you need to instantiate the Sink client with an requiredArgNoEnv option, like new Sink({ requiredArgNoEnv: \'<example>\' }).'
+        "Missing required client option requiredArgNoEnv; you need to instantiate the Sink client with an requiredArgNoEnv option, like new Sink({ requiredArgNoEnv: '<example>' }).",
       );
     }
 
@@ -282,13 +281,15 @@ export class Sink extends Core.APIClient {
     };
 
     if (!options.dangerouslyAllowBrowser && Core.isRunningInBrowser()) {
-      throw new Errors.SinkError('This is disabled by default, as it risks exposing your secret API credentials to attackers.\nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })')
+      throw new Errors.SinkError(
+        'This is disabled by default, as it risks exposing your secret API credentials to attackers.\nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew Sink({ dangerouslyAllowBrowser: true })',
+      );
     }
 
     if (baseURL && opts.environment) {
       throw new Errors.SinkError(
-        'Ambiguous URL; The `baseURL` option (or SINK_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null'
-      )
+        'Ambiguous URL; The `baseURL` option (or SINK_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
+      );
     }
 
     super({
@@ -300,7 +301,7 @@ export class Sink extends Core.APIClient {
     });
 
     this._options = options;
-    this.idempotencyHeader = 'Idempotency-Key'
+    this.idempotencyHeader = 'Idempotency-Key';
 
     this.userToken = userToken;
     this.apiKeyHeader = apiKeyHeader;
@@ -372,7 +373,8 @@ export class Sink extends Core.APIClient {
   version1_30Names: API.Version1_30Names = new API.Version1_30Names(this);
   recursion: API.Recursion = new API.Recursion(this);
   sharedQueryParams: API.SharedQueryParams = new API.SharedQueryParams(this);
-  modelReferencedInParentAndChild: API.ModelReferencedInParentAndChildResource = new API.ModelReferencedInParentAndChildResource(this);
+  modelReferencedInParentAndChild: API.ModelReferencedInParentAndChildResource =
+    new API.ModelReferencedInParentAndChildResource(this);
 
   /**
    * API status check
@@ -381,7 +383,7 @@ export class Sink extends Core.APIClient {
     return this.get('/status', options);
   }
 
-  apiStatusAlias = this.apiStatus
+  apiStatusAlias = this.apiStatus;
 
   /**
    * Endpoint returning no response
@@ -400,7 +402,7 @@ export class Sink extends Core.APIClient {
   protected override defaultHeaders(opts: Core.FinalRequestOptions): Core.Headers {
     return {
       ...super.defaultHeaders(opts),
-      ...(this._options.dangerouslyAllowBrowser ? {'my-header-only-set-if-browser': 'true'} : undefined),
+      ...(this._options.dangerouslyAllowBrowser ? { 'my-header-only-set-if-browser': 'true' } : undefined),
       'My-Api-Version': '11',
       'X-Enable-Metrics': '1',
       'X-Client-UserName': this.username,
@@ -411,8 +413,8 @@ export class Sink extends Core.APIClient {
   }
 
   protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
-    const bearerAuth = this.bearerAuth(opts)
-    const apiKeyAuth = this.apiKeyAuth(opts)
+    const bearerAuth = this.bearerAuth(opts);
+    const apiKeyAuth = this.apiKeyAuth(opts);
 
     if (bearerAuth != null && !Core.isEmptyObj(bearerAuth)) {
       return bearerAuth;
@@ -439,12 +441,12 @@ export class Sink extends Core.APIClient {
   }
 
   protected override stringifyQuery(query: Record<string, unknown>): string {
-    return qs.stringify(query, { arrayFormat: 'comma' })
+    return qs.stringify(query, { arrayFormat: 'comma' });
   }
 
   static Sink = this;
-  static CONSTANT_WITH_NEWLINES = "\n\nHuman:"
-  static DEFAULT_TIMEOUT = 60000 // 1 minute
+  static CONSTANT_WITH_NEWLINES = '\n\nHuman:';
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static SinkError = Errors.SinkError;
   static APIError = Errors.APIError;
@@ -464,11 +466,23 @@ export class Sink extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
-  CONSTANT_WITH_NEWLINES
-} = Sink
+export const { CONSTANT_WITH_NEWLINES } = Sink;
 
-export const { SinkError, APIError, APIConnectionError, APIConnectionTimeoutError, APIUserAbortError, NotFoundError, ConflictError, RateLimitError, BadRequestError, AuthenticationError, InternalServerError, PermissionDeniedError, UnprocessableEntityError } = Errors
+export const {
+  SinkError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} = Errors;
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;

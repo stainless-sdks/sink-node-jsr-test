@@ -1,8 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as UndocumentedResourceAPI from './undocumented-resource';
 import * as CardsAPI from './cards';
@@ -14,7 +12,11 @@ export class UndocumentedResource extends APIResource {
    *
    * Only applies to cards of type `PHYSICAL` [beta].
    */
-  reissue(cardToken: string, body: UndocumentedResourceReissueParams, options?: Core.RequestOptions): Core.APIPromise<CardsAPI.Card> {
+  reissue(
+    cardToken: string,
+    body: UndocumentedResourceReissueParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CardsAPI.Card> {
     return this._client.post(`/cards/${cardToken}/reissue`, { body, ...options });
   }
 }

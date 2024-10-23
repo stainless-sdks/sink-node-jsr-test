@@ -1,15 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
-import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as ConfigToolsAPI from './config-tools';
 import * as CardsAPI from './cards';
 import * as Shared from './shared';
 
 export class ConfigTools extends APIResource {
-  modelRefFromNestedResponseBody(options?: Core.RequestOptions): Core.APIPromise<ConfigToolModelRefFromNestedResponseBodyResponse> {
+  modelRefFromNestedResponseBody(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ConfigToolModelRefFromNestedResponseBodyResponse> {
     return this._client.get('/config_tools/model_refs/from_nested_response', options);
   }
 
@@ -21,7 +21,10 @@ export class ConfigTools extends APIResource {
    * Create a new virtual or physical card. Parameters `pin`, `shippingAddress`, and
    * `product_id` only apply to physical cards.
    */
-  onlyInNode(body: ConfigToolOnlyInNodeParams, options?: Core.RequestOptions): Core.APIPromise<CardsAPI.Card> {
+  onlyInNode(
+    body: ConfigToolOnlyInNodeParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CardsAPI.Card> {
     return this._client.post('/cards', { body, ...options });
   }
 }

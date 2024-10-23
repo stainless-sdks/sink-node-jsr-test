@@ -1,14 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
-import { Unions } from './unions';
-import { ReservedNames } from './reserved-names/reserved-names';
-import { Params } from './params';
-import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
-import { OpenAPISpecials } from './openapi-specials';
 import * as NamesAPI from './names';
 import * as Shared from '../shared';
 import * as OpenAPISpecialsAPI from './openapi-specials';
@@ -43,7 +36,10 @@ export class Names extends APIResource {
    * Endpoint with request & response properties that are likely to cause name
    * conflicts.
    */
-  propertiesCommonConflicts(body: NamePropertiesCommonConflictsParams, options?: Core.RequestOptions): Core.APIPromise<NamePropertiesCommonConflictsResponse> {
+  propertiesCommonConflicts(
+    body: NamePropertiesCommonConflictsParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NamePropertiesCommonConflictsResponse> {
     return this._client.post('/names/properties_common_conflicts', { body, ...options });
   }
 
@@ -51,7 +47,10 @@ export class Names extends APIResource {
    * Endpoint with request & response properties with names that aren't legal
    * javascript identifiers.
    */
-  propertiesIllegalJavascriptIdentifiers(body: NamePropertiesIllegalJavascriptIdentifiersParams, options?: Core.RequestOptions): Core.APIPromise<NamePropertiesIllegalJavascriptIdentifiersResponse> {
+  propertiesIllegalJavascriptIdentifiers(
+    body: NamePropertiesIllegalJavascriptIdentifiersParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NamePropertiesIllegalJavascriptIdentifiersResponse> {
     return this._client.post('/names/properties_illegal_javascript_identifiers', { body, ...options });
   }
 
@@ -59,14 +58,18 @@ export class Names extends APIResource {
    * Endpoint with a response model property that can cause clashes with a model
    * import.
    */
-  responsePropertyClashesModelImport(options?: Core.RequestOptions): Core.APIPromise<NameResponsePropertyClashesModelImportResponse> {
+  responsePropertyClashesModelImport(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NameResponsePropertyClashesModelImportResponse> {
     return this._client.get('/names/response_property_clashes_model_import', options);
   }
 
   /**
    * Endpoint with a response model property that would clash with pydantic.
    */
-  responseShadowsPydantic(options?: Core.RequestOptions): Core.APIPromise<NameResponseShadowsPydanticResponse> {
+  responseShadowsPydantic(
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NameResponseShadowsPydanticResponse> {
     return this._client.get('/names/response_property_shadows_pydantic', options);
   }
 }
@@ -142,7 +145,9 @@ export interface NamePropertiesCommonConflictsResponse {
   int_2: number;
 }
 
-export type NamePropertiesIllegalJavascriptIdentifiersResponse = NamePropertiesIllegalJavascriptIdentifiersResponse._2llegalJavascriptIdentifiers | number
+export type NamePropertiesIllegalJavascriptIdentifiersResponse =
+  | NamePropertiesIllegalJavascriptIdentifiersResponse._2llegalJavascriptIdentifiers
+  | number;
 
 export namespace NamePropertiesIllegalJavascriptIdentifiersResponse {
   export interface _2llegalJavascriptIdentifiers {
@@ -217,14 +222,16 @@ export interface NamePropertiesCommonConflictsParams {
   int_2: number;
 }
 
-export type NamePropertiesIllegalJavascriptIdentifiersParams = NamePropertiesIllegalJavascriptIdentifiersParams._2llegalJavascriptIdentifiers | NamePropertiesIllegalJavascriptIdentifiersParams._3llegalJavascriptIdentifiers
+export type NamePropertiesIllegalJavascriptIdentifiersParams =
+  | NamePropertiesIllegalJavascriptIdentifiersParams._2llegalJavascriptIdentifiers
+  | NamePropertiesIllegalJavascriptIdentifiersParams._3llegalJavascriptIdentifiers;
 
 export namespace NamePropertiesIllegalJavascriptIdentifiersParams {
   export interface _2llegalJavascriptIdentifiers {
     irrelevant?: number;
   }
 
-  export type _3llegalJavascriptIdentifiers = number
+  export type _3llegalJavascriptIdentifiers = number;
 }
 
 export namespace Names {

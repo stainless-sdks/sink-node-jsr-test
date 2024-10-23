@@ -1,17 +1,17 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import { APIPromise } from '../../core';
 import * as Core from '../../core';
-import { SharedResponses } from './shared-responses';
 import * as RecursionAPI from './recursion';
 import * as SharedResponsesAPI from './shared-responses';
 
 export class Recursion extends APIResource {
   sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this._client);
 
-  createEnvelope(body: RecursionCreateEnvelopeParams, options?: Core.RequestOptions): Core.APIPromise<RecursionCreateEnvelopeResponse> {
+  createEnvelope(
+    body: RecursionCreateEnvelopeParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<RecursionCreateEnvelopeResponse> {
     return this._client.post('/recursion/envelope', { body, ...options });
   }
 
@@ -20,7 +20,7 @@ export class Recursion extends APIResource {
   }
 }
 
-export type ArrayRecursion = Array<number | ArrayRecursion>
+export type ArrayRecursion = Array<number | ArrayRecursion>;
 
 export interface SelfRecursion {
   name: string;

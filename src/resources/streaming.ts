@@ -1,36 +1,90 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
 import { APIPromise } from '../core';
 import * as Core from '../core';
 import * as StreamingAPI from './streaming';
 import { Stream } from '../streaming';
 
 export class Streaming extends APIResource {
-  basic(body: StreamingBasicParamsNonStreaming, options?: Core.RequestOptions): APIPromise<StreamingBasicResponse>
-  basic(body: StreamingBasicParamsStreaming, options?: Core.RequestOptions): APIPromise<Stream<StreamingBasicResponse>>
-  basic(body: StreamingBasicParamsBase, options?: Core.RequestOptions): APIPromise<Stream<StreamingBasicResponse> | StreamingBasicResponse>
-  basic(body: StreamingBasicParams, options?: Core.RequestOptions): APIPromise<StreamingBasicResponse> | APIPromise<Stream<StreamingBasicResponse>> {
-    return this._client.post('/streaming/basic', { body, ...options, stream: body.stream ?? false }) as APIPromise<StreamingBasicResponse> | APIPromise<Stream<StreamingBasicResponse>>;
+  basic(
+    body: StreamingBasicParamsNonStreaming,
+    options?: Core.RequestOptions,
+  ): APIPromise<StreamingBasicResponse>;
+  basic(
+    body: StreamingBasicParamsStreaming,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingBasicResponse>>;
+  basic(
+    body: StreamingBasicParamsBase,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingBasicResponse> | StreamingBasicResponse>;
+  basic(
+    body: StreamingBasicParams,
+    options?: Core.RequestOptions,
+  ): APIPromise<StreamingBasicResponse> | APIPromise<Stream<StreamingBasicResponse>> {
+    return this._client.post('/streaming/basic', { body, ...options, stream: body.stream ?? false }) as
+      | APIPromise<StreamingBasicResponse>
+      | APIPromise<Stream<StreamingBasicResponse>>;
   }
 
-  nestedParams(body: StreamingNestedParamsParamsNonStreaming, options?: Core.RequestOptions): APIPromise<StreamingNestedParamsResponse>
-  nestedParams(body: StreamingNestedParamsParamsStreaming, options?: Core.RequestOptions): APIPromise<Stream<StreamingNestedParamsResponse>>
-  nestedParams(body: StreamingNestedParamsParamsBase, options?: Core.RequestOptions): APIPromise<Stream<StreamingNestedParamsResponse> | StreamingNestedParamsResponse>
-  nestedParams(body: StreamingNestedParamsParams, options?: Core.RequestOptions): APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>> {
-    return this._client.post('/streaming/nested_params', { body, ...options, stream: body.stream ?? false }) as APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>>;
+  nestedParams(
+    body: StreamingNestedParamsParamsNonStreaming,
+    options?: Core.RequestOptions,
+  ): APIPromise<StreamingNestedParamsResponse>;
+  nestedParams(
+    body: StreamingNestedParamsParamsStreaming,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingNestedParamsResponse>>;
+  nestedParams(
+    body: StreamingNestedParamsParamsBase,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingNestedParamsResponse> | StreamingNestedParamsResponse>;
+  nestedParams(
+    body: StreamingNestedParamsParams,
+    options?: Core.RequestOptions,
+  ): APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>> {
+    return this._client.post('/streaming/nested_params', {
+      body,
+      ...options,
+      stream: body.stream ?? false,
+    }) as APIPromise<StreamingNestedParamsResponse> | APIPromise<Stream<StreamingNestedParamsResponse>>;
   }
 
-  noDiscriminator(body: StreamingNoDiscriminatorParams, options?: Core.RequestOptions): APIPromise<Stream<StreamingNoDiscriminatorResponse>> {
-    return this._client.post('/streaming/no_discriminator', { body, ...options, stream: true }) as APIPromise<Stream<StreamingNoDiscriminatorResponse>>;
+  noDiscriminator(
+    body: StreamingNoDiscriminatorParams,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingNoDiscriminatorResponse>> {
+    return this._client.post('/streaming/no_discriminator', { body, ...options, stream: true }) as APIPromise<
+      Stream<StreamingNoDiscriminatorResponse>
+    >;
   }
 
-  queryParamDiscriminator(query: StreamingQueryParamDiscriminatorParamsNonStreaming, options?: Core.RequestOptions): APIPromise<StreamingQueryParamDiscriminatorResponse>
-  queryParamDiscriminator(query: StreamingQueryParamDiscriminatorParamsStreaming, options?: Core.RequestOptions): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>>
-  queryParamDiscriminator(query: StreamingQueryParamDiscriminatorParamsBase, options?: Core.RequestOptions): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse> | StreamingQueryParamDiscriminatorResponse>
-  queryParamDiscriminator(query: StreamingQueryParamDiscriminatorParams, options?: Core.RequestOptions): APIPromise<StreamingQueryParamDiscriminatorResponse> | APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>> {
-    return this._client.get('/streaming/query_param_discriminator', { query, ...options, stream: query.should_stream ?? false }) as APIPromise<StreamingQueryParamDiscriminatorResponse> | APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>>;
+  queryParamDiscriminator(
+    query: StreamingQueryParamDiscriminatorParamsNonStreaming,
+    options?: Core.RequestOptions,
+  ): APIPromise<StreamingQueryParamDiscriminatorResponse>;
+  queryParamDiscriminator(
+    query: StreamingQueryParamDiscriminatorParamsStreaming,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>>;
+  queryParamDiscriminator(
+    query: StreamingQueryParamDiscriminatorParamsBase,
+    options?: Core.RequestOptions,
+  ): APIPromise<Stream<StreamingQueryParamDiscriminatorResponse> | StreamingQueryParamDiscriminatorResponse>;
+  queryParamDiscriminator(
+    query: StreamingQueryParamDiscriminatorParams,
+    options?: Core.RequestOptions,
+  ):
+    | APIPromise<StreamingQueryParamDiscriminatorResponse>
+    | APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>> {
+    return this._client.get('/streaming/query_param_discriminator', {
+      query,
+      ...options,
+      stream: query.should_stream ?? false,
+    }) as
+      | APIPromise<StreamingQueryParamDiscriminatorResponse>
+      | APIPromise<Stream<StreamingQueryParamDiscriminatorResponse>>;
   }
 }
 
@@ -58,7 +112,7 @@ export interface StreamingQueryParamDiscriminatorResponse {
   model?: string;
 }
 
-export type StreamingBasicParams = StreamingBasicParamsNonStreaming | StreamingBasicParamsStreaming
+export type StreamingBasicParams = StreamingBasicParamsNonStreaming | StreamingBasicParamsStreaming;
 
 export interface StreamingBasicParamsBase {
   model: string;
@@ -69,8 +123,8 @@ export interface StreamingBasicParamsBase {
 }
 
 export namespace StreamingBasicParams {
-  export type StreamingBasicParamsNonStreaming = StreamingAPI.StreamingBasicParamsNonStreaming
-  export type StreamingBasicParamsStreaming = StreamingAPI.StreamingBasicParamsStreaming
+  export type StreamingBasicParamsNonStreaming = StreamingAPI.StreamingBasicParamsNonStreaming;
+  export type StreamingBasicParamsStreaming = StreamingAPI.StreamingBasicParamsStreaming;
 }
 
 export interface StreamingBasicParamsNonStreaming extends StreamingBasicParamsBase {
@@ -81,7 +135,9 @@ export interface StreamingBasicParamsStreaming extends StreamingBasicParamsBase 
   stream: true;
 }
 
-export type StreamingNestedParamsParams = StreamingNestedParamsParamsNonStreaming | StreamingNestedParamsParamsStreaming
+export type StreamingNestedParamsParams =
+  | StreamingNestedParamsParamsNonStreaming
+  | StreamingNestedParamsParamsStreaming;
 
 export interface StreamingNestedParamsParamsBase {
   model: string;
@@ -110,8 +166,8 @@ export namespace StreamingNestedParamsParams {
     }
   }
 
-  export type StreamingNestedParamsParamsNonStreaming = StreamingAPI.StreamingNestedParamsParamsNonStreaming
-  export type StreamingNestedParamsParamsStreaming = StreamingAPI.StreamingNestedParamsParamsStreaming
+  export type StreamingNestedParamsParamsNonStreaming = StreamingAPI.StreamingNestedParamsParamsNonStreaming;
+  export type StreamingNestedParamsParamsStreaming = StreamingAPI.StreamingNestedParamsParamsStreaming;
 }
 
 export interface StreamingNestedParamsParamsNonStreaming extends StreamingNestedParamsParamsBase {
@@ -128,7 +184,9 @@ export interface StreamingNoDiscriminatorParams {
   prompt: string;
 }
 
-export type StreamingQueryParamDiscriminatorParams = StreamingQueryParamDiscriminatorParamsNonStreaming | StreamingQueryParamDiscriminatorParamsStreaming
+export type StreamingQueryParamDiscriminatorParams =
+  | StreamingQueryParamDiscriminatorParamsNonStreaming
+  | StreamingQueryParamDiscriminatorParamsStreaming;
 
 export interface StreamingQueryParamDiscriminatorParamsBase {
   prompt: string;
@@ -137,15 +195,19 @@ export interface StreamingQueryParamDiscriminatorParamsBase {
 }
 
 export namespace StreamingQueryParamDiscriminatorParams {
-  export type StreamingQueryParamDiscriminatorParamsNonStreaming = StreamingAPI.StreamingQueryParamDiscriminatorParamsNonStreaming
-  export type StreamingQueryParamDiscriminatorParamsStreaming = StreamingAPI.StreamingQueryParamDiscriminatorParamsStreaming
+  export type StreamingQueryParamDiscriminatorParamsNonStreaming =
+    StreamingAPI.StreamingQueryParamDiscriminatorParamsNonStreaming;
+  export type StreamingQueryParamDiscriminatorParamsStreaming =
+    StreamingAPI.StreamingQueryParamDiscriminatorParamsStreaming;
 }
 
-export interface StreamingQueryParamDiscriminatorParamsNonStreaming extends StreamingQueryParamDiscriminatorParamsBase {
+export interface StreamingQueryParamDiscriminatorParamsNonStreaming
+  extends StreamingQueryParamDiscriminatorParamsBase {
   should_stream?: false;
 }
 
-export interface StreamingQueryParamDiscriminatorParamsStreaming extends StreamingQueryParamDiscriminatorParamsBase {
+export interface StreamingQueryParamDiscriminatorParamsStreaming
+  extends StreamingQueryParamDiscriminatorParamsBase {
   should_stream: true;
 }
 

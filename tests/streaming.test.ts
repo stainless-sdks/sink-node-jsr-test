@@ -268,7 +268,7 @@ test('error handling', async () => {
     `[Error: {"type":"error","error":{"type":"overloaded_error","message":"Overloaded"}}]`,
   );
   await err.toBeInstanceOf(APIConnectionError);
-});;
+});
 
 async function iteratorToStream(iterator: AsyncGenerator<any>): Promise<PassThrough> {
   const parts: unknown[] = [];
