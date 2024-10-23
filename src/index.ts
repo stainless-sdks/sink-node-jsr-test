@@ -683,10 +683,12 @@ export namespace Sink {
   export import Balance = API.Balance;
   export import NameChildPropImportClashResponse = API.NameChildPropImportClashResponse;
   export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export import NamePropertiesIllegalGoIdentifiersResponse = API.NamePropertiesIllegalGoIdentifiersResponse;
   export import NamePropertiesIllegalJavascriptIdentifiersResponse = API.NamePropertiesIllegalJavascriptIdentifiersResponse;
   export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
+  export import NamePropertiesIllegalGoIdentifiersParams = API.NamePropertiesIllegalGoIdentifiersParams;
   export import NamePropertiesIllegalJavascriptIdentifiersParams = API.NamePropertiesIllegalJavascriptIdentifiersParams;
 
   export import Widgets = API.Widgets;

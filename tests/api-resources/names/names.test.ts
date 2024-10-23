@@ -86,6 +86,17 @@ describe('resource names', () => {
     });
   });
 
+  test('propertiesIllegalGoIdentifiers', async () => {
+    const responsePromise = client.names.propertiesIllegalGoIdentifiers('type', {});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
   test('propertiesIllegalJavascriptIdentifiers', async () => {
     const responsePromise = client.names.propertiesIllegalJavascriptIdentifiers({});
     const rawResponse = await responsePromise.asResponse();

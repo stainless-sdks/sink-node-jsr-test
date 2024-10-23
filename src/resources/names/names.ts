@@ -44,6 +44,18 @@ export class Names extends APIResource {
   }
 
   /**
+   * Endpoint with request & response properties with names that aren't legal go
+   * identifiers.
+   */
+  propertiesIllegalGoIdentifiers(
+    type: string,
+    body: NamePropertiesIllegalGoIdentifiersParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<NamePropertiesIllegalGoIdentifiersResponse> {
+    return this._client.post(`/names/properties_illegal_go_identifiers/${type}`, { body, ...options });
+  }
+
+  /**
    * Endpoint with request & response properties with names that aren't legal
    * javascript identifiers.
    */
@@ -145,6 +157,10 @@ export interface NamePropertiesCommonConflictsResponse {
   int_2: number;
 }
 
+export interface NamePropertiesIllegalGoIdentifiersResponse {
+  defer: string;
+}
+
 export type NamePropertiesIllegalJavascriptIdentifiersResponse =
   | NamePropertiesIllegalJavascriptIdentifiersResponse._2llegalJavascriptIdentifiers
   | number;
@@ -222,6 +238,10 @@ export interface NamePropertiesCommonConflictsParams {
   int_2: number;
 }
 
+export interface NamePropertiesIllegalGoIdentifiersParams {
+  defer?: string;
+}
+
 export type NamePropertiesIllegalJavascriptIdentifiersParams =
   | NamePropertiesIllegalJavascriptIdentifiersParams._2llegalJavascriptIdentifiers
   | NamePropertiesIllegalJavascriptIdentifiersParams._3llegalJavascriptIdentifiers;
@@ -238,10 +258,12 @@ export namespace Names {
   export import Balance = NamesAPI.Balance;
   export import NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
   export import NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
+  export import NamePropertiesIllegalGoIdentifiersResponse = NamesAPI.NamePropertiesIllegalGoIdentifiersResponse;
   export import NamePropertiesIllegalJavascriptIdentifiersResponse = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersResponse;
   export import NameResponsePropertyClashesModelImportResponse = NamesAPI.NameResponsePropertyClashesModelImportResponse;
   export import NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
   export import NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
+  export import NamePropertiesIllegalGoIdentifiersParams = NamesAPI.NamePropertiesIllegalGoIdentifiersParams;
   export import NamePropertiesIllegalJavascriptIdentifiersParams = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersParams;
   export import Unions = UnionsAPI.Unions;
   export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;

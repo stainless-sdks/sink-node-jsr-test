@@ -518,6 +518,7 @@ Types:
 - <code><a href="./src/resources/names/names.ts">Balance</a></code>
 - <code><a href="./src/resources/names/names.ts">NameChildPropImportClashResponse</a></code>
 - <code><a href="./src/resources/names/names.ts">NamePropertiesCommonConflictsResponse</a></code>
+- <code><a href="./src/resources/names/names.ts">NamePropertiesIllegalGoIdentifiersResponse</a></code>
 - <code><a href="./src/resources/names/names.ts">NamePropertiesIllegalJavascriptIdentifiersResponse</a></code>
 - <code><a href="./src/resources/names/names.ts">NameResponsePropertyClashesModelImportResponse</a></code>
 - <code><a href="./src/resources/names/names.ts">NameResponseShadowsPydanticResponse</a></code>
@@ -527,6 +528,7 @@ Methods:
 - <code title="post /names/child_prop_import_clash">client.names.<a href="./src/resources/names/names.ts">childPropImportClash</a>() -> NameChildPropImportClashResponse</code>
 - <code title="get /names/method_name_get">client.names.<a href="./src/resources/names/names.ts">get</a>() -> BasicSharedModelObject</code>
 - <code title="post /names/properties_common_conflicts">client.names.<a href="./src/resources/names/names.ts">propertiesCommonConflicts</a>({ ...params }) -> NamePropertiesCommonConflictsResponse</code>
+- <code title="post /names/properties_illegal_go_identifiers/{type}">client.names.<a href="./src/resources/names/names.ts">propertiesIllegalGoIdentifiers</a>(type, { ...params }) -> NamePropertiesIllegalGoIdentifiersResponse</code>
 - <code title="post /names/properties_illegal_javascript_identifiers">client.names.<a href="./src/resources/names/names.ts">propertiesIllegalJavascriptIdentifiers</a>({ ...params }) -> NamePropertiesIllegalJavascriptIdentifiersResponse</code>
 - <code title="get /names/response_property_clashes_model_import">client.names.<a href="./src/resources/names/names.ts">responsePropertyClashesModelImport</a>() -> NameResponsePropertyClashesModelImportResponse</code>
 - <code title="get /names/response_property_shadows_pydantic">client.names.<a href="./src/resources/names/names.ts">responseShadowsPydantic</a>() -> NameResponseShadowsPydanticResponse</code>

@@ -4,10 +4,12 @@ export {
   Balance,
   NameChildPropImportClashResponse,
   NamePropertiesCommonConflictsResponse,
+  NamePropertiesIllegalGoIdentifiersResponse,
   NamePropertiesIllegalJavascriptIdentifiersResponse,
   NameResponsePropertyClashesModelImportResponse,
   NameResponseShadowsPydanticResponse,
   NamePropertiesCommonConflictsParams,
+  NamePropertiesIllegalGoIdentifiersParams,
   NamePropertiesIllegalJavascriptIdentifiersParams,
   Names,
 } from './names';
