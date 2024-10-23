@@ -29,4 +29,4 @@ jobs:
         run: |
           bash ./bin/publish-jsr
         env:
-          NPM_TOKEN: ${{ secrets.SINK_NPM_TOKEN || secrets.NPM_TOKEN }}
+          JSR_TOKEN: ${{ secrets.SINK_JSR_TOKEN || secrets.JSR_TOKEN }}
