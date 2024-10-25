@@ -30,37 +30,34 @@ export class PaginationTests extends APIResource {
 
 export namespace PaginationTests {
   export import SchemaTypes = SchemaTypesAPI.SchemaTypes;
-  export type SchemaTypeAllofsParams = SchemaTypesAPI.SchemaTypeAllofsParams;
-  export type SchemaTypeUnionsParams = SchemaTypesAPI.SchemaTypeUnionsParams;
+  export import SchemaTypeAllofsParams = SchemaTypesAPI.SchemaTypeAllofsParams;
+  export import SchemaTypeUnionsParams = SchemaTypesAPI.SchemaTypeUnionsParams;
   export import ItemsTypes = ItemsTypesAPI.ItemsTypes;
-  export type ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
+  export import ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
   export import ItemsTypeListUnknownResponsesPagePageNumber = ItemsTypesAPI.ItemsTypeListUnknownResponsesPagePageNumber;
-  export type ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
+  export import ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
   export import PageNumber = PageNumberAPI.PageNumber;
-  export type PageNumberListParams = PageNumberAPI.PageNumberListParams;
-  export type PageNumberListWithoutCurrentPageResponseParams =
-    PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
+  export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
+  export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
   export import PageNumberWithoutCurrentPageResponse = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponse;
-  export type PageNumberWithoutCurrentPageResponseListParams =
-    PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListParams;
-  export type PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams =
-    PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams;
+  export import PageNumberWithoutCurrentPageResponseListParams = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListParams;
+  export import PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams;
   export import Refs = RefsAPI.Refs;
-  export type RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
-  export type RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;
+  export import RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
+  export import RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;
   export import ResponseHeaders = ResponseHeadersAPI.ResponseHeaders;
-  export type ResponseHeaderBasicCursorParams = ResponseHeadersAPI.ResponseHeaderBasicCursorParams;
+  export import ResponseHeaderBasicCursorParams = ResponseHeadersAPI.ResponseHeaderBasicCursorParams;
   export import TopLevelArrays = TopLevelArraysAPI.TopLevelArrays;
-  export type TopLevelArrayBasicCursorParams = TopLevelArraysAPI.TopLevelArrayBasicCursorParams;
+  export import TopLevelArrayBasicCursorParams = TopLevelArraysAPI.TopLevelArrayBasicCursorParams;
   export import Cursor = CursorAPI.Cursor;
-  export type CursorListParams = CursorAPI.CursorListParams;
-  export type CursorListReverseParams = CursorAPI.CursorListReverseParams;
+  export import CursorListParams = CursorAPI.CursorListParams;
+  export import CursorListReverseParams = CursorAPI.CursorListReverseParams;
   export import Offset = OffsetAPI.Offset;
-  export type OffsetListParams = OffsetAPI.OffsetListParams;
-  export type OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
-  export type OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
+  export import OffsetListParams = OffsetAPI.OffsetListParams;
+  export import OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
+  export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
   export import FakePages = FakePagesAPI.FakePages;
-  export type FakePageListParams = FakePagesAPI.FakePageListParams;
+  export import FakePageListParams = FakePagesAPI.FakePageListParams;
   export import NestedItems = NestedItemsAPI.NestedItems;
-  export type NestedItemListParams = NestedItemsAPI.NestedItemListParams;
+  export import NestedItemListParams = NestedItemsAPI.NestedItemListParams;
 }

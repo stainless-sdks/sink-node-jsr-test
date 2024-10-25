@@ -15,5 +15,5 @@ export interface Private {
 }
 
 export namespace PrivateResource {
-  export type Private = PrivateAPI.Private;
+  export import Private = PrivateAPI.Private;
 }

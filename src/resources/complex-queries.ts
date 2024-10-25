@@ -73,10 +73,10 @@ export interface ComplexQueryUnionQueryParams {
 }
 
 export namespace ComplexQueries {
-  export type ComplexQueryArrayQueryResponse = ComplexQueriesAPI.ComplexQueryArrayQueryResponse;
-  export type ComplexQueryObjectQueryResponse = ComplexQueriesAPI.ComplexQueryObjectQueryResponse;
-  export type ComplexQueryUnionQueryResponse = ComplexQueriesAPI.ComplexQueryUnionQueryResponse;
-  export type ComplexQueryArrayQueryParams = ComplexQueriesAPI.ComplexQueryArrayQueryParams;
-  export type ComplexQueryObjectQueryParams = ComplexQueriesAPI.ComplexQueryObjectQueryParams;
-  export type ComplexQueryUnionQueryParams = ComplexQueriesAPI.ComplexQueryUnionQueryParams;
+  export import ComplexQueryArrayQueryResponse = ComplexQueriesAPI.ComplexQueryArrayQueryResponse;
+  export import ComplexQueryObjectQueryResponse = ComplexQueriesAPI.ComplexQueryObjectQueryResponse;
+  export import ComplexQueryUnionQueryResponse = ComplexQueriesAPI.ComplexQueryUnionQueryResponse;
+  export import ComplexQueryArrayQueryParams = ComplexQueriesAPI.ComplexQueryArrayQueryParams;
+  export import ComplexQueryObjectQueryParams = ComplexQueriesAPI.ComplexQueryObjectQueryParams;
+  export import ComplexQueryUnionQueryParams = ComplexQueriesAPI.ComplexQueryUnionQueryParams;
 }

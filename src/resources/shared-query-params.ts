@@ -61,8 +61,8 @@ export interface SharedQueryParamDelParams {
 }
 
 export namespace SharedQueryParams {
-  export type SharedQueryParamRetrieveResponse = SharedQueryParamsAPI.SharedQueryParamRetrieveResponse;
-  export type SharedQueryParamDelResponse = SharedQueryParamsAPI.SharedQueryParamDelResponse;
-  export type SharedQueryParamRetrieveParams = SharedQueryParamsAPI.SharedQueryParamRetrieveParams;
-  export type SharedQueryParamDelParams = SharedQueryParamsAPI.SharedQueryParamDelParams;
+  export import SharedQueryParamRetrieveResponse = SharedQueryParamsAPI.SharedQueryParamRetrieveResponse;
+  export import SharedQueryParamDelResponse = SharedQueryParamsAPI.SharedQueryParamDelResponse;
+  export import SharedQueryParamRetrieveParams = SharedQueryParamsAPI.SharedQueryParamRetrieveParams;
+  export import SharedQueryParamDelParams = SharedQueryParamsAPI.SharedQueryParamDelParams;
 }

@@ -161,15 +161,13 @@ export interface MethodConfigShouldNotShowUpInAPIDocsParams {
 }
 
 export namespace MethodConfig {
-  export type MethodConfigSkippedTestsAllResponse = MethodConfigAPI.MethodConfigSkippedTestsAllResponse;
-  export type MethodConfigSkippedTestsGoResponse = MethodConfigAPI.MethodConfigSkippedTestsGoResponse;
-  export type MethodConfigSkippedTestsJavaResponse = MethodConfigAPI.MethodConfigSkippedTestsJavaResponse;
-  export type MethodConfigSkippedTestsKotlinResponse = MethodConfigAPI.MethodConfigSkippedTestsKotlinResponse;
-  export type MethodConfigSkippedTestsNodeResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeResponse;
-  export type MethodConfigSkippedTestsNodeAndPythonResponse =
-    MethodConfigAPI.MethodConfigSkippedTestsNodeAndPythonResponse;
-  export type MethodConfigSkippedTestsPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsPythonResponse;
-  export type MethodConfigSkippedTestsRubyResponse = MethodConfigAPI.MethodConfigSkippedTestsRubyResponse;
-  export type MethodConfigShouldNotShowUpInAPIDocsParams =
-    MethodConfigAPI.MethodConfigShouldNotShowUpInAPIDocsParams;
+  export import MethodConfigSkippedTestsAllResponse = MethodConfigAPI.MethodConfigSkippedTestsAllResponse;
+  export import MethodConfigSkippedTestsGoResponse = MethodConfigAPI.MethodConfigSkippedTestsGoResponse;
+  export import MethodConfigSkippedTestsJavaResponse = MethodConfigAPI.MethodConfigSkippedTestsJavaResponse;
+  export import MethodConfigSkippedTestsKotlinResponse = MethodConfigAPI.MethodConfigSkippedTestsKotlinResponse;
+  export import MethodConfigSkippedTestsNodeResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeResponse;
+  export import MethodConfigSkippedTestsNodeAndPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeAndPythonResponse;
+  export import MethodConfigSkippedTestsPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsPythonResponse;
+  export import MethodConfigSkippedTestsRubyResponse = MethodConfigAPI.MethodConfigSkippedTestsRubyResponse;
+  export import MethodConfigShouldNotShowUpInAPIDocsParams = MethodConfigAPI.MethodConfigShouldNotShowUpInAPIDocsParams;
 }

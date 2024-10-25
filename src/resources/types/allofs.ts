@@ -16,6 +16,6 @@ export interface AllofMultipleInlineEntries extends AllofBaseParent {
 }
 
 export namespace Allofs {
-  export type AllofBaseParent = AllofsAPI.AllofBaseParent;
-  export type AllofMultipleInlineEntries = AllofsAPI.AllofMultipleInlineEntries;
+  export import AllofBaseParent = AllofsAPI.AllofBaseParent;
+  export import AllofMultipleInlineEntries = AllofsAPI.AllofMultipleInlineEntries;
 }

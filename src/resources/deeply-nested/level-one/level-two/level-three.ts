@@ -19,5 +19,5 @@ export interface ModelLevel3 {
 }
 
 export namespace LevelThree {
-  export type ModelLevel3 = LevelThreeAPI.ModelLevel3;
+  export import ModelLevel3 = LevelThreeAPI.ModelLevel3;
 }

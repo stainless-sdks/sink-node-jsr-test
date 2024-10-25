@@ -1,5 +1,5 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Arrays, type ArrayMissingItemsResponse } from './arrays';
+export { ArrayMissingItemsResponse, Arrays } from './arrays';
 export { InvalidSchemas } from './invalid-schemas';
-export { Objects, type ObjectMissingItemsResponse } from './objects';
+export { ObjectMissingItemsResponse, Objects } from './objects';

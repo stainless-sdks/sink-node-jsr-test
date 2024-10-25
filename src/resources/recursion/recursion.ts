@@ -43,10 +43,10 @@ export interface RecursionCreateSelfParams {
 }
 
 export namespace Recursion {
-  export type ArrayRecursion = RecursionAPI.ArrayRecursion;
-  export type SelfRecursion = RecursionAPI.SelfRecursion;
-  export type RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
-  export type RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
-  export type RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
+  export import ArrayRecursion = RecursionAPI.ArrayRecursion;
+  export import SelfRecursion = RecursionAPI.SelfRecursion;
+  export import RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
+  export import RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
+  export import RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
   export import SharedResponses = SharedResponsesAPI.SharedResponses;
 }

@@ -11,7 +11,7 @@ export type APIStatusAlias = APIStatus;
 export type CustomAPIStatusMessage = string;
 
 export namespace TopLevel {
-  export type APIStatus = TopLevelAPI.APIStatus;
-  export type APIStatusAlias = TopLevelAPI.APIStatusAlias;
-  export type CustomAPIStatusMessage = TopLevelAPI.CustomAPIStatusMessage;
+  export import APIStatus = TopLevelAPI.APIStatus;
+  export import APIStatusAlias = TopLevelAPI.APIStatusAlias;
+  export import CustomAPIStatusMessage = TopLevelAPI.CustomAPIStatusMessage;
 }

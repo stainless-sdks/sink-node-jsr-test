@@ -19,5 +19,5 @@ export interface Import {
 }
 
 export namespace ImportResource {
-  export type Import = ImportAPI.Import;
+  export import Import = ImportAPI.Import;
 }

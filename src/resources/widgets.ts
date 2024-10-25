@@ -29,5 +29,5 @@ export interface Widget {
 }
 
 export namespace Widgets {
-  export type Widget = WidgetsAPI.Widget;
+  export import Widget = WidgetsAPI.Widget;
 }

@@ -23,6 +23,6 @@ export interface ClientCreateParams {
 }
 
 export namespace Clients {
-  export type Client = ClientsAPI.Client;
-  export type ClientCreateParams = ClientsAPI.ClientCreateParams;
+  export import Client = ClientsAPI.Client;
+  export import ClientCreateParams = ClientsAPI.ClientCreateParams;
 }

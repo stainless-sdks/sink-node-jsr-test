@@ -41,5 +41,5 @@ export interface BinaryWithPathAndBodyParamParams {
 }
 
 export namespace Binaries {
-  export type BinaryWithPathAndBodyParamParams = BinariesAPI.BinaryWithPathAndBodyParamParams;
+  export import BinaryWithPathAndBodyParamParams = BinariesAPI.BinaryWithPathAndBodyParamParams;
 }

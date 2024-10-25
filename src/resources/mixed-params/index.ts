@@ -1,14 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
+  DuplicateBodyAndPathParams,
+  DuplicateQueryAndBodyParams,
+  DuplicateQueryAndPathParams,
   Duplicates,
-  type DuplicateBodyAndPathParams,
-  type DuplicateQueryAndBodyParams,
-  type DuplicateQueryAndPathParams,
 } from './duplicates';
 export {
+  MixedParamBodyWithTopLevelOneOfAndPathParams,
+  MixedParamQueryAndBodyParams,
+  MixedParamQueryBodyAndPathParams,
   MixedParams,
-  type MixedParamBodyWithTopLevelOneOfAndPathParams,
-  type MixedParamQueryAndBodyParams,
-  type MixedParamQueryBodyAndPathParams,
 } from './mixed-params';

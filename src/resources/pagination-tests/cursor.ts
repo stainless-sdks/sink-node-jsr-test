@@ -58,8 +58,8 @@ export interface CursorListParams extends PageCursorParams {
 export interface CursorListReverseParams extends PageCursorWithReverseParams {}
 
 export namespace Cursor {
-  export type CursorListParams = CursorAPI.CursorListParams;
-  export type CursorListReverseParams = CursorAPI.CursorListReverseParams;
+  export import CursorListParams = CursorAPI.CursorListParams;
+  export import CursorListReverseParams = CursorAPI.CursorListReverseParams;
 }
 
 export { MyModelsPageCursor, MyModelsPageCursorWithReverse };

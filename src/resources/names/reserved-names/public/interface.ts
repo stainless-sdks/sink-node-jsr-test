@@ -15,5 +15,5 @@ export interface Interface {
 }
 
 export namespace InterfaceResource {
-  export type Interface = InterfaceAPI.Interface;
+  export import Interface = InterfaceAPI.Interface;
 }

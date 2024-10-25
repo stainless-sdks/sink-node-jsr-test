@@ -78,6 +78,6 @@ export interface EmptyBodyTypedParamsParams {
 }
 
 export namespace EmptyBody {
-  export type EmptyBodyStainlessEmptyObjectParams = EmptyBodyAPI.EmptyBodyStainlessEmptyObjectParams;
-  export type EmptyBodyTypedParamsParams = EmptyBodyAPI.EmptyBodyTypedParamsParams;
+  export import EmptyBodyStainlessEmptyObjectParams = EmptyBodyAPI.EmptyBodyStainlessEmptyObjectParams;
+  export import EmptyBodyTypedParamsParams = EmptyBodyAPI.EmptyBodyTypedParamsParams;
 }

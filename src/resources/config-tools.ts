@@ -184,13 +184,12 @@ export interface ConfigToolOnlyInNodeParams {
 }
 
 export namespace ConfigTools {
-  export type ModelFromNestedResponseBodyRef = ConfigToolsAPI.ModelFromNestedResponseBodyRef;
-  export type ModelFromSchemasRef = ConfigToolsAPI.ModelFromSchemasRef;
-  export type ModelFromSchemasRefOpenAPIUri = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUri;
-  export type ModelFromSchemasRefOpenAPIUriJmespath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJmespath;
-  export type ModelFromSchemasRefOpenAPIUriJsonpath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJsonpath;
-  export type OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
-  export type ConfigToolModelRefFromNestedResponseBodyResponse =
-    ConfigToolsAPI.ConfigToolModelRefFromNestedResponseBodyResponse;
-  export type ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
+  export import ModelFromNestedResponseBodyRef = ConfigToolsAPI.ModelFromNestedResponseBodyRef;
+  export import ModelFromSchemasRef = ConfigToolsAPI.ModelFromSchemasRef;
+  export import ModelFromSchemasRefOpenAPIUri = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUri;
+  export import ModelFromSchemasRefOpenAPIUriJmespath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJmespath;
+  export import ModelFromSchemasRefOpenAPIUriJsonpath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJsonpath;
+  export import OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
+  export import ConfigToolModelRefFromNestedResponseBodyResponse = ConfigToolsAPI.ConfigToolModelRefFromNestedResponseBodyResponse;
+  export import ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
 }

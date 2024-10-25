@@ -24,5 +24,5 @@ export interface MapNullableItemsResponse {
 }
 
 export namespace Maps {
-  export type MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
+  export import MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
 }

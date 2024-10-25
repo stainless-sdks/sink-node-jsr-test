@@ -39,7 +39,7 @@ export interface ResponseHeaderBasicCursorParams extends PageCursorFromHeadersPa
 }
 
 export namespace ResponseHeaders {
-  export type ResponseHeaderBasicCursorParams = ResponseHeadersAPI.ResponseHeaderBasicCursorParams;
+  export import ResponseHeaderBasicCursorParams = ResponseHeadersAPI.ResponseHeaderBasicCursorParams;
 }
 
 export { MyModelsPageCursorFromHeaders };

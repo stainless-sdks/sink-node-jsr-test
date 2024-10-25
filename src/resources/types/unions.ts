@@ -159,26 +159,16 @@ export namespace UnionParamDiscriminatedWithBasicMappingParams {
 }
 
 export namespace Unions {
-  export type UnionDiscriminatedVariantA = UnionsAPI.UnionDiscriminatedVariantA;
-  export type UnionDiscriminatedVariantB = UnionsAPI.UnionDiscriminatedVariantB;
-  export type UnionArrayParamDiscriminatedByPropertyNameResponse =
-    UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameResponse;
-  export type UnionArrayParamDiscriminatedWithBasicMappingResponse =
-    UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingResponse;
-  export type UnionParamDiscriminatedByPropertyNameResponse =
-    UnionsAPI.UnionParamDiscriminatedByPropertyNameResponse;
-  export type UnionParamDiscriminatedWithBasicMappingResponse =
-    UnionsAPI.UnionParamDiscriminatedWithBasicMappingResponse;
-  export type UnionResponseDiscriminatedByPropertyNameResponse =
-    UnionsAPI.UnionResponseDiscriminatedByPropertyNameResponse;
-  export type UnionResponseDiscriminatedWithBasicMappingResponse =
-    UnionsAPI.UnionResponseDiscriminatedWithBasicMappingResponse;
-  export type UnionArrayParamDiscriminatedByPropertyNameParams =
-    UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameParams;
-  export type UnionArrayParamDiscriminatedWithBasicMappingParams =
-    UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingParams;
-  export type UnionParamDiscriminatedByPropertyNameParams =
-    UnionsAPI.UnionParamDiscriminatedByPropertyNameParams;
-  export type UnionParamDiscriminatedWithBasicMappingParams =
-    UnionsAPI.UnionParamDiscriminatedWithBasicMappingParams;
+  export import UnionDiscriminatedVariantA = UnionsAPI.UnionDiscriminatedVariantA;
+  export import UnionDiscriminatedVariantB = UnionsAPI.UnionDiscriminatedVariantB;
+  export import UnionArrayParamDiscriminatedByPropertyNameResponse = UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameResponse;
+  export import UnionArrayParamDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingResponse;
+  export import UnionParamDiscriminatedByPropertyNameResponse = UnionsAPI.UnionParamDiscriminatedByPropertyNameResponse;
+  export import UnionParamDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionParamDiscriminatedWithBasicMappingResponse;
+  export import UnionResponseDiscriminatedByPropertyNameResponse = UnionsAPI.UnionResponseDiscriminatedByPropertyNameResponse;
+  export import UnionResponseDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionResponseDiscriminatedWithBasicMappingResponse;
+  export import UnionArrayParamDiscriminatedByPropertyNameParams = UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameParams;
+  export import UnionArrayParamDiscriminatedWithBasicMappingParams = UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingParams;
+  export import UnionParamDiscriminatedByPropertyNameParams = UnionsAPI.UnionParamDiscriminatedByPropertyNameParams;
+  export import UnionParamDiscriminatedWithBasicMappingParams = UnionsAPI.UnionParamDiscriminatedWithBasicMappingParams;
 }

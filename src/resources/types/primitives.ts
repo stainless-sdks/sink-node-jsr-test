@@ -28,7 +28,7 @@ export interface PrimitiveStringsParams {
 }
 
 export namespace Primitives {
-  export type ModelString = PrimitivesAPI.ModelString;
-  export type PrimitiveStringsResponse = PrimitivesAPI.PrimitiveStringsResponse;
-  export type PrimitiveStringsParams = PrimitivesAPI.PrimitiveStringsParams;
+  export import ModelString = PrimitivesAPI.ModelString;
+  export import PrimitiveStringsResponse = PrimitivesAPI.PrimitiveStringsResponse;
+  export import PrimitiveStringsParams = PrimitivesAPI.PrimitiveStringsParams;
 }

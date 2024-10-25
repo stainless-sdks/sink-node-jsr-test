@@ -255,31 +255,25 @@ export namespace NamePropertiesIllegalJavascriptIdentifiersParams {
 }
 
 export namespace Names {
-  export type Balance = NamesAPI.Balance;
-  export type NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
-  export type NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
-  export type NamePropertiesIllegalGoIdentifiersResponse =
-    NamesAPI.NamePropertiesIllegalGoIdentifiersResponse;
-  export type NamePropertiesIllegalJavascriptIdentifiersResponse =
-    NamesAPI.NamePropertiesIllegalJavascriptIdentifiersResponse;
-  export type NameResponsePropertyClashesModelImportResponse =
-    NamesAPI.NameResponsePropertyClashesModelImportResponse;
-  export type NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
-  export type NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
-  export type NamePropertiesIllegalGoIdentifiersParams = NamesAPI.NamePropertiesIllegalGoIdentifiersParams;
-  export type NamePropertiesIllegalJavascriptIdentifiersParams =
-    NamesAPI.NamePropertiesIllegalJavascriptIdentifiersParams;
+  export import Balance = NamesAPI.Balance;
+  export import NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
+  export import NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
+  export import NamePropertiesIllegalGoIdentifiersResponse = NamesAPI.NamePropertiesIllegalGoIdentifiersResponse;
+  export import NamePropertiesIllegalJavascriptIdentifiersResponse = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersResponse;
+  export import NameResponsePropertyClashesModelImportResponse = NamesAPI.NameResponsePropertyClashesModelImportResponse;
+  export import NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
+  export import NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
+  export import NamePropertiesIllegalGoIdentifiersParams = NamesAPI.NamePropertiesIllegalGoIdentifiersParams;
+  export import NamePropertiesIllegalJavascriptIdentifiersParams = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersParams;
   export import Unions = UnionsAPI.Unions;
-  export type DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
-  export type VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
+  export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
+  export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
   export import ReservedNames = ReservedNamesAPI.ReservedNames;
-  export type ReservedNameCommonReservedParamsParams =
-    ReservedNamesAPI.ReservedNameCommonReservedParamsParams;
+  export import ReservedNameCommonReservedParamsParams = ReservedNamesAPI.ReservedNameCommonReservedParamsParams;
   export import Params = ParamsAPI.Params;
-  export type ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
-  export type ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
+  export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
+  export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
   export import CanCauseClashes = CanCauseClashesAPI.CanCauseClashes;
   export import OpenAPISpecials = OpenAPISpecialsAPI.OpenAPISpecials;
-  export type OpenAPISpecialUsedUsedAsPropertyNameResponse =
-    OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
+  export import OpenAPISpecialUsedUsedAsPropertyNameResponse = OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
 }

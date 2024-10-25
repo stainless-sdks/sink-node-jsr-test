@@ -36,7 +36,7 @@ export interface NestedItemListParams extends PageCursorNestedItemsParams {
 }
 
 export namespace NestedItems {
-  export type NestedItemListParams = NestedItemsAPI.NestedItemListParams;
+  export import NestedItemListParams = NestedItemsAPI.NestedItemListParams;
 }
 
 export { MyModelsPageCursorNestedItems };

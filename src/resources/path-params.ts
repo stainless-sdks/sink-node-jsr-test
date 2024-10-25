@@ -163,10 +163,10 @@ export interface PathParamNullableParamsParams {
 }
 
 export namespace PathParams {
-  export type PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
-  export type PathParamFileExtensionResponse = PathParamsAPI.PathParamFileExtensionResponse;
-  export type PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
-  export type PathParamQueryParamResponse = PathParamsAPI.PathParamQueryParamResponse;
-  export type PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
-  export type PathParamNullableParamsParams = PathParamsAPI.PathParamNullableParamsParams;
+  export import PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
+  export import PathParamFileExtensionResponse = PathParamsAPI.PathParamFileExtensionResponse;
+  export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
+  export import PathParamQueryParamResponse = PathParamsAPI.PathParamQueryParamResponse;
+  export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
+  export import PathParamNullableParamsParams = PathParamsAPI.PathParamNullableParamsParams;
 }

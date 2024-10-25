@@ -15,5 +15,5 @@ export interface ArrayMissingItemsResponse {
 }
 
 export namespace Arrays {
-  export type ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
+  export import ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
 }

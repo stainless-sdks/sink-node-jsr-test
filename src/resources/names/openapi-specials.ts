@@ -17,6 +17,5 @@ export interface OpenAPISpecialUsedUsedAsPropertyNameResponse {
 }
 
 export namespace OpenAPISpecials {
-  export type OpenAPISpecialUsedUsedAsPropertyNameResponse =
-    OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
+  export import OpenAPISpecialUsedUsedAsPropertyNameResponse = OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
 }

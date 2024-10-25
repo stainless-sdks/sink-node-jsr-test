@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
+  ArrayRecursion,
+  SelfRecursion,
+  RecursionCreateEnvelopeResponse,
+  RecursionCreateEnvelopeParams,
+  RecursionCreateSelfParams,
   Recursion,
-  type ArrayRecursion,
-  type SelfRecursion,
-  type RecursionCreateEnvelopeResponse,
-  type RecursionCreateEnvelopeParams,
-  type RecursionCreateSelfParams,
 } from './recursion';
 export { SharedResponses } from './shared-responses';
