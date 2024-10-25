@@ -53,6 +53,7 @@ export interface DefaultReqOptionWithParamOverrideParams {
 }
 
 export namespace DefaultReqOptions {
-  export import DefaultReqOptionWithParamOverrideParams = DefaultReqOptionsAPI.DefaultReqOptionWithParamOverrideParams;
+  export type DefaultReqOptionWithParamOverrideParams =
+    DefaultReqOptionsAPI.DefaultReqOptionWithParamOverrideParams;
   export import Child = ChildAPI.Child;
 }

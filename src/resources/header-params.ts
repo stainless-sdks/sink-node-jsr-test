@@ -221,8 +221,8 @@ export interface HeaderParamNullableTypeParams {
 }
 
 export namespace HeaderParams {
-  export import HeaderParamAllTypesParams = HeaderParamsAPI.HeaderParamAllTypesParams;
-  export import HeaderParamArraysParams = HeaderParamsAPI.HeaderParamArraysParams;
-  export import HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
-  export import HeaderParamNullableTypeParams = HeaderParamsAPI.HeaderParamNullableTypeParams;
+  export type HeaderParamAllTypesParams = HeaderParamsAPI.HeaderParamAllTypesParams;
+  export type HeaderParamArraysParams = HeaderParamsAPI.HeaderParamArraysParams;
+  export type HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
+  export type HeaderParamNullableTypeParams = HeaderParamsAPI.HeaderParamNullableTypeParams;
 }

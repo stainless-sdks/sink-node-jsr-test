@@ -95,10 +95,10 @@ export namespace UnionTypeSuperMixedTypesResponse {
 export type UnionTypeUnknownVariantResponse = Shared.SimpleObject | unknown;
 
 export namespace UnionTypes {
-  export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
-  export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
-  export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
-  export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
-  export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
-  export import UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
+  export type UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
+  export type UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
+  export type UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
+  export type UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
+  export type UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
+  export type UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
 }

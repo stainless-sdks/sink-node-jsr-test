@@ -61,8 +61,8 @@ export interface SchemaTypeUnionsParams extends PageCursorParams {
 }
 
 export namespace SchemaTypes {
-  export import SchemaTypeAllofsParams = SchemaTypesAPI.SchemaTypeAllofsParams;
-  export import SchemaTypeUnionsParams = SchemaTypesAPI.SchemaTypeUnionsParams;
+  export type SchemaTypeAllofsParams = SchemaTypesAPI.SchemaTypeAllofsParams;
+  export type SchemaTypeUnionsParams = SchemaTypesAPI.SchemaTypeUnionsParams;
 }
 
 export { MyModelsPageCursor };

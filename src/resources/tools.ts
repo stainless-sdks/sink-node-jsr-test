@@ -30,6 +30,6 @@ export interface ToolSkippedParamsParams {
 }
 
 export namespace Tools {
-  export import ObjectSkippedProps = ToolsAPI.ObjectSkippedProps;
-  export import ToolSkippedParamsParams = ToolsAPI.ToolSkippedParamsParams;
+  export type ObjectSkippedProps = ToolsAPI.ObjectSkippedProps;
+  export type ToolSkippedParamsParams = ToolsAPI.ToolSkippedParamsParams;
 }

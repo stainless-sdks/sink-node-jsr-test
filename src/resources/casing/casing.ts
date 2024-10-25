@@ -9,7 +9,7 @@ export class Casing extends APIResource {
 
 export namespace Casing {
   export import EEOCResource = EEOCAPI.EEOCResource;
-  export import EEOC = EEOCAPI.EEOC;
+  export type EEOC = EEOCAPI.EEOC;
   export import EEOCsPageCursor = EEOCAPI.EEOCsPageCursor;
-  export import EEOCListParams = EEOCAPI.EEOCListParams;
+  export type EEOCListParams = EEOCAPI.EEOCListParams;
 }

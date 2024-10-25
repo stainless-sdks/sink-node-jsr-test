@@ -52,6 +52,6 @@ export interface Version1_30NameCreateParams {
 }
 
 export namespace Version1_30Names {
-  export import Version1_30NameCreateResponse = Version1_30NamesAPI.Version1_30NameCreateResponse;
-  export import Version1_30NameCreateParams = Version1_30NamesAPI.Version1_30NameCreateParams;
+  export type Version1_30NameCreateResponse = Version1_30NamesAPI.Version1_30NameCreateResponse;
+  export type Version1_30NameCreateParams = Version1_30NamesAPI.Version1_30NameCreateParams;
 }

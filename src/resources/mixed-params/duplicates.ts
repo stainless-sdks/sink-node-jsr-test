@@ -82,7 +82,7 @@ export interface DuplicateQueryAndPathParams {
 }
 
 export namespace Duplicates {
-  export import DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
-  export import DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
-  export import DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
+  export type DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
+  export type DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
+  export type DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
 }

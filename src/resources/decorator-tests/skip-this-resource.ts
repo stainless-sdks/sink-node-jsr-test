@@ -18,5 +18,5 @@ export interface SkipThisResourceINeverAppearResponse {
 }
 
 export namespace SkipThisResource {
-  export import SkipThisResourceINeverAppearResponse = SkipThisResourceAPI.SkipThisResourceINeverAppearResponse;
+  export type SkipThisResourceINeverAppearResponse = SkipThisResourceAPI.SkipThisResourceINeverAppearResponse;
 }

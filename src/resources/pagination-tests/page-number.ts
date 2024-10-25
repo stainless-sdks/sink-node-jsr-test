@@ -53,8 +53,9 @@ export interface PageNumberListParams extends PagePageNumberParams {}
 export interface PageNumberListWithoutCurrentPageResponseParams extends PagePageNumberParams {}
 
 export namespace PageNumber {
-  export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
-  export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
+  export type PageNumberListParams = PageNumberAPI.PageNumberListParams;
+  export type PageNumberListWithoutCurrentPageResponseParams =
+    PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
 }
 
 export { MyModelsPagePageNumber };

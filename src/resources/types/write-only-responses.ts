@@ -16,5 +16,5 @@ export class WriteOnlyResponses extends APIResource {
 export interface WriteOnlyResponseSimpleResponse {}
 
 export namespace WriteOnlyResponses {
-  export import WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
+  export type WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
 }

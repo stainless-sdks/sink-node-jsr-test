@@ -15,5 +15,5 @@ export interface Class {
 }
 
 export namespace ClassResource {
-  export import Class = ClassAPI.Class;
+  export type Class = ClassAPI.Class;
 }

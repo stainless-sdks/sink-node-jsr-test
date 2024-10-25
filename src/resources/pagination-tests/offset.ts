@@ -89,9 +89,9 @@ export interface OffsetListNoStartFieldParams extends PageOffsetNoStartFieldPara
 export interface OffsetWithTotalCountParams extends PageOffsetTotalCountParams {}
 
 export namespace Offset {
-  export import OffsetListParams = OffsetAPI.OffsetListParams;
-  export import OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
-  export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
+  export type OffsetListParams = OffsetAPI.OffsetListParams;
+  export type OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
+  export type OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
 }
 
 export { MyModelsPageOffset, MyModelsPageOffsetNoStartField, MyModelsPageOffsetTotalCount };

@@ -117,11 +117,12 @@ export interface MixedParamQueryBodyAndPathParams {
 }
 
 export namespace MixedParams {
-  export import MixedParamBodyWithTopLevelOneOfAndPathParams = MixedParamsAPI.MixedParamBodyWithTopLevelOneOfAndPathParams;
-  export import MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
-  export import MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
+  export type MixedParamBodyWithTopLevelOneOfAndPathParams =
+    MixedParamsAPI.MixedParamBodyWithTopLevelOneOfAndPathParams;
+  export type MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
+  export type MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
   export import Duplicates = DuplicatesAPI.Duplicates;
-  export import DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
-  export import DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
-  export import DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
+  export type DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
+  export type DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
+  export type DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
 }

@@ -39,7 +39,7 @@ export type ItemsTypeListUnknownResponse = unknown;
 export interface ItemsTypeListUnknownParams extends PagePageNumberParams {}
 
 export namespace ItemsTypes {
-  export import ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
+  export type ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
   export import ItemsTypeListUnknownResponsesPagePageNumber = ItemsTypesAPI.ItemsTypeListUnknownResponsesPagePageNumber;
-  export import ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
+  export type ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
 }

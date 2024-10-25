@@ -50,6 +50,6 @@ export namespace VariantsSinglePropObjects {
 }
 
 export namespace Unions {
-  export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
-  export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
+  export type DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
+  export type VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
 }

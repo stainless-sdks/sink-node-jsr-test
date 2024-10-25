@@ -378,35 +378,39 @@ export interface ResponseOnlyReadOnlyPropertiesResponse {
 export type ResponseStringResponseResponse = string;
 
 export namespace Responses {
-  export import ModelFromNestedPath = ResponsesAPI.ModelFromNestedPath;
-  export import ModelWithNestedModel = ResponsesAPI.ModelWithNestedModel;
-  export import ObjectWithAnyOfNullProperty = ResponsesAPI.ObjectWithAnyOfNullProperty;
-  export import ObjectWithOneOfNullProperty = ResponsesAPI.ObjectWithOneOfNullProperty;
-  export import ObjectWithUnionProperties = ResponsesAPI.ObjectWithUnionProperties;
-  export import ResponsesAllofCrossObject = ResponsesAPI.ResponsesAllofCrossObject;
-  export import SimpleAllof = ResponsesAPI.SimpleAllof;
-  export import UnknownObject = ResponsesAPI.UnknownObject;
-  export import ResponseAdditionalPropertiesResponse = ResponsesAPI.ResponseAdditionalPropertiesResponse;
-  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = ResponsesAPI.ResponseAdditionalPropertiesNestedModelReferenceResponse;
-  export import ResponseAllofCrossResourceResponse = ResponsesAPI.ResponseAllofCrossResourceResponse;
-  export import ResponseAllofSimpleResponse = ResponsesAPI.ResponseAllofSimpleResponse;
-  export import ResponseArrayObjectWithUnionPropertiesResponse = ResponsesAPI.ResponseArrayObjectWithUnionPropertiesResponse;
-  export import ResponseArrayResponseResponse = ResponsesAPI.ResponseArrayResponseResponse;
-  export import ResponseBooleanResponseResponse = ResponsesAPI.ResponseBooleanResponseResponse;
-  export import ResponseIntegerResponseResponse = ResponsesAPI.ResponseIntegerResponseResponse;
-  export import ResponseMissingRequiredResponse = ResponsesAPI.ResponseMissingRequiredResponse;
-  export import ResponseNestedArrayResponse = ResponsesAPI.ResponseNestedArrayResponse;
-  export import ResponseObjectAllPropertiesResponse = ResponsesAPI.ResponseObjectAllPropertiesResponse;
-  export import ResponseObjectNoPropertiesResponse = ResponsesAPI.ResponseObjectNoPropertiesResponse;
-  export import ResponseObjectWithAdditionalPropertiesPropResponse = ResponsesAPI.ResponseObjectWithAdditionalPropertiesPropResponse;
-  export import ResponseObjectWithHeavilyNestedUnionResponse = ResponsesAPI.ResponseObjectWithHeavilyNestedUnionResponse;
-  export import ResponseOnlyReadOnlyPropertiesResponse = ResponsesAPI.ResponseOnlyReadOnlyPropertiesResponse;
-  export import ResponseStringResponseResponse = ResponsesAPI.ResponseStringResponseResponse;
+  export type ModelFromNestedPath = ResponsesAPI.ModelFromNestedPath;
+  export type ModelWithNestedModel = ResponsesAPI.ModelWithNestedModel;
+  export type ObjectWithAnyOfNullProperty = ResponsesAPI.ObjectWithAnyOfNullProperty;
+  export type ObjectWithOneOfNullProperty = ResponsesAPI.ObjectWithOneOfNullProperty;
+  export type ObjectWithUnionProperties = ResponsesAPI.ObjectWithUnionProperties;
+  export type ResponsesAllofCrossObject = ResponsesAPI.ResponsesAllofCrossObject;
+  export type SimpleAllof = ResponsesAPI.SimpleAllof;
+  export type UnknownObject = ResponsesAPI.UnknownObject;
+  export type ResponseAdditionalPropertiesResponse = ResponsesAPI.ResponseAdditionalPropertiesResponse;
+  export type ResponseAdditionalPropertiesNestedModelReferenceResponse =
+    ResponsesAPI.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export type ResponseAllofCrossResourceResponse = ResponsesAPI.ResponseAllofCrossResourceResponse;
+  export type ResponseAllofSimpleResponse = ResponsesAPI.ResponseAllofSimpleResponse;
+  export type ResponseArrayObjectWithUnionPropertiesResponse =
+    ResponsesAPI.ResponseArrayObjectWithUnionPropertiesResponse;
+  export type ResponseArrayResponseResponse = ResponsesAPI.ResponseArrayResponseResponse;
+  export type ResponseBooleanResponseResponse = ResponsesAPI.ResponseBooleanResponseResponse;
+  export type ResponseIntegerResponseResponse = ResponsesAPI.ResponseIntegerResponseResponse;
+  export type ResponseMissingRequiredResponse = ResponsesAPI.ResponseMissingRequiredResponse;
+  export type ResponseNestedArrayResponse = ResponsesAPI.ResponseNestedArrayResponse;
+  export type ResponseObjectAllPropertiesResponse = ResponsesAPI.ResponseObjectAllPropertiesResponse;
+  export type ResponseObjectNoPropertiesResponse = ResponsesAPI.ResponseObjectNoPropertiesResponse;
+  export type ResponseObjectWithAdditionalPropertiesPropResponse =
+    ResponsesAPI.ResponseObjectWithAdditionalPropertiesPropResponse;
+  export type ResponseObjectWithHeavilyNestedUnionResponse =
+    ResponsesAPI.ResponseObjectWithHeavilyNestedUnionResponse;
+  export type ResponseOnlyReadOnlyPropertiesResponse = ResponsesAPI.ResponseOnlyReadOnlyPropertiesResponse;
+  export type ResponseStringResponseResponse = ResponsesAPI.ResponseStringResponseResponse;
   export import UnionTypes = UnionTypesAPI.UnionTypes;
-  export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
-  export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
-  export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
-  export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
-  export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
-  export import UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
+  export type UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
+  export type UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
+  export type UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
+  export type UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
+  export type UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
+  export type UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
 }

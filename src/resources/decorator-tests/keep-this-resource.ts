@@ -19,5 +19,6 @@ export interface KeepThisResourceKeepThisMethodResponse {
 }
 
 export namespace KeepThisResource {
-  export import KeepThisResourceKeepThisMethodResponse = KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
+  export type KeepThisResourceKeepThisMethodResponse =
+    KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
 }

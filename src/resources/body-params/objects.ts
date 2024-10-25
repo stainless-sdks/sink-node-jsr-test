@@ -33,5 +33,5 @@ export namespace ObjectMixedKnownAndUnknownParams {
 }
 
 export namespace Objects {
-  export import ObjectMixedKnownAndUnknownParams = ObjectsAPI.ObjectMixedKnownAndUnknownParams;
+  export type ObjectMixedKnownAndUnknownParams = ObjectsAPI.ObjectMixedKnownAndUnknownParams;
 }

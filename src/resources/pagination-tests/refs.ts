@@ -65,8 +65,8 @@ export interface RefWithSharedModelRefParams extends PageCursorSharedRefParams {
 }
 
 export namespace Refs {
-  export import RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
-  export import RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;
+  export type RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
+  export type RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;
 }
 
 export { MyModelsPageCursorNestedObjectRef, MyModelsPageCursorSharedRef };

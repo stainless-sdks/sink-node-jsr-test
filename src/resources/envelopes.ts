@@ -91,7 +91,7 @@ export interface EnvelopeInlineResponseResponse {
 export type EnvelopeWrappedArrayResponse = Array<Shared.ObjectWithChildRef>;
 
 export namespace Envelopes {
-  export import Address = EnvelopesAPI.Address;
-  export import EnvelopeInlineResponseResponse = EnvelopesAPI.EnvelopeInlineResponseResponse;
-  export import EnvelopeWrappedArrayResponse = EnvelopesAPI.EnvelopeWrappedArrayResponse;
+  export type Address = EnvelopesAPI.Address;
+  export type EnvelopeInlineResponseResponse = EnvelopesAPI.EnvelopeInlineResponseResponse;
+  export type EnvelopeWrappedArrayResponse = EnvelopesAPI.EnvelopeWrappedArrayResponse;
 }

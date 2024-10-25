@@ -89,9 +89,9 @@ export interface EnumBasicParams {
 }
 
 export namespace Enums {
-  export import EnumBasicResponse = EnumsAPI.EnumBasicResponse;
-  export import EnumArrayUniqueValuesParams = EnumsAPI.EnumArrayUniqueValuesParams;
-  export import EnumArrayUniqueValues2ValuesParams = EnumsAPI.EnumArrayUniqueValues2ValuesParams;
-  export import EnumArrayUniqueValuesNumbersParams = EnumsAPI.EnumArrayUniqueValuesNumbersParams;
-  export import EnumBasicParams = EnumsAPI.EnumBasicParams;
+  export type EnumBasicResponse = EnumsAPI.EnumBasicResponse;
+  export type EnumArrayUniqueValuesParams = EnumsAPI.EnumArrayUniqueValuesParams;
+  export type EnumArrayUniqueValues2ValuesParams = EnumsAPI.EnumArrayUniqueValues2ValuesParams;
+  export type EnumArrayUniqueValuesNumbersParams = EnumsAPI.EnumArrayUniqueValuesNumbersParams;
+  export type EnumBasicParams = EnumsAPI.EnumBasicParams;
 }

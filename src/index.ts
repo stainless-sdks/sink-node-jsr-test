@@ -488,381 +488,397 @@ export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
 export namespace Sink {
-  export import RequestOptions = Core.RequestOptions;
+  export type RequestOptions = Core.RequestOptions;
 
   export import PageCursor = Pagination.PageCursor;
-  export import PageCursorParams = Pagination.PageCursorParams;
-  export import PageCursorResponse = Pagination.PageCursorResponse;
+  export type PageCursorParams = Pagination.PageCursorParams;
+  export type PageCursorResponse<T> = Pagination.PageCursorResponse<T>;
 
   export import PageCursorWithReverse = Pagination.PageCursorWithReverse;
-  export import PageCursorWithReverseParams = Pagination.PageCursorWithReverseParams;
-  export import PageCursorWithReverseResponse = Pagination.PageCursorWithReverseResponse;
+  export type PageCursorWithReverseParams = Pagination.PageCursorWithReverseParams;
+  export type PageCursorWithReverseResponse<T> = Pagination.PageCursorWithReverseResponse<T>;
 
   export import PageCursorFromHeaders = Pagination.PageCursorFromHeaders;
-  export import PageCursorFromHeadersParams = Pagination.PageCursorFromHeadersParams;
-  export import PageCursorFromHeadersResponse = Pagination.PageCursorFromHeadersResponse;
+  export type PageCursorFromHeadersParams = Pagination.PageCursorFromHeadersParams;
+  export type PageCursorFromHeadersResponse<T> = Pagination.PageCursorFromHeadersResponse<T>;
 
   export import PageCursorTopLevelArray = Pagination.PageCursorTopLevelArray;
-  export import PageCursorTopLevelArrayParams = Pagination.PageCursorTopLevelArrayParams;
-  export import PageCursorTopLevelArrayResponse = Pagination.PageCursorTopLevelArrayResponse;
+  export type PageCursorTopLevelArrayParams = Pagination.PageCursorTopLevelArrayParams;
+  export type PageCursorTopLevelArrayResponse<T> = Pagination.PageCursorTopLevelArrayResponse<T>;
 
   export import PageCursorSharedRef = Pagination.PageCursorSharedRef;
-  export import PageCursorSharedRefParams = Pagination.PageCursorSharedRefParams;
-  export import PageCursorSharedRefResponse = Pagination.PageCursorSharedRefResponse;
+  export type PageCursorSharedRefParams = Pagination.PageCursorSharedRefParams;
+  export type PageCursorSharedRefResponse<T> = Pagination.PageCursorSharedRefResponse<T>;
 
   export import PageCursorNestedObjectRef = Pagination.PageCursorNestedObjectRef;
-  export import PageCursorNestedObjectRefParams = Pagination.PageCursorNestedObjectRefParams;
-  export import PageCursorNestedObjectRefResponse = Pagination.PageCursorNestedObjectRefResponse;
+  export type PageCursorNestedObjectRefParams = Pagination.PageCursorNestedObjectRefParams;
+  export type PageCursorNestedObjectRefResponse<T> = Pagination.PageCursorNestedObjectRefResponse<T>;
 
   export import PageCursorNestedItems = Pagination.PageCursorNestedItems;
-  export import PageCursorNestedItemsParams = Pagination.PageCursorNestedItemsParams;
-  export import PageCursorNestedItemsResponse = Pagination.PageCursorNestedItemsResponse;
+  export type PageCursorNestedItemsParams = Pagination.PageCursorNestedItemsParams;
+  export type PageCursorNestedItemsResponse<T> = Pagination.PageCursorNestedItemsResponse<T>;
 
   export import PagePageNumber = Pagination.PagePageNumber;
-  export import PagePageNumberParams = Pagination.PagePageNumberParams;
-  export import PagePageNumberResponse = Pagination.PagePageNumberResponse;
+  export type PagePageNumberParams = Pagination.PagePageNumberParams;
+  export type PagePageNumberResponse<T> = Pagination.PagePageNumberResponse<T>;
 
   export import PagePageNumberWithoutCurrentPageResponse = Pagination.PagePageNumberWithoutCurrentPageResponse;
-  export import PagePageNumberWithoutCurrentPageResponseParams = Pagination.PagePageNumberWithoutCurrentPageResponseParams;
-  export import PagePageNumberWithoutCurrentPageResponseResponse = Pagination.PagePageNumberWithoutCurrentPageResponseResponse;
+  export type PagePageNumberWithoutCurrentPageResponseParams =
+    Pagination.PagePageNumberWithoutCurrentPageResponseParams;
+  export type PagePageNumberWithoutCurrentPageResponseResponse<T> =
+    Pagination.PagePageNumberWithoutCurrentPageResponseResponse<T>;
 
   export import PageOffsetTotalCount = Pagination.PageOffsetTotalCount;
-  export import PageOffsetTotalCountParams = Pagination.PageOffsetTotalCountParams;
-  export import PageOffsetTotalCountResponse = Pagination.PageOffsetTotalCountResponse;
+  export type PageOffsetTotalCountParams = Pagination.PageOffsetTotalCountParams;
+  export type PageOffsetTotalCountResponse<T> = Pagination.PageOffsetTotalCountResponse<T>;
 
   export import PageOffset = Pagination.PageOffset;
-  export import PageOffsetParams = Pagination.PageOffsetParams;
-  export import PageOffsetResponse = Pagination.PageOffsetResponse;
+  export type PageOffsetParams = Pagination.PageOffsetParams;
+  export type PageOffsetResponse<T> = Pagination.PageOffsetResponse<T>;
 
   export import PageOffsetNoStartField = Pagination.PageOffsetNoStartField;
-  export import PageOffsetNoStartFieldParams = Pagination.PageOffsetNoStartFieldParams;
-  export import PageOffsetNoStartFieldResponse = Pagination.PageOffsetNoStartFieldResponse;
+  export type PageOffsetNoStartFieldParams = Pagination.PageOffsetNoStartFieldParams;
+  export type PageOffsetNoStartFieldResponse<T> = Pagination.PageOffsetNoStartFieldResponse<T>;
 
   export import PageCursorURL = Pagination.PageCursorURL;
-  export import PageCursorURLParams = Pagination.PageCursorURLParams;
-  export import PageCursorURLResponse = Pagination.PageCursorURLResponse;
+  export type PageCursorURLParams = Pagination.PageCursorURLParams;
+  export type PageCursorURLResponse<T> = Pagination.PageCursorURLResponse<T>;
 
   export import PageCursorID = Pagination.PageCursorID;
-  export import PageCursorIDParams = Pagination.PageCursorIDParams;
-  export import PageCursorIDResponse = Pagination.PageCursorIDResponse;
+  export type PageCursorIDParams = Pagination.PageCursorIDParams;
+  export type PageCursorIDResponse<T> = Pagination.PageCursorIDResponse<T>;
 
   export import FakePage = Pagination.FakePage;
-  export import FakePageParams = Pagination.FakePageParams;
-  export import FakePageResponse = Pagination.FakePageResponse;
+  export type FakePageParams = Pagination.FakePageParams;
+  export type FakePageResponse<T> = Pagination.FakePageResponse<T>;
 
-  export import APIStatus = API.APIStatus;
-  export import APIStatusAlias = API.APIStatusAlias;
-  export import CustomAPIStatusMessage = API.CustomAPIStatusMessage;
+  export type APIStatus = API.APIStatus;
+  export type APIStatusAlias = API.APIStatusAlias;
+  export type CustomAPIStatusMessage = API.CustomAPIStatusMessage;
 
   export import Testing = API.Testing;
-  export import RootResponse = API.RootResponse;
+  export type RootResponse = API.RootResponse;
 
   export import ComplexQueries = API.ComplexQueries;
-  export import ComplexQueryArrayQueryResponse = API.ComplexQueryArrayQueryResponse;
-  export import ComplexQueryObjectQueryResponse = API.ComplexQueryObjectQueryResponse;
-  export import ComplexQueryUnionQueryResponse = API.ComplexQueryUnionQueryResponse;
-  export import ComplexQueryArrayQueryParams = API.ComplexQueryArrayQueryParams;
-  export import ComplexQueryObjectQueryParams = API.ComplexQueryObjectQueryParams;
-  export import ComplexQueryUnionQueryParams = API.ComplexQueryUnionQueryParams;
+  export type ComplexQueryArrayQueryResponse = API.ComplexQueryArrayQueryResponse;
+  export type ComplexQueryObjectQueryResponse = API.ComplexQueryObjectQueryResponse;
+  export type ComplexQueryUnionQueryResponse = API.ComplexQueryUnionQueryResponse;
+  export type ComplexQueryArrayQueryParams = API.ComplexQueryArrayQueryParams;
+  export type ComplexQueryObjectQueryParams = API.ComplexQueryObjectQueryParams;
+  export type ComplexQueryUnionQueryParams = API.ComplexQueryUnionQueryParams;
 
   export import Casing = API.Casing;
 
   export import DefaultReqOptions = API.DefaultReqOptions;
-  export import DefaultReqOptionWithParamOverrideParams = API.DefaultReqOptionWithParamOverrideParams;
+  export type DefaultReqOptionWithParamOverrideParams = API.DefaultReqOptionWithParamOverrideParams;
 
   export import Tools = API.Tools;
-  export import ObjectSkippedProps = API.ObjectSkippedProps;
-  export import ToolSkippedParamsParams = API.ToolSkippedParamsParams;
+  export type ObjectSkippedProps = API.ObjectSkippedProps;
+  export type ToolSkippedParamsParams = API.ToolSkippedParamsParams;
 
   export import UndocumentedResource = API.UndocumentedResource;
-  export import UndocumentedResourceReissueParams = API.UndocumentedResourceReissueParams;
+  export type UndocumentedResourceReissueParams = API.UndocumentedResourceReissueParams;
 
   export import MethodConfig = API.MethodConfig;
-  export import MethodConfigSkippedTestsAllResponse = API.MethodConfigSkippedTestsAllResponse;
-  export import MethodConfigSkippedTestsGoResponse = API.MethodConfigSkippedTestsGoResponse;
-  export import MethodConfigSkippedTestsJavaResponse = API.MethodConfigSkippedTestsJavaResponse;
-  export import MethodConfigSkippedTestsKotlinResponse = API.MethodConfigSkippedTestsKotlinResponse;
-  export import MethodConfigSkippedTestsNodeResponse = API.MethodConfigSkippedTestsNodeResponse;
-  export import MethodConfigSkippedTestsNodeAndPythonResponse = API.MethodConfigSkippedTestsNodeAndPythonResponse;
-  export import MethodConfigSkippedTestsPythonResponse = API.MethodConfigSkippedTestsPythonResponse;
-  export import MethodConfigSkippedTestsRubyResponse = API.MethodConfigSkippedTestsRubyResponse;
-  export import MethodConfigShouldNotShowUpInAPIDocsParams = API.MethodConfigShouldNotShowUpInAPIDocsParams;
+  export type MethodConfigSkippedTestsAllResponse = API.MethodConfigSkippedTestsAllResponse;
+  export type MethodConfigSkippedTestsGoResponse = API.MethodConfigSkippedTestsGoResponse;
+  export type MethodConfigSkippedTestsJavaResponse = API.MethodConfigSkippedTestsJavaResponse;
+  export type MethodConfigSkippedTestsKotlinResponse = API.MethodConfigSkippedTestsKotlinResponse;
+  export type MethodConfigSkippedTestsNodeResponse = API.MethodConfigSkippedTestsNodeResponse;
+  export type MethodConfigSkippedTestsNodeAndPythonResponse =
+    API.MethodConfigSkippedTestsNodeAndPythonResponse;
+  export type MethodConfigSkippedTestsPythonResponse = API.MethodConfigSkippedTestsPythonResponse;
+  export type MethodConfigSkippedTestsRubyResponse = API.MethodConfigSkippedTestsRubyResponse;
+  export type MethodConfigShouldNotShowUpInAPIDocsParams = API.MethodConfigShouldNotShowUpInAPIDocsParams;
 
   export import Streaming = API.Streaming;
-  export import StreamingBasicResponse = API.StreamingBasicResponse;
-  export import StreamingNestedParamsResponse = API.StreamingNestedParamsResponse;
-  export import StreamingNoDiscriminatorResponse = API.StreamingNoDiscriminatorResponse;
-  export import StreamingQueryParamDiscriminatorResponse = API.StreamingQueryParamDiscriminatorResponse;
-  export import StreamingBasicParams = API.StreamingBasicParams;
-  export import StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
-  export import StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
-  export import StreamingNestedParamsParams = API.StreamingNestedParamsParams;
-  export import StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
-  export import StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
-  export import StreamingNoDiscriminatorParams = API.StreamingNoDiscriminatorParams;
-  export import StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
-  export import StreamingQueryParamDiscriminatorParamsNonStreaming = API.StreamingQueryParamDiscriminatorParamsNonStreaming;
-  export import StreamingQueryParamDiscriminatorParamsStreaming = API.StreamingQueryParamDiscriminatorParamsStreaming;
+  export type StreamingBasicResponse = API.StreamingBasicResponse;
+  export type StreamingNestedParamsResponse = API.StreamingNestedParamsResponse;
+  export type StreamingNoDiscriminatorResponse = API.StreamingNoDiscriminatorResponse;
+  export type StreamingQueryParamDiscriminatorResponse = API.StreamingQueryParamDiscriminatorResponse;
+  export type StreamingBasicParams = API.StreamingBasicParams;
+  export type StreamingBasicParamsNonStreaming = API.StreamingBasicParamsNonStreaming;
+  export type StreamingBasicParamsStreaming = API.StreamingBasicParamsStreaming;
+  export type StreamingNestedParamsParams = API.StreamingNestedParamsParams;
+  export type StreamingNestedParamsParamsNonStreaming = API.StreamingNestedParamsParamsNonStreaming;
+  export type StreamingNestedParamsParamsStreaming = API.StreamingNestedParamsParamsStreaming;
+  export type StreamingNoDiscriminatorParams = API.StreamingNoDiscriminatorParams;
+  export type StreamingQueryParamDiscriminatorParams = API.StreamingQueryParamDiscriminatorParams;
+  export type StreamingQueryParamDiscriminatorParamsNonStreaming =
+    API.StreamingQueryParamDiscriminatorParamsNonStreaming;
+  export type StreamingQueryParamDiscriminatorParamsStreaming =
+    API.StreamingQueryParamDiscriminatorParamsStreaming;
 
   export import PaginationTests = API.PaginationTests;
 
   export import Docstrings = API.Docstrings;
-  export import DocstringLeadingDoubleQuoteResponse = API.DocstringLeadingDoubleQuoteResponse;
-  export import DocstringTrailingDoubleQuoteResponse = API.DocstringTrailingDoubleQuoteResponse;
+  export type DocstringLeadingDoubleQuoteResponse = API.DocstringLeadingDoubleQuoteResponse;
+  export type DocstringTrailingDoubleQuoteResponse = API.DocstringTrailingDoubleQuoteResponse;
 
   export import InvalidSchemas = API.InvalidSchemas;
 
   export import ResourceRefs = API.ResourceRefs;
 
   export import Cards = API.Cards;
-  export import Card = API.Card;
-  export import CardAlias = API.CardAlias;
-  export import FundingAccount = API.FundingAccount;
-  export import CardListResponse = API.CardListResponse;
-  export import CardProvisionFooResponse = API.CardProvisionFooResponse;
-  export import CardCreateParams = API.CardCreateParams;
-  export import CardUpdateParams = API.CardUpdateParams;
-  export import CardListParams = API.CardListParams;
-  export import CardCreateAliasedParams = API.CardCreateAliasedParams;
-  export import CardCreateAliasedDeprecatedParams = API.CardCreateAliasedDeprecatedParams;
-  export import CardProvisionFooParams = API.CardProvisionFooParams;
-  export import CardReissueParams = API.CardReissueParams;
+  export type Card = API.Card;
+  export type CardAlias = API.CardAlias;
+  export type FundingAccount = API.FundingAccount;
+  export type CardListResponse = API.CardListResponse;
+  export type CardProvisionFooResponse = API.CardProvisionFooResponse;
+  export type CardCreateParams = API.CardCreateParams;
+  export type CardUpdateParams = API.CardUpdateParams;
+  export type CardListParams = API.CardListParams;
+  export type CardCreateAliasedParams = API.CardCreateAliasedParams;
+  export type CardCreateAliasedDeprecatedParams = API.CardCreateAliasedDeprecatedParams;
+  export type CardProvisionFooParams = API.CardProvisionFooParams;
+  export type CardReissueParams = API.CardReissueParams;
 
   export import Files = API.Files;
-  export import FileCreateMultipartResponse = API.FileCreateMultipartResponse;
-  export import FileEverythingMultipartResponse = API.FileEverythingMultipartResponse;
-  export import FileNoFileMultipartResponse = API.FileNoFileMultipartResponse;
-  export import FileWithOptionalParamResponse = API.FileWithOptionalParamResponse;
-  export import FileCreateMultipartParams = API.FileCreateMultipartParams;
-  export import FileEverythingMultipartParams = API.FileEverythingMultipartParams;
-  export import FileNoFileMultipartParams = API.FileNoFileMultipartParams;
-  export import FileWithOptionalParamParams = API.FileWithOptionalParamParams;
+  export type FileCreateMultipartResponse = API.FileCreateMultipartResponse;
+  export type FileEverythingMultipartResponse = API.FileEverythingMultipartResponse;
+  export type FileNoFileMultipartResponse = API.FileNoFileMultipartResponse;
+  export type FileWithOptionalParamResponse = API.FileWithOptionalParamResponse;
+  export type FileCreateMultipartParams = API.FileCreateMultipartParams;
+  export type FileEverythingMultipartParams = API.FileEverythingMultipartParams;
+  export type FileNoFileMultipartParams = API.FileNoFileMultipartParams;
+  export type FileWithOptionalParamParams = API.FileWithOptionalParamParams;
 
   export import Binaries = API.Binaries;
-  export import BinaryWithPathAndBodyParamParams = API.BinaryWithPathAndBodyParamParams;
+  export type BinaryWithPathAndBodyParamParams = API.BinaryWithPathAndBodyParamParams;
 
   export import Resources = API.Resources;
 
   export import ConfigTools = API.ConfigTools;
-  export import ModelFromNestedResponseBodyRef = API.ModelFromNestedResponseBodyRef;
-  export import ModelFromSchemasRef = API.ModelFromSchemasRef;
-  export import ModelFromSchemasRefOpenAPIUri = API.ModelFromSchemasRefOpenAPIUri;
-  export import ModelFromSchemasRefOpenAPIUriJmespath = API.ModelFromSchemasRefOpenAPIUriJmespath;
-  export import ModelFromSchemasRefOpenAPIUriJsonpath = API.ModelFromSchemasRefOpenAPIUriJsonpath;
-  export import OnlyNodeModel = API.OnlyNodeModel;
-  export import ConfigToolModelRefFromNestedResponseBodyResponse = API.ConfigToolModelRefFromNestedResponseBodyResponse;
-  export import ConfigToolOnlyInNodeParams = API.ConfigToolOnlyInNodeParams;
+  export type ModelFromNestedResponseBodyRef = API.ModelFromNestedResponseBodyRef;
+  export type ModelFromSchemasRef = API.ModelFromSchemasRef;
+  export type ModelFromSchemasRefOpenAPIUri = API.ModelFromSchemasRefOpenAPIUri;
+  export type ModelFromSchemasRefOpenAPIUriJmespath = API.ModelFromSchemasRefOpenAPIUriJmespath;
+  export type ModelFromSchemasRefOpenAPIUriJsonpath = API.ModelFromSchemasRefOpenAPIUriJsonpath;
+  export type OnlyNodeModel = API.OnlyNodeModel;
+  export type ConfigToolModelRefFromNestedResponseBodyResponse =
+    API.ConfigToolModelRefFromNestedResponseBodyResponse;
+  export type ConfigToolOnlyInNodeParams = API.ConfigToolOnlyInNodeParams;
 
   export import CompanyResource = API.CompanyResource;
-  export import Company = API.Company;
+  export type Company = API.Company;
 
   export import OpenAPIFormats = API.OpenAPIFormats;
-  export import OpenAPIFormatArrayTypeOneEntryResponse = API.OpenAPIFormatArrayTypeOneEntryResponse;
-  export import OpenAPIFormatArrayTypeOneEntryWithNullResponse = API.OpenAPIFormatArrayTypeOneEntryWithNullResponse;
-  export import OpenAPIFormatArrayTypeOneEntryParams = API.OpenAPIFormatArrayTypeOneEntryParams;
-  export import OpenAPIFormatArrayTypeOneEntryWithNullParams = API.OpenAPIFormatArrayTypeOneEntryWithNullParams;
+  export type OpenAPIFormatArrayTypeOneEntryResponse = API.OpenAPIFormatArrayTypeOneEntryResponse;
+  export type OpenAPIFormatArrayTypeOneEntryWithNullResponse =
+    API.OpenAPIFormatArrayTypeOneEntryWithNullResponse;
+  export type OpenAPIFormatArrayTypeOneEntryParams = API.OpenAPIFormatArrayTypeOneEntryParams;
+  export type OpenAPIFormatArrayTypeOneEntryWithNullParams = API.OpenAPIFormatArrayTypeOneEntryWithNullParams;
 
   export import Parent = API.Parent;
 
   export import Envelopes = API.Envelopes;
-  export import Address = API.Address;
-  export import EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
-  export import EnvelopeWrappedArrayResponse = API.EnvelopeWrappedArrayResponse;
+  export type Address = API.Address;
+  export type EnvelopeInlineResponseResponse = API.EnvelopeInlineResponseResponse;
+  export type EnvelopeWrappedArrayResponse = API.EnvelopeWrappedArrayResponse;
 
   export import Types = API.Types;
-  export import TypeDatesResponse = API.TypeDatesResponse;
-  export import TypeDatetimesResponse = API.TypeDatetimesResponse;
-  export import TypeDatesParams = API.TypeDatesParams;
-  export import TypeDatetimesParams = API.TypeDatetimesParams;
+  export type TypeDatesResponse = API.TypeDatesResponse;
+  export type TypeDatetimesResponse = API.TypeDatetimesResponse;
+  export type TypeDatesParams = API.TypeDatesParams;
+  export type TypeDatetimesParams = API.TypeDatetimesParams;
 
   export import Clients = API.Clients;
-  export import Client = API.Client;
-  export import ClientCreateParams = API.ClientCreateParams;
+  export type Client = API.Client;
+  export type ClientCreateParams = API.ClientCreateParams;
 
   export import Names = API.Names;
-  export import Balance = API.Balance;
-  export import NameChildPropImportClashResponse = API.NameChildPropImportClashResponse;
-  export import NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
-  export import NamePropertiesIllegalGoIdentifiersResponse = API.NamePropertiesIllegalGoIdentifiersResponse;
-  export import NamePropertiesIllegalJavascriptIdentifiersResponse = API.NamePropertiesIllegalJavascriptIdentifiersResponse;
-  export import NameResponsePropertyClashesModelImportResponse = API.NameResponsePropertyClashesModelImportResponse;
-  export import NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
-  export import NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
-  export import NamePropertiesIllegalGoIdentifiersParams = API.NamePropertiesIllegalGoIdentifiersParams;
-  export import NamePropertiesIllegalJavascriptIdentifiersParams = API.NamePropertiesIllegalJavascriptIdentifiersParams;
+  export type Balance = API.Balance;
+  export type NameChildPropImportClashResponse = API.NameChildPropImportClashResponse;
+  export type NamePropertiesCommonConflictsResponse = API.NamePropertiesCommonConflictsResponse;
+  export type NamePropertiesIllegalGoIdentifiersResponse = API.NamePropertiesIllegalGoIdentifiersResponse;
+  export type NamePropertiesIllegalJavascriptIdentifiersResponse =
+    API.NamePropertiesIllegalJavascriptIdentifiersResponse;
+  export type NameResponsePropertyClashesModelImportResponse =
+    API.NameResponsePropertyClashesModelImportResponse;
+  export type NameResponseShadowsPydanticResponse = API.NameResponseShadowsPydanticResponse;
+  export type NamePropertiesCommonConflictsParams = API.NamePropertiesCommonConflictsParams;
+  export type NamePropertiesIllegalGoIdentifiersParams = API.NamePropertiesIllegalGoIdentifiersParams;
+  export type NamePropertiesIllegalJavascriptIdentifiersParams =
+    API.NamePropertiesIllegalJavascriptIdentifiersParams;
 
   export import Widgets = API.Widgets;
-  export import Widget = API.Widget;
+  export type Widget = API.Widget;
 
   export import Webhooks = API.Webhooks;
-  export import CardCreatedWebhookEvent = API.CardCreatedWebhookEvent;
-  export import CardReadyWebhookEvent = API.CardReadyWebhookEvent;
-  export import CardErroredWebhookEvent = API.CardErroredWebhookEvent;
-  export import CardUpdatedWebhookEvent = API.CardUpdatedWebhookEvent;
-  export import CardDeletedWebhookEvent = API.CardDeletedWebhookEvent;
-  export import UnwrapWebhookEvent = API.UnwrapWebhookEvent;
+  export type CardCreatedWebhookEvent = API.CardCreatedWebhookEvent;
+  export type CardReadyWebhookEvent = API.CardReadyWebhookEvent;
+  export type CardErroredWebhookEvent = API.CardErroredWebhookEvent;
+  export type CardUpdatedWebhookEvent = API.CardUpdatedWebhookEvent;
+  export type CardDeletedWebhookEvent = API.CardDeletedWebhookEvent;
+  export type UnwrapWebhookEvent = API.UnwrapWebhookEvent;
 
   export import ClientParams = API.ClientParams;
-  export import ClientParamWithPathParamResponse = API.ClientParamWithPathParamResponse;
-  export import ClientParamWithPathParamAndStandardResponse = API.ClientParamWithPathParamAndStandardResponse;
-  export import ClientParamWithQueryParamResponse = API.ClientParamWithQueryParamResponse;
-  export import ClientParamWithPathParamParams = API.ClientParamWithPathParamParams;
-  export import ClientParamWithPathParamAndStandardParams = API.ClientParamWithPathParamAndStandardParams;
-  export import ClientParamWithQueryParamParams = API.ClientParamWithQueryParamParams;
+  export type ClientParamWithPathParamResponse = API.ClientParamWithPathParamResponse;
+  export type ClientParamWithPathParamAndStandardResponse = API.ClientParamWithPathParamAndStandardResponse;
+  export type ClientParamWithQueryParamResponse = API.ClientParamWithQueryParamResponse;
+  export type ClientParamWithPathParamParams = API.ClientParamWithPathParamParams;
+  export type ClientParamWithPathParamAndStandardParams = API.ClientParamWithPathParamAndStandardParams;
+  export type ClientParamWithQueryParamParams = API.ClientParamWithQueryParamParams;
 
   export import Responses = API.Responses;
-  export import ModelFromNestedPath = API.ModelFromNestedPath;
-  export import ModelWithNestedModel = API.ModelWithNestedModel;
-  export import ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
-  export import ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
-  export import ObjectWithUnionProperties = API.ObjectWithUnionProperties;
-  export import ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
-  export import SimpleAllof = API.SimpleAllof;
-  export import UnknownObject = API.UnknownObject;
-  export import ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
-  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
-  export import ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
-  export import ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
-  export import ResponseArrayObjectWithUnionPropertiesResponse = API.ResponseArrayObjectWithUnionPropertiesResponse;
-  export import ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
-  export import ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
-  export import ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
-  export import ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
-  export import ResponseNestedArrayResponse = API.ResponseNestedArrayResponse;
-  export import ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
-  export import ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
-  export import ResponseObjectWithAdditionalPropertiesPropResponse = API.ResponseObjectWithAdditionalPropertiesPropResponse;
-  export import ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
-  export import ResponseOnlyReadOnlyPropertiesResponse = API.ResponseOnlyReadOnlyPropertiesResponse;
-  export import ResponseStringResponseResponse = API.ResponseStringResponseResponse;
+  export type ModelFromNestedPath = API.ModelFromNestedPath;
+  export type ModelWithNestedModel = API.ModelWithNestedModel;
+  export type ObjectWithAnyOfNullProperty = API.ObjectWithAnyOfNullProperty;
+  export type ObjectWithOneOfNullProperty = API.ObjectWithOneOfNullProperty;
+  export type ObjectWithUnionProperties = API.ObjectWithUnionProperties;
+  export type ResponsesAllofCrossObject = API.ResponsesAllofCrossObject;
+  export type SimpleAllof = API.SimpleAllof;
+  export type UnknownObject = API.UnknownObject;
+  export type ResponseAdditionalPropertiesResponse = API.ResponseAdditionalPropertiesResponse;
+  export type ResponseAdditionalPropertiesNestedModelReferenceResponse =
+    API.ResponseAdditionalPropertiesNestedModelReferenceResponse;
+  export type ResponseAllofCrossResourceResponse = API.ResponseAllofCrossResourceResponse;
+  export type ResponseAllofSimpleResponse = API.ResponseAllofSimpleResponse;
+  export type ResponseArrayObjectWithUnionPropertiesResponse =
+    API.ResponseArrayObjectWithUnionPropertiesResponse;
+  export type ResponseArrayResponseResponse = API.ResponseArrayResponseResponse;
+  export type ResponseBooleanResponseResponse = API.ResponseBooleanResponseResponse;
+  export type ResponseIntegerResponseResponse = API.ResponseIntegerResponseResponse;
+  export type ResponseMissingRequiredResponse = API.ResponseMissingRequiredResponse;
+  export type ResponseNestedArrayResponse = API.ResponseNestedArrayResponse;
+  export type ResponseObjectAllPropertiesResponse = API.ResponseObjectAllPropertiesResponse;
+  export type ResponseObjectNoPropertiesResponse = API.ResponseObjectNoPropertiesResponse;
+  export type ResponseObjectWithAdditionalPropertiesPropResponse =
+    API.ResponseObjectWithAdditionalPropertiesPropResponse;
+  export type ResponseObjectWithHeavilyNestedUnionResponse = API.ResponseObjectWithHeavilyNestedUnionResponse;
+  export type ResponseOnlyReadOnlyPropertiesResponse = API.ResponseOnlyReadOnlyPropertiesResponse;
+  export type ResponseStringResponseResponse = API.ResponseStringResponseResponse;
 
   export import PathParams = API.PathParams;
-  export import PathParamColonSuffixResponse = API.PathParamColonSuffixResponse;
-  export import PathParamFileExtensionResponse = API.PathParamFileExtensionResponse;
-  export import PathParamMultipleResponse = API.PathParamMultipleResponse;
-  export import PathParamQueryParamResponse = API.PathParamQueryParamResponse;
-  export import PathParamSingularResponse = API.PathParamSingularResponse;
-  export import PathParamNullableParamsParams = API.PathParamNullableParamsParams;
+  export type PathParamColonSuffixResponse = API.PathParamColonSuffixResponse;
+  export type PathParamFileExtensionResponse = API.PathParamFileExtensionResponse;
+  export type PathParamMultipleResponse = API.PathParamMultipleResponse;
+  export type PathParamQueryParamResponse = API.PathParamQueryParamResponse;
+  export type PathParamSingularResponse = API.PathParamSingularResponse;
+  export type PathParamNullableParamsParams = API.PathParamNullableParamsParams;
 
   export import PositionalParams = API.PositionalParams;
-  export import PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
-  export import PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
-  export import PositionalParamBodyParams = API.PositionalParamBodyParams;
-  export import PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
-  export import PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
-  export import PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
-  export import PositionalParamQueryParams = API.PositionalParamQueryParams;
-  export import PositionalParamQueryAndPathParams = API.PositionalParamQueryAndPathParams;
-  export import PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
-  export import PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
+  export type PositionalParamBasicBodyParams = API.PositionalParamBasicBodyParams;
+  export type PositionalParamBasicQueryParams = API.PositionalParamBasicQueryParams;
+  export type PositionalParamBodyParams = API.PositionalParamBodyParams;
+  export type PositionalParamBodyExtraParamParams = API.PositionalParamBodyExtraParamParams;
+  export type PositionalParamKitchenSinkParams = API.PositionalParamKitchenSinkParams;
+  export type PositionalParamMultiplePathParamsParams = API.PositionalParamMultiplePathParamsParams;
+  export type PositionalParamQueryParams = API.PositionalParamQueryParams;
+  export type PositionalParamQueryAndPathParams = API.PositionalParamQueryAndPathParams;
+  export type PositionalParamQueryMultipleParams = API.PositionalParamQueryMultipleParams;
+  export type PositionalParamUnionBodyAndPathParams = API.PositionalParamUnionBodyAndPathParams;
 
   export import EmptyBody = API.EmptyBody;
-  export import EmptyBodyStainlessEmptyObjectParams = API.EmptyBodyStainlessEmptyObjectParams;
-  export import EmptyBodyTypedParamsParams = API.EmptyBodyTypedParamsParams;
+  export type EmptyBodyStainlessEmptyObjectParams = API.EmptyBodyStainlessEmptyObjectParams;
+  export type EmptyBodyTypedParamsParams = API.EmptyBodyTypedParamsParams;
 
   export import QueryParams = API.QueryParams;
-  export import QueryParamAllOfParams = API.QueryParamAllOfParams;
-  export import QueryParamAnyOfParams = API.QueryParamAnyOfParams;
-  export import QueryParamAnyOfStringOrArrayParams = API.QueryParamAnyOfStringOrArrayParams;
-  export import QueryParamArrayParams = API.QueryParamArrayParams;
-  export import QueryParamEnumParams = API.QueryParamEnumParams;
-  export import QueryParamObjectParams = API.QueryParamObjectParams;
-  export import QueryParamOneOfParams = API.QueryParamOneOfParams;
-  export import QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
+  export type QueryParamAllOfParams = API.QueryParamAllOfParams;
+  export type QueryParamAnyOfParams = API.QueryParamAnyOfParams;
+  export type QueryParamAnyOfStringOrArrayParams = API.QueryParamAnyOfStringOrArrayParams;
+  export type QueryParamArrayParams = API.QueryParamArrayParams;
+  export type QueryParamEnumParams = API.QueryParamEnumParams;
+  export type QueryParamObjectParams = API.QueryParamObjectParams;
+  export type QueryParamOneOfParams = API.QueryParamOneOfParams;
+  export type QueryParamPrimitivesParams = API.QueryParamPrimitivesParams;
 
   export import BodyParams = API.BodyParams;
-  export import ModelWithParamInName = API.ModelWithParamInName;
-  export import MyModel = API.MyModel;
-  export import NestedRequestModelA = API.NestedRequestModelA;
-  export import NestedRequestModelB = API.NestedRequestModelB;
-  export import NestedRequestModelC = API.NestedRequestModelC;
-  export import NullTypeModel = API.NullTypeModel;
-  export import StringMapModel = API.StringMapModel;
-  export import UnknownObjectModel = API.UnknownObjectModel;
-  export import BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
-  export import BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
-  export import BodyParamBinaryStringTypeParams = API.BodyParamBinaryStringTypeParams;
-  export import BodyParamBinaryTypeParams = API.BodyParamBinaryTypeParams;
-  export import BodyParamDuplicateSubpropertyParams = API.BodyParamDuplicateSubpropertyParams;
-  export import BodyParamEnumPropertiesParams = API.BodyParamEnumPropertiesParams;
-  export import BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
-  export import BodyParamNullTypeParams = API.BodyParamNullTypeParams;
-  export import BodyParamObjectWithArrayOfObjectsParams = API.BodyParamObjectWithArrayOfObjectsParams;
-  export import BodyParamObjectWithUnionPropertiesParams = API.BodyParamObjectWithUnionPropertiesParams;
-  export import BodyParamOnlyReadOnlyPropertiesParams = API.BodyParamOnlyReadOnlyPropertiesParams;
-  export import BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
-  export import BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;
-  export import BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
-  export import BodyParamPropertyWithHeavilyNestedComplexUnionParams = API.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
-  export import BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
-  export import BodyParamStringMapModelRefParams = API.BodyParamStringMapModelRefParams;
-  export import BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
-  export import BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
-  export import BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
-  export import BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
-  export import BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
-  export import BodyParamTopLevelArrayWithOtherParamsParams = API.BodyParamTopLevelArrayWithOtherParamsParams;
-  export import BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
-  export import BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
-  export import BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
-  export import BodyParamUnknownObjectParams = API.BodyParamUnknownObjectParams;
-  export import BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
-  export import BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;
-  export import BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
+  export type ModelWithParamInName = API.ModelWithParamInName;
+  export type MyModel = API.MyModel;
+  export type NestedRequestModelA = API.NestedRequestModelA;
+  export type NestedRequestModelB = API.NestedRequestModelB;
+  export type NestedRequestModelC = API.NestedRequestModelC;
+  export type NullTypeModel = API.NullTypeModel;
+  export type StringMapModel = API.StringMapModel;
+  export type UnknownObjectModel = API.UnknownObjectModel;
+  export type BodyParamTopLevelAllOfResponse = API.BodyParamTopLevelAllOfResponse;
+  export type BodyParamUnionOverlappingPropResponse = API.BodyParamUnionOverlappingPropResponse;
+  export type BodyParamBinaryStringTypeParams = API.BodyParamBinaryStringTypeParams;
+  export type BodyParamBinaryTypeParams = API.BodyParamBinaryTypeParams;
+  export type BodyParamDuplicateSubpropertyParams = API.BodyParamDuplicateSubpropertyParams;
+  export type BodyParamEnumPropertiesParams = API.BodyParamEnumPropertiesParams;
+  export type BodyParamNestedRequestModelsParams = API.BodyParamNestedRequestModelsParams;
+  export type BodyParamNullTypeParams = API.BodyParamNullTypeParams;
+  export type BodyParamObjectWithArrayOfObjectsParams = API.BodyParamObjectWithArrayOfObjectsParams;
+  export type BodyParamObjectWithUnionPropertiesParams = API.BodyParamObjectWithUnionPropertiesParams;
+  export type BodyParamOnlyReadOnlyPropertiesParams = API.BodyParamOnlyReadOnlyPropertiesParams;
+  export type BodyParamParamInModelNameRefParams = API.BodyParamParamInModelNameRefParams;
+  export type BodyParamPropertyModelRefParams = API.BodyParamPropertyModelRefParams;
+  export type BodyParamPropertyWithComplexUnionParams = API.BodyParamPropertyWithComplexUnionParams;
+  export type BodyParamPropertyWithHeavilyNestedComplexUnionParams =
+    API.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
+  export type BodyParamReadOnlyPropertiesParams = API.BodyParamReadOnlyPropertiesParams;
+  export type BodyParamStringMapModelRefParams = API.BodyParamStringMapModelRefParams;
+  export type BodyParamTopLevelAllOfParams = API.BodyParamTopLevelAllOfParams;
+  export type BodyParamTopLevelAllOfNestedObjectParams = API.BodyParamTopLevelAllOfNestedObjectParams;
+  export type BodyParamTopLevelAnyOfWithRefParams = API.BodyParamTopLevelAnyOfWithRefParams;
+  export type BodyParamTopLevelArrayParams = API.BodyParamTopLevelArrayParams;
+  export type BodyParamTopLevelArrayWithChildrenParams = API.BodyParamTopLevelArrayWithChildrenParams;
+  export type BodyParamTopLevelArrayWithOtherParamsParams = API.BodyParamTopLevelArrayWithOtherParamsParams;
+  export type BodyParamTopLevelOneOfOneEntryParams = API.BodyParamTopLevelOneOfOneEntryParams;
+  export type BodyParamTopLevelSharedTypeParams = API.BodyParamTopLevelSharedTypeParams;
+  export type BodyParamUnionOverlappingPropParams = API.BodyParamUnionOverlappingPropParams;
+  export type BodyParamUnknownObjectParams = API.BodyParamUnknownObjectParams;
+  export type BodyParamWithDefaultBodyParamOptionalParams = API.BodyParamWithDefaultBodyParamOptionalParams;
+  export type BodyParamWithDefaultBodyParamRequiredParams = API.BodyParamWithDefaultBodyParamRequiredParams;
+  export type BodyParamWithModelPropertyParams = API.BodyParamWithModelPropertyParams;
 
   export import HeaderParams = API.HeaderParams;
-  export import HeaderParamAllTypesParams = API.HeaderParamAllTypesParams;
-  export import HeaderParamArraysParams = API.HeaderParamArraysParams;
-  export import HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
-  export import HeaderParamNullableTypeParams = API.HeaderParamNullableTypeParams;
+  export type HeaderParamAllTypesParams = API.HeaderParamAllTypesParams;
+  export type HeaderParamArraysParams = API.HeaderParamArraysParams;
+  export type HeaderParamClientArgumentParams = API.HeaderParamClientArgumentParams;
+  export type HeaderParamNullableTypeParams = API.HeaderParamNullableTypeParams;
 
   export import MixedParams = API.MixedParams;
-  export import MixedParamBodyWithTopLevelOneOfAndPathParams = API.MixedParamBodyWithTopLevelOneOfAndPathParams;
-  export import MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
-  export import MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
+  export type MixedParamBodyWithTopLevelOneOfAndPathParams = API.MixedParamBodyWithTopLevelOneOfAndPathParams;
+  export type MixedParamQueryAndBodyParams = API.MixedParamQueryAndBodyParams;
+  export type MixedParamQueryBodyAndPathParams = API.MixedParamQueryBodyAndPathParams;
 
   export import MakeAmbiguousSchemasLooser = API.MakeAmbiguousSchemasLooser;
-  export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = API.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
+  export type MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse =
+    API.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
 
   export import MakeAmbiguousSchemasExplicit = API.MakeAmbiguousSchemasExplicit;
-  export import MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse = API.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
+  export type MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse =
+    API.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
 
   export import DecoratorTests = API.DecoratorTests;
-  export import DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
+  export type DecoratorTestKeepMeResponse = API.DecoratorTestKeepMeResponse;
 
   export import Tests = API.Tests;
 
   export import DeeplyNested = API.DeeplyNested;
 
   export import Version1_30Names = API.Version1_30Names;
-  export import Version1_30NameCreateResponse = API.Version1_30NameCreateResponse;
-  export import Version1_30NameCreateParams = API.Version1_30NameCreateParams;
+  export type Version1_30NameCreateResponse = API.Version1_30NameCreateResponse;
+  export type Version1_30NameCreateParams = API.Version1_30NameCreateParams;
 
   export import Recursion = API.Recursion;
-  export import ArrayRecursion = API.ArrayRecursion;
-  export import SelfRecursion = API.SelfRecursion;
-  export import RecursionCreateEnvelopeResponse = API.RecursionCreateEnvelopeResponse;
-  export import RecursionCreateEnvelopeParams = API.RecursionCreateEnvelopeParams;
-  export import RecursionCreateSelfParams = API.RecursionCreateSelfParams;
+  export type ArrayRecursion = API.ArrayRecursion;
+  export type SelfRecursion = API.SelfRecursion;
+  export type RecursionCreateEnvelopeResponse = API.RecursionCreateEnvelopeResponse;
+  export type RecursionCreateEnvelopeParams = API.RecursionCreateEnvelopeParams;
+  export type RecursionCreateSelfParams = API.RecursionCreateSelfParams;
 
   export import SharedQueryParams = API.SharedQueryParams;
-  export import SharedQueryParamRetrieveResponse = API.SharedQueryParamRetrieveResponse;
-  export import SharedQueryParamDelResponse = API.SharedQueryParamDelResponse;
-  export import SharedQueryParamRetrieveParams = API.SharedQueryParamRetrieveParams;
-  export import SharedQueryParamDelParams = API.SharedQueryParamDelParams;
+  export type SharedQueryParamRetrieveResponse = API.SharedQueryParamRetrieveResponse;
+  export type SharedQueryParamDelResponse = API.SharedQueryParamDelResponse;
+  export type SharedQueryParamRetrieveParams = API.SharedQueryParamRetrieveParams;
+  export type SharedQueryParamDelParams = API.SharedQueryParamDelParams;
 
   export import ModelReferencedInParentAndChildResource = API.ModelReferencedInParentAndChildResource;
-  export import ModelReferencedInParentAndChild = API.ModelReferencedInParentAndChild;
+  export type ModelReferencedInParentAndChild = API.ModelReferencedInParentAndChild;
 
-  export import BasicSharedModelObject = API.BasicSharedModelObject;
-  export import Currency = API.Currency;
-  export import ObjectWithChildRef = API.ObjectWithChildRef;
-  export import PageCursorSharedRefPagination = API.PageCursorSharedRefPagination;
-  export import SharedCursorNestedResponsePropMeta = API.SharedCursorNestedResponsePropMeta;
-  export import SharedSelfRecursion = API.SharedSelfRecursion;
-  export import ShippingAddress = API.ShippingAddress;
-  export import SimpleObject = API.SimpleObject;
-  export import SimpleObjectAlias = API.SimpleObjectAlias;
+  export type BasicSharedModelObject = API.BasicSharedModelObject;
+  export type Currency = API.Currency;
+  export type ObjectWithChildRef = API.ObjectWithChildRef;
+  export type PageCursorSharedRefPagination = API.PageCursorSharedRefPagination;
+  export type SharedCursorNestedResponsePropMeta = API.SharedCursorNestedResponsePropMeta;
+  export type SharedSelfRecursion = API.SharedSelfRecursion;
+  export type ShippingAddress = API.ShippingAddress;
+  export type SimpleObject = API.SimpleObject;
+  export type SimpleObjectAlias = API.SimpleObjectAlias;
 }
 
 export default Sink;

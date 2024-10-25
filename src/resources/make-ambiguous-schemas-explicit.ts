@@ -30,5 +30,6 @@ export interface MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitRespons
 }
 
 export namespace MakeAmbiguousSchemasExplicit {
-  export import MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse = MakeAmbiguousSchemasExplicitAPI.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
+  export type MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse =
+    MakeAmbiguousSchemasExplicitAPI.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
 }

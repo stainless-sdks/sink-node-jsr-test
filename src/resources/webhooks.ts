@@ -68,10 +68,10 @@ export type UnwrapWebhookEvent =
   | CardDeletedWebhookEvent;
 
 export namespace Webhooks {
-  export import CardCreatedWebhookEvent = WebhooksAPI.CardCreatedWebhookEvent;
-  export import CardReadyWebhookEvent = WebhooksAPI.CardReadyWebhookEvent;
-  export import CardErroredWebhookEvent = WebhooksAPI.CardErroredWebhookEvent;
-  export import CardUpdatedWebhookEvent = WebhooksAPI.CardUpdatedWebhookEvent;
-  export import CardDeletedWebhookEvent = WebhooksAPI.CardDeletedWebhookEvent;
-  export import UnwrapWebhookEvent = WebhooksAPI.UnwrapWebhookEvent;
+  export type CardCreatedWebhookEvent = WebhooksAPI.CardCreatedWebhookEvent;
+  export type CardReadyWebhookEvent = WebhooksAPI.CardReadyWebhookEvent;
+  export type CardErroredWebhookEvent = WebhooksAPI.CardErroredWebhookEvent;
+  export type CardUpdatedWebhookEvent = WebhooksAPI.CardUpdatedWebhookEvent;
+  export type CardDeletedWebhookEvent = WebhooksAPI.CardDeletedWebhookEvent;
+  export type UnwrapWebhookEvent = WebhooksAPI.UnwrapWebhookEvent;
 }

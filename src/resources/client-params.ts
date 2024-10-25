@@ -97,10 +97,12 @@ export interface ClientParamWithQueryParamParams {
 }
 
 export namespace ClientParams {
-  export import ClientParamWithPathParamResponse = ClientParamsAPI.ClientParamWithPathParamResponse;
-  export import ClientParamWithPathParamAndStandardResponse = ClientParamsAPI.ClientParamWithPathParamAndStandardResponse;
-  export import ClientParamWithQueryParamResponse = ClientParamsAPI.ClientParamWithQueryParamResponse;
-  export import ClientParamWithPathParamParams = ClientParamsAPI.ClientParamWithPathParamParams;
-  export import ClientParamWithPathParamAndStandardParams = ClientParamsAPI.ClientParamWithPathParamAndStandardParams;
-  export import ClientParamWithQueryParamParams = ClientParamsAPI.ClientParamWithQueryParamParams;
+  export type ClientParamWithPathParamResponse = ClientParamsAPI.ClientParamWithPathParamResponse;
+  export type ClientParamWithPathParamAndStandardResponse =
+    ClientParamsAPI.ClientParamWithPathParamAndStandardResponse;
+  export type ClientParamWithQueryParamResponse = ClientParamsAPI.ClientParamWithQueryParamResponse;
+  export type ClientParamWithPathParamParams = ClientParamsAPI.ClientParamWithPathParamParams;
+  export type ClientParamWithPathParamAndStandardParams =
+    ClientParamsAPI.ClientParamWithPathParamAndStandardParams;
+  export type ClientParamWithQueryParamParams = ClientParamsAPI.ClientParamWithQueryParamParams;
 }

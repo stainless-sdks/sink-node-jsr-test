@@ -39,7 +39,7 @@ export interface TopLevelArrayBasicCursorParams extends PageCursorTopLevelArrayP
 }
 
 export namespace TopLevelArrays {
-  export import TopLevelArrayBasicCursorParams = TopLevelArraysAPI.TopLevelArrayBasicCursorParams;
+  export type TopLevelArrayBasicCursorParams = TopLevelArraysAPI.TopLevelArrayBasicCursorParams;
 }
 
 export { MyModelsPageCursorTopLevelArray };

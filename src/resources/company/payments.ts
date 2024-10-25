@@ -21,5 +21,5 @@ export interface CompanyPayment {
 }
 
 export namespace Payments {
-  export import CompanyPayment = PaymentsAPI.CompanyPayment;
+  export type CompanyPayment = PaymentsAPI.CompanyPayment;
 }

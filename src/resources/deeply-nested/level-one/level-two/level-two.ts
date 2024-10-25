@@ -22,7 +22,7 @@ export interface ModelLevel2 {
 }
 
 export namespace LevelTwo {
-  export import ModelLevel2 = LevelTwoAPI.ModelLevel2;
+  export type ModelLevel2 = LevelTwoAPI.ModelLevel2;
   export import LevelThree = LevelThreeAPI.LevelThree;
-  export import ModelLevel3 = LevelThreeAPI.ModelLevel3;
+  export type ModelLevel3 = LevelThreeAPI.ModelLevel3;
 }

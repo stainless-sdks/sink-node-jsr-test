@@ -49,5 +49,5 @@ export interface UndocumentedResourceReissueParams {
 }
 
 export namespace UndocumentedResource {
-  export import UndocumentedResourceReissueParams = UndocumentedResourceAPI.UndocumentedResourceReissueParams;
+  export type UndocumentedResourceReissueParams = UndocumentedResourceAPI.UndocumentedResourceReissueParams;
 }

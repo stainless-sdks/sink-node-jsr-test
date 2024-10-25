@@ -34,7 +34,7 @@ export interface EEOCListParams extends PageCursorParams {
 }
 
 export namespace EEOCResource {
-  export import EEOC = EEOCAPI.EEOC;
+  export type EEOC = EEOCAPI.EEOC;
   export import EEOCsPageCursor = EEOCAPI.EEOCsPageCursor;
-  export import EEOCListParams = EEOCAPI.EEOCListParams;
+  export type EEOCListParams = EEOCAPI.EEOCListParams;
 }

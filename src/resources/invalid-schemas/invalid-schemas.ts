@@ -11,7 +11,7 @@ export class InvalidSchemas extends APIResource {
 
 export namespace InvalidSchemas {
   export import Arrays = ArraysAPI.Arrays;
-  export import ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
+  export type ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
   export import Objects = ObjectsAPI.Objects;
-  export import ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
+  export type ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
 }

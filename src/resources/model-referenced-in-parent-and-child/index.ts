@@ -2,6 +2,6 @@
 
 export { Child } from './child';
 export {
-  ModelReferencedInParentAndChild,
   ModelReferencedInParentAndChildResource,
+  type ModelReferencedInParentAndChild,
 } from './model-referenced-in-parent-and-child';

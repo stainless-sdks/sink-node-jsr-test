@@ -17,5 +17,5 @@ export interface RootResponse {
 }
 
 export namespace Testing {
-  export import RootResponse = TestingAPI.RootResponse;
+  export type RootResponse = TestingAPI.RootResponse;
 }

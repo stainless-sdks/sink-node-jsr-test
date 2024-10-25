@@ -233,12 +233,12 @@ export interface QueryParamPrimitivesParams {
 }
 
 export namespace QueryParams {
-  export import QueryParamAllOfParams = QueryParamsAPI.QueryParamAllOfParams;
-  export import QueryParamAnyOfParams = QueryParamsAPI.QueryParamAnyOfParams;
-  export import QueryParamAnyOfStringOrArrayParams = QueryParamsAPI.QueryParamAnyOfStringOrArrayParams;
-  export import QueryParamArrayParams = QueryParamsAPI.QueryParamArrayParams;
-  export import QueryParamEnumParams = QueryParamsAPI.QueryParamEnumParams;
-  export import QueryParamObjectParams = QueryParamsAPI.QueryParamObjectParams;
-  export import QueryParamOneOfParams = QueryParamsAPI.QueryParamOneOfParams;
-  export import QueryParamPrimitivesParams = QueryParamsAPI.QueryParamPrimitivesParams;
+  export type QueryParamAllOfParams = QueryParamsAPI.QueryParamAllOfParams;
+  export type QueryParamAnyOfParams = QueryParamsAPI.QueryParamAnyOfParams;
+  export type QueryParamAnyOfStringOrArrayParams = QueryParamsAPI.QueryParamAnyOfStringOrArrayParams;
+  export type QueryParamArrayParams = QueryParamsAPI.QueryParamArrayParams;
+  export type QueryParamEnumParams = QueryParamsAPI.QueryParamEnumParams;
+  export type QueryParamObjectParams = QueryParamsAPI.QueryParamObjectParams;
+  export type QueryParamOneOfParams = QueryParamsAPI.QueryParamOneOfParams;
+  export type QueryParamPrimitivesParams = QueryParamsAPI.QueryParamPrimitivesParams;
 }

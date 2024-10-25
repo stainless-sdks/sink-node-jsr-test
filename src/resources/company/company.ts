@@ -16,7 +16,7 @@ export interface Company {
 }
 
 export namespace CompanyResource {
-  export import Company = CompanyAPI.Company;
+  export type Company = CompanyAPI.Company;
   export import Payments = PaymentsAPI.Payments;
-  export import CompanyPayment = PaymentsAPI.CompanyPayment;
+  export type CompanyPayment = PaymentsAPI.CompanyPayment;
 }

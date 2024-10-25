@@ -30,5 +30,6 @@ export interface MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse {
 }
 
 export namespace MakeAmbiguousSchemasLooser {
-  export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = MakeAmbiguousSchemasLooserAPI.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
+  export type MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse =
+    MakeAmbiguousSchemasLooserAPI.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
 }

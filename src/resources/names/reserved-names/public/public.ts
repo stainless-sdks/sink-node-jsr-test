@@ -22,11 +22,11 @@ export interface Public {
 }
 
 export namespace PublicResource {
-  export import Public = PublicAPI.Public;
+  export type Public = PublicAPI.Public;
   export import PrivateResource = PrivateAPI.PrivateResource;
-  export import Private = PrivateAPI.Private;
+  export type Private = PrivateAPI.Private;
   export import InterfaceResource = InterfaceAPI.InterfaceResource;
-  export import Interface = InterfaceAPI.Interface;
+  export type Interface = InterfaceAPI.Interface;
   export import ClassResource = ClassAPI.ClassResource;
-  export import Class = ClassAPI.Class;
+  export type Class = ClassAPI.Class;
 }

@@ -134,10 +134,13 @@ export interface ObjectTwoDimensionalArrayPrimitivePropertyResponse {
 }
 
 export namespace Objects {
-  export import UnknownObjectType = ObjectsAPI.UnknownObjectType;
-  export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
-  export import ObjectMultiplePropertiesSameModelResponse = ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
-  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
+  export type UnknownObjectType = ObjectsAPI.UnknownObjectType;
+  export type ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
+  export type ObjectMultipleArrayPropertiesSameRefResponse =
+    ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
+  export type ObjectMultiplePropertiesSameModelResponse =
+    ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
+  export type ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
+  export type ObjectTwoDimensionalArrayPrimitivePropertyResponse =
+    ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
 }

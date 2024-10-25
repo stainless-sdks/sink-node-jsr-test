@@ -28,6 +28,6 @@ export interface UnionParamUnionEnumNewTypeParams {
 }
 
 export namespace Unions {
-  export import ModelNewTypeString = UnionsAPI.ModelNewTypeString;
-  export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
+  export type ModelNewTypeString = UnionsAPI.ModelNewTypeString;
+  export type UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
 }

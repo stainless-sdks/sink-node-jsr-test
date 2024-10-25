@@ -55,7 +55,7 @@ export interface MethodExportParams {
 }
 
 export namespace Methods {
-  export import Export = MethodsAPI.Export;
-  export import Return = MethodsAPI.Return;
-  export import MethodExportParams = MethodsAPI.MethodExportParams;
+  export type Export = MethodsAPI.Export;
+  export type Return = MethodsAPI.Return;
+  export type MethodExportParams = MethodsAPI.MethodExportParams;
 }

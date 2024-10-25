@@ -22,5 +22,5 @@ export interface ChildInlinedResponseResponse {
 }
 
 export namespace Child {
-  export import ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
+  export type ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
 }

@@ -64,8 +64,8 @@ export interface ArrayNestedInParamsParams {
 }
 
 export namespace Arrays {
-  export import ArrayObjectItems = ArraysAPI.ArrayObjectItems;
-  export import ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
-  export import ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
-  export import ArrayNestedInParamsParams = ArraysAPI.ArrayNestedInParamsParams;
+  export type ArrayObjectItems = ArraysAPI.ArrayObjectItems;
+  export type ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
+  export type ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
+  export type ArrayNestedInParamsParams = ArraysAPI.ArrayNestedInParamsParams;
 }

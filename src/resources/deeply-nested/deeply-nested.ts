@@ -9,5 +9,5 @@ export class DeeplyNested extends APIResource {
 
 export namespace DeeplyNested {
   export import LevelOne = LevelOneAPI.LevelOne;
-  export import ModelLevel1 = LevelOneAPI.ModelLevel1;
+  export type ModelLevel1 = LevelOneAPI.ModelLevel1;
 }

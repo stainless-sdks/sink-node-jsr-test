@@ -29,10 +29,11 @@ export interface DecoratorTestKeepMeResponse {
 }
 
 export namespace DecoratorTests {
-  export import DecoratorTestKeepMeResponse = DecoratorTestsAPI.DecoratorTestKeepMeResponse;
+  export type DecoratorTestKeepMeResponse = DecoratorTestsAPI.DecoratorTestKeepMeResponse;
   export import Languages = LanguagesAPI.Languages;
   export import KeepThisResource = KeepThisResourceAPI.KeepThisResource;
-  export import KeepThisResourceKeepThisMethodResponse = KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
+  export type KeepThisResourceKeepThisMethodResponse =
+    KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
   export import SkipThisResource = SkipThisResourceAPI.SkipThisResource;
-  export import SkipThisResourceINeverAppearResponse = SkipThisResourceAPI.SkipThisResourceINeverAppearResponse;
+  export type SkipThisResourceINeverAppearResponse = SkipThisResourceAPI.SkipThisResourceINeverAppearResponse;
 }
