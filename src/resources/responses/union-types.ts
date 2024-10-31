@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as UnionTypesAPI from './union-types';
 import * as Shared from '../shared';
 
 export class UnionTypes extends APIResource {
@@ -94,11 +93,13 @@ export namespace UnionTypeSuperMixedTypesResponse {
 
 export type UnionTypeUnknownVariantResponse = Shared.SimpleObject | unknown;
 
-export namespace UnionTypes {
-  export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
-  export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
-  export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
-  export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
-  export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
-  export import UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
+export declare namespace UnionTypes {
+  export {
+    type UnionTypeMixedTypesResponse as UnionTypeMixedTypesResponse,
+    type UnionTypeNullableUnionResponse as UnionTypeNullableUnionResponse,
+    type UnionTypeNumbersResponse as UnionTypeNumbersResponse,
+    type UnionTypeObjectsResponse as UnionTypeObjectsResponse,
+    type UnionTypeSuperMixedTypesResponse as UnionTypeSuperMixedTypesResponse,
+    type UnionTypeUnknownVariantResponse as UnionTypeUnknownVariantResponse,
+  };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as OpenAPIFormatsAPI from './openapi-formats';
 
 export class OpenAPIFormats extends APIResource {
   /**
@@ -56,9 +55,11 @@ export interface OpenAPIFormatArrayTypeOneEntryWithNullParams {
   enable_debug_logging?: boolean;
 }
 
-export namespace OpenAPIFormats {
-  export import OpenAPIFormatArrayTypeOneEntryResponse = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryResponse;
-  export import OpenAPIFormatArrayTypeOneEntryWithNullResponse = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryWithNullResponse;
-  export import OpenAPIFormatArrayTypeOneEntryParams = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryParams;
-  export import OpenAPIFormatArrayTypeOneEntryWithNullParams = OpenAPIFormatsAPI.OpenAPIFormatArrayTypeOneEntryWithNullParams;
+export declare namespace OpenAPIFormats {
+  export {
+    type OpenAPIFormatArrayTypeOneEntryResponse as OpenAPIFormatArrayTypeOneEntryResponse,
+    type OpenAPIFormatArrayTypeOneEntryWithNullResponse as OpenAPIFormatArrayTypeOneEntryWithNullResponse,
+    type OpenAPIFormatArrayTypeOneEntryParams as OpenAPIFormatArrayTypeOneEntryParams,
+    type OpenAPIFormatArrayTypeOneEntryWithNullParams as OpenAPIFormatArrayTypeOneEntryWithNullParams,
+  };
 }

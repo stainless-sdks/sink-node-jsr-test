@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as SharedQueryParamsAPI from './shared-query-params';
 
 export class SharedQueryParams extends APIResource {
   retrieve(query?: SharedQueryParamRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<string>;
@@ -60,9 +59,11 @@ export interface SharedQueryParamDelParams {
   shared2?: string;
 }
 
-export namespace SharedQueryParams {
-  export import SharedQueryParamRetrieveResponse = SharedQueryParamsAPI.SharedQueryParamRetrieveResponse;
-  export import SharedQueryParamDelResponse = SharedQueryParamsAPI.SharedQueryParamDelResponse;
-  export import SharedQueryParamRetrieveParams = SharedQueryParamsAPI.SharedQueryParamRetrieveParams;
-  export import SharedQueryParamDelParams = SharedQueryParamsAPI.SharedQueryParamDelParams;
+export declare namespace SharedQueryParams {
+  export {
+    type SharedQueryParamRetrieveResponse as SharedQueryParamRetrieveResponse,
+    type SharedQueryParamDelResponse as SharedQueryParamDelResponse,
+    type SharedQueryParamRetrieveParams as SharedQueryParamRetrieveParams,
+    type SharedQueryParamDelParams as SharedQueryParamDelParams,
+  };
 }

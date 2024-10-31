@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as ImportAPI from './import';
 
 export class ImportResource extends APIResource {
   /**
@@ -18,6 +17,6 @@ export interface Import {
   foo: string;
 }
 
-export namespace ImportResource {
-  export import Import = ImportAPI.Import;
+export declare namespace ImportResource {
+  export { type Import as Import };
 }

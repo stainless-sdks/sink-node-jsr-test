@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as MethodConfigAPI from './method-config';
 import * as CardsAPI from './cards';
 import * as Shared from './shared';
 
@@ -160,14 +159,16 @@ export interface MethodConfigShouldNotShowUpInAPIDocsParams {
   shippingAddress?: Shared.ShippingAddress;
 }
 
-export namespace MethodConfig {
-  export import MethodConfigSkippedTestsAllResponse = MethodConfigAPI.MethodConfigSkippedTestsAllResponse;
-  export import MethodConfigSkippedTestsGoResponse = MethodConfigAPI.MethodConfigSkippedTestsGoResponse;
-  export import MethodConfigSkippedTestsJavaResponse = MethodConfigAPI.MethodConfigSkippedTestsJavaResponse;
-  export import MethodConfigSkippedTestsKotlinResponse = MethodConfigAPI.MethodConfigSkippedTestsKotlinResponse;
-  export import MethodConfigSkippedTestsNodeResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeResponse;
-  export import MethodConfigSkippedTestsNodeAndPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsNodeAndPythonResponse;
-  export import MethodConfigSkippedTestsPythonResponse = MethodConfigAPI.MethodConfigSkippedTestsPythonResponse;
-  export import MethodConfigSkippedTestsRubyResponse = MethodConfigAPI.MethodConfigSkippedTestsRubyResponse;
-  export import MethodConfigShouldNotShowUpInAPIDocsParams = MethodConfigAPI.MethodConfigShouldNotShowUpInAPIDocsParams;
+export declare namespace MethodConfig {
+  export {
+    type MethodConfigSkippedTestsAllResponse as MethodConfigSkippedTestsAllResponse,
+    type MethodConfigSkippedTestsGoResponse as MethodConfigSkippedTestsGoResponse,
+    type MethodConfigSkippedTestsJavaResponse as MethodConfigSkippedTestsJavaResponse,
+    type MethodConfigSkippedTestsKotlinResponse as MethodConfigSkippedTestsKotlinResponse,
+    type MethodConfigSkippedTestsNodeResponse as MethodConfigSkippedTestsNodeResponse,
+    type MethodConfigSkippedTestsNodeAndPythonResponse as MethodConfigSkippedTestsNodeAndPythonResponse,
+    type MethodConfigSkippedTestsPythonResponse as MethodConfigSkippedTestsPythonResponse,
+    type MethodConfigSkippedTestsRubyResponse as MethodConfigSkippedTestsRubyResponse,
+    type MethodConfigShouldNotShowUpInAPIDocsParams as MethodConfigShouldNotShowUpInAPIDocsParams,
+  };
 }

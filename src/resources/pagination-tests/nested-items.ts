@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as NestedItemsAPI from './nested-items';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPageCursorNestedItems } from '../body-params/body-params';
 import { type PageCursorNestedItemsParams } from '../../pagination';
@@ -35,8 +34,8 @@ export interface NestedItemListParams extends PageCursorNestedItemsParams {
   limit?: number;
 }
 
-export namespace NestedItems {
-  export import NestedItemListParams = NestedItemsAPI.NestedItemListParams;
+export declare namespace NestedItems {
+  export { type NestedItemListParams as NestedItemListParams };
 }
 
 export { MyModelsPageCursorNestedItems };

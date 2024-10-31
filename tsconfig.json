@@ -11,7 +11,7 @@
     "paths": {
       "sink-npm/_shims/auto/*": ["src/_shims/auto/*-node"],
       "sink-npm/*": ["src/*"],
-      "sink-npm": ["src/index.ts"],
+      "sink-npm": ["src/index.ts"]
     },
     "noEmit": true,
 

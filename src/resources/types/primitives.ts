@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as PrimitivesAPI from './primitives';
 
 export class Primitives extends APIResource {
   /**
@@ -27,8 +26,10 @@ export interface PrimitiveStringsParams {
   string_param?: ModelString;
 }
 
-export namespace Primitives {
-  export import ModelString = PrimitivesAPI.ModelString;
-  export import PrimitiveStringsResponse = PrimitivesAPI.PrimitiveStringsResponse;
-  export import PrimitiveStringsParams = PrimitivesAPI.PrimitiveStringsParams;
+export declare namespace Primitives {
+  export {
+    type ModelString as ModelString,
+    type PrimitiveStringsResponse as PrimitiveStringsResponse,
+    type PrimitiveStringsParams as PrimitiveStringsParams,
+  };
 }

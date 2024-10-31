@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as OpenAPISpecialsAPI from './openapi-specials';
 
 export class OpenAPISpecials extends APIResource {
   usedUsedAsPropertyName(
@@ -16,6 +15,6 @@ export interface OpenAPISpecialUsedUsedAsPropertyNameResponse {
   $ref: string;
 }
 
-export namespace OpenAPISpecials {
-  export import OpenAPISpecialUsedUsedAsPropertyNameResponse = OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
+export declare namespace OpenAPISpecials {
+  export { type OpenAPISpecialUsedUsedAsPropertyNameResponse as OpenAPISpecialUsedUsedAsPropertyNameResponse };
 }

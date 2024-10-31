@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as PageNumberAPI from './page-number';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPagePageNumber } from '../body-params/body-params';
 import { type PagePageNumberParams } from '../../pagination';
@@ -52,9 +51,11 @@ export interface PageNumberListParams extends PagePageNumberParams {}
 
 export interface PageNumberListWithoutCurrentPageResponseParams extends PagePageNumberParams {}
 
-export namespace PageNumber {
-  export import PageNumberListParams = PageNumberAPI.PageNumberListParams;
-  export import PageNumberListWithoutCurrentPageResponseParams = PageNumberAPI.PageNumberListWithoutCurrentPageResponseParams;
+export declare namespace PageNumber {
+  export {
+    type PageNumberListParams as PageNumberListParams,
+    type PageNumberListWithoutCurrentPageResponseParams as PageNumberListWithoutCurrentPageResponseParams,
+  };
 }
 
 export { MyModelsPagePageNumber };

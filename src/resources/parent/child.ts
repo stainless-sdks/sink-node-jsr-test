@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ChildAPI from './child';
 
 /**
  * Some children can be very large
@@ -21,6 +20,6 @@ export interface ChildInlinedResponseResponse {
   foo: number;
 }
 
-export namespace Child {
-  export import ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
+export declare namespace Child {
+  export { type ChildInlinedResponseResponse as ChildInlinedResponseResponse };
 }

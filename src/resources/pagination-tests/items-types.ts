@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ItemsTypesAPI from './items-types';
 import { PagePageNumber, type PagePageNumberParams } from '../../pagination';
 
 export class ItemsTypes extends APIResource {
@@ -38,8 +37,12 @@ export type ItemsTypeListUnknownResponse = unknown;
 
 export interface ItemsTypeListUnknownParams extends PagePageNumberParams {}
 
-export namespace ItemsTypes {
-  export import ItemsTypeListUnknownResponse = ItemsTypesAPI.ItemsTypeListUnknownResponse;
-  export import ItemsTypeListUnknownResponsesPagePageNumber = ItemsTypesAPI.ItemsTypeListUnknownResponsesPagePageNumber;
-  export import ItemsTypeListUnknownParams = ItemsTypesAPI.ItemsTypeListUnknownParams;
+ItemsTypes.ItemsTypeListUnknownResponsesPagePageNumber = ItemsTypeListUnknownResponsesPagePageNumber;
+
+export declare namespace ItemsTypes {
+  export {
+    type ItemsTypeListUnknownResponse as ItemsTypeListUnknownResponse,
+    ItemsTypeListUnknownResponsesPagePageNumber as ItemsTypeListUnknownResponsesPagePageNumber,
+    type ItemsTypeListUnknownParams as ItemsTypeListUnknownParams,
+  };
 }

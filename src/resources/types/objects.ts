@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ObjectsAPI from './objects';
 import * as BodyParamsAPI from '../body-params/body-params';
 
 export class Objects extends APIResource {
@@ -133,11 +132,13 @@ export interface ObjectTwoDimensionalArrayPrimitivePropertyResponse {
   string_prop: Array<Array<string>>;
 }
 
-export namespace Objects {
-  export import UnknownObjectType = ObjectsAPI.UnknownObjectType;
-  export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
-  export import ObjectMultiplePropertiesSameModelResponse = ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
-  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
+export declare namespace Objects {
+  export {
+    type UnknownObjectType as UnknownObjectType,
+    type ObjectMixedKnownAndUnknownResponse as ObjectMixedKnownAndUnknownResponse,
+    type ObjectMultipleArrayPropertiesSameRefResponse as ObjectMultipleArrayPropertiesSameRefResponse,
+    type ObjectMultiplePropertiesSameModelResponse as ObjectMultiplePropertiesSameModelResponse,
+    type ObjectMultiplePropertiesSameRefResponse as ObjectMultiplePropertiesSameRefResponse,
+    type ObjectTwoDimensionalArrayPrimitivePropertyResponse as ObjectTwoDimensionalArrayPrimitivePropertyResponse,
+  };
 }

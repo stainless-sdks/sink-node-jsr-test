@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as UndocumentedResourceAPI from './undocumented-resource';
 import * as CardsAPI from './cards';
 import * as Shared from './shared';
 
@@ -48,6 +47,6 @@ export interface UndocumentedResourceReissueParams {
   shippingAddress?: Shared.ShippingAddress;
 }
 
-export namespace UndocumentedResource {
-  export import UndocumentedResourceReissueParams = UndocumentedResourceAPI.UndocumentedResourceReissueParams;
+export declare namespace UndocumentedResource {
+  export { type UndocumentedResourceReissueParams as UndocumentedResourceReissueParams };
 }

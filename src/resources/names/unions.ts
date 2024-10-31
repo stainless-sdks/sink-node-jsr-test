@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as UnionsAPI from './unions';
 import * as ResponsesAPI from '../responses/responses';
 
 export class Unions extends APIResource {
@@ -49,7 +48,9 @@ export namespace VariantsSinglePropObjects {
   }
 }
 
-export namespace Unions {
-  export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
-  export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
+export declare namespace Unions {
+  export {
+    type DiscriminatedUnion as DiscriminatedUnion,
+    type VariantsSinglePropObjects as VariantsSinglePropObjects,
+  };
 }

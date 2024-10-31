@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as CardsAPI from './cards';
 import * as Shared from './shared';
 
 export class Cards extends APIResource {
@@ -846,17 +845,19 @@ export interface CardReissueParams {
   shippingAddress?: Shared.ShippingAddress;
 }
 
-export namespace Cards {
-  export import Card = CardsAPI.Card;
-  export import CardAlias = CardsAPI.CardAlias;
-  export import FundingAccount = CardsAPI.FundingAccount;
-  export import CardListResponse = CardsAPI.CardListResponse;
-  export import CardProvisionFooResponse = CardsAPI.CardProvisionFooResponse;
-  export import CardCreateParams = CardsAPI.CardCreateParams;
-  export import CardUpdateParams = CardsAPI.CardUpdateParams;
-  export import CardListParams = CardsAPI.CardListParams;
-  export import CardCreateAliasedParams = CardsAPI.CardCreateAliasedParams;
-  export import CardCreateAliasedDeprecatedParams = CardsAPI.CardCreateAliasedDeprecatedParams;
-  export import CardProvisionFooParams = CardsAPI.CardProvisionFooParams;
-  export import CardReissueParams = CardsAPI.CardReissueParams;
+export declare namespace Cards {
+  export {
+    type Card as Card,
+    type CardAlias as CardAlias,
+    type FundingAccount as FundingAccount,
+    type CardListResponse as CardListResponse,
+    type CardProvisionFooResponse as CardProvisionFooResponse,
+    type CardCreateParams as CardCreateParams,
+    type CardUpdateParams as CardUpdateParams,
+    type CardListParams as CardListParams,
+    type CardCreateAliasedParams as CardCreateAliasedParams,
+    type CardCreateAliasedDeprecatedParams as CardCreateAliasedDeprecatedParams,
+    type CardProvisionFooParams as CardProvisionFooParams,
+    type CardReissueParams as CardReissueParams,
+  };
 }

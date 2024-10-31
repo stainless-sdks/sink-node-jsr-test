@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as FilesAPI from './files';
 
 export class Files extends APIResource {
   /**
@@ -118,13 +117,15 @@ export interface FileWithOptionalParamParams {
   mask?: Core.Uploadable;
 }
 
-export namespace Files {
-  export import FileCreateMultipartResponse = FilesAPI.FileCreateMultipartResponse;
-  export import FileEverythingMultipartResponse = FilesAPI.FileEverythingMultipartResponse;
-  export import FileNoFileMultipartResponse = FilesAPI.FileNoFileMultipartResponse;
-  export import FileWithOptionalParamResponse = FilesAPI.FileWithOptionalParamResponse;
-  export import FileCreateMultipartParams = FilesAPI.FileCreateMultipartParams;
-  export import FileEverythingMultipartParams = FilesAPI.FileEverythingMultipartParams;
-  export import FileNoFileMultipartParams = FilesAPI.FileNoFileMultipartParams;
-  export import FileWithOptionalParamParams = FilesAPI.FileWithOptionalParamParams;
+export declare namespace Files {
+  export {
+    type FileCreateMultipartResponse as FileCreateMultipartResponse,
+    type FileEverythingMultipartResponse as FileEverythingMultipartResponse,
+    type FileNoFileMultipartResponse as FileNoFileMultipartResponse,
+    type FileWithOptionalParamResponse as FileWithOptionalParamResponse,
+    type FileCreateMultipartParams as FileCreateMultipartParams,
+    type FileEverythingMultipartParams as FileEverythingMultipartParams,
+    type FileNoFileMultipartParams as FileNoFileMultipartParams,
+    type FileWithOptionalParamParams as FileWithOptionalParamParams,
+  };
 }

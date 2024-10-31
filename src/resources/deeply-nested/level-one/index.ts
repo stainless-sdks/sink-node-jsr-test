@@ -1,4 +1,4 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { ModelLevel1, LevelOne } from './level-one';
-export { ModelLevel2, LevelTwo } from './level-two/index';
+export { LevelOne, type ModelLevel1 } from './level-one';
+export { LevelTwo, type ModelLevel2 } from './level-two/index';

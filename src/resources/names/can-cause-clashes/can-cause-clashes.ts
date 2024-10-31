@@ -2,14 +2,19 @@
 
 import { APIResource } from '../../../resource';
 import * as EmploymentDataAPI from './employment-data';
+import { EmploymentData } from './employment-data';
 import * as ResponseAPI from './response';
+import { Response } from './response';
 
 export class CanCauseClashes extends APIResource {
   employmentData: EmploymentDataAPI.EmploymentData = new EmploymentDataAPI.EmploymentData(this._client);
   response: ResponseAPI.Response = new ResponseAPI.Response(this._client);
 }
 
-export namespace CanCauseClashes {
-  export import EmploymentData = EmploymentDataAPI.EmploymentData;
-  export import Response = ResponseAPI.Response;
+CanCauseClashes.Response = Response;
+
+export declare namespace CanCauseClashes {
+  export { type EmploymentData as EmploymentData };
+
+  export { Response as Response };
 }

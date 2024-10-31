@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as DocstringsAPI from './docstrings';
 import * as Shared from './shared';
 
 export class Docstrings extends APIResource {
@@ -71,7 +70,9 @@ export interface DocstringTrailingDoubleQuoteResponse {
   prop3: boolean;
 }
 
-export namespace Docstrings {
-  export import DocstringLeadingDoubleQuoteResponse = DocstringsAPI.DocstringLeadingDoubleQuoteResponse;
-  export import DocstringTrailingDoubleQuoteResponse = DocstringsAPI.DocstringTrailingDoubleQuoteResponse;
+export declare namespace Docstrings {
+  export {
+    type DocstringLeadingDoubleQuoteResponse as DocstringLeadingDoubleQuoteResponse,
+    type DocstringTrailingDoubleQuoteResponse as DocstringTrailingDoubleQuoteResponse,
+  };
 }

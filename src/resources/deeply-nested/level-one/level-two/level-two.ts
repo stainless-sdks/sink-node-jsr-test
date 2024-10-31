@@ -2,9 +2,9 @@
 
 import { APIResource } from '../../../../resource';
 import * as Core from '../../../../core';
-import * as LevelTwoAPI from './level-two';
 import * as CardsAPI from '../../../cards';
 import * as LevelThreeAPI from './level-three';
+import { LevelThree, ModelLevel3 } from './level-three';
 
 export class LevelTwo extends APIResource {
   levelThree: LevelThreeAPI.LevelThree = new LevelThreeAPI.LevelThree(this._client);
@@ -21,8 +21,10 @@ export interface ModelLevel2 {
   depth?: 'level 2' | null;
 }
 
-export namespace LevelTwo {
-  export import ModelLevel2 = LevelTwoAPI.ModelLevel2;
-  export import LevelThree = LevelThreeAPI.LevelThree;
-  export import ModelLevel3 = LevelThreeAPI.ModelLevel3;
+LevelTwo.LevelThree = LevelThree;
+
+export declare namespace LevelTwo {
+  export { type ModelLevel2 as ModelLevel2 };
+
+  export { LevelThree as LevelThree, type ModelLevel3 as ModelLevel3 };
 }

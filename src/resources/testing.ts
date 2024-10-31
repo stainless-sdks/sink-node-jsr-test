@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as TestingAPI from './testing';
 
 export class Testing extends APIResource {
   root(options?: Core.RequestOptions): Core.APIPromise<RootResponse> {
@@ -16,6 +15,6 @@ export interface RootResponse {
   message: string;
 }
 
-export namespace Testing {
-  export import RootResponse = TestingAPI.RootResponse;
+export declare namespace Testing {
+  export { type RootResponse as RootResponse };
 }

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as EnumsAPI from './enums';
 import * as Shared from '../shared';
 
 export class Enums extends APIResource {
@@ -88,10 +87,12 @@ export interface EnumBasicParams {
   uses_const?: 'my_const_enum_value';
 }
 
-export namespace Enums {
-  export import EnumBasicResponse = EnumsAPI.EnumBasicResponse;
-  export import EnumArrayUniqueValuesParams = EnumsAPI.EnumArrayUniqueValuesParams;
-  export import EnumArrayUniqueValues2ValuesParams = EnumsAPI.EnumArrayUniqueValues2ValuesParams;
-  export import EnumArrayUniqueValuesNumbersParams = EnumsAPI.EnumArrayUniqueValuesNumbersParams;
-  export import EnumBasicParams = EnumsAPI.EnumBasicParams;
+export declare namespace Enums {
+  export {
+    type EnumBasicResponse as EnumBasicResponse,
+    type EnumArrayUniqueValuesParams as EnumArrayUniqueValuesParams,
+    type EnumArrayUniqueValues2ValuesParams as EnumArrayUniqueValues2ValuesParams,
+    type EnumArrayUniqueValuesNumbersParams as EnumArrayUniqueValuesNumbersParams,
+    type EnumBasicParams as EnumBasicParams,
+  };
 }

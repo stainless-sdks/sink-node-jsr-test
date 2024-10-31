@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../../resource';
 import * as Core from '../../../../core';
-import * as InterfaceAPI from './interface';
 
 export class InterfaceResource extends APIResource {
   interface(options?: Core.RequestOptions): Core.APIPromise<Interface> {
@@ -14,6 +13,6 @@ export interface Interface {
   interface: string;
 }
 
-export namespace InterfaceResource {
-  export import Interface = InterfaceAPI.Interface;
+export declare namespace InterfaceResource {
+  export { type Interface as Interface };
 }

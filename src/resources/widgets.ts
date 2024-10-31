@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as WidgetsAPI from './widgets';
 
 /**
  * Widget is love
@@ -28,6 +27,6 @@ export interface Widget {
   id: number;
 }
 
-export namespace Widgets {
-  export import Widget = WidgetsAPI.Widget;
+export declare namespace Widgets {
+  export { type Widget as Widget };
 }

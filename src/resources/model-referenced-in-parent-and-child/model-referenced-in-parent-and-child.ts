@@ -2,8 +2,8 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ModelReferencedInParentAndChildAPI from './model-referenced-in-parent-and-child';
 import * as ChildAPI from './child';
+import { Child } from './child';
 
 export class ModelReferencedInParentAndChildResource extends APIResource {
   child: ChildAPI.Child = new ChildAPI.Child(this._client);
@@ -17,7 +17,10 @@ export interface ModelReferencedInParentAndChild {
   foo: string;
 }
 
-export namespace ModelReferencedInParentAndChildResource {
-  export import ModelReferencedInParentAndChild = ModelReferencedInParentAndChildAPI.ModelReferencedInParentAndChild;
-  export import Child = ChildAPI.Child;
+ModelReferencedInParentAndChildResource.Child = Child;
+
+export declare namespace ModelReferencedInParentAndChildResource {
+  export { type ModelReferencedInParentAndChild as ModelReferencedInParentAndChild };
+
+  export { Child as Child };
 }

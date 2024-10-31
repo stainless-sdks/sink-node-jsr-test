@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ArraysAPI from './arrays';
 
 export class Arrays extends APIResource {
   /**
@@ -63,9 +62,11 @@ export interface ArrayNestedInParamsParams {
   array_param?: unknown;
 }
 
-export namespace Arrays {
-  export import ArrayObjectItems = ArraysAPI.ArrayObjectItems;
-  export import ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
-  export import ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
-  export import ArrayNestedInParamsParams = ArraysAPI.ArrayNestedInParamsParams;
+export declare namespace Arrays {
+  export {
+    type ArrayObjectItems as ArrayObjectItems,
+    type ArrayFloatItemsResponse as ArrayFloatItemsResponse,
+    type ArrayObjectItemsResponse as ArrayObjectItemsResponse,
+    type ArrayNestedInParamsParams as ArrayNestedInParamsParams,
+  };
 }

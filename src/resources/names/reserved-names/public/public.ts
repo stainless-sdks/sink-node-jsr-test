@@ -2,10 +2,12 @@
 
 import { APIResource } from '../../../../resource';
 import * as Core from '../../../../core';
-import * as PublicAPI from './public';
 import * as ClassAPI from './class';
+import { Class, ClassResource } from './class';
 import * as InterfaceAPI from './interface';
+import { Interface, InterfaceResource } from './interface';
 import * as PrivateAPI from './private';
+import { Private, PrivateResource } from './private';
 
 export class PublicResource extends APIResource {
   private: PrivateAPI.PrivateResource = new PrivateAPI.PrivateResource(this._client);
@@ -21,12 +23,16 @@ export interface Public {
   public: string;
 }
 
-export namespace PublicResource {
-  export import Public = PublicAPI.Public;
-  export import PrivateResource = PrivateAPI.PrivateResource;
-  export import Private = PrivateAPI.Private;
-  export import InterfaceResource = InterfaceAPI.InterfaceResource;
-  export import Interface = InterfaceAPI.Interface;
-  export import ClassResource = ClassAPI.ClassResource;
-  export import Class = ClassAPI.Class;
+PublicResource.PrivateResource = PrivateResource;
+PublicResource.InterfaceResource = InterfaceResource;
+PublicResource.ClassResource = ClassResource;
+
+export declare namespace PublicResource {
+  export { type Public as Public };
+
+  export { PrivateResource as PrivateResource, type Private as Private };
+
+  export { InterfaceResource as InterfaceResource, type Interface as Interface };
+
+  export { ClassResource as ClassResource, type Class as Class };
 }

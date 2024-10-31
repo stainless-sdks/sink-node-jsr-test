@@ -2,12 +2,14 @@
 
 import { APIResource } from '../../resource';
 import * as LevelOneAPI from './level-one/level-one';
+import { LevelOne, ModelLevel1 } from './level-one/level-one';
 
 export class DeeplyNested extends APIResource {
   levelOne: LevelOneAPI.LevelOne = new LevelOneAPI.LevelOne(this._client);
 }
 
-export namespace DeeplyNested {
-  export import LevelOne = LevelOneAPI.LevelOne;
-  export import ModelLevel1 = LevelOneAPI.ModelLevel1;
+DeeplyNested.LevelOne = LevelOne;
+
+export declare namespace DeeplyNested {
+  export { LevelOne as LevelOne, type ModelLevel1 as ModelLevel1 };
 }

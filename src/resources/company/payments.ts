@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as PaymentsAPI from './payments';
 
 /**
  * For paying Stainless $$$
@@ -20,6 +19,6 @@ export interface CompanyPayment {
   amount: number;
 }
 
-export namespace Payments {
-  export import CompanyPayment = PaymentsAPI.CompanyPayment;
+export declare namespace Payments {
+  export { type CompanyPayment as CompanyPayment };
 }

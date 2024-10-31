@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as KeepThisResourceAPI from './keep-this-resource';
 
 export class KeepThisResource extends APIResource {
   /**
@@ -18,6 +17,6 @@ export interface KeepThisResourceKeepThisMethodResponse {
   foo: string;
 }
 
-export namespace KeepThisResource {
-  export import KeepThisResourceKeepThisMethodResponse = KeepThisResourceAPI.KeepThisResourceKeepThisMethodResponse;
+export declare namespace KeepThisResource {
+  export { type KeepThisResourceKeepThisMethodResponse as KeepThisResourceKeepThisMethodResponse };
 }

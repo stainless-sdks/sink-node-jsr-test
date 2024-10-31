@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as SchemaTypesAPI from './schema-types';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPageCursor } from '../body-params/body-params';
 import { type PageCursorParams } from '../../pagination';
@@ -60,9 +59,11 @@ export interface SchemaTypeUnionsParams extends PageCursorParams {
   limit?: number;
 }
 
-export namespace SchemaTypes {
-  export import SchemaTypeAllofsParams = SchemaTypesAPI.SchemaTypeAllofsParams;
-  export import SchemaTypeUnionsParams = SchemaTypesAPI.SchemaTypeUnionsParams;
+export declare namespace SchemaTypes {
+  export {
+    type SchemaTypeAllofsParams as SchemaTypeAllofsParams,
+    type SchemaTypeUnionsParams as SchemaTypeUnionsParams,
+  };
 }
 
 export { MyModelsPageCursor };

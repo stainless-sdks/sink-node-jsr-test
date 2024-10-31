@@ -3,9 +3,9 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as DefaultReqOptionsAPI from './default-req-options';
 import * as Shared from '../shared';
 import * as ChildAPI from './child';
+import { Child } from './child';
 
 export class DefaultReqOptions extends APIResource {
   child: ChildAPI.Child = new ChildAPI.Child(this._client);
@@ -52,7 +52,10 @@ export interface DefaultReqOptionWithParamOverrideParams {
   'X-My-Header'?: boolean;
 }
 
-export namespace DefaultReqOptions {
-  export import DefaultReqOptionWithParamOverrideParams = DefaultReqOptionsAPI.DefaultReqOptionWithParamOverrideParams;
-  export import Child = ChildAPI.Child;
+DefaultReqOptions.Child = Child;
+
+export declare namespace DefaultReqOptions {
+  export { type DefaultReqOptionWithParamOverrideParams as DefaultReqOptionWithParamOverrideParams };
+
+  export { Child as Child };
 }

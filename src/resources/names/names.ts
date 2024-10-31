@@ -2,13 +2,17 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as NamesAPI from './names';
 import * as Shared from '../shared';
 import * as OpenAPISpecialsAPI from './openapi-specials';
+import { OpenAPISpecialUsedUsedAsPropertyNameResponse, OpenAPISpecials } from './openapi-specials';
 import * as ParamsAPI from './params';
+import { ParamOptionsParamParams, ParamTimeoutParamParams, Params } from './params';
 import * as UnionsAPI from './unions';
+import { DiscriminatedUnion, Unions, VariantsSinglePropObjects } from './unions';
 import * as CanCauseClashesAPI from './can-cause-clashes/can-cause-clashes';
+import { CanCauseClashes } from './can-cause-clashes/can-cause-clashes';
 import * as ReservedNamesAPI from './reserved-names/reserved-names';
+import { ReservedNameCommonReservedParamsParams, ReservedNames } from './reserved-names/reserved-names';
 
 export class Names extends APIResource {
   unions: UnionsAPI.Unions = new UnionsAPI.Unions(this._client);
@@ -254,26 +258,47 @@ export namespace NamePropertiesIllegalJavascriptIdentifiersParams {
   export type _3llegalJavascriptIdentifiers = number;
 }
 
-export namespace Names {
-  export import Balance = NamesAPI.Balance;
-  export import NameChildPropImportClashResponse = NamesAPI.NameChildPropImportClashResponse;
-  export import NamePropertiesCommonConflictsResponse = NamesAPI.NamePropertiesCommonConflictsResponse;
-  export import NamePropertiesIllegalGoIdentifiersResponse = NamesAPI.NamePropertiesIllegalGoIdentifiersResponse;
-  export import NamePropertiesIllegalJavascriptIdentifiersResponse = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersResponse;
-  export import NameResponsePropertyClashesModelImportResponse = NamesAPI.NameResponsePropertyClashesModelImportResponse;
-  export import NameResponseShadowsPydanticResponse = NamesAPI.NameResponseShadowsPydanticResponse;
-  export import NamePropertiesCommonConflictsParams = NamesAPI.NamePropertiesCommonConflictsParams;
-  export import NamePropertiesIllegalGoIdentifiersParams = NamesAPI.NamePropertiesIllegalGoIdentifiersParams;
-  export import NamePropertiesIllegalJavascriptIdentifiersParams = NamesAPI.NamePropertiesIllegalJavascriptIdentifiersParams;
-  export import Unions = UnionsAPI.Unions;
-  export import DiscriminatedUnion = UnionsAPI.DiscriminatedUnion;
-  export import VariantsSinglePropObjects = UnionsAPI.VariantsSinglePropObjects;
-  export import ReservedNames = ReservedNamesAPI.ReservedNames;
-  export import ReservedNameCommonReservedParamsParams = ReservedNamesAPI.ReservedNameCommonReservedParamsParams;
-  export import Params = ParamsAPI.Params;
-  export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
-  export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
-  export import CanCauseClashes = CanCauseClashesAPI.CanCauseClashes;
-  export import OpenAPISpecials = OpenAPISpecialsAPI.OpenAPISpecials;
-  export import OpenAPISpecialUsedUsedAsPropertyNameResponse = OpenAPISpecialsAPI.OpenAPISpecialUsedUsedAsPropertyNameResponse;
+Names.Unions = Unions;
+Names.ReservedNames = ReservedNames;
+Names.Params = Params;
+Names.CanCauseClashes = CanCauseClashes;
+Names.OpenAPISpecials = OpenAPISpecials;
+
+export declare namespace Names {
+  export {
+    type Balance as Balance,
+    type NameChildPropImportClashResponse as NameChildPropImportClashResponse,
+    type NamePropertiesCommonConflictsResponse as NamePropertiesCommonConflictsResponse,
+    type NamePropertiesIllegalGoIdentifiersResponse as NamePropertiesIllegalGoIdentifiersResponse,
+    type NamePropertiesIllegalJavascriptIdentifiersResponse as NamePropertiesIllegalJavascriptIdentifiersResponse,
+    type NameResponsePropertyClashesModelImportResponse as NameResponsePropertyClashesModelImportResponse,
+    type NameResponseShadowsPydanticResponse as NameResponseShadowsPydanticResponse,
+    type NamePropertiesCommonConflictsParams as NamePropertiesCommonConflictsParams,
+    type NamePropertiesIllegalGoIdentifiersParams as NamePropertiesIllegalGoIdentifiersParams,
+    type NamePropertiesIllegalJavascriptIdentifiersParams as NamePropertiesIllegalJavascriptIdentifiersParams,
+  };
+
+  export {
+    Unions as Unions,
+    type DiscriminatedUnion as DiscriminatedUnion,
+    type VariantsSinglePropObjects as VariantsSinglePropObjects,
+  };
+
+  export {
+    ReservedNames as ReservedNames,
+    type ReservedNameCommonReservedParamsParams as ReservedNameCommonReservedParamsParams,
+  };
+
+  export {
+    Params as Params,
+    type ParamOptionsParamParams as ParamOptionsParamParams,
+    type ParamTimeoutParamParams as ParamTimeoutParamParams,
+  };
+
+  export { CanCauseClashes as CanCauseClashes };
+
+  export {
+    OpenAPISpecials as OpenAPISpecials,
+    type OpenAPISpecialUsedUsedAsPropertyNameResponse as OpenAPISpecialUsedUsedAsPropertyNameResponse,
+  };
 }

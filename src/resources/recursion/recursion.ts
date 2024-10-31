@@ -2,8 +2,8 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as RecursionAPI from './recursion';
 import * as SharedResponsesAPI from './shared-responses';
+import { SharedResponses } from './shared-responses';
 
 export class Recursion extends APIResource {
   sharedResponses: SharedResponsesAPI.SharedResponses = new SharedResponsesAPI.SharedResponses(this._client);
@@ -42,11 +42,16 @@ export interface RecursionCreateSelfParams {
   child?: SelfRecursion;
 }
 
-export namespace Recursion {
-  export import ArrayRecursion = RecursionAPI.ArrayRecursion;
-  export import SelfRecursion = RecursionAPI.SelfRecursion;
-  export import RecursionCreateEnvelopeResponse = RecursionAPI.RecursionCreateEnvelopeResponse;
-  export import RecursionCreateEnvelopeParams = RecursionAPI.RecursionCreateEnvelopeParams;
-  export import RecursionCreateSelfParams = RecursionAPI.RecursionCreateSelfParams;
-  export import SharedResponses = SharedResponsesAPI.SharedResponses;
+Recursion.SharedResponses = SharedResponses;
+
+export declare namespace Recursion {
+  export {
+    type ArrayRecursion as ArrayRecursion,
+    type SelfRecursion as SelfRecursion,
+    type RecursionCreateEnvelopeResponse as RecursionCreateEnvelopeResponse,
+    type RecursionCreateEnvelopeParams as RecursionCreateEnvelopeParams,
+    type RecursionCreateSelfParams as RecursionCreateSelfParams,
+  };
+
+  export { SharedResponses as SharedResponses };
 }

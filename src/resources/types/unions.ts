@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as UnionsAPI from './unions';
 
 export class Unions extends APIResource {
   /**
@@ -158,17 +157,19 @@ export namespace UnionParamDiscriminatedWithBasicMappingParams {
   }
 }
 
-export namespace Unions {
-  export import UnionDiscriminatedVariantA = UnionsAPI.UnionDiscriminatedVariantA;
-  export import UnionDiscriminatedVariantB = UnionsAPI.UnionDiscriminatedVariantB;
-  export import UnionArrayParamDiscriminatedByPropertyNameResponse = UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameResponse;
-  export import UnionArrayParamDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingResponse;
-  export import UnionParamDiscriminatedByPropertyNameResponse = UnionsAPI.UnionParamDiscriminatedByPropertyNameResponse;
-  export import UnionParamDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionParamDiscriminatedWithBasicMappingResponse;
-  export import UnionResponseDiscriminatedByPropertyNameResponse = UnionsAPI.UnionResponseDiscriminatedByPropertyNameResponse;
-  export import UnionResponseDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionResponseDiscriminatedWithBasicMappingResponse;
-  export import UnionArrayParamDiscriminatedByPropertyNameParams = UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameParams;
-  export import UnionArrayParamDiscriminatedWithBasicMappingParams = UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingParams;
-  export import UnionParamDiscriminatedByPropertyNameParams = UnionsAPI.UnionParamDiscriminatedByPropertyNameParams;
-  export import UnionParamDiscriminatedWithBasicMappingParams = UnionsAPI.UnionParamDiscriminatedWithBasicMappingParams;
+export declare namespace Unions {
+  export {
+    type UnionDiscriminatedVariantA as UnionDiscriminatedVariantA,
+    type UnionDiscriminatedVariantB as UnionDiscriminatedVariantB,
+    type UnionArrayParamDiscriminatedByPropertyNameResponse as UnionArrayParamDiscriminatedByPropertyNameResponse,
+    type UnionArrayParamDiscriminatedWithBasicMappingResponse as UnionArrayParamDiscriminatedWithBasicMappingResponse,
+    type UnionParamDiscriminatedByPropertyNameResponse as UnionParamDiscriminatedByPropertyNameResponse,
+    type UnionParamDiscriminatedWithBasicMappingResponse as UnionParamDiscriminatedWithBasicMappingResponse,
+    type UnionResponseDiscriminatedByPropertyNameResponse as UnionResponseDiscriminatedByPropertyNameResponse,
+    type UnionResponseDiscriminatedWithBasicMappingResponse as UnionResponseDiscriminatedWithBasicMappingResponse,
+    type UnionArrayParamDiscriminatedByPropertyNameParams as UnionArrayParamDiscriminatedByPropertyNameParams,
+    type UnionArrayParamDiscriminatedWithBasicMappingParams as UnionArrayParamDiscriminatedWithBasicMappingParams,
+    type UnionParamDiscriminatedByPropertyNameParams as UnionParamDiscriminatedByPropertyNameParams,
+    type UnionParamDiscriminatedWithBasicMappingParams as UnionParamDiscriminatedWithBasicMappingParams,
+  };
 }

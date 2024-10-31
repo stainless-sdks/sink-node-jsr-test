@@ -3,9 +3,14 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as MixedParamsAPI from './mixed-params';
 import * as Shared from '../shared';
 import * as DuplicatesAPI from './duplicates';
+import {
+  DuplicateBodyAndPathParams,
+  DuplicateQueryAndBodyParams,
+  DuplicateQueryAndPathParams,
+  Duplicates,
+} from './duplicates';
 
 export class MixedParams extends APIResource {
   duplicates: DuplicatesAPI.Duplicates = new DuplicatesAPI.Duplicates(this._client);
@@ -116,12 +121,19 @@ export interface MixedParamQueryBodyAndPathParams {
   body_param?: string;
 }
 
-export namespace MixedParams {
-  export import MixedParamBodyWithTopLevelOneOfAndPathParams = MixedParamsAPI.MixedParamBodyWithTopLevelOneOfAndPathParams;
-  export import MixedParamQueryAndBodyParams = MixedParamsAPI.MixedParamQueryAndBodyParams;
-  export import MixedParamQueryBodyAndPathParams = MixedParamsAPI.MixedParamQueryBodyAndPathParams;
-  export import Duplicates = DuplicatesAPI.Duplicates;
-  export import DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
-  export import DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
-  export import DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
+MixedParams.Duplicates = Duplicates;
+
+export declare namespace MixedParams {
+  export {
+    type MixedParamBodyWithTopLevelOneOfAndPathParams as MixedParamBodyWithTopLevelOneOfAndPathParams,
+    type MixedParamQueryAndBodyParams as MixedParamQueryAndBodyParams,
+    type MixedParamQueryBodyAndPathParams as MixedParamQueryBodyAndPathParams,
+  };
+
+  export {
+    Duplicates as Duplicates,
+    type DuplicateBodyAndPathParams as DuplicateBodyAndPathParams,
+    type DuplicateQueryAndBodyParams as DuplicateQueryAndBodyParams,
+    type DuplicateQueryAndPathParams as DuplicateQueryAndPathParams,
+  };
 }

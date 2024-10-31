@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as WriteOnlyResponsesAPI from './write-only-responses';
 
 export class WriteOnlyResponses extends APIResource {
   /**
@@ -15,6 +14,6 @@ export class WriteOnlyResponses extends APIResource {
 
 export interface WriteOnlyResponseSimpleResponse {}
 
-export namespace WriteOnlyResponses {
-  export import WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
+export declare namespace WriteOnlyResponses {
+  export { type WriteOnlyResponseSimpleResponse as WriteOnlyResponseSimpleResponse };
 }

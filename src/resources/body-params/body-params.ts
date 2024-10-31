@@ -6,7 +6,9 @@ import * as Core from '../../core';
 import * as BodyParamsAPI from './body-params';
 import * as Shared from '../shared';
 import * as ObjectsAPI from './objects';
+import { ObjectMixedKnownAndUnknownParams, Objects } from './objects';
 import * as UnionsAPI from './unions';
+import { ModelNewTypeString, UnionParamUnionEnumNewTypeParams, Unions } from './unions';
 import * as ResponsesAPI from '../responses/responses';
 import {
   PageCursor,
@@ -826,48 +828,56 @@ export interface BodyParamWithModelPropertyParams {
   my_model?: MyModel;
 }
 
-export namespace BodyParams {
-  export import ModelWithParamInName = BodyParamsAPI.ModelWithParamInName;
-  export import MyModel = BodyParamsAPI.MyModel;
-  export import NestedRequestModelA = BodyParamsAPI.NestedRequestModelA;
-  export import NestedRequestModelB = BodyParamsAPI.NestedRequestModelB;
-  export import NestedRequestModelC = BodyParamsAPI.NestedRequestModelC;
-  export import NullTypeModel = BodyParamsAPI.NullTypeModel;
-  export import StringMapModel = BodyParamsAPI.StringMapModel;
-  export import UnknownObjectModel = BodyParamsAPI.UnknownObjectModel;
-  export import BodyParamTopLevelAllOfResponse = BodyParamsAPI.BodyParamTopLevelAllOfResponse;
-  export import BodyParamUnionOverlappingPropResponse = BodyParamsAPI.BodyParamUnionOverlappingPropResponse;
-  export import BodyParamBinaryStringTypeParams = BodyParamsAPI.BodyParamBinaryStringTypeParams;
-  export import BodyParamBinaryTypeParams = BodyParamsAPI.BodyParamBinaryTypeParams;
-  export import BodyParamDuplicateSubpropertyParams = BodyParamsAPI.BodyParamDuplicateSubpropertyParams;
-  export import BodyParamEnumPropertiesParams = BodyParamsAPI.BodyParamEnumPropertiesParams;
-  export import BodyParamNestedRequestModelsParams = BodyParamsAPI.BodyParamNestedRequestModelsParams;
-  export import BodyParamNullTypeParams = BodyParamsAPI.BodyParamNullTypeParams;
-  export import BodyParamObjectWithArrayOfObjectsParams = BodyParamsAPI.BodyParamObjectWithArrayOfObjectsParams;
-  export import BodyParamObjectWithUnionPropertiesParams = BodyParamsAPI.BodyParamObjectWithUnionPropertiesParams;
-  export import BodyParamOnlyReadOnlyPropertiesParams = BodyParamsAPI.BodyParamOnlyReadOnlyPropertiesParams;
-  export import BodyParamParamInModelNameRefParams = BodyParamsAPI.BodyParamParamInModelNameRefParams;
-  export import BodyParamPropertyModelRefParams = BodyParamsAPI.BodyParamPropertyModelRefParams;
-  export import BodyParamPropertyWithComplexUnionParams = BodyParamsAPI.BodyParamPropertyWithComplexUnionParams;
-  export import BodyParamPropertyWithHeavilyNestedComplexUnionParams = BodyParamsAPI.BodyParamPropertyWithHeavilyNestedComplexUnionParams;
-  export import BodyParamReadOnlyPropertiesParams = BodyParamsAPI.BodyParamReadOnlyPropertiesParams;
-  export import BodyParamStringMapModelRefParams = BodyParamsAPI.BodyParamStringMapModelRefParams;
-  export import BodyParamTopLevelAllOfParams = BodyParamsAPI.BodyParamTopLevelAllOfParams;
-  export import BodyParamTopLevelAllOfNestedObjectParams = BodyParamsAPI.BodyParamTopLevelAllOfNestedObjectParams;
-  export import BodyParamTopLevelAnyOfWithRefParams = BodyParamsAPI.BodyParamTopLevelAnyOfWithRefParams;
-  export import BodyParamTopLevelArrayParams = BodyParamsAPI.BodyParamTopLevelArrayParams;
-  export import BodyParamTopLevelArrayWithChildrenParams = BodyParamsAPI.BodyParamTopLevelArrayWithChildrenParams;
-  export import BodyParamTopLevelArrayWithOtherParamsParams = BodyParamsAPI.BodyParamTopLevelArrayWithOtherParamsParams;
-  export import BodyParamTopLevelOneOfOneEntryParams = BodyParamsAPI.BodyParamTopLevelOneOfOneEntryParams;
-  export import BodyParamTopLevelSharedTypeParams = BodyParamsAPI.BodyParamTopLevelSharedTypeParams;
-  export import BodyParamUnionOverlappingPropParams = BodyParamsAPI.BodyParamUnionOverlappingPropParams;
-  export import BodyParamUnknownObjectParams = BodyParamsAPI.BodyParamUnknownObjectParams;
-  export import BodyParamWithDefaultBodyParamOptionalParams = BodyParamsAPI.BodyParamWithDefaultBodyParamOptionalParams;
-  export import BodyParamWithDefaultBodyParamRequiredParams = BodyParamsAPI.BodyParamWithDefaultBodyParamRequiredParams;
-  export import BodyParamWithModelPropertyParams = BodyParamsAPI.BodyParamWithModelPropertyParams;
-  export import Objects = ObjectsAPI.Objects;
-  export import ObjectMixedKnownAndUnknownParams = ObjectsAPI.ObjectMixedKnownAndUnknownParams;
-  export import Unions = UnionsAPI.Unions;
-  export import ModelNewTypeString = UnionsAPI.ModelNewTypeString;
-  export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
+BodyParams.Objects = Objects;
+BodyParams.Unions = Unions;
+
+export declare namespace BodyParams {
+  export {
+    type ModelWithParamInName as ModelWithParamInName,
+    type MyModel as MyModel,
+    type NestedRequestModelA as NestedRequestModelA,
+    type NestedRequestModelB as NestedRequestModelB,
+    type NestedRequestModelC as NestedRequestModelC,
+    type NullTypeModel as NullTypeModel,
+    type StringMapModel as StringMapModel,
+    type UnknownObjectModel as UnknownObjectModel,
+    type BodyParamTopLevelAllOfResponse as BodyParamTopLevelAllOfResponse,
+    type BodyParamUnionOverlappingPropResponse as BodyParamUnionOverlappingPropResponse,
+    type BodyParamBinaryStringTypeParams as BodyParamBinaryStringTypeParams,
+    type BodyParamBinaryTypeParams as BodyParamBinaryTypeParams,
+    type BodyParamDuplicateSubpropertyParams as BodyParamDuplicateSubpropertyParams,
+    type BodyParamEnumPropertiesParams as BodyParamEnumPropertiesParams,
+    type BodyParamNestedRequestModelsParams as BodyParamNestedRequestModelsParams,
+    type BodyParamNullTypeParams as BodyParamNullTypeParams,
+    type BodyParamObjectWithArrayOfObjectsParams as BodyParamObjectWithArrayOfObjectsParams,
+    type BodyParamObjectWithUnionPropertiesParams as BodyParamObjectWithUnionPropertiesParams,
+    type BodyParamOnlyReadOnlyPropertiesParams as BodyParamOnlyReadOnlyPropertiesParams,
+    type BodyParamParamInModelNameRefParams as BodyParamParamInModelNameRefParams,
+    type BodyParamPropertyModelRefParams as BodyParamPropertyModelRefParams,
+    type BodyParamPropertyWithComplexUnionParams as BodyParamPropertyWithComplexUnionParams,
+    type BodyParamPropertyWithHeavilyNestedComplexUnionParams as BodyParamPropertyWithHeavilyNestedComplexUnionParams,
+    type BodyParamReadOnlyPropertiesParams as BodyParamReadOnlyPropertiesParams,
+    type BodyParamStringMapModelRefParams as BodyParamStringMapModelRefParams,
+    type BodyParamTopLevelAllOfParams as BodyParamTopLevelAllOfParams,
+    type BodyParamTopLevelAllOfNestedObjectParams as BodyParamTopLevelAllOfNestedObjectParams,
+    type BodyParamTopLevelAnyOfWithRefParams as BodyParamTopLevelAnyOfWithRefParams,
+    type BodyParamTopLevelArrayParams as BodyParamTopLevelArrayParams,
+    type BodyParamTopLevelArrayWithChildrenParams as BodyParamTopLevelArrayWithChildrenParams,
+    type BodyParamTopLevelArrayWithOtherParamsParams as BodyParamTopLevelArrayWithOtherParamsParams,
+    type BodyParamTopLevelOneOfOneEntryParams as BodyParamTopLevelOneOfOneEntryParams,
+    type BodyParamTopLevelSharedTypeParams as BodyParamTopLevelSharedTypeParams,
+    type BodyParamUnionOverlappingPropParams as BodyParamUnionOverlappingPropParams,
+    type BodyParamUnknownObjectParams as BodyParamUnknownObjectParams,
+    type BodyParamWithDefaultBodyParamOptionalParams as BodyParamWithDefaultBodyParamOptionalParams,
+    type BodyParamWithDefaultBodyParamRequiredParams as BodyParamWithDefaultBodyParamRequiredParams,
+    type BodyParamWithModelPropertyParams as BodyParamWithModelPropertyParams,
+  };
+
+  export { Objects as Objects, type ObjectMixedKnownAndUnknownParams as ObjectMixedKnownAndUnknownParams };
+
+  export {
+    Unions as Unions,
+    type ModelNewTypeString as ModelNewTypeString,
+    type UnionParamUnionEnumNewTypeParams as UnionParamUnionEnumNewTypeParams,
+  };
 }

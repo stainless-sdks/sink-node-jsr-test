@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as PositionalParamsAPI from './positional-params';
 
 export class PositionalParams extends APIResource {
   /**
@@ -277,15 +276,17 @@ export interface PositionalParamUnionBodyAndPathParams {
   kind: 'VIRTUAL' | 'PHYSICAL';
 }
 
-export namespace PositionalParams {
-  export import PositionalParamBasicBodyParams = PositionalParamsAPI.PositionalParamBasicBodyParams;
-  export import PositionalParamBasicQueryParams = PositionalParamsAPI.PositionalParamBasicQueryParams;
-  export import PositionalParamBodyParams = PositionalParamsAPI.PositionalParamBodyParams;
-  export import PositionalParamBodyExtraParamParams = PositionalParamsAPI.PositionalParamBodyExtraParamParams;
-  export import PositionalParamKitchenSinkParams = PositionalParamsAPI.PositionalParamKitchenSinkParams;
-  export import PositionalParamMultiplePathParamsParams = PositionalParamsAPI.PositionalParamMultiplePathParamsParams;
-  export import PositionalParamQueryParams = PositionalParamsAPI.PositionalParamQueryParams;
-  export import PositionalParamQueryAndPathParams = PositionalParamsAPI.PositionalParamQueryAndPathParams;
-  export import PositionalParamQueryMultipleParams = PositionalParamsAPI.PositionalParamQueryMultipleParams;
-  export import PositionalParamUnionBodyAndPathParams = PositionalParamsAPI.PositionalParamUnionBodyAndPathParams;
+export declare namespace PositionalParams {
+  export {
+    type PositionalParamBasicBodyParams as PositionalParamBasicBodyParams,
+    type PositionalParamBasicQueryParams as PositionalParamBasicQueryParams,
+    type PositionalParamBodyParams as PositionalParamBodyParams,
+    type PositionalParamBodyExtraParamParams as PositionalParamBodyExtraParamParams,
+    type PositionalParamKitchenSinkParams as PositionalParamKitchenSinkParams,
+    type PositionalParamMultiplePathParamsParams as PositionalParamMultiplePathParamsParams,
+    type PositionalParamQueryParams as PositionalParamQueryParams,
+    type PositionalParamQueryAndPathParams as PositionalParamQueryAndPathParams,
+    type PositionalParamQueryMultipleParams as PositionalParamQueryMultipleParams,
+    type PositionalParamUnionBodyAndPathParams as PositionalParamUnionBodyAndPathParams,
+  };
 }

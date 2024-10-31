@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ObjectsAPI from './objects';
 
 export class Objects extends APIResource {
   missingItems(options?: Core.RequestOptions): Core.APIPromise<ObjectMissingItemsResponse> {
@@ -14,6 +13,6 @@ export interface ObjectMissingItemsResponse {
   any_prop: unknown;
 }
 
-export namespace Objects {
-  export import ObjectMissingItemsResponse = ObjectsAPI.ObjectMissingItemsResponse;
+export declare namespace Objects {
+  export { type ObjectMissingItemsResponse as ObjectMissingItemsResponse };
 }

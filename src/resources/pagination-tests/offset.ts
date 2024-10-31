@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as OffsetAPI from './offset';
 import * as BodyParamsAPI from '../body-params/body-params';
 import {
   MyModelsPageOffset,
@@ -88,10 +87,12 @@ export interface OffsetListNoStartFieldParams extends PageOffsetNoStartFieldPara
 
 export interface OffsetWithTotalCountParams extends PageOffsetTotalCountParams {}
 
-export namespace Offset {
-  export import OffsetListParams = OffsetAPI.OffsetListParams;
-  export import OffsetListNoStartFieldParams = OffsetAPI.OffsetListNoStartFieldParams;
-  export import OffsetWithTotalCountParams = OffsetAPI.OffsetWithTotalCountParams;
+export declare namespace Offset {
+  export {
+    type OffsetListParams as OffsetListParams,
+    type OffsetListNoStartFieldParams as OffsetListNoStartFieldParams,
+    type OffsetWithTotalCountParams as OffsetWithTotalCountParams,
+  };
 }
 
 export { MyModelsPageOffset, MyModelsPageOffsetNoStartField, MyModelsPageOffsetTotalCount };

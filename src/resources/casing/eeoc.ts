@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as EEOCAPI from './eeoc';
 import { PageCursor, type PageCursorParams } from '../../pagination';
 
 export class EEOCResource extends APIResource {
@@ -33,8 +32,8 @@ export interface EEOCListParams extends PageCursorParams {
   limit?: number;
 }
 
-export namespace EEOCResource {
-  export import EEOC = EEOCAPI.EEOC;
-  export import EEOCsPageCursor = EEOCAPI.EEOCsPageCursor;
-  export import EEOCListParams = EEOCAPI.EEOCListParams;
+EEOCResource.EEOCsPageCursor = EEOCsPageCursor;
+
+export declare namespace EEOCResource {
+  export { type EEOC as EEOC, EEOCsPageCursor as EEOCsPageCursor, type EEOCListParams as EEOCListParams };
 }

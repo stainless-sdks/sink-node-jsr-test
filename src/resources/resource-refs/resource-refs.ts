@@ -2,7 +2,9 @@
 
 import { APIResource } from '../../resource';
 import * as PaginatedModelFirstRefAPI from './paginated-model-first-ref';
+import { PaginatedModelFirstRef } from './paginated-model-first-ref';
 import * as PaginatedModelSecondRefAPI from './paginated-model-second-ref';
+import { PaginatedModelSecondRef } from './paginated-model-second-ref';
 
 export class ResourceRefs extends APIResource {
   paginatedModelFirstRef: PaginatedModelFirstRefAPI.PaginatedModelFirstRef =
@@ -11,7 +13,11 @@ export class ResourceRefs extends APIResource {
     new PaginatedModelSecondRefAPI.PaginatedModelSecondRef(this._client);
 }
 
-export namespace ResourceRefs {
-  export import PaginatedModelFirstRef = PaginatedModelFirstRefAPI.PaginatedModelFirstRef;
-  export import PaginatedModelSecondRef = PaginatedModelSecondRefAPI.PaginatedModelSecondRef;
+ResourceRefs.PaginatedModelFirstRef = PaginatedModelFirstRef;
+ResourceRefs.PaginatedModelSecondRef = PaginatedModelSecondRef;
+
+export declare namespace ResourceRefs {
+  export { PaginatedModelFirstRef as PaginatedModelFirstRef };
+
+  export { PaginatedModelSecondRef as PaginatedModelSecondRef };
 }

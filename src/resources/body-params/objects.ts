@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ObjectsAPI from './objects';
 
 export class Objects extends APIResource {
   /**
@@ -32,6 +31,6 @@ export namespace ObjectMixedKnownAndUnknownParams {
   }
 }
 
-export namespace Objects {
-  export import ObjectMixedKnownAndUnknownParams = ObjectsAPI.ObjectMixedKnownAndUnknownParams;
+export declare namespace Objects {
+  export { type ObjectMixedKnownAndUnknownParams as ObjectMixedKnownAndUnknownParams };
 }

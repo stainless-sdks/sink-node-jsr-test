@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as EmptyBodyAPI from './empty-body';
 import * as Shared from './shared';
 
 export class EmptyBody extends APIResource {
@@ -77,7 +76,9 @@ export interface EmptyBodyTypedParamsParams {
   second_query_param?: string;
 }
 
-export namespace EmptyBody {
-  export import EmptyBodyStainlessEmptyObjectParams = EmptyBodyAPI.EmptyBodyStainlessEmptyObjectParams;
-  export import EmptyBodyTypedParamsParams = EmptyBodyAPI.EmptyBodyTypedParamsParams;
+export declare namespace EmptyBody {
+  export {
+    type EmptyBodyStainlessEmptyObjectParams as EmptyBodyStainlessEmptyObjectParams,
+    type EmptyBodyTypedParamsParams as EmptyBodyTypedParamsParams,
+  };
 }

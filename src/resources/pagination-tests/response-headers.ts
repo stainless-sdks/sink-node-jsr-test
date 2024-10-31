@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ResponseHeadersAPI from './response-headers';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPageCursorFromHeaders } from '../body-params/body-params';
 import { type PageCursorFromHeadersParams } from '../../pagination';
@@ -38,8 +37,8 @@ export interface ResponseHeaderBasicCursorParams extends PageCursorFromHeadersPa
   limit?: number;
 }
 
-export namespace ResponseHeaders {
-  export import ResponseHeaderBasicCursorParams = ResponseHeadersAPI.ResponseHeaderBasicCursorParams;
+export declare namespace ResponseHeaders {
+  export { type ResponseHeaderBasicCursorParams as ResponseHeaderBasicCursorParams };
 }
 
 export { MyModelsPageCursorFromHeaders };

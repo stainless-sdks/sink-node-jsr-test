@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as RefsAPI from './refs';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPageCursorNestedObjectRef, MyModelsPageCursorSharedRef } from '../body-params/body-params';
 import { type PageCursorNestedObjectRefParams, type PageCursorSharedRefParams } from '../../pagination';
@@ -64,9 +63,11 @@ export interface RefWithSharedModelRefParams extends PageCursorSharedRefParams {
   limit?: number;
 }
 
-export namespace Refs {
-  export import RefNestedObjectRefParams = RefsAPI.RefNestedObjectRefParams;
-  export import RefWithSharedModelRefParams = RefsAPI.RefWithSharedModelRefParams;
+export declare namespace Refs {
+  export {
+    type RefNestedObjectRefParams as RefNestedObjectRefParams,
+    type RefWithSharedModelRefParams as RefWithSharedModelRefParams,
+  };
 }
 
 export { MyModelsPageCursorNestedObjectRef, MyModelsPageCursorSharedRef };

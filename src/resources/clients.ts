@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ClientsAPI from './clients';
 
 export class Clients extends APIResource {
   create(body: ClientCreateParams, options?: Core.RequestOptions): Core.APIPromise<Client> {
@@ -22,7 +21,6 @@ export interface ClientCreateParams {
   name: string;
 }
 
-export namespace Clients {
-  export import Client = ClientsAPI.Client;
-  export import ClientCreateParams = ClientsAPI.ClientCreateParams;
+export declare namespace Clients {
+  export { type Client as Client, type ClientCreateParams as ClientCreateParams };
 }

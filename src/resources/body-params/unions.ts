@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as UnionsAPI from './unions';
 
 export class Unions extends APIResource {
   /**
@@ -27,7 +26,9 @@ export interface UnionParamUnionEnumNewTypeParams {
   model?: ModelNewTypeString | 'gpt-4' | 'gpt-3';
 }
 
-export namespace Unions {
-  export import ModelNewTypeString = UnionsAPI.ModelNewTypeString;
-  export import UnionParamUnionEnumNewTypeParams = UnionsAPI.UnionParamUnionEnumNewTypeParams;
+export declare namespace Unions {
+  export {
+    type ModelNewTypeString as ModelNewTypeString,
+    type UnionParamUnionEnumNewTypeParams as UnionParamUnionEnumNewTypeParams,
+  };
 }

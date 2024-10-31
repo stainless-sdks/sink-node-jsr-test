@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ArraysAPI from './arrays';
 
 export class Arrays extends APIResource {
   missingItems(options?: Core.RequestOptions): Core.APIPromise<ArrayMissingItemsResponse> {
@@ -14,6 +13,6 @@ export interface ArrayMissingItemsResponse {
   array_prop: Array<unknown>;
 }
 
-export namespace Arrays {
-  export import ArrayMissingItemsResponse = ArraysAPI.ArrayMissingItemsResponse;
+export declare namespace Arrays {
+  export { type ArrayMissingItemsResponse as ArrayMissingItemsResponse };
 }

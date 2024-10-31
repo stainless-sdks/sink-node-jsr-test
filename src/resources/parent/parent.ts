@@ -2,12 +2,14 @@
 
 import { APIResource } from '../../resource';
 import * as ChildAPI from './child';
+import { Child, ChildInlinedResponseResponse } from './child';
 
 export class Parent extends APIResource {
   child: ChildAPI.Child = new ChildAPI.Child(this._client);
 }
 
-export namespace Parent {
-  export import Child = ChildAPI.Child;
-  export import ChildInlinedResponseResponse = ChildAPI.ChildInlinedResponseResponse;
+Parent.Child = Child;
+
+export declare namespace Parent {
+  export { Child as Child, type ChildInlinedResponseResponse as ChildInlinedResponseResponse };
 }

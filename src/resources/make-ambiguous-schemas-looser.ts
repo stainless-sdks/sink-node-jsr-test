@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as MakeAmbiguousSchemasLooserAPI from './make-ambiguous-schemas-looser';
 
 export class MakeAmbiguousSchemasLooser extends APIResource {
   /**
@@ -29,6 +28,6 @@ export interface MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse {
   emptyObject: unknown;
 }
 
-export namespace MakeAmbiguousSchemasLooser {
-  export import MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse = MakeAmbiguousSchemasLooserAPI.MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse;
+export declare namespace MakeAmbiguousSchemasLooser {
+  export { type MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse as MakeAmbiguousSchemasLooserMakeAmbiguousSchemasLooserResponse };
 }

@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as PathParamsAPI from './path-params';
 import * as Shared from './shared';
 
 export class PathParams extends APIResource {
@@ -162,11 +161,13 @@ export interface PathParamNullableParamsParams {
   foo?: string;
 }
 
-export namespace PathParams {
-  export import PathParamColonSuffixResponse = PathParamsAPI.PathParamColonSuffixResponse;
-  export import PathParamFileExtensionResponse = PathParamsAPI.PathParamFileExtensionResponse;
-  export import PathParamMultipleResponse = PathParamsAPI.PathParamMultipleResponse;
-  export import PathParamQueryParamResponse = PathParamsAPI.PathParamQueryParamResponse;
-  export import PathParamSingularResponse = PathParamsAPI.PathParamSingularResponse;
-  export import PathParamNullableParamsParams = PathParamsAPI.PathParamNullableParamsParams;
+export declare namespace PathParams {
+  export {
+    type PathParamColonSuffixResponse as PathParamColonSuffixResponse,
+    type PathParamFileExtensionResponse as PathParamFileExtensionResponse,
+    type PathParamMultipleResponse as PathParamMultipleResponse,
+    type PathParamQueryParamResponse as PathParamQueryParamResponse,
+    type PathParamSingularResponse as PathParamSingularResponse,
+    type PathParamNullableParamsParams as PathParamNullableParamsParams,
+  };
 }

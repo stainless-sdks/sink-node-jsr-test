@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as DuplicatesAPI from './duplicates';
 import * as Shared from '../shared';
 
 export class Duplicates extends APIResource {
@@ -81,8 +80,10 @@ export interface DuplicateQueryAndPathParams {
   query_id: string;
 }
 
-export namespace Duplicates {
-  export import DuplicateBodyAndPathParams = DuplicatesAPI.DuplicateBodyAndPathParams;
-  export import DuplicateQueryAndBodyParams = DuplicatesAPI.DuplicateQueryAndBodyParams;
-  export import DuplicateQueryAndPathParams = DuplicatesAPI.DuplicateQueryAndPathParams;
+export declare namespace Duplicates {
+  export {
+    type DuplicateBodyAndPathParams as DuplicateBodyAndPathParams,
+    type DuplicateQueryAndBodyParams as DuplicateQueryAndBodyParams,
+    type DuplicateQueryAndPathParams as DuplicateQueryAndPathParams,
+  };
 }

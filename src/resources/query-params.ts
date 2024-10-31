@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as QueryParamsAPI from './query-params';
 
 export class QueryParams extends APIResource {
   /**
@@ -232,13 +231,15 @@ export interface QueryParamPrimitivesParams {
   string_param?: string;
 }
 
-export namespace QueryParams {
-  export import QueryParamAllOfParams = QueryParamsAPI.QueryParamAllOfParams;
-  export import QueryParamAnyOfParams = QueryParamsAPI.QueryParamAnyOfParams;
-  export import QueryParamAnyOfStringOrArrayParams = QueryParamsAPI.QueryParamAnyOfStringOrArrayParams;
-  export import QueryParamArrayParams = QueryParamsAPI.QueryParamArrayParams;
-  export import QueryParamEnumParams = QueryParamsAPI.QueryParamEnumParams;
-  export import QueryParamObjectParams = QueryParamsAPI.QueryParamObjectParams;
-  export import QueryParamOneOfParams = QueryParamsAPI.QueryParamOneOfParams;
-  export import QueryParamPrimitivesParams = QueryParamsAPI.QueryParamPrimitivesParams;
+export declare namespace QueryParams {
+  export {
+    type QueryParamAllOfParams as QueryParamAllOfParams,
+    type QueryParamAnyOfParams as QueryParamAnyOfParams,
+    type QueryParamAnyOfStringOrArrayParams as QueryParamAnyOfStringOrArrayParams,
+    type QueryParamArrayParams as QueryParamArrayParams,
+    type QueryParamEnumParams as QueryParamEnumParams,
+    type QueryParamObjectParams as QueryParamObjectParams,
+    type QueryParamOneOfParams as QueryParamOneOfParams,
+    type QueryParamPrimitivesParams as QueryParamPrimitivesParams,
+  };
 }

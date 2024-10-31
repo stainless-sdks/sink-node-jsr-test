@@ -183,13 +183,15 @@ export interface ConfigToolOnlyInNodeParams {
   state?: 'OPEN' | 'PAUSED';
 }
 
-export namespace ConfigTools {
-  export import ModelFromNestedResponseBodyRef = ConfigToolsAPI.ModelFromNestedResponseBodyRef;
-  export import ModelFromSchemasRef = ConfigToolsAPI.ModelFromSchemasRef;
-  export import ModelFromSchemasRefOpenAPIUri = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUri;
-  export import ModelFromSchemasRefOpenAPIUriJmespath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJmespath;
-  export import ModelFromSchemasRefOpenAPIUriJsonpath = ConfigToolsAPI.ModelFromSchemasRefOpenAPIUriJsonpath;
-  export import OnlyNodeModel = ConfigToolsAPI.OnlyNodeModel;
-  export import ConfigToolModelRefFromNestedResponseBodyResponse = ConfigToolsAPI.ConfigToolModelRefFromNestedResponseBodyResponse;
-  export import ConfigToolOnlyInNodeParams = ConfigToolsAPI.ConfigToolOnlyInNodeParams;
+export declare namespace ConfigTools {
+  export {
+    type ModelFromNestedResponseBodyRef as ModelFromNestedResponseBodyRef,
+    type ModelFromSchemasRef as ModelFromSchemasRef,
+    type ModelFromSchemasRefOpenAPIUri as ModelFromSchemasRefOpenAPIUri,
+    type ModelFromSchemasRefOpenAPIUriJmespath as ModelFromSchemasRefOpenAPIUriJmespath,
+    type ModelFromSchemasRefOpenAPIUriJsonpath as ModelFromSchemasRefOpenAPIUriJsonpath,
+    type OnlyNodeModel as OnlyNodeModel,
+    type ConfigToolModelRefFromNestedResponseBodyResponse as ConfigToolModelRefFromNestedResponseBodyResponse,
+    type ConfigToolOnlyInNodeParams as ConfigToolOnlyInNodeParams,
+  };
 }

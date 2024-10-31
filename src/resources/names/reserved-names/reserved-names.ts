@@ -2,10 +2,12 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as ReservedNamesAPI from './reserved-names';
 import * as ImportAPI from './import';
+import { Import, ImportResource } from './import';
 import * as MethodsAPI from './methods';
+import { Export, MethodExportParams, Methods, Return } from './methods';
 import * as PublicAPI from './public/public';
+import { Public, PublicResource } from './public/public';
 
 export class ReservedNames extends APIResource {
   public: PublicAPI.PublicResource = new PublicAPI.PublicResource(this._client);
@@ -32,14 +34,21 @@ export interface ReservedNameCommonReservedParamsParams {
   from: string;
 }
 
-export namespace ReservedNames {
-  export import ReservedNameCommonReservedParamsParams = ReservedNamesAPI.ReservedNameCommonReservedParamsParams;
-  export import PublicResource = PublicAPI.PublicResource;
-  export import Public = PublicAPI.Public;
-  export import ImportResource = ImportAPI.ImportResource;
-  export import Import = ImportAPI.Import;
-  export import Methods = MethodsAPI.Methods;
-  export import Export = MethodsAPI.Export;
-  export import Return = MethodsAPI.Return;
-  export import MethodExportParams = MethodsAPI.MethodExportParams;
+ReservedNames.PublicResource = PublicResource;
+ReservedNames.ImportResource = ImportResource;
+ReservedNames.Methods = Methods;
+
+export declare namespace ReservedNames {
+  export { type ReservedNameCommonReservedParamsParams as ReservedNameCommonReservedParamsParams };
+
+  export { PublicResource as PublicResource, type Public as Public };
+
+  export { ImportResource as ImportResource, type Import as Import };
+
+  export {
+    Methods as Methods,
+    type Export as Export,
+    type Return as Return,
+    type MethodExportParams as MethodExportParams,
+  };
 }

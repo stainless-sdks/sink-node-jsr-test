@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as SkipThisResourceAPI from './skip-this-resource';
 
 export class SkipThisResource extends APIResource {
   /**
@@ -17,6 +16,6 @@ export interface SkipThisResourceINeverAppearResponse {
   foo: string;
 }
 
-export namespace SkipThisResource {
-  export import SkipThisResourceINeverAppearResponse = SkipThisResourceAPI.SkipThisResourceINeverAppearResponse;
+export declare namespace SkipThisResource {
+  export { type SkipThisResourceINeverAppearResponse as SkipThisResourceINeverAppearResponse };
 }

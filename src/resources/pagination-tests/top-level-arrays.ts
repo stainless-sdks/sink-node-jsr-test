@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as TopLevelArraysAPI from './top-level-arrays';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPageCursorTopLevelArray } from '../body-params/body-params';
 import { type PageCursorTopLevelArrayParams } from '../../pagination';
@@ -38,8 +37,8 @@ export interface TopLevelArrayBasicCursorParams extends PageCursorTopLevelArrayP
   limit?: number;
 }
 
-export namespace TopLevelArrays {
-  export import TopLevelArrayBasicCursorParams = TopLevelArraysAPI.TopLevelArrayBasicCursorParams;
+export declare namespace TopLevelArrays {
+  export { type TopLevelArrayBasicCursorParams as TopLevelArrayBasicCursorParams };
 }
 
 export { MyModelsPageCursorTopLevelArray };

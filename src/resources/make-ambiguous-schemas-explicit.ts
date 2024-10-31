@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as MakeAmbiguousSchemasExplicitAPI from './make-ambiguous-schemas-explicit';
 
 export class MakeAmbiguousSchemasExplicit extends APIResource {
   /**
@@ -29,6 +28,6 @@ export interface MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitRespons
   emptyObject: Record<string, unknown>;
 }
 
-export namespace MakeAmbiguousSchemasExplicit {
-  export import MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse = MakeAmbiguousSchemasExplicitAPI.MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse;
+export declare namespace MakeAmbiguousSchemasExplicit {
+  export { type MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse as MakeAmbiguousSchemasExplicitMakeAmbiguousSchemasExplicitResponse };
 }

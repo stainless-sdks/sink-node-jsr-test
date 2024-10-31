@@ -2,16 +2,59 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as TypesAPI from './types';
 import * as AllofsAPI from './allofs';
+import { AllofBaseParent, AllofMultipleInlineEntries, Allofs } from './allofs';
 import * as ArraysAPI from './arrays';
+import {
+  ArrayFloatItemsResponse,
+  ArrayNestedInParamsParams,
+  ArrayObjectItems,
+  ArrayObjectItemsResponse,
+  Arrays,
+} from './arrays';
 import * as EnumsAPI from './enums';
+import {
+  EnumArrayUniqueValues2ValuesParams,
+  EnumArrayUniqueValuesNumbersParams,
+  EnumArrayUniqueValuesParams,
+  EnumBasicParams,
+  EnumBasicResponse,
+  Enums,
+} from './enums';
 import * as MapsAPI from './maps';
+import { MapNullableItemsResponse, Maps } from './maps';
 import * as ObjectsAPI from './objects';
+import {
+  ObjectMixedKnownAndUnknownResponse,
+  ObjectMultipleArrayPropertiesSameRefResponse,
+  ObjectMultiplePropertiesSameModelResponse,
+  ObjectMultiplePropertiesSameRefResponse,
+  ObjectTwoDimensionalArrayPrimitivePropertyResponse,
+  Objects,
+  UnknownObjectType,
+} from './objects';
 import * as PrimitivesAPI from './primitives';
+import { ModelString, PrimitiveStringsParams, PrimitiveStringsResponse, Primitives } from './primitives';
 import * as ReadOnlyParamsAPI from './read-only-params';
+import { ReadOnlyParamSimpleParams, ReadOnlyParamSimpleResponse, ReadOnlyParams } from './read-only-params';
 import * as UnionsAPI from './unions';
+import {
+  UnionArrayParamDiscriminatedByPropertyNameParams,
+  UnionArrayParamDiscriminatedByPropertyNameResponse,
+  UnionArrayParamDiscriminatedWithBasicMappingParams,
+  UnionArrayParamDiscriminatedWithBasicMappingResponse,
+  UnionDiscriminatedVariantA,
+  UnionDiscriminatedVariantB,
+  UnionParamDiscriminatedByPropertyNameParams,
+  UnionParamDiscriminatedByPropertyNameResponse,
+  UnionParamDiscriminatedWithBasicMappingParams,
+  UnionParamDiscriminatedWithBasicMappingResponse,
+  UnionResponseDiscriminatedByPropertyNameResponse,
+  UnionResponseDiscriminatedWithBasicMappingResponse,
+  Unions,
+} from './unions';
 import * as WriteOnlyResponsesAPI from './write-only-responses';
+import { WriteOnlyResponseSimpleResponse, WriteOnlyResponses } from './write-only-responses';
 
 export class Types extends APIResource {
   primitives: PrimitivesAPI.Primitives = new PrimitivesAPI.Primitives(this._client);
@@ -96,54 +139,90 @@ export interface TypeDatetimesParams {
   optional_datetime?: string;
 }
 
-export namespace Types {
-  export import TypeDatesResponse = TypesAPI.TypeDatesResponse;
-  export import TypeDatetimesResponse = TypesAPI.TypeDatetimesResponse;
-  export import TypeDatesParams = TypesAPI.TypeDatesParams;
-  export import TypeDatetimesParams = TypesAPI.TypeDatetimesParams;
-  export import Primitives = PrimitivesAPI.Primitives;
-  export import ModelString = PrimitivesAPI.ModelString;
-  export import PrimitiveStringsResponse = PrimitivesAPI.PrimitiveStringsResponse;
-  export import PrimitiveStringsParams = PrimitivesAPI.PrimitiveStringsParams;
-  export import ReadOnlyParams = ReadOnlyParamsAPI.ReadOnlyParams;
-  export import ReadOnlyParamSimpleResponse = ReadOnlyParamsAPI.ReadOnlyParamSimpleResponse;
-  export import ReadOnlyParamSimpleParams = ReadOnlyParamsAPI.ReadOnlyParamSimpleParams;
-  export import WriteOnlyResponses = WriteOnlyResponsesAPI.WriteOnlyResponses;
-  export import WriteOnlyResponseSimpleResponse = WriteOnlyResponsesAPI.WriteOnlyResponseSimpleResponse;
-  export import Maps = MapsAPI.Maps;
-  export import MapNullableItemsResponse = MapsAPI.MapNullableItemsResponse;
-  export import Enums = EnumsAPI.Enums;
-  export import EnumBasicResponse = EnumsAPI.EnumBasicResponse;
-  export import EnumArrayUniqueValuesParams = EnumsAPI.EnumArrayUniqueValuesParams;
-  export import EnumArrayUniqueValues2ValuesParams = EnumsAPI.EnumArrayUniqueValues2ValuesParams;
-  export import EnumArrayUniqueValuesNumbersParams = EnumsAPI.EnumArrayUniqueValuesNumbersParams;
-  export import EnumBasicParams = EnumsAPI.EnumBasicParams;
-  export import Allofs = AllofsAPI.Allofs;
-  export import AllofBaseParent = AllofsAPI.AllofBaseParent;
-  export import AllofMultipleInlineEntries = AllofsAPI.AllofMultipleInlineEntries;
-  export import Unions = UnionsAPI.Unions;
-  export import UnionDiscriminatedVariantA = UnionsAPI.UnionDiscriminatedVariantA;
-  export import UnionDiscriminatedVariantB = UnionsAPI.UnionDiscriminatedVariantB;
-  export import UnionArrayParamDiscriminatedByPropertyNameResponse = UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameResponse;
-  export import UnionArrayParamDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingResponse;
-  export import UnionParamDiscriminatedByPropertyNameResponse = UnionsAPI.UnionParamDiscriminatedByPropertyNameResponse;
-  export import UnionParamDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionParamDiscriminatedWithBasicMappingResponse;
-  export import UnionResponseDiscriminatedByPropertyNameResponse = UnionsAPI.UnionResponseDiscriminatedByPropertyNameResponse;
-  export import UnionResponseDiscriminatedWithBasicMappingResponse = UnionsAPI.UnionResponseDiscriminatedWithBasicMappingResponse;
-  export import UnionArrayParamDiscriminatedByPropertyNameParams = UnionsAPI.UnionArrayParamDiscriminatedByPropertyNameParams;
-  export import UnionArrayParamDiscriminatedWithBasicMappingParams = UnionsAPI.UnionArrayParamDiscriminatedWithBasicMappingParams;
-  export import UnionParamDiscriminatedByPropertyNameParams = UnionsAPI.UnionParamDiscriminatedByPropertyNameParams;
-  export import UnionParamDiscriminatedWithBasicMappingParams = UnionsAPI.UnionParamDiscriminatedWithBasicMappingParams;
-  export import Objects = ObjectsAPI.Objects;
-  export import UnknownObjectType = ObjectsAPI.UnknownObjectType;
-  export import ObjectMixedKnownAndUnknownResponse = ObjectsAPI.ObjectMixedKnownAndUnknownResponse;
-  export import ObjectMultipleArrayPropertiesSameRefResponse = ObjectsAPI.ObjectMultipleArrayPropertiesSameRefResponse;
-  export import ObjectMultiplePropertiesSameModelResponse = ObjectsAPI.ObjectMultiplePropertiesSameModelResponse;
-  export import ObjectMultiplePropertiesSameRefResponse = ObjectsAPI.ObjectMultiplePropertiesSameRefResponse;
-  export import ObjectTwoDimensionalArrayPrimitivePropertyResponse = ObjectsAPI.ObjectTwoDimensionalArrayPrimitivePropertyResponse;
-  export import Arrays = ArraysAPI.Arrays;
-  export import ArrayObjectItems = ArraysAPI.ArrayObjectItems;
-  export import ArrayFloatItemsResponse = ArraysAPI.ArrayFloatItemsResponse;
-  export import ArrayObjectItemsResponse = ArraysAPI.ArrayObjectItemsResponse;
-  export import ArrayNestedInParamsParams = ArraysAPI.ArrayNestedInParamsParams;
+Types.Primitives = Primitives;
+Types.ReadOnlyParams = ReadOnlyParams;
+Types.WriteOnlyResponses = WriteOnlyResponses;
+Types.Maps = Maps;
+Types.Enums = Enums;
+Types.Allofs = Allofs;
+Types.Unions = Unions;
+Types.Objects = Objects;
+Types.Arrays = Arrays;
+
+export declare namespace Types {
+  export {
+    type TypeDatesResponse as TypeDatesResponse,
+    type TypeDatetimesResponse as TypeDatetimesResponse,
+    type TypeDatesParams as TypeDatesParams,
+    type TypeDatetimesParams as TypeDatetimesParams,
+  };
+
+  export {
+    Primitives as Primitives,
+    type ModelString as ModelString,
+    type PrimitiveStringsResponse as PrimitiveStringsResponse,
+    type PrimitiveStringsParams as PrimitiveStringsParams,
+  };
+
+  export {
+    ReadOnlyParams as ReadOnlyParams,
+    type ReadOnlyParamSimpleResponse as ReadOnlyParamSimpleResponse,
+    type ReadOnlyParamSimpleParams as ReadOnlyParamSimpleParams,
+  };
+
+  export {
+    WriteOnlyResponses as WriteOnlyResponses,
+    type WriteOnlyResponseSimpleResponse as WriteOnlyResponseSimpleResponse,
+  };
+
+  export { Maps as Maps, type MapNullableItemsResponse as MapNullableItemsResponse };
+
+  export {
+    Enums as Enums,
+    type EnumBasicResponse as EnumBasicResponse,
+    type EnumArrayUniqueValuesParams as EnumArrayUniqueValuesParams,
+    type EnumArrayUniqueValues2ValuesParams as EnumArrayUniqueValues2ValuesParams,
+    type EnumArrayUniqueValuesNumbersParams as EnumArrayUniqueValuesNumbersParams,
+    type EnumBasicParams as EnumBasicParams,
+  };
+
+  export {
+    Allofs as Allofs,
+    type AllofBaseParent as AllofBaseParent,
+    type AllofMultipleInlineEntries as AllofMultipleInlineEntries,
+  };
+
+  export {
+    Unions as Unions,
+    type UnionDiscriminatedVariantA as UnionDiscriminatedVariantA,
+    type UnionDiscriminatedVariantB as UnionDiscriminatedVariantB,
+    type UnionArrayParamDiscriminatedByPropertyNameResponse as UnionArrayParamDiscriminatedByPropertyNameResponse,
+    type UnionArrayParamDiscriminatedWithBasicMappingResponse as UnionArrayParamDiscriminatedWithBasicMappingResponse,
+    type UnionParamDiscriminatedByPropertyNameResponse as UnionParamDiscriminatedByPropertyNameResponse,
+    type UnionParamDiscriminatedWithBasicMappingResponse as UnionParamDiscriminatedWithBasicMappingResponse,
+    type UnionResponseDiscriminatedByPropertyNameResponse as UnionResponseDiscriminatedByPropertyNameResponse,
+    type UnionResponseDiscriminatedWithBasicMappingResponse as UnionResponseDiscriminatedWithBasicMappingResponse,
+    type UnionArrayParamDiscriminatedByPropertyNameParams as UnionArrayParamDiscriminatedByPropertyNameParams,
+    type UnionArrayParamDiscriminatedWithBasicMappingParams as UnionArrayParamDiscriminatedWithBasicMappingParams,
+    type UnionParamDiscriminatedByPropertyNameParams as UnionParamDiscriminatedByPropertyNameParams,
+    type UnionParamDiscriminatedWithBasicMappingParams as UnionParamDiscriminatedWithBasicMappingParams,
+  };
+
+  export {
+    Objects as Objects,
+    type UnknownObjectType as UnknownObjectType,
+    type ObjectMixedKnownAndUnknownResponse as ObjectMixedKnownAndUnknownResponse,
+    type ObjectMultipleArrayPropertiesSameRefResponse as ObjectMultipleArrayPropertiesSameRefResponse,
+    type ObjectMultiplePropertiesSameModelResponse as ObjectMultiplePropertiesSameModelResponse,
+    type ObjectMultiplePropertiesSameRefResponse as ObjectMultiplePropertiesSameRefResponse,
+    type ObjectTwoDimensionalArrayPrimitivePropertyResponse as ObjectTwoDimensionalArrayPrimitivePropertyResponse,
+  };
+
+  export {
+    Arrays as Arrays,
+    type ArrayObjectItems as ArrayObjectItems,
+    type ArrayFloatItemsResponse as ArrayFloatItemsResponse,
+    type ArrayObjectItemsResponse as ArrayObjectItemsResponse,
+    type ArrayNestedInParamsParams as ArrayNestedInParamsParams,
+  };
 }

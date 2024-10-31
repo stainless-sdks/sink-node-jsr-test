@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as PageNumberWithoutCurrentPageResponseAPI from './page-number-without-current-page-response';
 import * as BodyParamsAPI from '../body-params/body-params';
 import {
   MyModelsPagePageNumber,
@@ -65,9 +64,11 @@ export interface PageNumberWithoutCurrentPageResponseListParams extends PagePage
 export interface PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams
   extends PagePageNumberWithoutCurrentPageResponseParams {}
 
-export namespace PageNumberWithoutCurrentPageResponse {
-  export import PageNumberWithoutCurrentPageResponseListParams = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListParams;
-  export import PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams = PageNumberWithoutCurrentPageResponseAPI.PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams;
+export declare namespace PageNumberWithoutCurrentPageResponse {
+  export {
+    type PageNumberWithoutCurrentPageResponseListParams as PageNumberWithoutCurrentPageResponseListParams,
+    type PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams as PageNumberWithoutCurrentPageResponseListWithoutCurrentPageResponseParams,
+  };
 }
 
 export { MyModelsPagePageNumber, MyModelsPagePageNumberWithoutCurrentPageResponse };

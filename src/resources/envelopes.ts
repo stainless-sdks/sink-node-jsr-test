@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as EnvelopesAPI from './envelopes';
 import * as Shared from './shared';
 
 export class Envelopes extends APIResource {
@@ -90,8 +89,10 @@ export interface EnvelopeInlineResponseResponse {
 
 export type EnvelopeWrappedArrayResponse = Array<Shared.ObjectWithChildRef>;
 
-export namespace Envelopes {
-  export import Address = EnvelopesAPI.Address;
-  export import EnvelopeInlineResponseResponse = EnvelopesAPI.EnvelopeInlineResponseResponse;
-  export import EnvelopeWrappedArrayResponse = EnvelopesAPI.EnvelopeWrappedArrayResponse;
+export declare namespace Envelopes {
+  export {
+    type Address as Address,
+    type EnvelopeInlineResponseResponse as EnvelopeInlineResponseResponse,
+    type EnvelopeWrappedArrayResponse as EnvelopeWrappedArrayResponse,
+  };
 }

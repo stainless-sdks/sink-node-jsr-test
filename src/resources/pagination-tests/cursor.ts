@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as CursorAPI from './cursor';
 import * as BodyParamsAPI from '../body-params/body-params';
 import { MyModelsPageCursor, MyModelsPageCursorWithReverse } from '../body-params/body-params';
 import { type PageCursorParams, type PageCursorWithReverseParams } from '../../pagination';
@@ -57,9 +56,11 @@ export interface CursorListParams extends PageCursorParams {
 
 export interface CursorListReverseParams extends PageCursorWithReverseParams {}
 
-export namespace Cursor {
-  export import CursorListParams = CursorAPI.CursorListParams;
-  export import CursorListReverseParams = CursorAPI.CursorListReverseParams;
+export declare namespace Cursor {
+  export {
+    type CursorListParams as CursorListParams,
+    type CursorListReverseParams as CursorListReverseParams,
+  };
 }
 
 export { MyModelsPageCursor, MyModelsPageCursorWithReverse };

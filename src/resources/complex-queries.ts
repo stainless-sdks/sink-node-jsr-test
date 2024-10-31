@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as ComplexQueriesAPI from './complex-queries';
 
 export class ComplexQueries extends APIResource {
   arrayQuery(
@@ -72,11 +71,13 @@ export interface ComplexQueryUnionQueryParams {
   include?: string | number | Array<string>;
 }
 
-export namespace ComplexQueries {
-  export import ComplexQueryArrayQueryResponse = ComplexQueriesAPI.ComplexQueryArrayQueryResponse;
-  export import ComplexQueryObjectQueryResponse = ComplexQueriesAPI.ComplexQueryObjectQueryResponse;
-  export import ComplexQueryUnionQueryResponse = ComplexQueriesAPI.ComplexQueryUnionQueryResponse;
-  export import ComplexQueryArrayQueryParams = ComplexQueriesAPI.ComplexQueryArrayQueryParams;
-  export import ComplexQueryObjectQueryParams = ComplexQueriesAPI.ComplexQueryObjectQueryParams;
-  export import ComplexQueryUnionQueryParams = ComplexQueriesAPI.ComplexQueryUnionQueryParams;
+export declare namespace ComplexQueries {
+  export {
+    type ComplexQueryArrayQueryResponse as ComplexQueryArrayQueryResponse,
+    type ComplexQueryObjectQueryResponse as ComplexQueryObjectQueryResponse,
+    type ComplexQueryUnionQueryResponse as ComplexQueryUnionQueryResponse,
+    type ComplexQueryArrayQueryParams as ComplexQueryArrayQueryParams,
+    type ComplexQueryObjectQueryParams as ComplexQueryObjectQueryParams,
+    type ComplexQueryUnionQueryParams as ComplexQueryUnionQueryParams,
+  };
 }

@@ -211,19 +211,21 @@ export interface StreamingQueryParamDiscriminatorParamsStreaming
   should_stream: true;
 }
 
-export namespace Streaming {
-  export import StreamingBasicResponse = StreamingAPI.StreamingBasicResponse;
-  export import StreamingNestedParamsResponse = StreamingAPI.StreamingNestedParamsResponse;
-  export import StreamingNoDiscriminatorResponse = StreamingAPI.StreamingNoDiscriminatorResponse;
-  export import StreamingQueryParamDiscriminatorResponse = StreamingAPI.StreamingQueryParamDiscriminatorResponse;
-  export import StreamingBasicParams = StreamingAPI.StreamingBasicParams;
-  export import StreamingBasicParamsNonStreaming = StreamingAPI.StreamingBasicParamsNonStreaming;
-  export import StreamingBasicParamsStreaming = StreamingAPI.StreamingBasicParamsStreaming;
-  export import StreamingNestedParamsParams = StreamingAPI.StreamingNestedParamsParams;
-  export import StreamingNestedParamsParamsNonStreaming = StreamingAPI.StreamingNestedParamsParamsNonStreaming;
-  export import StreamingNestedParamsParamsStreaming = StreamingAPI.StreamingNestedParamsParamsStreaming;
-  export import StreamingNoDiscriminatorParams = StreamingAPI.StreamingNoDiscriminatorParams;
-  export import StreamingQueryParamDiscriminatorParams = StreamingAPI.StreamingQueryParamDiscriminatorParams;
-  export import StreamingQueryParamDiscriminatorParamsNonStreaming = StreamingAPI.StreamingQueryParamDiscriminatorParamsNonStreaming;
-  export import StreamingQueryParamDiscriminatorParamsStreaming = StreamingAPI.StreamingQueryParamDiscriminatorParamsStreaming;
+export declare namespace Streaming {
+  export {
+    type StreamingBasicResponse as StreamingBasicResponse,
+    type StreamingNestedParamsResponse as StreamingNestedParamsResponse,
+    type StreamingNoDiscriminatorResponse as StreamingNoDiscriminatorResponse,
+    type StreamingQueryParamDiscriminatorResponse as StreamingQueryParamDiscriminatorResponse,
+    type StreamingBasicParams as StreamingBasicParams,
+    type StreamingBasicParamsNonStreaming as StreamingBasicParamsNonStreaming,
+    type StreamingBasicParamsStreaming as StreamingBasicParamsStreaming,
+    type StreamingNestedParamsParams as StreamingNestedParamsParams,
+    type StreamingNestedParamsParamsNonStreaming as StreamingNestedParamsParamsNonStreaming,
+    type StreamingNestedParamsParamsStreaming as StreamingNestedParamsParamsStreaming,
+    type StreamingNoDiscriminatorParams as StreamingNoDiscriminatorParams,
+    type StreamingQueryParamDiscriminatorParams as StreamingQueryParamDiscriminatorParams,
+    type StreamingQueryParamDiscriminatorParamsNonStreaming as StreamingQueryParamDiscriminatorParamsNonStreaming,
+    type StreamingQueryParamDiscriminatorParamsStreaming as StreamingQueryParamDiscriminatorParamsStreaming,
+  };
 }

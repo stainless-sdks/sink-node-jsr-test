@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ClientParamsAPI from './client-params';
 
 export class ClientParams extends APIResource {
   /**
@@ -96,11 +95,13 @@ export interface ClientParamWithQueryParamParams {
   client_query_param?: string;
 }
 
-export namespace ClientParams {
-  export import ClientParamWithPathParamResponse = ClientParamsAPI.ClientParamWithPathParamResponse;
-  export import ClientParamWithPathParamAndStandardResponse = ClientParamsAPI.ClientParamWithPathParamAndStandardResponse;
-  export import ClientParamWithQueryParamResponse = ClientParamsAPI.ClientParamWithQueryParamResponse;
-  export import ClientParamWithPathParamParams = ClientParamsAPI.ClientParamWithPathParamParams;
-  export import ClientParamWithPathParamAndStandardParams = ClientParamsAPI.ClientParamWithPathParamAndStandardParams;
-  export import ClientParamWithQueryParamParams = ClientParamsAPI.ClientParamWithQueryParamParams;
+export declare namespace ClientParams {
+  export {
+    type ClientParamWithPathParamResponse as ClientParamWithPathParamResponse,
+    type ClientParamWithPathParamAndStandardResponse as ClientParamWithPathParamAndStandardResponse,
+    type ClientParamWithQueryParamResponse as ClientParamWithQueryParamResponse,
+    type ClientParamWithPathParamParams as ClientParamWithPathParamParams,
+    type ClientParamWithPathParamAndStandardParams as ClientParamWithPathParamAndStandardParams,
+    type ClientParamWithQueryParamParams as ClientParamWithQueryParamParams,
+  };
 }

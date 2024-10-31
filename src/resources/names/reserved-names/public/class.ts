@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../../../resource';
 import * as Core from '../../../../core';
-import * as ClassAPI from './class';
 
 export class ClassResource extends APIResource {
   class(options?: Core.RequestOptions): Core.APIPromise<Class> {
@@ -14,6 +13,6 @@ export interface Class {
   class: string;
 }
 
-export namespace ClassResource {
-  export import Class = ClassAPI.Class;
+export declare namespace ClassResource {
+  export { type Class as Class };
 }

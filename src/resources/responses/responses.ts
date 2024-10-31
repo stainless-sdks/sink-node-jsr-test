@@ -2,11 +2,19 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ResponsesAPI from './responses';
 import * as Shared from '../shared';
 import * as BodyParamsAPI from '../body-params/body-params';
 import * as PaymentsAPI from '../company/payments';
 import * as UnionTypesAPI from './union-types';
+import {
+  UnionTypeMixedTypesResponse,
+  UnionTypeNullableUnionResponse,
+  UnionTypeNumbersResponse,
+  UnionTypeObjectsResponse,
+  UnionTypeSuperMixedTypesResponse,
+  UnionTypeUnknownVariantResponse,
+  UnionTypes,
+} from './union-types';
 
 export class Responses extends APIResource {
   unionTypes: UnionTypesAPI.UnionTypes = new UnionTypesAPI.UnionTypes(this._client);
@@ -377,36 +385,43 @@ export interface ResponseOnlyReadOnlyPropertiesResponse {
 
 export type ResponseStringResponseResponse = string;
 
-export namespace Responses {
-  export import ModelFromNestedPath = ResponsesAPI.ModelFromNestedPath;
-  export import ModelWithNestedModel = ResponsesAPI.ModelWithNestedModel;
-  export import ObjectWithAnyOfNullProperty = ResponsesAPI.ObjectWithAnyOfNullProperty;
-  export import ObjectWithOneOfNullProperty = ResponsesAPI.ObjectWithOneOfNullProperty;
-  export import ObjectWithUnionProperties = ResponsesAPI.ObjectWithUnionProperties;
-  export import ResponsesAllofCrossObject = ResponsesAPI.ResponsesAllofCrossObject;
-  export import SimpleAllof = ResponsesAPI.SimpleAllof;
-  export import UnknownObject = ResponsesAPI.UnknownObject;
-  export import ResponseAdditionalPropertiesResponse = ResponsesAPI.ResponseAdditionalPropertiesResponse;
-  export import ResponseAdditionalPropertiesNestedModelReferenceResponse = ResponsesAPI.ResponseAdditionalPropertiesNestedModelReferenceResponse;
-  export import ResponseAllofCrossResourceResponse = ResponsesAPI.ResponseAllofCrossResourceResponse;
-  export import ResponseAllofSimpleResponse = ResponsesAPI.ResponseAllofSimpleResponse;
-  export import ResponseArrayObjectWithUnionPropertiesResponse = ResponsesAPI.ResponseArrayObjectWithUnionPropertiesResponse;
-  export import ResponseArrayResponseResponse = ResponsesAPI.ResponseArrayResponseResponse;
-  export import ResponseBooleanResponseResponse = ResponsesAPI.ResponseBooleanResponseResponse;
-  export import ResponseIntegerResponseResponse = ResponsesAPI.ResponseIntegerResponseResponse;
-  export import ResponseMissingRequiredResponse = ResponsesAPI.ResponseMissingRequiredResponse;
-  export import ResponseNestedArrayResponse = ResponsesAPI.ResponseNestedArrayResponse;
-  export import ResponseObjectAllPropertiesResponse = ResponsesAPI.ResponseObjectAllPropertiesResponse;
-  export import ResponseObjectNoPropertiesResponse = ResponsesAPI.ResponseObjectNoPropertiesResponse;
-  export import ResponseObjectWithAdditionalPropertiesPropResponse = ResponsesAPI.ResponseObjectWithAdditionalPropertiesPropResponse;
-  export import ResponseObjectWithHeavilyNestedUnionResponse = ResponsesAPI.ResponseObjectWithHeavilyNestedUnionResponse;
-  export import ResponseOnlyReadOnlyPropertiesResponse = ResponsesAPI.ResponseOnlyReadOnlyPropertiesResponse;
-  export import ResponseStringResponseResponse = ResponsesAPI.ResponseStringResponseResponse;
-  export import UnionTypes = UnionTypesAPI.UnionTypes;
-  export import UnionTypeMixedTypesResponse = UnionTypesAPI.UnionTypeMixedTypesResponse;
-  export import UnionTypeNullableUnionResponse = UnionTypesAPI.UnionTypeNullableUnionResponse;
-  export import UnionTypeNumbersResponse = UnionTypesAPI.UnionTypeNumbersResponse;
-  export import UnionTypeObjectsResponse = UnionTypesAPI.UnionTypeObjectsResponse;
-  export import UnionTypeSuperMixedTypesResponse = UnionTypesAPI.UnionTypeSuperMixedTypesResponse;
-  export import UnionTypeUnknownVariantResponse = UnionTypesAPI.UnionTypeUnknownVariantResponse;
+Responses.UnionTypes = UnionTypes;
+
+export declare namespace Responses {
+  export {
+    type ModelFromNestedPath as ModelFromNestedPath,
+    type ModelWithNestedModel as ModelWithNestedModel,
+    type ObjectWithAnyOfNullProperty as ObjectWithAnyOfNullProperty,
+    type ObjectWithOneOfNullProperty as ObjectWithOneOfNullProperty,
+    type ObjectWithUnionProperties as ObjectWithUnionProperties,
+    type ResponsesAllofCrossObject as ResponsesAllofCrossObject,
+    type SimpleAllof as SimpleAllof,
+    type UnknownObject as UnknownObject,
+    type ResponseAdditionalPropertiesResponse as ResponseAdditionalPropertiesResponse,
+    type ResponseAdditionalPropertiesNestedModelReferenceResponse as ResponseAdditionalPropertiesNestedModelReferenceResponse,
+    type ResponseAllofCrossResourceResponse as ResponseAllofCrossResourceResponse,
+    type ResponseAllofSimpleResponse as ResponseAllofSimpleResponse,
+    type ResponseArrayObjectWithUnionPropertiesResponse as ResponseArrayObjectWithUnionPropertiesResponse,
+    type ResponseArrayResponseResponse as ResponseArrayResponseResponse,
+    type ResponseBooleanResponseResponse as ResponseBooleanResponseResponse,
+    type ResponseIntegerResponseResponse as ResponseIntegerResponseResponse,
+    type ResponseMissingRequiredResponse as ResponseMissingRequiredResponse,
+    type ResponseNestedArrayResponse as ResponseNestedArrayResponse,
+    type ResponseObjectAllPropertiesResponse as ResponseObjectAllPropertiesResponse,
+    type ResponseObjectNoPropertiesResponse as ResponseObjectNoPropertiesResponse,
+    type ResponseObjectWithAdditionalPropertiesPropResponse as ResponseObjectWithAdditionalPropertiesPropResponse,
+    type ResponseObjectWithHeavilyNestedUnionResponse as ResponseObjectWithHeavilyNestedUnionResponse,
+    type ResponseOnlyReadOnlyPropertiesResponse as ResponseOnlyReadOnlyPropertiesResponse,
+    type ResponseStringResponseResponse as ResponseStringResponseResponse,
+  };
+
+  export {
+    UnionTypes as UnionTypes,
+    type UnionTypeMixedTypesResponse as UnionTypeMixedTypesResponse,
+    type UnionTypeNullableUnionResponse as UnionTypeNullableUnionResponse,
+    type UnionTypeNumbersResponse as UnionTypeNumbersResponse,
+    type UnionTypeObjectsResponse as UnionTypeObjectsResponse,
+    type UnionTypeSuperMixedTypesResponse as UnionTypeSuperMixedTypesResponse,
+    type UnionTypeUnknownVariantResponse as UnionTypeUnknownVariantResponse,
+  };
 }

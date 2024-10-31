@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as MethodsAPI from './methods';
 
 export class Methods extends APIResource {
   /**
@@ -54,8 +53,6 @@ export interface MethodExportParams {
   const?: string;
 }
 
-export namespace Methods {
-  export import Export = MethodsAPI.Export;
-  export import Return = MethodsAPI.Return;
-  export import MethodExportParams = MethodsAPI.MethodExportParams;
+export declare namespace Methods {
+  export { type Export as Export, type Return as Return, type MethodExportParams as MethodExportParams };
 }

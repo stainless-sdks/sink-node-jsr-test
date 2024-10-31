@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ToolsAPI from './tools';
 
 export class Tools extends APIResource {
   skippedParams(
@@ -29,7 +28,9 @@ export interface ToolSkippedParamsParams {
   skipped_python?: string;
 }
 
-export namespace Tools {
-  export import ObjectSkippedProps = ToolsAPI.ObjectSkippedProps;
-  export import ToolSkippedParamsParams = ToolsAPI.ToolSkippedParamsParams;
+export declare namespace Tools {
+  export {
+    type ObjectSkippedProps as ObjectSkippedProps,
+    type ToolSkippedParamsParams as ToolSkippedParamsParams,
+  };
 }

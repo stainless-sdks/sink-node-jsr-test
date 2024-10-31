@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as HeaderParamsAPI from './header-params';
 
 export class HeaderParams extends APIResource {
   /**
@@ -220,9 +219,11 @@ export interface HeaderParamNullableTypeParams {
   'X-Null'?: string;
 }
 
-export namespace HeaderParams {
-  export import HeaderParamAllTypesParams = HeaderParamsAPI.HeaderParamAllTypesParams;
-  export import HeaderParamArraysParams = HeaderParamsAPI.HeaderParamArraysParams;
-  export import HeaderParamClientArgumentParams = HeaderParamsAPI.HeaderParamClientArgumentParams;
-  export import HeaderParamNullableTypeParams = HeaderParamsAPI.HeaderParamNullableTypeParams;
+export declare namespace HeaderParams {
+  export {
+    type HeaderParamAllTypesParams as HeaderParamAllTypesParams,
+    type HeaderParamArraysParams as HeaderParamArraysParams,
+    type HeaderParamClientArgumentParams as HeaderParamClientArgumentParams,
+    type HeaderParamNullableTypeParams as HeaderParamNullableTypeParams,
+  };
 }

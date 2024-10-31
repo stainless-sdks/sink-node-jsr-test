@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ParamsAPI from './params';
 
 export class Params extends APIResource {
   /**
@@ -42,7 +41,9 @@ export interface ParamTimeoutParamParams {
   timeout?: number;
 }
 
-export namespace Params {
-  export import ParamOptionsParamParams = ParamsAPI.ParamOptionsParamParams;
-  export import ParamTimeoutParamParams = ParamsAPI.ParamTimeoutParamParams;
+export declare namespace Params {
+  export {
+    type ParamOptionsParamParams as ParamOptionsParamParams,
+    type ParamTimeoutParamParams as ParamTimeoutParamParams,
+  };
 }

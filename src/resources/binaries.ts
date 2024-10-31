@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as BinariesAPI from './binaries';
 import { type Response } from '../_shims/index';
 
 export class Binaries extends APIResource {
@@ -40,6 +39,6 @@ export interface BinaryWithPathAndBodyParamParams {
   foo?: string;
 }
 
-export namespace Binaries {
-  export import BinaryWithPathAndBodyParamParams = BinariesAPI.BinaryWithPathAndBodyParamParams;
+export declare namespace Binaries {
+  export { type BinaryWithPathAndBodyParamParams as BinaryWithPathAndBodyParamParams };
 }
