@@ -1,6 +1,6 @@
 # Sink Custom Node Title 1 API Library
 
-[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sink-npm)
+[![NPM version](https://img.shields.io/npm/v/sink-npm.svg)](https://npmjs.org/package/sink-npm) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/sink-npm) [![JSR Version](https://jsr.io/badges/@stainless-api/sink-jsr)](https://jsr.io/@stainless-api/sink-jsr)
 
 This library provides convenient access to the Sink REST API from server-side TypeScript or JavaScript.
 
@@ -13,6 +13,16 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ```sh
 npm install sink-npm
 ```
+
+You can also import from jsr:
+
+<!-- x-release-please-start-version -->
+
+```ts
+import Sink from 'jsr:@stainless-api/sink-jsr';
+```
+
+<!-- x-release-please-end -->
 
 ## Usage
 
