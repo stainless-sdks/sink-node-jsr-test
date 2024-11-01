@@ -2,8 +2,8 @@ import { ReadableStream, type Response } from './_shims/index';
 import { SinkError } from './error';
 import { LineDecoder } from './internal/decoders/line';
 
-import { createResponseHeaders } from 'sink-npm/core';
-import { APIError } from 'sink-npm/error';
+import { createResponseHeaders } from './core';
+import { APIError } from './error';
 
 type Bytes = string | ArrayBuffer | Uint8Array | Buffer | null | undefined;
 
